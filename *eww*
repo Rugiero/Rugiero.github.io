@@ -1,0 +1,69 @@
+GNU Pass
+
+Generate passwords and keep them safe with pass. Install it on Ubuntu
+
+>sudo apt install pass
+
+You have to generate a gpg key pair. Generate one with
+
+>gpg --generate-key
+
+and follow the instructions.
+
+Once you have a key list them:
+
+>gpg --list-keys
+
+Copy the name of the key and initalize pass, e.g.
+
+>pass init ABCDEFGHIJKLMNOPQRSTUV1234
+
+Now you can add password with
+
+>pass generate keyfolder/newkey
+
+GIT usage with pass 
+
+Export your public and private key with
+
+>gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234
+
+>gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.
+
+Now we can initilize the Git reporisoritory with these keys. Move public.key and private.key through a safe
+channel to the computer you wish to use pass in. Import the keys 
+
+>gpg --import public.key
+
+>gpg --import private.key
+
+Initalize the git repository
+
+>pass git init
+
+>pass git remote add origin git@github.com:myname/pass-store
+
+Now you can get the password data from the server
+
+>pass git pull origin master --allow-unrelated-histories
+
+Do some changes and commit changes
+
+>pass git commit -am "First"
+
+Push and set the upstream
+
+>git push --set-upstream origin master
+
+From here on you can use all the familiar git commands
+
+>pass git pull
+
+>pass git push
+
+>pass git commit -am "text"
+
+Thats it!
+
