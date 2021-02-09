@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
+<HEAD>
+<TITLE>Controlling your passwords with pass</TITLE>
+<META NAME="description" CONTENT="Controlling your passwords with pass">
+<META NAME="keywords" CONTENT="main">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+
+<LINK REL="STYLESHEET" HREF="main.css">
+
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html22"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="http://www.cv.nrao.edu/~author/"><IMG STYLE=""
+ SRC="../jetscalecropped.png"
+ ALT="jetscalecropped.png"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node5.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node3.html">February</A>
+<B> Previous:</B> <A
+ HREF="node3.html">February</A>
+ &nbsp; <B>  <A ID="tex2html23"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A ID="SECTION00021100000000000000">
+Controlling your passwords with pass</A>
+</H3>
+Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
+
+<P>
+
+<UL>
+<LI>Install the application in the terminal: 
+<BR>  »sudo apt install pass 
+<BR></LI>
+<LI>Check for existing GPG keys 
+<BR>  »gpg &ndash;list-keys
+</LI>
+<LI>If no keys were found generate a key pair 
+<BR>  »gpg &ndash;generate-key
+<BR></LI>
+<LI>Copy the name of the key and initalize pass, e.g.
+<BR>  »pass init ABCDEFGHIJKLMNOPQRSTUV1234 
+<BR></LI>
+<LI>Now you can add password with 
+<BR>  »pass generate keyfolder/newkey
+</LI>
+</UL>
+
+<P>
+Connect pass to git so it is easy to keep track of changes with multiple machines.
+
+<P>
+
+<UL>
+<LI>Export your public and private key with 
+<BR>  »gpg &ndash;export &ndash;output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+<BR>  »gpg &ndash;export-secret-key &ndash;output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+<BR>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.
+<BR></LI>
+<LI>Now we can initilize the Git reporisoritory with these keys. Move public.key and private.key through a safe channel to the computer you wish to use pass in. Import the keys 
+<BR>  »gpg &ndash;import public.key
+<BR>  »gpg &ndash;import private.key
+<BR></LI>
+<LI>Initalize yout git repository
+<BR>  »pass git init 
+<BR>  »pass git remote add origin git@repo.com:myname/pass-store
+<BR></LI>
+<LI>Get password data from the server 
+<BR>  »pass git pull origin master &ndash;allow-unrelated-histories
+<BR></LI>
+<LI>Commit
+<BR>  »pass git commit -am &ldquo;First&rdquo; 
+<BR></LI>
+<LI>Push and set upstream 
+<BR>  »git push &ndash;set-upstream origin master 
+<BR></LI>
+<LI>Pass commits the changes automatically and from here on you can use the familiar git commands 
+<BR>  »pass git pull 
+<BR>  »pass git push
+</LI>
+</UL>
+Stay safe.
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html22"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="http://www.cv.nrao.edu/~author/"><IMG STYLE=""
+ SRC="../jetscalecropped.png"
+ ALT="jetscalecropped.png"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node5.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node3.html">February</A>
+<B> Previous:</B> <A
+ HREF="node3.html">February</A>
+ &nbsp; <B>  <A ID="tex2html23"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
