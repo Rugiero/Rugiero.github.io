@@ -79,6 +79,15 @@ pass init ABCDEFGHIJKLMNOPQRSTUV1234,
 </PRE>
 where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
 </LI>
+<LI>Add password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+Copy a password to clipboard 
+<BR><PRE>
+pass keyfolder/newkey -c
+</PRE>
+</LI>
 </UL>
 
 <P>
@@ -133,7 +142,7 @@ pass keyfolder/newkey -c
 </LI>
 <LI>Push and set upstream 
 <BR><PRE>
-git push --set-upstream origin master
+pass git push --set-upstream origin master
 </PRE>
 </LI>
 <LI>Pass commits the changes automatically and from here on you can use the familiar git commands 
