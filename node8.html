@@ -83,9 +83,17 @@ where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
 <BR><PRE>
 pass generate keyfolder/newkey
 </PRE>
+List passwords
+<PRE>
+pass
+</PRE>
 Copy a password to clipboard 
 <BR><PRE>
 pass keyfolder/newkey -c
+</PRE>
+For more commands
+<PRE>
+man pass
 </PRE>
 </LI>
 </UL>
@@ -127,25 +135,12 @@ pass git remote add origin git@repo.com:myname/pass-store
 pass git pull origin master --allow-unrelated-histories
 </PRE>
 </LI>
-<LI>Do some changes to pass and it will commit the changes automatically. We give two basic commands in the following. You can look for more examples from the manual
-<BR><PRE>
-man pass
-</PRE>
-Add password with 
-<BR><PRE>
-pass generate keyfolder/newkey
-</PRE>
-Copy a password to clipboard 
-<BR><PRE>
-pass keyfolder/newkey -c
-</PRE>
-</LI>
-<LI>Push and set upstream 
+<LI>Do some changes and pass will automatically commit them. Push and set upstream 
 <BR><PRE>
 pass git push --set-upstream origin master
 </PRE>
 </LI>
-<LI>Pass commits the changes automatically and from here on you can use the familiar git commands 
+<LI>From here on you can use the familiar git commands 
 <BR><PRE>
 pass git pull 
 pass git push
