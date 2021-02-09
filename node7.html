@@ -31,7 +31,7 @@
 <A
  HREF="node6.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html37"
+<A ID="tex2html38"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE=""
@@ -44,43 +44,43 @@
  HREF="node6.html">February</A>
 <B> Previous:</B> <A
  HREF="node6.html">February</A>
- &nbsp; <B>  <A ID="tex2html38"
+ &nbsp; <B>  <A ID="tex2html39"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A ID="SECTION00031100000000000000">
+<H2><A ID="SECTION00311000000000000000">
 Controlling your passwords with pass</A>
-</H3>
+</H2>
 Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
 
 <P>
 
 <UL>
-<LI>Install the application in the terminal: 
+<LI>Install the application in the terminal 
 <BR><PRE>
- &gt;&gt;sudo apt install pass
+sudo apt install pass
 </PRE>
 </LI>
 <LI>Check for existing GPG keys 
 <BR><PRE>
- &gt;&gt;gpg --list-keys
+gpg --list-keys
 </PRE>
 </LI>
 <LI>If no keys were found generate a key pair 
 <BR><PRE>
- &gt;&gt;gpg --generate-key
+gpg --generate-key
 </PRE>
 </LI>
 <LI>Copy the name of the key and initalize pass
 <BR><PRE>
- &gt;&gt;pass init ABCDEFGHIJKLMNOPQRSTUV1234
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
 </LI>
 <LI>Now you can add password with 
 <BR><PRE>
- &gt;&gt;pass generate keyfolder/newkey
+pass generate keyfolder/newkey
 </PRE>
 </LI>
 </UL>
@@ -93,47 +93,88 @@ Connect pass to git so it is easy to keep track of changes with multiple machine
 <UL>
 <LI>Export your public and private key with 
 <BR>  <PRE>
-  &gt;&gt;gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-  &gt;&gt;gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
 </PRE>
   where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.
 <BR></LI>
 <LI>Now we can initilize the Git reporisoritory with these keys. Move public.key and private.key through a safe channel to the computer you wish to use pass in. Import the keys 
 <BR><PRE>
-  &gt;&gt;gpg --import public.key
-  &gt;&gt;gpg --import private.key
+gpg --import public.key
+gpg --import private.key
 </PRE>
 </LI>
 <LI>Initalize yout git repository
 <BR><PRE>
-  &gt;&gt;pass git init 
-  &gt;&gt;pass git remote add origin git@repo.com:myname/pass-store
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
 </PRE>
 </LI>
 <LI>Get password data from the server 
 <PRE>
-  &gt;&gt;pass git pull origin master --allow-unrelated-histories
+pass git pull origin master --allow-unrelated-histories
 </PRE>
 </LI>
 <LI>Commit
 <BR><PRE>
- &gt;&gt;pass git commit -am &ldquo;First&rdquo;
+pass git commit -am &ldquo;First&rdquo;
 </PRE>
 </LI>
 <LI>Push and set upstream 
 <BR><PRE>
- &gt;&gt;git push --set-upstream origin master
+git push --set-upstream origin master
 </PRE>
 </LI>
 <LI>Pass commits the changes automatically and from here on you can use the familiar git commands 
 <BR><PRE>
- &gt;&gt;pass git pull 
- &gt;&gt;pass git push
+pass git pull 
+pass git push
 </PRE>
 </LI>
 </UL>
 Stay safe.
-<BR><HR>
+
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+References:
+  <DT><A ID="stochasticgeometry">1</A>
+<DD>
+    https://www.passwordstore.org/
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html38"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE=""
+ SRC="../jetscalecropped.png"
+ ALT="jetscalecropped.png"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node8.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node6.html">February</A>
+<B> Previous:</B> <A
+ HREF="node6.html">February</A>
+ &nbsp; <B>  <A ID="tex2html39"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
