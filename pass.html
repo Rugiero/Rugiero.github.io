@@ -19,7 +19,8 @@
 
 <h2>GIT usage with pass </h2>
 
-<p>Export your public and private key with</p>
+<p>Should you Initalize a repository in different device go for:</p>
+<p><h2>#1</h2> Export your public and private key with</p>
 <p>>gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234</p>
 <p>>gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,</p>
 <p>where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.</p>
@@ -29,6 +30,7 @@
 <p>  >gpg --import private.key</p>
 
 
+<p><h2>#2</h2> Having your gpg keys already locally initialized. </p>
 <p>Initalize your git repository</p>
 <p>>pass git init</p>
 <p>>pass git remote add origin git@repo.com:myname/pass-store</p>

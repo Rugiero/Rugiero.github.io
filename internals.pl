@@ -1,17 +1,9 @@
-# LaTeX2HTML 2019.2 (Released June 5, 2019)
+# LaTeX2HTML 2018 (Released Feb 1, 2018)
 # Associate internals original text with physical files.
 
 
-$key = q/cite_69/;
-$ref_files{$key} = "$dir".q|node7.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/cite_70/;
-$ref_files{$key} = "$dir".q|node7.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/cite_shadow/;
-$ref_files{$key} = "$dir".q|node7.html|; 
+$key = q/1/;
+$ref_files{$key} = "$dir".q|node8.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/cite_stochasticgeometry/;

@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
 <HEAD>
 <TITLE>Controlling your passwords with pass</TITLE>
 <META NAME="description" CONTENT="Controlling your passwords with pass">
@@ -9,48 +9,48 @@
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="main.css">
 
 <LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
 <LINK REL="next" HREF="node9.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A
- HREF="node9.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node7.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node7.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html44"
+<A NAME="tex2html118"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html114"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html110"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html116"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE=""
- SRC="../jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="../jetscalecropped.png"
  ALT="jetscalecropped.png"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node9.html">About this document ...</A>
-<B> Up:</B> <A
- HREF="node7.html">February</A>
-<B> Previous:</B> <A
- HREF="node7.html">February</A>
- &nbsp; <B>  <A ID="tex2html45"
+<B> Next:</B> <A NAME="tex2html119"
+  HREF="node9.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html115"
+  HREF="node7.html">February</A>
+<B> Previous:</B> <A NAME="tex2html111"
+  HREF="node7.html">February</A>
+ &nbsp; <B>  <A NAME="tex2html117"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A ID="SECTION00311100000000000000">
+<H3><A NAME="SECTION00311100000000000000">
 Controlling your passwords with pass</A>
 </H3>
 Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
@@ -64,7 +64,7 @@ sudo apt install pass
 </PRE>
 </LI>
 <LI>Check for existing GPG keys 
-<BR><PRE>
+<BR><A NAME="1"></A><PRE>
 gpg --list-keys
 </PRE>
 </LI>
@@ -75,13 +75,9 @@ gpg --generate-key
 </LI>
 <LI>Copy the name of the key and initalize pass
 <BR><PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234
+pass init ABCDEFGHIJKLMNOPQRSTUV1234,
 </PRE>
-</LI>
-<LI>Now you can add password with 
-<BR><PRE>
-pass generate keyfolder/newkey
-</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
 </LI>
 </UL>
 
@@ -104,6 +100,13 @@ gpg --import public.key
 gpg --import private.key
 </PRE>
 </LI>
+<LI>After importing keys to a new machine you can list keys and initilize pass
+<PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+
+<P>
+</LI>
 <LI>Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
 <BR><PRE>
 pass git init 
@@ -115,9 +118,17 @@ pass git remote add origin git@repo.com:myname/pass-store
 pass git pull origin master --allow-unrelated-histories
 </PRE>
 </LI>
-<LI>Do some changes to pass and it will commit the changes automatically. You can look for examples from the manual
+<LI>Do some changes to pass and it will commit the changes automatically. We give two basic commands in the following. You can look for more examples from the manual
 <BR><PRE>
 man pass
+</PRE>
+Add password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+Copy a password to clipboard 
+<BR><PRE>
+pass keyfolder/newkey -c
 </PRE>
 </LI>
 <LI>Push and set upstream 
@@ -132,7 +143,7 @@ pass git push
 </PRE>
 </LI>
 </UL>
-Stay safe.
+Stay safe :)
 
 <P>
 <BR>
@@ -142,7 +153,7 @@ Stay safe.
 <BR>
 <BR>
 References:
-  <DT><A ID="stochasticgeometry">1</A>
+  <P></P><DT><A NAME="stochasticgeometry">1</A>
 <DD>
     https://www.passwordstore.org/
 
@@ -150,29 +161,29 @@ References:
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A
- HREF="node9.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node7.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node7.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html44"
+<A NAME="tex2html118"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html114"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html110"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html116"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE=""
- SRC="../jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="../jetscalecropped.png"
  ALT="jetscalecropped.png"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node9.html">About this document ...</A>
-<B> Up:</B> <A
- HREF="node7.html">February</A>
-<B> Previous:</B> <A
- HREF="node7.html">February</A>
- &nbsp; <B>  <A ID="tex2html45"
+<B> Next:</B> <A NAME="tex2html119"
+  HREF="node9.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html115"
+  HREF="node7.html">February</A>
+<B> Previous:</B> <A NAME="tex2html111"
+  HREF="node7.html">February</A>
+ &nbsp; <B>  <A NAME="tex2html117"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
