@@ -110,14 +110,14 @@ pass git init
 pass git remote add origin git@repo.com:myname/pass-store
 </PRE>
 </LI>
-<LI>Get password data from the server 
+<LI>Get password data from the server (from an non-empty repository, otherwise skip)
 <PRE>
 pass git pull origin master --allow-unrelated-histories
 </PRE>
 </LI>
-<LI>Commit
+<LI>Do some changes to pass and it will commit the changes automatically. You can look for examples from the manual
 <BR><PRE>
-pass git commit -am &ldquo;First&rdquo;
+man pass
 </PRE>
 </LI>
 <LI>Push and set upstream 
