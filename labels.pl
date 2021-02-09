@@ -15,7 +15,7 @@ $external_labels{$key} = "$URL/" . q|node7.html|;
 $noresave{$key} = "$nosave";
 
 $key = q/cite_stochasticgeometry/;
-$external_labels{$key} = "$URL/" . q|node7.html|; 
+$external_labels{$key} = "$URL/" . q|node8.html|; 
 $noresave{$key} = "$nosave";
 
 1;

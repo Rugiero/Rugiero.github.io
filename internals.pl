@@ -15,7 +15,7 @@ $ref_files{$key} = "$dir".q|node7.html|;
 $noresave{$key} = "$nosave";
 
 $key = q/cite_stochasticgeometry/;
-$ref_files{$key} = "$dir".q|node7.html|; 
+$ref_files{$key} = "$dir".q|node8.html|; 
 $noresave{$key} = "$nosave";
 
 1;

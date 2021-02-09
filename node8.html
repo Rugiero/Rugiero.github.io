@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>Controlling your passwords with pass</TITLE>
+<META NAME="description" CONTENT="Controlling your passwords with pass">
 <META NAME="keywords" CONTENT="main">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,51 +15,166 @@
 
 <LINK REL="STYLESHEET" HREF="main.css">
 
-<LINK REL="previous" HREF="node5.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="main.html">
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node7.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node7.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html40"
+<A ID="tex2html44"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE=""
  SRC="../jetscalecropped.png"
  ALT="jetscalecropped.png"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node9.html">About this document ...</A>
 <B> Up:</B> <A
- HREF="main.html">A glimpse to my</A>
+ HREF="node7.html">February</A>
 <B> Previous:</B> <A
- HREF="node7.html">Controlling your passwords with</A>
- &nbsp; <B>  <A ID="tex2html41"
+ HREF="node7.html">February</A>
+ &nbsp; <B>  <A ID="tex2html45"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00400000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-<B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
+<H3><A ID="SECTION00311100000000000000">
+Controlling your passwords with pass</A>
+</H3>
+Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html6"
-  HREF="../main.tex">main.tex</A></kbd>
+
+<UL>
+<LI>Install the application in the terminal 
+<BR><PRE>
+sudo apt install pass
+</PRE>
+</LI>
+<LI>Check for existing GPG keys 
+<BR><PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>If no keys were found generate a key pair 
+<BR><PRE>
+gpg --generate-key
+</PRE>
+</LI>
+<LI>Copy the name of the key and initalize pass
+<BR><PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+</LI>
+<LI>Now you can add password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+</LI>
+</UL>
+
 <P>
-The translation was initiated on 2021-02-09
-<BR><HR>
+Connect pass to git so it is easy to keep track of changes with multiple machines.
+
+<P>
+
+<UL>
+<LI>Export your public and private key with 
+<BR>  <PRE>
+gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+</PRE>
+  where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.
+<BR></LI>
+<LI>Now we can initilize the Git reporisoritory with these keys. Move public.key and private.key through a safe channel to the computer you wish to use pass in. Import the keys 
+<BR><PRE>
+gpg --import public.key
+gpg --import private.key
+</PRE>
+</LI>
+<LI>Initalize yout git repository
+<BR><PRE>
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
+</PRE>
+</LI>
+<LI>Get password data from the server 
+<PRE>
+pass git pull origin master --allow-unrelated-histories
+</PRE>
+</LI>
+<LI>Commit
+<BR><PRE>
+pass git commit -am &ldquo;First&rdquo;
+</PRE>
+</LI>
+<LI>Push and set upstream 
+<BR><PRE>
+git push --set-upstream origin master
+</PRE>
+</LI>
+<LI>Pass commits the changes automatically and from here on you can use the familiar git commands 
+<BR><PRE>
+pass git pull 
+pass git push
+</PRE>
+</LI>
+</UL>
+Stay safe.
+
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+References:
+  <DT><A ID="stochasticgeometry">1</A>
+<DD>
+    https://www.passwordstore.org/
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html44"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE=""
+ SRC="../jetscalecropped.png"
+ ALT="jetscalecropped.png"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node9.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node7.html">February</A>
+<B> Previous:</B> <A
+ HREF="node7.html">February</A>
+ &nbsp; <B>  <A ID="tex2html45"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
