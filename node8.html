@@ -91,20 +91,20 @@ Connect pass to git so it is easy to keep track of changes with multiple machine
 <P>
 
 <UL>
-<LI>Export your public and private key with 
+<LI>Export your public and private key to a file with 
 <BR>  <PRE>
 gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
 gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
 </PRE>
   where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.
 <BR></LI>
-<LI>Now we can initilize the Git reporisoritory with these keys. Move public.key and private.key through a safe channel to the computer you wish to use pass in. Import the keys 
+<LI>Now we can initilize the git reporisoritory with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine 
 <BR><PRE>
 gpg --import public.key
 gpg --import private.key
 </PRE>
 </LI>
-<LI>Initalize yout git repository
+<LI>Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
 <BR><PRE>
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
