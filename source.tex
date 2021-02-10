@@ -80,10 +80,12 @@ Ilari Angervuori\\
 \section{Education}
 \section{Research}
 
-\chapter{Blog posts 2021}
+\chapter{Blog post}
 Random thoughts between Sun and Earth and Beyond.
-\section{February}
-\subsection{Controlling your passwords with pass}
+\section{2021}
+Hope it will be better than $2020.$
+\subsection{February}
+\subsubsection{Controlling your passwords with pass}
 Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
 
 \begin{itemize}
@@ -92,6 +94,7 @@ Pass is a nice unix style free and open source wallet for keeping your passwords
 sudo apt install pass  
 \end{verbatim}
 \item Check for existing GPG keys \\
+\label{1}
 \begin{verbatim}
 gpg --list-keys 
 \end{verbatim}
@@ -101,52 +104,66 @@ gpg --generate-key
 \end{verbatim}
 \item Copy the name of the key and initalize pass\\
 \begin{verbatim}
-pass init ABCDEFGHIJKLMNOPQRSTUV1234 
+pass init ABCDEFGHIJKLMNOPQRSTUV1234, 
 \end{verbatim}
-  \item Now you can add password with \\
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
+\item Generate a password with \\
 \begin{verbatim}
 pass generate keyfolder/newkey 
+\end{verbatim}
+List passwords
+\begin{verbatim}
+pass
+\end{verbatim}
+Copy a password to clipboard \\
+\begin{verbatim}
+pass keyfolder/newkey -c
+\end{verbatim}
+For more commands
+\begin{verbatim}
+man pass
 \end{verbatim}
 \end{itemize}
 
 Connect pass to git so it is easy to keep track of changes with multiple machines.
 
 \begin{itemize}
-\item Export your public and private key with \\
+\item Export your public and private key to a file with \\
   \begin{verbatim}
 gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
 gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
   \end{verbatim}
   where ABCDEFGHIJKLMNOPQRSTUV1234 is your keyname.\\
-\item Now we can initilize the Git reporisoritory with these keys. Move public.key and private.key through a safe channel to the computer you wish to use pass in. Import the keys \\
+\item Now we can initilize the git reporisoritory with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine \\
 \begin{verbatim}
 gpg --import public.key
 gpg --import private.key
 \end{verbatim}
-\item Initalize yout git repository\\
+\item After importing keys to a new machine you can initilize pass
+\begin{verbatim}
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+\end{verbatim}
+
+\item Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands\\
 \begin{verbatim}
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
  \end{verbatim}
-\item Get password data from the server 
+\item Get password data from the server (from a non-empty repository, otherwise skip)
 \begin{verbatim}
 pass git pull origin master --allow-unrelated-histories
 \end{verbatim}
-\item Commit\\
+\item Do some changes and pass will automatically commit them. Push and set upstream \\
 \begin{verbatim}
-pass git commit -am ``First'' 
+pass git push --set-upstream origin master 
 \end{verbatim}
-\item Push and set upstream \\
-\begin{verbatim}
-git push --set-upstream origin master 
-\end{verbatim}
-\item Pass commits the changes automatically and from here on you can use the familiar git commands \\
+\item From here on you can use the familiar git commands \\
 \begin{verbatim}
 pass git pull 
 pass git push 
 \end{verbatim}
 \end{itemize}
-Stay safe.
+Stay safe :)
 
 \vspace{2cm}
 References:
