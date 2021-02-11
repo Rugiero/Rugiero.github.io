@@ -21,7 +21,7 @@
 \documentclass{article}
 \usepackage{html,makeidx,epsf}
 \usepackage{graphicx}
-\renewcommand{\bibname}{References}
+%\renewcommand{\bibname}{References}
 
 %
 % Add home page navigation button -- edit the URL!
@@ -38,7 +38,8 @@
 \def\linkedin{https://www.linkedin.com/in/ilari-angervuori-0a1358160/}
 \def\soundcloud{https://soundcloud.com/ilari-angervuori}
 \def\github{https://github.com/Rugiero}
-\def\cv{}
+\def\pass{https://www.passwordstore.org/}
+\def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
 \makeindex
 
 \begin{document}
@@ -65,11 +66,11 @@ Ilari Angervuori\\
   \htmladdnormallink{Linkedin}{\linkedin}\\
   \htmladdnormallink{Soundcloud}{\soundcloud}\\
   \htmladdnormallink{GitHub}{\github} \\
-  \htmladdnormallink{CV}{\cv}
+  \htmladdnormallink{CV}{\cv}\\
 \end{center}
 
 %\begin{latexonly}
-\markright{Document_Short_Title}
+%\markright{Document_Short_Title}
 \maketitle
 % uncomment to run:
 %\end{latexonly}
@@ -77,7 +78,7 @@ Ilari Angervuori\\
 \tableofcontents
 
 \pagebreak
-\chapter{About me}
+\section{About me}
 I am a mathematician and engineer from Finland. You can find about my professional achievements below.
 
 I am keeping up a monthly blog what you can find in the blog posts section. It handles daily stuff encountered in my professional life sometimes with a poetic undertone (first thing taught to a fresh PhD student: ``Don't try to be poetic''). I hope you will find it interesting. 
@@ -99,15 +100,13 @@ In free time I love music, literature, long walks, coffee and beer.
 
 \begin{itemize}
 \item Downlink Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry
-Okati, N., Riihonen, T., Korpi, D., Angervuori, I. & Wichman, R., Aug 2020, In : IEEE Transactions on Communications. 68, 8, p. 5120-5134 9079921.\\
+Okati, N., Riihonen, T., Korpi, D., Angervuori, I. Wichman, R., Aug 2020, In : IEEE Transactions on Communications. 68, 8, p. 5120-5134 9079921.\\
 \end{itemize}
 
 
-\chapter{Blog posts}
+\section{Blog posts 2021}
 General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
 
-\section{2021}
-Hope it will be better than $2020.$
 \subsection{February}
 \subsubsection{Controlling your passwords with pass}
 Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
@@ -191,13 +190,13 @@ Stay safe :)
 
 \vspace{2cm}
 References:
-  \bibitem{stochasticgeometry}
-    https://www.passwordstore.org/
 
+ \htmladdnormallink{Password Store}{\pass}
 
-
+\end{document}
 %
 % optional post-title formatting for PostScript
 %
 \parindent0pt
 \parskip2.5ex plus 0.5ex minus 0.5ex
+

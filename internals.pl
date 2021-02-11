@@ -3,7 +3,7 @@
 
 
 $key = q/1/;
-$ref_files{$key} = "$dir".q|node8.html|; 
+$ref_files{$key} = "$dir".q|node7.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/cite_stochasticgeometry/;
