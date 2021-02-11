@@ -1,11 +1,9 @@
-# LaTeX2HTML 2018 (Released Feb 1, 2018)
+# LaTeX2HTML 2019.2 (Released June 5, 2019)
 # Associate images original text with physical files.
 
 
 $key = q/2020.;MSF=1.6;AAT/;
-$cached_env_img{$key} = q|<IMG
- WIDTH="40" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="|."$dir".q|img1.png"
+$cached_env_img{$key} = q|<IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img1.svg"
  ALT="$2020.$">|; 
 
 1;
