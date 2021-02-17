@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>Controlling your passwords with pass</TITLE>
-<META NAME="description" CONTENT="Controlling your passwords with pass">
+<TITLE>Poisson process on a sphere</TITLE>
+<META NAME="description" CONTENT="Poisson process on a sphere">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -31,163 +31,170 @@
 <A
  HREF="node6.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html39"
+<A ID="tex2html45"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="4"></A>
+ ALT="6"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node8.html">About this document ...</A>
+ HREF="node8.html">February</A>
 <B> Up:</B> <A
- HREF="node6.html">February</A>
+ HREF="node6.html">January</A>
 <B> Previous:</B> <A
- HREF="node6.html">February</A>
- &nbsp; <B>  <A ID="tex2html40"
+ HREF="node6.html">January</A>
+ &nbsp; <B>  <A ID="tex2html46"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
 <H3><A ID="SECTION00031100000000000000">
-Controlling your passwords with pass</A>
+Poisson process on a sphere</A>
 </H3>
-Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
+Of course, Poisson process can be generalized to an arbitrary manifold. Particularly Poisson point process on a sphere is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area <!-- MATH
+ $A = [-\pi,\pi] \times [-1,1]$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img1.svg"
+ ALT="$A = [-\pi,\pi] \times [-1,1]$"></SPAN> through the area preserving mapping from <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
+ ALT="$A$"></SPAN> to surface of a sphere
+
+<DIV class="equation">
+
+<!-- MATH
+ \begin{equation}
+(x,y) \mapsto (r,x,\sin(y)) .
+\end{equation}
+ -->
+ &nbsp;  <IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img3.svg"
+ ALT="$\displaystyle (x,y) \mapsto (r,x,\sin(y)) \nonumber.
+$"> 
+
+&nbsp;
+</DIV>
 
 <P>
+Resulting process interpreted in geographical coordinates <!-- MATH
+ $(r,\theta,\varphi)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img4.svg"
+ ALT="$(r,\theta,\varphi)$"></SPAN> is a Poisson point process on a sphere of radius <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img5.svg"
+ ALT="$r$"></SPAN>.  Following codes returns a scatter plot of Poisson points on the unit sphere.
 
-<UL>
-<LI>Install the application in the terminal 
-<BR><PRE>
-sudo apt install pass
-</PRE>
-</LI>
-<LI>Check for existing GPG keys 
-<BR><PRE>
-gpg --list-keys
-</PRE>
-</LI>
-<LI>If no keys were found generate a key pair 
-<BR><PRE>
-gpg --generate-key
-</PRE>
-</LI>
-<LI>Copy the name of the key and initalize pass
-<BR><PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234,
-</PRE>
-where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
-</LI>
-<LI>Generate a password with 
-<BR><PRE>
-pass generate keyfolder/newkey
-</PRE>
-List passwords
+<P>
+GNU/Octave or Matlab:
 <PRE>
-pass
+%Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin=-pi; xMax = pi;
+  
+  xDelta=xMax-xMin;yDelta=yMax-yMin; %Rectangle dimensions
+  numbPoints=poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x=xDelta*(rand(numbPoints,1))+xMin;    %Pick points from uniform distribution
+  y=yDelta*(rand(numbPoints,1))+yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+
+  figure(1)    %Plot
+  [X, Y, Z] = sphere;
+  surf(X,Y,Z,'EdgeColor','none','FaceColor','black');
+  hold on
+  scatter3(refc(1,:),refc(2,:),refc(3,:),10,...
+           'MarkerFaceColor','yellow',...
+           'MarkerEdgeColor','red');
+  axis equal
+end
 </PRE>
-Copy a password to clipboard 
-<BR><PRE>
-pass keyfolder/newkey -c
-</PRE>
-For more commands
+
+<P>
+Python:
+
+<P>
 <PRE>
-man pass
+import numpy as np
+import scipy.stats
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import axes3d
+
+#Rectangle dimension
+xMin=-np.pi;xMax=np.pi;
+yMin=-1;yMax=1;
+xDelta=xMax-xMin;yDelta=yMax-yMin; #rectangle dimensions
+
+#Density parameter of the Poisson point process. Mean number of points on the sphere
+lambda0=1000; 
+
+#Simulate Poisson point process
+
+#Number of point in the area is a Poisson variable of intensity lambda0
+numbPoints = scipy.stats.poisson( lambda0 ).rvs()
+x = xDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+xMin
+y = yDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+yMin
+
+#Transform to geographical coordinates
+x = x
+y = np.arcsin(y)
+#Plotting
+fig = plt.figure()
+ax = plt.axes(projection="3d")
+ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )
+plt.show()
 </PRE>
-</LI>
-</UL>
 
 <P>
-Connect pass to git so it is easy to keep track of changes with multiple machines.
-
-<P>
-
-<UL>
-<LI>Export your public and private key to a file with 
-<BR>  <PRE>
-gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
-</PRE>
-  where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
-<BR></LI>
-<LI>Now we can initilize the git reporisoritory with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine 
-<BR><PRE>
-gpg --import public.key
-gpg --import private.key
-</PRE>
-</LI>
-<LI>After importing keys to a new machine you can initilize pass
+Wolfram Language:
 <PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234
+(*lambda is the mean number of points on the unit sphere*) 
+  poissononsphere[lambda_] := 
+  Module[{nrofpoints, phi, theta, radius, refc, polarp}, 
+   nrofpoints = RandomVariate[PoissonDistribution[lambda]];
+   polarp = 
+    Table[{RandomVariate[UniformDistribution[{-Pi, Pi}]], 
+      ArcSin[RandomVariate[UniformDistribution[{-1, 1}]]]}, 
+     nrofpoints];
+   radius = 1;
+   refc = 
+    Table[{radius*Sin[polarp[[i]][[2]] + Pi/2]*
+       Cos[polarp[[i]][[1]] + Pi],
+      radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1]] + Pi],
+      radius*Cos[polarp[[i]][[2]] + Pi/2]}, {i, nrofpoints}];
+   refc
+   ];
+   ListPointPlot3D[poissononsphere[500], BoxRatios -&gt; {1, 1, 1}]
 </PRE>
 
 <P>
-</LI>
-<LI>Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
-<BR><PRE>
-pass git init 
-pass git remote add origin git@repo.com:myname/pass-store
-</PRE>
-</LI>
-<LI>Get password data from the server (from a non-empty repository, otherwise skip)
-<PRE>
-pass git pull origin master --allow-unrelated-histories
-</PRE>
-</LI>
-<LI>Do some changes and pass will automatically commit them. Push and set upstream 
-<BR><PRE>
-pass git push --set-upstream origin master
-</PRE>
-</LI>
-<LI>From here on you can use the familiar git commands 
-<BR><PRE>
-pass git pull 
-pass git push
-</PRE>
-</LI>
-</UL>
-Stay safe :)
+
+<DIV class="CENTER"><A ID="51"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Are the stars Poisson distributed in the sky?</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./poissononsphere.jpg"
+ ALT="Image poissononsphere"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-References:
+
+<DIV class="CENTER"><A ID="55"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Poisson distributed transmitters and the aggregate signal strength in a satellite by location. Poisson assumption is reasonable in many situations, but, well, here the sea areas are a bit overrepresented.  </CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./interferenceenvironment.png"
+ ALT="Image interferenceenvironment"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
-<A ID="tex2html7"
-  HREF="https://www.passwordstore.org/">Password Store</A>
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node8.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node6.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node6.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html39"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="4"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node8.html">About this document ...</A>
-<B> Up:</B> <A
- HREF="node6.html">February</A>
-<B> Previous:</B> <A
- HREF="node6.html">February</A>
- &nbsp; <B>  <A ID="tex2html40"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<BR><HR>
 
 </BODY>
 </HTML>

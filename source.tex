@@ -21,6 +21,9 @@
 \documentclass{article}
 \usepackage{html,makeidx,epsf}
 \usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[overload]{empheq}
+
 %\renewcommand{\bibname}{References}
 
 %
@@ -81,14 +84,14 @@ Ilari Angervuori\\
 \section{About me}
 I am a mathematician and engineer from Finland. You can find about my professional achievements below.
 
-I am keeping up a monthly blog what you can find in the blog posts section. It handles daily stuff encountered in my professional life sometimes with a poetic undertone (first thing taught to a fresh PhD student: ``Don't try to be poetic''). I hope you will find it interesting. 
+I am keeping up a monthly blog what you can find in the blog posts section. It handles daily stuff encountered in my professional life. I hope you will find it interesting. 
 
 In free time I love music, literature, long walks, coffee and beer.
 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{me1.jpg}
-  \caption{Me in my beloved home town Helsinki (well, technically in Espoo, Otaniemi)}
+  \caption{Me in my beloved home town Helsinki in the middle of summer (well, technically in Espoo, Otaniemi)}
 \end{figure}
 
 \subsection{Education}
@@ -107,6 +110,113 @@ In free time I love music, literature, long walks, coffee and beer.
 
 \section{Blog posts 2021}
 General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
+
+\subsection{January}
+\subsubsection{Poisson process on a sphere}
+Of course, Poisson process can be generalized to an arbitrary manifold. Particularly Poisson point process on a sphere is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
+\begin{equation}
+  (x,y) \mapsto (r,x,\sin(y)) \nonumber.
+\end{equation}
+
+
+Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+
+
+
+GNU/Octave or Matlab:
+\begin{verbatim}
+%Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin=-pi; xMax = pi;
+  
+  xDelta=xMax-xMin;yDelta=yMax-yMin; %Rectangle dimensions
+  numbPoints=poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x=xDelta*(rand(numbPoints,1))+xMin;    %Pick points from uniform distribution
+  y=yDelta*(rand(numbPoints,1))+yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+
+  figure(1)    %Plot
+  [X, Y, Z] = sphere;
+  surf(X,Y,Z,'EdgeColor','none','FaceColor','black');
+  hold on
+  scatter3(refc(1,:),refc(2,:),refc(3,:),10,...
+           'MarkerFaceColor','yellow',...
+           'MarkerEdgeColor','red');
+  axis equal
+end
+\end{verbatim}
+
+Python:
+
+\begin{verbatim}
+import numpy as np
+import scipy.stats
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import axes3d
+
+#Rectangle dimension
+xMin=-np.pi;xMax=np.pi;
+yMin=-1;yMax=1;
+xDelta=xMax-xMin;yDelta=yMax-yMin; #rectangle dimensions
+
+#Density parameter of the Poisson point process. Mean number of points on the sphere
+lambda0=1000; 
+
+#Simulate Poisson point process
+
+#Number of point in the area is a Poisson variable of intensity lambda0
+numbPoints = scipy.stats.poisson( lambda0 ).rvs()
+x = xDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+xMin
+y = yDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+yMin
+
+#Transform to geographical coordinates
+x = x
+y = np.arcsin(y)
+#Plotting
+fig = plt.figure()
+ax = plt.axes(projection="3d")
+ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )
+plt.show()
+  
+\end{verbatim}
+
+Wolfram Language:
+\begin{verbatim}
+(*lambda is the mean number of points on the unit sphere*) 
+  poissononsphere[lambda_] := 
+  Module[{nrofpoints, phi, theta, radius, refc, polarp}, 
+   nrofpoints = RandomVariate[PoissonDistribution[lambda]];
+   polarp = 
+    Table[{RandomVariate[UniformDistribution[{-Pi, Pi}]], 
+      ArcSin[RandomVariate[UniformDistribution[{-1, 1}]]]}, 
+     nrofpoints];
+   radius = 1;
+   refc = 
+    Table[{radius*Sin[polarp[[i]][[2]] + Pi/2]*
+       Cos[polarp[[i]][[1]] + Pi],
+      radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1]] + Pi],
+      radius*Cos[polarp[[i]][[2]] + Pi/2]}, {i, nrofpoints}];
+   refc
+   ];
+   ListPointPlot3D[poissononsphere[500], BoxRatios -> {1, 1, 1}]  
+\end{verbatim}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{poissononsphere.jpg}
+  \caption{Are the stars Poisson distributed in the sky?}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{interferenceenvironment.png}
+  \caption{Poisson distributed transmitters and the aggregate signal strength in a satellite by location. Poisson assumption is reasonable in many situations, but, well, here the sea areas are a bit overrepresented.  }
+\end{figure}
 
 \subsection{February}
 \subsubsection{Controlling your passwords with pass}
