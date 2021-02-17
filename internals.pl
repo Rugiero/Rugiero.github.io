@@ -2,20 +2,12 @@
 # Associate internals original text with physical files.
 
 
-$key = q/1/;
+$key = q/cite_2/;
 $ref_files{$key} = "$dir".q|node7.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_stochasticgeometry/;
-$ref_files{$key} = "$dir".q|node8.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/fig:footprint/;
-$ref_files{$key} = "$dir".q|node2.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/fig:mesh1/;
-$ref_files{$key} = "$dir".q|node2.html|; 
+$key = q/cite_theoryofpoint/;
+$ref_files{$key} = "$dir".q|node7.html|; 
 $noresave{$key} = "$nosave";
 
 1;
