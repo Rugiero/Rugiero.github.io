@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.8.26)  18 FEB 2021 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.8.26)  18 FEB 2021 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -205,7 +205,7 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 )
 \sizebox=\box30
 \lthtmlwrite=\write5
-(./images.aux)
+No file images.aux.
 \openout1 = `images.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
@@ -246,151 +246,47 @@ latex2htmlLength oddsidemargin=62.0pt
 
 latex2htmlLength evensidemargin=62.0pt
 
-
-LaTeX Warning: File `me1.jpg' not found on input line 150.
-
-
-! LaTeX Error: File `me1.jpg' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.150 \includegraphics[width=\linewidth]{me1.jpg}
-                                                 %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in me1.jpg (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.150 \includegraphics[width=\linewidth]{me1.jpg}
-                                                 %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: me1.jpg Graphic file (type eps)
-<me1.jpg>
-l2hSize :tex2html_wrap204:349.09615pt::0.0pt::349.0pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 155.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 155.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+l2hSize :tex2html_wrap_inline105:8.0pt::8.0pt::91.22911pt.
 [1
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 161.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 161.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-l2hSize :tex2html_wrap_inline105:8.0pt::8.0pt::91.22911pt.
+l2hSize :tex2html_wrap_inline107:6.83331pt::0.0pt::8.00005pt.
 [2
 
 
 ]
-l2hSize :tex2html_wrap_inline107:6.83331pt::0.0pt::8.00005pt.
+l2hSize :displaymath41:20.5pt::0.0pt::349.0pt.
 [3
 
 
 ]
-l2hSize :displaymath41:20.5pt::0.0pt::349.0pt.
+l2hSize :tex2html_wrap_inline109:8.0pt::8.0pt::32.91437pt.
 [4
 
 
 ]
-l2hSize :tex2html_wrap_inline109:8.0pt::8.0pt::32.91437pt.
-[5
-
-
-]
 l2hSize :tex2html_wrap_inline111:6.45831pt::0.0pt::5.2894pt.
-[6
-
-
-]
-
-LaTeX Warning: File `poissononsphere.jpg' not found on input line 193.
-
-
-! LaTeX Error: File `poissononsphere.jpg' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.193 ...cs[width=\linewidth]{poissononsphere.jpg}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in poissononsphere.jpg (no Boun
-dingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.193 ...cs[width=\linewidth]{poissononsphere.jpg}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: poissononsphere.jpg Graphic file (type eps)
-<poissononsphere.jpg>
-l2hSize :tex2html_wrap218:349.09615pt::0.0pt::349.0pt.
-[7
-
-
-]
-
-LaTeX Warning: File `interferenceenvironment.png' not found on input line 199.
-
-
-! LaTeX Error: File `interferenceenvironment.png' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.199 ...=\linewidth]{interferenceenvironment.png}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in interferenceenvironment.png 
-(no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.199 ...=\linewidth]{interferenceenvironment.png}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: interferenceenvironment.png Graphic file (type eps)
-<interferenceenvironment.png>
-l2hSize :tex2html_wrap222:349.09615pt::0.0pt::349.0pt.
-[8
+[5
 
 
 ] (./images.aux) ) 
 Here is how much of TeX's memory you used:
- 3237 strings out of 494806
- 43613 string characters out of 6178026
+ 3222 strings out of 494806
+ 43359 string characters out of 6178026
  105361 words of memory out of 5000000
- 6556 multiletter control sequences out of 15000+600000
+ 6548 multiletter control sequences out of 15000+600000
  5339 words of font info for 22 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 39i,5n,35p,280b,200s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,5n,35p,280b,151s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on images.dvi (8 pages, 2064 bytes).
+Output written on images.dvi (5 pages, 1396 bytes).
