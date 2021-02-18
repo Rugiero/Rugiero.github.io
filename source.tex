@@ -136,7 +136,7 @@ function refc = poissononsphere(density)
   y=yDelta*(rand(numbPoints,1))+yMin;    %Map referencepoints to geographical coordinates
   ref = [x y]';
 
-  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on an unit sphere
   r = 1;
   refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
           r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
