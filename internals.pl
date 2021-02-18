@@ -6,6 +6,10 @@ $key = q/cite_2/;
 $ref_files{$key} = "$dir".q|node7.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/cite_3/;
+$ref_files{$key} = "$dir".q|node7.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_pass/;
 $ref_files{$key} = "$dir".q|node9.html|; 
 $noresave{$key} = "$nosave";
