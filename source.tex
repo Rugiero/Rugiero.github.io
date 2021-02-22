@@ -43,7 +43,6 @@
 \def\github{https://github.com/Rugiero}
 \def\pass{https://www.passwordstore.org/}
 \def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
-\def\keeler{https://hpaulkeeler.com/poisson-point-process-simulation/}
 \makeindex
 
 \begin{document}
@@ -137,7 +136,7 @@ function refc = poissononsphere(density)
   y=yDelta*(rand(numbPoints,1))+yMin;    %Map referencepoints to geographical coordinates
   ref = [x y]';
 
-  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on an unit sphere
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
   r = 1;
   refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
           r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
@@ -222,7 +221,8 @@ Wolfram Language:
 References:
 \bibitem{theoryofpoint} D. J. Daley and D. Vere-Jones, ``The General Poisson Process'' in {\em An introduction to the theory of point processes.} New York: Springer, 2003, pp. 39. 
 \bibitem{2} Stoyan, Dietrich. et al. \em{Stochastic Geometry and Its Applications}. 3rd ed. Chichester: Wiley, 2013. Print.
-\bibitem{3}\htmladdnormallink{H. Paul Keeler's Blog}{\keeler}
+
+
 
 
 \subsection{February}
