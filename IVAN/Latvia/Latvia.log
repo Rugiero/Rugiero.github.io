@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  18 MAR 2021 23:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  19 MAR 2021 00:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -709,7 +709,13 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[6] [7] (./Latvia.aux) ) 
+[6]
+Overfull \hbox (22.78906pt too wide) in paragraph at lines 37--38
+\T1/EBGaramond-OsF/regular/n/12 neet toisi-amme, ei edes ko-ronater-ve-hdystä, 
+jossa kyynär-päillä hipais-taan toisi-amme. Jotenkin
+ []
+
+[7] (./Latvia.aux) ) 
 Here is how much of TeX's memory you used:
  5947 strings out of 481239
  81770 string characters out of 5920377
@@ -718,17 +724,17 @@ Here is how much of TeX's memory you used:
  626917 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,11n,49p,1749b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramo
-nd/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/eb
-gm_tcdnmr.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld
-6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.
-enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bol
-d.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-B
-oldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
-ramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/
-EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/callig
-ra-type1/callig15.pfb>
-Output written on Latvia.pdf (7 pages, 394276 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/e
+bgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_t
+cdnmr.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2
+.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}
+</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldI
+talic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramo
+nd-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
+ramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/calligra-t
+ype1/callig15.pfb>
+Output written on Latvia.pdf (7 pages, 395290 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
