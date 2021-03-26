@@ -1,185 +1,72 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
 <HEAD>
-<TITLE>Controlling your passwords with pass</TITLE>
-<META NAME="description" CONTENT="Controlling your passwords with pass">
+<TITLE>About this document ...</TITLE>
+<META NAME="description" CONTENT="About this document ...">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node8.html">
-<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="source.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A
- HREF="node10.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node8.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node8.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html51"
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_g.png"> 
+<A NAME="tex2html128"
+  HREF="source.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html124"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html130"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="jetscalecropped.png"
  ALT="6"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node10.html">About this document ...</A>
-<B> Up:</B> <A
- HREF="node8.html">February</A>
-<B> Previous:</B> <A
- HREF="node8.html">February</A>
- &nbsp; <B>  <A ID="tex2html52"
+<B> Up:</B> <A NAME="tex2html129"
+  HREF="source.html">A glimpse to my</A>
+<B> Previous:</B> <A NAME="tex2html125"
+  HREF="node8.html">March – Signal Propagation</A>
+ &nbsp; <B>  <A NAME="tex2html131"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A ID="SECTION00032100000000000000">
-Controlling your passwords with pass</A>
-</H3><EM>
-Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
-</EM>
+<H1><A NAME="SECTION00040000000000000000">
+About this document ...</A>
+</H1><STRONG>
+<B>A glimpse to my mind</B>
+</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2018 (Released Feb 1, 2018)
 <P>
-<UL>
-<LI>Install the application in the terminal 
-<BR><PRE>
-sudo apt install pass
-</PRE>
-</LI>
-<LI>Check for existing GPG keys 
-<BR><PRE>
-gpg --list-keys
-</PRE>
-</LI>
-<LI>If no keys were found generate a key pair 
-<BR><PRE>
-gpg --generate-key
-</PRE>
-</LI>
-<LI>Copy the name of the key and initalize pass
-<BR><PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234,
-</PRE>
-where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
-</LI>
-<LI>Generate a password with 
-<BR><PRE>
-pass generate keyfolder/newkey
-</PRE>
-List passwords
-<PRE>
-pass
-</PRE>
-Copy a password to clipboard 
-<BR><PRE>
-pass keyfolder/newkey -c
-</PRE>
-For more commands
-<PRE>
-man pass
-</PRE>
-</LI>
-</UL>
-<P>
-<EM>Connect pass to git so it is easy to keep track of changes with multiple machines.
-</EM>
-<P>
-<UL>
-<LI>Export your public and private key to a file with 
-<BR>  <PRE>
-gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
-</PRE>
-  where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
-<BR></LI>
-<LI>Now we can initilize the git reporisoritory with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine 
-<BR><PRE>
-gpg --import public.key
-gpg --import private.key
-</PRE>
-</LI>
-<LI>After importing keys to a new machine you can initilize pass
-<PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234
-</PRE>
-
-<P>
-</LI>
-<LI>Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
-<BR><PRE>
-pass git init 
-pass git remote add origin git@repo.com:myname/pass-store
-</PRE>
-</LI>
-<LI>Get password data from the server (from a non-empty repository, otherwise skip)
-<PRE>
-pass git pull origin master --allow-unrelated-histories
-</PRE>
-</LI>
-<LI>Do some changes and pass will automatically commit them. Push and set upstream 
-<BR><PRE>
-pass git push --set-upstream origin master
-</PRE>
-</LI>
-<LI>From here on you can use the familiar git commands 
-<BR><PRE>
-pass git pull 
-pass git push
-</PRE>
-</LI>
-</UL><EM>
-Stay safe :)
-</EM>
-<P>
-<EM>References:
-</EM>
-<P>
-<EM><DT><A ID="pass">1</A>
-<DD><A ID="tex2html9"
-  HREF="https://www.passwordstore.org/">Password Store</A>
-</EM>
-<P>
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node10.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node8.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node8.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html51"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="6"></A>
+Copyright &#169; 1993, 1994, 1995, 1996,
+Nikos Drakos, 
+Computer Based Learning Unit, University of Leeds.
 <BR>
-<B> Next:</B> <A
- HREF="node10.html">About this document ...</A>
-<B> Up:</B> <A
- HREF="node8.html">February</A>
-<B> Previous:</B> <A
- HREF="node8.html">February</A>
- &nbsp; <B>  <A ID="tex2html52"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT><A NAME="tex2html11"
+  HREF="../source.tex">source.tex</A></TT>
+<P>
+The translation was initiated on 2021-03-26
+<BR><HR>
 
 </BODY>
 </HTML>

@@ -1,230 +1,185 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
 <HEAD>
-<TITLE>Poisson process on a sphere</TITLE>
-<META NAME="description" CONTENT="Poisson process on a sphere">
+<TITLE>February – Controlling your Passwords with Pass</TITLE>
+<META NAME="description" CONTENT="February – Controlling your Passwords with Pass">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node5.html">
 <LINK REL="next" HREF="node8.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A
- HREF="node8.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node6.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node6.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html46"
+<A NAME="tex2html112"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html108"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html102"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html110"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="jetscalecropped.png"
  ALT="6"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node8.html">February</A>
-<B> Up:</B> <A
- HREF="node6.html">January</A>
-<B> Previous:</B> <A
- HREF="node6.html">January</A>
- &nbsp; <B>  <A ID="tex2html47"
+<B> Next:</B> <A NAME="tex2html113"
+  HREF="node8.html">March – Signal Propagation</A>
+<B> Up:</B> <A NAME="tex2html109"
+  HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A NAME="tex2html103"
+  HREF="node6.html">January – Poisson process</A>
+ &nbsp; <B>  <A NAME="tex2html111"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A ID="SECTION00031100000000000000">
-Poisson process on a sphere</A>
-</H3>
-Of course, Poisson process can be generalized to an arbitrary manifold. Particularly Poisson point process on a sphere is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area <!-- MATH
- $A = [-\pi,\pi] \times [-1,1]$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img1.svg"
- ALT="$A = [-\pi,\pi] \times [-1,1]$"></SPAN> through the area preserving mapping from <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
- ALT="$A$"></SPAN> to surface of a sphere
-
-<DIV class="equation">
-
-<!-- MATH
- \begin{equation}
-(x,y) \mapsto (r,x,\sin(y)) .
-\end{equation}
- -->
- &nbsp;  <IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img3.svg"
- ALT="$\displaystyle (x,y) \mapsto (r,x,\sin(y)) \nonumber.
-$"> 
-
-&nbsp;
-</DIV>
-
-<P>
-Resulting process interpreted in geographical coordinates <!-- MATH
- $(r,\theta,\varphi)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img4.svg"
- ALT="$(r,\theta,\varphi)$"></SPAN> is a Poisson point process on a sphere of radius <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img5.svg"
- ALT="$r$"></SPAN>.  Following codes returns a scatter plot of Poisson points on the unit sphere.
-
-<P>
-GNU/Octave or Matlab:
-<PRE>
-%Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
-function refc = poissononsphere(density)
-  yMin = -1; yMax = 1;
-  xMin=-pi; xMax = pi;
-  
-  xDelta=xMax-xMin;yDelta=yMax-yMin; %Rectangle dimensions
-  numbPoints=poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
-  x=xDelta*(rand(numbPoints,1))+xMin;    %Pick points from uniform distribution
-  y=yDelta*(rand(numbPoints,1))+yMin;    %Map referencepoints to geographical coordinates
-  ref = [x y]';
-
-  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
-  r = 1;
-  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
-          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
-          r*cos(refs(2,:)+pi/2)];
-
-  figure(1)    %Plot
-  [X, Y, Z] = sphere;
-  surf(X,Y,Z,'EdgeColor','none','FaceColor','black');
-  hold on
-  scatter3(refc(1,:),refc(2,:),refc(3,:),10,...
-           'MarkerFaceColor','yellow',...
-           'MarkerEdgeColor','red');
-  axis equal
-end
-</PRE>
-
-<P>
-Python:
-
-<P>
-<PRE>
-import numpy as np
-import scipy.stats
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import axes3d
-
-#Rectangle dimension
-xMin=-np.pi;xMax=np.pi;
-yMin=-1;yMax=1;
-xDelta=xMax-xMin;yDelta=yMax-yMin; #rectangle dimensions
-
-#Density parameter of the Poisson point process. Mean number of points on the sphere
-lambda0=1000; 
-
-#Simulate Poisson point process
-
-#Number of point in the area is a Poisson variable of intensity lambda0
-numbPoints = scipy.stats.poisson( lambda0 ).rvs()
-x = xDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+xMin
-y = yDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+yMin
-
-#Transform to geographical coordinates
-x = x
-y = np.arcsin(y)
-#Plotting
-fig = plt.figure()
-ax = plt.axes(projection="3d")
-ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )
-plt.show()
-</PRE>
-
-<P>
-Wolfram Language:
-<PRE>
-(*lambda is the mean number of points on the unit sphere*) 
-  poissononsphere[lambda_] := 
-  Module[{nrofpoints, phi, theta, radius, refc, polarp}, 
-   nrofpoints = RandomVariate[PoissonDistribution[lambda]];
-   polarp = 
-    Table[{RandomVariate[UniformDistribution[{-Pi, Pi}]], 
-      ArcSin[RandomVariate[UniformDistribution[{-1, 1}]]]}, 
-     nrofpoints];
-   radius = 1;
-   refc = 
-    Table[{radius*Sin[polarp[[i]][[2]] + Pi/2]*
-       Cos[polarp[[i]][[1]] + Pi],
-      radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1]] + Pi],
-      radius*Cos[polarp[[i]][[2]] + Pi/2]}, {i, nrofpoints}];
-   refc
-   ];
-   ListPointPlot3D[poissononsphere[500], BoxRatios -&gt; {1, 1, 1}]
-</PRE>
-
-<P>
-
-<DIV class="CENTER"><A ID="51"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-Are the stars Poisson distributed in the sky?</CAPTION>
-<TR><TD><IMG STYLE=""
- SRC="./poissononsphere.jpg"
- ALT="Image poissononsphere"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-
-<DIV class="CENTER"><A ID="55"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-Poisson distributed transmitters and the aggregate signal strength in a satellite by location. Poisson assumption is reasonable in many situations, but, well, here the sea areas are a bit overrepresented.  </CAPTION>
-<TR><TD><IMG STYLE=""
- SRC="./interferenceenvironment.png"
- ALT="Image interferenceenvironment"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-References:
-<DT><A ID="theoryofpoint">1</A>
-<DD> D. J. Daley and D. Vere-Jones, &ldquo;The General Poisson Process&rdquo; in <EM>An introduction to the theory of point processes.</EM> New York: Springer, 2003, pp. 39. 
-<DT><A ID="2">2</A>
-<DD> Stoyan, Dietrich. et al. <EM>Stochastic Geometry and Its Applications. 3rd ed. Chichester: Wiley, 2013. Print.
+<H2><A NAME="SECTION00031000000000000000">
+February – Controlling your Passwords with Pass</A>
+</H2><EM>
+Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
 </EM>
 <P>
+<UL>
+<LI>Install the application in the terminal 
+<BR><PRE>
+sudo apt install pass
+</PRE>
+</LI>
+<LI>Check for existing GPG keys 
+<BR><PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>If no keys were found generate a key pair 
+<BR><PRE>
+gpg --generate-key
+</PRE>
+</LI>
+<LI>Copy the name of the key and initalize pass
+<BR><PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234,
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
+</LI>
+<LI>Generate a password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+List passwords
+<PRE>
+pass
+</PRE>
+Copy a password to clipboard 
+<BR><PRE>
+pass keyfolder/newkey -c
+</PRE>
+For more commands
+<PRE>
+man pass
+</PRE>
+</LI>
+</UL>
+<P>
+<EM>Connect pass to git so it is easy to keep track of changes with multiple machines.
+</EM>
+<P>
+<UL>
+<LI>Export your public and private key to a file with 
+<BR>  <PRE>
+gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+</PRE>
+  where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
+<BR></LI>
+<LI>Now we can initilize the git reporisoritory with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine 
+<BR><PRE>
+gpg --import public.key
+gpg --import private.key
+</PRE>
+</LI>
+<LI>After importing keys to a new machine you can initilize pass
+<PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+
+<P>
+</LI>
+<LI>Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
+<BR><PRE>
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
+</PRE>
+</LI>
+<LI>Get password data from the server (from a non-empty repository, otherwise skip)
+<PRE>
+pass git pull origin master --allow-unrelated-histories
+</PRE>
+</LI>
+<LI>Do some changes and pass will automatically commit them. Push and set upstream 
+<BR><PRE>
+pass git push --set-upstream origin master
+</PRE>
+</LI>
+<LI>From here on you can use the familiar git commands 
+<BR><PRE>
+pass git pull 
+pass git push
+</PRE>
+</LI>
+</UL><EM>
+Stay safe :)
+</EM>
+<P>
+<EM>References:
+</EM>
+<P>
+<EM><P></P><DT><A NAME="pass">1</A>
+<DD><A NAME="tex2html9"
+  HREF="https://www.passwordstore.org/">Password Store</A>
+</EM>
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A
- HREF="node8.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node6.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node6.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html46"
+<A NAME="tex2html112"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html108"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html102"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html110"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="jetscalecropped.png"
  ALT="6"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node8.html">February</A>
-<B> Up:</B> <A
- HREF="node6.html">January</A>
-<B> Previous:</B> <A
- HREF="node6.html">January</A>
- &nbsp; <B>  <A ID="tex2html47"
+<B> Next:</B> <A NAME="tex2html113"
+  HREF="node8.html">March – Signal Propagation</A>
+<B> Up:</B> <A NAME="tex2html109"
+  HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A NAME="tex2html103"
+  HREF="node6.html">January – Poisson process</A>
+ &nbsp; <B>  <A NAME="tex2html111"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
