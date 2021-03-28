@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  26 MAR 2021 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  28 MAR 2021 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,12 +716,30 @@ Overfull \hbox (6.74387pt too wide) in paragraph at lines 37--38
  []
 
 [7]
-Overfull \hbox (5.44063pt too wide) in paragraph at lines 60--61
-[]\T1/EBGaramond-OsF/regular/n/12 Aloin saman tien oikeas-t-aan pit‰m‰‰n t‰st‰ 
-poliisi-kaverista ja h‰-nen vit-tuun-tuneesta
+Overfull \hbox (4.80696pt too wide) in paragraph at lines 62--63
+\T1/EBGaramond-OsF/regular/n/12 tuna olin aina pit‰nyt varsin tur-vat-tomana j‰
+r-jeste-ly‰, jossa os-oitetiedot meni en-sin silkki-
  []
 
-[8] (./Latvia.aux) ) 
+
+Overfull \hbox (18.70369pt too wide) in paragraph at lines 62--63
+\T1/EBGaramond-OsF/regular/n/12 tien palve-limelle, jossa ne vasta salat-tiin. 
+Salaus pit‰isi tehd‰ jo jokainen oma-lla ti-etokoneella,
+ []
+
+
+Overfull \hbox (57.98419pt too wide) in paragraph at lines 68--69
+[]\T1/EBGaramond-OsF/regular/n/12 Joskus olin tullissa p‰‰ssyt p‰lk‰h‰st‰ v‰it-
+t‰m‰ll‰, ett‰ mi-nun nimeeni tilatut tutkimuskemikaalit
+ []
+
+
+Overfull \hbox (0.70946pt too wide) in paragraph at lines 80--81
+\T1/EBGaramond-OsF/regular/n/12 hu-umekiel-to-lakia vas-taan jou-tu-matta edes 
+sakkoja mak-samaan. Saipa-han kyt‰t pu-uhail-
+ []
+
+[8] [9] (./Latvia.aux) ) 
 Here is how much of TeX's memory you used:
  5947 strings out of 481239
  81770 string characters out of 5920377
@@ -730,20 +748,20 @@ Here is how much of TeX's memory you used:
  626917 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,11n,49p,1749b,249s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/e
-bgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_t
-cdnmr.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2
-.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}
-</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldI
-talic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramo
-nd-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
-ramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/calligra-t
-ype1/callig15.pfb>
-Output written on Latvia.pdf (8 pages, 398340 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramo
+nd/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/eb
+gm_tcdnmr.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld
+6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.
+enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bol
+d.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-B
+oldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
+ramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/
+EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/callig
+ra-type1/callig15.pfb>
+Output written on Latvia.pdf (9 pages, 400835 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
