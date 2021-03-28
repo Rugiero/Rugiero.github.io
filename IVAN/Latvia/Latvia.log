@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  28 MAR 2021 21:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  28 MAR 2021 23:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,12 +733,6 @@ Overfull \hbox (57.98419pt too wide) in paragraph at lines 68--69
 tämällä, että mi-nun nimeeni tilatut tutkimuskemikaalit
  []
 
-
-Overfull \hbox (0.70946pt too wide) in paragraph at lines 80--81
-\T1/EBGaramond-OsF/regular/n/12 hu-umekiel-to-lakia vas-taan jou-tu-matta edes 
-sakkoja mak-samaan. Saipa-han kytät pu-uhail-
- []
-
 [8] [9] (./Latvia.aux) ) 
 Here is how much of TeX's memory you used:
  5947 strings out of 481239
@@ -758,7 +752,7 @@ oldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
 ramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/
 EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/callig
 ra-type1/callig15.pfb>
-Output written on Latvia.pdf (9 pages, 400835 bytes).
+Output written on Latvia.pdf (9 pages, 400850 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
