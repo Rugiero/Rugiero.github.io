@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  28 MAR 2021 23:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.23)  28 MAR 2021 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -752,7 +752,7 @@ oldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
 ramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/
 EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/callig
 ra-type1/callig15.pfb>
-Output written on Latvia.pdf (9 pages, 400850 bytes).
+Output written on Latvia.pdf (9 pages, 400841 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
