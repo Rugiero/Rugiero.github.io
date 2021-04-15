@@ -301,6 +301,7 @@ pass git remote add origin git@repo.com:myname/pass-store
 \item Get password data from the server (from a non-empty repository, otherwise skip)
 \begin{verbatim}
 pass git pull origin master --allow-unrelated-histories
+pass git commit -am "firstcommit"
 \end{verbatim}
 \item Do some changes and pass will automatically commit them. Push and set upstream \\
 \begin{verbatim}
