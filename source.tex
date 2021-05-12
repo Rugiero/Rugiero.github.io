@@ -63,7 +63,7 @@ Ilari Angervuori\\
 
 \date
 {
-{Last update 17.02.2021}\\
+{Last update 12.05.2021}\\
 }
 
 \begin{center}
@@ -122,8 +122,8 @@ In free time I love music, literature, long walks, coffee and beer.
 \section{Blog posts 2021}
 General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
 
-\subsubsection{January – Poisson process on a sphere}
-Of course, Poisson process can be generalized to an arbitrary manifold. Particularly Poisson point process on a sphere is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
+\subsubsection{January – Poisson Process on a Sphere}
+Poisson process has a generalization in a large category of manifolds. Particularly Poisson point process on a sphere is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
 \begin{equation}
   (x,y) \mapsto (r,x,\sin(y)) \nonumber.
 \end{equation}
@@ -224,8 +224,8 @@ Wolfram Language:
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{interferenceenvironment.png}
-  \caption{Poisson distributed transmitters and the aggregate signal strength in a satellite by location. Poisson assumption is reasonable in many situations, but, well, here the sea areas are a bit overrepresented.  }
+  \includegraphics[width=5cm]{interferenceenvironment.png}
+  \caption{Poisson distributed transmitters and the aggregate signal strength in a satellite by location. Poisson assumption is reasonable in varying situations, but, well, here the sea areas are a bit overrepresented.  }
 \end{figure}
 
 References:
@@ -251,7 +251,7 @@ gpg --list-keys
 \begin{verbatim}
 gpg --generate-key
 \end{verbatim}
-\item Copy the name of the key and initalize pass\\
+\item Copy the name of the key and initialize pass\\
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234, 
 \end{verbatim}
@@ -283,17 +283,17 @@ gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234
 gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
   \end{verbatim}
   where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.\\
-\item Now we can initilize the git reporisoritory with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine \\
+\item Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine \\
 \begin{verbatim}
 gpg --import public.key
 gpg --import private.key
 \end{verbatim}
-\item After importing keys to a new machine you can initilize pass
+\item After importing keys to a new machine you can initialize pass
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
 
-\item Initalize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands\\
+\item Initialize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands\\
 \begin{verbatim}
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
@@ -319,14 +319,16 @@ Stay safe :)
 References:
 
 \bibitem[1]{pass}\htmladdnormallink{Password Store}{\pass}
+
+
   \subsection{March – Signal Propagation in a City}
   People in the city trying to contact their fellow mates by cell phones will have to exchange data by electromagnetic waves with their base stations. This data is relevant only to the parties communicating with each other. As some of the data signals gets leaked to the surroundings, each transmission will cause an interference field, which will disturb other transmissions in the same frequency band.
 
-  Interference in big crowds gets so large that data transmission rates will lower to the level of jamming. This can be seen for example in crowded festival areas, when calling to a friend is impossible.
+  Interference in big crowds gets so large that data transmission rates will lower to the level of jamming. This shows for example in crowded festival areas as difficulties to reach out your friend by your mobile phone.
 
   \begin{figure}
   \includegraphics[width=\linewidth]{rician.gif}
-  \caption{Interference field developing in time. Complex surrounding is modeled as random multi path signal propagation from random locations moving to random directions in time. Also, a line-of-sight component is assumed. Red occurrences will cause remarkable disturbance in communication.}
+  \caption{Interference field developing in time. We assume random multi path signal propagation from random locations moving to random directions in time. Also, a line-of-sight component is present. Red occurrences will cause remarkable disturbance in communication.}
 \end{figure}
 
 
@@ -334,7 +336,41 @@ References:
 
 \bibitem[1]{hurr}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
 
+  \subsection{April – Frequentist Inference in Mathematica}
+  Mathematica provides a package called ``Hypothesis Testing'' for analyzing random data. Package includes handy objects like ``Around'' which represents an quantity and the uncertainty around it. Following example code returns an Around object representing the $90 \%$ confidence interval of the estimated bias of a coin after a repeated trial. Like shown in the code, the ListPlot plots Around objects as such.
+
+
+\begin{verbatim}
+(*Load the Hypothesis Testing Package.*)
+Needs["HypothesisTesting`"];
+
+coin[flips_, bias_] :=
+ (*Make the experiment and collect the data*) 
+ Module[{index, realizations, mean, conf, around},
+  realizations = {};
+  For[index = 1, index <= flips, index++,
+   realizations =  
+     Append[realizations, 
+      RandomVariate[BernoulliDistribution[bias]]];
+   ];
   
+  (*Means*)
+  mean = Mean[realizations[[All]]];
+  (*Confidence intervals*)
+  conf = MeanCI[realizations[[All]]];
+  (*Around object.*)
+  
+  around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
+  ]
+coin[1000, 0.5]
+ListPlot[{
+Around[0.488, 0.0620678530067702]}]
+\end{verbatim}
+
+  
+  
+  
+ 
   
    
 \end{document}

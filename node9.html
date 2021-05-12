@@ -1,62 +1,87 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
-<HTML lang="en">
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>April – Frequentist Inference in Mathematica</TITLE>
+<META NAME="description" CONTENT="April – Frequentist Inference in Mathematica">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node5.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="next" HREF="node10.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="source.html">
+ HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html49"
+<A ID="tex2html52"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="6"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node10.html">About this document ...</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node8.html">March – Signal Propagation</A>
- &nbsp; <B>  <A ID="tex2html50"
+ &nbsp; <B>  <A ID="tex2html53"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00040000000000000000">
-About this document ...</A>
-</H1><STRONG>
-<B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2020.2 (Released July 1, 2020)
+<H2><A ID="SECTION00033000000000000000">
+April – Frequentist Inference in Mathematica</A>
+</H2><EM>
+  Mathematica provides a package called &ldquo;Hypothesis Testing&rdquo; for analyzing random data. Package includes handy objects like &ldquo;Around&rdquo; which represents an quantity and the uncertainty around it. Following example code returns an Around object representing the <SPAN CLASS="MATH"><IMG STYLE="height: 2.10ex; vertical-align: -0.25ex; " SRC="img6.svg"
+ ALT="$90 \%$"></SPAN> confidence interval of the estimated bias of a coin after a repeated trial. Like shown in the code, the ListPlot plots Around objects as such.
+</EM>
+<P><PRE>
+(*Load the Hypothesis Testing Package.*)
+Needs["HypothesisTesting`"];
+
+coin[flips_, bias_] :=
+ (*Make the experiment and collect the data*) 
+ Module[{index, realizations, mean, conf, around},
+  realizations = {};
+  For[index = 1, index &lt;= flips, index++,
+   realizations =  
+     Append[realizations, 
+      RandomVariate[BernoulliDistribution[bias]]];
+   ];
+  
+  (*Means*)
+  mean = Mean[realizations[[All]]];
+  (*Confidence intervals*)
+  conf = MeanCI[realizations[[All]]];
+  (*Around object.*)
+  
+  around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
+  ]
+coin[1000, 0.5]
+ListPlot[{
+Around[0.488, 0.0620678530067702]}]
+</PRE>
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html12"
-  HREF="../source.tex">source.tex</A></kbd>
-<P>
-The translation was initiated on 2021-04-15
 <BR><HR>
 
 </BODY>
