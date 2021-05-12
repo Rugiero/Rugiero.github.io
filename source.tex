@@ -354,12 +354,11 @@ coin[flips_, bias_] :=
       RandomVariate[BernoulliDistribution[bias]]];
    ];
   
-  (*Means*)
+  (*Mean*)
   mean = Mean[realizations[[All]]];
-  (*Confidence intervals*)
+  (*Confidence interval*)
   conf = MeanCI[realizations[[All]]];
-  (*Around object.*)
-  
+  (*Around object*)
   around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
   ]
 around = coin[1000, 0.5]
