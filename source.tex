@@ -362,9 +362,8 @@ coin[flips_, bias_] :=
   
   around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
   ]
-coin[1000, 0.5]
-ListPlot[{
-Around[0.488, 0.0620678530067702]}]
+around = coin[1000, 0.5]
+ListPlot[{around}]
 \end{verbatim}
 
   
