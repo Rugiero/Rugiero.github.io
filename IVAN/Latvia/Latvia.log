@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.4.16)  15 MAY 2021 03:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.4.16)  21 MAY 2021 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -748,40 +748,40 @@ Overfull \hbox (8.97182pt too wide) in paragraph at lines 77--78
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (49.3922pt too wide) in paragraph at lines 91--92
+Overfull \hbox (49.3922pt too wide) in paragraph at lines 99--100
 []\T1/EBGaramond-OsF/regular/n/12 Peijaksen sairaalasta herät-tyäni sairaalan e
 dustalta löysin bussin, joka vei minut Mäkelänkadulle
  []
 
 
-Overfull \hbox (3.64856pt too wide) in paragraph at lines 91--92
-\T1/EBGaramond-OsF/regular/n/12 kotiin. Sit-ten kävin ko-tini läheisessä Nepali
-laisessa rav-in-to-lassa lounaalla, ja menin kotiin
+Overfull \hbox (15.22865pt too wide) in paragraph at lines 99--100
+\T1/EBGaramond-OsF/regular/n/12 jäl-keen. Siis tämä hi-ton pilkkuhomma, kun alk
+o-holin an-niskelu-paikoissa pitää lain mukaan
  []
 
-[9] (./Latvia.aux) ) 
+[9] [10] (./Latvia.aux) ) 
 Here is how much of TeX's memory you used:
  5996 strings out of 480906
  82327 string characters out of 5910772
- 314532 words of memory out of 5000000
+ 315532 words of memory out of 5000000
  21481 multiletter control sequences out of 15000+600000
  629662 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,12n,49p,1749b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/e
-bgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_t
-cdnmr.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2
-.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}
-</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldI
-talic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramo
-nd-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGa
-ramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/calligra-t
-ype1/callig15.pfb>
-Output written on Latvia.pdf (9 pages, 407602 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaram
+ond/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/e
+bgm_tcdnmr.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_l
+d6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni
+.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bo
+ld.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-
+BoldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBG
+aramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond
+/EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/calli
+gra-type1/callig15.pfb>
+Output written on Latvia.pdf (10 pages, 409403 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 72 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
