@@ -365,10 +365,34 @@ around = coin[1000, 0.5]
 ListPlot[{around}]
 \end{verbatim}
 
-  
-  
-  
- 
+
+\subsection{May – Rayleigh Fading Audiolized}
+
+When a signal is propagating through multiple paths to a receiver each signal component in each path will be in different phase and of different strength. Should there be no line-of-sight component present, the  additive signal will fade according the Rayleigh fading.
+
+For example, a simple sine wave
+
+can after some multi-path propagation sound something like
+
+assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to variate randomly in time.
+
+If we add some Gaussian noise
+
+we notice that the faded signal will bury under the noise time to time
+
+
+these events referred to as deep fades.
+
+
+
+
+  References:
+
+\bibitem[1]{hurr}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
+
+
+
+
   
    
 \end{document}
