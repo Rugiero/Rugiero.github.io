@@ -15,7 +15,7 @@ $ref_files{$key} = "$dir".q|node7.html|;
 $noresave{$key} = "$nosave";
 
 $key = q/cite_theoryofpoint/;
-$ref_files{$key} = "$dir".q|node6.html|; 
+$ref_files{$key} = "$dir".q|node10.html|; 
 $noresave{$key} = "$nosave";
 
 1;

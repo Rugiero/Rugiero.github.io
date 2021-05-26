@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>May – Rayleigh Fading Audiolized</TITLE>
+<META NAME="description" CONTENT="May – Rayleigh Fading Audiolized">
+<META NAME="keywords" CONTENT="source">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html60"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="6"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node11.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node9.html">April – Frequentist Inference</A>
+ &nbsp; <B>  <A ID="tex2html61"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00034000000000000000">
+May – Rayleigh Fading Audiolized</A>
+</H2>
+<P>
+<EM>When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html14"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
+</EM>
+<P>
+<EM>For example, a simple sine wave
+</EM>
+<P>
+<EM>can after some multi-path propagation sound something like
+</EM>
+<P>
+<EM>assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
+</EM>
+<P>
+<EM>If we add some Gaussian noise
+</EM>
+<P>
+<EM>we notice that the original signal is somehow recognisable from the noise
+</EM>
+<P>
+<EM>but the faded signal
+</EM>
+<P>
+<EM>will sometimes bury completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
+</EM>
+<P>
+<EM>References:
+<DT><A ID="theoryofpoint">1</A>
+<DD> William C. Jakes, <EM>Microwave Mobile Communications</EM>, IEEE PRESS, 1974. 
+</EM>
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>
