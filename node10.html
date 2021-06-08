@@ -52,13 +52,14 @@
 <H2><A ID="SECTION00034000000000000000">
 May – Rayleigh Fading Audiolized</A>
 </H2>
+
 <P>
-<EM>When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html14"
+When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html14"
   HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
-</EM>
+
 <P>
-  <EM>For example, a simple sine wave
-    <figure>
+  For example, a simple sine wave
+  <figure>
       <audio
         controls
         src="REF.wav">
@@ -66,9 +67,8 @@ May – Rayleigh Fading Audiolized</A>
         <code>audio</code> element.
       </audio>
     </figure>
-</EM>
 <P>
-  <EM>can after some multi-path propagation sound something like
+can after some multi-path propagation sound something like
     <figure>
       <audio
         controls
@@ -77,44 +77,39 @@ May – Rayleigh Fading Audiolized</A>
         <code>audio</code> element.
       </audio>
     </figure>
-  </EM>
 <P>
-  <EM>assuming that the receiver is moving at a constant speed, so that variation in the Doppler shifts in the signals propagating through different paths will cause the aggregate signal to vary randomly in time.
-  </EM>
+assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
+
 <P>
-  <EM>If we add a Gaussian noise component we will notice that the original signal is somehow recognisable from the noise
-    <figure>
+If we add some <A ID="tex2html14"
+  HREF="https://en.wikipedia.org/wiki/Additive_white_Gaussian_noise">white Gaussian noise</A>  we notice that the original signal is somehow recognisable from the noise:
+ 
+<figure>
       <audio
         controls
         src="REFNOISE.wav">
         Your browser does not support the
         <code>audio</code> element.
       </audio>,
-    </figure>        
-</EM>
+    </figure> 
 <P>
-  <EM>but the faded signal
-    <figure>
-      <audio
-        controls
-        src="EZNOISE.wav">
-        Your browser does not support the
-        <code>audio</code> element.
-      </audio>
-    </figure>        
-</EM>
+ 
+  but the faded signal
+  <figure>
+    <audio
+      controls
+      src="EZNOISE.wav">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
+  </figure>        
+
 <P>
-<EM>will sometimes be buried completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
-</EM>
+will sometimes bury completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
+
 <P>
-  <BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<EM>Here is a GNU/Octave or Matlab code for the used Rayleigh simulator:
-</EM><PRE>
+Here is a GNU/Octave or Matlab code for the used Rayleigh simulator:
+<PRE>
 %Rayleigh simulator. Jakes model. In Octave remember to load the statistics package.
 
 close all
@@ -157,8 +152,8 @@ audiowrite('REFNOISE.wav', 1/2*(REF+NOISE), 8000)
 toc
 plot(T,EZ)
 </PRE>
+
 <P>
-<EM>
 <BR>
 <BR>
 <BR>
@@ -166,8 +161,9 @@ plot(T,EZ)
 <BR>
 <BR>
 And the same in Python:
-</EM>
-<P><PRE>
+
+<P>
+<PRE>
 import numpy as np
 import math
 import matplotlib.pyplot as plt
@@ -215,8 +211,8 @@ sd.play(EZ,fs,blocking = True)
 plt.plot(T, EZ)
 plt.show()
 </PRE>
+
 <P>
-<EM>
 <BR>
 <BR>
 <BR>
@@ -225,8 +221,8 @@ plt.show()
 <BR>
 References:
 <DT><A ID="theoryofpoint">1</A>
-<DD> William C. Jakes, <EM>Microwave Mobile Communications</EM>, IEEE PRESS, 1974. 
-</EM>
+<DD> William C. Jakes, &ldquo;Microwave Mobile Communications&rdquo;, IEEE PRESS, 1974. 
+
 <P>
 <BR><HR>
 

@@ -52,11 +52,12 @@
 
 <H2><A ID="SECTION00033000000000000000">
 April – Frequentist Inference in Mathematica</A>
-</H2><EM>
+</H2>
   Mathematica provides a package called &ldquo;Hypothesis Testing&rdquo; for analyzing random data. Package includes handy objects like &ldquo;Around&rdquo; which represents a quantity and the uncertainty around it. The following example code returns an Around object representing the <SPAN CLASS="MATH"><IMG STYLE="height: 2.10ex; vertical-align: -0.25ex; " SRC="img6.svg"
  ALT="$90 \%$"></SPAN> confidence interval of the estimated bias of a coin after a repeated trial. Like shown in the code, the ListPlot plots Around objects as such.
-</EM>
-<P><PRE>
+
+<P>
+<PRE>
 (*Load the Hypothesis Testing Package.*)
 Needs["HypothesisTesting`"];
 
@@ -80,6 +81,7 @@ coin[flips_, bias_] :=
 around = coin[1000, 0.5]
 ListPlot[{around}]
 </PRE>
+
 <P>
 <BR><HR>
 
