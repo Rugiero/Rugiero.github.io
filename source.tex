@@ -44,8 +44,10 @@
 \def\pass{https://www.passwordstore.org/}
 \def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
 \def\hal{https://hal.inria.fr/inria-00403039v1/document}
+\def\hal2{https://hal.inria.fr/inria-00403040/file/FnT2.pdf}
 \def\ray{https://en.wikipedia.org/wiki/Rayleigh_fading}
 \def\ric{https://en.wikipedia.org/wiki/Rician_fading}
+\def\gaus{https://en.wikipedia.org/wiki/Gaussian_noise}
 \makeindex
 
 \begin{document}
@@ -378,7 +380,7 @@ can after some multi-path propagation sound something like
 
 assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
 
-If we add some Gaussian noise
+If we add some \htmladdnormallink{Gaussian white noise}{\gaus}
 
 we notice that the original signal is somehow recognisable from the noise
 
@@ -434,7 +436,7 @@ toc
 plot(T,EZ)
 \end{verbatim}
 
-\vspace{2cm}
+
 And the same in Python:
 
 \begin{verbatim}
@@ -487,14 +489,41 @@ plt.show()
 \end{verbatim}
 
 
-\vspace{2cm}
+
 References:
 \bibitem[1]{theoryofpoint} William C. Jakes, ``Microwave Mobile Communications'', IEEE PRESS, 1974. 
 
 
 
+  \subsection{June – MIMO}
+  Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity canalways be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capcaity is improve without using any extra energy and without increasing the interference.
 
-  
+  But how and why does it work? I will demostrate it by a simple argument based on stochastic geometry.
+
+  Let us make few assumptions. We assume a flat and infinite Earth (no tinfoils). In addition we assume that our communication channel environment consits of many obstacles so that transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. Interfering transmitters are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
+
+
+  As derived in \htmladdnormallink{here}{\hal2} we express the probability $p$ of a succesfull transmission (for example, a message to a friend) as:
+
+  \begin{equation*}
+    p = e^{-\frac{\pi^2 /2}{\sqrt{P}}},
+  \end{equation*}
+  where $P$ denotes the mean transmitting power.
+
+  In MIMO we use multiple antennas to send the message. In every antenna message should be coded in a way that it can't be mixed with the messages the other antennas are transmitting. This can be done by (\htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}).
+  Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate by complementary probability that at least one message is received:
+  \begin{equation*}
+    \mathbb{P}[Message received] = 1-(1-e^{-\frac{\pi^2 /2}{\sqrt{P/N}}})^N,
+  \end{equation*}
+where $N$ is the number of antennas. Notice that we divided the transmitting power $P$ by number of antennas.
+Other way we could try to improve to increase the probability of a succesfull transmission is just increasing the power $P$. In the following figure we increase the number of antennas $N$, and make a comparison to the probabilities acquired by increasing the power by multiplicative factor $N$.
+
+  \begin{figure}
+  \includegraphics[width=\linewidth]{MIMO.gif}
+  \caption{Interference field developing in time. We assume random multi path signal propagation from random locations moving to random directions in time. Also, a line-of-sight component is present – that is we assume \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication.}
+\end{figure}
+
+  \bibitem[1]{hal2}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hal2}
    
 \end{document}
 %
