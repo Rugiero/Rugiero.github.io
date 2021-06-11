@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
-<HTML lang="en">
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
 <HEAD>
 <TITLE>May – Rayleigh Fading Audiolized</TITLE>
 <META NAME="description" CONTENT="May – Rayleigh Fading Audiolized">
@@ -11,10 +11,11 @@
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node11.html">
 <LINK REL="previous" HREF="node9.html">
 <LINK REL="next" HREF="node11.html">
 </HEAD>
@@ -31,19 +32,19 @@
 <A
  HREF="node9.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html60"
+<A ID="tex2html72"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="6"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node11.html">About this document ...</A>
+ HREF="node11.html">June – MIMO</A>
 <B> Up:</B> <A
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node9.html">April – Frequentist Inference</A>
- &nbsp; <B>  <A ID="tex2html61"
+ &nbsp; <B>  <A ID="tex2html73"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -54,47 +55,52 @@ May – Rayleigh Fading Audiolized</A>
 </H2>
 
 <P>
-When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html14"
-  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
+  When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html14"
+																																    HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
 
 <P>
   For example, a simple sine wave
+
   <figure>
-      <audio
-        controls
-        src="REF.wav">
-        Your browser does not support the
-        <code>audio</code> element.
-      </audio>
-    </figure>
+    <audio
+      controls
+      src="REF.wav">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
+  </figure>
+  
 <P>
-can after some multi-path propagation sound something like
-    <figure>
-      <audio
-        controls
-        src="EZ.wav">
-        Your browser does not support the
-        <code>audio</code> element.
-      </audio>
-    </figure>
+  can after some multi-path propagation sound something like
+  <figure>
+    <audio
+      controls
+      src="EZ.wav">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
+  </figure>
 <P>
-assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
+  assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
 
 <P>
-If we add some <A ID="tex2html14"
-  HREF="https://en.wikipedia.org/wiki/Additive_white_Gaussian_noise">white Gaussian noise</A>  we notice that the original signal is somehow recognisable from the noise:
- 
-<figure>
-      <audio
-        controls
-        src="REFNOISE.wav">
-        Your browser does not support the
-        <code>audio</code> element.
-      </audio>,
-    </figure> 
+  If we add some <A ID="tex2html15"
+		    HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>
+
 <P>
- 
+  we notice that the original signal is somehow recognizable from the noise
+<P>
+  <figure>
+    <audio
+      controls
+      src="REFNOISE.wav">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>,
+  </figure>        
+<P>
   but the faded signal
+
   <figure>
     <audio
       controls
@@ -103,7 +109,6 @@ If we add some <A ID="tex2html14"
       <code>audio</code> element.
     </audio>
   </figure>        
-
 <P>
 will sometimes bury completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
 
@@ -154,12 +159,6 @@ plot(T,EZ)
 </PRE>
 
 <P>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
 And the same in Python:
 
 <P>
@@ -213,12 +212,6 @@ plt.show()
 </PRE>
 
 <P>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
 References:
 <DT><A ID="theoryofpoint">1</A>
 <DD> William C. Jakes, &ldquo;Microwave Mobile Communications&rdquo;, IEEE PRESS, 1974. 

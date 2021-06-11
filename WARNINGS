@@ -1,13 +1,14 @@
 No implementation found for style `empheq'
 
-source.tex is newer than source.aux: Please rerun latex.
+The source.aux file was not found, so sections will not be numbered 
+and cross-references will be shown as icons.
 
-Substitution of arg to newlabelxx delayed.
-
-? brace missing for \oldcontentsline
+No number for "MeinmybelovedhometownHelsinkiinthemiddleofsummer(well,technicallyinEspoo,Otaniemi)"
 
 No number for "ArethestarsPoissondistributedinthesky?"
 
 No number for "Poissondistributedtransmittersandtheaggregatesignalstrengthinasatellitebylocation.Poissonassumptionisreasonableinvaryingsituations,but,well,heretheseaareasareabitoverrepresented."
 
 No number for "Interferencefielddevelopingintime.Weassumerandommultipathsignalpropagationfromrandomlocationsmovingtorandomdirectionsintime.Also,aline-of-sightcomponentispresent–thatisweassumeRicianfading.Redoccurrenceswillcauseremarkabledisturbanceincommunication."
+
+No number for "MIMOsavesenergyandimprovesthequality"

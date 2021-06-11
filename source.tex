@@ -67,7 +67,7 @@ Ilari Angervuori\\
 
 \date
 {
-{Last update 26.05.2021}\\
+{Last update 11.06.2021}\\
 }
 
 \begin{center}
@@ -496,32 +496,37 @@ References:
 
 
   \subsection{June – MIMO}
-  Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity canalways be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capcaity is improve without using any extra energy and without increasing the interference.
+  Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity can always be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
 
-  But how and why does it work? I will demostrate it by a simple argument based on stochastic geometry.
+  But how and why does it work? Here is how I came up with a simple argument based on stochastic geometry.
 
-  Let us make few assumptions. We assume a flat and infinite Earth (no tinfoils). In addition we assume that our communication channel environment consits of many obstacles so that transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. Interfering transmitters are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
+  Let us make few assumptions. We assume a flat and infinite Earth (no tin-foils). In addition we assume that our communication channel environment consist of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. City is full of mobile phones transmitting data with their base-stations, and in the other hand causing interference to each other. We make a natural assumption that the interfering transmitters are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
 
 
-  As derived in \htmladdnormallink{here}{\hal2} we express the probability $p$ of a succesfull transmission (for example, a message to a friend) as:
+  As derived in \htmladdnormallink{here}{\hal2} we express the probability $p$ of a successful transmission (for example a message to a friend) as:
 
   \begin{equation*}
-    p = e^{-\frac{\pi^2 /2}{\sqrt{P}}},
+    \mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2 /2}{\sqrt{P}}},
   \end{equation*}
+  
   where $P$ denotes the mean transmitting power.
 
-  In MIMO we use multiple antennas to send the message. In every antenna message should be coded in a way that it can't be mixed with the messages the other antennas are transmitting. This can be done by (\htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}).
+  In MIMO we use multiple antennas to send the message. In each antenna the message should be coded in a way that it can't be mixed with the information that the other antennas are transmitting. This can be done by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
   Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate by complementary probability that at least one message is received:
+  
   \begin{equation*}
-    \mathbb{P}[Message received] = 1-(1-e^{-\frac{\pi^2 /2}{\sqrt{P/N}}})^N,
+    \mathbb{P}[\text{Message received}]  = 1-\left(1-e^{-\frac{\pi^2 /2}{\sqrt{P/N}}}\right)^N,
   \end{equation*}
-where $N$ is the number of antennas. Notice that we divided the transmitting power $P$ by number of antennas.
-Other way we could try to improve to increase the probability of a succesfull transmission is just increasing the power $P$. In the following figure we increase the number of antennas $N$, and make a comparison to the probabilities acquired by increasing the power by multiplicative factor $N$.
+  
+where $N$ is the number of antennas. Notice that we divided the transmitting power $P$ by number of antennas, so we don't increase the aggregate power at all.
+In the other hand, should we have no MIMO technology at hand, we could try to improve to increase the link quality just by increasing the power $P$. In the following figure we compare these two cases.
 
   \begin{figure}
-  \includegraphics[width=\linewidth]{MIMO.gif}
-  \caption{Interference field developing in time. We assume random multi path signal propagation from random locations moving to random directions in time. Also, a line-of-sight component is present – that is we assume \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication.}
-\end{figure}
+  \includegraphics[width=\linewidth]{MIMO.png}
+  \caption{MIMO saves energy and improves the quality}
+  \end{figure}
+
+  It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using MIMO we can achieve better data-rates than by increasing the power of the transmitters.
 
   \bibitem[1]{hal2}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hal2}
    

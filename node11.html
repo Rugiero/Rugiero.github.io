@@ -1,64 +1,154 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
-<HTML lang="en">
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>June – MIMO</TITLE>
+<META NAME="description" CONTENT="June – MIMO">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node5.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="next" HREF="node12.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="source.html">
+ HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node10.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html62"
+<A ID="tex2html74"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="6"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node12.html">About this document ...</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node10.html">May – Rayleigh Fading</A>
- &nbsp; <B>  <A ID="tex2html63"
+ &nbsp; <B>  <A ID="tex2html75"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00040000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-<B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2020.2 (Released July 1, 2020)
+<H2><A ID="SECTION00035000000000000000">
+June – MIMO</A>
+</H2>
+  Multiple-input and multiple-output (<A ID="tex2html17"
+  HREF="https://en.wikipedia.org/wiki/MIMO">MIMO</A>) antenna technology is used to exploit the <A ID="tex2html18"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">multi-path propagation</A>
+to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity can always be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html15"
-  HREF="../source.tex">source.tex</A></kbd>
+But how and why does it work? Here is how I came up with a simple argument based on stochastic geometry.
+
 <P>
-The translation was initiated on 2021-06-08
-<BR><HR>
+Let us make few assumptions. We assume a flat and infinite Earth (no tin-foils). In addition we assume that our communication channel environment consist of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be <A ID="tex2html19"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh faded</A>. City is full of mobile phones transmitting data with their base-stations, and in the other hand causing interference to each other. We make a natural assumption that the interfering transmitters are distributed according to the <A ID="tex2html20"
+  HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>.
+
+<P>
+As derived in <A ID="tex2html21"
+  HREF="https://hal.inria.fr/inria-00403039v1/document2">here</A>
+we express the probability <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img7.svg"
+ ALT="$p$"></SPAN> of a successful transmission (for example a message to a friend) as:
+
+<P>
+<IMG STYLE=""
+ SRC="img8.svg"
+ ALT="\begin{equation*}
+\mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2 /2}{\sqrt{P}}},
+\end{equation*}">
+
+<P>
+where <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img9.svg"
+ ALT="$P$"></SPAN> denotes the mean transmitting power.
+
+<P>
+In MIMO we use multiple antennas to send the message. In each antenna the message should be coded in a way that it can't be mixed with the information that the other antennas are transmitting. This can be done by <A ID="tex2html22"
+  HREF="https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing">orthogonal modulation</A>.
+
+Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate by complementary probability that at least one message is received:
+
+<P>
+<IMG STYLE=""
+ SRC="img10.svg"
+ ALT="\begin{equation*}
+\mathbb{P}[\text{Message received}] = 1-\left(1-e^{-\frac{\pi^2 /2}{\sqrt{P/N}}}\right)^N,
+\end{equation*}">
+
+<P>
+where <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img11.svg"
+ ALT="$N$"></SPAN> is the number of antennas. Notice that we divided the transmitting power <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img9.svg"
+ ALT="$P$"></SPAN> by number of antennas, so we don't increase the aggregate power at all.
+In the other hand, should we have no MIMO technology at hand, we could try to improve to increase the link quality just by increasing the power <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img9.svg"
+ ALT="$P$"></SPAN>. In the following figure we compare these two cases.
+
+<P>
+
+<DIV class="CENTER"><A ID="151"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+MIMO saves energy and improves the quality</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./MIMO.png"
+ ALT="Image MIMO"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using MIMO we can achieve better data-rates than by increasing the power of the transmitters.
+
+<P>
+<DT><A ID="hal2">1</A>
+<DD>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html23"
+  HREF="https://hal.inria.fr/inria-00403039v1/document2">Stochastic Geometry and Wireless Networks, Volume 2 - Applications</A>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html74"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="6"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node12.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node10.html">May – Rayleigh Fading</A>
+ &nbsp; <B>  <A ID="tex2html75"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
