@@ -32,7 +32,7 @@
 <A
  HREF="node7.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html68"
+<A ID="tex2html74"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
@@ -44,7 +44,7 @@
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node7.html">February – Controlling your</A>
- &nbsp; <B>  <A ID="tex2html69"
+ &nbsp; <B>  <A ID="tex2html75"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -53,18 +53,35 @@
 <H2><A ID="SECTION00032000000000000000">
 March – Signal Propagation in a City</A>
 </H2>
-  People in the city trying to contact their fellow mates by cell phones will have to exchange data by electromagnetic waves with their base stations. This data is relevant only to the parties communicating with each other. As some of the data signals gets leaked to the surroundings, each transmission will cause an interference field, which will disturb other transmissions in the same frequency band.
+Signal propagation in a city is characterized essentially by obstacles which reflects the signal. In a city signal power levels follows approximately <A ID="tex2html18"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh</A>
+statistics if there is no line-of-sight path present between the transmitter and the receiver. 
 
 <P>
-Interference in big crowds gets so large that data transmission rates will lower to the level of jamming. This shows for example in crowded festival areas as difficulties to reach out your friend by your mobile phone.
+Here is just couple of nice figures I made to help myself to perceive what is going on. First figure demonstrates how a single signal propagates between buildings, and second figure shows how aggregate signal power (interference) from many transmitters develops in time. 
 
 <P>
 
-<DIV class="CENTER"><A ID="160"></A>
+<DIV class="CENTER"><A ID="169"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-Interference field developing in time. We assume random multi path signal propagation from random locations moving to random directions in time. Also, a line-of-sight component is present – that is we assume <A ID="tex2html10"
-  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>. Red occurrences will cause remarkable disturbance in communication.</CAPTION>
+<A ID="tex2html10"
+  HREF="https://en.wikipedia.org/wiki/Helmholtz_equation">Helmholtz equation</A>
+solved by <A ID="tex2html11"
+  HREF="https://en.wikipedia.org/wiki/Finite_element_method">finite element method</A>. The white boxes represents buildings, and the little white circle is the transmitter. You can see how waves multi path components acts  either constructively or detrimentally because of reflections from the buildings.</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./helmholtz.png"
+ ALT="Image helmholtz"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV class="CENTER"><A ID="170"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Interference field developing in time. Transmitters in random locations are moving to random directions in time, and the aggregate signal strength is plotted. There is a line-of-sight component is present – that is we assume in fact  <A ID="tex2html15"
+  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters gets large.</CAPTION>
 <TR><TD><IMG STYLE=""
  SRC="./rician.gif"
  ALT="Image rician"></TD></TR>
@@ -76,10 +93,36 @@ References:
 
 <P>
 <DT><A ID="hurr">1</A>
-<DD>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html13"
+<DD>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html19"
   HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
 <P>
-<BR><HR>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html74"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="6"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node9.html">April – Frequentist Inference</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node7.html">February – Controlling your</A>
+ &nbsp; <B>  <A ID="tex2html75"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

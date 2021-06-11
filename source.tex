@@ -326,13 +326,20 @@ References:
 
 
   \subsection{March – Signal Propagation in a City}
-  People in the city trying to contact their fellow mates by cell phones will have to exchange data by electromagnetic waves with their base stations. This data is relevant only to the parties communicating with each other. As some of the data signals gets leaked to the surroundings, each transmission will cause an interference field, which will disturb other transmissions in the same frequency band.
+Signal propagation in a city is characterized essentially by obstacles which reflects the signal. In a city signal power levels follows approximately \htmladdnormallink{Rayleigh}{\ray} statistics if there is no line-of-sight path present between the transmitter and the receiver. 
 
-  Interference in big crowds gets so large that data transmission rates will lower to the level of jamming. This shows for example in crowded festival areas as difficulties to reach out your friend by your mobile phone.
+Here is just couple of nice figures I made to help myself to perceive what is going on. First figure demonstrates how a single signal propagates between buildings, and second figure shows how aggregate signal power (interference) from many transmitters develops in time. 
 
   \begin{figure}
+  \includegraphics[width=\linewidth]{helmholtz.png}
+  \caption{\htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} solved by \htmladdnormallink{finite element method}{https://en.wikipedia.org/wiki/Finite_element_method}. The white boxes represents buildings, and the little white circle is the transmitter. You can see how waves multi path components acts  either constructively or detrimentally because of reflections from the buildings.}
+\end{figure}
+
+
+  
+  \begin{figure}
   \includegraphics[width=\linewidth]{rician.gif}
-  \caption{Interference field developing in time. We assume random multi path signal propagation from random locations moving to random directions in time. Also, a line-of-sight component is present – that is we assume \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication.}
+  \caption{Interference field developing in time. Transmitters in random locations are moving to random directions in time, and the aggregate signal strength is plotted. There is a line-of-sight component is present – that is we assume in fact  \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters gets large.}
 \end{figure}
 
 
