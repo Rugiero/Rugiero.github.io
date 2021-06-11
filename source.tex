@@ -43,8 +43,8 @@
 \def\github{https://github.com/Rugiero}
 \def\pass{https://www.passwordstore.org/}
 \def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
-\def\hal{https://hal.inria.fr/inria-00403039v1/document}
-\def\hal2{https://hal.inria.fr/inria-00403040/file/FnT2.pdf}
+\def\hal{https://hal.inria.fr/inria-00403039v1/}
+\def\hall{https://hal.inria.fr/inria-00403040v4/document}
 \def\ray{https://en.wikipedia.org/wiki/Rayleigh_fading}
 \def\ric{https://en.wikipedia.org/wiki/Rician_fading}
 \def\gaus{https://en.wikipedia.org/wiki/Gaussian_noise}
@@ -500,10 +500,10 @@ References:
 
   But how and why does it work? Here is how I came up with a simple argument based on stochastic geometry.
 
-  Let us make few assumptions. We assume a flat and infinite Earth (no tin-foils). In addition we assume that our communication channel environment consist of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. City is full of mobile phones transmitting data with their base-stations, and in the other hand causing interference to each other. We make a natural assumption that the interfering transmitters are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
+  Let us make few assumptions. We assume a flat and infinite Earth (no tin-foils). In addition we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc.. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. City is full of mobile phones transmitting data with their base-stations, and in the other hand causing interference to each other. We make a natural assumption that the interfering transmitters are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
 
 
-  As derived in \htmladdnormallink{here}{\hal2} we express the probability $p$ of a successful transmission (for example a message to a friend) as:
+  As derived in \htmladdnormallink{here}{\hall} we express the probability $p$ of a successful transmission (for example a message to a friend) as:
 
   \begin{equation*}
     \mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
@@ -528,7 +528,7 @@ In the other hand, should we have no MIMO technology at hand, we could try to im
 
   It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using MIMO we can achieve better data-rates than by increasing the power of the transmitters.
 
-  \bibitem[1]{hal2}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hal2}
+  \bibitem[1]{hal2}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hall}
    
 \end{document}
 %
