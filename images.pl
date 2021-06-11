@@ -39,18 +39,18 @@ $key = q/r;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img5.svg"
  ALT="$r$">|; 
 
-$key = q/{equation*}{mathbb{P}{[text{Messagereceived}]=1-left(1-e^{-frac{pi^2slash2}{sqrt{PslashN}}}right)^N,{equation*};MSF=1.6;TAGS=R;AAT/;
+$key = q/{equation*}{mathbb{P}{[text{Messagereceived}]=1-left(1-e^{-frac{pi^2}{2sqrt{PslashN}}}right)^N,{equation*};MSF=1.6;TAGS=R;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE=""
  SRC="|."$dir".q|img10.svg"
  ALT="\begin{equation*}
-\mathbb{P}[\text{Message received}] = 1-\left(1-e^{-\frac{\pi^2 /2}{\sqrt{P/N}}}\right)^N,
+\mathbb{P}[\text{Message received}] = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,
 \end{equation*}">|; 
 
-$key = q/{equation*}{mathbb{P}{[text{Messagereceived}]=e^{-frac{pi^2slash2}{sqrt{P}}},{equation*};MSF=1.6;TAGS=R;AAT/;
+$key = q/{equation*}{mathbb{P}{[text{Messagereceived}]=e^{-frac{pi^2}{2sqrt{P}}},{equation*};MSF=1.6;TAGS=R;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE=""
  SRC="|."$dir".q|img8.svg"
  ALT="\begin{equation*}
-\mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2 /2}{\sqrt{P}}},
+\mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
 \end{equation*}">|; 
 
 1;

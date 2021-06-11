@@ -506,7 +506,7 @@ References:
   As derived in \htmladdnormallink{here}{\hal2} we express the probability $p$ of a successful transmission (for example a message to a friend) as:
 
   \begin{equation*}
-    \mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2 /2}{\sqrt{P}}},
+    \mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
   \end{equation*}
   
   where $P$ denotes the mean transmitting power.
@@ -515,7 +515,7 @@ References:
   Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate by complementary probability that at least one message is received:
   
   \begin{equation*}
-    \mathbb{P}[\text{Message received}]  = 1-\left(1-e^{-\frac{\pi^2 /2}{\sqrt{P/N}}}\right)^N,
+    \mathbb{P}[\text{Message received}]  = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,
   \end{equation*}
   
 where $N$ is the number of antennas. Notice that we divided the transmitting power $P$ by number of antennas, so we don't increase the aggregate power at all.
