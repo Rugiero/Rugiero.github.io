@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  11 JUN 2021 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  14 JUN 2021 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -422,40 +422,40 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 139
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-:tex2html_wrap_inline176:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline179:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline176:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline179:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 Preview: Tightpage -32891 -32891 32891 32891
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-:tex2html_wrap_inline178:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline181:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_inline178:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline181:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [2]
 
-:tex2html_wrap_indisplay366:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_indisplay371:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_indisplay366:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_indisplay371:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [3]
 
-:tex2html_wrap_inline180:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline183:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline180:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline183:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [4]
 
-:tex2html_wrap_inline182:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline185:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline182:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline185:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [5]
 
-:tex2html_wrap_inline184:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline187:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline184:lthtmlCropMarkDepth:=0.55554pt:1ex:=4.30554pt
+:tex2html_wrap_inline187:lthtmlCropMarkDepth:=0.55554pt:1ex:=4.30554pt
 [6]
 
-:tex2html_wrap_inline186:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline189:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline186:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline189:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 [7]
 
 ! LaTeX Error: Bad math environment delimiter.
@@ -485,14 +485,14 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-:equationstar144:lthtmlCropMarkHeight:=16.27184pt
+:equationstar147:lthtmlCropMarkHeight:=16.27184pt
 
-:equationstar144:lthtmlCropMarkDepth:=5.27182pt:1ex:=4.30554pt
+:equationstar147:lthtmlCropMarkDepth:=5.27182pt:1ex:=4.30554pt
 [8]
 
-:tex2html_wrap_inline188:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline191:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_inline188:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline191:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [9]
 
 ! LaTeX Error: Bad math environment delimiter.
@@ -522,14 +522,14 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-:equationstar152:lthtmlCropMarkHeight:=21.95744pt
+:equationstar155:lthtmlCropMarkHeight:=21.95744pt
 
-:equationstar152:lthtmlCropMarkDepth:=10.95744pt:1ex:=4.30554pt
+:equationstar155:lthtmlCropMarkDepth:=10.95744pt:1ex:=4.30554pt
 [10]
 
-:tex2html_wrap_inline190:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline193:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_inline190:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline193:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.

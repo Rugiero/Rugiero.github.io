@@ -10,6 +10,10 @@ $key = q/cite_hal2/;
 $external_labels{$key} = "$URL/" . q|node11.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/cite_hur22r/;
+$external_labels{$key} = "$URL/" . q|node8.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_hurr/;
 $external_labels{$key} = "$URL/" . q|node8.html|; 
 $noresave{$key} = "$nosave";

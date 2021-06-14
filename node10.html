@@ -32,7 +32,7 @@
 <A
  HREF="node9.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html78"
+<A ID="tex2html79"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
@@ -44,7 +44,7 @@
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node9.html">April – Frequentist Inference</A>
- &nbsp; <B>  <A ID="tex2html79"
+ &nbsp; <B>  <A ID="tex2html80"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -55,10 +55,8 @@ May – Rayleigh Fading Audiolized</A>
 </H2>
 
 <P>
-When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html20"
+When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html21"
   HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
-
-  GNU nano 4.8                                                 AUDIOT.tex                                                            
 <P>
   For example, a simple sine wave
 
@@ -70,7 +68,7 @@ When a signal is propagating through multiple paths each signal component in eac
       <code>audio</code> element.
     </audio>
   </figure>
-
+  
 <P>
   can after some multi-path propagation sound something like
   <figure>
@@ -82,11 +80,11 @@ When a signal is propagating through multiple paths each signal component in eac
     </audio>
   </figure>
 <P>
-  assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the agg>
+  assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
 
 <P>
   If we add some <A ID="tex2html15"
-                    HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>
+		    HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>
 
 <P>
   we notice that the original signal is somehow recognizable from the noise (headphone users, watch out!)
@@ -98,7 +96,7 @@ When a signal is propagating through multiple paths each signal component in eac
       Your browser does not support the
       <code>audio</code> element.
     </audio>,
-  </figure>
+  </figure>        
 <P>
   but the faded signal
 
@@ -109,12 +107,11 @@ When a signal is propagating through multiple paths each signal component in eac
       Your browser does not support the
       <code>audio</code> element.
     </audio>
-  </figure>
+  </figure>        
 <P>
 will sometimes bury completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
 
 <P>
-
 
 Here is a GNU/Octave or Matlab code for the used Rayleigh simulator:
 <PRE>
@@ -134,6 +131,8 @@ rI = 1000*rand(1,N); %Random distances of the sources.
 %Geometrical stuff. Check for the Jakes model in the reference.
 An = @(t) (atan(sin(randan).*rI./(cos(randan).*rI-v*t))).*(cos(randan).*rI&gt;v*t)+...
      (pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI&lt;=v*t);
+phis = 2*pi.*(rand(1,N));
+wc =pi/2; %Frequency of the signal.
 Beta = 2*pi/(1/(wc/(2*pi)));
 theta = @(t) cos(An(t)).*Beta*v.*t+phis;
 
