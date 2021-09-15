@@ -44,7 +44,8 @@
 \def\soundcloud{https://soundcloud.com/ilari-angervuori}
 \def\github{https://github.com/Rugiero}
 \def\pass{https://www.passwordstore.org/}
-\def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
+%%\def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
+\def\cv{cv.pdf}
 \def\hal{https://hal.inria.fr/inria-00403039v1/}
 \def\hall{https://hal.inria.fr/inria-00403040v4/document}
 \def\ray{https://en.wikipedia.org/wiki/Rayleigh_fading}
@@ -69,7 +70,7 @@
 
     \date
         {
-          {Last update 11.06.2021}\\
+          {Last update 15.09.2021}\\
         }
 
         \begin{center}
@@ -89,7 +90,7 @@
 
         \pagebreak
         \section{About me}
-        Please jump to my professional records in the subsections below, or read a brief story of my life in the following.
+        I am a Finnish mathematician interested in engineering and particularly wireless communications. Please jump to my professional records in the subsections below.
 
 
         %% One milestone in my way to engineering started at 2009, thee year of my high school graduation, when I got in to study Electrical engineering in the Helsinki University of technology (TKK). Mathematical disclipline was a natural choice for me as during my highschool years in Helsinki, Munkkinimemi, mathematics and physics where areas where I could get by well without too much effort – or the effort did not feel overwhelmingly bad because I was genuinely interested in these arts. Vastness of space and mathematical poet-like ability to describe the world has always fascinated me – there is something calmfull in chewing the formulas and gradually starting to grasp the mathematical description by your own intuition.
@@ -244,7 +245,7 @@ References:
 
 
 \subsection{February – Controlling your Passwords with Pass}
-Pass is a nice unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
 
 \begin{itemize}
 \item Install the application in the terminal \\
@@ -385,6 +386,12 @@ coin[flips_, bias_] :=
 around = coin[1000, 0.5]
 ListPlot[{around}]
 \end{verbatim}
+
+References:
+\begin{itemize}
+\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+    
+\end{itemize}
 
 
 \subsection{May – Rayleigh Fading Audiolized}
@@ -548,15 +555,15 @@ Assuming that each message from each antenna will propagate to the receiver in a
   \textbf{P}[\text{Successful MIMO transmission with N antennas}]  = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,
 \end{equation*}
 
-where $N$ is the number of antennas. Notice that we divided the transmitting power $P$ by number of antennas, so we don't increase the aggregate power at all.
-In the other hand, should we have no MIMO technology at hand, we could try to improve to increase the link quality just by increasing the power $P$. In the following figure we compare these two cases.
+where $N$ is the number of transmitting antennas. Notice that we divided the transmitting power $P$ by the number of antennas, so we don't increase the aggregate power at all.
+In the other hand, should we have no MIMO technology at hand, we could try to improve to increase the link quality just by increasing the power $P$ of a single antenna. In the following figure we compare these two cases.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{MIMO.png}
   \caption{MIMO saves energy and improves the quality}
 \end{figure}
 
-It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using multiple antennas we can achieve better data-rates than by merely increasing the power of a single transmitter.
+It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using multiple antennas we can save power and achieve better data-rates than by merely increasing the power of a single transmitter.
 
 References:
 \begin{itemize}
@@ -617,16 +624,39 @@ References:
 \end{itemize}
 
 
-\subsection{September – Radio waves in a tunnel}
+\subsection{August – Radio waves in a tunnel}
 
-Everyone have experience how radio turns into static when driving into a tunnel. Once upon a night I could not get sleep thinking about why does this really happen. I have heard that FM wavelength is just so large that the wave ``does not fit the tunnel''. But this is not very satisfying explanation.
+Everyone have some experience how radio turns into static when one is driving into a tunnel. It just does not work (unless there is a special \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} installed inside the tunnel).
 
-After some research I found that the explanation lies in the behaviour of Maxwell equations (well, daa). All backs down to the fact that the wave ``does not fit'' in the tunnel, because of the interface conditions of the electromagnetic field; the tangential component of the electical field component of the electromagnetic wave has to be zero in the walls of the tunnel. This leads to a situation where the wave has, in a sense, no room the oscillate in the tunnel.
+ Once upon a night I could not get sleep pondering on why does this happen. For example, water seems to behave quite differently; no matter how narrow the pipe, a water wave will go through it. Someone might have told me that \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radio wavelength is just so large that the wave ``does not fit the tunnel''. But as intuitively acceptable this explanation could be (I don't think it is even that), it is not a very satisfying explanation as such.
+
+After some research I found that the explanation lies in the behavior of \htmladdnormallink{Maxwell equations}{https://en.wikipedia.org/wiki/Maxwell's_equations} (well, what a surprise). All backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electrical field component of the electromagnetic wave has to be near to zero in the tunnel interface. This leads to a situation where the wave has, in a sense, no room the oscillate inside the tunnel. The zero interface condition here is crucial; for example, it does not generally apply to a water wave and this is the reason a wave in the water fit through the smallest hole.
+
+Intuitive or not, this is what the equations tells us. To demonstrate this fact I solved, using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for an plane-wave in a two dimensional setting mimicking a tunnel and its entrance. The  \htmladdnormallink{electromagnetic wave}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} is considered to be polarized so that the electrical component is pointing at right angle w.r.t. the plane (either towards or against the reader of this page).  \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is set to zero. Solutions coloring shown in the figures following represents the magnitude of the electrical component.
+
+We compare the behavior of two different wavelengths:
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{highfreq.gif}
+  \caption{High frequencies fit in the tunnel}
+\end{figure}
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{lowfreq.gif}
+  \caption{Wavelengths bigger than the diameter of the tunnel will not get through}
+\end{figure}.
+
+
+
 
 
 References: 
 \begin{itemize}
 \item \htmladdnormallink{Scattering Problem: Matlab PDE Modeler App}{https://se.mathworks.com/help/pde/ug/scattering-problem.html}
+\item \htmladdnormallink{Interface conditions for electromagnetic fields (Wikipedia article)}{https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields}
+    
 \end{itemize}
 
 
