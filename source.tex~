@@ -129,7 +129,7 @@
         \section{Blog posts 2021}
         General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
 
-        \subsubsection{January – Poisson Process on a Sphere}
+        \subsection{January – Poisson Process on a Sphere}
         \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to many mathematical spaces. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
         \begin{equation}
           (x,y) \mapsto (r,x,\sin(y)) \nonumber.
