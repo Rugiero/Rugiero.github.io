@@ -22,6 +22,8 @@
 \usepackage{html,makeidx,epsf}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{amsmath}
+%%\usepackage{media9}
 \usepackage[overload]{empheq}
 
 %\renewcommand{\bibname}{References}
@@ -42,7 +44,8 @@
 \def\soundcloud{https://soundcloud.com/ilari-angervuori}
 \def\github{https://github.com/Rugiero}
 \def\pass{https://www.passwordstore.org/}
-\def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
+%%\def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
+\def\cv{cv.pdf}
 \def\hal{https://hal.inria.fr/inria-00403039v1/}
 \def\hall{https://hal.inria.fr/inria-00403040v4/document}
 \def\ray{https://en.wikipedia.org/wiki/Rayleigh_fading}
@@ -57,87 +60,87 @@
 %
 
 \title{
-{\bf A glimpse to my mind}
+  {\bf A glimpse to my mind}
 }
 
 \author
-{
-Ilari Angervuori\\
-}
+    {
+      Ilari Angervuori\\
+    }
 
-\date
-{
-{Last update 11.06.2021}\\
-}
+    \date
+        {
+          {Last update 11.06.2021}\\
+        }
 
-\begin{center}
-  \htmladdnormallink{Linkedin}{\linkedin}\\
-  \htmladdnormallink{Soundcloud}{\soundcloud}\\
-  \htmladdnormallink{GitHub}{\github} \\
-  \htmladdnormallink{CV}{\cv}\\
-\end{center}
+        \begin{center}
+          \htmladdnormallink{Linkedin}{\linkedin}\\
+          \htmladdnormallink{Soundcloud}{\soundcloud}\\
+          \htmladdnormallink{GitHub}{\github} \\
+          \htmladdnormallink{CV}{\cv}\\
+        \end{center}
 
-%\begin{latexonly}
-%\markright{Document_Short_Title}
-\maketitle
-% uncomment to run:
-%\end{latexonly}
+        %\begin{latexonly}
+        %\markright{Document_Short_Title}
+        \maketitle
+        % uncomment to run:
+        %\end{latexonly}
 
-\tableofcontents
+        \tableofcontents
 
-\pagebreak
-\section{About me}
-Please jump to my professional records in the subsections below, or read a brief story of my life in the following.
-
-
-%% One milestone in my way to engineering started at 2009, thee year of my high school graduation, when I got in to study Electrical engineering in the Helsinki University of technology (TKK). Mathematical disclipline was a natural choice for me as during my highschool years in Helsinki, Munkkinimemi, mathematics and physics where areas where I could get by well without too much effort – or the effort did not feel overwhelmingly bad because I was genuinely interested in these arts. Vastness of space and mathematical poet-like ability to describe the world has always fascinated me – there is something calmfull in chewing the formulas and gradually starting to grasp the mathematical description by your own intuition.
-
-%% The first year in TKK went by. How ever much I loved engineering, I loved partying equally much. Couple of semesters went without any credits and one day I decided that electrical circuits is not for me -- I wanted to lean towards natural sciences, maybe to Meteorology, or Geophysics. Anyways, at that momement I was not into technology and I did not feel home in University of technology.  So after one year studying in TKK and one -- admittedly interesting -- year in the service of the Finnish Defence Forces I started to study physics in the University of Helsinki.
-
-%% I started my freshman year with meteorologists. First year was for most part studying in basic physics courses and mathematics as a minor subject. I made some ever lasting friendships during the period with meteorologists, but I never completed one course in meteorology. I was more into physics and mathematics. In the end the minor subject turned to be my major interest, and I changed my major to mathematics. I suppose I had more or less kind of artistic mind set and thought that mathematics grasps the heart of reality in a more rudimentary manner than physics. It is the universal language – I mean – so universal that it does not depend on our universe; the prime numbers are there regardless of what ever value the gravitational constant happens to be. So I started to study real analysis, complex analysis, topology, functional analysis in the department of mathematics in the University of Helsinki. My goal was to pursue a master degree in Applied Analysis.
+        \pagebreak
+        \section{About me}
+        I am a Finnish mathematician interested in engineering and particularly wireless communications. Please jump to my professional records in the subsections below.
 
 
+        %% One milestone in my way to engineering started at 2009, thee year of my high school graduation, when I got in to study Electrical engineering in the Helsinki University of technology (TKK). Mathematical disclipline was a natural choice for me as during my highschool years in Helsinki, Munkkinimemi, mathematics and physics where areas where I could get by well without too much effort – or the effort did not feel overwhelmingly bad because I was genuinely interested in these arts. Vastness of space and mathematical poet-like ability to describe the world has always fascinated me – there is something calmfull in chewing the formulas and gradually starting to grasp the mathematical description by your own intuition.
 
+        %% The first year in TKK went by. How ever much I loved engineering, I loved partying equally much. Couple of semesters went without any credits and one day I decided that electrical circuits is not for me -- I wanted to lean towards natural sciences, maybe to Meteorology, or Geophysics. Anyways, at that momement I was not into technology and I did not feel home in University of technology.  So after one year studying in TKK and one -- admittedly interesting -- year in the service of the Finnish Defence Forces I started to study physics in the University of Helsinki.
 
-I am keeping up a monthly blog that you can find in the blog posts section. It handles daily stuff encountered in my professional life. I hope you will find it interesting. 
-
-In free time I love music, literature, long walks, coffee and beer.
- 
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{me1.jpg}
-  \caption{Me in my beloved home town Helsinki in the middle of summer (well, technically in Espoo, Otaniemi)}
-\end{figure}
-
-\subsection{Education}
-\begin{itemize}
-\item 2016 Bachelor of Science University of Helsinki\\
-\item 2018 Master of Philosophy University of Helsinki
-\end{itemize}
-\subsection{Research}
-
-\begin{itemize}
-\item Downlink Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry
-  Okati, N., Riihonen, T., Korpi, D., Angervuori, I. Wichman, R., Aug 2020, In : IEEE Transactions on Communications. 68, 8, p. 5120-5134 9079921.\\
-\item A. Yastrebova et al., "Theoretical and Simulation-based Analysis of Terrestrial Interference to LEO Satellite Uplinks," GLOBECOM 2020 - 2020 IEEE Global Communications Conference, Taipei, Taiwan, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9347980.
-\end{itemize}
-
-
-\section{Blog posts 2021}
-General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
-
-\subsubsection{January – Poisson Process on a Sphere}
-Poisson process has a generalization in a large category of manifolds. Particularly Poisson point process on a sphere is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
-\begin{equation}
-  (x,y) \mapsto (r,x,\sin(y)) \nonumber.
-\end{equation}
-
-
-Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+        %% I started my freshman year with meteorologists. First year was for most part studying in basic physics courses and mathematics as a minor subject. I made some ever lasting friendships during the period with meteorologists, but I never completed one course in meteorology. I was more into physics and mathematics. In the end the minor subject turned to be my major interest, and I changed my major to mathematics. I suppose I had more or less kind of artistic mind set and thought that mathematics grasps the heart of reality in a more rudimentary manner than physics. It is the universal language – I mean – so universal that it does not depend on our universe; the prime numbers are there regardless of what ever value the gravitational constant happens to be. So I started to study real analysis, complex analysis, topology, functional analysis in the department of mathematics in the University of Helsinki. My goal was to pursue a master degree in Applied Analysis.
 
 
 
-GNU/Octave or Matlab:
+
+        I am keeping up a monthly blog that you can find in the blog posts section. It handles daily stuff encountered in my professional life. I hope you will find it interesting. 
+
+        In free time I love music, literature, long walks, coffee and beer.
+        
+
+        \begin{figure}
+          \includegraphics[width=\linewidth]{me1.jpg}
+          \caption{Me in my beloved home town Helsinki in the middle of the summer (well, technically I am in Espoo, Otaniemi – and it is a snowy and shiny day in February, frozen sea seen in the background)}
+        \end{figure}
+
+        \subsection{Education}
+        \begin{itemize}
+        \item 2016 Bachelor of Science University of Helsinki\\
+        \item 2018 Master of Philosophy University of Helsinki
+        \end{itemize}
+        \subsection{Research}
+
+        \begin{itemize}
+        \item Down-link Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry
+          Okati, N., Riihonen, T., Korpi, D., Angervuori, I. Wichman, R., Aug 2020, In : IEEE Transactions on Communications. 68, 8, p. 5120-5134 9079921.\\
+        \item A. Yastrebova et al., "Theoretical and Simulation-based Analysis of Terrestrial Interference to LEO Satellite Uplinks," GLOBECOM 2020 - 2020 IEEE Global Communications Conference, Taipei, Taiwan, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9347980.
+        \end{itemize}
+
+
+        \section{Blog posts 2021}
+        General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
+
+        \subsubsection{January – Poisson Process on a Sphere}
+        \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to many mathematical spaces. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
+        \begin{equation}
+          (x,y) \mapsto (r,x,\sin(y)) \nonumber.
+        \end{equation}
+
+
+        Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+
+
+
+        GNU Octave or Matlab:
 \begin{verbatim}
 %Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
 function refc = poissononsphere(density)
@@ -198,7 +201,7 @@ fig = plt.figure()
 ax = plt.axes(projection="3d")
 ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )
 plt.show()
-  
+
 \end{verbatim}
 
 Wolfram Language:
@@ -229,12 +232,14 @@ Wolfram Language:
 
 \begin{figure}
   \includegraphics[width=\linewidth]{interferenceenvironment.png}
-  \caption{Poisson distributed transmitters and the aggregate signal strength in a satellite by location. Poisson assumption is reasonable in varying situations, but, well, here the sea areas are a bit overrepresented.  }
+  \caption{Aggregate interference power in a satellite receiver represented by a color – interfering sources are considered to be Poisson distributed on Earth}
 \end{figure}
 
 References:
-\bibitem{theoryofpoint} D. J. Daley and D. Vere-Jones, The General Poisson Process in  ``An introduction to the theory of point processes''. New York: Springer, 2003, pp. 39. 
-\bibitem{2} Stoyan, Dietrich. et al. ``Stochastic Geometry and Its Applications''. 3rd ed. Chichester: Wiley, 2013. Print.
+\begin{itemize}
+\item D. J. Daley and D. Vere-Jones, The General Poisson Process in  ``An introduction to the theory of point processes''. New York: Springer, 2003, pp. 39. 
+\item Stoyan, Dietrich. et al. ``Stochastic Geometry and Its Applications''. 3rd ed. Chichester: Wiley, 2013. Print.
+\end{itemize}
 
 
 
@@ -282,11 +287,11 @@ Connect pass to git so it is easy to keep track of changes with multiple machine
 
 \begin{itemize}
 \item Export your public and private key to a file with \\
-  \begin{verbatim}
-gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
-  \end{verbatim}
-  where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.\\
+\begin{verbatim}
+  gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+\end{verbatim}
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.\\
 \item Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine \\
 \begin{verbatim}
 gpg --import public.key
@@ -322,37 +327,39 @@ Stay safe :)
 
 References:
 
-\bibitem[1]{pass}\htmladdnormallink{Password Store}{\pass}
+\begin{itemize}
+\item \htmladdnormallink{Password Store}{\pass}
+\end{itemize}
 
 
-  \subsection{March – Signal Propagation in a City}
-Mobile telephone signal propagation in a city is characterized essentially by obstacles which reflects the signal. In a city, the aggregate received signal follows approximately \htmladdnormallink{Rayleigh}{\ray} statistics if there is no line-of-sight path present between the transmitter and the receiver. 
+\subsection{March – Signal Propagation in a City}
+Mobile telephone signal propagation in a city is characterized essentially by obstacles that reflects the signal. In a city, the aggregate received signal follows approximately \htmladdnormallink{Rayleigh}{\ray} statistics if there is no line-of-sight path present between the transmitter and the receiver. 
 
-Here is just couple of nice figures I made to help myself to perceive what is going on. First figure demonstrates how a simple sine signal propagates between buildings, and second figure shows how aggregate signal power (interference) from many transmitters develops in time. 
+Here is couple of nice figures I made to help to perceive what is going on. First figure demonstrates how a simple sine signal propagates between buildings, and the second figure shows how aggregate signal power – that can be considered as \htmladdnormallink{interference}{https://en.wikipedia.org/wiki/Electromagnetic_interference} power – from many transmitters develops in time. 
 
-  \begin{figure}
+\begin{figure}
   \includegraphics[width=\linewidth]{sin.gif}
-  \caption{\htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} solved by \htmladdnormallink{finite element method}{https://en.wikipedia.org/wiki/Finite_element_method}. The white boxes represents buildings, and the little white circle is the transmitter. You can see how reflections will cause the signal strength either to increase or decrease depending on the location.}
+  \caption{\htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} solved by \htmladdnormallink{finite element method}{https://en.wikipedia.org/wiki/Finite_element_method}. The white boxes represents buildings, and the little white circle is the transmitter. You can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the incoming phases of the reflected waves.}
 \end{figure}
 
 
-  
-  \begin{figure}
+
+\begin{figure}
   \includegraphics[width=\linewidth]{rician.gif}
-  \caption{Interference field developing in time. Transmitters in random locations are moving to random directions in time, and the aggregate signal strength is plotted. There is a line-of-sight component is present – that is we assume in fact  \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters gets large. Time can't be considered to be in scale here.}
+  \caption{Interference power field developing in time. Transmitters in random locations are moving to random directions in time, and the aggregate signal strength is plotted – red color representing the highest mean power of interference and deep blue representing absence of any interference. There is a line-of-sight component is present – that is, we assume in fact  \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters. Time can't be considered to be in a human perspective scale here.}
 \end{figure}
 
 
-  References:
+References:
+\begin{itemize}
+\item François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
 
-\bibitem[1]{hurr}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
+\item Nicolae Cindea (2021).   \htmladdnormallink{Movie to GIF Converter}{https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)}, MATLAB Central File Exchange. Retrieved June 14, 2021. 
+\end{itemize}
 
-  \bibitem[2]{hur22r} Nicolae Cindea (2021).   \htmladdnormallink{Movie to GIF Converter}{https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)}, MATLAB Central File Exchange. Retrieved June 14, 2021. 
 
-    
-
-  \subsection{April – Frequentist Inference in Mathematica}
-  Mathematica provides a package called ``Hypothesis Testing'' for analyzing random data. Package includes handy objects like ``Around'' which represents a quantity and the uncertainty around it. The following example code returns an Around object representing the $90 \%$ confidence interval of the estimated bias of a coin after a repeated trial. Like shown in the code, the ListPlot plots Around objects as such.
+\subsection{April – Frequentist Inference in Mathematica}
+Mathematica provides a package called ``Hypothesis Testing'' for analyzing random data. Package includes handy objects like ``Around'' which represents a quantity and the uncertainty around it. The following example code returns an Around object representing the $90 \%$ confidence interval of the estimated bias of a coin after a repeated trial. Like shown in the code, the ListPlot plots Around objects as such.
 
 
 \begin{verbatim}
@@ -385,24 +392,35 @@ ListPlot[{around}]
 
 When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the \htmladdnormallink{Rayleigh fading}{\ray}.
 
-For example, a simple sine wave
+For example, a simple sine
+
+\htmladdnormallink{wave}{https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH} (links to soundcloud.com – VOLUME ALERT)
 
 can after some multi-path propagation sound something like
 
-assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
+\htmladdnormallink{this}{https://soundcloud.com/ilari-angervuori/ez-1/s-eQvc2PWfIJs} –
 
-If we add some \htmladdnormallink{Gaussian white noise}{\gaus}
+assuming that the receiver is moving at a constant speed, so that variation of Doppler shifts in different signal paths will cause the aggregate signal to vary randomly in time.
 
-we notice that the original signal is somehow recognisable from the noise
+If we add some \htmladdnormallink{Gaussian white noise}{\gaus} we notice that the original signal is somehow recognizable from the
 
-
-but the faded signal
-
-
-will sometimes bury completely under the noise – these events are referred to as \textbf{deep fades}.
+\htmladdnormallink{noised signal}{https://soundcloud.com/ilari-angervuori/refnoise/s-Za1jUDgCPSV}
 
 
-Here is a GNU/Octave or Matlab code for the used Rayleigh simulator:
+but the
+
+\htmladdnormallink{faded signal}{https://soundcloud.com/ilari-angervuori/eznoise/s-z4MjfqRZr6E}
+
+
+will sometimes get buried completely under the noise – these events are referred to as \textbf{deep fades}.
+
+
+\begin{figure}
+  \includegraphics[width=1cm]{fadedsinesignal.png}
+  \caption{Multi-path faded sine signal}
+\end{figure}
+
+Here is a GNU Octave or Matlab code for the used Rayleigh simulator:
 \begin{verbatim}
 %Rayleigh simulator. Jakes model. In Octave remember to load the statistics package.
 
@@ -419,7 +437,7 @@ rI = 1000*rand(1,N); %Random distances of the sources.
 
 %Geometrical stuff. Check for the Jakes model in the reference.
 An = @(t) (atan(sin(randan).*rI./(cos(randan).*rI-v*t))).*(cos(randan).*rI>v*t)+...
-     (pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI<=v*t);
+(pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI<=v*t);
 phis = 2*pi.*(rand(1,N));
 wc =pi/2; %Frequency of the signal.
 Beta = 2*pi/(1/(wc/(2*pi)));
@@ -432,9 +450,9 @@ EZ = []; %Faded signal.
 REF = []; %Original signal.
 NOISE = []; %Additional Gaussian noise.
 for t =T
-    EZ = [EZ Ez(t)];
-    REF = [REF cos(wc*t)];
-    NOISE = [NOISE 0.9*stdnormal_rnd(1)];
+EZ = [EZ Ez(t)];
+REF = [REF cos(wc*t)];
+NOISE = [NOISE 0.9*stdnormal_rnd(1)];
 end
 
 %Write the audio files at sampling rate 8000.
@@ -451,33 +469,33 @@ plot(T,EZ)
 And the same in Python:
 
 \begin{verbatim}
-import numpy as np
-import math
-import matplotlib.pyplot as plt
-import sounddevice as sd
-import time
+  import numpy as np
+  import math
+  import matplotlib.pyplot as plt
+  import sounddevice as sd
+  import time
 
-#Jakes Rayleigh simulator. Please check for the reference in this site for further details.
+  #Jakes Rayleigh simulator. Please check for the reference in this site for further details.
 
-N = 20 #Number of multipaths.
-T = np.linspace(0, 10000, 100000) #Time vector.
-v = 0.001 #Speed of the receiver. 
+  N = 20 #Number of multipaths.
+  T = np.linspace(0, 10000, 100000) #Time vector.
+  v = 0.001 #Speed of the receiver. 
 
 
 
-randan = np.random.rand(1, N) * math.pi #Random angles w.r.t. receiver.
-rI = np.random.rand(1, N) * 1000 #Random distances of the sources.
-phis = np.random.rand(1, N) * 2 * math.pi 
+  randan = np.random.rand(1, N) * math.pi #Random angles w.r.t. receiver.
+  rI = np.random.rand(1, N) * 1000 #Random distances of the sources.
+  phis = np.random.rand(1, N) * 2 * math.pi 
 
-def An(t):
-    return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * rI - v * t))) * (
-        np.cos(randan) * rI > v * t
-    ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.cos(randan) * rI))) * (
-        np.cos(randan) * rI <= v * t
-    )
+  def An(t):
+  return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * rI - v * t))) * (
+  np.cos(randan) * rI > v * t
+  ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.cos(randan) * rI))) * (
+  np.cos(randan) * rI <= v * t
+  )
 
-wc = np.pi/2 #Frequency of the signal.
-Beta = 2 * math.pi / (1 / (wc / (2 * math.pi)))
+  wc = np.pi/2 #Frequency of the signal.
+  Beta = 2 * math.pi / (1 / (wc / (2 * math.pi)))
 
 def theta(t):
     return np.cos(An(t)) * Beta * v * t +phis
@@ -502,45 +520,149 @@ plt.show()
 
 
 References:
-\bibitem[1]{theoryofpoint} William C. Jakes, ``Microwave Mobile Communications'', IEEE PRESS, 1974. 
+\begin{itemize}
+\item William C. Jakes, ``Microwave Mobile Communications'', IEEE PRESS, 1974.
+\end{itemize}
 
 
 
-  \subsection{June – MIMO}
-  Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity can always be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
+\subsection{June – Why does MIMO work?}
+Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity can always be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
 
-  But how and why does it work? Here is how I came up with a simple argument based on stochastic geometry.
+But how and why does it work? Here is how I came up with a simple argument based on stochastic geometry.
 
-  Let us make few assumptions. We assume a flat and infinite Earth (no tin-foils). In addition we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc.. Then our data signal is prone to propagate to the receiver through multiple paths; for example through different streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. City is full of mobile phones transmitting data with their base-stations, and in the other hand causing interference to each other. We make a natural assumption that the interfering transmitters are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
+Let us make few assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this ``tin foil assumption'', but it is often reasonable). In addition we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc.. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. City is full of mobile phones exchanging data with their \htmladdnormallink{base stations}{https://en.wikipedia.org/wiki/Cell_site} which are further handing the data to the receiving mobile phones base station and, in the other hand, causing interference to the other base station. We make a natural assumption that the interfering base stations are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} around the receiver.
 
 
-  As derived in \htmladdnormallink{here}{\hall} we express the probability $p$ of a successful transmission (for example a message to a friend) as:
+Let's consider that person A is sending a message (a Telegram message, or whatever you wish) to person B. We are interested in the probability that the base station serving the person A will successfully transmit the message to a base station serving the person B. Under assumptions above and some other simplified assumptions – as derived in \htmladdnormallink{here}{\hall}, we can express the probability of a successful transmission as:
 
-  \begin{equation*}
-    \mathbb{P}[\text{Message received}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
-  \end{equation*}
-  
-  where $P$ denotes the mean transmitting power.
+\begin{equation}
+  \textbf{P}[\text{Successful single-antenna transmission}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
+\end{equation}
 
-  In MIMO we use multiple antennas to send the message. In each antenna the message should be coded in a way that it can't be mixed with the information that the other antennas are transmitting. This can be done by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
-  Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate by complementary probability that at least one message is received:
-  
-  \begin{equation*}
-    \mathbb{P}[\text{Message received}]  = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,
-  \end{equation*}
-  
+where $P$ denotes the mean transmitting power of the base-stations.
+
+In MIMO we use multiple distinct antennas to transmit the same message. In each antenna the message should be coded in a way that it can't be mixed with the information that the other antennas are transmitting. This can be done by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
+Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate from equation $(1)$ by complementary probability that \textbf{at least one message transmission is received:}
+
+\begin{equation*}
+  \textbf{P}[\text{Successful MIMO transmission with N antennas}]  = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,
+\end{equation*}
+
 where $N$ is the number of antennas. Notice that we divided the transmitting power $P$ by number of antennas, so we don't increase the aggregate power at all.
 In the other hand, should we have no MIMO technology at hand, we could try to improve to increase the link quality just by increasing the power $P$. In the following figure we compare these two cases.
 
-  \begin{figure}
+\begin{figure}
   \includegraphics[width=\linewidth]{MIMO.png}
   \caption{MIMO saves energy and improves the quality}
-  \end{figure}
+\end{figure}
 
-  It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using MIMO we can achieve better data-rates than by increasing the power of the transmitters.
+It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using multiple antennas we can achieve better data-rates than by merely increasing the power of a single transmitter.
 
-  \bibitem[1]{hal2}François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hall}
-   
+References:
+\begin{itemize}
+\item François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hall}
+\end{itemize}
+
+\subsection{July – Animating GIFs in GNU Octave}
+
+Often it is nice to plot your results as an animation. The following code demonstrates the most effective way to write GIFs in Octave that I could find. Example code outputs an animation of a \htmladdnormallink{complex base-band signal symbol}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} in noise. Code uses the quiver plot, but any other plot should do equally well. Matlab compatibility is not guaranteed.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{gifu.gif}
+  \caption{Animated GIF of a noisy QAM symbol}
+\end{figure}
+
+
+The point is to loop through all frames and save them to a file after each other with functions \textit{getframe} and \textit{imwrite}. 
+
+\begin{verbatim}
+function writeGIF()
+  clear all;
+  close all;
+  clear imread;
+  clear imwrite;
+  
+  N = 100; %%Number of frames.
+
+  %%We use quiver plot as an example, but any other plot works equally.
+  signal = 5 + 5*i; %%Baseband symbol.
+  signal = signal + randn(1) + randn(1)*i ;   %%Add some Gaussian noise.
+  quiver(0,0,real(signal), imag(signal))
+  axis([[-10, 10],[-10, 10]])
+
+  %%Write the first frame.
+  frame = getframe(); %%Get the current frame.
+  imwrite(frame.cdata,'gifu.gif','gif','writemode','overwrite',...
+          'LoopCount',inf,'DelayTime',0.1);  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
+  
+  for iii = 1 : N
+    iii
+    %%Write GIF.
+    signal = 5 + 5*i; %%Baseband symbol.
+    signal = signal  + rand(1) + randn(1)*i ;   %%Add some Gaussian noise.
+    quiver(0,0,real(signal), imag(signal))
+    axis([[-10, 10],[-10, 10]])
+    
+    frame = getframe(); %%Get the current frame.
+    imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1); %%Write the frame to gifu.gif.
+  end
+end
+
+
+\end{verbatim}
+
+References: 
+\begin{itemize}
+\item \htmladdnormallink{Octave Image Processing}{https://octave.org/doc/v4.0.1/Loading-and-Saving-Images.html}
+\end{itemize}
+
+
+\subsection{August – Radio waves in a tunnel}
+
+Everyone have some experience how radio turns into static when one is driving into a tunnel. It just does not work (unless there is a special \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} installed inside the tunnel).
+
+ Once upon a night I could not get sleep pondering on why does this happen. For example, water seems to behave quite differently; no matter how narrow the pipe, a water wave will go through it. Someone might have told me that \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radio wavelength is just so large that the wave ``does not fit the tunnel''. But as intuitively acceptable this explanation could be (I don't think it is even that), it is not a very satisfying explanation as such.
+
+After some research I found that the explanation lies in the behavior of \htmladdnormallink{Maxwell equations}{https://en.wikipedia.org/wiki/Maxwell's_equations} (well, what a surprise). All backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electrical field component of the electromagnetic wave has to be near to zero in the tunnel interface. This leads to a situation where the wave has, in a sense, no room the oscillate inside the tunnel. The zero interface condition here is crucial; for example, it does not generally apply to a water wave and this is the reason a wave in the water fits through the smallest hole.
+
+Intuitive or not, this is what the equations tells us. To demonstrate this fact I solved, using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for an plane-wave in a two dimensional setting mimicking a tunnel and its entrance. The  \htmladdnormallink{electromagnetic wave}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} is considered to be polarized so that the electrical component is pointing at right angle w.r.t. the plane (either towards or against the reader of this page).  \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is set to zero. Solutions coloring shown in the figures following represents the magnitude of the electrical component.
+
+We compare the behaviour of two different wavelengths:
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{highfreq.gif}
+  \caption{High frequencies fits in the tunnel}
+\end{figure}
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{lowfreq.gif}
+  \caption{Wavelengths bigger than the diameter of the tunnel will not get through}
+\end{figure}.
+
+
+
+
+
+References: 
+\begin{itemize}
+\item \htmladdnormallink{Scattering Problem: Matlab PDE Modeler App}{https://se.mathworks.com/help/pde/ug/scattering-problem.html}
+\item \htmladdnormallink{Interface conditions for electromagnetic fields (Wikipedia article)}{https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields}
+    
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
 %
 % optional post-title formatting for PostScript

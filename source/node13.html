@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
+<HEAD>
+<TITLE>August – Radio waves in a tunnel</TITLE>
+<META NAME="description" CONTENT="August – Radio waves in a tunnel">
+<META NAME="keywords" CONTENT="source">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html113"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node14.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node12.html">July – Animating GIFs</A>
+ &nbsp; <B>  <A ID="tex2html114"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00037000000000000000">
+August – Radio waves in a tunnel</A>
+</H2>
+
+<P>
+Everyone have some experience how radio turns into static when one is driving into a tunnel. It just does not work (unless there is a special <A ID="tex2html44"
+  HREF="https://en.wikipedia.org/wiki/Leaky_feeder">radiating cable</A>
+installed inside the tunnel).
+
+<P>
+Once upon a night I could not get sleep pondering on why does this happen. For example, water seems to behave quite differently; no matter how narrow the pipe, a water wave will go through it. Someone might have told me that <A ID="tex2html45"
+  HREF="https://en.wikipedia.org/wiki/FM_broadcast_band">FM</A>
+radio wavelength is just so large that the wave &ldquo;does not fit the tunnel&rdquo;. But as intuitively acceptable this explanation could be (I don't think it is even that), it is not a very satisfying explanation as such.
+
+<P>
+After some research I found that the explanation lies in the behavior of <A ID="tex2html46"
+  HREF="https://en.wikipedia.org/wiki/Maxwell's_equations">Maxwell equations</A>
+(well, what a surprise). All backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electrical field component of the electromagnetic wave has to be near to zero in the tunnel interface. This leads to a situation where the wave has, in a sense, no room the oscillate inside the tunnel. The zero interface condition here is crucial; for example, it does not generally apply to a water wave and this is the reason a wave in the water fits through the smallest hole.
+
+<P>
+Intuitive or not, this is what the equations tells us. To demonstrate this fact I solved, using <A ID="tex2html47"
+  HREF="https://en.wikipedia.org/wiki/Finite_element_method">FEM</A>, the <A ID="tex2html48"
+  HREF="https://en.wikipedia.org/wiki/Helmholtz_equation">Helmholtz equation</A>
+for an plane-wave in a two dimensional setting mimicking a tunnel and its entrance. The  <A ID="tex2html49"
+  HREF="https://en.wikipedia.org/wiki/Electromagnetic_radiation">electromagnetic wave</A>
+is considered to be polarized so that the electrical component is pointing at right angle w.r.t. the plane (either towards or against the reader of this page).  <A ID="tex2html50"
+  HREF="https://en.wikipedia.org/wiki/Boundary_value_problem">Boundary conditions</A>
+inside the 2D tunnel is set to zero. Solutions coloring shown in the figures following represents the magnitude of the electrical component.
+
+<P>
+We compare the behaviour of two different wavelengths:
+
+<P>
+
+<DIV class="CENTER"><A ID="223"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+High frequencies fits in the tunnel</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./highfreq.gif"
+ ALT="Image highfreq"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV class="CENTER"><A ID="227"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Wavelengths bigger than the diameter of the tunnel will not get through</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./lowfreq.gif"
+ ALT="Image lowfreq"></TD></TR>
+</TABLE>
+</DIV>
+.
+
+<P>
+References: 
+
+<UL>
+<LI><A ID="tex2html51"
+  HREF="https://se.mathworks.com/help/pde/ug/scattering-problem.html">Scattering Problem: Matlab PDE Modeler App</A>
+</LI>
+<LI><A ID="tex2html52"
+  HREF="https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields">Interface conditions for electromagnetic fields (Wikipedia article)</A>
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html113"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node14.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node12.html">July – Animating GIFs</A>
+ &nbsp; <B>  <A ID="tex2html114"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

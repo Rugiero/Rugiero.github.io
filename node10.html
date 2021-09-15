@@ -32,19 +32,19 @@
 <A
  HREF="node9.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html79"
+<A ID="tex2html107"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="6"></A>
+ ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node11.html">June – MIMO</A>
+ HREF="node11.html">June – Why does</A>
 <B> Up:</B> <A
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node9.html">April – Frequentist Inference</A>
- &nbsp; <B>  <A ID="tex2html80"
+ &nbsp; <B>  <A ID="tex2html108"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -55,65 +55,59 @@ May – Rayleigh Fading Audiolized</A>
 </H2>
 
 <P>
-When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html21"
+When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the <A ID="tex2html24"
   HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
-<P>
-  For example, a simple sine wave
-
-  <figure>
-    <audio
-      controls
-      src="REF.wav">
-      Your browser does not support the
-      <code>audio</code> element.
-    </audio>
-  </figure>
-  
-<P>
-  can after some multi-path propagation sound something like
-  <figure>
-    <audio
-      controls
-      src="EZ.wav">
-      Your browser does not support the
-      <code>audio</code> element.
-    </audio>
-  </figure>
-<P>
-  assuming that the receiver is moving at a constant speed, so that variation in multi-path sources Doppler shift will cause the aggregate signal to vary randomly in time.
 
 <P>
-  If we add some <A ID="tex2html15"
-		    HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>
+For example, a simple sine
 
 <P>
-  we notice that the original signal is somehow recognizable from the noise (headphone users, watch out!)
-<P>
-  <figure>
-    <audio
-      controls
-      src="REFNOISE.wav">
-      Your browser does not support the
-      <code>audio</code> element.
-    </audio>,
-  </figure>        
-<P>
-  but the faded signal
+<A ID="tex2html25"
+  HREF="https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH">wave</A>
+(links to soundcloud.com – VOLUME ALERT)
 
-  <figure>
-    <audio
-      controls
-      src="EZNOISE.wav">
-      Your browser does not support the
-      <code>audio</code> element.
-    </audio>
-  </figure>        
 <P>
-will sometimes bury completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
+can after some multi-path propagation sound something like
+
+<P>
+<A ID="tex2html26"
+  HREF="https://soundcloud.com/ilari-angervuori/ez-1/s-eQvc2PWfIJs">this</A>
+–
+
+<P>
+assuming that the receiver is moving at a constant speed, so that variation of Doppler shifts in different signal paths will cause the aggregate signal to vary randomly in time.
+
+<P>
+If we add some <A ID="tex2html27"
+  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>
+we notice that the original signal is somehow recognizable from the
+
+<P>
+<A ID="tex2html28"
+  HREF="https://soundcloud.com/ilari-angervuori/refnoise/s-Za1jUDgCPSV">noised signal</A>
+<P>
+but the
+
+<P>
+<A ID="tex2html29"
+  HREF="https://soundcloud.com/ilari-angervuori/eznoise/s-z4MjfqRZr6E">faded signal</A>
+<P>
+will sometimes get buried completely under the noise – these events are referred to as <SPAN  CLASS="textbf">deep fades</SPAN>.
 
 <P>
 
-Here is a GNU/Octave or Matlab code for the used Rayleigh simulator:
+<DIV class="CENTER"><A ID="147"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Multi-path faded sine signal</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./fadedsinesignal.png"
+ ALT="Image fadedsinesignal"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Here is a GNU Octave or Matlab code for the used Rayleigh simulator:
 <PRE>
 %Rayleigh simulator. Jakes model. In Octave remember to load the statistics package.
 
@@ -130,7 +124,7 @@ rI = 1000*rand(1,N); %Random distances of the sources.
 
 %Geometrical stuff. Check for the Jakes model in the reference.
 An = @(t) (atan(sin(randan).*rI./(cos(randan).*rI-v*t))).*(cos(randan).*rI&gt;v*t)+...
-     (pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI&lt;=v*t);
+(pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI&lt;=v*t);
 phis = 2*pi.*(rand(1,N));
 wc =pi/2; %Frequency of the signal.
 Beta = 2*pi/(1/(wc/(2*pi)));
@@ -143,9 +137,9 @@ EZ = []; %Faded signal.
 REF = []; %Original signal.
 NOISE = []; %Additional Gaussian noise.
 for t =T
-    EZ = [EZ Ez(t)];
-    REF = [REF cos(wc*t)];
-    NOISE = [NOISE 0.9*stdnormal_rnd(1)];
+EZ = [EZ Ez(t)];
+REF = [REF cos(wc*t)];
+NOISE = [NOISE 0.9*stdnormal_rnd(1)];
 end
 
 %Write the audio files at sampling rate 8000.
@@ -163,33 +157,33 @@ And the same in Python:
 
 <P>
 <PRE>
-import numpy as np
-import math
-import matplotlib.pyplot as plt
-import sounddevice as sd
-import time
+  import numpy as np
+  import math
+  import matplotlib.pyplot as plt
+  import sounddevice as sd
+  import time
 
-#Jakes Rayleigh simulator. Please check for the reference in this site for further details.
+  #Jakes Rayleigh simulator. Please check for the reference in this site for further details.
 
-N = 20 #Number of multipaths.
-T = np.linspace(0, 10000, 100000) #Time vector.
-v = 0.001 #Speed of the receiver. 
+  N = 20 #Number of multipaths.
+  T = np.linspace(0, 10000, 100000) #Time vector.
+  v = 0.001 #Speed of the receiver. 
 
 
 
-randan = np.random.rand(1, N) * math.pi #Random angles w.r.t. receiver.
-rI = np.random.rand(1, N) * 1000 #Random distances of the sources.
-phis = np.random.rand(1, N) * 2 * math.pi 
+  randan = np.random.rand(1, N) * math.pi #Random angles w.r.t. receiver.
+  rI = np.random.rand(1, N) * 1000 #Random distances of the sources.
+  phis = np.random.rand(1, N) * 2 * math.pi 
 
-def An(t):
-    return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * rI - v * t))) * (
-        np.cos(randan) * rI &gt; v * t
-    ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.cos(randan) * rI))) * (
-        np.cos(randan) * rI &lt;= v * t
-    )
+  def An(t):
+  return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * rI - v * t))) * (
+  np.cos(randan) * rI &gt; v * t
+  ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.cos(randan) * rI))) * (
+  np.cos(randan) * rI &lt;= v * t
+  )
 
-wc = np.pi/2 #Frequency of the signal.
-Beta = 2 * math.pi / (1 / (wc / (2 * math.pi)))
+  wc = np.pi/2 #Frequency of the signal.
+  Beta = 2 * math.pi / (1 / (wc / (2 * math.pi)))
 
 def theta(t):
     return np.cos(An(t)) * Beta * v * t +phis
@@ -213,11 +207,40 @@ plt.show()
 
 <P>
 References:
-<DT><A ID="theoryofpoint">1</A>
-<DD> William C. Jakes, &ldquo;Microwave Mobile Communications&rdquo;, IEEE PRESS, 1974. 
+
+<UL>
+<LI>William C. Jakes, &ldquo;Microwave Mobile Communications&rdquo;, IEEE PRESS, 1974.
+</LI>
+</UL>
 
 <P>
-<BR><HR>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html107"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node11.html">June – Why does</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node9.html">April – Frequentist Inference</A>
+ &nbsp; <B>  <A ID="tex2html108"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
