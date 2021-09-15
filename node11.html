@@ -32,7 +32,7 @@
 <A
  HREF="node10.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html111"
+<A ID="tex2html113"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
@@ -44,7 +44,7 @@
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node10.html">May – Rayleigh Fading</A>
- &nbsp; <B>  <A ID="tex2html112"
+ &nbsp; <B>  <A ID="tex2html114"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -53,8 +53,8 @@
 <H2><A ID="SECTION00036000000000000000">
 June – Why does MIMO work?</A>
 </H2>
-Multiple-input and multiple-output (<A ID="tex2html32"
-  HREF="https://en.wikipedia.org/wiki/MIMO">MIMO</A>) antenna technology is used to exploit the <A ID="tex2html33"
+Multiple-input and multiple-output (<A ID="tex2html34"
+  HREF="https://en.wikipedia.org/wiki/MIMO">MIMO</A>) antenna technology is used to exploit the <A ID="tex2html35"
   HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">multi-path propagation</A>
 to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity can always be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they operate in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
 
@@ -62,15 +62,15 @@ to improve the capacity of a communication link (i.e. more gigabytes of internet
 But how and why does it work? Here is how I came up with a simple argument based on stochastic geometry.
 
 <P>
-Let us make few assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this &ldquo;tin foil assumption&rdquo;, but it is often reasonable). In addition we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc.. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. Aggregate signal in the receiver will be <A ID="tex2html34"
-  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh faded</A>. City is full of mobile phones exchanging data with their <A ID="tex2html35"
+Let us make few assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this &ldquo;tin foil assumption&rdquo;, but it is often reasonable). In addition we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna cant see each other. We can assume that we are in a city full of houses, cars, trees, etc.. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. Aggregate signal in the receiver will be <A ID="tex2html36"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh faded</A>. City is full of mobile phones exchanging data with their <A ID="tex2html37"
   HREF="https://en.wikipedia.org/wiki/Cell_site">base stations</A>
-which are further handing the data to the receiving mobile phones base station and, in the other hand, causing interference to the other base station. We make a natural assumption that the interfering base stations are distributed according to the <A ID="tex2html36"
+which are further handing the data to the receiving mobile phones base station and, in the other hand, causing interference to the other base station. We make a natural assumption that the interfering base stations are distributed according to the <A ID="tex2html38"
   HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>
 around the receiver.
 
 <P>
-Let's consider that person A is sending a message (a Telegram message, or whatever you wish) to person B. We are interested in the probability that the base station serving the person A will successfully transmit the message to a base station serving the person B. Under assumptions above and some other simplified assumptions – as derived in <A ID="tex2html37"
+Let's consider that person A is sending a message (a Telegram message, or whatever you wish) to person B. We are interested in the probability that the base station serving the person A will successfully transmit the message to a base station serving the person B. Under assumptions above and some other simplified assumptions – as derived in <A ID="tex2html39"
   HREF="https://hal.inria.fr/inria-00403040v4/document">here</A>, we can express the probability of a successful transmission as:
 
 <P>
@@ -95,7 +95,7 @@ where <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " 
  ALT="$P$"></SPAN> denotes the mean transmitting power of the base-stations.
 
 <P>
-In MIMO we use multiple distinct antennas to transmit the same message. In each antenna the message should be coded in a way that it can't be mixed with the information that the other antennas are transmitting. This can be done by <A ID="tex2html38"
+In MIMO we use multiple distinct antennas to transmit the same message. In each antenna the message should be coded in a way that it can't be mixed with the information that the other antennas are transmitting. This can be done by <A ID="tex2html40"
   HREF="https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing">orthogonal modulation</A>.
 Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate from equation <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img10.svg"
  ALT="$(1)$"></SPAN> by complementary probability that <SPAN  CLASS="textbf">at least one message transmission is received:</SPAN>
@@ -126,7 +126,7 @@ In the other hand, should we have no MIMO technology at hand, we could try to im
 
 <P>
 
-<DIV class="CENTER"><A ID="189"></A>
+<DIV class="CENTER"><A ID="191"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 MIMO saves energy and improves the quality</CAPTION>
@@ -143,7 +143,7 @@ It is evident that MIMO is a great solution for increasing the throughput of a w
 References:
 
 <UL>
-<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html39"
+<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html41"
   HREF="https://hal.inria.fr/inria-00403040v4/document">Stochastic Geometry and Wireless Networks, Volume 2 - Applications</A>
 </LI>
 </UL>
@@ -161,7 +161,7 @@ References:
 <A
  HREF="node10.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html111"
+<A ID="tex2html113"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0"><IMG STYLE="" SRC="jetscalecropped.png"
@@ -173,7 +173,7 @@ References:
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node10.html">May – Rayleigh Fading</A>
- &nbsp; <B>  <A ID="tex2html112"
+ &nbsp; <B>  <A ID="tex2html114"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
