@@ -665,7 +665,7 @@ References:
 
   \subsection{September – A pile of sand meeting the Poisson point process}
 
-  I thought that it would be nice to write about some purely mathematical subject today, so I decided to briefly discuss about the Poisson process, and its properties under a transformation.
+  I thought that it would be nice to write about some purely mathematical subject today, so I decided to briefly discuss the Poisson process, and its properties under a transformation.
 
   It is a well known fact that some point processes converges to Poisson point process after sufficient transformations. This is of course why the Poisson p.p. can appears everywhere in the nature; for example, grain of sands in an heap of grains – made by a child at a beach on a sunny day – will eventually spread by wind (or water) around the beach. The grains will be randomly displaced here and there forming something approximating a realization of a Poisson p.p., even though the original heap was more ordered.
 
@@ -679,15 +679,25 @@ References:
   
   with a ``heap'' of sand at origo. Lets make an natural assumption that the amount of grains in the heap is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}. 
 
-  Then assume that after a while, wind moves the individual sand grain from the to a uniformly disributed angle and random randomply length between $(-\infty, \infty)$. In other words, the probability that a sand grain is moved to a location inside a cirle $B(r_1,r)$ is $\int \frac{1}{\sqrt{2 \pi}}e^{x^2} dx$
-
+  Then assume that after a while, wind moves the individual sand grain from the to a uniformly disributed angle and random randomply length between $(-\infty, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a cirle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{y^2} dy.$ 
+  
   After a random translation of all points the Laplace Transform is then
-
+   
   \begin{align*}
-    \mathcal{L}(f) &= \mathbb{E} \exp \left[-\sum_i f(Y_i) \right] = \mathbb{E} 2 \pi \prod \int_{-\infty}^{\infty}   \left[e^{-f(y_i)} \right] \frac{1}{\sqrt{2 \pi}}e^{y_i^2} dy_i \\&
+    \mathcal{L}(f) &= \mathbb{E} \exp \left[-\sum_i f(Y_i) \right] = \mathbb{E}  \prod_i \exp \left[  -f(Y_i)   \right]  \\
+    &= \mathbb{E}_n \left[  (2 \pi)^{-n/2}  \int_0^{\infty} \dots \int_0^{\infty}  \prod_{i = 0}^n \exp \left[  -f(y_i)  \right] \frac{1}{\sqrt{2 \pi}}e^{y_i^2} dy_1 \dots d y_n \right] \\
+    &= \mathbb{E}_n \left[(2 \pi)^{-n/2}  \left( \int_{0}^{\infty}  \exp \left[  -f(y) - y^2   \right] dy \right)^n\right] \\
+    &= \mathbb{E}_n \exp \left[ \sum_{i= 0}^n \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{(2 \pi)^{-1/2}} dy \right) \right] \\
+  \end{align*}
+
+  Evaluating now the Laplace functional with $- \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{(2 \pi)^{1/2}} dy \right) \right] $
+    \begin{align*}
+      \mathcal{L} &= \exp \left[-\int_{\mathbb{R}^2} 1 -  e^{- \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y) + y^2 \right] (2 \pi)^{1 - 1/(2x)} dy \right)} \Lambda(dx)   \right]\\
+      &= \exp \left[-\int_{\mathbb{R}^2} \left(1 -    \int_{0}^{\infty}  \exp \left[  -f(y) - y^2 \right] (2 \pi)^{1 - 1/(2 x)} dy \right)  \Lambda(dx)  \right] \\
+      &= \exp \left[-\int_{\mathbb{R}^2} \left( 1 -    \int_{0}^{\infty}  \exp \left[  -f(y)\right] \frac{e^{-y^2}}{ (2 \pi)^{1 - 1/(2 x)}} dy \right) \Lambda(dx)  \right] \\
+      &=  \exp \left[-N -  \left(  -  \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \exp{y^2} (2 \pi)^{1 - 1/(2 N)} dy \right)   \right] \\
+      &=  \exp \left[  -  \int_{0}^{\infty}  1- \exp \left[  -f(y)  \right] \exp{y^2} (2 \pi)^{1 - 1/(2 N)} dy    \right] 
     \end{align*}
-
-
 
 
   
