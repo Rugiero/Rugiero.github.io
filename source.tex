@@ -130,13 +130,13 @@
         General thoughts on mathematics and engineering, practical instructions and artistic non sense. The themes of this blog are much inspired by challenges encountered in my professional life.
 
         \subsection{January – Poisson Process on a Sphere}
-        \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to many mathematical spaces. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to surface of a sphere
+        \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to general \htmladdnormallink{manifolds}{https://en.wikipedia.org/wiki/Manifold}. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a unit sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to geographical coordinates
         \begin{equation}
-          (x,y) \mapsto (r,x,\sin(y)) \nonumber.
+          (x,y) \mapsto (1,x,\sin^{-1}(y)) \nonumber.
         \end{equation}
 
 
-        Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+        Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a unit sphere.  Following codes returns a scatter plot of Poisson points on the unit sphere.
 
 
 
@@ -665,42 +665,40 @@ References:
 
   \subsection{September – A pile of sand meeting the Poisson point process}
 
-  I thought that it would be nice to write about some purely mathematical subject today, so I decided to briefly discuss the Poisson process, and its properties under a transformation.
+  I thought that it would be nice to write about some purely mathematical subject today, so I decided to briefly discuss the famous Poisson process, and its properties under a transformation.
 
-  It is a well known fact that some point processes converges to Poisson point process after sufficient transformations. This is of course why the Poisson p.p. can appears everywhere in the nature; for example, grain of sands in an heap of grains – made by a child at a beach on a sunny day – will eventually spread by wind (or water) around the beach. The grains will be randomly displaced here and there forming something approximating a realization of a Poisson p.p., even though the original heap was more ordered.
+  It is a well known fact that some point processes converges to Poisson point process after sufficient amount of right transformations. This is of course why the Poisson p.p appears everywhere in the nature; for example, grain of sands in a pile of grains – made by a child at a beach on a sunny day – will eventually spread by wind (or water) around the beach. The grains will be randomly displaced here and there forming something approximating a realization of a Poisson p.p., even though the original pile was more ordered.
 
-  Let's play the game with a heap (or, in fact pile) of sand spreading to a flat area by random translations of the grains. We don't exactly derive any limiting results, because we make the Poisson assumption all way. However, we will show that falling a pile of sand will result in Poisson distributed grains in the ground.
+  Let's play the game with a pile of sand spreading to a flat area by random translations of the grains. 
 
+  Consider a pile of sand at orgio. Let's assume that the pile is small enough so that it is concerned in a single point, i.e. the origo. Lets make an natural assumption that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}. 
 
-  Suppose a unit circle
-  $$
-  U = B(0,1)
-  $$
+  Suppose that after a while, wind moves the individual sand grain from the pile directing them with uniformly distributed angle and to a random distance between $(-\infty, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a circle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$ 
   
-  with a ``heap'' of sand at origo. Lets make an natural assumption that the amount of grains in the heap is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}. 
-
-  Then assume that after a while, wind moves the individual sand grain from the to a uniformly disributed angle and random randomply length between $(-\infty, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a cirle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{y^2} dy.$ 
-  
-  After a random translation of all points the Laplace Transform is then
+  After a random translation of all points the \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Laplace_functional} of the \textit{distances} of the points is 
    
   \begin{align*}
-    \mathcal{L}(f) &= \mathbb{E} \exp \left[-\sum_i f(Y_i) \right] = \mathbb{E}  \prod_i \exp \left[  -f(Y_i)   \right]  \\
-    &= \mathbb{E}_n \left[  (2 \pi)^{-n/2}  \int_0^{\infty} \dots \int_0^{\infty}  \prod_{i = 0}^n \exp \left[  -f(y_i)  \right] \frac{1}{\sqrt{2 \pi}}e^{y_i^2} dy_1 \dots d y_n \right] \\
-    &= \mathbb{E}_n \left[(2 \pi)^{-n/2}  \left( \int_{0}^{\infty}  \exp \left[  -f(y) - y^2   \right] dy \right)^n\right] \\
-    &= \mathbb{E}_n \exp \left[ \sum_{i= 0}^n \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{(2 \pi)^{-1/2}} dy \right) \right] \\
+    \mathcal{L}_{\tau}(f) &= \mathbb{E} \exp \left[-\sum_i f(|Y_i|) \right] = \mathbb{E}  \prod_i \exp \left[  -f(|Y_i|)   \right]  \\
+    &= \mathbb{E}_n \left[  (2 \pi)^{-n/2}  \int_0^{\infty} \dots \int_0^{\infty}  \prod_{i = 0}^n \exp \left[  -f(y_i)  \right] \frac{2}{\sqrt{2 \pi}}e^{-y_i^2} dy_1 \dots d y_n \right] \\
+    &= \mathbb{E}_n \left[(2 \pi)^{-n/2}  \left( \int_{0}^{\infty}  2\exp \left[  -f(y) - y^2   \right] dy \right)^n\right] \\
+    &= \mathbb{E}_n \exp \left[ \sum_{i= 0}^n \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) \right] \\ 
   \end{align*}
 
-  Evaluating now the Laplace functional with $- \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{(2 \pi)^{1/2}} dy \right) \right] $
+  Evaluating the  \htmladdnormallink{Poisson Laplace functional}{https://en.wikipedia.org/wiki/Poisson_point_process#Laplace_functionals} $\mathcal{L}(g)$ of the sand pile with $ g = - \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{\sqrt{2 \pi}} dy \right) \right] $ we get;
     \begin{align*}
-      \mathcal{L} &= \exp \left[-\int_{\mathbb{R}^2} 1 -  e^{- \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y) + y^2 \right] (2 \pi)^{1 - 1/(2x)} dy \right)} \Lambda(dx)   \right]\\
-      &= \exp \left[-\int_{\mathbb{R}^2} \left(1 -    \int_{0}^{\infty}  \exp \left[  -f(y) - y^2 \right] (2 \pi)^{1 - 1/(2 x)} dy \right)  \Lambda(dx)  \right] \\
-      &= \exp \left[-\int_{\mathbb{R}^2} \left( 1 -    \int_{0}^{\infty}  \exp \left[  -f(y)\right] \frac{e^{-y^2}}{ (2 \pi)^{1 - 1/(2 x)}} dy \right) \Lambda(dx)  \right] \\
-      &=  \exp \left[-N -  \left(  -  \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \exp{y^2} (2 \pi)^{1 - 1/(2 N)} dy \right)   \right] \\
-      &=  \exp \left[  -  \int_{0}^{\infty}  1- \exp \left[  -f(y)  \right] \exp{y^2} (2 \pi)^{1 - 1/(2 N)} dy    \right] 
+      \mathcal{L}(g) = \mathcal{L}_{\tau}(f)& = \exp \left[  \left{-\int_{\mathbb{R}^2} 1 -  e^{\log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)   \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) }\Lambda(dx) \right]    \\
+      &= \exp \left[-\int_{\mathbb{R}^2} \left(1  -   \int_{0}^{\infty}  \exp [-f(y)] \frac{2e^{-y^2}}{\sqrt{2 \pi}}  dy \right)  \Lambda(dx)  \right] \\
+        &= \exp \left[-\int_{\mathbb{R}^2}\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right) \frac{2e^{-y^2}}{\sqrt{2 \pi}}dy  \Lambda(dx)  \right] \\ 
+        &= \exp \left[-\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right)  \sqrt{\frac{2}{\pi}}e^{-y^2} N dy    \right], (1) \\   
     \end{align*}
+where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). But the formula $(1)$ is the Laplace functional  of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N.$ As the direction of the translation of a sand grain was uniformly distributed in $[0, 2\pi]$, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the  two-dimensional multivariate Gaussian distribution as the density.
 
+  In fact, the result above applies to any translations as long as the translation is independently applied to every point (or grain); Poisson point process remains Poisson in a transformation. Yes, we had to make the Poisson assumption also for the pile, so that the result above could be derived. But indeed, we can show that certain processes approach Poisson p.p. when the points are translated. However, I leave this is out of scope of this blog entry for now.
 
-  
+  \begin{figure}
+    \includegraphics[width=\linewidth]{spread.pdf}
+    \caption{Wavelengths bigger than the diameter of the tunnel will not get through}
+\end{figure}.
 
 
   
