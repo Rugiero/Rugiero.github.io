@@ -70,7 +70,7 @@
 
     \date
         {
-          {Last update 15.09.2021}\\
+          {Last update 15.11.2021}\\
         }
 
         \begin{center}
@@ -334,15 +334,13 @@ References:
 
 
 \subsection{March – Signal Propagation in a City}
-Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that \htmladdnormallink{attenuates}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflects}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refracts}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffracts}{https://en.wikipedia.org/wiki/Diffraction} the signal.
+Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that \htmladdnormallink{attenuates}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflects}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refracts}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffracts}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to Rayleigh fading as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow Rician fading statistics.
 
-Should there be a pure \htmladdnormallink{line-of-sight}{https://en.wikipedia.org/wiki/Line-of-sight_propagation} from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow \htmladdnormallink{Rician fading}{https://en.wikipedia.org/wiki/Rician_fading} statistics. 
+I animated a couple of GIFs to help us to perceive what is going on.
+The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal that is amplifying in some locations and degenerating in others. You can look for both Rician conditions (lower right) and Rayleigh conditions (lower left) in the image and see how the signal behaves under those conditions. The figure was obtained by solving the Helmholtz equation by finite element method.
 
-I animated couple of GIFs to help us to perceive what is going on.
 
-The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sums up to a signal that is amplifying in some locations and degenerating in others. You can look for both Rician conditions (lower right) and Rayleigh conditions (lower left) in the image and see how the signal behaves under those conditions. Figure was obtained by solving the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} by \htmladdnormallink{finite element method}{https://en.wikipedia.org/wiki/Finite_element_method}.
-
-The second figure shows how aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as \htmladdnormallink{interference}{https://en.wikipedia.org/wiki/Electromagnetic_interference} in a receiver. You can see how the high peaks of interference power emerges at random locations. In real life, these kinds of peaks can cause decreased data-rates. The figure was obtained by simulating a random walk of points in a realization of the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} on a plane.
+The second figure shows how to aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. In real life, these kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{sin.gif}
@@ -366,8 +364,8 @@ References:
 
 
 \subsection{April – Frequentist Inference in Mathematica}
-Mathematica provides a package called ``Hypothesis Testing'' for analyzing random data. Package includes handy objects like ``Around'' which represents a quantity and the uncertainty around it. The following example code returns an Around object representing the $90 \%$ confidence interval of the estimated bias of a coin after a repeated trial. Like shown in the code, the ListPlot plots Around objects as such.
 
+Mathematica provides a package called “Hypothesis Testing” for analyzing random data. The package includes handy objects like “Around”, representing a quantity and the uncertainty around it. The following example code returns an Around object representing the confidence interval of the estimated bias of a coin after a repeated trial. As shown in the code, the ListPlot plots Around objects as such.
 
 \begin{verbatim}
 (*Load the Hypothesis Testing Package.*)
@@ -539,15 +537,14 @@ References:
 
 
 
-\subsection{June – Why does MIMO work?}
-Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity is can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy consuming – this increases also interference to any other receivers should they transmit in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
+\subsection{June – Why Does MIMO Work?}
+
+Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity is can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy-consuming – this increases also interference to any other receivers should they transmit in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
 
 But what is the secret? Here is how I came up with a simple argument based on stochastic geometry.
+Let us make some assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this “tin foil assumption”, but it is often reasonable). In addition, we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna can not see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. The aggregate signal in the receiver will be  \htmladdnormallink{Rayleigh faded}{\ray}. The city is full of mobile phones exchanging data with their base stations which are further handing the data to the receiving mobile phones base station and, on the other hand, causing interference to the other base station. We make a natural assumption that the interfering base stations are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} around the receiver.
 
-Let us make some assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this ``tin foil assumption'', but it is often reasonable). In addition we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna can not see each other. We can assume that we are in a city full of houses, cars, trees, etc.. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. Aggregate signal in the receiver will be \htmladdnormallink{Rayleigh faded}{\ray}. City is full of mobile phones exchanging data with their \htmladdnormallink{base stations}{https://en.wikipedia.org/wiki/Cell_site} which are further handing the data to the receiving mobile phones base station and, in the other hand, causing interference to the other base station. We make a natural assumption that the interfering base stations are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} around the receiver.
-
-
-Let's consider that person A is sending a message (a Telegram message, or whatever you wish) to person B. We are interested in the probability that the base station serving the person A will successfully transmit the message to a base station serving the person B. Under assumptions above and some other simplified assumptions – as derived \htmladdnormallink{here}{\hall}, we can express the probability of a successful transmission as:
+Let's consider that person A is sending a message (a Telegram message, or whatever you wish) to person B. We are interested in the probability that the base station serving person A will successfully transmit the message to a base station serving person B. Under assumptions above and some other simplified assumptions – as derived \htmladdnormallink{here}{\hall}, we can express the probability of a successful transmission as:
 
 \begin{equation}
   \textbf{P}[\text{Successful single-antenna transmission}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
@@ -631,17 +628,21 @@ References:
 \end{itemize}
 
 
-\subsection{August – Radio waves in a tunnel}
+\subsection{August – Radio Waves in a Tunnel}
 
-Everyone have some experience how radio turns into static when one is driving into a tunnel. It just does not work (unless there is a special \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} installed inside the tunnel).
 
- Once upon a night I could not get sleep pondering on why does this happen. For example, water seems to behave differently; no matter how narrow the pipe, a water wave will go through it. Someone might have told me that \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radio wavelength is just so large that the wave ``does not fit the tunnel''. But as intuitively acceptable this explanation could be (I don't think it is even that), it is not a satisfying explanation as such.
+Everyone has some experience of how radio turns into static when one is driving into a tunnel. It just does not work (unless there is a special  \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} installed inside the tunnel).
+Once upon a night, I could not get sleep pondering on why does this happen. For example, water seems to behave differently; no matter how narrow the pipe, a water wave will go through it. Someone might have told me that \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radio wavelength is just so large that the wave “does not fit the tunnel”. But as intuitively acceptable as this explanation could be (I don't think it is even that), it is not a satisfying explanation as such.
 
-After some research I found that the explanation lies in the behavior of \htmladdnormallink{Maxwell equations}{https://en.wikipedia.org/wiki/Maxwell's_equations} (well, what a surprise). All backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electrical field component of the electromagnetic wave has to be near to zero in the tunnel interface. This leads to a situation where the wave has, in a sense, no room the oscillate inside the tunnel. The zero interface condition here is crucial; for example, it does not generally apply to a water wave and this is the reason a wave in the water fit through the smallest hole.
 
-Intuitive or not, this is what the equations tells us. To demonstrate this fact I solved, using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane-wave in a two dimensional setting mimicking a tunnel and its entrance. The  \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarization is so that the electrical component is pointing at right angle w.r.t. the plane (either towards or against the reader of this page).  \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is zero. Solutions coloring shown in the figures following represents the magnitude of the electrical component.
+After some research, I found that the explanation lies in the behaviour of \htmladdnormallink{Maxwell equations}{https://en.wikipedia.org/wiki/Maxwell's_equations} (well, what a surprise). All backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near to zero in the tunnel interface. This leads to a situation where the wave has, in a sense, no room the oscillate inside the tunnel. The zero interface condition here is crucial; for example, it does not generally apply to a water wave and this is the reason a wave in the water fit through the smallest hole.
 
-We compare the behavior of two different wavelengths:
+
+Intuitive or not, this is what the equations tell us. To demonstrate this fact I solved, using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane-wave in a two-dimensional setting mimicking a tunnel and its entrance. The \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel are zero. Solutions colouring shown in the figures following represents the magnitude of the electrical component.
+
+We compare the behaviour of two different wavelengths:
+
+
 
 
 \begin{figure}
@@ -663,18 +664,18 @@ References:
 \item \htmladdnormallink{Interface conditions for electromagnetic fields (Wikipedia article)}{https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields}
 
 
-  \subsection{September – A pile of sand meeting the Poisson point process}
+  \subsection{September – The Universality of the Poisson Point Process (Breaking a Pile of Sand)}
 
 
   I thought that it would be nice to write about some purely mathematical subject today, so I decided to briefly discuss the famous Poisson process and its properties under a transformation.
 
-  It is a well-known fact that some point processes converge to the Poisson point process after a sufficient amount of right transformations. This is of course why the Poisson p.p appears everywhere in nature; for example, grain of sands in a pile of grains – made by a child at a beach on a sunny day – will eventually spread by wind (or water) around the beach. The grains will be randomly displaced here and there forming something approximating a realization of a Poisson p.p., even though the original pile was more ordered.
+  It is a well-known fact that some point processes converge to the Poisson point process after a sufficient amount of right transformations. This is of course why the Poisson p.p appears everywhere in nature; for example, grain of sands in a sand castle – made by a child at a beach on a sunny day – will eventually spread by wind (or water) around the beach. The grains will be randomly displaced here and there forming something approximating a realization of a Poisson p.p., even though the original pile was more ordered.
 
   Let's play the game with a pile of sand spreading to a flat area by random translations of the grains. 
 
-  Consider a pile of sand at origo. Let's assume that the pile is small enough so that it is concerned in a single point, i.e. the origo. Let's make a natural assumption that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}. 
+  Consider a pile of sand at origo. Furthermore, let's assume that the pile is small enough (compared to unit distance) so that it is concentrated in a single point. Let's make a natural assumption that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}. Now our pile of sand is a Poisson point process concentrated in the origo.
 
-  Suppose that after a while, wind moves the individual sand grain from the pile directing them with uniformly distributed angle and to a random distance between $(-\infty, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a circle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$ 
+  Suppose that after a while, wind moves individual sand grains from the pile directing them with a uniformly distributed angle and to a random normally distributed distance between $[0, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a circle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$ 
   
   After a random translation of all points the \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Laplace_functional} of the \textit{distances} of the points is 
 
@@ -685,31 +686,83 @@ References:
     &= \mathbb{E}_n \exp \left[ \sum_{i= 0}^n \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) \right] \\ 
   \end{align*}
 
-  Evaluating the  \htmladdnormallink{Poisson Laplace functional}{https://en.wikipedia.org/wiki/Poisson_point_process#Laplace_functionals} $\mathcal{L}(g)$ of the sand pile with $ g = - \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{\sqrt{2 \pi}} dy \right) \right] $ we get;
+  Evaluating the  \htmladdnormallink{Poisson Laplace functional}{https://en.wikipedia.org/wiki/Poisson_point_process\#Laplace_functionals} $\mathcal{L}(g)$ of the sand pile with $ g = - \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{\sqrt{2 \pi}} dy \right)  $ we get
     \begin{align*}
-      \mathcal{L}(g) = \mathcal{L}_{\tau}(f)& = \exp \left[  \left{-\int_{\mathbb{R}^2} 1 -  e^{\log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)   \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) }\Lambda(dx) \right]    \\
+      \mathcal{L}(g) = \mathcal{L}_{\tau}(f)& = \exp \left[  -\int_{\mathbb{R}^2} 1 -  e^{\log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)   \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) }\Lambda(dx) \right]    \\
       &= \exp \left[-\int_{\mathbb{R}^2} \left(1  -   \int_{0}^{\infty}  \exp [-f(y)] \frac{2e^{-y^2}}{\sqrt{2 \pi}}  dy \right)  \Lambda(dx)  \right] \\
         &= \exp \left[-\int_{\mathbb{R}^2}\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right) \frac{2e^{-y^2}}{\sqrt{2 \pi}}dy  \Lambda(dx)  \right] \\ 
         &= \exp \left[-\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right)  \sqrt{\frac{2}{\pi}}e^{-y^2} N dy    \right], (1) \\   
     \end{align*}
 
-    where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.Wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). But the formula $(1)$ is the Laplace functional of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N.$ As the direction of the translation of a sand grain was uniformly distributed in $[0, 2\pi]$, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density.
-
-  In fact, the result above applies to any translations as long as the translation is independently applied to every point (or grain); the Poisson point process remains Poisson in a transformation. Yes, we had to make the Poisson assumption also for the pile, so that the result above could be derived. But indeed, we can show that certain non-Poisson processes approach Poisson p.p. when the points are translated. However, I leave this is out of the scope of this blog entry for now, and take the remark made here as a simple (possibly  a bit weird) example of the universality of the Poisson point process.
-
+    where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.Wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). But the formula $(1)$ is the Laplace functional of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N.$  As the direction of the translation of a sand grain was uniformly distributed, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density.
+      
+      The result above applies to any translations as long as the translation is independently applied to every point (or grain); the Poisson point process remains Poisson in a transformation. Here we had to make the Poisson assumption also for the pile so that the result above could be derived. But indeed, we can show that non-Poisson processes approach Poisson p.p. when the points are translated in a certain manner. However, I leave this is out of the scope of this blog entry for now, and take the remark made here as a simple (possibly a bit weird) example of the universality of the Poisson point process.
+      
   \begin{figure}
     \includegraphics[width=\linewidth]{spread.eps}
     \caption{$10000$ points randomly moved from the origo to the plane}
-\end{figure}.
+  \end{figure}.
 
 
-  
+References:
+\begin{itemize}
+\item D. J. Daley and D. Vere-Jones, The General Poisson Process in  ``An introduction to the theory of point processes''. New York: Springer, Volume II: General Theory and Structure, 2008, pp. 166.   
+\item François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
 \end{itemize}
 
 
 
+\subsection{October – Fast Fourier Transform in GNU Octave}
+
+\htmladdnormallink{Fast fourier transform}{https://en.wikipedia.org/wiki/Fast_Fourier_transform} (FFT) is an algorithm that computes the \htmladdnormallink{discrete Fourier transform}{https://en.wikipedia.org/wiki/Discrete_Fourier_transform}.
+
+FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate $F_s$ (Hz). By the \htmladdnormallink{Nyquist-Shannon sampling theorem}{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon_sampling_theorem}, sampling captures frequencies under $F_s/2$.
+
+Octave calculates the FFT from a discrete signal.  In the following code, we calculate the normalized FFT and plot it w.r.t. the frequency. Signal- and sample time vectors are given as input.
+
+\begin{verbatim}
+##Calculates and plots the fast fourier transform of a signal. Sampletimes have to start at time 0.
+
+function fftvector = plotfft(signal, sampletimes)
+  N = length(sampletimes); #Signal length.
+  Fs = (N - 1)/(sampletimes(N)) #Sampling rate. We have N - 1 "hops" in sampletimes(N) seconds.
+  FFT =  fft(signal);
+  if(mod(N,2) == 0) #Check if signal length is odd or even.
+    FFT = 2*FFT(1 : N/2)/N;
+    f = Fs*(0 : (N - 1)/2)/(N - 1); 
+  else
+    FFT = 2*FFT(1 : (N - 1)/2)/N;
+    f = Fs*(0 : (N - 2)/2)/(N - 1);
+  end  
+  fftvector = [f; FFT];
+  
+  figure(1)
+  plot(f, abs(FFT));
+  title('Fast fourier transform')
+  xlabel('Frequency (Hz)')
+  print  plot.jpg
+end
+
+\end{verbatim}
+
+In the following figure, I have plotted the Fourier transform of my track \htmladdnormallink{Tappimarssi}{https://soundcloud.com/ilari-angervuori/tappimarssi}. The track was imported to Octave by
+
+\begin{verbatim}
+[signal, fs] = audioread('Tappimarssi.wav');
+sampletimes = 0 : 1/fs : 1/fs*(length(y) - 1);
+\end{verbatim}
 
 
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{tappimarssi.jpg}
+\end{figure}
+
+
+\begin{itemize}
+\item  \htmladdnormallink{Octave Documentation – Signal Processing}{https://octave.org/doc/v5.2.0/Signal-Processing.html}
+\end{itemize}
+  
 
 
 

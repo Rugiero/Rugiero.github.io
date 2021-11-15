@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  17 SEP 2021 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  15 NOV 2021 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -411,108 +411,222 @@ latex2htmlLength oddsidemargin=62.0pt
 
 latex2htmlLength evensidemargin=62.0pt
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 154
+LaTeX Font Info:    Trying to load font information for U+msa on input line 149
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 154
+LaTeX Font Info:    Trying to load font information for U+msb on input line 149
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-:tex2html_wrap_inline508:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline1006:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline508:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline1006:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 Preview: Tightpage -32891 -32891 32891 32891
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-:tex2html_wrap_inline510:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline1017:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline510:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline1017:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [2]
 
-:tex2html_wrap_indisplay512:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline1019:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_indisplay512:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline1019:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [3]
 
-:tex2html_wrap_inline514:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_indisplay1021:lthtmlCropMarkHeight:=14.7175pt
 
-:tex2html_wrap_inline514:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_indisplay1021:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [4]
 
-:tex2html_wrap_inline516:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline1023:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline516:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline1023:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [5]
 
-:tex2html_wrap_inline533:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_indisplay1045:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline533:lthtmlCropMarkDepth:=0.55554pt:1ex:=4.30554pt
+:tex2html_wrap_indisplay1045:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [6]
 
-:tex2html_wrap_indisplay540:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_indisplay1046:lthtmlCropMarkHeight:=19.04366pt
 
-:tex2html_wrap_indisplay540:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_indisplay1046:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [7]
 
-:tex2html_wrap_indisplay541:lthtmlCropMarkHeight:=19.04366pt
+:tex2html_wrap_inline1048:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_indisplay541:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline1048:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [8]
 
-:tex2html_wrap_inline543:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline1050:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline543:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline1050:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [9]
 
-:tex2html_wrap_inline545:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_indisplay1053:lthtmlCropMarkHeight:=23.41476pt
 
-:tex2html_wrap_inline545:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_indisplay1053:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
 [10]
 
-:tex2html_wrap_indisplay548:lthtmlCropMarkHeight:=23.41476pt
+:tex2html_wrap_inline1055:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_indisplay548:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
+:tex2html_wrap_inline1055:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [11]
 
-:tex2html_wrap_inline550:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline1076:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline550:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline1076:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+
+:tex2html_wrap_inline1078:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline1078:lthtmlCropMarkDepth:=2.86108pt:1ex:=4.30554pt
+[13]
+
+:tex2html_wrap_inline1080:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline1080:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[14]
+
+:tex2html_wrap_inline1082:lthtmlCropMarkHeight:=17.82341pt
+
+:tex2html_wrap_inline1082:lthtmlCropMarkDepth:=5.43994pt:1ex:=4.30554pt
+[15]
+
+:tex2html_wrap_indisplay1083:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_indisplay1083:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[16]
+
+:tex2html_wrap_indisplay1084:lthtmlCropMarkHeight:=23.50014pt
+
+:tex2html_wrap_indisplay1084:lthtmlCropMarkDepth:=12.79865pt:1ex:=4.30554pt
+[17]
+
+:tex2html_wrap_indisplay1085:lthtmlCropMarkHeight:=23.50014pt
+
+:tex2html_wrap_indisplay1085:lthtmlCropMarkDepth:=12.79865pt:1ex:=4.30554pt
+[18]
+
+:tex2html_wrap_indisplay1086:lthtmlCropMarkHeight:=21.0418pt
+
+:tex2html_wrap_indisplay1086:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
+[19]
+
+:tex2html_wrap_indisplay1087:lthtmlCropMarkHeight:=23.50014pt
+
+:tex2html_wrap_indisplay1087:lthtmlCropMarkDepth:=12.79865pt:1ex:=4.30554pt
+[20]
+
+:tex2html_wrap_inline1089:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline1089:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[21]
+
+:tex2html_wrap_inline1091:lthtmlCropMarkHeight:=18.19508pt
+
+:tex2html_wrap_inline1091:lthtmlCropMarkDepth:=6.50009pt:1ex:=4.30554pt
+[22]
+
+:tex2html_wrap_indisplay1092:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_indisplay1092:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[23]
+
+:tex2html_wrap_indisplay1093:lthtmlCropMarkHeight:=23.87654pt
+
+:tex2html_wrap_indisplay1093:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
+[24]
+
+:tex2html_wrap_indisplay1094:lthtmlCropMarkHeight:=23.50014pt
+
+:tex2html_wrap_indisplay1094:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
+[25]
+
+:tex2html_wrap_indisplay1095:lthtmlCropMarkHeight:=23.50014pt
+
+:tex2html_wrap_indisplay1095:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
+[26]
+
+:tex2html_wrap_indisplay1096:lthtmlCropMarkHeight:=23.50014pt
+
+:tex2html_wrap_indisplay1096:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
+[27]
+
+:tex2html_wrap_inline1104:lthtmlCropMarkHeight:=18.35005pt
+
+:tex2html_wrap_inline1104:lthtmlCropMarkDepth:=6.0501pt:1ex:=4.30554pt
+[28]
+Package epstopdf Info: Source file: <spread.eps>
+(epstopdf)                    date: 2021-11-15 15:40:38
+(epstopdf)                    size: 2024862 bytes
+(epstopdf)             Output file: <spread-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-15 15:53:26
+(epstopdf)                    size: 413397 bytes
+(epstopdf)             Command: <repstopdf --outfile=spread-eps-converted-to.pd
+f spread.eps>
+(epstopdf)             \includegraphics on input line 330.
+Package epstopdf Info: Output file is already uptodate.
+<spread-eps-converted-to.pdf, id=106, 578.16pt x 433.62pt>
+File: spread-eps-converted-to.pdf Graphic file (type pdf)
+<use spread-eps-converted-to.pdf>
+Package pdftex.def Info: spread-eps-converted-to.pdf  used on input line 330.
+(pdftex.def)             Requested size: 349.0pt x 261.74873pt.
+
+:tex2html_wrap1112:lthtmlCropMarkHeight:=267.74873pt
+
+:tex2html_wrap1112:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[29 </m/home/home3/38/jangervu/unix/testingHTML/spread-eps-converted-to.pdf>]
+
+:tex2html_wrap_inline1115:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline1115:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+[30]
+
+:tex2html_wrap_inline1117:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline1117:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 347.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 347.
 (./images.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 347.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 347.
 Package rerunfilecheck Info: File `images.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 347.
  ) 
 Here is how much of TeX's memory you used:
- 8143 strings out of 481239
- 120042 string characters out of 5920376
+ 8149 strings out of 481239
+ 120211 string characters out of 5920376
  386583 words of memory out of 5000000
- 23265 multiletter control sequences out of 15000+600000
+ 23270 multiletter control sequences out of 15000+600000
  534964 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,6n,37p,281b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,7n,37p,785b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb>
-Output written on images.pdf (12 pages, 83236 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
+>
+Output written on images.pdf (31 pages, 534693 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 168 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

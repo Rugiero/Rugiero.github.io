@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
+<HEAD>
+<TITLE>October – Fast Fourier Transform in GNU Octave</TITLE>
+<META NAME="description" CONTENT="October – Fast Fourier Transform in GNU Octave">
+<META NAME="keywords" CONTENT="source">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html136"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node16.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node14.html">September – The Universality</A>
+ &nbsp; <B>  <A ID="tex2html137"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION000310000000000000000">
+October – Fast Fourier Transform in GNU Octave</A>
+</H2>
+
+<P>
+<A ID="tex2html60"
+  HREF="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast fourier transform</A>
+(FFT) is an algorithm that computes the <A ID="tex2html61"
+  HREF="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</A>.
+
+<P>
+FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img30.svg"
+ ALT="$F_s$"></SPAN> (Hz). By the <A ID="tex2html62"
+  HREF="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon sampling theorem</A>, sampling captures frequencies under <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img31.svg"
+ ALT="$F_s/2$"></SPAN>.
+
+<P>
+Octave calculates the FFT from a discrete signal.  In the following code, we calculate the normalized FFT and plot it w.r.t. the frequency. Signal- and sample time vectors are given as input.
+
+<P>
+<PRE>
+##Calculates and plots the fast fourier transform of a signal. Sampletimes have to start at time 0.
+
+function fftvector = plotfft(signal, sampletimes)
+  N = length(sampletimes); #Signal length.
+  Fs = (N - 1)/(sampletimes(N)) #Sampling rate. We have N - 1 "hops" in sampletimes(N) seconds.
+  FFT =  fft(signal);
+  if(mod(N,2) == 0) #Check if signal length is odd or even.
+    FFT = 2*FFT(1 : N/2)/N;
+    f = Fs*(0 : (N - 1)/2)/(N - 1); 
+  else
+    FFT = 2*FFT(1 : (N - 1)/2)/N;
+    f = Fs*(0 : (N - 2)/2)/(N - 1);
+  end  
+  fftvector = [f; FFT];
+  
+  figure(1)
+  plot(f, abs(FFT));
+  title('Fast fourier transform')
+  xlabel('Frequency (Hz)')
+  print  plot.jpg
+end
+</PRE>
+
+<P>
+In the following figure, I have plotted the Fourier transform of my track <A ID="tex2html63"
+  HREF="https://soundcloud.com/ilari-angervuori/tappimarssi">Tappimarssi</A>. The track was imported to Octave by
+
+<P>
+<PRE>
+[signal, fs] = audioread('Tappimarssi.wav');
+sampletimes = 0 : 1/fs : 1/fs*(length(y) - 1);
+</PRE>
+
+<P>
+
+<DIV class="CENTER">
+    <IMG STYLE=""
+ SRC="./tappimarssi.jpg"
+ ALT="Image tappimarssi">
+
+</DIV>
+
+<P>
+
+<UL>
+<LI><A ID="tex2html64"
+  HREF="https://octave.org/doc/v5.2.0/Signal-Processing.html">Octave Documentation – Signal Processing</A>
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

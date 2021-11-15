@@ -32,9 +32,9 @@
 <A
  HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html107"
+<A ID="tex2html118"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -44,7 +44,7 @@
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node5.html">Blog posts 2021</A>
- &nbsp; <B>  <A ID="tex2html108"
+ &nbsp; <B>  <A ID="tex2html119"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -53,24 +53,26 @@
 <H2><A ID="SECTION00031000000000000000">
 January – Poisson Process on a Sphere</A>
 </H2>
-        <A ID="tex2html9"
+        <A ID="tex2html10"
   HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>
-can be generalized to many mathematical spaces. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a sphere is equivalent to process in a two dimensional area <!-- MATH
+can be generalized to general <A ID="tex2html11"
+  HREF="https://en.wikipedia.org/wiki/Manifold">manifolds</A>. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a unit sphere is equivalent to process in a two dimensional area <!-- MATH
  $A = [-\pi,\pi] \times [-1,1]$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img1.svg"
- ALT="$A = [-\pi,\pi] \times [-1,1]$"></SPAN> through the area preserving mapping from <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
- ALT="$A$"></SPAN> to surface of a sphere
-        <P></P>
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img2.svg"
+ ALT="$A = [-\pi,\pi] \times [-1,1]$"></SPAN> through the area preserving mapping from <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img3.svg"
+ ALT="$A$"></SPAN> to geographical coordinates
+
+<P></P>
 <DIV CLASS="mathdisplay"><!-- MATH
  \begin{equation}
-(x,y) \mapsto (r,x,\sin(y)) \nonumber.
+(x,y) \mapsto (1,x,\sin^{-1}(y)) \nonumber.
 \end{equation}
  -->
 <TABLE CLASS="equation" >
 <TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img3.svg"
- ALT="$\displaystyle (x,y) \mapsto (r,x,\sin(y)) .$"></SPAN></TD>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.83ex; vertical-align: -0.70ex; " SRC="img4.svg"
+ ALT="$\displaystyle (x,y) \mapsto (1,x,\sin^{-1}(y)) .$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
@@ -80,9 +82,8 @@ can be generalized to many mathematical spaces. Particularly, Poisson process on
 Resulting process interpreted in geographical coordinates <!-- MATH
  $(r,\theta,\varphi)$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img4.svg"
- ALT="$(r,\theta,\varphi)$"></SPAN> is a Poisson point process on a sphere of radius <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img5.svg"
- ALT="$r$"></SPAN>.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img5.svg"
+ ALT="$(r,\theta,\varphi)$"></SPAN> is a Poisson point process on a unit sphere.  Following codes returns a scatter plot of Poisson points on the unit sphere.
 
 <P>
 GNU Octave or Matlab:
@@ -90,12 +91,12 @@ GNU Octave or Matlab:
 %Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
 function refc = poissononsphere(density)
   yMin = -1; yMax = 1;
-  xMin=-pi; xMax = pi;
+  xMin = -pi; xMax = pi;
   
-  xDelta=xMax-xMin;yDelta=yMax-yMin; %Rectangle dimensions
-  numbPoints=poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
-  x=xDelta*(rand(numbPoints,1))+xMin;    %Pick points from uniform distribution
-  y=yDelta*(rand(numbPoints,1))+yMin;    %Map referencepoints to geographical coordinates
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
   ref = [x y]';
 
   refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
@@ -126,9 +127,9 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import axes3d
 
 #Rectangle dimension
-xMin=-np.pi;xMax=np.pi;
-yMin=-1;yMax=1;
-xDelta=xMax-xMin;yDelta=yMax-yMin; #rectangle dimensions
+xMin = -np.pi; xMax = np.pi;
+yMin = -1; yMax = 1;
+xDelta = xMax - xMin; yDelta = yMax - yMin; #rectangle dimensions
 
 #Density parameter of the Poisson point process. Mean number of points on the sphere
 lambda0=1000; 
@@ -174,9 +175,9 @@ Wolfram Language:
 
 <P>
 
-<DIV class="CENTER"><A ID="58"></A>
+<DIV class="CENTER"><A ID="61"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 2:</STRONG>
 Are the stars Poisson distributed in the sky?</CAPTION>
 <TR><TD><IMG STYLE=""
  SRC="./poissononsphere.jpg"
@@ -186,9 +187,9 @@ Are the stars Poisson distributed in the sky?</CAPTION>
 
 <P>
 
-<DIV class="CENTER"><A ID="62"></A>
+<DIV class="CENTER"><A ID="65"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 3:</STRONG>
 Aggregate interference power in a satellite receiver represented by a color – interfering sources are considered to be Poisson distributed on Earth</CAPTION>
 <TR><TD><IMG STYLE=""
  SRC="./interferenceenvironment.png"
@@ -204,7 +205,7 @@ References:
 </LI>
 <LI>Stoyan, Dietrich. et al. &ldquo;Stochastic Geometry and Its Applications&rdquo;. 3rd ed. Chichester: Wiley, 2013. Print.
 </LI>
-<LI><A ID="tex2html10"
+<LI><A ID="tex2html12"
   HREF="https://hpaulkeeler.com/simulating-a-poisson-point-process-on-a-sphere">H. Paul Keeler's Blog</A>
 </LI>
 </UL>
@@ -222,9 +223,9 @@ References:
 <A
  HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html107"
+<A ID="tex2html118"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -234,7 +235,7 @@ References:
  HREF="node5.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node5.html">Blog posts 2021</A>
- &nbsp; <B>  <A ID="tex2html108"
+ &nbsp; <B>  <A ID="tex2html119"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
