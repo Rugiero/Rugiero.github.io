@@ -749,7 +749,7 @@ The following figure shows my track \htmladdnormallink{Tappimarssi}{https://soun
 
 \begin{verbatim}
 [signal, fs] = audioread('Tappimarssi.wav');
-sampletimes = 0 : 1/fs : 1/fs*(length(y) - 1);
+sampletimes = 0 : 1/fs : 1/fs*(length(signal) - 1);
 \end{verbatim}
 
 
