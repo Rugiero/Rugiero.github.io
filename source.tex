@@ -718,10 +718,10 @@ References:
 
 FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate $F_s$ (Hz). By the \htmladdnormallink{Nyquist-Shannon sampling theorem}{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon_sampling_theorem}, sampling captures frequencies under $F_s/2$.
 
-Octave calculates the FFT from a discrete signal.  In the following code, we calculate the normalized FFT and plot it w.r.t. the frequency. Signal- and sample time vectors are given as input.
+Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal- and sample time vectors are given as input.
 
 \begin{verbatim}
-##Calculates and plots the fast fourier transform of a signal. Sampletimes have to start at time 0.
+##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
 
 function fftvector = plotfft(signal, sampletimes)
   N = length(sampletimes); #Signal length.
