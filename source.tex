@@ -662,7 +662,7 @@ References:
 \begin{itemize}
 \item \htmladdnormallink{Scattering Problem: Matlab PDE Modeler App}{https://se.mathworks.com/help/pde/ug/scattering-problem.html}
 \item \htmladdnormallink{Interface conditions for electromagnetic fields (Wikipedia article)}{https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields}
-
+\end{itemize}
 
   \subsection{September – The Universality of the Poisson Point Process (Breaking a Pile of Sand)}
 
@@ -763,8 +763,96 @@ sampletimes = 0 : 1/fs : 1/fs*(length(signal) - 1);
 \item  \htmladdnormallink{Octave Documentation – Signal Processing}{https://octave.org/doc/v5.2.0/Signal-Processing.html}
 \end{itemize}
   
+\subsection{November – Digital Filtering}
+
+Let's construct a simple digital band-pass \htmladdnormallink{sinc filter}{https://en.wikipedia.org/wiki/Sinc_filter}.
+
+As everyone know, the sinc function is the \htmladdnormallink{impulse response}{https://en.wikipedia.org/wiki/Impulse_response} of a low-pass filter. That is, the \htmladdnormallink{convolution}{https://en.wikipedia.org/wiki/Convolution} of a signal $ S(t)$ and the sinc function $ t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$ will produce a low-pass filtered signal $S(t)$ without frequencies higher than $B_L$. Similarly, the function $ t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$ where $ \delta(t)$ represents the \htmladdnormallink{Dirac delta function}{https://en.wikipedia.org/wiki/Dirac_delta_function}, is the frequency response of the ideal high-pass filter of frequency $B_H$.
+
+Heuristically, we can right away derive the discrete versions of the impulse responses;
+
+$$
+i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
+$$
+for the low-pass filter, and
+
+$$
+i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
+$$
+
+for the high-pass filter. The variable $f_c$ is the sampling frequency and  $i \mapsto \delta[i] := \delta_{0i} $ is the \htmladdnormallink{Kronecker delta}{https://en.wikipedia.org/wiki/Kronecker_delta}.
+
+Now, having a discrete signal at hand, band-pass filtering  is (in the simplest approach) just a matter of discrete convolution of the signal with the functions above. The following octave code does the job.
 
 
+\begin{verbatim}
+##Sinc band-pass filter. f0 = B_L/fs, f1 = B_H/fs
+
+function filtered = sincfilter(signal, f0, f1)
+  if(mod(length(signal), 2) != 0) #Check if the signal length is even or odd.
+    signal = signal(1 : length(signal) - 1);
+  end
+  
+  M = 10000; #Increase this to increase accuracy.
+  sincF = zeros(1, M);
+  for m =  -M/2 + 1 : 1 : M/2 
+    if(!(m  == 0))
+      sincF(m + M/2) = sin(2*pi*f1*m)./(pi*m);
+    else
+      sincF(m + M/2) = 2*f1;
+    end
+  end
+
+  sincH = zeros(1,M);
+  for m =  -M/2 + 1 : 1 : M/2 
+    if(!(m  == 0))
+      sincH(m + M/2) = -sin(2*pi*f0*m)./(pi*m);
+    else
+      sincH(m + M/2) = -2*f0 + 1;
+    end
+  end
+  
+  ##Plot stuff.
+  figure(1)
+  plot(sincF)
+  figure(2)
+  plot(signal)
+
+  tic
+  filtered = conv(signal, sincF, "same");
+  filtered = conv(filtered, sincH, "same");
+  toc
+
+  figure(3)
+  plot(filtered)
+end
+
+
+\end{verbatim}
+
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{signal.jpg}
+   \caption{Signal of form $\cos(20 \pi t) + \sin(2 \pi t)$}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{filtered.jpg}
+   \caption{The same signal with the first term filtered away}
+\end{figure}
+
+
+
+
+
+For more accuracy and effectiveness, one should use windowed or recursive filters. You can check in the references for more sophisticated methods!
+
+
+References:
+\begin{itemize}
+  \item Steven W. Smith, ``Digital Signal Processing – A Practical Guide for Engineers and Scientists'', Elsevier Science, 2003.
+\end{itemize}
 
 
 
