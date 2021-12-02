@@ -167,10 +167,10 @@ $key = q/sqrt{frac{2}{pi}}e^{-x^2}N.;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 4.49ex; vertical-align: -1.52ex; " SRC="|."$dir".q|img28.svg"
  ALT="$\sqrt{\frac{2}{\pi}}e^{-x^2} N.$">|; 
 
-$key = q/textstyleparbox{textwidth}{Igraduatedin2019fromMunkkiniemihighschool.Mathematicsrocesstowardsafreeandhonestworld.(Pardonmeforthecliches.)par};MSF=1.6;TAGS=R;AAT/;
+$key = q/textstyleparbox{textwidth}{Igraduatedin2009fromMunkkiniemihighschool.Mathematicsrocesstowardsafreeandhonestworld.(Pardonmeforthecliches.)par};MSF=1.6;TAGS=R;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 130.15ex; vertical-align: -64.74ex; " SRC="|."$dir".q|img1.svg"
  ALT="$\textstyle \parbox{\textwidth}{
-I graduated in 2019 from Munkkiniemi high scho...
+I graduated in 2009 from Munkkiniemi high scho...
 ...he process towards a free and honest world. (Pardon me for the cliches.)
 \par
 }$">|; 
