@@ -102,7 +102,7 @@
 
         I proceeded with my graduate studies studying applied mathematics. I studied subjects like partial differential equations, functional analysis, dynamical systems, and  – the University of Helsinki's proudness – complex analysis. (My thesis advisor said that, in a moral sense, you cannot graduate from the University of Helsinki without taking some courses on Complex analysis, because a lot of the discipline has been developed in the university.) In addition, as a more ``practical'' subject, I studied some inverse problems. Summa summarum, I studied a wide range of fields in mathematics.
 
-        During my graduate studies, I spent half a year in Utrecht, Netherlands, studying more applied analysis of varying subjects (searching periodic orbits in the Lorentz equations as an example of a course – that I failed). At Utrecht University, I got the inspiration for a subject for my future master's thesis; the Finite Element Method. After I got back to Helsinki from the exchange, I had a chance to study more about the finite element method in Aalto University's courses. (Aalto University is a consortium of the Helsinki University of Technology, the Helsinki School of Economics and the University of Art and Design Helsinki.) While writing my thesis I also taught basic mathematics courses at the University of Helsinki and gained valuable experience in the pedagogical area.
+        During my graduate studies, I spent half a year in Utrecht, Netherlands, studying more applied analysis of varying subjects (searching periodic orbits in the Lorentz attractor as an example of a course – that I failed). At Utrecht University, I got the inspiration for a subject for my future master's thesis; the Finite Element Method. After I got back to Helsinki from the exchange, I had a chance to study more about the finite element method in Aalto University's courses. (Aalto University is a consortium of the Helsinki University of Technology, the Helsinki School of Economics and the University of Art and Design Helsinki.) While writing my thesis I also taught basic mathematics courses at the University of Helsinki and gained valuable experience in the pedagogical area.
 
         In the binge of graduation, I started to look for future opportunities. I looked for coding jobs in Helsinki and Tallinn, jobs for mathematicians in the mapping industry, continuing at some university to pursue a PhD etc. I ended up in the last one as doors opened for me into Aalto University's Department of Signal Processing and Acoustics to research low earth orbit satellite communications.
 
@@ -154,7 +154,7 @@
         \end{equation}
 
 
-        Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a unit sphere.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+        Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$.  Following codes returns a scatter plot of Poisson points on the unit sphere.
 
 
 
@@ -263,7 +263,7 @@ References:
 
 
 
-\subsection{February – Controlling your Passwords with Pass}
+\subsection{February – Controlling Your Passwords with Pass}
 Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
 
 \begin{itemize}
@@ -352,7 +352,7 @@ References:
 
 
 \subsection{March – Signal Propagation in a City}
-Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that \htmladdnormallink{attenuates}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflects}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refracts}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffracts}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to Rayleigh fading as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow Rician fading statistics.
+Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that \htmladdnormallink{attenuates}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflects}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refracts}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffracts}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
 
 I animated a couple of GIFs to help us to perceive what is going on.
 The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal that is amplifying in some locations and degenerating in others. You can look for both Rician conditions (lower right) and Rayleigh conditions (lower left) in the image and see how the signal behaves under those conditions. The figure was obtained by solving the Helmholtz equation by finite element method.
@@ -557,7 +557,7 @@ References:
 
 \subsection{June – Why Does MIMO Work?}
 
-Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacity is can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy-consuming – this increases also interference to any other receivers should they transmit in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
+Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link (i.e. more gigabytes of internet speed). In principle, capacityof the link can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy-consuming – this increases also interference to any other receivers should they transmit in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
 
 But what is the secret? Here is how I came up with a simple argument based on stochastic geometry.
 Let us make some assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this “tin foil assumption”, but it is often reasonable). In addition, we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna can not see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. The aggregate signal in the receiver will be  \htmladdnormallink{Rayleigh faded}{\ray}. The city is full of mobile phones exchanging data with their base stations which are further handing the data to the receiving mobile phones base station and, on the other hand, causing interference to the other base station. We make a natural assumption that the interfering base stations are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} around the receiver.
@@ -736,14 +736,13 @@ References:
 
 FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate $F_s$ (Hz). By the \htmladdnormallink{Nyquist-Shannon sampling theorem}{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon_sampling_theorem}, sampling captures frequencies under $F_s/2$.
 
-Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal- and sample time vectors are given as input.
+Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
 
 \begin{verbatim}
 ##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
 
-function fftvector = plotfft(signal, sampletimes)
-  N = length(sampletimes); #Signal length.
-  Fs = (N - 1)/(sampletimes(N)) #Sampling rate. We have N - 1 "hops" in sampletimes(N) seconds.
+function fftvector = plotfft(signal, Fs)
+  N = length(signal); #Signal length.
   FFT =  fft(signal);
   if(mod(N,2) == 0) #Check if signal length is odd or even.
     FFT = 2*FFT(1 : N/2)/N;
@@ -766,8 +765,7 @@ end
 The following figure shows my track \htmladdnormallink{Tappimarssi}{https://soundcloud.com/ilari-angervuori/tappimarssi} in the frequency domain. The track was imported to Octave by
 
 \begin{verbatim}
-[signal, fs] = audioread('Tappimarssi.wav');
-sampletimes = 0 : 1/fs : 1/fs*(length(signal) - 1);
+[signal, Fs] = audioread('Tappimarssi.wav');
 \end{verbatim}
 
 
@@ -872,6 +870,37 @@ References:
   \item Steven W. Smith, ``Digital Signal Processing – A Practical Guide for Engineers and Scientists'', Elsevier Science, 2003.
 \end{itemize}
 
+
+\subsection{December – Contour Plot in Mathematica}
+
+A contour plot is a nice way to represent 2D data. Mathematica has great for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
+
+The following code returns a contour plot of the \htmladdnormallink{Riemann zeta function's}{https://en.wikipedia.org/wiki/Riemann_zeta_function} absolute value in an area in the complex plane; $(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$ Text fonts are enlarged from default. Only values under $\max = 2$ are plotted. Values above that are ``clipped'' away as white colour. By definition of the absolute value, values are always more than $0$, otherwise values under $0$ would get clipped away with black colour. Contours are drawn in intervals of $0.1$, as adjusted in the \textbb{Range} function.
+\begin{verbatim}
+max = 2;
+ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10}, 
+ PlotLegends -> BarLegend[{"Rainbow", {0, max}}], 
+ ColorFunction -> "Rainbow", ContourStyle -> Black, 
+ Contours -> Function[{min, max}, Range[min, max, 0.1]], 
+ PlotLabel -> 
+  Style["Absolute value of the Riemann zeta function", 16, Bold], 
+ BaseStyle -> {FontSize -> 15}, 
+ FrameLabel -> {Style["Real axis" , 16, Bold], 
+   Style["Imaginary axis", 16, Bold]}, PlotRange -> {0, max}, 
+ ClippingStyle -> {Black, White}]
+\end{verbatim}
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{zeta.png}
+\end{figure}
+
+
+
+References:
+\begin{itemize}
+  \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+\end{itemize}
 
 
 %\subsection{December – Quadrature Amplitude Modulation}
