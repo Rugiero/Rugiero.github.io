@@ -10,6 +10,10 @@ $key = q/(1);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img10.svg"
  ALT="$(1)$">|; 
 
+$key = q/(mu_{text{LN}},sigma_{text{LN}}),;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img50.svg"
+ ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$">|; 
+
 $key = q/(r,theta,varphi);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img5.svg"
  ALT="$(r,\theta,\varphi)$">|; 
@@ -66,6 +70,18 @@ $key = q/S(t);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img34.svg"
  ALT="$S(t)$">|; 
 
+$key = q/X;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img55.svg"
+ ALT="$X$">|; 
+
+$key = q/XapproxYsim;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img49.svg"
+ ALT="$X \approx Y \sim$">|; 
+
+$key = q/Xsimmathcal{N}(mu,sigma^2);MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img48.svg"
+ ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$">|; 
+
 $key = q/Y_j;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.48ex; vertical-align: -0.78ex; " SRC="|."$dir".q|img14.svg"
  ALT="$Y_j$">|; 
@@ -82,9 +98,18 @@ $key = q/delta(t);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img38.svg"
  ALT="$\delta(t)$">|; 
 
+$key = q/displaystyle(-mu_{text{LN}},sigma_{text{LN}}).;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img57.svg"
+ ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+$">|; 
+
 $key = q/displaystyle(x,y)mapsto(1,x,sin^{-1}(y)).;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.83ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img4.svg"
  ALT="$\displaystyle (x,y) \mapsto (1,x,\sin^{-1}(y)) .$">|; 
+
+$key = q/displaystyle1slashXapprox1slashYsim;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img56.svg"
+ ALT="$\displaystyle 1/X \approx 1/Y \sim$">|; 
 
 $key = q/displaystyle=expleft[-int_{0}^{infty}left(1-exp[-f(y)]right)sqrt{frac{2}{pi}}e^{-y^2}Ndyright],(1);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 7.17ex; vertical-align: -3.02ex; " SRC="|."$dir".q|img28.svg"
@@ -146,6 +171,14 @@ $key = q/displaystylemathcal{L}_{tau}(f);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img17.svg"
  ALT="$\displaystyle \mathcal{L}_{\tau}(f)$">|; 
 
+$key = q/displaystylemu=expleft(mu_{text{LN}}+frac{sigma_{text{LN}}^2}{2}right);MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 5.88ex; vertical-align: -2.32ex; " SRC="|."$dir".q|img51.svg"
+ ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">|; 
+
+$key = q/displaystylesigma=(exp(sigma_{text{LN}}^2)-1)exp(2mu_{text{LN}}+sigma_{text{LN}}^2).;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img52.svg"
+ ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">|; 
+
 $key = q/displaystyletextbf{P}[;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img7.svg"
  ALT="$\displaystyle \textbf{P}[$">|; 
@@ -175,9 +208,17 @@ $key = q/max=2;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img46.svg"
  ALT="$\max = 2$">|; 
 
+$key = q/mu_{text{LN}};MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="|."$dir".q|img53.svg"
+ ALT="$\mu_{\text{LN}}$">|; 
+
 $key = q/r;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img6.svg"
  ALT="$r$">|; 
+
+$key = q/sigma_{text{LN}};MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="|."$dir".q|img54.svg"
+ ALT="$\sigma_{\text{LN}}$">|; 
 
 $key = q/sqrt{frac{2}{pi}}e^{-x^2}N.;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 4.49ex; vertical-align: -1.52ex; " SRC="|."$dir".q|img29.svg"

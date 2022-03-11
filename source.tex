@@ -70,7 +70,7 @@
 
     \date
         {
-          {Last update 04.01.2022}\\
+          {Last update 11.03.2022}\\
         }
 
         \begin{center}
@@ -899,19 +899,38 @@ ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10},
 
 References:
 \begin{itemize}
-  \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+\item Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
 \end{itemize}
+
 
 \section{Blog posts 2022}
 
 
-\subsection{January – Inverse of a Gaussian Variable Approaches a Gaussian Variable}
+\subsection{January – Inverse of a Gaussian Variable}
 
-If $Y = p/X,$ where $X \sim N(\mu, \sigma)$, then $Y \sim N(p/\mu, \sigma p/\mu^2 )$, when $ p \rightarrow \infty.$
+There is quite a pile of literature on the subject of the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter).
 
-\begin{align*}
-& \left| e^{-0.5(x - p/\mu)^2} - \frac{e^{-0.5(1/x-\mu)^2}}{x^2}\right|
-\end{align*}
+I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have not worked out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations). 
+
+First, approximate the Gaussian distributed variable $X \sim \mathcal{N}(\mu, \sigma^2)$ by a log-normally distributed variable $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$ with corresponding mean and variance, i.e.
+$$\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$$ and
+$$\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$$ We leave the solving of $\mu_{\text{LN}}$ and $\sigma_{\text{LN}}$ as an easy exercise for the reader.
+
+
+Using the theory of log-normal distribution, the inverse of $X$ is now given by
+$$
+1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+$$
+
+That's it!
+
+
+References:
+\begin{itemize}
+\item \htmladdnormallink{Log-normal distribution}{https://en.wikipedia.org/wiki/Log-normal_distribution}
+\item  Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+\end{itemize}
 
 
 
