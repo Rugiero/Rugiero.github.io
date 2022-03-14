@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>February – Voronoi Tesselation on a Sphere</TITLE>
+<META NAME="description" CONTENT="February – Voronoi Tesselation on a Sphere">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,49 +15,100 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node18.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="next" HREF="node21.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="source.html">
+ HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node18.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node19.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html170"
+<A ID="tex2html175"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node21.html">About this document ...</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node18.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node19.html">January – Inverse of</A>
- &nbsp; <B>  <A ID="tex2html171"
+ &nbsp; <B>  <A ID="tex2html176"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00050000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-  <B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
+<H2><A ID="SECTION00042000000000000000">
+February – Voronoi Tesselation on a Sphere</A>
+</H2>
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html78"
-  HREF="../source.tex">source.tex</A></kbd>
+Voronoi tessellation consists neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by an area that consists of locations that are more close to the chosen cell than any other cell. In addition to the artistic value, <A ID="tex2html78"
+  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, have applications e.g. in wireless communications (among the million other things). 
+
 <P>
-The translation was initiated on 2022-03-11
+
+<DIV class="CENTER">
+  <IMG STYLE=""
+ SRC="./voronoionsphere.png"
+ ALT="Image voronoionsphere">
+
+</DIV>
+
+<P>
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly found in Github. 
+
+<P>
+<PRE>
+%%Create Voronoi tesselation around Poisson points on a Sphere.
+
+clear all;
+close all;
+
+addpath(fullfile(cd,'rbfsphere'));
+density = 100;
+X = poissononsphere(density)'; %Poisson points in spherical coordinates.
+voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
+
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+end
+</PRE>
+
+<P>
+References:
+
+<UL>
+<LI><A ID="tex2html79"
+  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
+</LI>
+</UL>
+
+<P>
 <BR><HR>
 
 </BODY>
