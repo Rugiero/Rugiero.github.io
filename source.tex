@@ -909,7 +909,7 @@ References:
 
 \subsection{January – Inverse of a Gaussian Variable}
 
-There is quite a pile of literature on the subject of the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution behaves badly; the mean and variance does not generally exist.
+There is quite a pile of literature on the subject of the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution are ill-behaved; the mean and variance does not generally exist.
 
 I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have not worked out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations). 
 
@@ -936,14 +936,14 @@ References:
 
 \subsection{February – Voronoi Tesselation on a Sphere}
 
-Voronoi tessellation consists neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by an area that consists of locations that are more close to the chosen cell than any other cell. In addition to the artistic value, \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, have applications e.g. in wireless communications (among the million other things). 
+Voronoi tessellation consists neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, have applications in wireless communications (among the million other things). 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{voronoionsphere.png}
 \end{figure}
 
 
-The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly found in Github. 
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
 
 \begin{verbatim}
 
