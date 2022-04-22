@@ -1,63 +1,118 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>March – Plotting in Mathematica</TITLE>
+<META NAME="description" CONTENT="March – Plotting in Mathematica">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node18.html">
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node18.html">
+<LINK REL="next" HREF="node22.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
-<A
- HREF="source.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node20.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html177"
+<A NAME="tex2html393"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html389"
+  HREF="node18.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html383"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html391"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="cv.pdf"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
-<B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
-<B> Previous:</B> <A
- HREF="node20.html">February – Voronoi Tesselation</A>
- &nbsp; <B>  <A ID="tex2html178"
+<B> Next:</B> <A NAME="tex2html394"
+  HREF="node22.html">April – Satellite Communication</A>
+<B> Up:</B> <A NAME="tex2html390"
+  HREF="node18.html">Blog posts 2022</A>
+<B> Previous:</B> <A NAME="tex2html384"
+  HREF="node20.html">February – Voronoi Tesselation</A>
+ &nbsp; <B>  <A NAME="tex2html392"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00050000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-  <B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
+<H2><A NAME="SECTION00043000000000000000">
+March – Plotting in Mathematica</A>
+</H2>
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html80"
-  HREF="../source.tex">source.tex</A></kbd>
+Here's a plot for Mathematica that you can use as a template to plot ListLinePlot and Plot in the same figure. Font sizes are increased to be well visible in a research article. 
+
 <P>
-The translation was initiated on 2022-03-15
+<PRE>
+xmax = 150;
+ymax = 0.025;
+Show[
+ (*Histogram[res1,Automatic,"PDF"],*)
+ 
+ ListLinePlot[{Table[{t, 
+     PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+      t]}, {t, 0, xmax, xmax/10}],
+   Table[{t, 
+     PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][
+      t]}, {t, 0, xmax, xmax/10}], 
+   Table[{t, 
+     PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][
+      t]}, {t, 0, xmax, xmax/10}]}, 
+  PlotRange -&gt; {{0, xmax}, {0, ymax}},
+  PlotLabel -&gt; PDF,
+  AxesLabel -&gt; {Style["SIR", 16, Bold], Style["", 16, Bold]}, 
+  PlotLegends -&gt; Placed[{"Sim 1", "Sim 2", "Sim 3"}, Right], 
+  PlotMarkers -&gt; {Automatic, 10}, BaseStyle -&gt; {FontSize -&gt; 15}],
+ Plot[
+  {
+   PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+    t],
+   PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][t],
+   PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][t]
+   }, {t, 0.01, xmax}, PlotStyle -&gt; Thick, 
+  PlotLegends -&gt; 
+   Placed[{"\[CapitalGamma](3.7, 16.6)", "\[CapitalGamma](6.5, 8.6)", 
+     "\[CapitalGamma](3.3, 16.7)"}, Right]]
+ ]
+</PRE>
+
+<P>
+Output:
+
+<DIV ALIGN="CENTER">
+  <IMG
+  WIDTH="727" HEIGHT="396" ALIGN="BOTTOM" BORDER="0"
+ SRC="./listlineplot.png"
+ ALT="Image listlineplot">
+
+</DIV>
+
+<P>
+References:
+
+<UL>
+<LI><A NAME="tex2html80"
+  HREF="https://reference.wolfram.com/language/guide/HypothesisTests.html">reference.wolfram.com</A>
+</LI>
+</UL>
+
+<P>
 <BR><HR>
 
 </BODY>

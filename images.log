@@ -1,175 +1,74 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  15 MAR 2022 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2021.4.30)  22 APR 2022 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./images.tex
 (./images.tex
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 38 language(s) loaded.
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-) (/usr/share/texmf/tex/latex/html/html.sty (/usr/share/texlive/texmf-dist/tex/
-latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-) (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
-) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-)
-\@linkdim=\dimen135
-\Hy@linkcounter=\count175
-\Hy@pagecounter=\count176
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count177
-\pdfmajorversion=\count178
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count179
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen136
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
-))
-\Fld@menulength=\count180
-\Field@Width=\dimen137
-\Fld@charsize=\dimen138
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
-(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-)
-\Hy@abspage=\count181
-\c@Item=\count182
-\c@Hfootnote=\count183
-)
-Package hyperref Info: Driver: hpdftex.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
-(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-)
-\Fld@listcount=\count184
-\c@bookmark@seq@number=\count185
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
-)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
-)
-\Hy@SectionHShift=\skip49
-)
+) (/usr/share/texmf/tex/latex/html/html.sty
 Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
 
-\c@lpart=\count186
-\c@lchapter=\count187
-\c@chapter=\count188
-\c@lsection=\count189
-\c@lsubsection=\count190
-\c@lsubsubsection=\count191
-\c@lparagraph=\count192
-\c@lsubparagraph=\count193
-\c@lsubsubparagraph=\count194
+\c@lpart=\count87
+\c@lchapter=\count88
+\c@chapter=\count89
+\c@lsection=\count90
+\c@lsubsection=\count91
+\c@lsubsubsection=\count92
+\c@lparagraph=\count93
+\c@lsubparagraph=\count94
+\c@lsubsubparagraph=\count95
 \ptrfile=\write3
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 ) (/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.sty
 This is `epsf.tex' v2.7.4 <14 February 2011>
-\epsffilein=\read2
-\epsfframemargin=\dimen139
-\epsfframethickness=\dimen140
-\epsfrsize=\dimen141
-\epsftmp=\dimen142
-\epsftsize=\dimen143
-\epsfxsize=\dimen144
-\epsfysize=\dimen145
-\pspoints=\dimen146
+\epsffilein=\read1
+\epsfframemargin=\dimen103
+\epsfframethickness=\dimen104
+\epsfrsize=\dimen105
+\epsftmp=\dimen106
+\epsftsize=\dimen107
+\epsfxsize=\dimen108
+\epsfysize=\dimen109
+\pspoints=\dimen110
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+Package graphics Info: Driver file: dvips.def on input line 99.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
-\Gin@req@height=\dimen147
-\Gin@req@width=\dimen148
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -177,110 +76,109 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip50
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen149
+\ex@=\dimen113
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen150
+\pmbraise@=\dimen114
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count195
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count196
-\leftroot@=\count197
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count198
-\DOTSCASE@=\count199
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen151
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count266
-\c@MaxMatrixCols=\count267
-\dotsspace@=\muskip17
-\c@parentequation=\count268
-\dspbrk@lvl=\count269
+\inf@bad=\count96
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count97
+\leftroot@=\count98
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count99
+\DOTSCASE@=\count100
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
+\dotsspace@=\muskip10
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
 \tag@help=\toks17
-\row@=\count270
-\column@=\count271
-\maxfields@=\count272
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
 \andhelp@=\toks18
-\eqnshift@=\dimen152
-\alignsep@=\dimen153
-\tagshift@=\dimen154
-\tagwidth@=\dimen155
-\totwidth@=\dimen156
-\lineht@=\dimen157
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
 \@envbody=\toks19
-\multlinegap=\skip51
-\multlinetaggap=\skip52
+\multlinegap=\skip44
+\multlinetaggap=\skip45
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 ) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/empheq.sty
 Package: empheq 2017/03/31 v2.15 Emphasizing equations
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 ) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count273
-\calc@Bcount=\count274
-\calc@Adimen=\dimen158
-\calc@Bdimen=\dimen159
-\calc@Askip=\skip53
-\calc@Bskip=\skip54
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count108
+\calc@Bcount=\count109
+\calc@Adimen=\dimen122
+\calc@Bdimen=\dimen123
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count275
-\calc@Cskip=\skip55
+\calc@Ccount=\count110
+\calc@Cskip=\skip48
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count276
-\l_MT_multwidth_dim=\dimen160
-\origjot=\skip56
-\l_MT_shortvdotswithinadjustabove_dim=\dimen161
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen162
-\l_MT_above_intertext_sep=\dimen163
-\l_MT_below_intertext_sep=\dimen164
-\l_MT_above_shortintertext_sep=\dimen165
-\l_MT_below_shortintertext_sep=\dimen166
+\g_MT_multlinerow_int=\count111
+\l_MT_multwidth_dim=\dimen124
+\origjot=\skip49
+\l_MT_shortvdotswithinadjustabove_dim=\dimen125
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen126
+\l_MT_above_intertext_sep=\dimen127
+\l_MT_below_intertext_sep=\dimen128
+\l_MT_above_shortintertext_sep=\dimen129
+\l_MT_below_shortintertext_sep=\dimen130
 )
-\l_EQ_equationtype_int=\count277
-\l_EQ_alignmentmode_int=\count278
-\l_EQ_totalwidth_dim=\dimen167
-\l_EQ_displaywidth_dim=\dimen168
-\l_EQ_temp_linewidth_dim=\dimen169
-\EmphEqdelimitershortfall=\dimen170
-\EmphEqdelimiterfactor=\count279
-\g_EQ_toptag_height_dim=\dimen171
-\g_EQ_bottomtag_depth_dim=\dimen172
-\g_EQ_toprow_height_dim=\dimen173
-\g_EQ_bottomrow_depth_dim=\dimen174
-\g_EQ_widesttag_dim=\dimen175
-\EQ_mathdisplay_box=\box47
-\EQ_tag_box=\box48
-\g_EQ_temprow_int=\count280
+\l_EQ_equationtype_int=\count112
+\l_EQ_alignmentmode_int=\count113
+\l_EQ_totalwidth_dim=\dimen131
+\l_EQ_displaywidth_dim=\dimen132
+\l_EQ_temp_linewidth_dim=\dimen133
+\EmphEqdelimitershortfall=\dimen134
+\EmphEqdelimiterfactor=\count114
+\g_EQ_toptag_height_dim=\dimen135
+\g_EQ_bottomtag_depth_dim=\dimen136
+\g_EQ_toprow_height_dim=\dimen137
+\g_EQ_bottomrow_depth_dim=\dimen138
+\g_EQ_widesttag_dim=\dimen139
+\EQ_mathdisplay_box=\box28
+\EQ_tag_box=\box29
+\g_EQ_temprow_int=\count115
 )
 \@indexfile=\write4
 \openout4 = `images.idx'.
@@ -291,9 +189,8 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: dvips.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -302,92 +199,30 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2018/08/11 v1.3c Input encoding file
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
 )
-\sizebox=\box49
+\sizebox=\box30
 \lthtmlwrite=\write5
-(/usr/share/texmf/tex/latex/preview/preview.sty
-Package: preview 2017/04/24 11.91 (AUCTeX/preview-latex)
-(/usr/share/texlive/texmf-dist/tex/generic/luatex85/luatex85.sty
-Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
-) (/usr/share/texmf/tex/latex/preview/prtightpage.def
-\PreviewBorder=\dimen176
-)
-\pr@snippet=\count281
-\pr@box=\box50
-\pr@output=\toks23
-)
-\lthtmlPageBox=\box51
-\lthtmlCropMarkHeight=\dimen177
-\lthtmlCropMarkDepth=\dimen178
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count282
-\l__pdf_internal_box=\box52
-) (./images.aux)
+(./images.aux)
 \openout1 = `images.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-\AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring OFF on input line 124.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
-(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-)
-\c@section@level=\count283
-)
-LaTeX Info: Redefining \ref on input line 124.
-LaTeX Info: Redefining \pageref on input line 124.
-LaTeX Info: Redefining \nameref on input line 124.
-(./images.out) (./images.out)
-\@outlinefile=\write6
-\openout6 = `images.out'.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count284
-\scratchdimen=\dimen179
-\scratchbox=\box54
-\nofMPsegments=\count285
-\nofMParguments=\count286
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count287
-\MPscratchDim=\dimen180
-\MPnumerator=\count288
-\makeMPintoPDFobject=\count289
-\everyMPtoPDFconversion=\toks25
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-LaTeX Info: Redefining \[ on input line 124.
-LaTeX Info: Redefining \] on input line 124.
-Preview: Fontsize 10pt
-Preview: PDFoutput 1
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
+LaTeX Font Info:    ... okay on input line 140.
+\Hy@linkcounter=\count116
+LaTeX Info: Redefining \[ on input line 140.
+LaTeX Info: Redefining \] on input line 140.
 
 latex2htmlLength hsize=349.0pt
 
@@ -411,352 +246,395 @@ latex2htmlLength oddsidemargin=62.0pt
 
 latex2htmlLength evensidemargin=62.0pt
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 163
+
+LaTeX Warning: File `sin.gif' not found on input line 171.
+
+
+! LaTeX Error: File `sin.gif' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \includegraphics[width=\linewidth]{sin.gif}
+                                                 %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in sin.gif (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \includegraphics[width=\linewidth]{sin.gif}
+                                                 %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: sin.gif Graphic file (type eps)
+<sin.gif>
+l2hSize :tex2html_wrap1134:349.09615pt::0.0pt::349.0pt.
+[1
+
+
+
+]
+
+LaTeX Warning: File `fadedsinesignal.png' not found on input line 179.
+
+
+! LaTeX Error: File `fadedsinesignal.png' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179 ...egraphics[width=1cm]{fadedsinesignal.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in fadedsinesignal.png (no Boun
+dingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179 ...egraphics[width=1cm]{fadedsinesignal.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: fadedsinesignal.png Graphic file (type eps)
+<fadedsinesignal.png>
+l2hSize :tex2html_wrap1143:28.4521pt::0.0pt::349.0pt.
+[2
+
+
+]
+
+LaTeX Warning: File `MIMO.png' not found on input line 186.
+
+
+! LaTeX Error: File `MIMO.png' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.186 \includegraphics[width=\linewidth]{MIMO.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in MIMO.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.186 \includegraphics[width=\linewidth]{MIMO.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: MIMO.png Graphic file (type eps)
+<MIMO.png>
+l2hSize :tex2html_wrap1164:349.09615pt::0.0pt::349.0pt.
+[3
+
+
+]
+
+LaTeX Warning: File `gifu.gif' not found on input line 193.
+
+
+! LaTeX Error: File `gifu.gif' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.193 \includegraphics[width=\linewidth]{gifu.gif}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in gifu.gif (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.193 \includegraphics[width=\linewidth]{gifu.gif}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: gifu.gif Graphic file (type eps)
+<gifu.gif>
+l2hSize :tex2html_wrap1169:349.09615pt::0.0pt::349.0pt.
+[4
+
+
+]
+
+LaTeX Warning: File `highfreq.gif' not found on input line 200.
+
+
+! LaTeX Error: File `highfreq.gif' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200 ...egraphics[width=\linewidth]{highfreq.gif}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in highfreq.gif (no BoundingBox
+).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200 ...egraphics[width=\linewidth]{highfreq.gif}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: highfreq.gif Graphic file (type eps)
+<highfreq.gif>
+l2hSize :tex2html_wrap1174:349.09615pt::0.0pt::349.0pt.
+[5
+
+
+]
+
+LaTeX Warning: File `lowfreq.gif' not found on input line 206.
+
+
+! LaTeX Error: File `lowfreq.gif' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.206 ...degraphics[width=\linewidth]{lowfreq.gif}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in lowfreq.gif (no BoundingBox)
 .
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 163
-.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 
-:tex2html_wrap_inline1057:lthtmlCropMarkHeight:=289.22223pt
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.206 ...degraphics[width=\linewidth]{lowfreq.gif}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1057:lthtmlCropMarkDepth:=278.22221pt:1ex:=4.30554pt
-Preview: Tightpage -32891 -32891 32891 32891
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+File: lowfreq.gif Graphic file (type eps)
+<lowfreq.gif>
+l2hSize :tex2html_wrap1178:349.09615pt::0.0pt::349.0pt.
+[6
 
-:tex2html_wrap_inline1066:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline1066:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[2]
+]
 
-:tex2html_wrap_inline1068:lthtmlCropMarkHeight:=12.83331pt
+LaTeX Warning: File `tappimarssi.jpg' not found on input line 214.
 
-:tex2html_wrap_inline1068:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[3]
 
-:tex2html_wrap_indisplay1070:lthtmlCropMarkHeight:=14.7175pt
+! LaTeX Error: File `tappimarssi.jpg' not found.
 
-:tex2html_wrap_indisplay1070:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[4]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214 ...aphics[width=\linewidth]{tappimarssi.jpg}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1072:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline1072:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[5]
+! LaTeX Error: Cannot determine size of graphic in tappimarssi.jpg (no Bounding
+Box).
 
-:tex2html_wrap_inline1074:lthtmlCropMarkHeight:=10.30554pt
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214 ...aphics[width=\linewidth]{tappimarssi.jpg}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1074:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[6]
+File: tappimarssi.jpg Graphic file (type eps)
+<tappimarssi.jpg>
+l2hSize :tex2html_wrap1223:349.09615pt::0.0pt::349.0pt.
+[7
 
-:tex2html_wrap_indisplay1096:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_indisplay1096:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[7]
+]
 
-:tex2html_wrap_indisplay1097:lthtmlCropMarkHeight:=19.04366pt
+LaTeX Warning: File `signal.jpg' not found on input line 221.
 
-:tex2html_wrap_indisplay1097:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[8]
 
-:tex2html_wrap_inline1099:lthtmlCropMarkHeight:=12.83331pt
+! LaTeX Error: File `signal.jpg' not found.
 
-:tex2html_wrap_inline1099:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[9]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ...udegraphics[width=\linewidth]{signal.jpg}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1101:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline1101:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[10]
+! LaTeX Error: Cannot determine size of graphic in signal.jpg (no BoundingBox).
 
-:tex2html_wrap_indisplay1104:lthtmlCropMarkHeight:=23.41476pt
 
-:tex2html_wrap_indisplay1104:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
-[11]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ...udegraphics[width=\linewidth]{signal.jpg}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1106:lthtmlCropMarkHeight:=12.83331pt
+File: signal.jpg Graphic file (type eps)
+<signal.jpg>
+l2hSize :tex2html_wrap1254:349.09615pt::0.0pt::349.0pt.
+[8
 
-:tex2html_wrap_inline1106:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[12]
 
-:tex2html_wrap_inline1127:lthtmlCropMarkHeight:=13.5pt
+]
 
-:tex2html_wrap_inline1127:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[13]
+LaTeX Warning: File `filtered.jpg' not found on input line 227.
 
-:tex2html_wrap_inline1129:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_inline1129:lthtmlCropMarkDepth:=2.86108pt:1ex:=4.30554pt
-[14]
+! LaTeX Error: File `filtered.jpg' not found.
 
-:tex2html_wrap_inline1131:lthtmlCropMarkHeight:=13.5pt
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 ...egraphics[width=\linewidth]{filtered.jpg}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1131:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[15]
 
-:tex2html_wrap_inline1133:lthtmlCropMarkHeight:=17.82341pt
+! LaTeX Error: Cannot determine size of graphic in filtered.jpg (no BoundingBox
+).
 
-:tex2html_wrap_inline1133:lthtmlCropMarkDepth:=5.43994pt:1ex:=4.30554pt
-[16]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 ...egraphics[width=\linewidth]{filtered.jpg}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_indisplay1134:lthtmlCropMarkHeight:=13.5pt
+File: filtered.jpg Graphic file (type eps)
+<filtered.jpg>
+l2hSize :tex2html_wrap1258:349.09615pt::0.0pt::349.0pt.
+[9
 
-:tex2html_wrap_indisplay1134:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[17]
 
-:tex2html_wrap_indisplay1135:lthtmlCropMarkHeight:=23.50014pt
+]
 
-:tex2html_wrap_indisplay1135:lthtmlCropMarkDepth:=12.79865pt:1ex:=4.30554pt
-[18]
+LaTeX Warning: File `zeta.png' not found on input line 234.
 
-:tex2html_wrap_indisplay1136:lthtmlCropMarkHeight:=23.50014pt
 
-:tex2html_wrap_indisplay1136:lthtmlCropMarkDepth:=12.79865pt:1ex:=4.30554pt
-[19]
+! LaTeX Error: File `zeta.png' not found.
 
-:tex2html_wrap_indisplay1137:lthtmlCropMarkHeight:=21.0418pt
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 \includegraphics[width=\linewidth]{zeta.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_indisplay1137:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
-[20]
 
-:tex2html_wrap_indisplay1138:lthtmlCropMarkHeight:=23.50014pt
+! LaTeX Error: Cannot determine size of graphic in zeta.png (no BoundingBox).
 
-:tex2html_wrap_indisplay1138:lthtmlCropMarkDepth:=12.79865pt:1ex:=4.30554pt
-[21]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 \includegraphics[width=\linewidth]{zeta.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_inline1140:lthtmlCropMarkHeight:=13.5pt
+File: zeta.png Graphic file (type eps)
+<zeta.png>
+l2hSize :tex2html_wrap1268:349.09615pt::0.0pt::349.0pt.
+[10
 
-:tex2html_wrap_inline1140:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[22]
 
-:tex2html_wrap_inline1142:lthtmlCropMarkHeight:=18.19508pt
+]
 
-:tex2html_wrap_inline1142:lthtmlCropMarkDepth:=6.50009pt:1ex:=4.30554pt
-[23]
+LaTeX Warning: File `voronoionsphere.png' not found on input line 243.
 
-:tex2html_wrap_indisplay1143:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_indisplay1143:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[24]
+! LaTeX Error: File `voronoionsphere.png' not found.
 
-:tex2html_wrap_indisplay1144:lthtmlCropMarkHeight:=23.87654pt
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.243 ...cs[width=\linewidth]{voronoionsphere.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_indisplay1144:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
-[25]
 
-:tex2html_wrap_indisplay1145:lthtmlCropMarkHeight:=23.50014pt
+! LaTeX Error: Cannot determine size of graphic in voronoionsphere.png (no Boun
+dingBox).
 
-:tex2html_wrap_indisplay1145:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
-[26]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.243 ...cs[width=\linewidth]{voronoionsphere.png}
+                                                  %
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-:tex2html_wrap_indisplay1146:lthtmlCropMarkHeight:=23.50014pt
+File: voronoionsphere.png Graphic file (type eps)
+<voronoionsphere.png>
+l2hSize :tex2html_wrap1290:349.09615pt::0.0pt::349.0pt.
+[11
 
-:tex2html_wrap_indisplay1146:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
-[27]
 
-:tex2html_wrap_indisplay1147:lthtmlCropMarkHeight:=23.50014pt
-
-:tex2html_wrap_indisplay1147:lthtmlCropMarkDepth:=12.50015pt:1ex:=4.30554pt
-[28]
-
-:tex2html_wrap_inline1155:lthtmlCropMarkHeight:=18.35005pt
-
-:tex2html_wrap_inline1155:lthtmlCropMarkDepth:=6.0501pt:1ex:=4.30554pt
-[29]
-
-:tex2html_wrap_inline1159:lthtmlCropMarkHeight:=12.44444pt
-
-:tex2html_wrap_inline1159:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[30]
-Package epstopdf Info: Source file: <spread.eps>
-(epstopdf)                    date: 2021-11-15 15:40:38
-(epstopdf)                    size: 2024862 bytes
-(epstopdf)             Output file: <spread-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-15 15:53:26
-(epstopdf)                    size: 413397 bytes
-(epstopdf)             Command: <repstopdf --outfile=spread-eps-converted-to.pd
-f spread.eps>
-(epstopdf)             \includegraphics on input line 355.
-Package epstopdf Info: Output file is already uptodate.
-<spread-eps-converted-to.pdf, id=112, 578.16pt x 433.62pt>
-File: spread-eps-converted-to.pdf Graphic file (type pdf)
-<use spread-eps-converted-to.pdf>
-Package pdftex.def Info: spread-eps-converted-to.pdf  used on input line 355.
-(pdftex.def)             Requested size: 349.0pt x 261.74873pt.
-
-:tex2html_wrap1163:lthtmlCropMarkHeight:=267.74873pt
-
-:tex2html_wrap1163:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[31 </m/home/home3/38/jangervu/unix/testingHTML/spread-eps-converted-to.pdf>]
-
-:tex2html_wrap_inline1166:lthtmlCropMarkHeight:=12.83331pt
-
-:tex2html_wrap_inline1166:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
-[32]
-
-:tex2html_wrap_inline1168:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1168:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[33]
-
-:tex2html_wrap_inline1171:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1171:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[34]
-
-:tex2html_wrap_inline1173:lthtmlCropMarkHeight:=16.09998pt
-
-:tex2html_wrap_inline1173:lthtmlCropMarkDepth:=3.44841pt:1ex:=4.30554pt
-[35]
-
-:tex2html_wrap_inline1177:lthtmlCropMarkHeight:=12.83331pt
-
-:tex2html_wrap_inline1177:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
-[36]
-
-:tex2html_wrap_inline1179:lthtmlCropMarkHeight:=16.09998pt
-
-:tex2html_wrap_inline1179:lthtmlCropMarkDepth:=3.44841pt:1ex:=4.30554pt
-[37]
-
-:tex2html_wrap_inline1181:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1181:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[38]
-
-:tex2html_wrap_inline1183:lthtmlCropMarkHeight:=12.83331pt
-
-:tex2html_wrap_inline1183:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
-[39]
-
-:tex2html_wrap_indisplay1185:lthtmlCropMarkHeight:=23.59833pt
-
-:tex2html_wrap_indisplay1185:lthtmlCropMarkDepth:=6.85951pt:1ex:=4.30554pt
-[40]
-
-:tex2html_wrap_indisplay1187:lthtmlCropMarkHeight:=23.59833pt
-
-:tex2html_wrap_indisplay1187:lthtmlCropMarkDepth:=6.85951pt:1ex:=4.30554pt
-[41]
-
-:tex2html_wrap_inline1189:lthtmlCropMarkHeight:=12.94444pt
-
-:tex2html_wrap_inline1189:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
-[42]
-
-:tex2html_wrap_inline1191:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1191:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[43]
-
-:tex2html_wrap_inline1195:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1195:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[44]
-
-:tex2html_wrap_inline1204:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1204:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[45]
-
-:tex2html_wrap_inline1206:lthtmlCropMarkHeight:=12.44444pt
-
-:tex2html_wrap_inline1206:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[46]
-
-:tex2html_wrap_inline1210:lthtmlCropMarkHeight:=12.44444pt
-
-:tex2html_wrap_inline1210:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[47]
-
-:tex2html_wrap_inline1214:lthtmlCropMarkHeight:=14.14003pt
-
-:tex2html_wrap_inline1214:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[48]
-
-:tex2html_wrap_inline1216:lthtmlCropMarkHeight:=12.83331pt
-
-:tex2html_wrap_inline1216:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[49]
-
-:tex2html_wrap_inline1217:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_inline1217:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[50]
-
-:tex2html_wrap_indisplay1219:lthtmlCropMarkHeight:=20.9051pt
-
-:tex2html_wrap_indisplay1219:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
-[51]
-
-:tex2html_wrap_indisplay1221:lthtmlCropMarkHeight:=14.64003pt
-
-:tex2html_wrap_indisplay1221:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[52]
-
-:tex2html_wrap_inline1223:lthtmlCropMarkHeight:=10.30554pt
-
-:tex2html_wrap_inline1223:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
-[53]
-
-:tex2html_wrap_inline1225:lthtmlCropMarkHeight:=10.30554pt
-
-:tex2html_wrap_inline1225:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
-[54]
-
-:tex2html_wrap_inline1227:lthtmlCropMarkHeight:=12.83331pt
-
-:tex2html_wrap_inline1227:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[55]
-
-:tex2html_wrap_indisplay1229:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_indisplay1229:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[56]
-
-:tex2html_wrap_indisplay1230:lthtmlCropMarkHeight:=13.5pt
-
-:tex2html_wrap_indisplay1230:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[57]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 524.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 524.
-(./images.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 524.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 524.
-Package rerunfilecheck Info: File `images.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 524.
- ) 
+] (./images.aux) ) 
 Here is how much of TeX's memory you used:
- 8149 strings out of 481239
- 120211 string characters out of 5920376
- 394583 words of memory out of 5000000
- 23270 multiletter control sequences out of 15000+600000
- 534964 words of font info for 35 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 42i,8n,37p,906b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
->
-Output written on images.pdf (57 pages, 559269 bytes).
-PDF statistics:
- 252 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3257 strings out of 494171
+ 43706 string characters out of 6160122
+ 106901 words of memory out of 5000000
+ 6622 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 443 hyphenation exceptions out of 8191
+ 31i,5n,35p,308b,200s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on images.dvi (11 pages, 2520 bytes).
