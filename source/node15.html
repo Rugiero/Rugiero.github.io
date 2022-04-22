@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<HTML>
+<HEAD>
+<TITLE>October – Fast Fourier Transform in GNU Octave</TITLE>
+<META NAME="description" CONTENT="October – Fast Fourier Transform in GNU Octave">
+<META NAME="keywords" CONTENT="source">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html303"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html299"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html293"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html301"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  <A NAME="tex2html1"
+  HREF="cv.pdf"><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html304"
+  HREF="node16.html">November – Digital Filtering</A>
+<B> Up:</B> <A NAME="tex2html300"
+  HREF="node5.html">Blog posts 2021</A>
+<B> Previous:</B> <A NAME="tex2html294"
+  HREF="node14.html">September – The Universality</A>
+ &nbsp; <B>  <A NAME="tex2html302"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000310000000000000000">
+October – Fast Fourier Transform in GNU Octave</A>
+</H2>
+
+<P>
+<A NAME="tex2html62"
+  HREF="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast fourier transform</A>
+(FFT) is an algorithm that computes the <A NAME="tex2html63"
+  HREF="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</A>.
+
+<P>
+FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$F_s$"></SPAN> (Hz). By the <A NAME="tex2html64"
+  HREF="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon sampling theorem</A>, sampling captures frequencies under <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$F_s/2$"></SPAN>.
+
+<P>
+Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
+
+<P>
+<PRE>
+##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
+
+function fftvector = plotfft(signal, Fs)
+  N = length(signal); #Signal length.
+  FFT =  fft(signal);
+  if(mod(N,2) == 0) #Check if signal length is odd or even.
+    FFT = 2*FFT(1 : N/2)/N;
+    f = Fs*(0 : (N - 1)/2)/(N - 1); 
+  else
+    FFT = 2*FFT(1 : (N - 1)/2)/N;
+    f = Fs*(0 : (N - 2)/2)/(N - 1);
+  end  
+  fftvector = [f; FFT];
+  
+  figure(1)
+  plot(f, abs(FFT));
+  title('Fast fourier transform')
+  xlabel('Frequency (Hz)')
+  print  plot.jpg
+end
+</PRE>
+
+<P>
+The following figure shows my track <A NAME="tex2html65"
+  HREF="https://soundcloud.com/ilari-angervuori/tappimarssi">Tappimarssi</A>
+in the frequency domain. The track was imported to Octave by
+
+<P>
+<PRE>
+[signal, Fs] = audioread('Tappimarssi.wav');
+</PRE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+    <IMG
+  WIDTH="654" HEIGHT="491" ALIGN="BOTTOM" BORDER="0"
+ SRC="./tappimarssi.jpg"
+ ALT="Image tappimarssi">
+
+</DIV>
+
+<P>
+
+<UL>
+<LI><A NAME="tex2html66"
+  HREF="https://octave.org/doc/v5.2.0/Signal-Processing.html">Octave Documentation – Signal Processing</A>
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>
