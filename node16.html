@@ -66,32 +66,32 @@ of a low-pass filter. That is, the <A NAME="tex2html71"
   HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
 of a signal <SPAN CLASS="MATH"><IMG
  WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img41.png"
+ SRC="img34.png"
  ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
  $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
  -->
 <SPAN CLASS="MATH"><IMG
  WIDTH="101" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
- SRC="img42.png"
+ SRC="img35.png"
  ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG
  WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img41.png"
+ SRC="img34.png"
  ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG
  WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img43.png"
+ SRC="img36.png"
  ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
  $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
  -->
 <SPAN CLASS="MATH"><IMG
  WIDTH="152" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
- SRC="img44.png"
+ SRC="img37.png"
  ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG
  WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img45.png"
+ SRC="img38.png"
  ALT="$\delta(t)$"></SPAN> represents the <A NAME="tex2html72"
   HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG
  WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img46.png"
+ SRC="img39.png"
  ALT="$B_H$"></SPAN>.
 
 <P>
@@ -107,7 +107,7 @@ Heuristically, we can right away derive the discrete versions of the impulse res
 <DIV ALIGN="CENTER" CLASS="mathdisplay">
 <IMG
  WIDTH="149" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
- SRC="img47.png"
+ SRC="img40.png"
  ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
@@ -123,7 +123,7 @@ i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 <DIV ALIGN="CENTER" CLASS="mathdisplay">
 <IMG
  WIDTH="162" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
- SRC="img48.png"
+ SRC="img41.png"
  ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
@@ -131,13 +131,13 @@ $">
 <P>
 for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img49.png"
+ SRC="img42.png"
  ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
  $i \mapsto \delta[i] := \delta_{0i}$
  -->
 <SPAN CLASS="MATH"><IMG
  WIDTH="100" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img50.png"
+ SRC="img43.png"
  ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A NAME="tex2html73"
   HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
 
@@ -198,9 +198,12 @@ Signal of form <!-- MATH
  -->
 <SPAN CLASS="MATH"><IMG
  WIDTH="143" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img51.png"
+ SRC="img44.png"
  ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
-<TR><TD></TD></TR>
+<TR><TD><IMG
+  WIDTH="500" HEIGHT="375" ALIGN="BOTTOM" BORDER="0"
+ SRC="./signal.jpg"
+ ALT="Image signal"></TD></TR>
 </TABLE>
 </DIV>
 
@@ -210,7 +213,10 @@ Signal of form <!-- MATH
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 The same signal with the first term filtered away</CAPTION>
-<TR><TD></TD></TR>
+<TR><TD><IMG
+  WIDTH="500" HEIGHT="375" ALIGN="BOTTOM" BORDER="0"
+ SRC="./filtered.jpg"
+ ALT="Image filtered"></TD></TR>
 </TABLE>
 </DIV>
 
