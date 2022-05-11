@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>April – Satellite Communication Toolbox in Matlab</TITLE>
-<META NAME="description" CONTENT="April – Satellite Communication Toolbox in Matlab">
+<TITLE>March – Plotting in Mathematica</TITLE>
+<META NAME="description" CONTENT="March – Plotting in Mathematica">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,6 +15,7 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node23.html">
 <LINK REL="previous" HREF="node21.html">
 <LINK REL="next" HREF="node23.html">
 </HEAD>
@@ -26,88 +27,68 @@
  HREF="node23.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node18.html">
+ HREF="node19.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node21.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html188"
+<A ID="tex2html194"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node23.html">About this document ...</A>
+ HREF="node23.html">April – Satellite Communication</A>
 <B> Up:</B> <A
- HREF="node18.html">Blog posts 2022</A>
+ HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node21.html">March – Plotting in</A>
- &nbsp; <B>  <A ID="tex2html189"
+ HREF="node21.html">February – Voronoi Tesselation</A>
+ &nbsp; <B>  <A ID="tex2html195"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00044000000000000000">
-April – Satellite Communication Toolbox in Matlab</A>
+<H2><A ID="SECTION00043000000000000000">
+March – Plotting in Mathematica</A>
 </H2>
 
 <P>
-Matlab's Satellite Communication Toolbox can be used to study and visualize satellite networks. The following code places a terrestrial station in Otaniemi, and a LEO satellite in <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img59.svg"
- ALT="$2000$"></SPAN> km tracking the station. Satellite have to be at least in a elevation angle of <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img60.svg"
- ALT="$35$"></SPAN> degrees to contact to the base station. Satellites field of view and a <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img61.svg"
- ALT="$3$"></SPAN> dB footprint of width <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img62.svg"
- ALT="$1.5$"></SPAN> degrees is also represented.
+Here's a plot for Mathematica that you can use as a template to plot ListLinePlot and Plot in the same figure. Font sizes are increased to be well visible in a research article. 
 
 <P>
 <PRE>
-clear all;
-close all;
-
-startTime = datetime(2020,8,19,20,55,0); % 19 August 2020 8:55 PM UTC
-stopTime = startTime + days(1);          % 20 August 2020 8:55 PM UTC
-sampleTime = 60;                         % seconds
-sc = satelliteScenario(startTime,stopTime,sampleTime);
-
-
-semiMajorAxis = (6378 + 2000)*1000;          % meters
-eccentricity = 0;
-inclination = 90;                   % degrees
-rightAscensionOfAscendingNode = 0; % degrees
-argumentOfPeriapsis = 0;           % degrees
-trueAnomaly = 0;                   % degrees
-sat1 = satellite(sc, ...
-    semiMajorAxis, ...
-    eccentricity, ...
-    inclination, ...
-    rightAscensionOfAscendingNode, ...
-    argumentOfPeriapsis, ...
-    trueAnomaly, ...
-                 "Name","Satellite", ...
-                 "OrbitPropagator","two-body-keplerian");
-
-sat1.LabelFontSize = 30;
-cam1 = conicalSensor(sat1,"MaxViewAngle",90)
-cam2 = conicalSensor(sat1,"MaxViewAngle",1.5/2)
-
-name = "Test Transmitter";
-minElevationAngle = 35; % degrees
-lat = 60.185;
-lon = 24.83;
-geoSite = groundStation(sc, lat, lon, "Name", name, "MinElevationAngle", minElevationAngle)
-geoSite.LabelFontSize = 30;
-ac1 = access(cam1,geoSite);
-ac2 = access(cam2,geoSite);
-
-fov1 = fieldOfView(cam1, "LineColor",'blue', "LineWidth", 10)
-ac1.LineColor = 'black';
-
-fov2 = fieldOfView(cam2, "LineColor", 'green', "LineWidth", 10)
-
-pointAt(sat1,geoSite);
-
-play(sc);
+xmax = 150;
+ymax = 0.025;
+Show[
+ (*Histogram[res1,Automatic,"PDF"],*)
+ 
+ ListLinePlot[{Table[{t, 
+     PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+      t]}, {t, 0, xmax, xmax/10}],
+   Table[{t, 
+     PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][
+      t]}, {t, 0, xmax, xmax/10}], 
+   Table[{t, 
+     PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][
+      t]}, {t, 0, xmax, xmax/10}]}, 
+  PlotRange -&gt; {{0, xmax}, {0, ymax}},
+  PlotLabel -&gt; PDF,
+  AxesLabel -&gt; {Style["SIR", 16, Bold], Style["", 16, Bold]}, 
+  PlotLegends -&gt; Placed[{"Sim 1", "Sim 2", "Sim 3"}, Right], 
+  PlotMarkers -&gt; {Automatic, 10}, BaseStyle -&gt; {FontSize -&gt; 15}],
+ Plot[
+  {
+   PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+    t],
+   PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][t],
+   PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][t]
+   }, {t, 0.01, xmax}, PlotStyle -&gt; Thick, 
+  PlotLegends -&gt; 
+   Placed[{"\[CapitalGamma](3.7, 16.6)", "\[CapitalGamma](6.5, 8.6)", 
+     "\[CapitalGamma](3.3, 16.7)"}, Right]]
+ ]
 </PRE>
 
 <P>
@@ -115,8 +96,8 @@ Output:
 
 <DIV class="CENTER">
   <IMG STYLE=""
- SRC="img63.svg"
- ALT="\includegraphics[width=\linewidth]{stk.png}">
+ SRC="img58.svg"
+ ALT="\includegraphics[width=\linewidth]{listlineplot.png}">
 
 </DIV>
 
@@ -124,8 +105,8 @@ Output:
 References:
 
 <UL>
-<LI><A ID="tex2html82"
-  HREF="https://se.mathworks.com/products/satellite-communications.html">Mathworks</A>
+<LI><A ID="tex2html84"
+  HREF="https://reference.wolfram.com/language/guide/HypothesisTests.html">reference.wolfram.com</A>
 </LI>
 </UL>
 

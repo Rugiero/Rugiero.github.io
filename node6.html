@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>January – Poisson Process on a Sphere</TITLE>
-<META NAME="description" CONTENT="January – Poisson Process on a Sphere">
+<TITLE>Blog posts 2021</TITLE>
+<META NAME="description" CONTENT="Blog posts 2021">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,8 +15,8 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node7.html">
-<LINK REL="previous" HREF="node5.html">
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node2.html">
 <LINK REL="next" HREF="node7.html">
 </HEAD>
 
@@ -27,218 +27,67 @@
  HREF="node7.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node5.html">
+ HREF="source.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html152"
+<A ID="tex2html146"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node7.html">February – Controlling Your</A>
+ HREF="node7.html">January – Poisson Process</A>
 <B> Up:</B> <A
- HREF="node5.html">Blog posts 2021</A>
+ HREF="source.html">A glimpse to my</A>
 <B> Previous:</B> <A
- HREF="node5.html">Blog posts 2021</A>
- &nbsp; <B>  <A ID="tex2html153"
+ HREF="node5.html">Thesis's and other projects</A>
+ &nbsp; <B>  <A ID="tex2html147"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00031000000000000000">
-January – Poisson Process on a Sphere</A>
-</H2>
-        <A ID="tex2html11"
-  HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>
-can be generalized to general <A ID="tex2html12"
-  HREF="https://en.wikipedia.org/wiki/Manifold">manifolds</A>. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a unit sphere is equivalent to process in a two dimensional area <!-- MATH
- $A = [-\pi,\pi] \times [-1,1]$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img2.svg"
- ALT="$A = [-\pi,\pi] \times [-1,1]$"></SPAN> through the area preserving mapping from <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img3.svg"
- ALT="$A$"></SPAN> to geographical coordinates
-
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-(x,y) \mapsto (1,x,\sin^{-1}(y)) \nonumber.
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.83ex; vertical-align: -0.70ex; " SRC="img4.svg"
- ALT="$\displaystyle (x,y) \mapsto (1,x,\sin^{-1}(y)) .$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<P></P>
+<H1><A ID="SECTION00030000000000000000">
+Blog posts 2021</A>
+</H1>
+        General thoughts on mathematics and engineering, practical instructions, artistic non-sense. The themes of this blog are much inspired by the challenges encountered in my professional life. The blog serves also as my personal notes.
 
 <P>
-Resulting process interpreted in geographical coordinates <!-- MATH
- $(r,\theta,\varphi)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img5.svg"
- ALT="$(r,\theta,\varphi)$"></SPAN> is a Poisson point process on a sphere of radius <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img6.svg"
- ALT="$r$"></SPAN>.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+<BR><HR>
+<!--Table of Child-Links-->
+<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<P>
-GNU Octave or Matlab:
-<PRE>
-%Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
-function refc = poissononsphere(density)
-  yMin = -1; yMax = 1;
-  xMin = -pi; xMax = pi;
-  
-  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
-  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
-  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
-  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
-  ref = [x y]';
-
-  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
-  r = 1;
-  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
-          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
-          r*cos(refs(2,:)+pi/2)];
-
-  figure(1)    %Plot
-  [X, Y, Z] = sphere;
-  surf(X,Y,Z,'EdgeColor','none','FaceColor','black');
-  hold on
-  scatter3(refc(1,:),refc(2,:),refc(3,:),10,...
-           'MarkerFaceColor','yellow',...
-           'MarkerEdgeColor','red');
-  axis equal
-end
-</PRE>
-
-<P>
-Python:
-
-<P>
-<PRE>
-import numpy as np
-import scipy.stats
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import axes3d
-
-#Rectangle dimension
-xMin = -np.pi; xMax = np.pi;
-yMin = -1; yMax = 1;
-xDelta = xMax - xMin; yDelta = yMax - yMin; #rectangle dimensions
-
-#Density parameter of the Poisson point process. Mean number of points on the sphere
-lambda0=1000; 
-
-#Simulate Poisson point process
-
-#Number of point in the area is a Poisson variable of intensity lambda0
-numbPoints = scipy.stats.poisson( lambda0 ).rvs()
-x = xDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+xMin
-y = yDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+yMin
-
-#Transform to geographical coordinates
-x = x
-y = np.arcsin(y)
-#Plotting
-fig = plt.figure()
-ax = plt.axes(projection="3d")
-ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )
-plt.show()
-</PRE>
-
-<P>
-Wolfram Language:
-<PRE>
-(*lambda is the mean number of points on the unit sphere*) 
-  poissononsphere[lambda_] := 
-  Module[{nrofpoints, phi, theta, radius, refc, polarp}, 
-   nrofpoints = RandomVariate[PoissonDistribution[lambda]];
-   polarp = 
-    Table[{RandomVariate[UniformDistribution[{-Pi, Pi}]], 
-      ArcSin[RandomVariate[UniformDistribution[{-1, 1}]]]}, 
-     nrofpoints];
-   radius = 1;
-   refc = 
-    Table[{radius*Sin[polarp[[i]][[2]] + Pi/2]*
-       Cos[polarp[[i]][[1]] + Pi],
-      radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1]] + Pi],
-      radius*Cos[polarp[[i]][[2]] + Pi/2]}, {i, nrofpoints}];
-   refc
-   ];
-   ListPointPlot3D[poissononsphere[500], BoxRatios -&gt; {1, 1, 1}]
-</PRE>
-
-<P>
-
-<DIV class="CENTER"><A ID="70"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure 2:</STRONG>
-Are the stars Poisson distributed in the sky?</CAPTION>
-<TR><TD><IMG STYLE=""
- SRC="./poissononsphere.jpg"
- ALT="Image poissononsphere"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-
-<DIV class="CENTER"><A ID="74"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure 3:</STRONG>
-Aggregate interference power in a satellite receiver represented by a color – interfering sources are considered to be Poisson distributed on Earth</CAPTION>
-<TR><TD><IMG STYLE=""
- SRC="./interferenceenvironment.png"
- ALT="Image interferenceenvironment"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-References:
-
-<UL>
-<LI>D. J. Daley and D. Vere-Jones, The General Poisson Process in  &ldquo;An introduction to the theory of point processes&rdquo;. New York: Springer, 2003, pp. 39. 
-</LI>
-<LI>Stoyan, Dietrich. et al. &ldquo;Stochastic Geometry and Its Applications&rdquo;. 3rd ed. Chichester: Wiley, 2013. Print.
-</LI>
-<LI><A ID="tex2html13"
-  HREF="https://hpaulkeeler.com/simulating-a-poisson-point-process-on-a-sphere">H. Paul Keeler's Blog</A>
-</LI>
+<UL CLASS="ChildLinks">
+<LI><A ID="tex2html148"
+  HREF="node7.html">January – Poisson Process on a Sphere</A>
+<LI><A ID="tex2html149"
+  HREF="node8.html">February – Controlling Your Passwords with Pass</A>
+<LI><A ID="tex2html150"
+  HREF="node9.html">March – Signal Propagation in a City</A>
+<LI><A ID="tex2html151"
+  HREF="node10.html">April – Frequentist Inference in Mathematica</A>
+<LI><A ID="tex2html152"
+  HREF="node11.html">May – Rayleigh Fading Audiolized</A>
+<LI><A ID="tex2html153"
+  HREF="node12.html">June – Why Does MIMO Work?</A>
+<LI><A ID="tex2html154"
+  HREF="node13.html">July – Animating GIFs in GNU Octave</A>
+<LI><A ID="tex2html155"
+  HREF="node14.html">August – Radio Waves in a Tunnel</A>
+<LI><A ID="tex2html156"
+  HREF="node15.html">September – The Universality of the Poisson Point Process (Breaking a Pile of Sand)</A>
+<LI><A ID="tex2html157"
+  HREF="node16.html">October – Fast Fourier Transform in GNU Octave</A>
+<LI><A ID="tex2html158"
+  HREF="node17.html">November – Digital Filtering</A>
+<LI><A ID="tex2html159"
+  HREF="node18.html">December – Contour Plot in Mathematica</A>
 </UL>
-
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node7.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node5.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node5.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html152"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node7.html">February – Controlling Your</A>
-<B> Up:</B> <A
- HREF="node5.html">Blog posts 2021</A>
-<B> Previous:</B> <A
- HREF="node5.html">Blog posts 2021</A>
- &nbsp; <B>  <A ID="tex2html153"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<!--End of Table of Child-Links-->
+<BR><HR>
 
 </BODY>
 </HTML>

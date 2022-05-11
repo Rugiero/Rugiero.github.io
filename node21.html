@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>March – Plotting in Mathematica</TITLE>
-<META NAME="description" CONTENT="March – Plotting in Mathematica">
+<TITLE>February – Voronoi Tesselation on a Sphere</TITLE>
+<META NAME="description" CONTENT="February – Voronoi Tesselation on a Sphere">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,86 +27,85 @@
  HREF="node22.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node18.html">
+ HREF="node19.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node20.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html186"
+<A ID="tex2html192"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node22.html">April – Satellite Communication</A>
+ HREF="node22.html">March – Plotting in</A>
 <B> Up:</B> <A
- HREF="node18.html">Blog posts 2022</A>
+ HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node20.html">February – Voronoi Tesselation</A>
- &nbsp; <B>  <A ID="tex2html187"
+ HREF="node20.html">January – Inverse of</A>
+ &nbsp; <B>  <A ID="tex2html193"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00043000000000000000">
-March – Plotting in Mathematica</A>
+<H2><A ID="SECTION00042000000000000000">
+February – Voronoi Tesselation on a Sphere</A>
 </H2>
 
 <P>
-Here's a plot for Mathematica that you can use as a template to plot ListLinePlot and Plot in the same figure. Font sizes are increased to be well visible in a research article. 
+Voronoi tessellation consists neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, <A ID="tex2html82"
+  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, have applications in wireless communications (among the million other things). 
 
 <P>
-<PRE>
-xmax = 150;
-ymax = 0.025;
-Show[
- (*Histogram[res1,Automatic,"PDF"],*)
- 
- ListLinePlot[{Table[{t, 
-     PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
-      t]}, {t, 0, xmax, xmax/10}],
-   Table[{t, 
-     PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][
-      t]}, {t, 0, xmax, xmax/10}], 
-   Table[{t, 
-     PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][
-      t]}, {t, 0, xmax, xmax/10}]}, 
-  PlotRange -&gt; {{0, xmax}, {0, ymax}},
-  PlotLabel -&gt; PDF,
-  AxesLabel -&gt; {Style["SIR", 16, Bold], Style["", 16, Bold]}, 
-  PlotLegends -&gt; Placed[{"Sim 1", "Sim 2", "Sim 3"}, Right], 
-  PlotMarkers -&gt; {Automatic, 10}, BaseStyle -&gt; {FontSize -&gt; 15}],
- Plot[
-  {
-   PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
-    t],
-   PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][t],
-   PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][t]
-   }, {t, 0.01, xmax}, PlotStyle -&gt; Thick, 
-  PlotLegends -&gt; 
-   Placed[{"\[CapitalGamma](3.7, 16.6)", "\[CapitalGamma](6.5, 8.6)", 
-     "\[CapitalGamma](3.3, 16.7)"}, Right]]
- ]
-</PRE>
-
-<P>
-Output:
 
 <DIV class="CENTER">
   <IMG STYLE=""
- SRC="img58.svg"
- ALT="\includegraphics[width=\linewidth]{listlineplot.png}">
+ SRC="./voronoionsphere.png"
+ ALT="Image voronoionsphere">
 
 </DIV>
+
+<P>
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
+
+<P>
+<PRE>
+%%Create Voronoi tesselation around Poisson points on a Sphere.
+
+clear all;
+close all;
+
+addpath(fullfile(cd,'rbfsphere'));
+density = 100;
+X = poissononsphere(density)'; %Poisson points in spherical coordinates.
+voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
+
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+end
+</PRE>
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html81"
-  HREF="https://reference.wolfram.com/language/guide/HypothesisTests.html">reference.wolfram.com</A>
+<LI><A ID="tex2html83"
+  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
 </LI>
 </UL>
 

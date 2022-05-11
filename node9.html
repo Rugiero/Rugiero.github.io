@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>April – Frequentist Inference in Mathematica</TITLE>
-<META NAME="description" CONTENT="April – Frequentist Inference in Mathematica">
+<TITLE>March – Signal Propagation in a City</TITLE>
+<META NAME="description" CONTENT="March – Signal Propagation in a City">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,74 +27,117 @@
  HREF="node10.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node5.html">
+ HREF="node6.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html158"
+<A ID="tex2html164"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">May – Rayleigh Fading</A>
+ HREF="node10.html">April – Frequentist Inference</A>
 <B> Up:</B> <A
- HREF="node5.html">Blog posts 2021</A>
+ HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">March – Signal Propagation</A>
- &nbsp; <B>  <A ID="tex2html159"
+ HREF="node8.html">February – Controlling Your</A>
+ &nbsp; <B>  <A ID="tex2html165"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00034000000000000000">
-April – Frequentist Inference in Mathematica</A>
+<H2><A ID="SECTION00033000000000000000">
+March – Signal Propagation in a City</A>
 </H2>
+Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that <A ID="tex2html22"
+  HREF="https://en.wikipedia.org/wiki/Attenuation">attenuates</A>, <A ID="tex2html23"
+  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">reflects</A>, <A ID="tex2html24"
+  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">refracts</A>
+and <A ID="tex2html25"
+  HREF="https://en.wikipedia.org/wiki/Diffraction">diffracts</A>
+the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to <A ID="tex2html26"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>
+as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow <A ID="tex2html27"
+  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>
+statistics.
 
 <P>
-Mathematica provides a package called “Hypothesis Testing” for analyzing random data. The package includes handy objects like “Around”, representing a quantity and the uncertainty around it. The following example code returns an Around object representing the confidence interval of the estimated bias of a coin after a repeated trial. As shown in the code, the ListPlot plots Around objects as such.
+I animated a couple of GIFs to help us to perceive what is going on.
+The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal that is amplifying in some locations and degenerating in others. You can look for both Rician conditions (lower right) and Rayleigh conditions (lower left) in the image and see how the signal behaves under those conditions. The figure was obtained by solving the Helmholtz equation by finite element method.
 
 <P>
-<PRE>
-(*Load the Hypothesis Testing Package.*)
-Needs["HypothesisTesting`"];
+The second figure shows how to aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. In real life, these kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
 
-coin[flips_, bias_] :=
- (*Make the experiment and collect the data*) 
- Module[{index, realizations, mean, conf, around},
-  realizations = {};
-  For[index = 1, index &lt;= flips, index++,
-   realizations =  
-     Append[realizations, 
-      RandomVariate[BernoulliDistribution[bias]]];
-   ];
-  
-  (*Mean*)
-  mean = Mean[realizations[[All]]];
-  (*Confidence interval*)
-  conf = MeanCI[realizations[[All]]];
-  (*Around object*)
-  around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
-  ]
-around = coin[1000, 0.5]
-ListPlot[{around}]
-</PRE>
+<P>
+
+<DIV class="CENTER"><A ID="143"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+The white boxes represents buildings, and the little white circle is the transmitter. You can see how reflections will cause the aggregate signal strength to fluctuate by location depending on phases of the incoming reflected waves.</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./sin.gif"
+ ALT="Image sin"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV class="CENTER"><A ID="473"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Interference power field developing in time. Transmitters are Poisson distributed at random locations and moving to random directions, and the aggregate signal strength after fading is plotted. Red color represents the highest mean power of interference and deep blue represents absence of any interference. There is a line-of-sight component is present – that is, we assume  <A ID="tex2html19"
+  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters gets large. Time can't be considered to be in a human perspective scale here.</CAPTION>
+<TR><TD><IMG STYLE=""
+ SRC="./rician.gif"
+ ALT="Image rician"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html27"
-  HREF="https://reference.wolfram.com/language/guide/HypothesisTests.html">reference.wolfram.com</A>
+<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html28"
+  HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
 <P>
+</LI>
+<LI>Nicolae Cindea (2021).   <A ID="tex2html29"
+  HREF="https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)">Movie to GIF Converter</A>, MATLAB Central File Exchange. Retrieved June 14, 2021. 
 </LI>
 </UL>
 
 <P>
-<BR><HR>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html164"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node10.html">April – Frequentist Inference</A>
+<B> Up:</B> <A
+ HREF="node6.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node8.html">February – Controlling Your</A>
+ &nbsp; <B>  <A ID="tex2html165"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>Blog posts 2022</TITLE>
-<META NAME="description" CONTENT="Blog posts 2022">
+<TITLE>December – Contour Plot in Mathematica</TITLE>
+<META NAME="description" CONTENT="December – Contour Plot in Mathematica">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,8 +15,7 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node23.html">
-<LINK REL="previous" HREF="node5.html">
+<LINK REL="previous" HREF="node17.html">
 <LINK REL="next" HREF="node19.html">
 </HEAD>
 
@@ -27,53 +26,108 @@
  HREF="node19.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="source.html">
+ HREF="node6.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html176"
+<A ID="tex2html182"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node19.html">January – Inverse of</A>
+ HREF="node19.html">Blog posts 2022</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node17.html">December – Contour Plot</A>
- &nbsp; <B>  <A ID="tex2html177"
+ HREF="node17.html">November – Digital Filtering</A>
+ &nbsp; <B>  <A ID="tex2html183"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00040000000000000000">
-Blog posts 2022</A>
-</H1>
+<H2><A ID="SECTION000312000000000000000">
+December – Contour Plot in Mathematica</A>
+</H2>
 
 <P>
-General thoughts on mathematics and engineering, practical instructions, artistic non-sense. The themes of this blog are much inspired by the challenges encountered in my professional life. The blog serves also as my personal notes.
+A contour plot is a nice way to represent 2D data. Mathematica has great for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+The following code returns a contour plot of the <A ID="tex2html78"
+  HREF="https://en.wikipedia.org/wiki/Riemann_zeta_function">Riemann zeta function's</A>
+absolute value in an area in the complex plane; <!-- MATH
+ $(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img45.svg"
+ ALT="$(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$"></SPAN> Text fonts are enlarged from default. Only values under <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img46.svg"
+ ALT="$\max = 2$"></SPAN> are plotted. Values above that are &ldquo;clipped&rdquo; away as white colour. By definition of the absolute value, values are always more than <SPAN CLASS="MATH">0</SPAN>, otherwise values under <SPAN CLASS="MATH">0</SPAN> would get clipped away with black colour. Contours are drawn in intervals of <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
+ ALT="$0.1$"></SPAN>, as adjusted in the Range function.
+<PRE>
+max = 2;
+ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10}, 
+ PlotLegends -&gt; BarLegend[{"Rainbow", {0, max}}], 
+ ColorFunction -&gt; "Rainbow", ContourStyle -&gt; Black, 
+ Contours -&gt; Function[{min, max}, Range[min, max, 0.1]], 
+ PlotLabel -&gt; 
+  Style["Absolute value of the Riemann zeta function", 16, Bold], 
+ BaseStyle -&gt; {FontSize -&gt; 15}, 
+ FrameLabel -&gt; {Style["Real axis" , 16, Bold], 
+   Style["Imaginary axis", 16, Bold]}, PlotRange -&gt; {0, max}, 
+ ClippingStyle -&gt; {Black, White}]
+</PRE>
 
-<UL CLASS="ChildLinks">
-<LI><A ID="tex2html178"
-  HREF="node19.html">January – Inverse of a Gaussian Variable</A>
-<LI><A ID="tex2html179"
-  HREF="node20.html">February – Voronoi Tesselation on a Sphere</A>
-<LI><A ID="tex2html180"
-  HREF="node21.html">March – Plotting in Mathematica</A>
-<LI><A ID="tex2html181"
-  HREF="node22.html">April – Satellite Communication Toolbox in Matlab</A>
+<P>
+
+<DIV class="CENTER">
+  <IMG STYLE=""
+ SRC="./zeta.png"
+ ALT="Image zeta">
+
+</DIV>
+
+<P>
+References:
+
+<UL>
+<LI><A ID="tex2html79"
+  HREF="https://reference.wolfram.com/language/guide/HypothesisTests.html">reference.wolfram.com</A>
+</LI>
+<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+</LI>
 </UL>
-<!--End of Table of Child-Links-->
-<BR><HR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html182"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node19.html">Blog posts 2022</A>
+<B> Up:</B> <A
+ HREF="node6.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node17.html">November – Digital Filtering</A>
+ &nbsp; <B>  <A ID="tex2html183"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
