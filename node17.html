@@ -32,9 +32,9 @@
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html192"
+<A ID="tex2html191"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
@@ -45,7 +45,7 @@
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node16.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html193"
+ &nbsp; <B>  <A ID="tex2html192"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,42 +56,35 @@ November – Digital filtering</A>
 </H2>
 
 <P>
-Let's construct a simple digital band-pass filter based in the <A ID="tex2html74"
+Let's construct a simple digital band-pass filter based in the <A ID="tex2html73"
   HREF="https://en.wikipedia.org/wiki/Sinc_filter">sinc filter</A>.
 
 <P>
-As everyone know, the sinc function is the <A ID="tex2html75"
+As everyone know, the sinc function is the <A ID="tex2html74"
   HREF="https://en.wikipedia.org/wiki/Impulse_response">impulse response</A>
-of a low-pass filter. That is, the <A ID="tex2html76"
+of a low-pass filter. That is, the <A ID="tex2html75"
   HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
 of a signal <SPAN CLASS="MATH"><IMG
- WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img34.png"
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img34.svg"
  ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
  $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
  -->
 <SPAN CLASS="MATH"><IMG
- WIDTH="101" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
- SRC="img35.png"
+ STYLE="height: 3.60ex; vertical-align: -0.92ex; " SRC="img35.svg"
  ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG
- WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img34.png"
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img34.svg"
  ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG
- WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img36.png"
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img36.svg"
  ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
  $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
  -->
 <SPAN CLASS="MATH"><IMG
- WIDTH="152" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
- SRC="img37.png"
+ STYLE="height: 3.60ex; vertical-align: -0.92ex; " SRC="img37.svg"
  ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG
- WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img38.png"
- ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html77"
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html76"
   HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG
- WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img39.png"
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img39.svg"
  ALT="$B_H$"></SPAN>.
 
 <P>
@@ -106,8 +99,7 @@ Heuristically, we can right away derive the discrete versions of the impulse res
 </P>
 <DIV CLASS="displaymath">
 <IMG
- WIDTH="149" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
- SRC="img40.png"
+ STYLE="height: 6.12ex; vertical-align: -1.71ex; " SRC="img40.svg"
  ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
@@ -122,23 +114,20 @@ i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 </P>
 <DIV CLASS="displaymath">
 <IMG
- WIDTH="162" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
- SRC="img41.png"
+ STYLE="height: 6.12ex; vertical-align: -1.71ex; " SRC="img41.svg"
  ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
 
 <P>
 for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
- SRC="img42.png"
+ STYLE="height: 2.52ex; vertical-align: -0.57ex; " SRC="img42.svg"
  ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
  $i \mapsto \delta[i] := \delta_{0i}$
  -->
 <SPAN CLASS="MATH"><IMG
- WIDTH="100" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img43.png"
- ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html78"
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img43.svg"
+ ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html77"
   HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
 
 <P>
@@ -197,8 +186,7 @@ Signal of form <!-- MATH
  $\cos(20 \pi t) + \sin(2 \pi t)$
  -->
 <SPAN CLASS="MATH"><IMG
- WIDTH="143" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img44.png"
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img44.svg"
  ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="466" STYLE=""
@@ -211,7 +199,7 @@ Signal of form <!-- MATH
 
 <DIV class="CENTER"><A ID="396"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure 13:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 The same signal with the first term filtered away</CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="466" STYLE=""
@@ -244,9 +232,9 @@ References:
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html192"
+<A ID="tex2html191"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
@@ -257,7 +245,7 @@ References:
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node16.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html193"
+ &nbsp; <B>  <A ID="tex2html192"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
