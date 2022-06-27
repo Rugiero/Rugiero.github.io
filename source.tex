@@ -71,7 +71,7 @@
 
     \date
         {
-          {Last major update 23.05.2022}\\
+          {Last major update 27.06.2022}\\
         }
 
         \begin{center}
@@ -1197,6 +1197,68 @@ References:
   Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press,, 2005. Print.
 
 \end{itemize}
+
+\subsection{June – Gaussian vs. impulsive noise}
+
+Noise is often modelled as \htmladdnormallink{Gaussian}{https://en.wikipedia.org/wiki/Gaussian_noise}. However, it can be an unrealistic model in certain scenarios if the ``rare events'' are ``less rare'' than in the Gaussian distribution; particularly, this is the case with \htmladdnormallink{fat tailed distributions}{https://en.wikipedia.org/wiki/Fat-tailed_distribution}, that have a significant mass in the tail distributions. Other distributions, that are not strictly speaking fat-tailed or heavy-tailed, are the Middleton distributions, which are derived for the envelope of the noise from a non-Gaussian source.
+
+Particularly, the \htmladdnormallink{$\alpha$-stable distributions}{https://en.wikipedia.org/wiki/Stable_distribution} are used as noise models in various applications including economics and electromagnetic communications. Also the normal distribution belongs to the family of $\alpha$-stable distribution when the stability parameter $\alpha = 2$, being the only distribution in the family having a well-defined variance. With values $\alpha \leq 1$, even the mean is ill-defined, and the qualitative difference to the normal distribution is clear: imagine investing money in a share that has an fixed expected profit value – say, 10 euros in a year – versus investing to a share that of which value fluctuates so rapidly that the expected profit (mean profit over time) can be – in a sense – anything.
+
+In the following, we compare the Gaussian and $\alpha$-stable noises. The following GNU Octave code produces plots of analog Gaussian and  $\alpha$-stable noises. The function \htmladdnormallink{digitaltoanalog}{https://ilari.angervuori.fi/node24.html} is given my the May's blog entry. Also, remember to import to statistical package to Octave.
+
+\begin{verbatim}
+clear all;
+close all;
+
+%%Inverse of the alpha stable CDF with alpha = 1.
+invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
+%%Generate N Alpha-stable samples.
+N = 100;
+alphasamples = invalphaCDF(unifrnd(0,1,1,N));
+
+%%Generate normal samples.
+normalsamples = normrnd(0,1,1,N);
+%%Convert to analog signal.
+T = 1 : 0.1 : N;
+alphasamples = digitaltoanalog(T, alphasamples, 1);
+normalsamples = digitaltoanalog(T, normalsamples, 1);
+
+alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
+normalsamples = normalsamples/(mean(abs(normalsamples)));
+figure(1)
+plot(T, alphasamples)
+legend('Alpha-stable noise')
+axis([0 100 -15 15])
+figure(2)
+plot(T, normalsamples)
+legend('Gaussian noise')
+axis([0 100 -15 15])
+
+\end{verbatim}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{alphastablenoise.png}
+\end{figure}
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{gaussiannoise.png}
+\end{figure}
+
+Looking the pictures, it is easy to understand where the term ``impulsive noise'' comes from.
+
+
+It is also interesting to compare the audiolized noise-signals:
+\htmladdnormallink{my Soundcloud}{https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing}.
+
+
+
+
+
+
+
+
+
 
 
 

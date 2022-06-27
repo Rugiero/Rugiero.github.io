@@ -1,64 +1,179 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<HTML lang="en">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>June – Gaussian vs. impulsive noise</TITLE>
+<META NAME="description" CONTENT="June – Gaussian vs. impulsive noise">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node19.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="next" HREF="node26.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="source.html">
+ HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node19.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node24.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html205"
+<A ID="tex2html214"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node26.html">About this document ...</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node24.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html206"
+ &nbsp; <B>  <A ID="tex2html215"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00050000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-  <B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
+<H2><A ID="SECTION00046000000000000000">
+June – Gaussian vs. impulsive noise</A>
+</H2>
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html88"
-  HREF="../source.tex">source.tex</A></kbd>
+Noise is often modelled as <A ID="tex2html89"
+  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>. However, it can be an unrealistic model in certain scenarios if the &ldquo;rare events&rdquo; are &ldquo;less rare&rdquo; than in the Gaussian distribution; particularly, this is the case with <A ID="tex2html90"
+  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat tailed distributions</A>, that have a significant mass in the tail distributions. Other distributions, that are not strictly speaking fat-tailed or heavy-tailed, are the Middleton distributions, which are derived for the envelope of the noise from a non-Gaussian source.
+
 <P>
-The translation was initiated on 2022-05-23
-<BR><HR>
+Particularly, the <A ID="tex2html91"
+  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img26.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions</A>
+are used as noise models in various applications including economics and electromagnetic communications. Also the normal distribution belongs to the family of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img26.svg"
+ ALT="$\alpha$"></SPAN>-stable distribution when the stability parameter <!-- MATH
+ $\alpha = 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img27.svg"
+ ALT="$\alpha = 2$"></SPAN>, being the only distribution in the family having a well-defined variance. With values <!-- MATH
+ $\alpha \leq 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img28.svg"
+ ALT="$\alpha \leq 1$"></SPAN>, even the mean is ill-defined, and the qualitative difference to the normal distribution is clear: imagine investing money in a share that has an fixed expected profit value – say, 10 euros in a year – versus investing to a share that of which value fluctuates so rapidly that the expected profit (mean profit over time) can be – in a sense – anything.
+
+<P>
+In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img26.svg"
+ ALT="$\alpha$"></SPAN>-stable noises. The following GNU Octave code produces plots of analog Gaussian and  <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img26.svg"
+ ALT="$\alpha$"></SPAN>-stable noises. The function <A ID="tex2html92"
+  HREF="https://ilari.angervuori.fi/node24.html">digitaltoanalog</A>
+is given my the May's blog entry. Also, remember to import to statistical package to Octave.
+
+<P>
+<PRE>
+clear all;
+close all;
+
+%%Inverse of the alpha stable CDF with alpha = 1.
+invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
+%%Generate N Alpha-stable samples.
+N = 100;
+alphasamples = invalphaCDF(unifrnd(0,1,1,N));
+
+%%Generate normal samples.
+normalsamples = normrnd(0,1,1,N);
+%%Convert to analog signal.
+T = 1 : 0.1 : N;
+alphasamples = digitaltoanalog(T, alphasamples, 1);
+normalsamples = digitaltoanalog(T, normalsamples, 1);
+
+alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
+normalsamples = normalsamples/(mean(abs(normalsamples)));
+figure(1)
+plot(T, alphasamples)
+legend('Alpha-stable noise')
+axis([0 100 -15 15])
+figure(2)
+plot(T, normalsamples)
+legend('Gaussian noise')
+axis([0 100 -15 15])
+</PRE>
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./alphastablenoise.png"
+ ALT="Image alphastablenoise">
+
+</DIV>
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./gaussiannoise.png"
+ ALT="Image gaussiannoise">
+
+</DIV>
+
+<P>
+Looking the pictures, it is easy to understand where the term &ldquo;impulsive noise&rdquo; comes from.
+
+<P>
+It is also interesting to compare the audiolized noise-signals:
+<A ID="tex2html93"
+  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html214"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node26.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node19.html">Blog posts 2022</A>
+<B> Previous:</B> <A
+ HREF="node24.html">May – Digital to</A>
+ &nbsp; <B>  <A ID="tex2html215"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

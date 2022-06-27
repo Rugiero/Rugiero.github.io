@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<HTML lang="en">
 <HEAD>
 <TITLE>December – Contour plot in Mathematica</TITLE>
 <META NAME="description" CONTENT="December – Contour plot in Mathematica">
@@ -11,7 +11,7 @@
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -31,10 +31,11 @@
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html186"
+<A ID="tex2html194"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
@@ -43,7 +44,7 @@
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node17.html">November – Digital filtering</A>
- &nbsp; <B>  <A ID="tex2html187"
+ &nbsp; <B>  <A ID="tex2html195"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -57,14 +58,20 @@ December – Contour plot in Mathematica</A>
 A contour plot is a nice way to represent 2D data. Mathematica has great for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
 
 <P>
-The following code returns a contour plot of the <A ID="tex2html78"
+The following code returns a contour plot of the <A ID="tex2html79"
   HREF="https://en.wikipedia.org/wiki/Riemann_zeta_function">Riemann zeta function's</A>
 absolute value in an area in the complex plane; <!-- MATH
  $(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img45.svg"
- ALT="$(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$"></SPAN> Text fonts are enlarged from default. Only values under <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img46.svg"
- ALT="$\max = 2$"></SPAN> are plotted. Values above that are &ldquo;clipped&rdquo; away as white colour. By definition of the absolute value, values are always more than <SPAN CLASS="MATH">0</SPAN>, otherwise values under <SPAN CLASS="MATH">0</SPAN> would get clipped away with black colour. Contours are drawn in intervals of <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
+<SPAN CLASS="MATH"><IMG
+ WIDTH="191" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$"></SPAN> Text fonts are enlarged from default. Only values under <SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$\max = 2$"></SPAN> are plotted. Values above that are &ldquo;clipped&rdquo; away as white colour. By definition of the absolute value, values are always more than <SPAN CLASS="MATH">0</SPAN>, otherwise values under <SPAN CLASS="MATH">0</SPAN> would get clipped away with black colour. Contours are drawn in intervals of <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.png"
  ALT="$0.1$"></SPAN>, as adjusted in the Range function.
 <PRE>
 max = 2;
@@ -83,7 +90,8 @@ ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10},
 <P>
 
 <DIV class="CENTER">
-  <IMG STYLE=""
+  <IMG
+  WIDTH="621" HEIGHT="522" STYLE=""
  SRC="./zeta.png"
  ALT="Image zeta">
 
@@ -93,7 +101,7 @@ ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10},
 References:
 
 <UL>
-<LI><A ID="tex2html79"
+<LI><A ID="tex2html80"
   HREF="https://reference.wolfram.com/language/guide/HypothesisTests.html">reference.wolfram.com</A>
 </LI>
 <LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
@@ -113,10 +121,11 @@ References:
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html186"
+<A ID="tex2html194"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
@@ -125,7 +134,7 @@ References:
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node17.html">November – Digital filtering</A>
- &nbsp; <B>  <A ID="tex2html187"
+ &nbsp; <B>  <A ID="tex2html195"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
