@@ -152,6 +152,11 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img70.svg"
  ALT="$\alpha$">|; 
 
+$key = q/alpha=1;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img73.svg"
+ ALT="$\alpha =1$">|; 
+
 $key = q/alpha=2;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img71.svg"
