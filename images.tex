@@ -23,6 +23,8 @@
 
 \usepackage{xcolor}
 
+\usepackage[]{inputenc}
+
 
 
 \makeatletter
@@ -47,6 +49,7 @@
 \addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
 \addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
 \addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
 \newwrite\lthtmlwrite
 \makeatletter
 \let\realnormalsize=\normalsize
@@ -64,62 +67,58 @@
  \def\phantompar{\csname par\endcsname}\normalsize}%
 \def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
 \usepackage[tightpage,active]{preview}
-\PreviewBorder=1bp
 \newbox\lthtmlPageBox
 \newdimen\lthtmlCropMarkHeight
 \newdimen\lthtmlCropMarkDepth
-\long\def\lthtmlTightVBoxA#1{\def\lthtmllabel{#1}
-    \setbox\lthtmlPageBox\vbox\bgroup\catcode`\_=8 }%
-\long\def\lthtmlTightVBoxZ{\egroup
+\long\def\lthtmlTightVBox#1#2{%
+    \setbox\lthtmlPageBox\vbox{\hbox{\catcode`\_=8 #2}}%
     \lthtmlCropMarkHeight=\ht\lthtmlPageBox \advance \lthtmlCropMarkHeight 6pt
     \lthtmlCropMarkDepth=\dp\lthtmlPageBox
-    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
-    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
     \begin{preview}\copy\lthtmlPageBox\end{preview}}%
-\long\def\lthtmlTightFBoxA#1{\def\lthtmllabel{#1}%
-    \adjustnormalsize\setbox\lthtmlPageBox=\vbox\bgroup\hbox\bgroup %
+\long\def\lthtmlTightFBox#1#2{%
+    \adjustnormalsize\setbox\lthtmlPageBox=\vbox\bgroup %
     \let\ifinner=\iffalse \let\)\liih@math %
-    \bgroup\catcode`\_=8 }%
-\long\def\lthtmlTightFBoxZ{\egroup\egroup
+    {\catcode`\_=8 #2}%
     \@next\next\@currlist{}{\def\next{\voidb@x}}%
     \expandafter\box\next\egroup %
     \lthtmlCropMarkHeight=\ht\lthtmlPageBox \advance \lthtmlCropMarkHeight 6pt
     \lthtmlCropMarkDepth=\dp\lthtmlPageBox
-    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
-    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
     \begin{preview}\copy\lthtmlPageBox\end{preview}}%
-    \long\def\lthtmlinlinemathA#1#2\lthtmlindisplaymathZ{\lthtmlTightVBoxA{#1}{\hbox\bgroup#2\egroup}\lthtmlTightVBoxZ}
-    \def\lthtmlinlineA#1#2\lthtmlinlineZ{\lthtmlTightVBoxA{#1}{\hbox\bgroup#2\egroup}\lthtmlTightVBoxZ}
-    \long\def\lthtmldisplayA#1#2\lthtmldisplayZ{\lthtmlTightVBoxA{#1}{#2}\lthtmlTightVBoxZ}
+    \long\def\lthtmlinlinemathA#1#2\lthtmlindisplaymathZ{\lthtmlTightVBox{#1}{#2}}
+    \def\lthtmlinlineA#1#2\lthtmlinlineZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmldisplayA#1#2\lthtmldisplayZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmlinlinemathA#1#2\lthtmlindisplaymathZ{\lthtmlTightVBox{#1}{#2}}
+    \def\lthtmlinlineA#1#2\lthtmlinlineZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmldisplayA#1#2\lthtmldisplayZ{\lthtmlTightVBox{#1}{#2}}
     \long\def\lthtmldisplayB#1#2\lthtmldisplayZ{\\edef\preveqno{(\theequation)}%
-        \lthtmlTightVBoxA{#1}{\let\@eqnnum\relax#2}\lthtmlTightVBoxZ}
-    \long\def\lthtmlfigureA#1{\let\@savefreelist\@freelist
-        \lthtmlTightFBoxA{#1}}
-    \long\def\lthtmlfigureZ{
-        \lthtmlTightFBoxZ\global\let\@freelist\@savefreelist}
-    \long\def\lthtmlpictureA#1{\let\@savefreelist\@freelist
-        \lthtmlTightVBoxA{#1}}
-    \long\def\lthtmlpictureZ{
-        \lthtmlTightVBoxZ\global\let\@freelist\@savefreelist}
+        \lthtmlTightVBox{#1}{\let\@eqnnum\relax#2}}
+    \long\def\lthtmlfigureA#1#2\lthtmlfigureZ{\let\@savefreelist\@freelist
+        \lthtmlTightFBox{#1}{#2}\global\let\@freelist\@savefreelist}
+    \long\def\lthtmlpictureA#1#2\lthtmlpictureZ{\let\@savefreelist\@freelist
+        \lthtmlTightVBox{#1}{#2}\global\let\@freelist\@savefreelist}
 \def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
   \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
   \else\expandafter\vss\fi}%
 \providecommand{\selectlanguage}[1]{}%
 \makeatletter \tracingstats = 1 
-\providecommand{\Alpha}{\textrm{A}}
-\providecommand{\Beta}{\textrm{B}}
 \providecommand{\Chi}{\textrm{X}}
 \providecommand{\Epsilon}{\textrm{E}}
-\providecommand{\Eta}{\textrm{H}}
-\providecommand{\Iota}{\textrm{J}}
-\providecommand{\Kappa}{\textrm{K}}
+\providecommand{\Tau}{\textrm{T}}
 \providecommand{\Mu}{\textrm{M}}
-\providecommand{\Nu}{\textrm{N}}
+\providecommand{\Beta}{\textrm{B}}
+\providecommand{\Iota}{\textrm{J}}
+\providecommand{\omicron}{\textrm{o}}
+\providecommand{\Eta}{\textrm{H}}
 \providecommand{\Omicron}{\textrm{O}}
 \providecommand{\Rho}{\textrm{R}}
-\providecommand{\Tau}{\textrm{T}}
+\providecommand{\Alpha}{\textrm{A}}
 \providecommand{\Zeta}{\textrm{Z}}
-\providecommand{\omicron}{\textrm{o}}
+\providecommand{\Nu}{\textrm{N}}
+\providecommand{\Kappa}{\textrm{K}}
 
 
 \begin{document}
