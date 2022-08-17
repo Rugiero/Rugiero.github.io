@@ -71,7 +71,7 @@
 
     \date
         {
-          {Last major update 27.06.2022}\\
+          {Last major update 17.08.2022}\\
         }
 
         \begin{center}
@@ -898,7 +898,7 @@ References:
 
 \subsection{December – Contour plot in Mathematica}
 
-A contour plot is a nice way to represent 2D data. Mathematica has great for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
+A contour plot is a nice way to represent 2D data. Mathematica has some great tools for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
 
 The following code returns a contour plot of the \htmladdnormallink{Riemann zeta function's}{https://en.wikipedia.org/wiki/Riemann_zeta_function} absolute value in an area in the complex plane; $(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$ Text fonts are enlarged from default. Only values under $\max = 2$ are plotted. Values above that are ``clipped'' away as white colour. By definition of the absolute value, values are always more than $0$, otherwise values under $0$ would get clipped away with black colour. Contours are drawn in intervals of $0.1$, as adjusted in the \textbb{Range} function.
 \begin{verbatim}
@@ -1265,7 +1265,45 @@ References:
 
 
 
-%\subsection{December – Quadrature Amplitude Modulation}
+\subsection{July – Summing the signal powers}
+
+A simple but important observation for the July.
+
+Let us consider two sinusoidal signals of opposite phases during the time $t \in [0,1]$: $S_1(t) = \cos(2 \pi t)$ and $S_2(t) = \cos(2 \pi t + \pi).$ Obviously, the signals cancel each other completely and the mean power of the additive signal $ S_1 + S_2$ is just $0$:
+
+\begin{align}
+  &\mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0. 
+\end{align}
+
+
+I we were a bit silly, we could try to add the powers of the signals separately together:
+
+\begin{align}
+  \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \\
+  &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1, \nonumber
+\end{align}
+but the result greatly differs from the derivation in $(2)$! Some of the readers may be familiar with the   \htmladdnormallink{Cauchy–Schwarz inequality}{https://en.wikipedia.org/wiki/Cauchy-Schwarz_inequality#Probability_theory}, and already know that the left-hand side of the equation (2) does not generally equal the lhs of (3). Still, e.g. in point process models of wireless networks, the signal powers are often summed as in (3). The often unmentioned assumption behind this has everything to do with the independence of the signals:
+
+let us assume that $S_1$ and $S_2$ are some random variables (or deterministic variables, as a deterministic variable just is a random variable with a degenerate distribution). We have that
+\begin{equation}
+  \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2],
+\end{equation}
+thus the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds if and only if the \htmladdnormallink{inner-product}{https://en.wikipedia.org/wiki/Inner_product_space#Random_variables}, or the  \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation}, $\mathbb{E}[S_1 S_2] = 0$ -- that is -- if the random variables (or signals) $S_1$ and $S_2$ are not correlated. Clearly, this is not the case with our initial signals, as then the cross-correlation (with time shift $\tau =0$) is given by
+
+$$
+\mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
+$$
+as it should be according to the equations (2), (3) and (4).
+
+
+For example, the uncorrelation assumption holds for Gaussian noises. Furthermore, we can often consider that all distinct signals in the same communication system are uncorrelated. Even if the signals would be slightly correlated, the Cauchy-Schwarz inequality guarantees that the sum of the powers is an upper bound.
+
+References:
+\begin{itemize}
+\item \htmladdnormallink{Maol-taulukot}{https://fi.wikipedia.org/wiki/MAOL-taulukot} 
+\end{itemize}
+
+
 
 
 
