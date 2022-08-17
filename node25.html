@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
-<HTML lang="en">
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
 <HEAD>
 <TITLE>June – Gaussian vs. impulsive noise</TITLE>
 <META NAME="description" CONTENT="June – Gaussian vs. impulsive noise">
@@ -11,10 +11,11 @@
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node26.html">
 <LINK REL="previous" HREF="node24.html">
 <LINK REL="next" HREF="node26.html">
 </HEAD>
@@ -31,20 +32,19 @@
 <A
  HREF="node24.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html213"
+<A ID="tex2html220"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node26.html">About this document ...</A>
+ HREF="node26.html">July – Summing the</A>
 <B> Up:</B> <A
  HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node24.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html214"
+ &nbsp; <B>  <A ID="tex2html221"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -55,41 +55,33 @@ June – Gaussian vs. impulsive noise</A>
 </H2>
 
 <P>
-Noise is often modelled as <A ID="tex2html88"
+Noise is often modeled as <A ID="tex2html88"
   HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>. However, it can be an unrealistic model in certain scenarios if the &ldquo;rare events&rdquo; are &ldquo;less rare&rdquo; than in the Gaussian distribution. Particularly, this is the case with <A ID="tex2html89"
-  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat tailed distributions</A>, that have a significant mass in the tail distributions. Other impulsive noise distributions (that are not strictly speaking fat-tailed or heavy-tailed) are the Middleton distributions, which are derived for the envelope of the noise from a non-Gaussian source.
+  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat tailed distributions</A>, that have a significant mass in the tail distributions. Other impulsive noise distributions (that are not necessarily fat-tailed or heavy-tailed) are the Middleton distributions, which are derived for the envelope of non-Gaussian electromagnetic noise.
 
 <P>
 Particularly, the <A ID="tex2html90"
-  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img70.svg"
+  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img70.svg"
  ALT="$\alpha$"></SPAN>-stable distributions</A>
-are used as noise models in various applications including economics and electromagnetic communications. Also the normal distribution belongs to the family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img70.svg"
+are used as noise models in various applications including economics and electromagnetic communications. Also the normal distribution belongs to the family of <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img70.svg"
  ALT="$\alpha$"></SPAN>-stable distribution when the stability parameter <!-- MATH
  $\alpha = 2$
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img71.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img71.svg"
  ALT="$\alpha = 2$"></SPAN>, being the only distribution in the family having a well-defined variance. With values <!-- MATH
  $\alpha \leq 1$
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img72.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img72.svg"
  ALT="$\alpha \leq 1$"></SPAN>, even the mean is ill-defined, and the qualitative difference to the normal distribution is clear: imagine investing money in a share that has an fixed expected profit value – say, 10 euros in a year – versus investing to a share that of which value fluctuates so rapidly that the expected profit (mean profit over time) can be – in a sense – anything.
 
 <P>
-In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img70.svg"
- ALT="$\alpha$"></SPAN>-stable noises. That is, the in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img70.svg"
- ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img73.svg"
+In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img70.svg"
+ ALT="$\alpha$"></SPAN>-stable noises. That is, the in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img70.svg"
+ ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img73.svg"
  ALT="$\alpha =1$"></SPAN>, accordingly. 
 
 <P>
-The following GNU Octave code produces plots of bandwidth limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img70.svg"
+The following GNU Octave code produces plots of bandwidth limited analog Gaussian and  <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img70.svg"
  ALT="$\alpha$"></SPAN>-stable noises. The function <A ID="tex2html91"
   HREF="https://ilari.angervuori.fi/node24.html">digitaltoanalog</A>
 is given my May's blog entry. Also, remember to import to statistical package to Octave.
@@ -127,8 +119,7 @@ axis([0 100 -15 15])
 <P>
 
 <DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
+  <IMG STYLE=""
  SRC="./alphastablenoise.png"
  ALT="Image alphastablenoise">
 
@@ -137,8 +128,7 @@ axis([0 100 -15 15])
 <P>
 
 <DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
+  <IMG STYLE=""
  SRC="./gaussiannoise.png"
  ALT="Image gaussiannoise">
 
@@ -175,20 +165,19 @@ References:
 <A
  HREF="node24.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html213"
+<A ID="tex2html220"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node26.html">About this document ...</A>
+ HREF="node26.html">July – Summing the</A>
 <B> Up:</B> <A
  HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node24.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html214"
+ &nbsp; <B>  <A ID="tex2html221"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
