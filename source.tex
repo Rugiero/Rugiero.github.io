@@ -1282,9 +1282,9 @@ I we were a bit silly, we could try to add the powers of the signals separately 
   \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \\
   &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1, \nonumber
 \end{align}
-but the result greatly differs from the derivation in $(2)$! Some of the readers may be familiar with the   \htmladdnormallink{Cauchy–Schwarz inequality}{https://en.wikipedia.org/wiki/Cauchy-Schwarz_inequality#Probability_theory}, and already know that the left-hand side of the equation (2) does not generally equal the lhs of (3). Still, e.g. in point process models of wireless networks, the signal powers are often summed as in (3). The often unmentioned assumption behind this has everything to do with the independence of the signals:
+but the result greatly differs from the derivation in $(2)$! Still, e.g. in point process models of wireless networks, the signal powers are often summed as in (3). The often unmentioned assumption behind this has everything to do with the independence of the signals:
 
-let us assume that $S_1$ and $S_2$ are some random variables (or deterministic variables, as a deterministic variable just is a random variable with a degenerate distribution). We have that
+let us assume that $S_1$ and $S_2$ are some random variables of mean $0$ (or deterministic variables, as a deterministic variable just is a random variable with a degenerate distribution). We have that
 \begin{equation}
   \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2],
 \end{equation}
@@ -1296,7 +1296,7 @@ $$
 as it should be according to the equations (2), (3) and (4).
 
 
-For example, the uncorrelation assumption holds for Gaussian noises. Furthermore, we can often consider that all distinct signals in the same communication system are uncorrelated. Even if the signals would be slightly correlated, the Cauchy-Schwarz inequality guarantees that the sum of the powers is an upper bound.
+The uncorrelatedness assumption holds for Gaussian noises – and furthermore – we can often consider that all distinct signals in the same communication system are essentially uncorrelated.
 
 References:
 \begin{itemize}
