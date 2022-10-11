@@ -71,7 +71,7 @@
 
     \date
         {
-          {Last major update 17.08.2022}\\
+          {Last major update 11.10.2022}\\
         }
 
         \begin{center}
@@ -147,12 +147,12 @@
 
         \begin{itemize}
         \item
-          Ilari Angervuori and  Risto Wichman, ``A Closed-Form Approximation of the SIR
-          Distribution in a LEO Uplink Channel'', GLOBECOM 2022, Rio de Janeiro, Brazil, submitted for publication.
-        \item
           Ilari Angervuori,  Niloofar Okati, Taneli Riihonen,  Risto Wichman, ``Uplink Interference Characterization and Coverage Analysis of Modern {LEO} and {VLEO} Networks: A Stochastic Geometry Approach'', IEEE Transactions on Communications, submitted for publication.
-        \item 
-          Okati, N., Riihonen, T., Korpi, D., Angervuori, I. Wichman, R., Aug 2020, ``Down-link Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry'',  IEEE Transactions on Communications. 68, 8, p. 5120-5134 9079921.\\
+        \item
+          Ilari Angervuori and  Risto Wichman, ``A Closed-Form Approximation of the SIR
+          Distribution in a LEO Uplink Channel'', GLOBECOM 2022, Rio de Janeiro, Brazil, accepted for presentation.
+        \item
+          N. Okati, T. Riihonen, D. Korpi, I. Angervuori and R. Wichman, "Downlink Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry," in IEEE Transactions on Communications, vol. 68, no. 8, pp. 5120-5134, Aug. 2020, doi: 10.1109/TCOMM.2020.2990993.
         \item A. Yastrebova et al., ``Theoretical and Simulation-based Analysis of Terrestrial Interference to LEO Satellite Uplinks,'' GLOBECOM 2020 - 2020 IEEE Global Communications Conference, Taipei, Taiwan, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9347980.
         \item Niloofar Okati, Islam Tanash, Taneli Riihonen, Ilari Angervuori, Wichman Risto, ``Performance Evaluation of Low Earth Orbit Communication Satellites'', Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
         \item Ilari Angervuori, Wichman Risto, Niloofar Okati, Taneli Riihonen, ``On routing protocols in inter-satellite communications'', Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
@@ -1022,7 +1022,6 @@ Here's a plot for Mathematica that you can use as a template to plot ListLinePlo
 xmax = 150;
 ymax = 0.025;
 Show[
- (*Histogram[res1,Automatic,"PDF"],*)
  
  ListLinePlot[{Table[{t, 
      PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
@@ -1060,7 +1059,7 @@ Output:
 
 References:
 \begin{itemize}
-\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/Plot.html}
 \end{itemize}
 
 
@@ -1301,6 +1300,70 @@ The uncorrelatedness assumption holds for Gaussian noises – and furthermore �
 References:
 \begin{itemize}
 \item \htmladdnormallink{Maol-taulukot}{https://fi.wikipedia.org/wiki/MAOL-taulukot} 
+\end{itemize}
+
+
+
+
+\subsection{August – dB logplot in Mathematica}
+In our series of Mathematica plotting, here we give an example of how to plot values in dB in a \htmladdnormallink{logarithmic plot}{https://en.wikipedia.org/wiki/Logarithmic_scale}. Among many other things, the logarithmic plot is handy in visualizing the tails of probability distributions.  We represent the values of the complementary cumulative distributions in dB, thus we have to add custom ticks for the abscissa. Also, the font size is increased and plot titles and legends are added.
+\begin{verbatim}
+xmax = 180;
+ymax = 1;
+
+{table1, table2, 
+   table3} = {Table[{t, 
+     1 - CDF[GammaDistribution[3.715287738432738`, 
+         16.575007504627795`]][t]}, {t, 0, xmax, xmax/10}], 
+   Table[{t, 
+     1 - CDF[GammaDistribution[6.502676225156808`, 
+         8.60919186301341`]][t]}, {t, 0, xmax, xmax/10}], 
+   Table[{t, 
+     1 - CDF[GammaDistribution[3.3444580518527207`, 
+         16.73897127052263`]][t]}, {t, 0, xmax, xmax/10}]};
+
+Labeled[Show[
+  LogPlot[{1 - 
+     CDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+      x], 1 - CDF[
+       GammaDistribution[6.502676225156808`, 8.60919186301341`]][x], 
+    1 - CDF[GammaDistribution[3.3444580518527207`, 
+        16.73897127052263`]][x]}, {x, 0, xmax}, 
+   GridLines -> Automatic, PlotRange -> {{0, xmax}, {0, 1}}, 
+   Ticks -> {{{0*xmax, -Infinity},
+      {0.1*xmax, NumberForm[10*Log10[(0.1*xmax)], 3]},
+      {0.2*xmax, NumberForm[10*Log10[(0.2*xmax)], 3]},
+      {0.3*xmax, NumberForm[10*Log10[(0.3*xmax)], 3]},
+      {0.4*xmax, NumberForm[10*Log10[(0.4*xmax)], 3]},
+      {0.5*xmax, NumberForm[10*Log10[(0.5*xmax)], 3]},
+      {0.6*xmax, NumberForm[10*Log10[(0.6*xmax)], 3]},
+      {0.7*xmax, NumberForm[10*Log10[(0.7*xmax)], 3]},
+      {0.8*xmax, NumberForm[10*Log10[(0.8*xmax)], 3]},
+      {0.9*xmax, NumberForm[10*Log10[(0.9*xmax)], 3]},
+      {1*xmax, N[NumberForm[10*Log10[(1*xmax)], 3]] "dBm"}
+      }, {10^-4, 10^-3, 10^-2, 10^-1, 1}}, 
+   BaseStyle -> {FontSize -> 15}, PlotStyle -> Thick], 
+  ListLogPlot[{table1, table2, table3}, 
+   PlotLegends -> 
+    Placed[{"\[CapitalGamma](3.7,16.6)", "\[CapitalGamma](6.5,8.6)", 
+      "\[CapitalGamma](3.3,16.7)"}, Right], 
+   PlotMarkers -> {Automatic, 10}]
+  ], {"Percent of realizations abscissa is exceeded", 
+  "Interference power (decibel-milliwats)"}, {Left, Bottom}, 
+ RotateLabel -> True]
+
+
+\end{verbatim}
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{dBplot.png}
+\end{figure}
+
+
+References:
+\begin{itemize}
+\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/LogPlot.html}
 \end{itemize}
 
 
