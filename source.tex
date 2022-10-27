@@ -1368,7 +1368,7 @@ References:
 
 \subsection{September – Homography}
 
-\htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in my simulations: for elevation angles smaller than $90 \degree,$ you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$.
+\htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in my simulations: for elevation angles smaller than $90 \degree,$ you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$ so that the right focus point maps to origo.
 $$
 H=
 \begin{pmatrix}
