@@ -1,30 +1,9 @@
 No implementation found for style `empheq'
 
-The source.aux file was not found, so sections will not be numbered 
-and cross-references will be shown as icons.
+source.tex is newer than source.aux: Please rerun latex.
 
-No number for "MeinmybelovedhometownHelsinkiinthemiddleofthesummer(well,technicallyIaminEspoo,Otaniemi–anditisasnowyandshinydayinFebruary,frozenseaseeninthebackground)"
+Substitution of arg to newlabelxx delayed.
 
-No number for "ArethestarsPoissondistributedinthesky?"
-
-No number for "Aggregateinterferencepowerinasatellitereceiverrepresentedbyacolor–interferingsourcesareconsideredtobePoissondistributedonEarth"
-
-No number for "Thewhiteboxesrepresentsbuildings,andthelittlewhitecircleisthetransmitter.Youcanseehowreflectionswillcausetheaggregatesignalstrengthtofluctuatebylocationdependingonphasesoftheincomingreflectedwaves."
-
-No number for "Interferencepowerfielddevelopingintime.TransmittersarePoissondistributedatrandomlocationsandmovingtorandomdirections,andtheaggregatesignalstrengthafterfadingisplotted.Redcolorrepresentsthehighestmeanpowerofinterferenceanddeepbluerepresentsabsenceofanyinterference.Thereisaline-of-sightcomponentispresent–thatis,weassumeRicianfading.Redoccurrenceswillcauseremarkabledisturbanceincommunicationasinterferencefromothertransmittersgetslarge.Timecan'tbeconsideredtobeinahumanperspectivescalehere."
-
-No number for "Multi-pathfadedsinesignal"
-
-No number for "MIMOsavesenergyandimprovesthequality"
-
-No number for "AnimatedGIFofanoisyQAMsymbol"
-
-No number for "Highfrequenciesfitinthetunnel"
-
-No number for "Wavelengthsbiggerthanthediameterofthetunnelwillnotgetthrough"
-
-No number for "<SPANCLASS="MATH">$10000$</SPAN>pointsrandomlymovedfromtheorigototheplane"
+? brace missing for \oldcontentsline
 
 No number for "Signalofform<SPANCLASS="MATH">$cos(20pit)+sin(2pit)$</SPAN>"
-
-No number for "Thesamesignalwiththefirsttermfilteredaway"

@@ -32,9 +32,9 @@
 <A
  HREF="node23.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html222"
+<A ID="tex2html229"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -44,7 +44,7 @@
  HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node23.html">April – Satellite communication</A>
- &nbsp; <B>  <A ID="tex2html223"
+ &nbsp; <B>  <A ID="tex2html230"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -53,8 +53,8 @@
 <H2><A ID="SECTION00045000000000000000">
 May – Digital to analog modulation</A>
 </H2>
-Digital signal consists of values at discrete times, whereas analog signal is continuous in time <SPAN CLASS="MATH"><IMG STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img62.svg"
- ALT="$t$"></SPAN>. As the orthogonal set of <A ID="tex2html86"
+Digital signal consists of values at discrete times, whereas analog signal is continuous in time <SPAN CLASS="MATH"><IMG STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img63.svg"
+ ALT="$t$"></SPAN>. As the orthogonal set of <A ID="tex2html87"
   HREF="https://en.wikipedia.org/wiki/Sinc_function">sinc functions</A>
 <P><!-- MATH
  \begin{displaymath}
@@ -63,13 +63,13 @@ Digital signal consists of values at discrete times, whereas analog signal is co
  -->
 </P>
 <DIV CLASS="mathdisplay">
-<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img63.svg"
- ALT="$\displaystyle \{t \mapsto$">&nbsp; &nbsp;sinc<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img64.svg"
+<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img64.svg"
+ ALT="$\displaystyle \{t \mapsto$">&nbsp; &nbsp;sinc<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img65.svg"
  ALT="$\displaystyle (F_s t - n)\}_n,
 $">
 </DIV><P></P>
-spans the space of signals of bandwidth <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img33.svg"
- ALT="$F_s/2$"></SPAN>, an analog signal can be (uniquely) produced from a digital signal of length <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img12.svg"
+spans the space of signals of bandwidth <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ ALT="$F_s/2$"></SPAN>, an analog signal can be (uniquely) produced from a digital signal of length <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img14.svg"
  ALT="$N$"></SPAN> 
 <P><!-- MATH
  \begin{displaymath}
@@ -78,7 +78,7 @@ spans the space of signals of bandwidth <SPAN CLASS="MATH"><IMG STYLE="height: 2
  -->
 </P>
 <DIV CLASS="mathdisplay">
-<IMG STYLE="height: 2.95ex; vertical-align: -0.74ex; " SRC="img65.svg"
+<IMG STYLE="height: 2.95ex; vertical-align: -0.74ex; " SRC="img66.svg"
  ALT="$\displaystyle \{ x[n]\}_{n=0}^{N-1}
 $">
 </DIV><P></P>
@@ -90,12 +90,12 @@ S(t) =\sum_{n = 0}^{N-1} x[n]\text{sinc}(F_s t - n),
  -->
 </P>
 <DIV CLASS="mathdisplay">
-<IMG STYLE="height: 7.40ex; vertical-align: -3.06ex; " SRC="img66.svg"
- ALT="$\displaystyle S(t) =\sum_{n = 0}^{N-1} x[n]$">sinc<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img67.svg"
+<IMG STYLE="height: 7.40ex; vertical-align: -3.06ex; " SRC="img67.svg"
+ ALT="$\displaystyle S(t) =\sum_{n = 0}^{N-1} x[n]$">sinc<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img68.svg"
  ALT="$\displaystyle (F_s t - n),
 $">
 </DIV><P></P>
-where <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img32.svg"
+where <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img33.svg"
  ALT="$F_s$"></SPAN> is the sampling rate of the digital signal.
 
 <P>
@@ -113,12 +113,12 @@ end
 </PRE>
 
 <P>
-The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img68.svg"
- ALT="$x$"></SPAN>, and modulates the sampled digital signal back to an analog signal <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img69.svg"
- ALT="$S$"></SPAN>. As the <A ID="tex2html87"
+The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img69.svg"
+ ALT="$x$"></SPAN>, and modulates the sampled digital signal back to an analog signal <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img70.svg"
+ ALT="$S$"></SPAN>. As the <A ID="tex2html88"
   HREF="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist rate</A>
-restricts the bandwidth of the signal <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img69.svg"
- ALT="$S$"></SPAN> to <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img33.svg"
+restricts the bandwidth of the signal <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img70.svg"
+ ALT="$S$"></SPAN> to <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
  ALT="$F_s/2$"></SPAN>, information is lost in the sampling stage, because the original rectangle train has an infinite bandwidth.
 
 <P>
@@ -177,9 +177,9 @@ References:
 <A
  HREF="node23.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html222"
+<A ID="tex2html229"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -189,7 +189,7 @@ References:
  HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node23.html">April – Satellite communication</A>
- &nbsp; <B>  <A ID="tex2html223"
+ &nbsp; <B>  <A ID="tex2html230"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

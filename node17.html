@@ -32,9 +32,9 @@
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html200"
+<A ID="tex2html206"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -44,7 +44,7 @@
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node16.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html201"
+ &nbsp; <B>  <A ID="tex2html207"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -55,28 +55,28 @@ November – Digital filtering</A>
 </H2>
 
 <P>
-Let's construct a simple digital band-pass filter based in the <A ID="tex2html73"
+Let's construct a simple digital band-pass filter based in the <A ID="tex2html74"
   HREF="https://en.wikipedia.org/wiki/Sinc_filter">sinc filter</A>.
 
 <P>
-As everyone know, the sinc function is the <A ID="tex2html74"
+As everyone know, the sinc function is the <A ID="tex2html75"
   HREF="https://en.wikipedia.org/wiki/Impulse_response">impulse response</A>
-of a low-pass filter. That is, the <A ID="tex2html75"
+of a low-pass filter. That is, the <A ID="tex2html76"
   HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
-of a signal <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+of a signal <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
  ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
  $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img35.svg"
- ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
- ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img36.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img36.svg"
+ ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
+ ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img37.svg"
  ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
  $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img37.svg"
- ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
- ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html76"
-  HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img39.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img38.svg"
+ ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img39.svg"
+ ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html77"
+  HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img40.svg"
  ALT="$B_H$"></SPAN>.
 
 <P>
@@ -90,7 +90,7 @@ Heuristically, we can right away derive the discrete versions of the impulse res
  -->
 </P>
 <DIV CLASS="mathdisplay">
-<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img40.svg"
+<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img41.svg"
  ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
@@ -104,18 +104,18 @@ i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
  -->
 </P>
 <DIV CLASS="mathdisplay">
-<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img41.svg"
+<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img42.svg"
  ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
 
 <P>
-for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img42.svg"
+for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img43.svg"
  ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
  $i \mapsto \delta[i] := \delta_{0i}$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img43.svg"
- ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html77"
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img44.svg"
+ ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html78"
   HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
 
 <P>
@@ -173,7 +173,7 @@ end
 Signal of form <!-- MATH
  $\cos(20 \pi t) + \sin(2 \pi t)$
  -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img44.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img45.svg"
  ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
 <TR><TD><IMG STYLE=""
  SRC="./signal.jpg"
@@ -185,7 +185,7 @@ Signal of form <!-- MATH
 
 <DIV class="CENTER"><A ID="396"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 13:</STRONG>
 The same signal with the first term filtered away</CAPTION>
 <TR><TD><IMG STYLE=""
  SRC="./filtered.jpg"
@@ -217,9 +217,9 @@ References:
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html200"
+<A ID="tex2html206"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -229,7 +229,7 @@ References:
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node16.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html201"
+ &nbsp; <B>  <A ID="tex2html207"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
