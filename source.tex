@@ -71,7 +71,7 @@
 
     \date
         {
-          {Last major update 27.10.2022}\\
+          {Last major update 19.12.2022}\\
         }
 
         \begin{center}
@@ -1428,7 +1428,60 @@ References:
 \end{itemize}
 
 
+\subsection{December – asymptotic decay rate of a probability distribution}
+
+
+Let us study the thickness of the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's $X$ tail distribution. It is defined by
+\begin{equation}
+  \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x},
+\end{equation}
+where $\textbf{P}(\cdot)$ denotes the probability of an event. Let us calculate the decay rates for the exponential distribution, gamma distribution, and normal distribution.
+
+For \textbf{exponentially distributed} $X$ with scale parameter $\theta$:
+\begin{align}
+  \rho_{\text{Exponential}} &=\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x}  = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}   \nonumber \\
+  &=\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta.
+\end{align}
+
+For \textbf{gamma distributed} $X$ with shape parameter $k$ and scale parameter $\theta$:
+
+\begin{align}
+  \rho_{\text{Gamma}} &= \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X>x)}{x} = \lim_{x\rightarrow \infty} -\frac{\log (1-\gamma(k,x/\theta)/\Gamma(k))}{x} \nonumber  \\
+  &=\lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta)/\Gamma(k))}{x} \nonumber \\
+  &= \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta))}{x} = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}\label{line:22}\\
+  &= \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta. 
+\end{align}
+In line $(7)$, we used the asymptotic behavior of the gamma distribution
+$$
+\lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
+$$
+
+For \textbf{normal distributed} $X$ with mean $\mu$ and variance $\sigma^2$:
+
+\begin{align}
+  \rho_{\text{Normal}} &= \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X>x)}{x} = -\lim_{x\rightarrow \infty} \frac{\log \text{erfc}\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)}{x} \geq -\lim_{x\rightarrow \infty} \frac{\log\left( \sqrt{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} \\
+  &\geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} = -\lim_{x\rightarrow \infty} \frac{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }{x} = \frac{1}{\theta^2 2}\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x}  = \infty,
+\end{align}
+where in line $(9)$, we used the inequality $$\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$$ that holds for $x \geq 0$ and $\beta >1$ (we used $\beta = 2$).
+
+
+The asymptotic decay rates for the exponential distribution, gamma distribution, and normal distribution are given in $(6)$, $(8)$, and $(10)$, respectively. We see that the decay rate $\rho$ of the normal distribution is always maximal, i.e. $\rho_{\text{Normal}} = \infty$, whereas the decay rates of the exponential distribution and the gamma distribution depend on the scale parameter $\theta$.
+
+By normalizing the mean ($\mathbb{E}[X] = 1$) by setting $\theta = 1$ and $k=1/\theta$, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is $\rho_{\text{Exponential}} = 1$ and of the gamma distribution is $\rho_{\text{Gamma}} = k$. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters $k<1$, and faster than the exponential distribution with $k>1$. With $k=1$, the distributions coincide. When $k \rightarrow \infty$, the gamma distribution approaches the normal distribution, and $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$.
+
+
+References:
+\begin{itemize}
+\item \htmladdnormallink{Error function}{https://en.wikipedia.org/wiki/Error_function}
+\item \htmladdnormallink{Exponential distribution}{https://en.wikipedia.org/wiki/Exponential_distribution}
+\item \htmladdnormallink{Gamma distribution}{https://en.wikipedia.org/wiki/Gamma_distribution}
+\item \htmladdnormallink{Normal distribution}{https://en.wikipedia.org/wiki/Normal_distribution}
+
+\end{itemize}
+
+
 \end{document}
+
 %
 % optional post-title formatting for PostScript
 %

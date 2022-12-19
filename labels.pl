@@ -2,6 +2,18 @@
 # Associate labels original text with physical files.
 
 
+$key = q/1/;
+$external_labels{$key} = "$URL/" . q|node26.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/line:22/;
+$external_labels{$key} = "$URL/" . q|node29.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/singleantenna/;
+$external_labels{$key} = "$URL/" . q|node11.html|; 
+$noresave{$key} = "$nosave";
+
 1;
 
 
