@@ -322,10 +322,10 @@ $key = q/displaystyle]=e^{-frac{pi^2}{2sqrt{P}}},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 3.83ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img10.svg"
  ALT="$\displaystyle ] = e^{-\frac{\pi^2}{2\sqrt{P}}},$">|; 
 
-$key = q/displaystylegeq-lim_{xrightarrowinfty}frac{logleft(e^{-2left(frac{x-mu}{sigmasqrfrac{1}{theta^22}lim_{xrightarrowinfty}frac{x^2-2xmu+mu^2}{x}=infty,;MSF=1.6;AAT/;
+$key = q/displaystylegeq-lim_{xrightarrowinfty}frac{logleft(e^{-2left(frac{x-mu}{sigmasqr=frac{1}{sigma^2}lim_{xrightarrowinfty}frac{x^2-2xmu+mu^2}{x}=infty,;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="|."$dir".q|img114.svg"
  ALT="$\displaystyle \geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\fra...
-...{\theta^2 2}\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x} = \infty,$">|; 
+...}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x} = \infty,$">|; 
 
 $key = q/displaystyleimapstodelta[i]-frac{sin(2pifrac{B_H}{f_c}i)}{pii},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="|."$dir".q|img42.svg"
