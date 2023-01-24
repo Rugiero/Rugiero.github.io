@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
-<HTML lang="en">
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
 <HEAD>
 <TITLE>November – Digital filtering</TITLE>
 <META NAME="description" CONTENT="November – Digital filtering">
@@ -11,7 +11,7 @@
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -32,11 +32,10 @@
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html214"
+<A ID="tex2html215"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
@@ -45,7 +44,7 @@
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node16.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html215"
+ &nbsp; <B>  <A ID="tex2html216"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,35 +55,28 @@ November – Digital filtering</A>
 </H2>
 
 <P>
-Let's construct a simple digital band-pass filter based in the <A ID="tex2html73"
+Let's construct a simple digital band-pass filter based in the <A ID="tex2html74"
   HREF="https://en.wikipedia.org/wiki/Sinc_filter">sinc filter</A>.
 
 <P>
-As everyone know, the sinc function is the <A ID="tex2html74"
+As everyone know, the sinc function is the <A ID="tex2html75"
   HREF="https://en.wikipedia.org/wiki/Impulse_response">impulse response</A>
-of a low-pass filter. That is, the <A ID="tex2html75"
+of a low-pass filter. That is, the <A ID="tex2html76"
   HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
-of a signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img35.svg"
+of a signal <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img36.svg"
  ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
  $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 3.60ex; vertical-align: -0.92ex; " SRC="img36.svg"
- ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img37.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img37.svg"
+ ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img36.svg"
+ ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img38.svg"
  ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
  $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 3.60ex; vertical-align: -0.92ex; " SRC="img38.svg"
- ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img39.svg"
- ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html76"
-  HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img40.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img39.svg"
+ ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img40.svg"
+ ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html77"
+  HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img41.svg"
  ALT="$B_H$"></SPAN>.
 
 <P>
@@ -97,9 +89,8 @@ Heuristically, we can right away derive the discrete versions of the impulse res
 \end{displaymath}
  -->
 </P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 6.12ex; vertical-align: -1.71ex; " SRC="img41.svg"
+<DIV CLASS="mathdisplay">
+<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img42.svg"
  ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
@@ -112,22 +103,19 @@ i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 \end{displaymath}
  -->
 </P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 6.12ex; vertical-align: -1.71ex; " SRC="img42.svg"
+<DIV CLASS="mathdisplay">
+<IMG STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img43.svg"
  ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
 
 <P>
-for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.52ex; vertical-align: -0.57ex; " SRC="img43.svg"
+for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img44.svg"
  ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
  $i \mapsto \delta[i] := \delta_{0i}$
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img44.svg"
- ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html77"
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img45.svg"
+ ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html78"
   HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
 
 <P>
@@ -185,11 +173,9 @@ end
 Signal of form <!-- MATH
  $\cos(20 \pi t) + \sin(2 \pi t)$
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img45.svg"
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img46.svg"
  ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
-<TR><TD><IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
+<TR><TD><IMG STYLE=""
  SRC="./signal.jpg"
  ALT="Image signal"></TD></TR>
 </TABLE>
@@ -199,10 +185,9 @@ Signal of form <!-- MATH
 
 <DIV class="CENTER"><A ID="396"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 13:</STRONG>
 The same signal with the first term filtered away</CAPTION>
-<TR><TD><IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
+<TR><TD><IMG STYLE=""
  SRC="./filtered.jpg"
  ALT="Image filtered"></TD></TR>
 </TABLE>
@@ -232,11 +217,10 @@ References:
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html214"
+<A ID="tex2html215"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
@@ -245,7 +229,7 @@ References:
  HREF="node6.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node16.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html215"
+ &nbsp; <B>  <A ID="tex2html216"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
