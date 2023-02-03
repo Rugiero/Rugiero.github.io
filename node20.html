@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>January – Inverse of a Gaussian variable</TITLE>
-<META NAME="description" CONTENT="January – Inverse of a Gaussian variable">
+<TITLE>Blog posts 2022</TITLE>
+<META NAME="description" CONTENT="Blog posts 2022">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,8 +15,8 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node21.html">
-<LINK REL="previous" HREF="node19.html">
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node7.html">
 <LINK REL="next" HREF="node21.html">
 </HEAD>
 
@@ -27,141 +27,63 @@
  HREF="node21.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node19.html">
+ HREF="source.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node19.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html231"
+<A ID="tex2html224"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node21.html">February – Voronoi tesselation</A>
+ HREF="node21.html">January – Inverse of</A>
 <B> Up:</B> <A
- HREF="node19.html">Blog posts 2022</A>
+ HREF="source.html">A glimpse to my</A>
 <B> Previous:</B> <A
- HREF="node19.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html232"
+ HREF="node19.html">December – Contour plot</A>
+ &nbsp; <B>  <A ID="tex2html225"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00041000000000000000">
-January – Inverse of a Gaussian variable</A>
-</H2>
+<H1><A ID="SECTION00040000000000000000">
+Blog posts 2022</A>
+</H1>
+        General thoughts on mathematics and engineering, practical instructions, semi-artistic logical  nonsense. The themes of this blog are much inspired by the challenges encountered in my professional life. 
 
 <P>
-There is quite a pile of literature on the subject of the <A ID="tex2html81"
-  HREF="https://en.wikipedia.org/wiki/Inverse_distribution">inverse</A>
-of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution is ill-behaved; the mean and variance does not generally exist.
+<BR><HR>
+<!--Table of Child-Links-->
+<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<P>
-I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have not worked out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations). 
-
-<P>
-First, approximate the Gaussian distributed variable <!-- MATH
- $X \sim \mathcal{N}(\mu, \sigma^2)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img50.svg"
- ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$"></SPAN> by a log-normally distributed variable <!-- MATH
- $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img51.svg"
- ALT="$X \approx Y \sim$">&nbsp; &nbsp;Lognormal<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img52.svg"
- ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$"></SPAN> with corresponding mean and variance, i.e.
-<P><!-- MATH
- \begin{displaymath}
-\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="mathdisplay">
-<IMG STYLE="height: 5.88ex; vertical-align: -2.32ex; " SRC="img53.svg"
- ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">
-</DIV><P></P>
-and
-<P><!-- MATH
- \begin{displaymath}
-\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="mathdisplay">
-<IMG STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img54.svg"
- ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">
-</DIV><P></P>
-We leave the solving of <!-- MATH
- $\mu_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img55.svg"
- ALT="$\mu_{\text{LN}}$"></SPAN> and <!-- MATH
- $\sigma_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img56.svg"
- ALT="$\sigma_{\text{LN}}$"></SPAN> as an easy exercise for the reader.
-
-<P>
-Using the theory of log-normal distribution, the inverse of <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img57.svg"
- ALT="$X$"></SPAN> is now given by
-<P><!-- MATH
- \begin{displaymath}
-1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="mathdisplay">
-<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img58.svg"
- ALT="$\displaystyle 1/X \approx 1/Y \sim$">&nbsp; &nbsp;Lognormal<IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img59.svg"
- ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-$">
-</DIV><P></P>
-
-<P>
-That's it!
-
-<P>
-References:
-
-<UL>
-<LI><A ID="tex2html82"
-  HREF="https://en.wikipedia.org/wiki/Log-normal_distribution">Log-normal distribution</A>
-</LI>
-<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
-</LI>
+<UL CLASS="ChildLinks">
+<LI><A ID="tex2html226"
+  HREF="node21.html">January – Inverse of a Gaussian variable</A>
+<LI><A ID="tex2html227"
+  HREF="node22.html">February – Voronoi tesselation on a sphere</A>
+<LI><A ID="tex2html228"
+  HREF="node23.html">March – Plotting in Mathematica</A>
+<LI><A ID="tex2html229"
+  HREF="node24.html">April – Satellite communication toolbox in Matlab</A>
+<LI><A ID="tex2html230"
+  HREF="node25.html">May – Digital to analog modulation</A>
+<LI><A ID="tex2html231"
+  HREF="node26.html">June – Gaussian vs. impulsive noise</A>
+<LI><A ID="tex2html232"
+  HREF="node27.html">July – Summing the signal powers</A>
+<LI><A ID="tex2html233"
+  HREF="node28.html">August – dB logplot in Mathematica</A>
+<LI><A ID="tex2html234"
+  HREF="node29.html">September – Homography</A>
+<LI><A ID="tex2html235"
+  HREF="node30.html">December – Asymptotic decay rate of a probability distribution</A>
 </UL>
-
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node21.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node19.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node19.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html231"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node21.html">February – Voronoi tesselation</A>
-<B> Up:</B> <A
- HREF="node19.html">Blog posts 2022</A>
-<B> Previous:</B> <A
- HREF="node19.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html232"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<!--End of Table of Child-Links-->
+<BR><HR>
 
 </BODY>
 </HTML>

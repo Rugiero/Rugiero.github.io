@@ -7,7 +7,7 @@ $external_labels{$key} = "$URL/" . q|node26.html|;
 $noresave{$key} = "$nosave";
 
 $key = q/line:22/;
-$external_labels{$key} = "$URL/" . q|node29.html|; 
+$external_labels{$key} = "$URL/" . q|node30.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/singleantenna/;

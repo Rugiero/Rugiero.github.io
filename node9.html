@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>March – Signal propagation in a city</TITLE>
-<META NAME="description" CONTENT="March – Signal propagation in a city">
+<TITLE>February – Controlling your passwords with pass</TITLE>
+<META NAME="description" CONTENT="February – Controlling your passwords with pass">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,86 +27,137 @@
  HREF="node10.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node6.html">
+ HREF="node7.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html199"
+<A ID="tex2html202"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">April – Frequentist inference</A>
+ HREF="node10.html">March – Signal propagation</A>
 <B> Up:</B> <A
- HREF="node6.html">Blog posts 2021</A>
+ HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">February – Controlling your</A>
- &nbsp; <B>  <A ID="tex2html200"
+ HREF="node8.html">January – Poisson process</A>
+ &nbsp; <B>  <A ID="tex2html203"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00033000000000000000">
-March – Signal propagation in a city</A>
+<H2><A ID="SECTION00032000000000000000">
+February – Controlling your passwords with pass</A>
 </H2>
-Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that <A ID="tex2html23"
-  HREF="https://en.wikipedia.org/wiki/Attenuation">attenuates</A>, <A ID="tex2html24"
-  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">reflects</A>, <A ID="tex2html25"
-  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">refracts</A>
-and <A ID="tex2html26"
-  HREF="https://en.wikipedia.org/wiki/Diffraction">diffracts</A>
-the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to <A ID="tex2html27"
-  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>
-as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow <A ID="tex2html28"
-  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>
-statistics.
-
-<P>
-I animated a couple of GIFs to help us to perceive what is going on.
-The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal that is amplifying in some locations and degenerating in others. You can look for both Rician conditions (lower right) and Rayleigh conditions (lower left) in the image and see how the signal behaves under those conditions. The figure was obtained by solving the Helmholtz equation by finite element method.
-
-<P>
-The second figure shows how to aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. In real life, these kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
 
 <P>
 
-<DIV class="CENTER"><A ID="143"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure 4:</STRONG>
-The white boxes represents buildings, and the little white circle is the transmitter. You can see how reflections will cause the aggregate signal strength to fluctuate by location depending on phases of the incoming reflected waves.</CAPTION>
-<TR><TD><IMG STYLE=""
- SRC="./sin.gif"
- ALT="Image sin"></TD></TR>
-</TABLE>
-</DIV>
+<UL>
+<LI>Install the application in the terminal 
+<BR><PRE>
+sudo apt install pass
+</PRE>
+</LI>
+<LI>Check for existing GPG keys 
+<BR><PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>If no keys were found generate a key pair 
+<BR><PRE>
+gpg --generate-key
+</PRE>
+</LI>
+<LI>Copy the name of the key and initialize pass
+<BR><PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234,
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
+</LI>
+<LI>Generate a password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+List passwords
+<PRE>
+pass
+</PRE>
+Copy a password to clipboard 
+<BR><PRE>
+pass keyfolder/newkey -c
+</PRE>
+For more commands
+<PRE>
+man pass
+</PRE>
+</LI>
+</UL>
+
+<P>
+Connect pass to git so it is easy to keep track of changes with multiple machines.
 
 <P>
 
-<DIV class="CENTER"><A ID="692"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure 5:</STRONG>
-Interference power field developing in time. Transmitters are Poisson distributed at random locations and moving to random directions, and the aggregate signal strength after fading is plotted. Red color represents the highest mean power of interference and deep blue represents absence of any interference. There is a line-of-sight component is present – that is, we assume  <A ID="tex2html20"
-  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters gets large. Time can't be considered to be in a human perspective scale here.</CAPTION>
-<TR><TD><IMG STYLE=""
- SRC="./rician.gif"
- ALT="Image rician"></TD></TR>
-</TABLE>
-</DIV>
+<UL>
+<LI>Export your public and private key to a file with 
+<BR><PRE>
+  gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
+<BR></LI>
+<LI>Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine 
+<BR><PRE>
+gpg --import public.key
+gpg --import private.key
+</PRE>
+</LI>
+<LI>After importing keys to a new machine you can initialize pass
+<PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+
+<P>
+</LI>
+<LI>Initialize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
+<BR><PRE>
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
+</PRE>
+</LI>
+<LI>Get password data from the server (from a non-empty repository, otherwise skip)
+<PRE>
+pass git pull origin master --allow-unrelated-histories
+pass git commit -am "firstcommit"
+</PRE>
+</LI>
+<LI>Do some changes and pass will automatically commit them. Push and set upstream 
+<BR><PRE>
+pass git push --set-upstream origin master
+</PRE>
+</LI>
+<LI>From here on you can use the familiar git commands 
+<BR><PRE>
+pass git pull 
+pass git push
+</PRE>
+</LI>
+</UL>
+Stay safe :)
 
 <P>
 References:
 
-<UL>
-<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html29"
-  HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
 <P>
-</LI>
-<LI>Nicolae Cindea (2021).   <A ID="tex2html30"
-  HREF="https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)">Movie to GIF Converter</A>, MATLAB Central File Exchange. Retrieved June 14, 2021. 
+
+<UL>
+<LI><A ID="tex2html18"
+  HREF="https://www.passwordstore.org/">Password Store</A>
 </LI>
 </UL>
 
@@ -118,24 +169,24 @@ References:
  HREF="node10.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node6.html">
+ HREF="node7.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html199"
+<A ID="tex2html202"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">April – Frequentist inference</A>
+ HREF="node10.html">March – Signal propagation</A>
 <B> Up:</B> <A
- HREF="node6.html">Blog posts 2021</A>
+ HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">February – Controlling your</A>
- &nbsp; <B>  <A ID="tex2html200"
+ HREF="node8.html">January – Poisson process</A>
+ &nbsp; <B>  <A ID="tex2html203"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

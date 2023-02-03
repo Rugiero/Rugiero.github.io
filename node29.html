@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
 <HTML lang="EN">
 <HEAD>
-<TITLE>December – Asymptotic decay rate of a probability distribution</TITLE>
-<META NAME="description" CONTENT="December – Asymptotic decay rate of a probability distribution">
+<TITLE>September – Homography</TITLE>
+<META NAME="description" CONTENT="September – Homography">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,6 +15,7 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node30.html">
 <LINK REL="previous" HREF="node28.html">
 <LINK REL="next" HREF="node30.html">
 </HEAD>
@@ -26,264 +27,134 @@
  HREF="node30.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node19.html">
+ HREF="node20.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node28.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html249"
+<A ID="tex2html252"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node30.html">About this document ...</A>
+ HREF="node30.html">December – Asymptotic decay</A>
 <B> Up:</B> <A
- HREF="node19.html">Blog posts 2022</A>
+ HREF="node20.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node28.html">September – Homography</A>
- &nbsp; <B>  <A ID="tex2html250"
+ HREF="node28.html">August – dB logplot</A>
+ &nbsp; <B>  <A ID="tex2html253"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION000410000000000000000">
-December – Asymptotic decay rate of a probability distribution</A>
+<H2><A ID="SECTION00049000000000000000">
+September – Homography</A>
 </H2>
 
 <P>
-Let us study the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img57.svg"
- ALT="$X$"></SPAN> tail distribution. It is defined by
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x},
-\end{equation}
+<A ID="tex2html102"
+  HREF="https://en.wikipedia.org/wiki/Homography">Homography</A>
+can be used to &ldquo;change the perspective&rdquo; of an image (set of vectors). I have used homography for the satellite footprint in my simulations: for elevation angles smaller than <!-- MATH
+ $90 \degree,$
  -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img97.svg"
- ALT="$\displaystyle \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x},$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-where <!-- MATH
- $\textbf{P}(\cdot)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img98.svg"
- ALT="$\textbf{P}(\cdot)$"></SPAN> denotes the probability of an event. Let us calculate the decay rates for the exponential distribution, gamma distribution, and normal distribution.
-
-<P>
-For <SPAN  CLASS="textbf">exponentially distributed</SPAN> <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img57.svg"
- ALT="$X$"></SPAN> with scale parameter <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img99.svg"
- ALT="$\theta$"></SPAN>:
-<P></P>
-<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
-<TR >
-<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG STYLE="height: 1.89ex; vertical-align: -0.78ex; " SRC="img100.svg"
- ALT="$\displaystyle \rho_{\text{Exponential}}$"></SPAN></TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.47ex; vertical-align: -1.74ex; " SRC="img101.svg"
- ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x} = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img102.svg"
- ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta.$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-For <SPAN  CLASS="textbf">gamma distributed</SPAN> <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img57.svg"
- ALT="$X$"></SPAN> with shape parameter <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img103.svg"
- ALT="$k$"></SPAN> and scale parameter <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img99.svg"
- ALT="$\theta$"></SPAN>:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
-<TR >
-<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img104.svg"
- ALT="$\displaystyle \rho_{\text{Gamma}}$"></SPAN></TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img105.svg"
- ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = \lim_{x\rightarrow \infty} -\frac{\log (1-\gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img106.svg"
- ALT="$\displaystyle =\lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.62ex; vertical-align: -1.74ex; " SRC="img107.svg"
- ALT="$\displaystyle \overset{(a)}{=} \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k...
-... = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-<A ID="line:22">&nbsp;&nbsp;&nbsp;</A></TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.62ex; vertical-align: -1.74ex; " SRC="img108.svg"
- ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta.$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-In <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img109.svg"
- ALT="$(a)$"></SPAN>, we used the asymptotic behavior of the gamma distribution
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img92.svg"
+ ALT="$90 \degree,$"></SPAN> you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img93.svg"
+ ALT="$H$"></SPAN> transforms an <A ID="tex2html103"
+  HREF="https://en.wikipedia.org/wiki/Ellipse">ellipse</A>
+of parameters <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img94.svg"
+ ALT="$a$"></SPAN> and <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img95.svg"
+ ALT="$b$"></SPAN> to a circle of radius <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img8.svg"
+ ALT="$r$"></SPAN> so that the right focus point maps to origo.
 <P><!-- MATH
  \begin{displaymath}
-\lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
+H=
+\begin{pmatrix}
+  -a &-0 &-1 &0 &0 &0 &ar &0 &r \\
+  0 &0 &0 &-a &-0 &-1 & 0& 0 &0 \\
+  -c &-b^2/a& -1& 0& 0& 0 &0& 0& 0 \\
+  0 &0 &0 &-c &-b^2/a &-1 &cr &rb^2/a& r\\
+  a &0 &-1& 0& 0 &0 & ar &0 &-r \\
+  0 &0 &0 &a &0 &-1 &0 &0 &0\\
+  -c &b^2/a& -1& 0& 0& 0& 0& 0& 0 \\
+  0 &0 &0 &-c &b^2/a &-1 &-rc &rb^2/ar &-r
+\end{pmatrix}
 \end{displaymath}
  -->
 </P>
 <DIV CLASS="mathdisplay">
-<IMG STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img110.svg"
- ALT="$\displaystyle \lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
-$">
+<IMG STYLE="height: 22.45ex; vertical-align: -10.68ex; " SRC="img96.svg"
+ ALT="$\displaystyle H=
+\begin{pmatrix}
+-a &amp;-0 &amp;-1 &amp;0 &amp;0 &amp;0 &amp;ar &amp;0 &amp;r \\
+0 &amp;0 &amp;0 &amp;-...
+...&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0 \\
+0 &amp;0 &amp;0 &amp;-c &amp;b^2/a &amp;-1 &amp;-rc &amp;rb^2/ar &amp;-r
+\end{pmatrix}$">
 </DIV><P></P>
 
 <P>
-For <SPAN  CLASS="textbf">normal distributed</SPAN> <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img57.svg"
- ALT="$X$"></SPAN> with mean <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img111.svg"
- ALT="$\mu$"></SPAN> and variance <SPAN CLASS="MATH"><IMG STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img112.svg"
- ALT="$\sigma^2$"></SPAN>:
+
+<DIV class="CENTER">
+  <IMG STYLE=""
+ SRC="./homographydrawing.png"
+ ALT="Image homographydrawing">
+
+</DIV>
 
 <P>
-<P></P>
-<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
-<TR >
-<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img113.svg"
- ALT="$\displaystyle \rho_{\text{Normal}}$"></SPAN></TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="img114.svg"
- ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = -\...
-...t{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="img115.svg"
- ALT="$\displaystyle \geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\fra...
-...}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x} = \infty,$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-where in <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img116.svg"
- ALT="$(b)$"></SPAN>, we used the inequality <P><!-- MATH
- \begin{displaymath}
-\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="mathdisplay">
-erfc<IMG STYLE="height: 6.09ex; vertical-align: -2.16ex; " SRC="img117.svg"
- ALT="$\displaystyle (x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$">
-</DIV><P></P>
-that holds for <SPAN CLASS="MATH"><IMG STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img118.svg"
- ALT="$x \geq 0$"></SPAN> and <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img119.svg"
- ALT="$\beta &gt;1$"></SPAN> (we used <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img120.svg"
- ALT="$\beta = 2$"></SPAN>).
+Here is a GNU Octave code:
+<PRE>
+%%Changes ellipses with parameters a &gt; b  perspective to a sphere of radius r centered in origo. Vectors to be transformed are given in 2x1000 matrix refc.
+
+function points = homography(refc, a,b,r)
+  c = sqrt(a^2 - b^2);
+  %%Construct the homography matrix.
+  X1 = [[-a -0 -1 0 0 0 a*r 0*r r]; [0 0 0 -a -0 -1 a*0 0*0 0]];
+  X2 = [[-c -b^2/a -1 0 0 0 c*0 b^2/a*0 0]; [0 0 0 -c -b^2/a -1 c*r b^2/a*r r]];
+  X3 = [[a 0 -1 0 0 0 -a*-r 0*-r -r]; [0 0 0 a -0 -1 -a*0 0*0 0]];
+  X4 = [[-c b^2/a -1 0 0 0 c*0 -b^2/a*0 0]; [0 0 0 -c b^2/a -1 c*-r b^2/a*r -r]];
+  P = [X1; X2; X3; X4];
+  [U,S,V] = svd(P); %Singular value composition.
+  h = V(:,9);
+  H = reshape(h, 3, 3)';
+  points = [];
+  for point = refc
+    homopoint = [point; 1]; %Point presented in homogeneous coordinates.
+    homopoint = H*homopoint;
+    homopoint = [homopoint(1)/homopoint(3); homopoint(2)/homopoint(3)];
+    points = [points homopoint];
+  end
+  figure(1)
+  plot(points(1,:), points(2,:), 'b','linewidth',10);
+end
+</PRE>
 
 <P>
-The asymptotic decay rates for the exponential distribution, gamma distribution, and normal distribution are given in <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img121.svg"
- ALT="$(6)$"></SPAN>, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img122.svg"
- ALT="$(7)$"></SPAN>, and <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img123.svg"
- ALT="$(8)$"></SPAN>, respectively. We see that the decay rate <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img124.svg"
- ALT="$\rho$"></SPAN> of the normal distribution is always maximal, i.e. <!-- MATH
- $\rho_{\text{Normal}} = \infty$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img125.svg"
- ALT="$\rho_{\text{Normal}} = \infty$"></SPAN>, whereas the decay rates of the exponential distribution and the gamma distribution depend on the scale parameter <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img99.svg"
- ALT="$\theta$"></SPAN>.
+In the following, we are rotating a &ldquo;pyramid&rdquo;. It can be seen how the homography mapping can be interpreted as a change of perspective.
 
 <P>
-By normalizing the mean (<!-- MATH
- $\mathbb{E}[X] = 1$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img126.svg"
- ALT="$\mathbb{E}[X] = 1$"></SPAN>) by setting <!-- MATH
- $\theta = 1$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img127.svg"
- ALT="$\theta = 1$"></SPAN> and <!-- MATH
- $k=1/\theta$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img128.svg"
- ALT="$k=1/\theta$"></SPAN>, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is <!-- MATH
- $\rho_{\text{Exponential}} = 1$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.39ex; vertical-align: -0.78ex; " SRC="img129.svg"
- ALT="$\rho_{\text{Exponential}} = 1$"></SPAN> and of the gamma distribution is <!-- MATH
- $\rho_{\text{Gamma}} = k$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img130.svg"
- ALT="$\rho_{\text{Gamma}} = k$"></SPAN>. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters <SPAN CLASS="MATH"><IMG STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="img131.svg"
- ALT="$k&lt;1$"></SPAN>, and faster than the exponential distribution with <SPAN CLASS="MATH"><IMG STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="img132.svg"
- ALT="$k&gt;1$"></SPAN>. With <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img133.svg"
- ALT="$k=1$"></SPAN>, the distributions coincide. When <!-- MATH
- $k \rightarrow \infty$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img134.svg"
- ALT="$k \rightarrow \infty$"></SPAN>, the gamma distribution approaches the normal distribution, and <!-- MATH
- $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img135.svg"
- ALT="$\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$"></SPAN>.
+
+<DIV class="CENTER">
+  <IMG STYLE=""
+ SRC="./gifu2.gif"
+ ALT="Image gifu2">
+
+</DIV>
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html105"
-  HREF="https://en.wikipedia.org/wiki/Error_function">Error function</A>
-</LI>
-<LI><A ID="tex2html106"
-  HREF="https://en.wikipedia.org/wiki/Exponential_distribution">Exponential distribution</A>
-</LI>
-<LI><A ID="tex2html107"
-  HREF="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma distribution</A>
-</LI>
-<LI><A ID="tex2html108"
-  HREF="https://en.wikipedia.org/wiki/Normal_distribution">Normal distribution</A>
-<P>
+<LI><A ID="tex2html104"
+  HREF="https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog">Stack exchange</A>
 </LI>
 </UL>
 
 <P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node30.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node19.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node28.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html249"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node30.html">About this document ...</A>
-<B> Up:</B> <A
- HREF="node19.html">Blog posts 2022</A>
-<B> Previous:</B> <A
- HREF="node28.html">September – Homography</A>
- &nbsp; <B>  <A ID="tex2html250"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<BR><HR>
 
 </BODY>
 </HTML>
