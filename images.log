@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  3 FEB 2023 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.16)  22 MAR 2023 22:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,10 +583,10 @@ Preview: Tightpage -32891 -32891 32891 32891
 :tex2html_wrap_inline2099:lthtmlCropMarkDepth:=6.0501pt:1ex:=4.30554pt
 [32]
 Package epstopdf Info: Source file: <spread.eps>
-(epstopdf)                    date: 2023-02-03 18:56:25
+(epstopdf)                    date: 2023-03-22 22:09:43
 (epstopdf)                    size: 2024862 bytes
 (epstopdf)             Output file: <spread-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-02-03 18:56:25
+(epstopdf)                    date: 2023-03-22 22:09:43
 (epstopdf)                    size: 413397 bytes
 (epstopdf)             Command: <repstopdf --outfile=spread-eps-converted-to.pd
 f spread.eps>
