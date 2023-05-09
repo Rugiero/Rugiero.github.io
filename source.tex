@@ -650,7 +650,7 @@ function writeGIF()
   %%Write the first frame.
   frame = getframe(); %%Get the current frame.
   imwrite(frame.cdata,'gifu.gif','gif','writemode','overwrite',...
-          'LoopCount',inf,'DelayTime',0.1);  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
+          'LoopCount',inf,'DelayTime',0.1, 'Compression' , 'lzw');  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
   
   for iii = 1 : N
     iii
@@ -661,12 +661,11 @@ function writeGIF()
     axis([[-10, 10],[-10, 10]])
     
     frame = getframe(); %%Get the current frame.
-    imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1); %%Write the frame to gifu.gif.
+    imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1, 'Compression' , 'lzw'); %%Write the frame to gifu.gif.
   end
 end
-
-
 \end{verbatim}
+The 'Compression' setting is important to avoid insane file sizes and memory usage.
 
 References: 
 \begin{itemize}
@@ -1272,16 +1271,16 @@ Let us consider two sinusoidal signals of opposite phases during the time $t \in
 \begin{align}
   &\mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0,
 \end{align}
-where $\mathbb{E}[\cdot]$ is the mean.
+where $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the probabilistic expected value).
 
 
-I we were a bit silly, we could try to add the powers of the signals separately together:
+We could try to add the powers of the signals separately together:
 
 \begin{align}
   \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \\
   &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1, \nonumber
 \end{align}
-but the result greatly differs from the derivation in $(2)$! Still, e.g. in the \htmladdnormallink{point process models of wireless networks}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks}, the signal powers are often summed as in (3). The often unmentioned assumption behind this has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
+but the result greatly differs from $(2)$! Can we then sometimes sum the individual signal powers together or not? This surely would be handy. This question has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
 
 Let us assume that $S_1$ and $S_2$ are two signals. We have that
 \begin{equation}
@@ -1294,7 +1293,16 @@ $$
 $$
 as it should be according to the equations (2), (3) and (4).
 
-We used deterministic signals, but the same remarks apply to random signals or general random variables.
+In above, we used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases $\phi_1,\phi_2 \in [0,2 \pi]$, let $S_1(t) = \cps(2 \pi t + \phi_1)$ and $S_2(t) = \cos(2 \pi t + \phi_2)$;
+
+\begin{align*}
+  &\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}[(S_1 + S_2)^2]\right] = \mathbb{E}_{\phi_1} \left[\mathbb{E}\left[ S_1^2\right]\right] + \mathbb{E}_{\phi_2} \left[\mathbb{E}\left[ S_2^2\right]\right] +\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] \\
+  &=\frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^2dt d \phi_1 d+ \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt  d \phi_2 \\
+  &  + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^{2 \pi}\int_0^1 \cos(2 \pi t + \phi_1) \cos(2 \pi t + \phi_2)dt d \phi_1 d \phi_2\\
+  &= \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^2dt d \phi_1 d + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt  d \phi_2 = 1/2 +1/2 =1.
+\end{align*}
+The expected powers can be summed, as the expectation of the cross-correlation $\mathbb{E}[S_1 S_2]$ is $0$ for the two random signals $S_1$ and $S_2$, \textit{i.e.}, $\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] =0$.
+
 
 References:
 \begin{itemize}

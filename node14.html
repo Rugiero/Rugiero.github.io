@@ -32,9 +32,9 @@
 <A
  HREF="node13.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html212"
+<A ID="tex2html210"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
@@ -44,7 +44,7 @@
  HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node13.html">June – Why does</A>
- &nbsp; <B>  <A ID="tex2html213"
+ &nbsp; <B>  <A ID="tex2html211"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -55,7 +55,7 @@ July – Animating GIFs in GNU Octave</A>
 </H2>
 
 <P>
-Often it is nice to plot your results as an animation. The following code demonstrates the most effective way to write GIFs in Octave that I could find. Example code outputs an animation of a <A ID="tex2html48"
+Often it is nice to plot your results as an animation. The following code demonstrates the most effective way to write GIFs in Octave that I could find. Example code outputs an animation of a <A ID="tex2html47"
   HREF="https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation">complex base-band signal symbol</A>
 in noise. Code uses the quiver plot, but any other plot should do equally well. Matlab compatibility is not guaranteed.
 
@@ -63,7 +63,7 @@ in noise. Code uses the quiver plot, but any other plot should do equally well. 
 
 <DIV class="CENTER"><A ID="227"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure 8:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 Animated GIF of a noisy QAM symbol</CAPTION>
 <TR><TD><IMG STYLE=""
  SRC="./gifu.gif"
@@ -93,7 +93,7 @@ function writeGIF()
   %%Write the first frame.
   frame = getframe(); %%Get the current frame.
   imwrite(frame.cdata,'gifu.gif','gif','writemode','overwrite',...
-          'LoopCount',inf,'DelayTime',0.1);  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
+          'LoopCount',inf,'DelayTime',0.1, 'Compression' , 'lzw');  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
   
   for iii = 1 : N
     iii
@@ -104,16 +104,17 @@ function writeGIF()
     axis([[-10, 10],[-10, 10]])
     
     frame = getframe(); %%Get the current frame.
-    imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1); %%Write the frame to gifu.gif.
+    imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1, 'Compression' , 'lzw'); %%Write the frame to gifu.gif.
   end
 end
 </PRE>
+The 'Compression' setting is important to avoid insane file sizes and memory usage.
 
 <P>
 References: 
 
 <UL>
-<LI><A ID="tex2html49"
+<LI><A ID="tex2html48"
   HREF="https://octave.org/doc/v4.0.1/Loading-and-Saving-Images.html">Octave Image Processing</A>
 </LI>
 </UL>
