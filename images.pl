@@ -262,12 +262,12 @@ $key = q/displaystyle=expleft[-int_{mathbb{R}^2}left(1-int_{0}^{infty}exp[-f(y)]
 $cached_env_img{$key} = q|<IMG STYLE="height: 7.17ex; vertical-align: -3.02ex; " SRC="|."$dir".q|img27.svg"
  ALT="$\displaystyle = \exp \left[-\int_{\mathbb{R}^2} \left(1 - \int_{0}^{\infty} \exp [-f(y)] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) \Lambda(dx) \right]$">|; 
 
-$key = q/displaystyle=frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_1))^2dtdphi_1d+frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_2))^2dtdphi_2;MSF=1.6;AAT/;
+$key = q/displaystyle=frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_1))^2dtdphi_1+frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_2))^2dtdphi_2;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 5.96ex; vertical-align: -2.23ex; " SRC="|."$dir".q|img95.svg"
  ALT="$\displaystyle =\frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^...
 ...+ \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt d \phi_2$">|; 
 
-$key = q/displaystyle=frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_1))^2dtdphi_1d+frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_2))^2dtdphi_2=1slash2+1slash2=1.;MSF=1.6;AAT/;
+$key = q/displaystyle=frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_1))^2dtdphi_1+frac{1}{2pi}int_0^{2pi}int_0^1(cos(2pit+phi_2))^2dtdphi_2=1slash2+1slash2=1.;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG STYLE="height: 5.96ex; vertical-align: -2.23ex; " SRC="|."$dir".q|img97.svg"
  ALT="$\displaystyle = \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))...
 ...i}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt d \phi_2 = 1/2 +1/2 =1.$">|; 

@@ -1297,9 +1297,9 @@ In above, we used deterministic signals, but the same remarks apply to random si
 
 \begin{align*}
   &\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}[(S_1 + S_2)^2]\right] = \mathbb{E}_{\phi_1} \left[\mathbb{E}\left[ S_1^2\right]\right] + \mathbb{E}_{\phi_2} \left[\mathbb{E}\left[ S_2^2\right]\right] +\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] \\
-  &=\frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^2dt d \phi_1 d+ \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt  d \phi_2 \\
+  &=\frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^2dt d \phi_1 + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt  d \phi_2 \\
   &  + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^{2 \pi}\int_0^1 \cos(2 \pi t + \phi_1) \cos(2 \pi t + \phi_2)dt d \phi_1 d \phi_2\\
-  &= \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^2dt d \phi_1 d + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt  d \phi_2 = 1/2 +1/2 =1.
+  &= \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^2dt d \phi_1  + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt  d \phi_2 = 1/2 +1/2 =1.
 \end{align*}
 The expected powers can be summed, as the expectation of the cross-correlation $\mathbb{E}[S_1 S_2]$ is $0$ for the two random signals $S_1$ and $S_2$, \textit{i.e.}, $\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] =0$.
 
