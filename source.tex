@@ -71,7 +71,7 @@
 
     \date
         {
-          {Last major update 19.12.2022}\\
+          {Last major update 27.05.2023}\\
         }
 
         \begin{center}
@@ -1269,7 +1269,7 @@ A simple but important observation for the July.
 Let us consider two sinusoidal signals of opposite phases during the time $t \in [0,1]$: $S_1(t) = \cos(2 \pi t)$ and $S_2(t) = \cos(2 \pi t + \pi).$ Obviously, the signals cancel each other completely and the mean power of the additive signal $ S_1 + S_2$ is just $0$:
 
 \begin{align}
-  &\mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0,
+  &\mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0, \tag{1}
 \end{align}
 where $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the probabilistic expected value).
 
@@ -1277,21 +1277,21 @@ where $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the prob
 We could try to add the powers of the signals separately together:
 
 \begin{align}
-  \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \\
+  \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \tag{2} \\
   &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1, \nonumber
 \end{align}
 but the result greatly differs from $(2)$! Can we then sometimes sum the individual signal powers together or not? This surely would be handy. This question has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
 
 Let us assume that $S_1$ and $S_2$ are two signals. We have that
 \begin{equation}
-  \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2],
+  \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2], \tag{3}
 \end{equation}
 thus the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds if and only if the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ i.e. if the signals $S_1$ and $S_2$ are not correlated. Clearly, this is not the case with our initial signals, as then the cross-correlation is given by
 
 $$
 \mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
 $$
-as it should be according to the equations (2), (3) and (4).
+as it should be according to the equations (1), (2) and (3).
 
 In above, we used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases $\phi_1,\phi_2 \in [0,2 \pi]$, let $S_1(t) = \cps(2 \pi t + \phi_1)$ and $S_2(t) = \cos(2 \pi t + \phi_2)$;
 
@@ -1440,14 +1440,14 @@ References:
 
 Let us study the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's $X$ tail distribution. It is defined by
 \begin{equation}
-  \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x},
+  \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x}, \tag{1}
 \end{equation}
 where $\textbf{P}(\cdot)$ denotes the probability of an event. Let us calculate the decay rates for the exponential distribution, gamma distribution, and normal distribution.
 
 For \textbf{exponentially distributed} $X$ with scale parameter $\theta$:
 \begin{align}
   \rho_{\text{Exponential}} &=\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x}  = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}   \nonumber \\
-  &=\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta.
+  &=\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta. \tag{2}
 \end{align}
 
 For \textbf{gamma distributed} $X$ with shape parameter $k$ and scale parameter $\theta$:
@@ -1456,7 +1456,7 @@ For \textbf{gamma distributed} $X$ with shape parameter $k$ and scale parameter 
   \rho_{\text{Gamma}} &= \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X>x)}{x} = \lim_{x\rightarrow \infty} -\frac{\log (1-\gamma(k,x/\theta)/\Gamma(k))}{x} \nonumber  \\
   &=\lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta)/\Gamma(k))}{x} \nonumber \\
   &\overset{(a)}{=} \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta))}{x} = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}\label{line:22} \nonumber \\
-  &= \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta. 
+  &= \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta. \tag{3}
 \end{align}
 In $(a)$, we used the asymptotic behavior of the gamma distribution
 $$
@@ -1467,14 +1467,14 @@ For \textbf{normal distributed} $X$ with mean $\mu$ and variance $\sigma^2$:
 
 \begin{align}
   \rho_{\text{Normal}} &= \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X>x)}{x} = -\lim_{x\rightarrow \infty} \frac{\log \text{erfc}\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)}{x} \overset{(b)}{\geq} -\lim_{x\rightarrow \infty} \frac{\log\left( \sqrt{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} \nonumber \\
-  &\geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} = -\lim_{x\rightarrow \infty} \frac{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }{x} = \frac{1}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x}  = \infty,
+  &\geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} = -\lim_{x\rightarrow \infty} \frac{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }{x} = \frac{1}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x}  = \infty, \tag{4}
 \end{align}
 where in $(b)$, we used the inequality $$\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$$ that holds for $x \geq 0$ and $\beta >1$ (we used $\beta = 2$).
 
 
-The asymptotic decay rates for the exponential distribution, gamma distribution, and normal distribution are given in $(6)$, $(7)$, and $(8)$, respectively. We see that the decay rate $\rho$ of the normal distribution is always maximal, i.e. $\rho_{\text{Normal}} = \infty$, whereas the decay rates of the exponential distribution and the gamma distribution depend on the scale parameter $\theta$.
+The asymptotic decay rates for the exponential distribution, gamma distribution, and normal distribution are given in $(2)$, $(3)$, and $(4)$, respectively. We see that the decay rate $\rho$ of the normal distribution is always maximal, i.e. $\rho_{\text{Normal}} = \infty$, whereas the decay rates of the exponential distribution and the gamma distribution depend on the scale parameter $\theta$.
 
-By normalizing the mean ($\mathbb{E}[X] = 1$) by setting $\theta = 1$ and $k=1/\theta$, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is $\rho_{\text{Exponential}} = 1$ and of the gamma distribution is $\rho_{\text{Gamma}} = k$. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters $k<1$, and faster than the exponential distribution with $k>1$. With $k=1$, the distributions coincide. When $k \rightarrow \infty$, the gamma distribution approaches the normal distribution, and $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$.
+By normalizing the mean ($\mathbb{E}[X] = 1$) by setting $\theta = 1$ and $k=1/\theta$, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is $\rho_{\text{Exponential}} = 1$ and of the gamma distribution is $\rho_{\text{Gamma}} = k$. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters $k<1$, and faster than the exponential distribution with $k>1$. With $k=1$, the distributions coincide. When $k \rightarrow \infty$, the gamma distribution approaches the normal distribution and $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$.
 
 
 References:
@@ -1486,12 +1486,170 @@ References:
 
 \end{itemize}
 
+\section{Blog posts 2023}
 
+\subsection{May –  Signal fading in a satellite receiver and the coherence time}
+\begin{figure}
+  \includegraphics[width=\linewidth]{satelliteinterference.png}
+\end{figure}
+
+In this blog post, we study a faded signal in an omnidirectional satellite receiver sent by an Earth transmitter. We consider that the transmitter (TX) is sending a constant \htmladdnormallink{QAM}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} symbol, \textit{i.e.}, the TX \htmladdnormallink{baseband signal}{https://en.wikipedia.org/wiki/Baseband} is given by
+\begin{equation}
+  S_{\text{TX}} = Ae^{-2 i \pi \theta}, } \tag{1}
+\end{equation}
+for some $\theta \in [0,1]$ and $A \in \mathbb{R}_+$. Some of the \htmladdnormallink{passband signal}{https://en.wikipedia.org/wiki/Passband} \html
+addnormallink{scatters}{https://en.wikipedia.org/wiki/Scattering}. We use a model where $100$ scatterer objects are \htmladdnormallink{Poisson distributed }{https://en.wikipedia.org/wiki/Poisson_point_process} inside a circular area of diameter $180$ m. The phases of the scattered signals are independently uniformly random. Initially, the satellite, which is moving at its \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed}, is in the \htmladdnormallink{zenith}{https://en.wikipedia.org/wiki/Zenith} w.r.t. the Earth transmitter. The receiver's (RX) baseband signal is a linear combination of the \htmladdnormallink{down-conversions}{https://en.wikipedia.org/wiki/Digital_down_converter} of the scattered, \htmladdnormallink{Doppler shifted}{https://en.wikipedia.org/wiki/Doppler_effect} and \htmladdnormallink{attenuated}{https://en.wikipedia.org/wiki/Attenuation} passband signal components, and it has been shown to be given by
+\begin{equation}
+  S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_m }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
+  }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta}, \tag{2}
+\end{equation}
+where $l(d_i)$ is the path-loss function at distance $d_j$ from the scatterer $j$, $d_0$ is the direct-path distance to the transmitter, $K$ is the parameter that determines the energy ratio of the direct-path (\htmladdnormallink{LOS}{https://en.wikipedia.org/wiki/Line-of-sight_propagation}) component and the scattered paths, and $\tau_j(t) = d_j(t)/c$ is the propagation delays restricted by the speed of light $c$, which is dependent on time $t$ as the satellite moves, and $f_m$ is the carrier frequency.
+
+Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the orbital speed of the satellite is given by
+\begin{equation}
+  v = \sqrt{\frac{G}{h + R_{\oplus}}}, \tag{3}
+\end{equation}
+which is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$, hence the Doppler spread $D_s = 100$ Hz. The coherence time is given by
+\begin{equation}
+T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
+\end{equation}
+The satellite moves about $8$ meters during this period.
+
+Why is this interesting? Well, because the movement of the satellites can't be omitted when modeling the satellite networks. However, the small coherence time allows us to study the fading while the satellite can be approximated to stay still. The following figures illustrate the RX baseband signal changing in time while the satellite moves. As expected, the variance in the signal strength is larger in the Rayleigh faded case.
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{basebandgifK10.gif}
+  \caption{Baseband signal with partial LOS $K=10$}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{basebandgifK0.gif}
+  \caption{Baseband signal under Rayleigh fading $K=0$}
+\end{figure}
+
+Here is the Octave code:
+
+\begin{verbatim}
+function signals = satellite_baseband_simulation()
+  pkg load statistics
+  close all;
+  clear all;
+  clear imread;
+  clear imwrite;
+
+  h = 600*1000; #Altitude of satellites.
+  K = 0; #Rician parameter.
+  t = 0; #Initial time.
+  [refs bbsignals] = scatteredsignals(K);  #Random baseband signals ''bbsignals' and the scatterer-obstacle's locations in 'refs'.
+  signal = RXbaseband(refs, bbsignals);
+  N = 200;
+  history =[];
+  filename = 'basebandgif.gif';
+  if(exist(filename))
+    delete(filename);
+  end
+
+
+  for iii = 1 : N
+    ##Observe the progress.
+    if(mod(iii,10) == 0)
+      iii
+    end
+    refs = rotateearth(refs); #Rotate Earth.
+    signal = RXbaseband(refs, bbsignals); #New received baseband signal
+    history = [history [real(signal); imag(signal)]]; #History of the signals.    
+    ##Write GIF.
+    quiver(0,0,real(signal), imag(signal));
+    hold on;
+    plot(history(1,:), history(2,:))
+    axis([[-0.1, 0.1], [-0.1, 0.1]]);
+    t = t + 1/(4*8*100); #Time hop. t = 1/(8*300) is the initial coherence time of the example.
+     text(0.03, 0.03, mat2str(t, 3), 'fontsize',25);
+    text(0.075, 0.03, 's', 'fontsize',25);
+    frame = getframe();
+    imwrite(frame.cdata, filename,'gif','writemode','append','DelayTime',0.05, 'Compression','lzw')
+    hold off;
+  end  
+end
+
+
+##Returns a table of 101 (1 LOS signal and 100 signals from the scattered paths) randomly phased complex baseband signal symbols each corresponding to one of a obstacle location given in 'refs'. 'K' is the Rician parameter.
+function [refs, signals] = scatteredsignals(K)
+  ##First, generate the Poisson distributed random obstacle locations.
+  refs = [0; 0]; #LOS component.
+  yMin = 1-0.0000000001; yMax = 1;
+  xMin = -pi; xMax = pi;
+  xDelta = xMax - xMin; yDelta = yMax - yMin; #Rectangle dimensions
+  numbPoints =100;    #Number of points.
+  x = xDelta*(rand(numbPoints,1)) + xMin;    #Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    
+  refs = [refs [pi/2-asin(y)' ; x'] ]; #Map referencepoints to spherical coordinates
+  A = 30000; #Amplitude.
+  signals = [A*sqrt(K/(K+1)).*exp(-rand(1,1).*i*2*pi)];
+  signals = [signals A/(sqrt(100)*sqrt(1+K)).*exp(-rand(1,length(refs(1,:))-1).*i*2*pi)];
+end
+
+
+##Derives the received baseband signal.
+function bb = RXbaseband(refs, signals)
+  R = 6378*1000; #Radius of Earth in m.
+  h = 600*1000; #Altitude of the satellite.
+  d = @(gamma) sqrt((cos(gamma).*(R+h)-R).^2+(sin(gamma).*(R+h)).^2); ##Distance to the satellites in m.
+  c = 299792458; ##Speed of light.
+  if(!isempty(refs))
+    a = 1./d(refs(1,:));
+    tau  = d(refs(1,:))/c;
+  else
+    a = 0;
+    tau = 0;
+  end
+  fm = 12*10^9; ##Modulation frequency.
+  ab = a.*exp(-i*2*pi*tau.*fm); ##Received individual signals.
+  bb = sum(ab.*signals); ##Aggregate received signal.
+end
+
+##Rotates the positions in 'refs' as the satellite "moves". In this model, the satellite stays still at (0,0) but the Earth moves.
+function refs = rotateearth(refs)
+  t = 1/(4*8*100); #Time hop in seconds.
+  h= 600*1000; #Altitude of the satellite.
+  R = 6378*1000; #Radius of Earth.
+  GM = 3.986*10^14; #Gravitational constant.
+  orbitalspeed = sqrt(GM/(h + R)); #Satellite speed in m/s.
+  angularspeed = orbitalspeed/(h + R); #Angular speed of the satellite.
+  rotation = angularspeed*t; #Rotation of Earth.
+  eucpos  = pol2euc(refs); #Transform the polar coordinates to euclidean coordinates.
+  newpos = [[1 0 0]; [0 cos(rotation) -sin(rotation)]; [0 sin(rotation) cos(rotation)]]*eucpos; #Rotation about x-axis.  
+  refs = euc2pol(newpos); #Back to the polaroordinates.
+end
+
+
+function p  = euc2pol(e)
+  R = 6378*1000; #Radius of Earth.
+  p = [acos(e(3,:)./R); (e(2,:) >= 0).*atan2(e(2,:),e(1,:)) + ...
+			(e(2,:) < 0).*(atan2(e(2,:),e(1,:)) + 2*pi)]; #Polar coordinates from the given Euclidean coordinates in 'e'..
+end
+
+function e = pol2euc(p)
+  R= 6378*1000; #Radius of Earth.
+  e = [R*cos(p(2,:)).*sin(p(1,:));...
+       R*sin(p(2,:)).*sin(p(1,:));...
+       R*cos(p(1,:))]; #Euclidean coordinates from the given polar coordinates in 'p'.
+end
+
+\end{verbatim}
+References:
+\begin{itemize}
+\item Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press,, 2005.
 \end{document}
+
+
 
 %
 % optional post-title formatting for PostScript
 %
 \parindent0pt
 \parskip2.5ex plus 0.5ex minus 0.5ex
+
+
 
