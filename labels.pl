@@ -1,4 +1,4 @@
-# LaTeX2HTML 2019.2 (Released June 5, 2019)
+# LaTeX2HTML 2021.2 (Released July 1, 2021)
 # Associate labels original text with physical files.
 
 
@@ -9,13 +9,9 @@ $noresave{$key} = "$nosave";
 1;
 
 
-# LaTeX2HTML 2019.2 (Released June 5, 2019)
+# LaTeX2HTML 2021.2 (Released July 1, 2021)
 # labels from external_latex_labels array.
 
-
-$key = q/_/;
-$external_latex_labels{$key} = q|<|; 
-$noresave{$key} = "$nosave";
 
 1;
 

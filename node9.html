@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
+<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<HTML lang="en">
 <HEAD>
 <TITLE>February – Controlling your passwords with pass</TITLE>
 <META NAME="description" CONTENT="February – Controlling your passwords with pass">
@@ -11,7 +11,7 @@
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -32,10 +32,11 @@
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html218"
+<A ID="tex2html220"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
@@ -44,7 +45,7 @@
  HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node8.html">January – Poisson process</A>
- &nbsp; <B>  <A ID="tex2html219"
+ &nbsp; <B>  <A ID="tex2html221"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -53,29 +54,29 @@
 <H2><A ID="SECTION00032000000000000000">
 February – Controlling your passwords with pass</A>
 </H2>
-Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
 
 <P>
 
 <UL>
-<LI>Install the application in the terminal 
+<LI>Install the application in the terminal. 
 <BR><PRE>
 sudo apt install pass
 </PRE>
 </LI>
-<LI>Check for existing GPG keys 
+<LI>Check for the existing GPG keys. 
 <BR><PRE>
 gpg --list-keys
 </PRE>
 </LI>
-<LI>If no keys were found generate a key pair 
+<LI>If no keys were found generate a key pair. 
 <BR><PRE>
 gpg --generate-key
 </PRE>
 </LI>
-<LI>Copy the name of the key and initialize pass
+<LI>Copy the name of the key and initialize pass.
 <BR><PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234,
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
 where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
 </LI>
@@ -83,15 +84,15 @@ where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
 <BR><PRE>
 pass generate keyfolder/newkey
 </PRE>
-List passwords
+List the passwords.
 <PRE>
 pass
 </PRE>
-Copy a password to clipboard 
+Copy a password to the clipboard. 
 <BR><PRE>
 pass keyfolder/newkey -c
 </PRE>
-For more commands
+For more commands:
 <PRE>
 man pass
 </PRE>
@@ -99,32 +100,33 @@ man pass
 </UL>
 
 <P>
-Connect pass to git so it is easy to keep track of changes with multiple machines.
-
-<P>
+Connect Pass to Git and it is easy to keep track of passwords with multiple machines.
 
 <UL>
 <LI>Export your public and private key to a file with 
 <BR><PRE>
   gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
 where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
 <BR></LI>
-<LI>Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine 
+<LI>Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine. 
 <BR><PRE>
 gpg --import public.key
 gpg --import private.key
 </PRE>
 </LI>
-<LI>After importing keys to a new machine you can initialize pass
+<LI>After importing the keys to a new machine you can list the keys
+<PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>and initialize Pass with
 <PRE>
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
-
-<P>
 </LI>
-<LI>Initialize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands
+<LI>Initialize your git repository. Make a new repository named &ldquo;pass-store&rdquo; e.g. to GitHub if you are doing this the first time before the following commands. If the first command asks you to identify follow the given instructions.
 <BR><PRE>
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
@@ -136,16 +138,20 @@ pass git pull origin master --allow-unrelated-histories
 pass git commit -am "firstcommit"
 </PRE>
 </LI>
-<LI>Do some changes and pass will automatically commit them. Push and set upstream 
+<LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
 <BR><PRE>
 pass git push --set-upstream origin master
 </PRE>
+If Git complains about &ldquo;divergent brances&rdquo; just follow the instructions and repeat the command.
 </LI>
-<LI>From here on you can use the familiar git commands 
+<LI>From here on you can use the familiar git commands. 
 <BR><PRE>
 pass git pull 
 pass git push
 </PRE>
+It can be the case that you have to raise the trust level of the public key. For that, check <A ID="tex2html18"
+  HREF="https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user">this</A>
+article. 
 </LI>
 </UL>
 Stay safe :)
@@ -156,7 +162,7 @@ References:
 <P>
 
 <UL>
-<LI><A ID="tex2html17"
+<LI><A ID="tex2html19"
   HREF="https://www.passwordstore.org/">Password Store</A>
 </LI>
 </UL>
@@ -174,10 +180,11 @@ References:
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html218"
+<A ID="tex2html220"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG STYLE="" SRC="jetscalecropped.png"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
@@ -186,7 +193,7 @@ References:
  HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
  HREF="node8.html">January – Poisson process</A>
- &nbsp; <B>  <A ID="tex2html219"
+ &nbsp; <B>  <A ID="tex2html221"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

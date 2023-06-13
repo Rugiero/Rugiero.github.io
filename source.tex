@@ -292,82 +292,86 @@ References:
 
 
 \subsection{February – Controlling your passwords with pass}
-Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Ubuntu.
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
 
 \begin{itemize}
-\item Install the application in the terminal \\
+\item Install the application in the terminal. \\
 \begin{verbatim}
 sudo apt install pass  
 \end{verbatim}
-\item Check for existing GPG keys \\
+\item Check for the existing GPG keys. \\
 \begin{verbatim}
 gpg --list-keys 
 \end{verbatim}
-\item If no keys were found generate a key pair \\
+\item If no keys were found generate a key pair. \\
 \begin{verbatim}
 gpg --generate-key
 \end{verbatim}
-\item Copy the name of the key and initialize pass\\
+\item Copy the name of the key and initialize pass.\\
 \begin{verbatim}
-pass init ABCDEFGHIJKLMNOPQRSTUV1234, 
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
 where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
 \item Generate a password with \\
 \begin{verbatim}
 pass generate keyfolder/newkey 
 \end{verbatim}
-List passwords
+List the passwords.
 \begin{verbatim}
 pass
 \end{verbatim}
-Copy a password to clipboard \\
+Copy a password to the clipboard. \\
 \begin{verbatim}
 pass keyfolder/newkey -c
 \end{verbatim}
-For more commands
+For more commands:
 \begin{verbatim}
 man pass
 \end{verbatim}
 \end{itemize}
 
-Connect pass to git so it is easy to keep track of changes with multiple machines.
-
+Connect Pass to Git and it is easy to keep track of passwords with multiple machines.
 \begin{itemize}
 \item Export your public and private key to a file with \\
 \begin{verbatim}
   gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234,
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
 where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.\\
-\item Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use pass in. Import the keys to the machine \\
+\item Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine. \\
 \begin{verbatim}
 gpg --import public.key
 gpg --import private.key
 \end{verbatim}
-\item After importing keys to a new machine you can initialize pass
+\item After importing the keys to a new machine you can list the keys
+\begin{verbatim}
+gpg --list-keys 
+\end{verbatim}
+\item and initialize Pass with
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
-
-\item Initialize your git repository. Make a new repository named pass-store e.g. to GitHub if you are doing this first time before the following commands\\
+\item Initialize your git repository. Make a new repository named ``pass-store'' e.g. to GitHub if you are doing this the first time before the following commands. If the first command asks you to identify follow the given instructions.\\
 \begin{verbatim}
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
- \end{verbatim}
+\end{verbatim}
 \item Get password data from the server (from a non-empty repository, otherwise skip)
 \begin{verbatim}
 pass git pull origin master --allow-unrelated-histories
 pass git commit -am "firstcommit"
 \end{verbatim}
-\item Do some changes and pass will automatically commit them. Push and set upstream \\
+\item Do some changes and pass will automatically commit them. Push and set the ``upstream''. \\
 \begin{verbatim}
 pass git push --set-upstream origin master 
 \end{verbatim}
-\item From here on you can use the familiar git commands \\
+If Git complains about ``divergent brances'' just follow the instructions and repeat the command.
+\item From here on you can use the familiar git commands. \\
 \begin{verbatim}
 pass git pull 
 pass git push 
 \end{verbatim}
+It can be the case that you have to raise the trust level of the public key. For that, check \htmladdnormallink{this}{https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user} article. 
 \end{itemize}
 Stay safe :)
 
