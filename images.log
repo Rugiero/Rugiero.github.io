@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.13)  13 JUN 2023 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.7.4)  7 SEP 2023 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,10 +586,10 @@ Preview: Tightpage -65781 -65781 65781 65781
 :tex2html_wrap_inline2163:lthtmlCropMarkDepth:=6.0501pt:1ex:=4.30554pt
 [32]
 Package epstopdf Info: Source file: <spread.eps>
-(epstopdf)                    date: 2023-06-13 11:56:53
+(epstopdf)                    date: 2023-09-07 19:22:01
 (epstopdf)                    size: 2024862 bytes
 (epstopdf)             Output file: <spread-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-06-13 11:56:53
+(epstopdf)                    date: 2023-09-07 19:22:01
 (epstopdf)                    size: 413397 bytes
 (epstopdf)             Command: <repstopdf --outfile=spread-eps-converted-to.pd
 f spread.eps>
@@ -1316,12 +1316,12 @@ Package rerunfilecheck Info: File `images.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11503 strings out of 480247
- 176888 string characters out of 5896151
- 475626 words of memory out of 5000000
- 29133 multiletter control sequences out of 15000+600000
+ 11503 strings out of 479574
+ 176888 string characters out of 5877221
+ 477325 words of memory out of 5000000
+ 29178 multiletter control sequences out of 15000+600000
  471885 words of font info for 39 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 395 hyphenation exceptions out of 8191
  75i,9n,77p,905b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
