@@ -166,34 +166,43 @@ Given this model, we are interested in the time scale during which <!-- MATH
 <P></P>
 <DIV CLASS="displaymath"><!-- MATH
  \begin{equation}
-v = \sqrt{\frac{G}{h + R_{\oplus}}}, \tag{3}
+v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3},
 \end{equation}
  -->
 <TABLE CLASS="equation" >
 <TR>
 <TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
  STYLE="height: 7.50ex; vertical-align: -2.87ex; " SRC="img159.svg"
- ALT="$\displaystyle v = \sqrt{\frac{G}{h + R_{\oplus}}},$"></SPAN></TD>
+ ALT="$\displaystyle v = \sqrt{\frac{GM}{h + R_{\oplus}}}, ,$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (3)</TD></TR>
 </TABLE></DIV>
 <P></P>
-which is fast: around <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img160.svg"
+where <!-- MATH
+ $GM \approx 3.9 \cdot 10^{14}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.35ex; vertical-align: -0.12ex; " SRC="img160.svg"
+ ALT="$GM \approx 3.9 \cdot 10^{14}$"></SPAN>m<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.93ex; vertical-align: -0.70ex; " SRC="img161.svg"
+ ALT="$^3/$"></SPAN>s<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.35ex; vertical-align: -0.12ex; " SRC="img162.svg"
+ ALT="$^2$"></SPAN>. This which is fast: around <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img163.svg"
  ALT="$7$"></SPAN> km/s at <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img161.svg"
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img164.svg"
  ALT="$h=600$"></SPAN> km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower <A ID="tex2html123"
   HREF="https://en.wikipedia.org/wiki/Horizontal_coordinate_system">elevation angles</A>. In our model, the scatterers were distributed in an area of diameter <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img148.svg"
  ALT="$180$"></SPAN> m below the satellite, and the maximum Doppler shift initially is <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img162.svg"
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img165.svg"
  ALT="$50$"></SPAN> Hz for <!-- MATH
  $f_m = 12 \cdot 10^{9}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.80ex; vertical-align: -0.57ex; " SRC="img163.svg"
+ STYLE="height: 2.80ex; vertical-align: -0.57ex; " SRC="img166.svg"
  ALT="$f_m = 12 \cdot 10^{9}$"></SPAN>, hence the Doppler spread <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img164.svg"
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img167.svg"
  ALT="$D_s = 100$"></SPAN> Hz. The coherence time is given by
 <P></P>
 <DIV CLASS="displaymath"><!-- MATH
@@ -204,16 +213,16 @@ T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
 <TABLE CLASS="equation" >
 <TR>
 <TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.46ex; vertical-align: -2.06ex; " SRC="img165.svg"
+ STYLE="height: 5.46ex; vertical-align: -2.06ex; " SRC="img168.svg"
  ALT="$\displaystyle T_c = \frac{1}{8 D_s} \approx 10^{-3}$">&nbsp; &nbsp;s<IMG
- STYLE="height: 0.71ex; vertical-align: -0.12ex; " SRC="img166.svg"
+ STYLE="height: 0.71ex; vertical-align: -0.12ex; " SRC="img169.svg"
  ALT="$\displaystyle .$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (4)</TD></TR>
 </TABLE></DIV>
 <P></P>
 The satellite moves about <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img167.svg"
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img170.svg"
  ALT="$8$"></SPAN> meters during this period.
 
 <P>
@@ -221,11 +230,11 @@ The following figures illustrate the RX baseband signal changing in time while t
 
 <P>
 
-<DIV class="CENTER"><A ID="805"></A>
+<DIV class="CENTER"><A ID="806"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 Baseband signal with partial LOS <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img168.svg"
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img171.svg"
  ALT="$K=10$"></SPAN></CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="490" STYLE=""
@@ -236,11 +245,11 @@ Baseband signal with partial LOS <SPAN CLASS="MATH"><IMG
 
 <P>
 
-<DIV class="CENTER"><A ID="809"></A>
+<DIV class="CENTER"><A ID="810"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 Baseband signal under Rayleigh fading <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img169.svg"
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img172.svg"
  ALT="$K=0$"></SPAN></CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="490" STYLE=""

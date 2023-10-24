@@ -1510,9 +1510,9 @@ where $l(d_i)$ is the path-loss function at distance $d_j$ from the scatterer $j
 
 Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the orbital speed of the satellite is given by
 \begin{equation}
-  v = \sqrt{\frac{G}{h + R_{\oplus}}}, \tag{3}
+  v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3},
 \end{equation}
-which is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$, hence the Doppler spread $D_s = 100$ Hz. The coherence time is given by
+where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$. This which is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$, hence the Doppler spread $D_s = 100$ Hz. The coherence time is given by
 \begin{equation}
 T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
 \end{equation}
