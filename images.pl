@@ -593,10 +593,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img10.svg"
  ALT="$\displaystyle \textbf{P}[$">|; 
 
-$key = q/displaystylev=sqrt{frac{GM}{h+R_{oplus}}},,;MSF=1.6;AAT/;
+$key = q/displaystylev=sqrt{frac{GM}{h+R_{oplus}}},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 7.50ex; vertical-align: -2.87ex; " SRC="|."$dir".q|img159.svg"
- ALT="$\displaystyle v = \sqrt{\frac{GM}{h + R_{\oplus}}}, ,$">|; 
+ ALT="$\displaystyle v = \sqrt{\frac{GM}{h + R_{\oplus}}},$">|; 
 
 $key = q/displaystyle{tmapsto;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
