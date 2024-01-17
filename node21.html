@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>January – Inverse of a Gaussian variable</TITLE>
-<META NAME="description" CONTENT="January – Inverse of a Gaussian variable">
+<TITLE>December – Asymptotic decay rate of a probability distribution</TITLE>
+<META NAME="description" CONTENT="December – Asymptotic decay rate of a probability distribution">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,7 +15,6 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node22.html">
 <LINK REL="previous" HREF="node20.html">
 <LINK REL="next" HREF="node22.html">
 </HEAD>
@@ -27,12 +26,12 @@
  HREF="node22.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node20.html">
+ HREF="node15.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node20.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html255"
+<A ID="tex2html204"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -40,108 +39,266 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node22.html">February – Voronoi tesselation</A>
+ HREF="node22.html">Blog posts 2023</A>
 <B> Up:</B> <A
- HREF="node20.html">Blog posts 2022</A>
+ HREF="node15.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node20.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html256"
+ HREF="node20.html">September – Homography</A>
+ &nbsp; <B>  <A ID="tex2html205"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00041000000000000000">
-January – Inverse of a Gaussian variable</A>
+<H2><A ID="SECTION00046000000000000000">
+December – Asymptotic decay rate of a probability distribution</A>
 </H2>
 
 <P>
-There is quite a pile of literature on the subject of the <A ID="tex2html82"
-  HREF="https://en.wikipedia.org/wiki/Inverse_distribution">inverse</A>
-of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution is ill-behaved; the mean and variance does not generally exist.
-
-<P>
-I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have not worked out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations). 
-
-<P>
-First, approximate the Gaussian distributed variable <!-- MATH
- $X \sim \mathcal{N}(\mu, \sigma^2)$
+Let us study the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img40.svg"
+ ALT="$X$"></SPAN> tail distribution. It is defined by
+<P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x}, \tag{1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.39ex; vertical-align: -1.74ex; " SRC="img76.svg"
+ ALT="$\displaystyle \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x},$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(1)</TD></TR>
+</TABLE></DIV>
+<P></P>
+where <!-- MATH
+ $\textbf{P}(\cdot)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.93ex; vertical-align: -0.70ex; " SRC="img50.svg"
- ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$"></SPAN> by a log-normally distributed variable <!-- MATH
- $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img51.svg"
- ALT="$X \approx Y \sim$">&nbsp; &nbsp;Lognormal<IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img52.svg"
- ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$"></SPAN> with corresponding mean and variance, i.e.
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img77.svg"
+ ALT="$\textbf{P}(\cdot)$"></SPAN> denotes the probability of an event. Let us calculate the decay rates for the exponential distribution, gamma distribution, and normal distribution.
+
+<P>
+For <SPAN  CLASS="textbf">exponentially distributed</SPAN> <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img40.svg"
+ ALT="$X$"></SPAN> with scale parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img78.svg"
+ ALT="$\theta$"></SPAN>:
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.12ex; vertical-align: -0.78ex; " SRC="img79.svg"
+ ALT="$\displaystyle \rho_{\text{Exponential}}$"></SPAN></TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.70ex; vertical-align: -1.74ex; " SRC="img80.svg"
+ ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x} = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.39ex; vertical-align: -1.74ex; " SRC="img81.svg"
+ ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta.$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(2)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+For <SPAN  CLASS="textbf">gamma distributed</SPAN> <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img40.svg"
+ ALT="$X$"></SPAN> with shape parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img82.svg"
+ ALT="$k$"></SPAN> and scale parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img78.svg"
+ ALT="$\theta$"></SPAN>:
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img83.svg"
+ ALT="$\displaystyle \rho_{\text{Gamma}}$"></SPAN></TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.39ex; vertical-align: -1.74ex; " SRC="img84.svg"
+ ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = \lim_{x\rightarrow \infty} -\frac{\log (1-\gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.39ex; vertical-align: -1.74ex; " SRC="img85.svg"
+ ALT="$\displaystyle =\lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.85ex; vertical-align: -1.74ex; " SRC="img86.svg"
+ ALT="$\displaystyle \overset{(a)}{=} \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k...
+... = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+<A ID="line:22">&nbsp;&nbsp;&nbsp;</A></TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.85ex; vertical-align: -1.74ex; " SRC="img87.svg"
+ ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta.$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(3)</TD></TR>
+</TABLE></DIV>
+<P></P>
+In <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img88.svg"
+ ALT="$(a)$"></SPAN>, we used the asymptotic behavior of the gamma distribution
 <P><!-- MATH
  \begin{displaymath}
-\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)
+\lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
 \end{displaymath}
  -->
 </P>
 <DIV CLASS="displaymath">
 <IMG
- STYLE="height: 6.11ex; vertical-align: -2.32ex; " SRC="img53.svg"
- ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">
-</DIV><P></P>
-and
-<P><!-- MATH
- \begin{displaymath}
-\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 3.04ex; vertical-align: -0.70ex; " SRC="img54.svg"
- ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">
-</DIV><P></P>
-We leave the solving of <!-- MATH
- $\mu_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img55.svg"
- ALT="$\mu_{\text{LN}}$"></SPAN> and <!-- MATH
- $\sigma_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.46ex; " SRC="img56.svg"
- ALT="$\sigma_{\text{LN}}$"></SPAN> as an easy exercise for the reader.
-
-<P>
-Using the theory of log-normal distribution, the inverse of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img57.svg"
- ALT="$X$"></SPAN> is now given by
-<P><!-- MATH
- \begin{displaymath}
-1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img58.svg"
- ALT="$\displaystyle 1/X \approx 1/Y \sim$">&nbsp; &nbsp;Lognormal<IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img59.svg"
- ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+ STYLE="height: 5.39ex; vertical-align: -1.74ex; " SRC="img89.svg"
+ ALT="$\displaystyle \lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
 $">
 </DIV><P></P>
 
 <P>
-That's it!
+For <SPAN  CLASS="textbf">normal distributed</SPAN> <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img40.svg"
+ ALT="$X$"></SPAN> with mean <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img90.svg"
+ ALT="$\mu$"></SPAN> and variance <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.35ex; vertical-align: -0.12ex; " SRC="img91.svg"
+ ALT="$\sigma^2$"></SPAN>:
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img92.svg"
+ ALT="$\displaystyle \rho_{\text{Normal}}$"></SPAN></TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 8.54ex; vertical-align: -1.74ex; " SRC="img93.svg"
+ ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = -\...
+...t{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 8.54ex; vertical-align: -1.74ex; " SRC="img94.svg"
+ ALT="$\displaystyle \geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\fra...
+...}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x} = \infty,$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(4)</TD></TR>
+</TABLE></DIV>
+<P></P>
+where in <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img95.svg"
+ ALT="$(b)$"></SPAN>, we used the inequality <P><!-- MATH
+ \begin{displaymath}
+\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+erfc<IMG
+ STYLE="height: 6.32ex; vertical-align: -2.16ex; " SRC="img96.svg"
+ ALT="$\displaystyle (x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$">
+</DIV><P></P>
+that holds for <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img97.svg"
+ ALT="$x \geq 0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.52ex; vertical-align: -0.57ex; " SRC="img98.svg"
+ ALT="$\beta &gt;1$"></SPAN> (we used <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.52ex; vertical-align: -0.57ex; " SRC="img99.svg"
+ ALT="$\beta = 2$"></SPAN>).
+
+<P>
+The asymptotic decay rates for the exponential, gamma, and normal distribution are given in <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img100.svg"
+ ALT="$(2)$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img101.svg"
+ ALT="$(3)$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img102.svg"
+ ALT="$(4)$"></SPAN>, respectively. We see that the decay rate <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img103.svg"
+ ALT="$\rho$"></SPAN> of the normal distribution is always maximal, <SPAN  CLASS="textit">i.e.</SPAN>, <!-- MATH
+ $\rho_{\text{Normal}} = \infty$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img104.svg"
+ ALT="$\rho_{\text{Normal}} = \infty$"></SPAN>. In contrast, the decay rates of the exponential and gamma distributions depend on the scale parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img78.svg"
+ ALT="$\theta$"></SPAN>.
+
+<P>
+By normalizing the mean (<!-- MATH
+ $\mathbb{E}[X] = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img105.svg"
+ ALT="$\mathbb{E}[X] = 1$"></SPAN>) by setting <!-- MATH
+ $\theta = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img106.svg"
+ ALT="$\theta = 1$"></SPAN> and <!-- MATH
+ $k=1/\theta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img107.svg"
+ ALT="$k=1/\theta$"></SPAN>, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is <!-- MATH
+ $\rho_{\text{Exponential}} = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.62ex; vertical-align: -0.78ex; " SRC="img108.svg"
+ ALT="$\rho_{\text{Exponential}} = 1$"></SPAN> and of the gamma distribution is <!-- MATH
+ $\rho_{\text{Gamma}} = k$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.52ex; vertical-align: -0.57ex; " SRC="img109.svg"
+ ALT="$\rho_{\text{Gamma}} = k$"></SPAN>. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.21ex; " SRC="img110.svg"
+ ALT="$k&lt;1$"></SPAN>, and faster than the exponential distribution with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.21ex; " SRC="img111.svg"
+ ALT="$k&gt;1$"></SPAN>. With <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img112.svg"
+ ALT="$k=1$"></SPAN>, the distributions coincide. When <!-- MATH
+ $k \rightarrow \infty$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img113.svg"
+ ALT="$k \rightarrow \infty$"></SPAN>, the gamma distribution approaches the normal distribution and <!-- MATH
+ $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img114.svg"
+ ALT="$\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$"></SPAN>.
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html83"
-  HREF="https://en.wikipedia.org/wiki/Log-normal_distribution">Log-normal distribution</A>
+<LI><A ID="tex2html81"
+  HREF="https://en.wikipedia.org/wiki/Error_function">Error function</A>
 </LI>
-<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+<LI><A ID="tex2html82"
+  HREF="https://en.wikipedia.org/wiki/Exponential_distribution">Exponential distribution</A>
+</LI>
+<LI><A ID="tex2html83"
+  HREF="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma distribution</A>
+</LI>
+<LI><A ID="tex2html84"
+  HREF="https://en.wikipedia.org/wiki/Normal_distribution">Normal distribution</A>
+<P>
 </LI>
 </UL>
 
@@ -153,12 +310,12 @@ References:
  HREF="node22.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node20.html">
+ HREF="node15.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node20.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html255"
+<A ID="tex2html204"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -166,12 +323,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node22.html">February – Voronoi tesselation</A>
+ HREF="node22.html">Blog posts 2023</A>
 <B> Up:</B> <A
- HREF="node20.html">Blog posts 2022</A>
+ HREF="node15.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node20.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html256"
+ HREF="node20.html">September – Homography</A>
+ &nbsp; <B>  <A ID="tex2html205"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

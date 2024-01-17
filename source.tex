@@ -176,13 +176,13 @@
         General thoughts on mathematics and engineering, practical instructions, semi-artistic logical nonsense. The themes of this blog are much inspired by the challenges encountered in my professional life. 
 
         \subsection{January – Poisson process on a sphere}
-        \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to general \htmladdnormallink{manifolds}{https://en.wikipedia.org/wiki/Manifold}. Particularly, Poisson process on a three dimensional sphere surface is useful. Nicely enough, Poisson process on a unit sphere is equivalent to process in a two dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area preserving mapping from $A$ to geographical coordinates
+        The \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to general \htmladdnormallink{manifolds}{https://en.wikipedia.org/wiki/Manifold}. In Particular, the Poisson process on a three-dimensional sphere surface is useful. Nicely enough, the Poisson process on a unit sphere is equivalent to the process in a two-dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area-preserving mapping from $A$ to geographical coordinates
         \begin{equation}
           (x,y) \mapsto (1,x,\sin^{-1}(y)) \nonumber.
         \end{equation}
 
 
-        Resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$.  Following codes returns a scatter plot of Poisson points on the unit sphere.
+        The resulting process interpreted in geographical coordinates $(r,\theta,\varphi)$ is a Poisson point process on a sphere of radius $r$. The following code returns a scatter plot of Poisson points on the unit sphere.
 
 
 
@@ -278,7 +278,7 @@ Wolfram Language:
 
 \begin{figure}
   \includegraphics[width=\linewidth]{interferenceenvironment.png}
-  \caption{Aggregate interference power in a satellite receiver represented by a color – interfering sources are considered to be Poisson distributed on Earth}
+  \caption{Aggregate interference in a satellite. A color represents aggregate interference power at the given location. The interfering sources are considered Poisson distributed on Earth.}
 \end{figure}
 
 References:
@@ -384,24 +384,22 @@ References:
 
 
 \subsection{March – Signal propagation in a city}
-Mobile telephone signal propagation in a city is characterized essentially by obstacles, such as buildings and cars, that \htmladdnormallink{attenuates}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflects}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refracts}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffracts}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case for example if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter and/or the obstacles moves. In the case that there is only a limited line-of-sight element present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
+Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case, for example, if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
 
-I animated a couple of GIFs to help us to perceive what is going on.
-The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal that is amplifying in some locations and degenerating in others. You can look for both Rician conditions (lower right) and Rayleigh conditions (lower left) in the image and see how the signal behaves under those conditions. The figure was obtained by solving the Helmholtz equation by finite element method.
+I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
 
-
-The second figure shows how to aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. In real life, these kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
+The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. In real life, these kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{sin.gif}
-  \caption{The white boxes represents buildings, and the little white circle is the transmitter. You can see how reflections will cause the aggregate signal strength to fluctuate by location depending on phases of the incoming reflected waves.}
+  \caption{The white boxes represent buildings, and the little white circle is the transmitter. You can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the phases of the incoming reflected waves.}
 \end{figure}
 
 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{rician.gif}
-  \caption{Interference power field developing in time. Transmitters are Poisson distributed at random locations and moving to random directions, and the aggregate signal strength after fading is plotted. Red color represents the highest mean power of interference and deep blue represents absence of any interference. There is a line-of-sight component is present – that is, we assume  \htmladdnormallink{Rician fading}{\ric}. Red occurrences will cause remarkable disturbance in communication as interference from other transmitters gets large. Time can't be considered to be in a human perspective scale here.}
+  \caption{The interference power field develops in time as the interfering transmitters are moving in random directions at each time step. Red color represents the highest mean power of interference, and deep blue represents the absence of any interference. We assume  Rician fading. The interference in the red occurrences will reduce the performance remarkably.}
 \end{figure}
 
 
@@ -413,59 +411,59 @@ References:
 \end{itemize}
 
 
-\subsection{April – Frequentist inference in Mathematica}
+%% \subsection{April – Frequentist inference in Mathematica}
 
-Mathematica provides a package called “Hypothesis Testing” for analyzing random data. The package includes handy objects like “Around”, representing a quantity and the uncertainty around it. The following example code returns an Around object representing the confidence interval of the estimated bias of a coin after a repeated trial. As shown in the code, the ListPlot plots Around objects as such.
+%% Mathematica provides a package called “Hypothesis Testing” for analyzing random data. The package includes handy objects like “Around”, representing a quantity and the uncertainty around it. The following example code returns an Around object representing the confidence interval of the estimated bias of a coin after a repeated trial. As shown in the code, the ListPlot plots Around objects as such.
 
-\begin{verbatim}
-(*Load the Hypothesis Testing Package.*)
-Needs["HypothesisTesting`"];
+%% \begin{verbatim}
+%% (*Load the Hypothesis Testing Package.*)
+%% Needs["HypothesisTesting`"];
 
-coin[flips_, bias_] :=
- (*Make the experiment and collect the data*) 
- Module[{index, realizations, mean, conf, around},
-  realizations = {};
-  For[index = 1, index <= flips, index++,
-   realizations =  
-     Append[realizations, 
-      RandomVariate[BernoulliDistribution[bias]]];
-   ];
+%% coin[flips_, bias_] :=
+%%  (*Make the experiment and collect the data*) 
+%%  Module[{index, realizations, mean, conf, around},
+%%   realizations = {};
+%%   For[index = 1, index <= flips, index++,
+%%    realizations =  
+%%      Append[realizations, 
+%%       RandomVariate[BernoulliDistribution[bias]]];
+%%    ];
   
-  (*Mean*)
-  mean = Mean[realizations[[All]]];
-  (*Confidence interval*)
-  conf = MeanCI[realizations[[All]]];
-  (*Around object*)
-  around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
-  ]
-around = coin[1000, 0.5]
-ListPlot[{around}]
-\end{verbatim}
+%%   (*Mean*)
+%%   mean = Mean[realizations[[All]]];
+%%   (*Confidence interval*)
+%%   conf = MeanCI[realizations[[All]]];
+%%   (*Around object*)
+%%   around = Around[mean, Abs[conf[[1]] - conf[[2]]]]
+%%   ]
+%% around = coin[1000, 0.5]
+%% ListPlot[{around}]
+%% \end{verbatim}
 
-References:
-\begin{itemize}
-\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+%% References:
+%% \begin{itemize}
+%% \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
   
-\end{itemize}
+%% \end{itemize}
 
 
 \subsection{May – Rayleigh fading audiolized}
 
-When a signal is propagating through multiple paths each signal component in each path will be in different phase and of different strength when received. Should there be no line-of-sight component present, the  additive signal will fade according to the \htmladdnormallink{Rayleigh fading}{\ray}.
+When a signal propagates through multiple paths, each signal component in each path will be in a different phase and of varying strength when received. Should there be no line-of-sight component present, the additive signal will fade according to the \htmladdnormallink{Rayleigh fading}{\ray}.
 
-For example, a simple sine
+For example, a simple sine wave
 
 \htmladdnormallink{wave}{https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH} (links to soundcloud.com – VOLUME ALERT)
 
-can after some multi-path propagation sound something like
+can after some multi-path propagation sound like
 
-\htmladdnormallink{this}{https://soundcloud.com/ilari-angervuori/ez-1/s-eQvc2PWfIJs} –
+\htmladdnormallink{this}{https://soundcloud.com/ilari-angervuori/ez-1/s-eQvc2PWfIJs}:
 
-assuming that the receiver is moving at a constant speed, so that variation of Doppler shifts in different signal paths will cause the aggregate signal to vary randomly in time.
+Assuming that the receiver is moving, the variation of Doppler shifts in different signal paths will cause the signal strength to vary randomly in time.
 
-If we add some \htmladdnormallink{Gaussian white noise}{\gaus} we notice that the original signal is somehow recognizable from the
+If we add some \htmladdnormallink{Gaussian white noise}{\gaus}, we notice that the original signal is somehow recognizable from the
 
-\htmladdnormallink{noised signal}{https://soundcloud.com/ilari-angervuori/refnoise/s-Za1jUDgCPSV}
+\htmladdnormallink{noised signal}{https://soundcloud.com/ilari-angervuori/refnoise/s-Za1jUDgCPSV} (listen carefully, and you will hear the sine signal in the background).
 
 
 but the
@@ -473,15 +471,15 @@ but the
 \htmladdnormallink{faded signal}{https://soundcloud.com/ilari-angervuori/eznoise/s-z4MjfqRZr6E}
 
 
-will sometimes get buried under the noise – these events are referred to as \textbf{deep fades}.
+will sometimes get buried under the noise – these events are referred to as \textit{deep fades}.
 
 
 \begin{figure}
-  \includegraphics[width=1cm]{fadedsinesignal.png}
-  \caption{Multi-path faded sine signal}
+  \includegraphics[width=\linewidth]{fadedsinesignal.png}
+  \caption{The \htmladdnormallink{Envelope}{https://en.wikipedia.org/wiki/Envelope_(waves)} of a multi-path faded sine signal.}
 \end{figure}
 
-Here is a GNU Octave or Matlab code for the used Rayleigh simulator which outputs a the signal as audio:
+Here is a GNU Octave or Matlab code for the used Rayleigh simulator, which outputs the signal as audio:
 \begin{verbatim}
 %Rayleigh simulator. Jakes model. In Octave remember to load the statistics package.
 
@@ -589,120 +587,117 @@ References:
 
 \subsection{June – Why does MIMO work?}
 
-Multiple-input and multiple-output (\htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO}) antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link. In principle, the capacity of the link can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy-consuming – this increases also interference to any other receivers should they transmit in the same frequency band. In MIMO the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing the interference to other transmitters.
+Multiple-input and multiple-output \htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO} antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link. In principle, the link's capacity can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy-consuming – this also increases interference to any other receivers should they operate in the same frequency band. In MIMO, the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing interference towards other transmitters.
 
-But what is the secret? Here is how I came up with a simple argument based on stochastic geometry.
-Let us make some assumptions. We assume a flat and infinite Earth (yeah – you can laugh at this “tin foil assumption”, but it is often reasonable). In addition, we assume that our communication channel environment consists of many obstacles so that our transmitting antenna and receiving antenna can not see each other. We can assume that we are in a city full of houses, cars, trees, etc. Then our data signal is prone to propagate to the receiver through multiple paths; for example through distinct streets around different houses. The aggregate signal in the receiver will be  \htmladdnormallink{Rayleigh faded}{\ray}. The city is full of mobile phone's exchanging data with their base stations which are further handing the data to the receiving mobile phones base station and, on the other hand, causing interference to the other base stations. We make a natural assumption that the interfering base stations are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
+Why does it work? Here is how I came up with a simple argument based on stochastic geometry. First, let us make some assumptions. We assume a flat and infinite Earth (this is a ``tin foil assumption,'' but it is often reasonable). In addition, our communication channel environment consists of many obstacles so that our transmitting and receiving antennae can not see each other. We are in a city full of houses, cars, trees, etc. Then, our data signal propagates to the receiver through multiple paths, for example, through distinct streets around different houses. The aggregate signal in the receiver will be  \htmladdnormallink{Rayleigh faded}{\ray}. The city is stormed with mobile phones exchanging data with their base stations, which further hand the data to the receiving mobile phones' base station and, on the other hand, cause interference to the other base stations. We assume that the interfering base stations are independently located and are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
 
-Let's consider that person A is sending a message to person B. We are interested in the probability that the base station serving person A will successfully transmit the message to a base station serving person B (we assume that the base station $A$ directly hands the message to $B$ over the air, and both stations are using MIMO technology). Under the assumptions above and some other simplified assumptions – as derived \htmladdnormallink{here}{\hall}, we can express the probability of a successful transmission as:
+Let's consider that person A is sending a message to person B. We are interested in the probability that the base station serving person A successfully transmits the message to a base station serving person B. Under the assumptions above and some other simplified assumptions, as derived in \htmladdnormallink{here}{\hall}, we can express the probability of a successful transmission as:
 
 \begin{equation}
   \textbf{P}[\text{Successful single-antenna transmission}] = e^{-\frac{\pi^2}{2\sqrt{P}}},
 \end{equation}
 
-where $P$ denotes the mean transmitting power of the base-stations.
+where $P$ denotes the mean transmitting power of the base stations.
 
-In MIMO we use multiple distinct antennas to transmit the same message. In each antenna, the encoding of the message should be different so that it can't mix with the information that the other antennas are transmitting. This is possible by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
-Assuming that each message from each antenna will propagate to the receiver in an independent way, we can calculate from equation $(1)$ by the complementary probability that \textbf{at least one message transmission gets through:}
+In MIMO, we use multiple distinct antennas to transmit the same message. In each antenna, the encoding of the message should be different so that it can't mix with the information that the other antennas are transmitting – this is possible by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
+Assuming that each message from each antenna independently propagates to the receiver, we can calculate from equation $(1)$ by the complementary probability that \textbf{at least one message transmission gets through:}
 
 \begin{equation*}
   \textbf{P}[\text{Successful MIMO transmission with N antennas}]  = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,
 \end{equation*}
 
-where $N$ is the number of transmitting antennas. Notice that we divided the transmitting power $P$ by the number of antennas, so we don't increase the aggregate power at all.
-On the other hand, should we have no MIMO technology at hand, we could try to improve to increase the link quality just by increasing the power $P$ of a single antenna. In the following figure we compare these two cases.
+where $N$ is the number of transmitting antennas. Notice that we divided the transmitting power $P$ by the number of antennas, so we didn't increase the aggregate power.
+On the other hand, should we have no MIMO technology at hand, we could improve the link quality by increasing the power $P$ of a single antenna. In the following figure, we compare these two cases.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{MIMO.png}
-  \caption{MIMO saves energy and improves the quality}
+  \caption{MIMO saves energy and improves performance.}
 \end{figure}
 
-It is evident that MIMO is a great solution for increasing the throughput of a wireless communication link. Using multiple antennas we can save power and achieve better data-rates than by merely increasing the power of a single transmitter.
+It is evident that MIMO is an excellent solution for increasing the throughput of a wireless communication link. Using multiple antennas, we can save power and achieve better data rates than by merely increasing the power of a single transmitter.
 
 References:
 \begin{itemize}
 \item François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume 2 - Applications}{\hall}
 \end{itemize}
 
-\subsection{July – Animating GIFs in GNU Octave}
+%% \subsection{July – Animating GIFs in GNU Octave}
 
-Often it is nice to plot your results as an animation. The following code demonstrates the most effective way to write GIFs in Octave that I could find. Example code outputs an animation of a \htmladdnormallink{complex base-band signal symbol}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} in noise. Code uses the quiver plot, but any other plot should do equally well. Matlab compatibility is not guaranteed.
+%% Often it is nice to plot your results as an animation. The following code demonstrates the most effective way to write GIFs in Octave that I could find. Example code outputs an animation of a \htmladdnormallink{complex base-band signal symbol}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} in noise. Code uses the quiver plot, but any other plot should do equally well. Matlab compatibility is not guaranteed.
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{gifu.gif}
-  \caption{Animated GIF of a noisy QAM symbol}
-\end{figure}
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{gifu.gif}
+%%   \caption{Animated GIF of a noisy QAM symbol}
+%% \end{figure}
 
 
-The point is to loop through all frames and save them to a file after each other with functions \textit{getframe} and \textit{imwrite}. 
+%% The point is to loop through all frames and save them to a file after each other with functions \textit{getframe} and \textit{imwrite}. 
 
-\begin{verbatim}
-function writeGIF()
-  clear all;
-  close all;
-  clear imread;
-  clear imwrite;
+%% \begin{verbatim}
+%% function writeGIF()
+%%   clear all;
+%%   close all;
+%%   clear imread;
+%%   clear imwrite;
   
-  N = 100; %%Number of frames.
+%%   N = 100; %%Number of frames.
 
-  %%We use quiver plot as an example, but any other plot works equally.
-  signal = 5 + 5*i; %%Baseband symbol.
-  signal = signal + randn(1) + randn(1)*i ;   %%Add some Gaussian noise.
-  quiver(0,0,real(signal), imag(signal))
-  axis([[-10, 10],[-10, 10]])
+%%   %%We use quiver plot as an example, but any other plot works equally.
+%%   signal = 5 + 5*i; %%Baseband symbol.
+%%   signal = signal + randn(1) + randn(1)*i ;   %%Add some Gaussian noise.
+%%   quiver(0,0,real(signal), imag(signal))
+%%   axis([[-10, 10],[-10, 10]])
 
-  %%Write the first frame.
-  frame = getframe(); %%Get the current frame.
-  imwrite(frame.cdata,'gifu.gif','gif','writemode','overwrite',...
-          'LoopCount',inf,'DelayTime',0.1, 'Compression' , 'lzw');  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
+%%   %%Write the first frame.
+%%   frame = getframe(); %%Get the current frame.
+%%   imwrite(frame.cdata,'gifu.gif','gif','writemode','overwrite',...
+%%           'LoopCount',inf,'DelayTime',0.1, 'Compression' , 'lzw');  %%Write the frame to gifu.gif and use delay time 0.1 seconds.
   
-  for iii = 1 : N
-    iii
-    %%Write GIF.
-    signal = 5 + 5*i; %%Baseband symbol.
-    signal = signal  + rand(1) + randn(1)*i ;   %%Add some Gaussian noise.
-    quiver(0,0,real(signal), imag(signal))
-    axis([[-10, 10],[-10, 10]])
+%%   for iii = 1 : N
+%%     iii
+%%     %%Write GIF.
+%%     signal = 5 + 5*i; %%Baseband symbol.
+%%     signal = signal  + rand(1) + randn(1)*i ;   %%Add some Gaussian noise.
+%%     quiver(0,0,real(signal), imag(signal))
+%%     axis([[-10, 10],[-10, 10]])
     
-    frame = getframe(); %%Get the current frame.
-    imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1, 'Compression' , 'lzw'); %%Write the frame to gifu.gif.
-  end
-end
-\end{verbatim}
-The 'Compression' setting is important to avoid insane file sizes and memory usage.
+%%     frame = getframe(); %%Get the current frame.
+%%     imwrite(frame.cdata, 'gifu.gif','gif','writemode','append','DelayTime',0.1, 'Compression' , 'lzw'); %%Write the frame to gifu.gif.
+%%   end
+%% end
+%% \end{verbatim}
+%% The 'Compression' setting is important to avoid insane file sizes and memory usage.
 
-References: 
-\begin{itemize}
-\item \htmladdnormallink{Octave Image Processing}{https://octave.org/doc/v4.0.1/Loading-and-Saving-Images.html}
-\end{itemize}
+%% References: 
+%% \begin{itemize}
+%% \item \htmladdnormallink{Octave Image Processing}{https://octave.org/doc/v4.0.1/Loading-and-Saving-Images.html}
+%% \end{itemize}
 
 
 \subsection{August – Radio waves in a tunnel}
 
-
-Everyone has some experience of how radio turns into static when one is driving into a tunnel. It just does not work (unless there is a special  \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} installed inside the tunnel).
-Once upon a night, I could not get sleep pondering on why does this happen. From my experience, mobile phone signals seem to work better. The mobile phone signals seem to work. Someone might have told me that \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radio wavelength is just so large that the wave “does not fit the tunnel”. But as intuitively acceptable as this explanation could be (I don't think it is even that), it is not a satisfying explanation as such.
+Almost everyone has some experience of how radio turns static when driving into a tunnel. The radio stations only work if a special  \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} is installed inside the tunnel. Once upon a night, I could not sleep, pondering why the \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radios are unsuable in the tunnels. From my experience, mobile phone signals that operate at higher frequencies work better. Someone might have told me that FM radio wavelength is so large that the wave ``does not fit the tunnel''. But as intuitively acceptable as this explanation could be (I don't think it is even that), this answer did not satisfy me.
 
 
-After some research, I found that the explanation lies in the behaviour of \htmladdnormallink{Maxwell equations}{https://en.wikipedia.org/wiki/Maxwell's_equations} (well, what a surprise). All backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near to zero in the tunnel interface. This leads to a situation where the wave has, in a sense, no room the oscillate inside the tunnel.
+After some research, I found that the explanation lies in \htmladdnormallink{Maxwell equation's}{https://en.wikipedia.org/wiki/Maxwell's_equations} behavior (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface – this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
 
 
-Intuitive or not, this is what the equations tell us. To demonstrate this fact I solved, using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane-wave in a two-dimensional setting mimicking a tunnel and its entrance. The \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel are zero. Solution colouring, shown in the figures following, represents the magnitude of the electrical component.
+Intuitive or not, this is what the equations tell us. To demonstrate this, I solved using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane wave in a two-dimensional setting mimicking a tunnel and its entrance. The \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is zero. The coloring represents the electrical component's magnitude.
 
-We compare the behaviour of two different wavelengths:
+We compare the behavior of two different wavelengths:
 
 
 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{highfreq.gif}
-  \caption{High frequencies fit in the tunnel}
+  \caption{High frequencies fit in the tunnel.}
 \end{figure}
 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{lowfreq.gif}
-  \caption{Wavelengths bigger than the diameter of the tunnel will not get through}
+  \caption{Wavelengths bigger than the diameter of the tunnel will not get through.}
 \end{figure}.
 
 
@@ -715,18 +710,13 @@ References:
 
 \subsection{September – The universality of the Poisson point process (breaking a pile of sand)}
 
+The two-dimensional \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} appears everywhere in nature: locations of cell phones in a city, raindrops in a puddle,  locations of a bunch of grains of sand thrown in the ground, \textit{etc}.
 
-I thought that it would be nice to write about some purely mathematical subject today, so I decided to briefly discuss the famous Poisson process and its properties under a transformation.
+As a fun example, let us study how a bunch of grains of sand arranged into a sand castle will spread by wind and water around the sunny beach and, finally, a realization of the Poisson point process.
 
-It is a well-known fact that some point processes converge to the Poisson point process after a sufficient amount of right transformations. This is of course why the Poisson p.p appears everywhere in nature; for example, grain of sands in a sand castle – made by a child at a beach on a sunny day – will eventually spread by wind (or water) around the beach. The grains will be randomly displaced here and there forming something approximating a realization of a Poisson p.p., even though the original pile was more ordered.
-
-Let's play the game with a pile of sand spreading to a flat area by random translations of the grains. 
-
-Consider a pile of sand at origo. Furthermore, let's assume that the pile is small enough (compared to unit distance) so that it is concentrated in a single point. Let's make a natural assumption that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}. Now our pile of sand is a Poisson point process concentrated in the origo.
-
-Suppose that after a while, wind moves individual sand grains from the pile directing them with a uniformly distributed angle and to a random normally distributed distance between $[0, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a circle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$ 
+For simplicity, the sand castle is so tiny that it can be considered entirely located at the \htmladdnormallink{origin}{https://en.wikipedia.org/wiki/Origin_(mathematics)} of the two-dimensional beach. Let's assume that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}: In our model, the sand castle is a Poisson distributed random amount of grains of sand piled above each other in the origin. Suppose that wind moves individual sand grains from the pile after a while, directing them with a uniformly distributed angle and to a random, normal distributed distance between $[0, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a circle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$ 
   
-  After a random translation of all points the \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Laplace_functional} of the \textit{distances} of the points is 
+  After a random translation of all points, the \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Laplace_functional} of the \textit{distances} of the points is 
 
   \begin{align*}
     \mathcal{L}_{\tau}(f) &= \mathbb{E} \exp \left[-\sum_i f(|Y_i|) \right] = \mathbb{E}  \prod_i \exp \left[  -f(|Y_i|)   \right]  \\
@@ -743,13 +733,12 @@ Suppose that after a while, wind moves individual sand grains from the pile dire
     &= \exp \left[-\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right)  \sqrt{\frac{2}{\pi}}e^{-y^2} N dy    \right], (1) \\   
   \end{align*}
 
-  where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.Wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). But the formula $(1)$ is the Laplace functional of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N.$  As the direction of the translation of a sand grain was uniformly distributed, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density.
+  where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.Wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). But the formula $(1)$ is the Laplace functional of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N$, and as the direction of the translation of a sand grain was uniformly distributed, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density: an example of the universality of the Poisson point process in the nature.
     
-    The result above applies to any translations as long as the translation is independently applied to every point (or grain); the Poisson point process remains Poisson in a transformation. Here we had to make the Poisson assumption also for the pile so that the result above could be derived. But indeed, we can show that non-Poisson processes approach Poisson p.p. when the points are translated in a certain manner. However, I leave this is out of the scope of this blog entry for now, and take the remark made here as a simple (possibly a bit weird) example of the universality of the Poisson point process.
     
     \begin{figure}
       \includegraphics[width=\linewidth]{spread.eps}
-      \caption{$10000$ points randomly moved from the origo to the plane}
+      \caption{$10000$ points randomly moved from the origo to the plane.}
     \end{figure}.
 
 
@@ -761,191 +750,190 @@ Suppose that after a while, wind moves individual sand grains from the pile dire
 
 
 
-    \subsection{October – Fast Fourier transform in GNU Octave}
+%%     \subsection{October – Fast Fourier transform in GNU Octave}
 
-    \htmladdnormallink{Fast fourier transform}{https://en.wikipedia.org/wiki/Fast_Fourier_transform} (FFT) is an algorithm that computes the \htmladdnormallink{discrete Fourier transform}{https://en.wikipedia.org/wiki/Discrete_Fourier_transform}.
+%%     \htmladdnormallink{Fast fourier transform}{https://en.wikipedia.org/wiki/Fast_Fourier_transform} (FFT) is an algorithm that computes the \htmladdnormallink{discrete Fourier transform}{https://en.wikipedia.org/wiki/Discrete_Fourier_transform}.
 
-    FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate $F_s$ (Hz). By the \htmladdnormallink{Nyquist-Shannon sampling theorem}{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon_sampling_theorem}, sampling captures frequencies under $F_s/2$.
+%%     FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate $F_s$ (Hz). By the \htmladdnormallink{Nyquist-Shannon sampling theorem}{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon_sampling_theorem}, sampling captures frequencies under $F_s/2$.
 
-    Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
+%%     Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
 
-\begin{verbatim}
-##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
+%% \begin{verbatim}
+%% ##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
 
-function fftvector = plotfft(signal, Fs)
-  N = length(signal); #Signal length.
-  FFT =  fft(signal);
-  if(mod(N,2) == 0) #Check if signal length is odd or even.
-    FFT = 2*FFT(1 : N/2)/N;
-    f = Fs*(0 : (N - 1)/2)/(N - 1); 
-  else
-    FFT = 2*FFT(1 : (N - 1)/2)/N;
-    f = Fs*(0 : (N - 2)/2)/(N - 1);
-  end  
-  fftvector = [f; FFT];
+%% function fftvector = plotfft(signal, Fs)
+%%   N = length(signal); #Signal length.
+%%   FFT =  fft(signal);
+%%   if(mod(N,2) == 0) #Check if signal length is odd or even.
+%%     FFT = 2*FFT(1 : N/2)/N;
+%%     f = Fs*(0 : (N - 1)/2)/(N - 1); 
+%%   else
+%%     FFT = 2*FFT(1 : (N - 1)/2)/N;
+%%     f = Fs*(0 : (N - 2)/2)/(N - 1);
+%%   end  
+%%   fftvector = [f; FFT];
   
-  figure(1)
-  plot(f, abs(FFT));
-  title('Fast fourier transform')
-  xlabel('Frequency (Hz)')
-  print  plot.jpg
-end
+%%   figure(1)
+%%   plot(f, abs(FFT));
+%%   title('Fast fourier transform')
+%%   xlabel('Frequency (Hz)')
+%%   print  plot.jpg
+%% end
 
-\end{verbatim}
+%% \end{verbatim}
 
-The following figure shows my track \htmladdnormallink{Tappimarssi}{https://soundcloud.com/ilari-angervuori/tappimarssi} in the frequency domain. The track was imported to Octave by
+%% The following figure shows my track \htmladdnormallink{Tappimarssi}{https://soundcloud.com/ilari-angervuori/tappimarssi} in the frequency domain. The track was imported to Octave by
 
-\begin{verbatim}
-[signal, Fs] = audioread('Tappimarssi.wav');
-\end{verbatim}
-
-
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{tappimarssi.jpg}
-\end{figure}
+%% \begin{verbatim}
+%% [signal, Fs] = audioread('Tappimarssi.wav');
+%% \end{verbatim}
 
 
-\begin{itemize}
-\item  \htmladdnormallink{Octave Documentation – Signal Processing}{https://octave.org/doc/v5.2.0/Signal-Processing.html}
-\end{itemize}
 
-\subsection{November – Digital filtering}
-
-Let's construct a simple digital band-pass filter based in the \htmladdnormallink{sinc filter}{https://en.wikipedia.org/wiki/Sinc_filter}.
-
-As everyone know, the sinc function is the \htmladdnormallink{impulse response}{https://en.wikipedia.org/wiki/Impulse_response} of a low-pass filter. That is, the \htmladdnormallink{convolution}{https://en.wikipedia.org/wiki/Convolution} of a signal $ S(t)$ and the sinc function $ t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$ will produce a low-pass filtered signal $S(t)$ without frequencies higher than $B_L$. Similarly, the function $ t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$ where $ \delta(t)$ represents the \htmladdnormallink{Dirac delta function}{https://en.wikipedia.org/wiki/Dirac_delta_function}, is the frequency response of the ideal high-pass filter of frequency $B_H$.
-
-Heuristically, we can right away derive the discrete versions of the impulse responses:
-
-$$
-\mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
-$$
-for the low-pass filter, and
-
-$$
-i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
-$$
-
-for the high-pass filter. The variable $f_c$ is the sampling frequency and  $i \mapsto \delta[i] := \delta_{0i} $ is the \htmladdnormallink{Kronecker delta}{https://en.wikipedia.org/wiki/Kronecker_delta}.
-
-Now, having a discrete signal at hand, band-pass filtering  is (in the simplest approach) just a matter of discrete convolution of the signal with the functions above. The following octave code does the job.
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{tappimarssi.jpg}
+%% \end{figure}
 
 
-\begin{verbatim}
-##Sinc band-pass filter. f0 = B_L/fs, f1 = B_H/fs
+%% \begin{itemize}
+%% \item  \htmladdnormallink{Octave Documentation – Signal Processing}{https://octave.org/doc/v5.2.0/Signal-Processing.html}
+%% \end{itemize}
 
-function filtered = sincfilter(signal, f0, f1)
-  if(mod(length(signal), 2) != 0) #Check if the signal length is even or odd.
-    signal = signal(1 : length(signal) - 1);
-  end
+%% \subsection{November – Digital filtering}
+
+%% Let's construct a simple digital band-pass filter based in the \htmladdnormallink{sinc filter}{https://en.wikipedia.org/wiki/Sinc_filter}.
+
+%% As everyone know, the sinc function is the \htmladdnormallink{impulse response}{https://en.wikipedia.org/wiki/Impulse_response} of a low-pass filter. That is, the \htmladdnormallink{convolution}{https://en.wikipedia.org/wiki/Convolution} of a signal $ S(t)$ and the sinc function $ t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$ will produce a low-pass filtered signal $S(t)$ without frequencies higher than $B_L$. Similarly, the function $ t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$ where $ \delta(t)$ represents the \htmladdnormallink{Dirac delta function}{https://en.wikipedia.org/wiki/Dirac_delta_function}, is the frequency response of the ideal high-pass filter of frequency $B_H$.
+
+%% Heuristically, we can right away derive the discrete versions of the impulse responses:
+
+%% $$
+%% \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
+%% $$
+%% for the low-pass filter, and
+
+%% $$
+%% i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
+%% $$
+
+%% for the high-pass filter. The variable $f_c$ is the sampling frequency and  $i \mapsto \delta[i] := \delta_{0i} $ is the \htmladdnormallink{Kronecker delta}{https://en.wikipedia.org/wiki/Kronecker_delta}.
+
+%% Now, having a discrete signal at hand, band-pass filtering  is (in the simplest approach) just a matter of discrete convolution of the signal with the functions above. The following octave code does the job.
+
+
+%% \begin{verbatim}
+%% ##Sinc band-pass filter. f0 = B_L/fs, f1 = B_H/fs
+
+%% function filtered = sincfilter(signal, f0, f1)
+%%   if(mod(length(signal), 2) != 0) #Check if the signal length is even or odd.
+%%     signal = signal(1 : length(signal) - 1);
+%%   end
   
-  M = 10000; #Increase this to increase accuracy.
-  sincF = zeros(1, M);
-  for m =  -M/2 + 1 : 1 : M/2 
-    if(!(m  == 0))
-      sincF(m + M/2) = sin(2*pi*f1*m)./(pi*m);
-    else
-      sincF(m + M/2) = 2*f1;
-    end
-  end
+%%   M = 10000; #Increase this to increase accuracy.
+%%   sincF = zeros(1, M);
+%%   for m =  -M/2 + 1 : 1 : M/2 
+%%     if(!(m  == 0))
+%%       sincF(m + M/2) = sin(2*pi*f1*m)./(pi*m);
+%%     else
+%%       sincF(m + M/2) = 2*f1;
+%%     end
+%%   end
 
-  sincH = zeros(1,M);
-  for m =  -M/2 + 1 : 1 : M/2 
-    if(!(m  == 0))
-      sincH(m + M/2) = -sin(2*pi*f0*m)./(pi*m);
-    else
-      sincH(m + M/2) = -2*f0 + 1;
-    end
-  end
+%%   sincH = zeros(1,M);
+%%   for m =  -M/2 + 1 : 1 : M/2 
+%%     if(!(m  == 0))
+%%       sincH(m + M/2) = -sin(2*pi*f0*m)./(pi*m);
+%%     else
+%%       sincH(m + M/2) = -2*f0 + 1;
+%%     end
+%%   end
   
-  ##Plot stuff.
-  figure(1)
-  plot(sincF)
-  figure(2)
-  plot(signal)
+%%   ##Plot stuff.
+%%   figure(1)
+%%   plot(sincF)
+%%   figure(2)
+%%   plot(signal)
 
-  tic
-  filtered = conv(signal, sincF, "same");
-  filtered = conv(filtered, sincH, "same");
-  toc
+%%   tic
+%%   filtered = conv(signal, sincF, "same");
+%%   filtered = conv(filtered, sincH, "same");
+%%   toc
 
-  figure(3)
-  plot(filtered)
-end
-
-
-\end{verbatim}
+%%   figure(3)
+%%   plot(filtered)
+%% end
 
 
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{signal.jpg}
-  \caption{Signal of form $\cos(20 \pi t) + \sin(2 \pi t)$}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{filtered.jpg}
-  \caption{The same signal with the first term filtered away}
-\end{figure}
+%% \end{verbatim}
 
 
 
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{signal.jpg}
+%%   \caption{Signal of form $\cos(20 \pi t) + \sin(2 \pi t)$}
+%% \end{figure}
 
-
-For more accuracy and effectiveness, one should use windowed or recursive filters. You can check in the references for more sophisticated methods!
-
-
-References:
-\begin{itemize}
-\item Steven W. Smith, ``Digital Signal Processing – A Practical Guide for Engineers and Scientists'', Elsevier Science, 2003.
-\end{itemize}
-
-
-\subsection{December – Contour plot in Mathematica}
-
-A contour plot is a nice way to represent 2D data. Mathematica has some great tools for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
-
-The following code returns a contour plot of the \htmladdnormallink{Riemann zeta function's}{https://en.wikipedia.org/wiki/Riemann_zeta_function} absolute value in an area in the complex plane; $(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$ Text fonts are enlarged from default. Only values under $\max = 2$ are plotted. Values above that are ``clipped'' away as white colour. By definition of the absolute value, values are always more than $0$, otherwise values under $0$ would get clipped away with black colour. Contours are drawn in intervals of $0.1$, as adjusted in the \textbb{Range} function.
-\begin{verbatim}
-max = 2;
-ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10}, 
- PlotLegends -> BarLegend[{"Rainbow", {0, max}}], 
- ColorFunction -> "Rainbow", ContourStyle -> Black, 
- Contours -> Function[{min, max}, Range[min, max, 0.1]], 
- PlotLabel -> 
-  Style["Absolute value of the Riemann zeta function", 16, Bold], 
- BaseStyle -> {FontSize -> 15}, 
- FrameLabel -> {Style["Real axis" , 16, Bold], 
-   Style["Imaginary axis", 16, Bold]}, PlotRange -> {0, max}, 
- ClippingStyle -> {Black, White}]
-\end{verbatim}
-
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{zeta.png}
-\end{figure}
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{filtered.jpg}
+%%   \caption{The same signal with the first term filtered away}
+%% \end{figure}
 
 
 
-References:
-\begin{itemize}
-\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
-\item Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
-\end{itemize}
 
 
-\section{Blog posts 2022}
-        General thoughts on mathematics and engineering, practical instructions, semi-artistic logical  nonsense. The themes of this blog are much inspired by the challenges encountered in my professional life. 
+%% For more accuracy and effectiveness, one should use windowed or recursive filters. You can check in the references for more sophisticated methods!
+
+
+%% References:
+%% \begin{itemize}
+%% \item Steven W. Smith, ``Digital Signal Processing – A Practical Guide for Engineers and Scientists'', Elsevier Science, 2003.
+%% \end{itemize}
+
+
+%% \subsection{December – Contour plot in Mathematica}
+
+%% A contour plot is a nice way to represent 2D data. Mathematica has some great tools for constructing such plots, but you might want to tweak the fonts and graphics a bit. Sometimes fonts should be enlarged so that they are visible e.g. in a journal article where there is not too much space to use.
+
+%% The following code returns a contour plot of the \htmladdnormallink{Riemann zeta function's}{https://en.wikipedia.org/wiki/Riemann_zeta_function} absolute value in an area in the complex plane; $(-2,10) \times(-10i, 10i) \subset \mathbb{C}.$ Text fonts are enlarged from default. Only values under $\max = 2$ are plotted. Values above that are ``clipped'' away as white colour. By definition of the absolute value, values are always more than $0$, otherwise values under $0$ would get clipped away with black colour. Contours are drawn in intervals of $0.1$, as adjusted in the \textbb{Range} function.
+%% \begin{verbatim}
+%% max = 2;
+%% ContourPlot[Abs[N[Zeta[x + y*I]]], {x, -2, 10}, {y, -10, 10}, 
+%%  PlotLegends -> BarLegend[{"Rainbow", {0, max}}], 
+%%  ColorFunction -> "Rainbow", ContourStyle -> Black, 
+%%  Contours -> Function[{min, max}, Range[min, max, 0.1]], 
+%%  PlotLabel -> 
+%%   Style["Absolute value of the Riemann zeta function", 16, Bold], 
+%%  BaseStyle -> {FontSize -> 15}, 
+%%  FrameLabel -> {Style["Real axis" , 16, Bold], 
+%%    Style["Imaginary axis", 16, Bold]}, PlotRange -> {0, max}, 
+%%  ClippingStyle -> {Black, White}]
+%% \end{verbatim}
+
+
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{zeta.png}
+%% \end{figure}
+
+
+
+%% References:
+%% \begin{itemize}
+%% \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/guide/HypothesisTests.html}
+%% \item Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+%% \end{itemize}
+
+
+ \section{Blog posts 2022}
+%%         General thoughts on mathematics and engineering, practical instructions, semi-artistic logical  nonsense. The themes of this blog are much inspired by the challenges encountered in my professional life. 
 
 \subsection{January – Inverse of a Gaussian variable}
 
-There is quite a pile of literature on the subject of the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution is ill-behaved; the mean and variance does not generally exist.
+There is quite a pile of literature on the subject of the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution is ill-behaved; the mean and variance do not generally exist.
 
-I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have not worked out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations). 
+I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations).
 
-First, approximate the Gaussian distributed variable $X \sim \mathcal{N}(\mu, \sigma^2)$ by a log-normally distributed variable $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$ with corresponding mean and variance, i.e.
-$$\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$$ and
+First, approximate the Gaussian distributed variable $X \sim \mathcal{N}(\mu, \sigma^2)$ by a log-normally distributed variable $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$ with corresponding mean and variance, \textit{i.e.}, $$\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$$ and
 $$\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$$ We leave the solving of $\mu_{\text{LN}}$ and $\sigma_{\text{LN}}$ as an easy exercise for the reader.
 
 
@@ -967,7 +955,7 @@ References:
 
 \subsection{February – Voronoi tesselation on a sphere}
 
-Voronoi tessellation consists neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, have applications in wireless communications (among the million other things). 
+Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, has applications, \textit{e.g.}, in wireless communications. 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{voronoionsphere.png}
@@ -1017,141 +1005,205 @@ References:
 
 
 
-\subsection{March – Plotting in Mathematica}
+%% \subsection{March – Plotting in Mathematica}
 
-Here's a plot for Mathematica that you can use as a template to plot ListLinePlot and Plot in the same figure. Font sizes are increased to be well visible in a research article. 
+%% Here's a plot for Mathematica that you can use as a template to plot ListLinePlot and Plot in the same figure. Font sizes are increased to be well visible in a research article. 
 
 
-\begin{verbatim}
-xmax = 150;
-ymax = 0.025;
-Show[
+%% \begin{verbatim}
+%% xmax = 150;
+%% ymax = 0.025;
+%% Show[
  
- ListLinePlot[{Table[{t, 
-     PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
-      t]}, {t, 0, xmax, xmax/10}],
-   Table[{t, 
-     PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][
-      t]}, {t, 0, xmax, xmax/10}], 
-   Table[{t, 
-     PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][
-      t]}, {t, 0, xmax, xmax/10}]}, 
-  PlotRange -> {{0, xmax}, {0, ymax}},
-  PlotLabel -> PDF,
-  AxesLabel -> {Style["SIR", 16, Bold], Style["", 16, Bold]}, 
-  PlotLegends -> Placed[{"Sim 1", "Sim 2", "Sim 3"}, Right], 
-  PlotMarkers -> {Automatic, 10}, BaseStyle -> {FontSize -> 15}],
- Plot[
-  {
-   PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
-    t],
-   PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][t],
-   PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][t]
-   }, {t, 0.01, xmax}, PlotStyle -> Thick, 
-  PlotLegends -> 
-   Placed[{"\[CapitalGamma](3.7, 16.6)", "\[CapitalGamma](6.5, 8.6)", 
-     "\[CapitalGamma](3.3, 16.7)"}, Right]]
- ]
-\end{verbatim}
+%%  ListLinePlot[{Table[{t, 
+%%      PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+%%       t]}, {t, 0, xmax, xmax/10}],
+%%    Table[{t, 
+%%      PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][
+%%       t]}, {t, 0, xmax, xmax/10}], 
+%%    Table[{t, 
+%%      PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][
+%%       t]}, {t, 0, xmax, xmax/10}]}, 
+%%   PlotRange -> {{0, xmax}, {0, ymax}},
+%%   PlotLabel -> PDF,
+%%   AxesLabel -> {Style["SIR", 16, Bold], Style["", 16, Bold]}, 
+%%   PlotLegends -> Placed[{"Sim 1", "Sim 2", "Sim 3"}, Right], 
+%%   PlotMarkers -> {Automatic, 10}, BaseStyle -> {FontSize -> 15}],
+%%  Plot[
+%%   {
+%%    PDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+%%     t],
+%%    PDF[GammaDistribution[6.502676225156808`, 8.60919186301341`]][t],
+%%    PDF[GammaDistribution[3.3444580518527207`, 16.73897127052263`]][t]
+%%    }, {t, 0.01, xmax}, PlotStyle -> Thick, 
+%%   PlotLegends -> 
+%%    Placed[{"\[CapitalGamma](3.7, 16.6)", "\[CapitalGamma](6.5, 8.6)", 
+%%      "\[CapitalGamma](3.3, 16.7)"}, Right]]
+%%  ]
+%% \end{verbatim}
 
 
-Output:
-\begin{figure}
-  \includegraphics[width=\linewidth]{listlineplot.png}
-\end{figure}
+%% Output:
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{listlineplot.png}
+%% \end{figure}
 
 
-References:
-\begin{itemize}
-\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/Plot.html}
-\end{itemize}
+%% References:
+%% \begin{itemize}
+%% \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/Plot.html}
+%% \end{itemize}
 
 
-\subsection{April – Satellite communication toolbox in Matlab}
+%% \subsection{April – Satellite communication toolbox in Matlab}
 
-Matlab's Satellite Communication Toolbox can be used to study and visualize satellite networks. The following code places a terrestrial station in Otaniemi, and a LEO satellite in $2000$ km tracking the station. Satellite have to be at least in a elevation angle of $35$ degrees to contact to the base station. Satellites field of view and a $3$ dB footprint of width $1.5$ degrees is also represented.
+%% Matlab's Satellite Communication Toolbox can be used to study and visualize satellite networks. The following code places a terrestrial station in Otaniemi, and a LEO satellite in $2000$ km tracking the station. Satellite have to be at least in a elevation angle of $35$ degrees to contact to the base station. Satellites field of view and a $3$ dB footprint of width $1.5$ degrees is also represented.
+
+%% \begin{verbatim}
+%% clear all;
+%% close all;
+
+%% startTime = datetime(2020,8,19,20,55,0); % 19 August 2020 8:55 PM UTC
+%% stopTime = startTime + days(1);          % 20 August 2020 8:55 PM UTC
+%% sampleTime = 60;                         % seconds
+%% sc = satelliteScenario(startTime,stopTime,sampleTime);
+
+
+%% semiMajorAxis = (6378 + 2000)*1000;          % meters
+%% eccentricity = 0;
+%% inclination = 90;                   % degrees
+%% rightAscensionOfAscendingNode = 0; % degrees
+%% argumentOfPeriapsis = 0;           % degrees
+%% trueAnomaly = 0;                   % degrees
+%% sat1 = satellite(sc, ...
+%%     semiMajorAxis, ...
+%%     eccentricity, ...
+%%     inclination, ...
+%%     rightAscensionOfAscendingNode, ...
+%%     argumentOfPeriapsis, ...
+%%     trueAnomaly, ...
+%%                  "Name","Satellite", ...
+%%                  "OrbitPropagator","two-body-keplerian");
+
+%% sat1.LabelFontSize = 30;
+%% cam1 = conicalSensor(sat1,"MaxViewAngle",90)
+%% cam2 = conicalSensor(sat1,"MaxViewAngle",1.5/2)
+
+%% name = "Test Transmitter";
+%% minElevationAngle = 35; % degrees
+%% lat = 60.185;
+%% lon = 24.83;
+%% geoSite = groundStation(sc, lat, lon, "Name", name, "MinElevationAngle", minElevationAngle)
+%% geoSite.LabelFontSize = 30;
+%% ac1 = access(cam1,geoSite);
+%% ac2 = access(cam2,geoSite);
+
+%% fov1 = fieldOfView(cam1, "LineColor",'blue', "LineWidth", 10)
+%% ac1.LineColor = 'black';
+
+%% fov2 = fieldOfView(cam2, "LineColor", 'green', "LineWidth", 10)
+
+%% pointAt(sat1,geoSite);
+
+%% play(sc);
+
+%% \end{verbatim}
+
+
+
+%% Output:
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{stk.png}
+%% \end{figure}
+
+
+%% References:
+%% \begin{itemize}
+%% \item \htmladdnormallink{Mathworks}{https://se.mathworks.com/products/satellite-communications.html}
+%% \end{itemize}
+
+%% \subsection{May – Digital to analog modulation}
+%% Digital signal consists of values at discrete times, whereas analog signal is continuous in time $t$. As the orthogonal set of \htmladdnormallink{sinc functions}{https://en.wikipedia.org/wiki/Sinc_function}
+%% $$
+%% \{t \mapsto \text{sinc}(F_s t - n)\}_n,
+%% $$
+%% spans the space of signals of bandwidth $F_s/2$, an analog signal can be (uniquely) produced from a digital signal of length $N$ 
+%% $$
+%% \{ x[n]\}_{n=0}^{N-1}
+%% $$
+%% as a superposition of the \text{sinc} basis-functions
+%% $$
+%% S(t) =\sum_{n = 0}^{N-1} x[n]\text{sinc}(F_s t - n),
+%% $$
+%% where $F_s$ is the sampling rate of the digital signal.
+
+%% The following GNU Octave function produces the analog signal from a given digital signal
+
+%% \begin{verbatim}
+%% %%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
+%% function xb = digitaltoanalog(T, digitalsignal, Fs)
+%%   xb = [];
+%%   for t = T
+%%     xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
+%%   end
+%% end
+%% \end{verbatim}
+
+%% The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal $x$, and modulates the sampled digital signal back to an analog signal $S$. As the \htmladdnormallink{Nyquist rate}{https://en.wikipedia.org/wiki/Nyquist_frequency} restricts the bandwidth of the signal $S$ to $F_s/2$, information is lost in the sampling stage, because the original rectangle train has an infinite bandwidth.
+
+
+%% \begin{verbatim}
+%% pkg load signal;
+%% close all;
+%% clear all;
+
+%% input  = @(t) pulstran(t,[0,1,5,7,9],"rectpuls") %%The original analog signal at time t.
+
+%% Fs = 5; %Sampling rate.
+%% t = 10 %Time length of the signal.
+%% Ts = 0 : 1/Fs : t; %Sampling time instances.
+%% x =  input(Ts); %Sampled values, i.e. the digital signal.
+
+%% Ta = linspace(0, t, 1000); %Analog signal time instances for the plot.
+%% S = digitaltoanalog(Ta, x, Fs); %Modulated analog signal.
+
+%% %Plot.
+%% plot(Ta, input(Ta), 'color', 'r');
+%% hold on;
+%% plot(Ts, x, 'x', 'color', 'r')
+%% plot(Ta, S, 'color', 'b');
+%% legend( 'Original analog signal','Sampled digital signal', 'Rerproduced analog signal')
+
+%% \end{verbatim}
+
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{rectangletrain.png}
+%% \end{figure}
+
+
+
+%% References:
+%% \begin{itemize}
+%% \item 
+%%   Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press,, 2005. Print.
+
+%% \end{itemize}
+
+\subsection{June – Gaussian vs. impulsive noise}
+
+
+Noise is often modeled to have a \htmladdnormallink{Gaussian}{https://en.wikipedia.org/wiki/Gaussian_noise} waveform. However, it might be unrealistic in some circumstances if the \htmladdnormallink{outlier}{https://en.wikipedia.org/wiki/Outlier} events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with \htmladdnormallink{fat-tailed distributions}{https://en.wikipedia.org/wiki/Fat-tailed_distribution} with significant mass in the tail distribution. 
+
+The \htmladdnormallink{$\alpha$-stable distributions}{https://en.wikipedia.org/wiki/Stable_distribution} are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the $\alpha$-stable family of $\alpha$-stable distributions ($\alpha = 2$), the only distribution in the family with a finite variance. With values $\alpha \leq 1$, even the mean is infinite. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value – say, 10 euros in a year – versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary. Other impulsive noise distribution models are the \textit{Middleton distributions} representing the envelope of non-Gaussian electromagnetic noise.
+
+In the following, we compare the Gaussian and $\alpha$-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or $\alpha$-stable distribution with $\alpha =1$, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  $\alpha$-stable noises with $alpha = 1$. 
 
 \begin{verbatim}
+pkg load statistics
+
 clear all;
 close all;
 
-startTime = datetime(2020,8,19,20,55,0); % 19 August 2020 8:55 PM UTC
-stopTime = startTime + days(1);          % 20 August 2020 8:55 PM UTC
-sampleTime = 60;                         % seconds
-sc = satelliteScenario(startTime,stopTime,sampleTime);
-
-
-semiMajorAxis = (6378 + 2000)*1000;          % meters
-eccentricity = 0;
-inclination = 90;                   % degrees
-rightAscensionOfAscendingNode = 0; % degrees
-argumentOfPeriapsis = 0;           % degrees
-trueAnomaly = 0;                   % degrees
-sat1 = satellite(sc, ...
-    semiMajorAxis, ...
-    eccentricity, ...
-    inclination, ...
-    rightAscensionOfAscendingNode, ...
-    argumentOfPeriapsis, ...
-    trueAnomaly, ...
-                 "Name","Satellite", ...
-                 "OrbitPropagator","two-body-keplerian");
-
-sat1.LabelFontSize = 30;
-cam1 = conicalSensor(sat1,"MaxViewAngle",90)
-cam2 = conicalSensor(sat1,"MaxViewAngle",1.5/2)
-
-name = "Test Transmitter";
-minElevationAngle = 35; % degrees
-lat = 60.185;
-lon = 24.83;
-geoSite = groundStation(sc, lat, lon, "Name", name, "MinElevationAngle", minElevationAngle)
-geoSite.LabelFontSize = 30;
-ac1 = access(cam1,geoSite);
-ac2 = access(cam2,geoSite);
-
-fov1 = fieldOfView(cam1, "LineColor",'blue', "LineWidth", 10)
-ac1.LineColor = 'black';
-
-fov2 = fieldOfView(cam2, "LineColor", 'green', "LineWidth", 10)
-
-pointAt(sat1,geoSite);
-
-play(sc);
-
-\end{verbatim}
-
-
-
-Output:
-\begin{figure}
-  \includegraphics[width=\linewidth]{stk.png}
-\end{figure}
-
-
-References:
-\begin{itemize}
-\item \htmladdnormallink{Mathworks}{https://se.mathworks.com/products/satellite-communications.html}
-\end{itemize}
-
-\subsection{May – Digital to analog modulation}
-Digital signal consists of values at discrete times, whereas analog signal is continuous in time $t$. As the orthogonal set of \htmladdnormallink{sinc functions}{https://en.wikipedia.org/wiki/Sinc_function}
-$$
-\{t \mapsto \text{sinc}(F_s t - n)\}_n,
-$$
-spans the space of signals of bandwidth $F_s/2$, an analog signal can be (uniquely) produced from a digital signal of length $N$ 
-$$
-\{ x[n]\}_{n=0}^{N-1}
-$$
-as a superposition of the \text{sinc} basis-functions
-$$
-S(t) =\sum_{n = 0}^{N-1} x[n]\text{sinc}(F_s t - n),
-$$
-where $F_s$ is the sampling rate of the digital signal.
-
-The following GNU Octave function produces the analog signal from a given digital signal
-
-\begin{verbatim}
 %%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
 function xb = digitaltoanalog(T, digitalsignal, Fs)
   xb = [];
@@ -1159,60 +1211,7 @@ function xb = digitaltoanalog(T, digitalsignal, Fs)
     xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
   end
 end
-\end{verbatim}
 
-The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal $x$, and modulates the sampled digital signal back to an analog signal $S$. As the \htmladdnormallink{Nyquist rate}{https://en.wikipedia.org/wiki/Nyquist_frequency} restricts the bandwidth of the signal $S$ to $F_s/2$, information is lost in the sampling stage, because the original rectangle train has an infinite bandwidth.
-
-
-\begin{verbatim}
-pkg load signal;
-close all;
-clear all;
-
-input  = @(t) pulstran(t,[0,1,5,7,9],"rectpuls") %%The original analog signal at time t.
-
-Fs = 5; %Sampling rate.
-t = 10 %Time length of the signal.
-Ts = 0 : 1/Fs : t; %Sampling time instances.
-x =  input(Ts); %Sampled values, i.e. the digital signal.
-
-Ta = linspace(0, t, 1000); %Analog signal time instances for the plot.
-S = digitaltoanalog(Ta, x, Fs); %Modulated analog signal.
-
-%Plot.
-plot(Ta, input(Ta), 'color', 'r');
-hold on;
-plot(Ts, x, 'x', 'color', 'r')
-plot(Ta, S, 'color', 'b');
-legend( 'Original analog signal','Sampled digital signal', 'Rerproduced analog signal')
-
-\end{verbatim}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{rectangletrain.png}
-\end{figure}
-
-
-
-References:
-\begin{itemize}
-\item 
-  Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press,, 2005. Print.
-
-\end{itemize}
-
-\subsection{June – Gaussian vs. impulsive noise}
-
-
-Noise is often modeled as \htmladdnormallink{Gaussian}{https://en.wikipedia.org/wiki/Gaussian_noise}. However, it might be an unrealistic model in some circumstances if the \htmladdnormallink{outlier}{https://en.wikipedia.org/wiki/Outlier} events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with \htmladdnormallink{fat tailed distributions}{https://en.wikipedia.org/wiki/Fat-tailed_distribution}, that have significant mass in the tail distribution. 
-
-The \htmladdnormallink{$\alpha$-stable distributions}{https://en.wikipedia.org/wiki/Stable_distribution} are used as noise models in various applications including economics and electromagnetic communications. Also, the normal distribution belongs to the family of $\alpha$-stable distributions ($\alpha = 2$) being the only distribution in the family having a well-defined variance. With values $\alpha \leq 1$, even the mean is ill-defined, and the qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value – say, 10 euros in a year – versus investing to a share that of which value fluctuates so rapidly that the expected profit (mean profit over time) can be – in a sense – anything. Other impulsive noise distribution models are the Middleton distributions, which are derived for the envelope of non-Gaussian electromagnetic noise.
-
-In the following, we compare the Gaussian and $\alpha$-stable noises. That is, the in-phase and quadrature components are distributed as Gaussian distribution or $\alpha$-stable distribution with $\alpha =1$, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  $\alpha$-stable noises with $alpha = 1$. The function \htmladdnormallink{digitaltoanalog}{https://ilari.angervuori.fi/node24.html} is given in my \htmladdnormallink{May}{https://ilari.angervuori.fi/node11.html} blog entry. Remember to import the statistical package to Octave.
-
-\begin{verbatim}
-clear all;
-close all;
 
 %%Inverse of the alpha stable CDF with alpha = 1.
 invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
@@ -1238,6 +1237,7 @@ plot(T, normalsamples)
 legend('Gaussian noise')
 axis([0 100 -15 15])
 
+
 \end{verbatim}
 
 \begin{figure}
@@ -1249,10 +1249,10 @@ axis([0 100 -15 15])
   \includegraphics[width=\linewidth]{gaussiannoise.png}
 \end{figure}
 
-Looking the pictures, it is easy to understand where the term ``impulsive noise'' comes from.
+Comparing the figures, one can easily understand where the term ``impulsive noise'' comes from.
 
 
-It is also interesting to compare the audiolized noise-signals:
+It is also interesting to compare the audiolized noise signals:
 \htmladdnormallink{my Soundcloud}{https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing}.
 
 
@@ -1261,6 +1261,8 @@ References:
 \begin{itemize}
 \item Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman & Hall, 1994. Print.
 \item Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
+\item 
+  Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press,, 2005. Print.
 \end{itemize}
 
 
@@ -1268,14 +1270,12 @@ References:
 
 \subsection{July – Summing the signal powers}
 
-A simple but important observation for the July.
-
-Let us consider two sinusoidal signals of opposite phases during the time $t \in [0,1]$: $S_1(t) = \cos(2 \pi t)$ and $S_2(t) = \cos(2 \pi t + \pi).$ Obviously, the signals cancel each other completely and the mean power of the additive signal $ S_1 + S_2$ is just $0$:
+Let us consider two sinusoidal signals of opposite phases during the time $t \in [0,1]$: $S_1(t) = \cos(2 \pi t)$ and $S_2(t) = \cos(2 \pi t + \pi)$. Obviously, the signals cancel each other completely, and the mean power of the additive signal $ S_1 + S_2$ is just $0$:
 
 \begin{align}
   &\mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0, \tag{1}
 \end{align}
-where $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the probabilistic expected value).
+here $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the probabilistic expected value).
 
 
 We could try to add the powers of the signals separately together:
@@ -1284,20 +1284,20 @@ We could try to add the powers of the signals separately together:
   \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \tag{2} \\
   &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1, \nonumber
 \end{align}
-but the result greatly differs from $(2)$! Can we then sometimes sum the individual signal powers together or not? This surely would be handy. This question has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
+but the result significantly differs from X! Can we sometimes sum the individual signal powers together, which would be handy in many applications? This question has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
 
 Let us assume that $S_1$ and $S_2$ are two signals. We have that
 \begin{equation}
   \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2], \tag{3}
 \end{equation}
-thus the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds if and only if the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ i.e. if the signals $S_1$ and $S_2$ are not correlated. Clearly, this is not the case with our initial signals, as then the cross-correlation is given by
+thus, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated – this is not the case with our initial signals, as then the cross-correlation is given by
 
 $$
 \mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
 $$
-as it should be according to the equations (1), (2) and (3).
+as it should be if we tie together the equations (1), (2) and (3).
 
-In above, we used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases $\phi_1,\phi_2 \in [0,2 \pi]$, let $S_1(t) = \cps(2 \pi t + \phi_1)$ and $S_2(t) = \cos(2 \pi t + \phi_2)$;
+We used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases $\phi_1,\phi_2 \in [0,2 \pi]$, let $S_1(t) = \cps(2 \pi t + \phi_1)$ and $S_2(t) = \cos(2 \pi t + \phi_2)$;
 
 \begin{align*}
   &\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}[(S_1 + S_2)^2]\right] = \mathbb{E}_{\phi_1} \left[\mathbb{E}\left[ S_1^2\right]\right] + \mathbb{E}_{\phi_2} \left[\mathbb{E}\left[ S_2^2\right]\right] +\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] \\
@@ -1316,70 +1316,70 @@ References:
 
 
 
-\subsection{August – dB logplot in Mathematica}
-In our series of Mathematica plotting, here we give an example of how to plot values in dB in a \htmladdnormallink{logarithmic plot}{https://en.wikipedia.org/wiki/Logarithmic_scale}. Among many other things, the logarithmic plot is handy in visualizing the tails of probability distributions.  We represent the values of the complementary cumulative distributions in dB, thus we have to add custom ticks for the abscissa. Also, the font size is increased and plot titles and legends are added.
-\begin{verbatim}
-xmax = 180;
-ymax = 1;
+%% \subsection{August – dB logplot in Mathematica}
+%% In our series of Mathematica plotting, here we give an example of how to plot values in dB in a \htmladdnormallink{logarithmic plot}{https://en.wikipedia.org/wiki/Logarithmic_scale}. Among many other things, the logarithmic plot is handy in visualizing the tails of probability distributions.  We represent the values of the complementary cumulative distributions in dB, thus we have to add custom ticks for the abscissa. Also, the font size is increased and plot titles and legends are added.
+%% \begin{verbatim}
+%% xmax = 180;
+%% ymax = 1;
 
-{table1, table2, 
-   table3} = {Table[{t, 
-     1 - CDF[GammaDistribution[3.715287738432738`, 
-         16.575007504627795`]][t]}, {t, 0, xmax, xmax/10}], 
-   Table[{t, 
-     1 - CDF[GammaDistribution[6.502676225156808`, 
-         8.60919186301341`]][t]}, {t, 0, xmax, xmax/10}], 
-   Table[{t, 
-     1 - CDF[GammaDistribution[3.3444580518527207`, 
-         16.73897127052263`]][t]}, {t, 0, xmax, xmax/10}]};
+%% {table1, table2, 
+%%    table3} = {Table[{t, 
+%%      1 - CDF[GammaDistribution[3.715287738432738`, 
+%%          16.575007504627795`]][t]}, {t, 0, xmax, xmax/10}], 
+%%    Table[{t, 
+%%      1 - CDF[GammaDistribution[6.502676225156808`, 
+%%          8.60919186301341`]][t]}, {t, 0, xmax, xmax/10}], 
+%%    Table[{t, 
+%%      1 - CDF[GammaDistribution[3.3444580518527207`, 
+%%          16.73897127052263`]][t]}, {t, 0, xmax, xmax/10}]};
 
-Labeled[Show[
-  LogPlot[{1 - 
-     CDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
-      x], 1 - CDF[
-       GammaDistribution[6.502676225156808`, 8.60919186301341`]][x], 
-    1 - CDF[GammaDistribution[3.3444580518527207`, 
-        16.73897127052263`]][x]}, {x, 0, xmax}, 
-   GridLines -> Automatic, PlotRange -> {{0, xmax}, {0, 1}}, 
-   Ticks -> {{{0*xmax, -Infinity},
-      {0.1*xmax, NumberForm[10*Log10[(0.1*xmax)], 3]},
-      {0.2*xmax, NumberForm[10*Log10[(0.2*xmax)], 3]},
-      {0.3*xmax, NumberForm[10*Log10[(0.3*xmax)], 3]},
-      {0.4*xmax, NumberForm[10*Log10[(0.4*xmax)], 3]},
-      {0.5*xmax, NumberForm[10*Log10[(0.5*xmax)], 3]},
-      {0.6*xmax, NumberForm[10*Log10[(0.6*xmax)], 3]},
-      {0.7*xmax, NumberForm[10*Log10[(0.7*xmax)], 3]},
-      {0.8*xmax, NumberForm[10*Log10[(0.8*xmax)], 3]},
-      {0.9*xmax, NumberForm[10*Log10[(0.9*xmax)], 3]},
-      {1*xmax, N[NumberForm[10*Log10[(1*xmax)], 3]] "dBm"}
-      }, {10^-4, 10^-3, 10^-2, 10^-1, 1}}, 
-   BaseStyle -> {FontSize -> 15}, PlotStyle -> Thick], 
-  ListLogPlot[{table1, table2, table3}, 
-   PlotLegends -> 
-    Placed[{"\[CapitalGamma](3.7,16.6)", "\[CapitalGamma](6.5,8.6)", 
-      "\[CapitalGamma](3.3,16.7)"}, Right], 
-   PlotMarkers -> {Automatic, 10}]
-  ], {"Percent of realizations abscissa is exceeded", 
-  "Interference power (decibel-milliwats)"}, {Left, Bottom}, 
- RotateLabel -> True]
-
-
-\end{verbatim}
+%% Labeled[Show[
+%%   LogPlot[{1 - 
+%%      CDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
+%%       x], 1 - CDF[
+%%        GammaDistribution[6.502676225156808`, 8.60919186301341`]][x], 
+%%     1 - CDF[GammaDistribution[3.3444580518527207`, 
+%%         16.73897127052263`]][x]}, {x, 0, xmax}, 
+%%    GridLines -> Automatic, PlotRange -> {{0, xmax}, {0, 1}}, 
+%%    Ticks -> {{{0*xmax, -Infinity},
+%%       {0.1*xmax, NumberForm[10*Log10[(0.1*xmax)], 3]},
+%%       {0.2*xmax, NumberForm[10*Log10[(0.2*xmax)], 3]},
+%%       {0.3*xmax, NumberForm[10*Log10[(0.3*xmax)], 3]},
+%%       {0.4*xmax, NumberForm[10*Log10[(0.4*xmax)], 3]},
+%%       {0.5*xmax, NumberForm[10*Log10[(0.5*xmax)], 3]},
+%%       {0.6*xmax, NumberForm[10*Log10[(0.6*xmax)], 3]},
+%%       {0.7*xmax, NumberForm[10*Log10[(0.7*xmax)], 3]},
+%%       {0.8*xmax, NumberForm[10*Log10[(0.8*xmax)], 3]},
+%%       {0.9*xmax, NumberForm[10*Log10[(0.9*xmax)], 3]},
+%%       {1*xmax, N[NumberForm[10*Log10[(1*xmax)], 3]] "dBm"}
+%%       }, {10^-4, 10^-3, 10^-2, 10^-1, 1}}, 
+%%    BaseStyle -> {FontSize -> 15}, PlotStyle -> Thick], 
+%%   ListLogPlot[{table1, table2, table3}, 
+%%    PlotLegends -> 
+%%     Placed[{"\[CapitalGamma](3.7,16.6)", "\[CapitalGamma](6.5,8.6)", 
+%%       "\[CapitalGamma](3.3,16.7)"}, Right], 
+%%    PlotMarkers -> {Automatic, 10}]
+%%   ], {"Percent of realizations abscissa is exceeded", 
+%%   "Interference power (decibel-milliwats)"}, {Left, Bottom}, 
+%%  RotateLabel -> True]
 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{dBplot.png}
-\end{figure}
+%% \end{verbatim}
 
 
-References:
-\begin{itemize}
-\item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/LogPlot.html}
-\end{itemize}
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{dBplot.png}
+%% \end{figure}
+
+
+%% References:
+%% \begin{itemize}
+%% \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/LogPlot.html}
+%% \end{itemize}
 
 \subsection{September – Homography}
 
-\htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in my simulations: for elevation angles smaller than $90 \degree,$ you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$ so that the right focus point maps to origo.
+\htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than $90 \degree$, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$ so that the right-hand side focus point maps to the origin.
 $$
 H=
 \begin{pmatrix}
@@ -1476,7 +1476,7 @@ For \textbf{normal distributed} $X$ with mean $\mu$ and variance $\sigma^2$:
 where in $(b)$, we used the inequality $$\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$$ that holds for $x \geq 0$ and $\beta >1$ (we used $\beta = 2$).
 
 
-The asymptotic decay rates for the exponential distribution, gamma distribution, and normal distribution are given in $(2)$, $(3)$, and $(4)$, respectively. We see that the decay rate $\rho$ of the normal distribution is always maximal, i.e. $\rho_{\text{Normal}} = \infty$, whereas the decay rates of the exponential distribution and the gamma distribution depend on the scale parameter $\theta$.
+The asymptotic decay rates for the exponential, gamma, and normal distribution are given in $(2)$, $(3)$, and $(4)$, respectively. We see that the decay rate $\rho$ of the normal distribution is always maximal, \textit{i.e.}, $\rho_{\text{Normal}} = \infty$. In contrast, the decay rates of the exponential and gamma distributions depend on the scale parameter $\theta$.
 
 By normalizing the mean ($\mathbb{E}[X] = 1$) by setting $\theta = 1$ and $k=1/\theta$, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is $\rho_{\text{Exponential}} = 1$ and of the gamma distribution is $\rho_{\text{Gamma}} = k$. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters $k<1$, and faster than the exponential distribution with $k>1$. With $k=1$, the distributions coincide. When $k \rightarrow \infty$, the gamma distribution approaches the normal distribution and $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$.
 
@@ -1497,22 +1497,22 @@ References:
   \includegraphics[width=\linewidth]{satelliteinterference.png}
 \end{figure}
 
-In this blog post, we study a faded signal in an omnidirectional satellite receiver sent by an earth transmitter. We consider that the transmitter (TX) is sending a constant \htmladdnormallink{QAM}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} symbol, \textit{i.e.}, the TX \htmladdnormallink{baseband signal}{https://en.wikipedia.org/wiki/Baseband} is given by
+Let us study a faded signal in an omnidirectional satellite receiver sent by an earth transmitter. We consider that the transmitter (TX) is sending a constant \htmladdnormallink{QAM}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} symbol, \textit{i.e.}, the TX \htmladdnormallink{baseband signal}{https://en.wikipedia.org/wiki/Baseband} is given by
 \begin{equation}
   S_{\text{TX}} = Ae^{-2 i \pi \theta}, } \tag{1}
 \end{equation}
-for some $\theta \in [0,1]$ and $A \in \mathbb{R}_+$. The \htmladdnormallink{passband signal}{https://en.wikipedia.org/wiki/Passband} experiences \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading} due to terrestrial obstacles. We use a model where $100$ scatterer objects are \htmladdnormallink{Poisson distributed }{https://en.wikipedia.org/wiki/Poisson_point_process} inside a circular area of diameter $180$ m. The phases of the scattered signals are independently uniformly random. Initially, the satellite, which is moving at its \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed}, is in the \htmladdnormallink{zenith}{https://en.wikipedia.org/wiki/Zenith} w.r.t. the earth transmitter. The receiver's (RX) baseband signal is a linear combination of the \htmladdnormallink{down-conversions}{https://en.wikipedia.org/wiki/Digital_down_converter} of the scattered, \htmladdnormallink{Doppler shifted}{https://en.wikipedia.org/wiki/Doppler_effect} and \htmladdnormallink{attenuated}{https://en.wikipedia.org/wiki/Attenuation} passband signal components, and it is given by
+for some $\theta \in [0,1]$ and $A \in \mathbb{R}_+$. The \htmladdnormallink{passband signal}{https://en.wikipedia.org/wiki/Passband} experiences \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading} due to terrestrial obstacles. We use a model where $100$ scatterer objects are \htmladdnormallink{Poisson distributed }{https://en.wikipedia.org/wiki/Poisson_point_process} inside a circular area with a diameter of $180$ m. The phases of the scattered signals are independently uniformly random. Initially, the satellite, which is moving at its \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed}, is in the \htmladdnormallink{zenith}{https://en.wikipedia.org/wiki/Zenith} w.r.t. the earth transmitter. The receiver's (RX) baseband signal is a linear combination of the \htmladdnormallink{down-conversions}{https://en.wikipedia.org/wiki/Digital_down_converter} of the scattered, \htmladdnormallink{Doppler shifted}{https://en.wikipedia.org/wiki/Doppler_effect} and \htmladdnormallink{attenuated}{https://en.wikipedia.org/wiki/Attenuation} passband signal components, and it is given by
 \begin{equation}
   S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_m }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
   }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta}, \tag{2}
 \end{equation}
 where $l(d_i)$ is the path-loss function at distance $d_j$ from the scatterer $j$, $d_0$ is the direct-path distance to the transmitter, $K$ is the parameter that determines the energy ratio of the direct-path (\htmladdnormallink{LOS}{https://en.wikipedia.org/wiki/Line-of-sight_propagation}) component and the scattered paths, and $\tau_j(t) = d_j(t)/c$ is the propagation delays restricted by the speed of light $c$, which is dependent on time $t$ as the satellite moves, and $f_m$ is the carrier frequency.
 
-Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the orbital speed of the satellite is given by
+Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the orbital speed of the satellite's orbital speed is given by
 \begin{equation}
   v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3}
 \end{equation}
-where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$, and the denominator is the sum of the altitude of the satellite and the radius of the earth, respectively. This is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$, hence the Doppler spread $D_s = 100$ Hz. The coherence time is given by
+where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$; hence, the Doppler spread is $D_s = 100$ Hz. The coherence time is given by
 \begin{equation}
 T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
 \end{equation}
@@ -1522,12 +1522,12 @@ The following figures illustrate the RX baseband signal changing in time while t
 
 \begin{figure}
   \includegraphics[width=\linewidth]{basebandgifK10.gif}
-  \caption{Baseband signal with partial LOS $K=10$}
+  \caption{Baseband signal with partial LOS $K=10$.}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{basebandgifK0.gif}
-  \caption{Baseband signal under Rayleigh fading $K=0$}
+  \caption{Baseband signal under Rayleigh fading $K=0$.}
 \end{figure}
 
 Here is the Octave code:

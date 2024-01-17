@@ -3,7 +3,7 @@
 
 
 $key = q/line:22/;
-$external_labels{$key} = "$URL/" . q|node30.html|; 
+$external_labels{$key} = "$URL/" . q|node21.html|; 
 $noresave{$key} = "$nosave";
 
 1;

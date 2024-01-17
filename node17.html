@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>October – Fast Fourier transform in GNU Octave</TITLE>
-<META NAME="description" CONTENT="October – Fast Fourier transform in GNU Octave">
+<TITLE>February – Voronoi tesselation on a sphere</TITLE>
+<META NAME="description" CONTENT="February – Voronoi tesselation on a sphere">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,12 +27,12 @@
  HREF="node18.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node15.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html237"
+<A ID="tex2html196"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -40,87 +40,74 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node18.html">November – Digital filtering</A>
+ HREF="node18.html">June – Gaussian vs.</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node15.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node16.html">September – The universality</A>
- &nbsp; <B>  <A ID="tex2html238"
+ HREF="node16.html">January – Inverse of</A>
+ &nbsp; <B>  <A ID="tex2html197"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION000310000000000000000">
-October – Fast Fourier transform in GNU Octave</A>
+<H2><A ID="SECTION00042000000000000000">
+February – Voronoi tesselation on a sphere</A>
 </H2>
 
 <P>
-<A ID="tex2html68"
-  HREF="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast fourier transform</A>
-(FFT) is an algorithm that computes the <A ID="tex2html69"
-  HREF="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</A>.
-
-<P>
-FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img34.svg"
- ALT="$F_s$"></SPAN> (Hz). By the <A ID="tex2html70"
-  HREF="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon sampling theorem</A>, sampling captures frequencies under <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$F_s/2$"></SPAN>.
-
-<P>
-Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
-
-<P>
-<PRE>
-##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
-
-function fftvector = plotfft(signal, Fs)
-  N = length(signal); #Signal length.
-  FFT =  fft(signal);
-  if(mod(N,2) == 0) #Check if signal length is odd or even.
-    FFT = 2*FFT(1 : N/2)/N;
-    f = Fs*(0 : (N - 1)/2)/(N - 1); 
-  else
-    FFT = 2*FFT(1 : (N - 1)/2)/N;
-    f = Fs*(0 : (N - 2)/2)/(N - 1);
-  end  
-  fftvector = [f; FFT];
-  
-  figure(1)
-  plot(f, abs(FFT));
-  title('Fast fourier transform')
-  xlabel('Frequency (Hz)')
-  print  plot.jpg
-end
-</PRE>
-
-<P>
-The following figure shows my track <A ID="tex2html71"
-  HREF="https://soundcloud.com/ilari-angervuori/tappimarssi">Tappimarssi</A>
-in the frequency domain. The track was imported to Octave by
-
-<P>
-<PRE>
-[signal, Fs] = audioread('Tappimarssi.wav');
-</PRE>
+Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, <A ID="tex2html68"
+  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, has applications, <SPAN  CLASS="textit">e.g.</SPAN>, in wireless communications. 
 
 <P>
 
 <DIV class="CENTER">
   <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./tappimarssi.jpg"
- ALT="Image tappimarssi">
+  WIDTH="621" HEIGHT="467" STYLE=""
+ SRC="./voronoionsphere.png"
+ ALT="Image voronoionsphere">
 
 </DIV>
 
 <P>
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
+
+<P>
+<PRE>
+%%Create Voronoi tesselation around Poisson points on a Sphere.
+
+clear all;
+close all;
+
+addpath(fullfile(cd,'rbfsphere'));
+density = 100;
+X = poissononsphere(density)'; %Poisson points in spherical coordinates.
+voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
+
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+end
+</PRE>
+
+<P>
+References:
 
 <UL>
-<LI><A ID="tex2html72"
-  HREF="https://octave.org/doc/v5.2.0/Signal-Processing.html">Octave Documentation – Signal Processing</A>
+<LI><A ID="tex2html69"
+  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
 </LI>
 </UL>
 

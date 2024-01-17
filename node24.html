@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>April – Satellite communication toolbox in Matlab</TITLE>
-<META NAME="description" CONTENT="April – Satellite communication toolbox in Matlab">
+<TITLE>About this document ...</TITLE>
+<META NAME="description" CONTENT="About this document ...">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,128 +15,50 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node25.html">
-<LINK REL="previous" HREF="node23.html">
-<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node22.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="node25.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node20.html">
+ HREF="source.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node23.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html261"
+<A ID="tex2html211"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node25.html">May – Digital to</A>
 <B> Up:</B> <A
- HREF="node20.html">Blog posts 2022</A>
+ HREF="source.html">A glimpse to my</A>
 <B> Previous:</B> <A
- HREF="node23.html">March – Plotting in</A>
- &nbsp; <B>  <A ID="tex2html262"
+ HREF="node23.html">May – Signal fading</A>
+ &nbsp; <B>  <A ID="tex2html212"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00044000000000000000">
-April – Satellite communication toolbox in Matlab</A>
-</H2>
-
+<H1><A ID="SECTION00060000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>
+  <B>A glimpse to my mind</B>
+</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2021.2 (Released July 1, 2021)
 <P>
-Matlab's Satellite Communication Toolbox can be used to study and visualize satellite networks. The following code places a terrestrial station in Otaniemi, and a LEO satellite in <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img60.svg"
- ALT="$2000$"></SPAN> km tracking the station. Satellite have to be at least in a elevation angle of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img61.svg"
- ALT="$35$"></SPAN> degrees to contact to the base station. Satellites field of view and a <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img62.svg"
- ALT="$3$"></SPAN> dB footprint of width <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img63.svg"
- ALT="$1.5$"></SPAN> degrees is also represented.
-
+The command line arguments were: <BR>
+ <kbd>latex2html <A ID="tex2html100"
+  HREF="../source.tex">source.tex</A></kbd>
 <P>
-<PRE>
-clear all;
-close all;
-
-startTime = datetime(2020,8,19,20,55,0); % 19 August 2020 8:55 PM UTC
-stopTime = startTime + days(1);          % 20 August 2020 8:55 PM UTC
-sampleTime = 60;                         % seconds
-sc = satelliteScenario(startTime,stopTime,sampleTime);
-
-
-semiMajorAxis = (6378 + 2000)*1000;          % meters
-eccentricity = 0;
-inclination = 90;                   % degrees
-rightAscensionOfAscendingNode = 0; % degrees
-argumentOfPeriapsis = 0;           % degrees
-trueAnomaly = 0;                   % degrees
-sat1 = satellite(sc, ...
-    semiMajorAxis, ...
-    eccentricity, ...
-    inclination, ...
-    rightAscensionOfAscendingNode, ...
-    argumentOfPeriapsis, ...
-    trueAnomaly, ...
-                 "Name","Satellite", ...
-                 "OrbitPropagator","two-body-keplerian");
-
-sat1.LabelFontSize = 30;
-cam1 = conicalSensor(sat1,"MaxViewAngle",90)
-cam2 = conicalSensor(sat1,"MaxViewAngle",1.5/2)
-
-name = "Test Transmitter";
-minElevationAngle = 35; % degrees
-lat = 60.185;
-lon = 24.83;
-geoSite = groundStation(sc, lat, lon, "Name", name, "MinElevationAngle", minElevationAngle)
-geoSite.LabelFontSize = 30;
-ac1 = access(cam1,geoSite);
-ac2 = access(cam2,geoSite);
-
-fov1 = fieldOfView(cam1, "LineColor",'blue', "LineWidth", 10)
-ac1.LineColor = 'black';
-
-fov2 = fieldOfView(cam2, "LineColor", 'green', "LineWidth", 10)
-
-pointAt(sat1,geoSite);
-
-play(sc);
-</PRE>
-
-<P>
-Output:
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="477" STYLE=""
- SRC="./stk.png"
- ALT="Image stk">
-
-</DIV>
-
-<P>
-References:
-
-<UL>
-<LI><A ID="tex2html87"
-  HREF="https://se.mathworks.com/products/satellite-communications.html">Mathworks</A>
-</LI>
-</UL>
-
-<P>
+The translation was initiated on 2024-01-16
 <BR><HR>
 
 </BODY>

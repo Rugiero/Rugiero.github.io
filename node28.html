@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>August – dB logplot in Mathematica</TITLE>
-<META NAME="description" CONTENT="August – dB logplot in Mathematica">
+<TITLE>About this document ...</TITLE>
+<META NAME="description" CONTENT="About this document ...">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,113 +15,50 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node29.html">
-<LINK REL="previous" HREF="node27.html">
-<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node26.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="node29.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node20.html">
+ HREF="source.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node27.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html269"
+<A ID="tex2html245"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
-<B> Next:</B> <A
- HREF="node29.html">September – Homography</A>
 <B> Up:</B> <A
- HREF="node20.html">Blog posts 2022</A>
+ HREF="source.html">A glimpse to my</A>
 <B> Previous:</B> <A
- HREF="node27.html">July – Summing the</A>
- &nbsp; <B>  <A ID="tex2html270"
+ HREF="node27.html">May – Signal fading</A>
+ &nbsp; <B>  <A ID="tex2html246"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00048000000000000000">
-August – dB logplot in Mathematica</A>
-</H2>
-In our series of Mathematica plotting, here we give an example of how to plot values in dB in a <A ID="tex2html100"
-  HREF="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic plot</A>. Among many other things, the logarithmic plot is handy in visualizing the tails of probability distributions.  We represent the values of the complementary cumulative distributions in dB, thus we have to add custom ticks for the abscissa. Also, the font size is increased and plot titles and legends are added.
-<PRE>
-xmax = 180;
-ymax = 1;
-
-{table1, table2, 
-   table3} = {Table[{t, 
-     1 - CDF[GammaDistribution[3.715287738432738`, 
-         16.575007504627795`]][t]}, {t, 0, xmax, xmax/10}], 
-   Table[{t, 
-     1 - CDF[GammaDistribution[6.502676225156808`, 
-         8.60919186301341`]][t]}, {t, 0, xmax, xmax/10}], 
-   Table[{t, 
-     1 - CDF[GammaDistribution[3.3444580518527207`, 
-         16.73897127052263`]][t]}, {t, 0, xmax, xmax/10}]};
-
-Labeled[Show[
-  LogPlot[{1 - 
-     CDF[GammaDistribution[3.715287738432738`, 16.575007504627795`]][
-      x], 1 - CDF[
-       GammaDistribution[6.502676225156808`, 8.60919186301341`]][x], 
-    1 - CDF[GammaDistribution[3.3444580518527207`, 
-        16.73897127052263`]][x]}, {x, 0, xmax}, 
-   GridLines -&gt; Automatic, PlotRange -&gt; {{0, xmax}, {0, 1}}, 
-   Ticks -&gt; {{{0*xmax, -Infinity},
-      {0.1*xmax, NumberForm[10*Log10[(0.1*xmax)], 3]},
-      {0.2*xmax, NumberForm[10*Log10[(0.2*xmax)], 3]},
-      {0.3*xmax, NumberForm[10*Log10[(0.3*xmax)], 3]},
-      {0.4*xmax, NumberForm[10*Log10[(0.4*xmax)], 3]},
-      {0.5*xmax, NumberForm[10*Log10[(0.5*xmax)], 3]},
-      {0.6*xmax, NumberForm[10*Log10[(0.6*xmax)], 3]},
-      {0.7*xmax, NumberForm[10*Log10[(0.7*xmax)], 3]},
-      {0.8*xmax, NumberForm[10*Log10[(0.8*xmax)], 3]},
-      {0.9*xmax, NumberForm[10*Log10[(0.9*xmax)], 3]},
-      {1*xmax, N[NumberForm[10*Log10[(1*xmax)], 3]] "dBm"}
-      }, {10^-4, 10^-3, 10^-2, 10^-1, 1}}, 
-   BaseStyle -&gt; {FontSize -&gt; 15}, PlotStyle -&gt; Thick], 
-  ListLogPlot[{table1, table2, table3}, 
-   PlotLegends -&gt; 
-    Placed[{"\[CapitalGamma](3.7,16.6)", "\[CapitalGamma](6.5,8.6)", 
-      "\[CapitalGamma](3.3,16.7)"}, Right], 
-   PlotMarkers -&gt; {Automatic, 10}]
-  ], {"Percent of realizations abscissa is exceeded", 
-  "Interference power (decibel-milliwats)"}, {Left, Bottom}, 
- RotateLabel -&gt; True]
-</PRE>
-
+<H1><A ID="SECTION00060000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>
+  <B>A glimpse to my mind</B>
+</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2021.2 (Released July 1, 2021)
 <P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="334" STYLE=""
- SRC="./dBplot.png"
- ALT="Image dBplot">
-
-</DIV>
-
+The command line arguments were: <BR>
+ <kbd>latex2html <A ID="tex2html114"
+  HREF="../source.tex">source.tex</A></kbd>
 <P>
-References:
-
-<UL>
-<LI><A ID="tex2html101"
-  HREF="https://reference.wolfram.com/language/ref/LogPlot.html">reference.wolfram.com</A>
-</LI>
-</UL>
-
-<P>
+The translation was initiated on 2024-01-16
 <BR><HR>
 
 </BODY>
