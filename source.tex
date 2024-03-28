@@ -71,7 +71,7 @@
 
     \date
         {
-          {Last major update 27.05.2023}\\
+          {Last major update 28.03.2024}\\
         }
 
         \begin{center}
@@ -147,7 +147,7 @@
 
         \begin{itemize}
         \item
-          Ilari Angervuori,  Niloofar Okati, Taneli Riihonen,  Risto Wichman, ``A Closed-Form Approximation of the Interference Distribution in a LEO Uplink Channel'', IEEE Transactions on Communications, submitted for publication.
+          Ilari Angervuori,  Martin Haenggi, Risto Wichman, ``SIR Meta Distribution Analysis of a Narrow-Beam LEO Uplink'', IEEE Transactions on Communications, submitted for publication, 2024.
         \item
           I. Angervuori and R. Wichman, "A Closed-Form Approximation of the SIR Distribution in a LEO Uplink Channel," 2022 IEEE Globecom Workshops (GC Wkshps), Rio de Janeiro, Brazil, 2022, pp. 856-861, doi: 10.1109/GCWkshps56602.2022.10008485.
         \item
@@ -384,15 +384,15 @@ References:
 
 
 \subsection{March – Signal propagation in a city}
-Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case, for example, if you are transmitting to a near-by high base-station antenna. If there is no line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
+Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
 
 I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
 
-The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. In real life, these kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
+The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. These kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{sin.gif}
-  \caption{The white boxes represent buildings, and the little white circle is the transmitter. You can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the phases of the incoming reflected waves.}
+  \caption{The white boxes represent buildings, and the little white circle is the transmitter. One can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the phases of the incoming reflected waves.}
 \end{figure}
 
 
@@ -708,45 +708,46 @@ References:
 \item \htmladdnormallink{Interface conditions for electromagnetic fields (Wikipedia article)}{https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields}
 \end{itemize}
 
-\subsection{September – The universality of the Poisson point process (breaking a pile of sand)}
+%% \subsection{September – The universality of the Poisson point process (breaking a pile of sand)}
 
-The two-dimensional \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} appears everywhere in nature: locations of cell phones in a city, raindrops in a puddle,  locations of a bunch of grains of sand thrown in the ground, \textit{etc}.
+%% The two-dimensional \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} appears everywhere in nature: locations of cell phones in a city, raindrops in a puddle,  locations of a bunch of grains of sand thrown in the ground, \textit{etc}.
 
-As a fun example, let us study how a bunch of grains of sand arranged into a sand castle will spread by wind and water around the sunny beach and, finally, a realization of the Poisson point process.
+%% As a fun example, let us study how a bunch of grains of sand arranged into a sand castle will spread by wind and water around the sunny beach and, finally, into a realization of the Poisson point process.
 
-For simplicity, the sand castle is so tiny that it can be considered entirely located at the \htmladdnormallink{origin}{https://en.wikipedia.org/wiki/Origin_(mathematics)} of the two-dimensional beach. Let's assume that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}: In our model, the sand castle is a Poisson distributed random amount of grains of sand piled above each other in the origin. Suppose that wind moves individual sand grains from the pile after a while, directing them with a uniformly distributed angle and to a random, normal distributed distance between $[0, \infty)$. In other words, the probability that a sand grain is moved from the origo to a location $Y_j$ inside a circle $B(r_1,r_2)$ is $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$ 
+%% For simplicity, the sand castle is so tiny that it can be considered entirely located at the \htmladdnormallink{origin}{https://en.wikipedia.org/wiki/Origin_(mathematics)} of the two-dimensional beach. Let's assume that the amount of grains in the pile is  \htmladdnormallink{Poisson distributed}{https://en.wikipedia.org/wiki/Poisson_distribution}: In our model, the sand castle is a Poisson distributed random amount of sand piled above each other in the origin. We assume that the expected number of sand is $N$. Suppose that wind moves individual sand grains from the pile after a while, directing them with a uniformly distributed angle and to a random, normal distributed distance between $[0, \infty)$. In other words, the probability density function of the distance $|Y_i|$ of the sand grain $i$ is $y \mapsto  e^{-y^2/2}\sqrt{\frac{2}{{\pi}}} dy.$ 
   
-  After a random translation of all points, the \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Laplace_functional} of the \textit{distances} of the points is 
+%%   After a random translation of all points, the \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Laplace_functional} $ \mathcal{L}(f) \triangleq \mathbb{E}\exp \{-\sum f(x)\} $ of the \textit{distances} $\{|Y_i|\}_i$ is 
 
-  \begin{align*}
-    \mathcal{L}_{\tau}(f) &= \mathbb{E} \exp \left[-\sum_i f(|Y_i|) \right] = \mathbb{E}  \prod_i \exp \left[  -f(|Y_i|)   \right]  \\
-    &= \mathbb{E}_n \left[  (2 \pi)^{-n/2}  \int_0^{\infty} \dots \int_0^{\infty}  \prod_{i = 0}^n \exp \left[  -f(y_i)  \right] \frac{2}{\sqrt{2 \pi}}e^{-y_i^2} dy_1 \dots d y_n \right] \\
-    &= \mathbb{E}_n \left[(2 \pi)^{-n/2}  \left( \int_{0}^{\infty}  2\exp \left[  -f(y) - y^2   \right] dy \right)^n\right] \\
-    &= \mathbb{E}_n \exp \left[ \sum_{i= 0}^n \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) \right] \\ 
-  \end{align*}
+%%   \begin{align*}
+%%     \mathcal{L}_{Y}(f) &= \mathbb{E}_{n,Y} \exp \left[-\sum_{i=1}^n f(|Y_i|) \right] = \mathbb{E}_{n}   \mathbb{E}_{Y} \prod_{i=1}^n\exp  \left[  -f(|Y_i|)   \right]  \\
+%%     &= \mathbb{E}_{n}  \left[ \int_0^{\infty} \dots \int_0^{\infty}   \prod_{i = 1}^n\exp \left[  -f(y_i)  \right] \sqrt{\frac{2}{\pi}}e^{-y_i^2/2} dy_1 \dots d y_n \right] \\
+%%     &= \mathbb{E}_n \left[  \left( \int_{0}^{\infty}  \exp \left[  -f(y)   \right] e^{-y^2/2}\sqrt{\frac{2}{\pi}}dy \right)^n\right] \\
+%%     &=
+%%     &= \mathbb{E}_n \exp \left[ \sum_{i=1}^n \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] e^{-y^2/2} \sqrt{\frac{2}{ \pi}} dy \right) \right]. (1) \\ 
+%%   \end{align*}
 
-  Evaluating the  \htmladdnormallink{Poisson Laplace functional}{https://en.wikipedia.org/wiki/Poisson_point_process\#Laplace_functionals} $\mathcal{L}(g)$ of the sand pile with $ g = - \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{\sqrt{2 \pi}} dy \right)  $ we get
-  \begin{align*}
-    \mathcal{L}(g) = \mathcal{L}_{\tau}(f)& = \exp \left[  -\int_{\mathbb{R}^2} 1 -  e^{\log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)   \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) }\Lambda(dx) \right]    \\
-    &= \exp \left[-\int_{\mathbb{R}^2} \left(1  -   \int_{0}^{\infty}  \exp [-f(y)] \frac{2e^{-y^2}}{\sqrt{2 \pi}}  dy \right)  \Lambda(dx)  \right] \\
-    &= \exp \left[-\int_{\mathbb{R}^2}\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right) \frac{2e^{-y^2}}{\sqrt{2 \pi}}dy  \Lambda(dx)  \right] \\ 
-    &= \exp \left[-\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right)  \sqrt{\frac{2}{\pi}}e^{-y^2} N dy    \right], (1) \\   
-  \end{align*}
+%%   Next, we want to show that (1) have to form of the  \htmladdnormallink{Laplace functional}{https://en.wikipedia.org/wiki/Poisson_point_process\#Laplace_functionals} of the Poisson point process. Let  $\Phi \subset (0,\infty)$ be the Poisson process of density $\lambda$. We evaluate the Laplace tranform of $\Phi$ with $g(y) = - \log \left(\int_{0}^{\infty}  \exp \left[  -f(y)  \right] e^{-y^2} \sqrt{\frac{2}{ \pi}}dy \right)$:
+%%   \begin{align*}
+%%     \mathcal{L}_{Y}(f) =\mathcal{L}_{\Phi}(g) &= \exp \left[  -\int_{0}^{\infty} 1 -  e^{\log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)   \right] \sqrt{\frac{2}{\pi}}e^{-y^2/2} dy \right) } \lambda dx \right]    \\
+%%     &= \exp \left[-\int_{0}^{\infty} \left(1  -   \int_{0}^{\infty}  \exp [-f(y)] \sqrt{\frac{2}{\pi}}e^{-y^2/2}  dy \right)  \lambda dx  \right] \\
+%%     &= \exp \left[-\int_{0}^{\infty}\lambda dx\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right) \sqrt{\frac{2}{\pi}}e^{-y^2/2} dy    \right] \\ 
+%%     &= \exp \left[-\int_{0}^{\infty} \left(1  -     \exp [-f(y)]   \right)  \sqrt{\frac{2}{\pi}}e^{-y^2/2}  N dy    \right], (2) \\   
+%%   \end{align*}
 
-  where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.Wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). But the formula $(1)$ is the Laplace functional of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N$, and as the direction of the translation of a sand grain was uniformly distributed, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density: an example of the universality of the Poisson point process in the nature.
+%%   where $N$ denotes the expected number of points in the sand pile (\htmladdnormallink{Campbell's theorem}{https://en.Wikipedia.org/wiki/Campbell\%27s_theorem_(probability)}). The formula $(1)$ is the Laplace functional of the Poisson p.p. on $[0, \infty)$ with a density parameter $\sqrt{\frac{2}{\pi}}e^{-x^2} N$. As the direction of the translation of a sand grain was uniformly distributed, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density. This construction may be an example of the universality of the Poisson point process in nature.
+  
     
-    
-    \begin{figure}
-      \includegraphics[width=\linewidth]{spread.eps}
-      \caption{$10000$ points randomly moved from the origo to the plane.}
-    \end{figure}.
+%%     \begin{figure}
+%%       \includegraphics[width=\linewidth]{spread.eps}
+%%       \caption{$10000$ points randomly moved from the origo to the plane.}
+%%     \end{figure}.
 
 
-    References:
-    \begin{itemize}
-    \item D. J. Daley and D. Vere-Jones, The General Poisson Process in  ``An introduction to the theory of point processes''. New York: Springer, Volume II: General Theory and Structure, 2008, pp. 166.   
-    \item François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
-    \end{itemize}
+%%     References:
+%%     \begin{itemize}
+%%     \item D. J. Daley and D. Vere-Jones, The General Poisson Process in  ``An introduction to the theory of point processes''. New York: Springer, Volume II: General Theory and Structure, 2008, pp. 166.   
+%%     \item François Baccelli, Bartlomiej Blaszczyszyn \htmladdnormallink{Stochastic Geometry and Wireless Networks, Volume I -Theory}{\hal}
+%%     \end{itemize}
 
 
 
@@ -929,12 +930,12 @@ For simplicity, the sand castle is so tiny that it can be considered entirely lo
 
 \subsection{January – Inverse of a Gaussian variable}
 
-There is quite a pile of literature on the subject of the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution is ill-behaved; the mean and variance do not generally exist.
+There is a lot of literature on the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). The inverse distribution is ill-behaved; the mean and variance do not generally exist.
 
-I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations).
+I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified, e.g., by Monte Carlo simulations).
 
 First, approximate the Gaussian distributed variable $X \sim \mathcal{N}(\mu, \sigma^2)$ by a log-normally distributed variable $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$ with corresponding mean and variance, \textit{i.e.}, $$\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$$ and
-$$\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$$ We leave the solving of $\mu_{\text{LN}}$ and $\sigma_{\text{LN}}$ as an easy exercise for the reader.
+$$\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$$ We leave the solving of $\mu_{\text{LN}}$ and $\sigma_{\text{LN}}$ as an easy exercise for the reader. (:
 
 
 Using the theory of log-normal distribution, the inverse of $X$ is now given by
@@ -955,7 +956,7 @@ References:
 
 \subsection{February – Voronoi tesselation on a sphere}
 
-Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, has applications, \textit{e.g.}, in wireless communications. 
+Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, has applications, \textit{e.g.}, in wireless communications. 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{voronoionsphere.png}
@@ -1508,11 +1509,11 @@ for some $\theta \in [0,1]$ and $A \in \mathbb{R}_+$. The \htmladdnormallink{pas
 \end{equation}
 where $l(d_i)$ is the path-loss function at distance $d_j$ from the scatterer $j$, $d_0$ is the direct-path distance to the transmitter, $K$ is the parameter that determines the energy ratio of the direct-path (\htmladdnormallink{LOS}{https://en.wikipedia.org/wiki/Line-of-sight_propagation}) component and the scattered paths, and $\tau_j(t) = d_j(t)/c$ is the propagation delays restricted by the speed of light $c$, which is dependent on time $t$ as the satellite moves, and $f_m$ is the carrier frequency.
 
-Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the orbital speed of the satellite's orbital speed is given by
+Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the satellite's orbital speed is given by
 \begin{equation}
   v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3}
 \end{equation}
-where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$; hence, the Doppler spread is $D_s = 100$ Hz. The coherence time is given by
+where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$; hence, the Doppler spread is $D_s = 100$ Hz. A small estimate for the coherence time is given by
 \begin{equation}
 T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
 \end{equation}
@@ -1522,12 +1523,12 @@ The following figures illustrate the RX baseband signal changing in time while t
 
 \begin{figure}
   \includegraphics[width=\linewidth]{basebandgifK10.gif}
-  \caption{Baseband signal with partial LOS $K=10$.}
+  \caption{The baseband signal with partial LOS $K=10$.}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{basebandgifK0.gif}
-  \caption{Baseband signal under Rayleigh fading $K=0$.}
+  \caption{The baseband signal under Rayleigh fading $K=0$.}
 \end{figure}
 
 Here is the Octave code:
@@ -1643,6 +1644,25 @@ end
 References:
 \begin{itemize}
 \item Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press,, 2005.
+
+
+\section{Blog posts 2024}
+
+\subsection{March – A representation of the generalized hypergeometric function $_3F_2$}
+
+
+Here is a representation of the \htmladdnormallink{hypergeometric function}{https://en.wikipedia.org/wiki/Generalized_hypergeometric_function} $_3F_2(1,1,b;2,2;\cdot)$ in terms of the \htmladdnormallink{polylogarithm}{https://en.wikipedia.org/wiki/Polylogarithm}:
+
+For  $|x|<1$ and $b\in\mathbb{N}$, the \textit{hypergeometric series} representation is given by
+                 \begin{align}
+                   &  _3F_2(1,1,1+b;2,2;-x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{(-x)^n}{n!} \nonumber\\
+                   &=\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}(-x)^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}(-x)^n \nonumber \\
+                   &\overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} (-x)^n\nonumber \\
+                   &= \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\infty}_{n=0}  \frac{(-x)^n}{(n+1)^{2-k}} \overset{(b)}{=} -\frac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(-x)}{x}. \label{eq:pollog}
+                 \end{align}
+                 In (a), we used the expansion of the rising Pochhammer factorial and in (b), we used the definition of the polylogarithm. Furthermore, the $x \in \mathbb{C}$ follows from the \htmladdnormallink{analytic continuation}{https://en.wikipedia.org/wiki/Analytic_continuation} of the polylogarithm.
+
+
 \end{document}
 
 

@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>March – A representation of the generalized hypergeometric function </TITLE>
+<META NAME="description" CONTENT="March – A representation of the generalized hypergeometric function ">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,50 +15,110 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node22.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="next" HREF="node25.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="source.html">
+ HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node23.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node23.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html211"
+<A ID="tex2html208"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node25.html">About this document ...</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node23.html">Blog posts 2024</A>
 <B> Previous:</B> <A
- HREF="node23.html">May – Signal fading</A>
- &nbsp; <B>  <A ID="tex2html212"
+ HREF="node23.html">Blog posts 2024</A>
+ &nbsp; <B>  <A ID="tex2html209"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00060000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-  <B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2021.2 (Released July 1, 2021)
+<H2><A ID="SECTION00061000000000000000">
+March – A representation of the generalized hypergeometric function <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img127.svg"
+ ALT="$_3F_2$"></SPAN></A>
+</H2>
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html100"
-  HREF="../source.tex">source.tex</A></kbd>
+Here is a representation of the <A ID="tex2html92"
+  HREF="https://en.wikipedia.org/wiki/Generalized_hypergeometric_function">hypergeometric function</A>
+<!-- MATH
+ $_3F_2(1,1,b;2,2;\cdot)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img128.svg"
+ ALT="$_3F_2(1,1,b;2,2;\cdot)$"></SPAN> in terms of the <A ID="tex2html93"
+  HREF="https://en.wikipedia.org/wiki/Polylogarithm">polylogarithm</A>:
+
 <P>
-The translation was initiated on 2024-01-17
+For  <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img129.svg"
+ ALT="$\vert x\vert&lt;1$"></SPAN> and <!-- MATH
+ $b\in\mathbb{N}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.21ex; " SRC="img130.svg"
+ ALT="$b\in\mathbb{N}$"></SPAN>, the <SPAN  CLASS="textit">hypergeometric series</SPAN> representation is given by
+                 <P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.22ex; vertical-align: -3.06ex; " SRC="img131.svg"
+ ALT="$\displaystyle _3F_2(1,1,1+b;2,2;-x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{(-x)^n}{n!}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.22ex; vertical-align: -3.06ex; " SRC="img132.svg"
+ ALT="$\displaystyle =\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}(-x)^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}(-x)^n$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 8.47ex; vertical-align: -3.06ex; " SRC="img133.svg"
+ ALT="$\displaystyle \overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} (-x)^n$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.73ex; vertical-align: -3.14ex; " SRC="img134.svg"
+ ALT="$\displaystyle = \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\inft...
+...rac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(-x)}{x}.$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+<A ID="eq:pollog">(<SPAN CLASS="arabic">2</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<P></P>
+In (a), we used the expansion of the rising Pochhammer factorial and in (b), we used the definition of the polylogarithm. Furthermore, the <!-- MATH
+ $x \in \mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.15ex; vertical-align: -0.21ex; " SRC="img135.svg"
+ ALT="$x \in \mathbb{C}$"></SPAN> follows from the <A ID="tex2html94"
+  HREF="https://en.wikipedia.org/wiki/Analytic_continuation">analytic continuation</A>
+of the polylogarithm.
+
+<P>
 <BR><HR>
 
 </BODY>

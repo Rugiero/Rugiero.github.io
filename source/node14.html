@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>September – The universality of the Poisson point process (breaking a pile of sand)</TITLE>
+<META NAME="description" CONTENT="September – The universality of the Poisson point process (breaking a pile of sand)">
+<META NAME="keywords" CONTENT="source">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html184"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node15.html">Blog posts 2022</A>
+<B> Up:</B> <A
+ HREF="node7.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node13.html">August – Radio waves</A>
+ &nbsp; <B>  <A ID="tex2html185"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00037000000000000000">
+September – The universality of the Poisson point process (breaking a pile of sand)</A>
+</H2>
+
+<P>
+The two-dimensional <A ID="tex2html59"
+  HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>
+appears everywhere in nature: locations of cell phones in a city, raindrops in a puddle,  locations of a bunch of grains of sand thrown in the ground, <SPAN  CLASS="textit">etc</SPAN>.
+
+<P>
+As a fun example, let us study how a bunch of grains of sand arranged into a sand castle will spread by wind and water around the sunny beach and, finally, a realization of the Poisson point process.
+
+<P>
+For simplicity, the sand castle is so tiny that it can be considered entirely located at the <A ID="tex2html60"
+  HREF="https://en.wikipedia.org/wiki/Origin_(mathematics)">origin</A>
+of the two-dimensional beach. Let's assume that the amount of grains in the pile is  <A ID="tex2html61"
+  HREF="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distributed</A>: In our model, the sand castle is a Poisson distributed random amount of grains of sand piled above each other in the origin. Suppose that wind moves individual sand grains from the pile after a while, directing them with a uniformly distributed angle and to a random, normal distributed distance between <!-- MATH
+ $[0, \infty)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img15.svg"
+ ALT="$[0, \infty)$"></SPAN>. In other words, the probability that a sand grain is moved from the origo to a location <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.71ex; vertical-align: -0.78ex; " SRC="img16.svg"
+ ALT="$Y_j$"></SPAN> inside a circle <!-- MATH
+ $B(r_1,r_2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ ALT="$B(r_1,r_2)$"></SPAN> is <!-- MATH
+ $2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 4.46ex; vertical-align: -1.38ex; " SRC="img18.svg"
+ ALT="$2\int_{r_1}^{r^2} \frac{1}{\sqrt{2 \pi}}e^{-y^2} dy.$"></SPAN> 
+
+<P>
+After a random translation of all points, the <A ID="tex2html62"
+  HREF="https://en.wikipedia.org/wiki/Laplace_functional">Laplace functional</A>
+of the <SPAN  CLASS="textit">distances</SPAN> of the points is 
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img19.svg"
+ ALT="$\displaystyle \mathcal{L}_{\tau}(f)$"></SPAN></TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.48ex; vertical-align: -3.09ex; " SRC="img20.svg"
+ ALT="$\displaystyle = \mathbb{E} \exp \left[-\sum_i f(\vert Y_i\vert) \right] = \mathbb{E} \prod_i \exp \left[ -f(\vert Y_i\vert) \right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.48ex; vertical-align: -3.09ex; " SRC="img21.svg"
+ ALT="$\displaystyle = \mathbb{E}_n \left[ (2 \pi)^{-n/2} \int_0^{\infty} \dots \int_0...
+...left[ -f(y_i) \right] \frac{2}{\sqrt{2 \pi}}e^{-y_i^2} dy_1 \dots d y_n \right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.14ex; vertical-align: -2.32ex; " SRC="img22.svg"
+ ALT="$\displaystyle = \mathbb{E}_n \left[(2 \pi)^{-n/2} \left( \int_{0}^{\infty} 2\exp \left[ -f(y) - y^2 \right] dy \right)^n\right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.48ex; vertical-align: -3.09ex; " SRC="img23.svg"
+ ALT="$\displaystyle = \mathbb{E}_n \exp \left[ \sum_{i= 0}^n \log \left( \int_{0}^{\infty} \exp \left[ -f(y) \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) \right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+Evaluating the  <A ID="tex2html63"
+  HREF="https://en.wikipedia.org/wiki/Poisson_point_process#Laplace_functionals">Laplace functional</A>
+<!-- MATH
+ $\mathcal{L}(g)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img24.svg"
+ ALT="$\mathcal{L}(g)$"></SPAN> of the sand pile with <!-- MATH
+ $g = - \log \left(   \int_{0}^{\infty}  \exp \left[  -f(y)  \right] \frac{e^{-y^2}}{\sqrt{2 \pi}} dy \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 4.79ex; vertical-align: -1.63ex; " SRC="img25.svg"
+ ALT="$g = - \log \left( \int_{0}^{\infty} \exp \left[ -f(y) \right] \frac{e^{-y^2}}{\sqrt{2 \pi}} dy \right) $"></SPAN> we get
+  <P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img26.svg"
+ ALT="$\displaystyle \mathcal{L}(g) = \mathcal{L}_{\tau}(f)$"></SPAN></TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.49ex; vertical-align: -3.02ex; " SRC="img27.svg"
+ ALT="$\displaystyle = \exp \left[ -\int_{\mathbb{R}^2} 1 - e^{\log \left( \int_{0}^{\...
+...t[ -f(y) \right] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) }\Lambda(dx) \right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.41ex; vertical-align: -3.02ex; " SRC="img28.svg"
+ ALT="$\displaystyle = \exp \left[-\int_{\mathbb{R}^2} \left(1 - \int_{0}^{\infty} \exp [-f(y)] \frac{2e^{-y^2}}{\sqrt{2 \pi}} dy \right) \Lambda(dx) \right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.41ex; vertical-align: -3.02ex; " SRC="img29.svg"
+ ALT="$\displaystyle = \exp \left[-\int_{\mathbb{R}^2}\int_{0}^{\infty} \left(1 - \exp [-f(y)] \right) \frac{2e^{-y^2}}{\sqrt{2 \pi}}dy \Lambda(dx) \right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 7.41ex; vertical-align: -3.02ex; " SRC="img30.svg"
+ ALT="$\displaystyle = \exp \left[-\int_{0}^{\infty} \left(1 - \exp [-f(y)] \right) \sqrt{\frac{2}{\pi}}e^{-y^2} N dy \right], (1)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img14.svg"
+ ALT="$N$"></SPAN> denotes the expected number of points in the sand pile (<A ID="tex2html64"
+  HREF="https://en.Wikipedia.org/wiki/Campbell%27s_theorem_(probability)">Campbell's theorem</A>). But the formula <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img12.svg"
+ ALT="$(1)$"></SPAN> is the Laplace functional of the Poisson p.p. on <!-- MATH
+ $[0, \infty)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img15.svg"
+ ALT="$[0, \infty)$"></SPAN> with a density parameter <!-- MATH
+ $\sqrt{\frac{2}{\pi}}e^{-x^2} N$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 4.72ex; vertical-align: -1.52ex; " SRC="img31.svg"
+ ALT="$\sqrt{\frac{2}{\pi}}e^{-x^2} N$"></SPAN>, and as the direction of the translation of a sand grain was uniformly distributed, we can conclude that the sand grains are Poisson distributed according to the Poisson p.p. with the two-dimensional multivariate Gaussian distribution as the density: an example of the universality of the Poisson point process in the nature.
+
+<P>
+
+<DIV class="CENTER"><A ID="327"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img1.svg"
+ ALT="$10000$"></SPAN> points randomly moved from the origo to the plane.</CAPTION>
+<TR><TD><IMG
+ STYLE="height: 60.34ex; vertical-align: -0.12ex; " SRC="img32.svg"
+ ALT="\includegraphics[width=\linewidth]{spread.eps}"></TD></TR>
+</TABLE>
+</DIV>
+.
+
+<P>
+References:
+    
+<UL>
+<LI>D. J. Daley and D. Vere-Jones, The General Poisson Process in  &ldquo;An introduction to the theory of point processes&rdquo;. New York: Springer, Volume II: General Theory and Structure, 2008, pp. 166.   
+</LI>
+<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html65"
+  HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html184"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node15.html">Blog posts 2022</A>
+<B> Up:</B> <A
+ HREF="node7.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node13.html">August – Radio waves</A>
+ &nbsp; <B>  <A ID="tex2html185"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
