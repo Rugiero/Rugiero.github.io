@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>About this document ...</TITLE>
-<META NAME="description" CONTENT="About this document ...">
+<TITLE>September – Homography</TITLE>
+<META NAME="description" CONTENT="September – Homography">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -15,50 +15,154 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="previous" HREF="node26.html">
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="next" HREF="node29.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next_g.png"> 
 <A
- HREF="source.html">
+ HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node19.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node27.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html245"
+<A ID="tex2html246"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
+<B> Next:</B> <A
+ HREF="node29.html">December – Asymptotic decay</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node19.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node27.html">May – Signal fading</A>
- &nbsp; <B>  <A ID="tex2html246"
+ HREF="node27.html">August – dB logplot</A>
+ &nbsp; <B>  <A ID="tex2html247"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00060000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>
-  <B>A glimpse to my mind</B>
-</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2021.2 (Released July 1, 2021)
+<H2><A ID="SECTION00049000000000000000">
+September – Homography</A>
+</H2>
+
 <P>
-The command line arguments were: <BR>
- <kbd>latex2html <A ID="tex2html114"
-  HREF="../source.tex">source.tex</A></kbd>
+<A ID="tex2html101"
+  HREF="https://en.wikipedia.org/wiki/Homography">Homography</A>
+can be used to &ldquo;change the perspective&rdquo; of an image (set of vectors). I have used homography for the satellite footprint in my simulations: for elevation angles smaller than <!-- MATH
+ $90 \degree,$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.41ex; vertical-align: -0.57ex; " SRC="img91.svg"
+ ALT="$90 \degree,$"></SPAN> you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img92.svg"
+ ALT="$H$"></SPAN> transforms an <A ID="tex2html102"
+  HREF="https://en.wikipedia.org/wiki/Ellipse">ellipse</A>
+of parameters <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img93.svg"
+ ALT="$a$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img94.svg"
+ ALT="$b$"></SPAN> to a circle of radius <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img6.svg"
+ ALT="$r$"></SPAN> so that the right focus point maps to origo.
+<P><!-- MATH
+ \begin{displaymath}
+H=
+\begin{pmatrix}
+  -a &-0 &-1 &0 &0 &0 &ar &0 &r \\
+  0 &0 &0 &-a &-0 &-1 & 0& 0 &0 \\
+  -c &-b^2/a& -1& 0& 0& 0 &0& 0& 0 \\
+  0 &0 &0 &-c &-b^2/a &-1 &cr &rb^2/a& r\\
+  a &0 &-1& 0& 0 &0 & ar &0 &-r \\
+  0 &0 &0 &a &0 &-1 &0 &0 &0\\
+  -c &b^2/a& -1& 0& 0& 0& 0& 0& 0 \\
+  0 &0 &0 &-c &b^2/a &-1 &-rc &rb^2/ar &-r
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 22.68ex; vertical-align: -10.68ex; " SRC="img95.svg"
+ ALT="$\displaystyle H=
+\begin{pmatrix}
+-a &amp;-0 &amp;-1 &amp;0 &amp;0 &amp;0 &amp;ar &amp;0 &amp;r \\
+0 &amp;0 &amp;0 &amp;-...
+...&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0 \\
+0 &amp;0 &amp;0 &amp;-c &amp;b^2/a &amp;-1 &amp;-rc &amp;rb^2/ar &amp;-r
+\end{pmatrix}$">
+</DIV><P></P>
+
 <P>
-The translation was initiated on 2024-01-16
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="319" STYLE=""
+ SRC="./homographydrawing.png"
+ ALT="Image homographydrawing">
+
+</DIV>
+
+<P>
+Here is a GNU Octave code:
+<PRE>
+%%Changes ellipses with parameters a &gt; b  perspective to a sphere of radius r centered in origo. Vectors to be transformed are given in 2x1000 matrix refc.
+
+function points = homography(refc, a,b,r)
+  c = sqrt(a^2 - b^2);
+  %%Construct the homography matrix.
+  X1 = [[-a -0 -1 0 0 0 a*r 0*r r]; [0 0 0 -a -0 -1 a*0 0*0 0]];
+  X2 = [[-c -b^2/a -1 0 0 0 c*0 b^2/a*0 0]; [0 0 0 -c -b^2/a -1 c*r b^2/a*r r]];
+  X3 = [[a 0 -1 0 0 0 -a*-r 0*-r -r]; [0 0 0 a -0 -1 -a*0 0*0 0]];
+  X4 = [[-c b^2/a -1 0 0 0 c*0 -b^2/a*0 0]; [0 0 0 -c b^2/a -1 c*-r b^2/a*r -r]];
+  P = [X1; X2; X3; X4];
+  [U,S,V] = svd(P); %Singular value composition.
+  h = V(:,9);
+  H = reshape(h, 3, 3)';
+  points = [];
+  for point = refc
+    homopoint = [point; 1]; %Point presented in homogeneous coordinates.
+    homopoint = H*homopoint;
+    homopoint = [homopoint(1)/homopoint(3); homopoint(2)/homopoint(3)];
+    points = [points homopoint];
+  end
+  figure(1)
+  plot(points(1,:), points(2,:), 'b','linewidth',10);
+end
+</PRE>
+
+<P>
+In the following, we are rotating a &ldquo;pyramid&rdquo;. It can be seen how the homography mapping can be interpreted as a change of perspective.
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="490" STYLE=""
+ SRC="./gifu2.gif"
+ ALT="Image gifu2">
+
+</DIV>
+
+<P>
+References:
+
+<UL>
+<LI><A ID="tex2html103"
+  HREF="https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog">Stack exchange</A>
+</LI>
+</UL>
+
+<P>
 <BR><HR>
 
 </BODY>

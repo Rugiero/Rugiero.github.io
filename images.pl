@@ -355,10 +355,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 5.70ex; vertical-align: -1.74ex; " SRC="|."$dir".q|img62.svg"
  ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x} = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}$">|; 
 
-$key = q/displaystyle=sum^{infty}_{n=0}frac{(1+b)_n}{(n+1)^2n!}(-x)^n=frac{1}{b!}sum^{infty}_{n=0}frac{(n+1)_{b}}{(n+1)^2}(-x)^n;MSF=1.6;AAT/;
+$key = q/displaystyle=sum^{infty}_{n=0}frac{(1+b)_n}{(n+1)^2n!}(-x)^n=frac{1}{b!}sum^{infty}_{n=0}frac{(n+1)_{b}}{(n+1)^2}(-x)^nnonumber;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 7.22ex; vertical-align: -3.06ex; " SRC="|."$dir".q|img132.svg"
- ALT="$\displaystyle =\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}(-x)^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}(-x)^n$">|; 
+ ALT="$\displaystyle =\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}(-x)^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}(-x)^n \nonumber$">|; 
 
 $key = q/displaystyleS_{text{TX}}=Ae^{-2ipitheta},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
@@ -380,10 +380,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 4.06ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img10.svg"
  ALT="$\displaystyle ] = e^{-\frac{\pi^2}{2\sqrt{P}}},$">|; 
 
-$key = q/displaystyle_3F_2(1,1,1+b;2,2;-x)=sum^{infty}_{n=0}frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n}frac{(-x)^n}{n!};MSF=1.6;AAT/;
+$key = q/displaystyle_3F_2(1,1,1+b;2,2;-x)=sum^{infty}_{n=0}frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n}frac{(-x)^n}{n!}nonumber;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 7.22ex; vertical-align: -3.06ex; " SRC="|."$dir".q|img131.svg"
- ALT="$\displaystyle _3F_2(1,1,1+b;2,2;-x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{(-x)^n}{n!}$">|; 
+ ALT="$\displaystyle _3F_2(1,1,1+b;2,2;-x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{(-x)^n}{n!} \nonumber$">|; 
 
 $key = q/displaystylelim_{xrightarrowinfty}-frac{logtextbf{P}(X>x)}{x},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
@@ -423,10 +423,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 6.11ex; vertical-align: -2.32ex; " SRC="|."$dir".q|img18.svg"
  ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">|; 
 
-$key = q/displaystyleoverset{(a)}{=}frac{1}{b!}sum^{infty}_{n=0}frac{sum^{b}_{k=1}left[batopkright](n+1)^k}{(n+1)^2}(-x)^n;MSF=1.6;AAT/;
+$key = q/displaystyleoverset{(a)}{=}frac{1}{b!}sum^{infty}_{n=0}frac{sum^{b}_{k=1}left[batopkright](n+1)^k}{(n+1)^2}(-x)^nnonumber;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 8.47ex; vertical-align: -3.06ex; " SRC="|."$dir".q|img133.svg"
- ALT="$\displaystyle \overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} (-x)^n$">|; 
+ ALT="$\displaystyle \overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} (-x)^n\nonumber$">|; 
 
 $key = q/displaystylerho_{text{Exponential}};MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
@@ -512,6 +512,11 @@ $key = q/l(d_i);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img103.svg"
  ALT="$l(d_i)$">|; 
+
+$key = q/left[batopkright];MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG
+ STYLE="height: 4.63ex; vertical-align: -1.63ex; " SRC="|."$dir".q|img135.svg"
+ ALT="$\left[ b \atop k \right]$">|; 
 
 $key = q/mathbb{E}[(S_1+S_2)^2]=mathbb{E}[S_1^2]+mathbb{E}[S_2^2];MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
@@ -645,7 +650,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/xinmathbb{C};MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
- STYLE="height: 2.15ex; vertical-align: -0.21ex; " SRC="|."$dir".q|img135.svg"
+ STYLE="height: 2.15ex; vertical-align: -0.21ex; " SRC="|."$dir".q|img136.svg"
  ALT="$x \in \mathbb{C}$">|; 
 
 $key = q/|x|<1;MSF=1.6;AAT/;
