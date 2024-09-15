@@ -4,7 +4,6 @@
 # Function to print strings present
 # between any pair of delimiters
 def printSubsInDelimiters(string) :
-    
     # Stores the indices 
     newstring = "";
     flag1 = 0;
@@ -12,24 +11,25 @@ def printSubsInDelimiters(string) :
     itflag = 0;
     htmlflag = 0;
     i = 0;
-    while i < len(string): 
+    
+    while i < len(string):
         # If opening delimiter
         # is encountered
+
         if (string[i] == '$' and flag1 == 0 and flag2 == 0) :
             flag1 = 1;
         elif (string[i] == '$' and flag1 == 1 and flag2 == 0) :
-            newstring = newstring + 'X';
+            newstring = newstring + 'X' + str(i);
             flag1 = 0;
-        elif ((string[i] == '\\' or string[i] == '\n' or string[i] == '\r' or string[i] == '\t' or string[i] == '\b'or string[i] == '\f' or string[i] == '\a') and flag2 == 0 and flag1 == 0) :
+        elif ((string[i] == "\\") and flag2 == 0 and flag1 == 0) :
             flag2 = 1;
-            if (string[i] + string[i + 1] + string[i + 2] + string[i + 3] +string[i + 4] + string[i + 5] == '\textit') :
+            if (string[i] + string[i + 1] + string[i + 2] + string[i + 3] +string[i + 4] + string[i + 5] +string[i + 6] == "\\textit") :
                 itflag = 1;
-                i = i + 6;
-            elif (string[i] + string[i + 1] + string[i + 2] + string[i + 3] +string[i + 4]  == '\html') :
+                i = i + 7;
+            elif (string[i] + string[i + 1] + string[i + 2] + string[i + 3] +string[i + 4]  == "\\html") :
                 htmlflag = 1;
                 i = i + 18;                
                 flag2=1;
-
         elif (string[i] == '}' and flag2 == 1 and flag1 == 0) :
             if(itflag == 1) :
                 itflag = 0;
@@ -42,10 +42,10 @@ def printSubsInDelimiters(string) :
                 htmlflag = 0;
                 flag2 = 0
                 flag1 =0;
-                newstring = newstring + 'X';
+                newstring = newstring + 'X' + str(i);
                 flag2 = 0;
             else:
-                newstring = newstring + 'X';
+                newstring = newstring + 'X' + str(i);
                 flag2 = 0;
         elif ((flag2 == 0 and flag1 == 0) or itflag == 1) :
             newstring = newstring + string[i];
