@@ -351,7 +351,7 @@ gpg --list-keys
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
-\item First, add your public SSH key to GitHub. We will initialize the GitHub repository. If you do this for the first time, create a new repository named ``pass-store'' before the following commands. If the first command asks you to identify yourself, follow the instructions.
+\item First, remember to \htmladdnormallink{add your public SSH key to GitHub}{https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account}. We will initialize the GitHub repository. If you do this for the first time, create a new repository named ``pass-store'' before the following commands. If the first command asks you to identify yourself, follow the instructions.
 \begin{verbatim}
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
@@ -371,7 +371,7 @@ pass git push --set-upstream origin master
 pass git pull 
 pass git push 
 \end{verbatim}
-It can be the case that you have to raise the trust level of the public key. For that, check \htmladdnormallink{this}{https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user} article. 
+It can be the case that you have to raise the trust level of the public key. For that, check \htmladdnormallink{this}{https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user}  article. 
 \end{itemize}
 Stay safe :)
 
