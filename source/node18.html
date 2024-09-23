@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>June – Gaussian vs. impulsive noise</TITLE>
-<META NAME="description" CONTENT="June – Gaussian vs. impulsive noise">
+<TITLE>July&mdash;Summing the signal powers</TITLE>
+<META NAME="description" CONTENT="July&mdash;Summing the signal powers">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,12 +27,12 @@
  HREF="node19.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node15.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html198"
+<A ID="tex2html194"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -40,142 +40,219 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node19.html">July – Summing the</A>
+ HREF="node19.html">September Homography</A>
 <B> Up:</B> <A
- HREF="node15.html">Blog posts 2022</A>
+ HREF="node14.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node17.html">February – Voronoi tesselation</A>
- &nbsp; <B>  <A ID="tex2html199"
+ HREF="node17.html">June Gaussian vs. impulsive</A>
+ &nbsp; <B>  <A ID="tex2html195"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00043000000000000000">
-June – Gaussian vs. impulsive noise</A>
+<H2><A ID="SECTION00044000000000000000">
+July&mdash;Summing the signal powers</A>
 </H2>
 
 <P>
-Noise is often modeled to have a <A ID="tex2html70"
-  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
-waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html71"
-  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
-events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html72"
-  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
-with significant mass in the tail distribution. 
-
-<P>
-The <A ID="tex2html73"
-  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$\alpha$"></SPAN>-stable distributions</A>
-are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
- $\alpha = 2$
+Let us consider two sinusoidal signals of opposite phases during the time <!-- MATH
+ $t \in [0,1]$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
- $\alpha \leq 1$
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img29.svg"
+ ALT="$t \in [0,1]$"></SPAN>: <!-- MATH
+ $S_1(t) = \cos(2 \pi t)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img45.svg"
- ALT="$\alpha \leq 1$"></SPAN>, even the mean is infinite. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value – say, 10 euros in a year – versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary. Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img30.svg"
+ ALT="$S_1(t) = \cos(2 \pi t)$"></SPAN> and <!-- MATH
+ $S_2(t) = \cos(2 \pi t + \pi)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img31.svg"
+ ALT="$S_2(t) = \cos(2 \pi t + \pi)$"></SPAN>. Obviously, the signals cancel each other completely, and the mean power of the additive signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img32.svg"
+ ALT="$S_1 + S_2$"></SPAN> is just <SPAN CLASS="MATH">0</SPAN>:
 
 <P>
-In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img46.svg"
- ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img46.svg"
- ALT="$\alpha =1$"></SPAN>. 
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img33.svg"
+ ALT="$\displaystyle \mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0,$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(1)</TD></TR>
+</TABLE></DIV>
+<P></P>
+here <!-- MATH
+ $\mathbb{E}[\cdot]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ ALT="$\mathbb{E}[\cdot]$"></SPAN> is the mean (slightly abusing the notation of the probabilistic expected value).
 
 <P>
-<PRE>
-pkg load statistics
-
-clear all;
-close all;
-
-%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
-function xb = digitaltoanalog(T, digitalsignal, Fs)
-  xb = [];
-  for t = T
-    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
-  end
-end
-
-
-%%Inverse of the alpha stable CDF with alpha = 1.
-invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
-%%Generate N Alpha-stable samples.
-N = 100;
-alphasamples = invalphaCDF(unifrnd(0,1,1,N));
-
-%%Generate normal samples.
-normalsamples = normrnd(0,1,1,N);
-%%Convert to analog signal.
-T = 1 : 0.1 : N;
-alphasamples = digitaltoanalog(T, alphasamples, 1);
-normalsamples = digitaltoanalog(T, normalsamples, 1);
-
-alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
-normalsamples = normalsamples/(mean(abs(normalsamples)));
-figure(1)
-plot(T, alphasamples)
-legend('Alpha-stable noise')
-axis([0 100 -15 15])
-figure(2)
-plot(T, normalsamples)
-legend('Gaussian noise')
-axis([0 100 -15 15])
-</PRE>
+We could try to add the powers of the signals separately together:
 
 <P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./alphastablenoise.png"
- ALT="Image alphastablenoise">
-
-</DIV>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:right;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 3.04ex; vertical-align: -0.70ex; " SRC="img35.svg"
+ ALT="$\displaystyle \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2]$"></SPAN></TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img36.svg"
+ ALT="$\displaystyle = \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi t + \pi) dt$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(2)</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img37.svg"
+ ALT="$\displaystyle = \int_0^1 2 \cos^2(2 \pi t) dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1,$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+but the result significantly differs from X! Can we sometimes sum the individual signal powers together, which would be handy in many applications? This question has everything to do with the <A ID="tex2html67"
+  HREF="https://en.wikipedia.org/wiki/Correlation">correlation</A>
+of the signals.
 
 <P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./gaussiannoise.png"
- ALT="Image gaussiannoise">
-
-</DIV>
+Let us assume that <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img38.svg"
+ ALT="$S_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img39.svg"
+ ALT="$S_2$"></SPAN> are two signals. We have that
+<P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2], \tag{3}
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 3.04ex; vertical-align: -0.70ex; " SRC="img40.svg"
+ ALT="$\displaystyle \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2],$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(3)</TD></TR>
+</TABLE></DIV>
+<P></P>
+thus, the identity <!-- MATH
+ $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.93ex; vertical-align: -0.70ex; " SRC="img41.svg"
+ ALT="$\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $"></SPAN> holds <SPAN  CLASS="textit">if and only if</SPAN> the <A ID="tex2html68"
+  HREF="https://en.wikipedia.org/wiki/Cross-correlation">cross-correlation</A>
+<!-- MATH
+ $\mathbb{E}[S_1 S_2] = 0,$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img42.svg"
+ ALT="$\mathbb{E}[S_1 S_2] = 0,$"></SPAN> <SPAN  CLASS="textit">i.e</SPAN>., if the signals <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img38.svg"
+ ALT="$S_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img39.svg"
+ ALT="$S_2$"></SPAN> are not correlated&mdash;this is not the case with our initial signals, as then the cross-correlation is given by
 
 <P>
-Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
+<P><!-- MATH
+ \begin{displaymath}
+\mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img43.svg"
+ ALT="$\displaystyle \mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) d...
+...i t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
+$">
+</DIV><P></P>
+as it should be if we tie together the equations (1), (2) and (3).
 
 <P>
-It is also interesting to compare the audiolized noise signals:
-<A ID="tex2html74"
-  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
+We used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases <!-- MATH
+ $\phi_1,\phi_2 \in [0,2 \pi]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img44.svg"
+ ALT="$\phi_1,\phi_2 \in [0,2 \pi]$"></SPAN>, let <!-- MATH
+ $S_1(t) = \cps(2 \pi t + \phi_1)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img45.svg"
+ ALT="$S_1(t) = \cps(2 \pi t + \phi_1)$"></SPAN> and <!-- MATH
+ $S_2(t) = \cos(2 \pi t + \phi_2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img46.svg"
+ ALT="$S_2(t) = \cos(2 \pi t + \phi_2)$"></SPAN>;
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 3.27ex; vertical-align: -0.93ex; " SRC="img47.svg"
+ ALT="$\displaystyle \mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}[(S_1 + S_2)^2]\right]...
+...\right] +\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right]$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img48.svg"
+ ALT="$\displaystyle =\frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))^...
+...+ \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt d \phi_2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img49.svg"
+ ALT="$\displaystyle + \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^{2 \pi}\int_0^1 \cos(2 \pi t + \phi_1) \cos(2 \pi t + \phi_2)dt d \phi_1 d \phi_2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD>&nbsp;</TD>
+<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 6.19ex; vertical-align: -2.23ex; " SRC="img50.svg"
+ ALT="$\displaystyle = \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))...
+...i}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt d \phi_2 = 1/2 +1/2 =1.$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+The expected powers can be summed, as the expectation of the cross-correlation <!-- MATH
+ $\mathbb{E}[S_1 S_2]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img51.svg"
+ ALT="$\mathbb{E}[S_1 S_2]$"></SPAN> is <SPAN CLASS="MATH">0</SPAN> for the two random signals <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img38.svg"
+ ALT="$S_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img39.svg"
+ ALT="$S_2$"></SPAN>, <SPAN  CLASS="textit">i.e.</SPAN>, <!-- MATH
+ $\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] =0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.86ex; vertical-align: -0.78ex; " SRC="img52.svg"
+ ALT="$\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] =0$"></SPAN>.
 
 <P>
 References:
 
 <UL>
-<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
-</LI>
-<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
-</LI>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005. Print.
+<LI><A ID="tex2html69"
+  HREF="https://fi.wikipedia.org/wiki/MAOL-taulukot">Maol-taulukot</A>
 </LI>
 </UL>
 
@@ -187,12 +264,12 @@ References:
  HREF="node19.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node15.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html198"
+<A ID="tex2html194"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -200,12 +277,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node19.html">July – Summing the</A>
+ HREF="node19.html">September Homography</A>
 <B> Up:</B> <A
- HREF="node15.html">Blog posts 2022</A>
+ HREF="node14.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node17.html">February – Voronoi tesselation</A>
- &nbsp; <B>  <A ID="tex2html199"
+ HREF="node17.html">June Gaussian vs. impulsive</A>
+ &nbsp; <B>  <A ID="tex2html195"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>February – Voronoi tesselation on a sphere</TITLE>
-<META NAME="description" CONTENT="February – Voronoi tesselation on a sphere">
+<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
+<META NAME="description" CONTENT="June&mdash;Gaussian vs. impulsive noise">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,12 +27,12 @@
  HREF="node18.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node15.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html196"
+<A ID="tex2html192"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -40,79 +40,177 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node18.html">June – Gaussian vs.</A>
+ HREF="node18.html">July Summing the signal</A>
 <B> Up:</B> <A
- HREF="node15.html">Blog posts 2022</A>
+ HREF="node14.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node16.html">January – Inverse of</A>
- &nbsp; <B>  <A ID="tex2html197"
+ HREF="node16.html">February Voronoi tesselation on</A>
+ &nbsp; <B>  <A ID="tex2html193"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00042000000000000000">
-February – Voronoi tesselation on a sphere</A>
+<H2><A ID="SECTION00043000000000000000">
+June&mdash;Gaussian vs. impulsive noise</A>
 </H2>
 
 <P>
-Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. In addition to the artistic value, <A ID="tex2html68"
-  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, has applications, <SPAN  CLASS="textit">e.g.</SPAN>, in wireless communications. 
+Noise is often modeled to have a <A ID="tex2html62"
+  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
+waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html63"
+  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
+events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html64"
+  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
+with significant mass in the tail distribution. 
+
+<P>
+The <A ID="tex2html65"
+  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions</A>
+are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
+ $\alpha = 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img26.svg"
+ ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
+ $\alpha \leq 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img27.svg"
+ ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
+
+<P>
+Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
+
+<P>
+In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img28.svg"
+ ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img28.svg"
+ ALT="$\alpha =1$"></SPAN>. 
+
+<P>
+<PRE>
+pkg load statistics
+
+clear all;
+close all;
+
+%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
+function xb = digitaltoanalog(T, digitalsignal, Fs)
+  xb = [];
+  for t = T
+    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
+  end
+end
+
+
+%%Inverse of the alpha stable CDF with alpha = 1.
+invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
+%%Generate N Alpha-stable samples.
+N = 100;
+alphasamples = invalphaCDF(unifrnd(0,1,1,N));
+
+%%Generate normal samples.
+normalsamples = normrnd(0,1,1,N);
+%%Convert to analog signal.
+T = 1 : 0.1 : N;
+alphasamples = digitaltoanalog(T, alphasamples, 1);
+normalsamples = digitaltoanalog(T, normalsamples, 1);
+
+alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
+normalsamples = normalsamples/(mean(abs(normalsamples)));
+figure(1)
+plot(T, alphasamples)
+legend('Alpha-stable noise')
+axis([0 100 -15 15])
+figure(2)
+plot(T, normalsamples)
+legend('Gaussian noise')
+axis([0 100 -15 15])
+</PRE>
 
 <P>
 
 <DIV class="CENTER">
   <IMG
-  WIDTH="621" HEIGHT="467" STYLE=""
- SRC="./voronoionsphere.png"
- ALT="Image voronoionsphere">
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./alphastablenoise.png"
+ ALT="Image alphastablenoise">
 
 </DIV>
 
 <P>
-The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./gaussiannoise.png"
+ ALT="Image gaussiannoise">
+
+</DIV>
 
 <P>
-<PRE>
-%%Create Voronoi tesselation around Poisson points on a Sphere.
+Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
 
-clear all;
-close all;
-
-addpath(fullfile(cd,'rbfsphere'));
-density = 100;
-X = poissononsphere(density)'; %Poisson points in spherical coordinates.
-voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
-
-function refc = poissononsphere(density)
-  yMin = -1; yMax = 1;
-  xMin = -pi; xMax = pi;
-  
-  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
-  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
-  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
-  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
-  ref = [x y]';
-
-  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
-  r = 1;
-  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
-          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
-          r*cos(refs(2,:)+pi/2)];
-end
-</PRE>
+<P>
+It is also interesting to compare the audiolized noise signals:
+<A ID="tex2html66"
+  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html69"
-  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
+<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
+</LI>
+<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
+</LI>
+<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005. Print.
 </LI>
 </UL>
 
 <P>
-<BR><HR>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html192"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node18.html">July Summing the signal</A>
+<B> Up:</B> <A
+ HREF="node14.html">Blog posts 2022</A>
+<B> Previous:</B> <A
+ HREF="node16.html">February Voronoi tesselation on</A>
+ &nbsp; <B>  <A ID="tex2html193"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

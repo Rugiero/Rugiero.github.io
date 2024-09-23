@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>January – Inverse of a Gaussian variable</TITLE>
-<META NAME="description" CONTENT="January – Inverse of a Gaussian variable">
+<TITLE>February&mdash;Voronoi tesselation on a sphere</TITLE>
+<META NAME="description" CONTENT="February&mdash;Voronoi tesselation on a sphere">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -27,12 +27,12 @@
  HREF="node17.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node15.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node15.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html194"
+<A ID="tex2html190"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -40,139 +40,79 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node17.html">February – Voronoi tesselation</A>
+ HREF="node17.html">June Gaussian vs. impulsive</A>
 <B> Up:</B> <A
- HREF="node15.html">Blog posts 2022</A>
+ HREF="node14.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node15.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html195"
+ HREF="node15.html">January Inverse of a</A>
+ &nbsp; <B>  <A ID="tex2html191"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00041000000000000000">
-January – Inverse of a Gaussian variable</A>
+<H2><A ID="SECTION00042000000000000000">
+February&mdash;Voronoi tesselation on a sphere</A>
 </H2>
 
 <P>
-There is quite a pile of literature on the subject of the <A ID="tex2html66"
-  HREF="https://en.wikipedia.org/wiki/Inverse_distribution">inverse</A>
-of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). In fact, the inverse distribution is ill-behaved; the mean and variance do not generally exist.
+Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The <A ID="tex2html60"
+  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, has applications, <SPAN  CLASS="textit">e.g.</SPAN>, in wireless communications. 
 
 <P>
-I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified by Monte Carlo simulations).
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="467" STYLE=""
+ SRC="./voronoionsphere.png"
+ ALT="Image voronoionsphere">
+
+</DIV>
 
 <P>
-First, approximate the Gaussian distributed variable <!-- MATH
- $X \sim \mathcal{N}(\mu, \sigma^2)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.93ex; vertical-align: -0.70ex; " SRC="img33.svg"
- ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$"></SPAN> by a log-normally distributed variable <!-- MATH
- $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img34.svg"
- ALT="$X \approx Y \sim$">&nbsp; &nbsp;Lognormal<IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$"></SPAN> with corresponding mean and variance, <SPAN  CLASS="textit">i.e.</SPAN>, <P><!-- MATH
- \begin{displaymath}
-\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 6.11ex; vertical-align: -2.32ex; " SRC="img36.svg"
- ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">
-</DIV><P></P>
-and
-<P><!-- MATH
- \begin{displaymath}
-\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 3.04ex; vertical-align: -0.70ex; " SRC="img37.svg"
- ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">
-</DIV><P></P>
-We leave the solving of <!-- MATH
- $\mu_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.91ex; vertical-align: -0.57ex; " SRC="img38.svg"
- ALT="$\mu_{\text{LN}}$"></SPAN> and <!-- MATH
- $\sigma_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.46ex; " SRC="img39.svg"
- ALT="$\sigma_{\text{LN}}$"></SPAN> as an easy exercise for the reader.
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
 
 <P>
-Using the theory of log-normal distribution, the inverse of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img40.svg"
- ALT="$X$"></SPAN> is now given by
-<P><!-- MATH
- \begin{displaymath}
-1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img41.svg"
- ALT="$\displaystyle 1/X \approx 1/Y \sim$">&nbsp; &nbsp;Lognormal<IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img42.svg"
- ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-$">
-</DIV><P></P>
+<PRE>
+%%Create Voronoi tesselation around Poisson points on a Sphere.
 
-<P>
-That's it!
+clear all;
+close all;
+
+addpath(fullfile(cd,'rbfsphere'));
+density = 100;
+X = poissononsphere(density)'; %Poisson points in spherical coordinates.
+voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
+
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+end
+</PRE>
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html67"
-  HREF="https://en.wikipedia.org/wiki/Log-normal_distribution">Log-normal distribution</A>
-</LI>
-<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+<LI><A ID="tex2html61"
+  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
 </LI>
 </UL>
 
 <P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node17.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node15.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node15.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html194"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node17.html">February – Voronoi tesselation</A>
-<B> Up:</B> <A
- HREF="node15.html">Blog posts 2022</A>
-<B> Previous:</B> <A
- HREF="node15.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html195"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<BR><HR>
 
 </BODY>
 </HTML>

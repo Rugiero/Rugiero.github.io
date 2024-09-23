@@ -125,7 +125,7 @@
 
         \begin{figure}
           \includegraphics[width=\linewidth]{me1.jpg}
-          \caption{Me in my beloved home town Helsinki in the middle of the summer (well, technically I am in Espoo, Otaniemi – and it is a snowy and shiny day in February, frozen sea seen in the background)}
+          \caption{Me in my beloved home town Helsinki in the middle of the summer (well, technically I am in Espoo, Otaniemi---and it is a snowy and shiny day in February, frozen sea seen in the background)}
         \end{figure}
 
         
@@ -175,7 +175,7 @@
         \section{Blog posts 2021}
         General thoughts on mathematics and engineering, practical instructions, semi-artistic logical nonsense. The themes of this blog are much inspired by the challenges encountered in my professional life. 
 
-        \subsection{January – Poisson process on a sphere}
+        \subsection{January---Poisson process on a sphere}
         The \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to general \htmladdnormallink{manifolds}{https://en.wikipedia.org/wiki/Manifold}. In Particular, the Poisson process on a three-dimensional sphere surface is useful. Nicely enough, the Poisson process on a unit sphere is equivalent to the process in a two-dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area-preserving mapping from $A$ to geographical coordinates
         \begin{equation}
           (x,y) \mapsto (1,x,\sin^{-1}(y)) \nonumber.
@@ -291,7 +291,7 @@ References:
 
 
 
-\subsection{February – Controlling your passwords with pass}
+\subsection{February---Controlling your passwords with pass}
 Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
 
 \begin{itemize}
@@ -338,12 +338,12 @@ Connect Pass to Git and it is easy to keep track of passwords with multiple mach
   gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
 where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.\\
-\item Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine. \\
+\item Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: \\
 \begin{verbatim}
 gpg --import public.key
 gpg --import private.key
 \end{verbatim}
-\item After importing the keys to a new machine you can list the keys
+\item After importing the keys to a new machine you can list the keys:
 \begin{verbatim}
 gpg --list-keys 
 \end{verbatim}
@@ -351,7 +351,7 @@ gpg --list-keys
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
-\item Initialize your git repository. Make a new repository named ``pass-store'' e.g. to GitHub if you are doing this the first time before the following commands. If the first command asks you to identify follow the given instructions.\\
+\item First, add your public SSH key to GitHub. We will initialize the GitHub repository. If you do this for the first time, create a new repository named ``pass-store'' before the following commands. If the first command asks you to identify yourself, follow the instructions.
 \begin{verbatim}
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
@@ -361,11 +361,11 @@ pass git remote add origin git@repo.com:myname/pass-store
 pass git pull origin master --allow-unrelated-histories
 pass git commit -am "firstcommit"
 \end{verbatim}
+If Git complains about ``divergent branches'' just choose the ``merge'' reconcileing and repeat the command.
 \item Do some changes and pass will automatically commit them. Push and set the ``upstream''. \\
 \begin{verbatim}
 pass git push --set-upstream origin master 
 \end{verbatim}
-If Git complains about ``divergent brances'' just follow the instructions and repeat the command.
 \item From here on you can use the familiar git commands. \\
 \begin{verbatim}
 pass git pull 
@@ -383,8 +383,8 @@ References:
 \end{itemize}
 
 
-\subsection{March – Signal propagation in a city}
-Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver – this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
+\subsection{March---Signal propagation in a city}
+Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver---this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
 
 I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
 
@@ -447,13 +447,13 @@ References:
 %% \end{itemize}
 
 
-\subsection{May – Rayleigh fading audiolized}
+\subsection{May---Rayleigh fading audiolized}
 
 When a signal propagates through multiple paths, each signal component in each path will be in a different phase and of varying strength when received. Should there be no line-of-sight component present, the additive signal will fade according to the \htmladdnormallink{Rayleigh fading}{\ray}.
 
 For example, a simple sine wave
 
-\htmladdnormallink{wave}{https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH} (links to soundcloud.com – VOLUME ALERT)
+\htmladdnormallink{wave}{https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH} (links to soundcloud.com---VOLUME ALERT)
 
 can after some multi-path propagation sound like
 
@@ -471,7 +471,7 @@ but the
 \htmladdnormallink{faded signal}{https://soundcloud.com/ilari-angervuori/eznoise/s-z4MjfqRZr6E}
 
 
-will sometimes get buried under the noise – these events are referred to as \textit{deep fades}.
+will sometimes get buried under the noise---these events are referred to as \textit{deep fades}.
 
 
 \begin{figure}
@@ -585,9 +585,9 @@ References:
 
 
 
-\subsection{June – Why does MIMO work?}
+\subsection{June---Why does MIMO work?}
 
-Multiple-input and multiple-output \htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO} antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link. In principle, the link's capacity can be increased merely by increasing the power of the transmitting antenna. However – apart from being energy-consuming – this also increases interference to any other receivers should they operate in the same frequency band. In MIMO, the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing interference towards other transmitters.
+Multiple-input and multiple-output \htmladdnormallink{MIMO}{https://en.wikipedia.org/wiki/MIMO} antenna technology is used to exploit the \htmladdnormallink{multi-path propagation}{\ray} to improve the capacity of a communication link. In principle, the link's capacity can be increased merely by increasing the power of the transmitting antenna. However---apart from being energy-consuming---this also increases interference to any other receivers should they operate in the same frequency band. In MIMO, the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing interference towards other transmitters.
 
 Why does it work? Here is how I came up with a simple argument based on stochastic geometry. First, let us make some assumptions. We assume a flat and infinite Earth (this is a ``tin foil assumption,'' but it is often reasonable). In addition, our communication channel environment consists of many obstacles so that our transmitting and receiving antennae can not see each other. We are in a city full of houses, cars, trees, etc. Then, our data signal propagates to the receiver through multiple paths, for example, through distinct streets around different houses. The aggregate signal in the receiver will be  \htmladdnormallink{Rayleigh faded}{\ray}. The city is stormed with mobile phones exchanging data with their base stations, which further hand the data to the receiving mobile phones' base station and, on the other hand, cause interference to the other base stations. We assume that the interfering base stations are independently located and are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process}.
 
@@ -599,7 +599,7 @@ Let's consider that person A is sending a message to person B. We are interested
 
 where $P$ denotes the mean transmitting power of the base stations.
 
-In MIMO, we use multiple distinct antennas to transmit the same message. In each antenna, the encoding of the message should be different so that it can't mix with the information that the other antennas are transmitting – this is possible by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
+In MIMO, we use multiple distinct antennas to transmit the same message. In each antenna, the encoding of the message should be different so that it can't mix with the information that the other antennas are transmitting---this is possible by \htmladdnormallink{orthogonal modulation}{https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing}.
 Assuming that each message from each antenna independently propagates to the receiver, we can calculate from equation $(1)$ by the complementary probability that \textbf{at least one message transmission gets through:}
 
 \begin{equation*}
@@ -674,12 +674,12 @@ References:
 %% \end{itemize}
 
 
-\subsection{August – Radio waves in a tunnel}
+\subsection{August---Radio waves in a tunnel}
 
 Almost everyone has some experience of how radio turns static when driving into a tunnel. The radio stations only work if a special  \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} is installed inside the tunnel. Once upon a night, I could not sleep, pondering why the \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radios are unsuable in the tunnels. From my experience, mobile phone signals that operate at higher frequencies work better. Someone might have told me that FM radio wavelength is so large that the wave ``does not fit the tunnel''. But as intuitively acceptable as this explanation could be (I don't think it is even that), this answer did not satisfy me.
 
 
-After some research, I found that the explanation lies in \htmladdnormallink{Maxwell equation's}{https://en.wikipedia.org/wiki/Maxwell's_equations} behavior (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface – this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
+After some research, I found that the explanation lies in \htmladdnormallink{Maxwell equation's}{https://en.wikipedia.org/wiki/Maxwell's_equations} behavior (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface---this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
 
 
 Intuitive or not, this is what the equations tell us. To demonstrate this, I solved using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane wave in a two-dimensional setting mimicking a tunnel and its entrance. The \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is zero. The coloring represents the electrical component's magnitude.
@@ -928,9 +928,9 @@ References:
  \section{Blog posts 2022}
 %%         General thoughts on mathematics and engineering, practical instructions, semi-artistic logical  nonsense. The themes of this blog are much inspired by the challenges encountered in my professional life. 
 
-\subsection{January – Inverse of a Gaussian variable}
+\subsection{January---Inverse of a Gaussian variable}
 
-There is a lot of literature on the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution – it is a different matter). The inverse distribution is ill-behaved; the mean and variance do not generally exist.
+There is a lot of literature on the \htmladdnormallink{inverse}{https://en.wikipedia.org/wiki/Inverse_distribution} of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution---it is a different matter). The inverse distribution is ill-behaved; the mean and variance do not generally exist.
 
 I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified, e.g., by Monte Carlo simulations).
 
@@ -954,7 +954,7 @@ References:
 \end{itemize}
 
 
-\subsection{February – Voronoi tesselation on a sphere}
+\subsection{February---Voronoi tesselation on a sphere}
 
 Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, has applications, \textit{e.g.}, in wireless communications. 
 
@@ -1190,12 +1190,12 @@ References:
 
 %% \end{itemize}
 
-\subsection{June – Gaussian vs. impulsive noise}
+\subsection{June---Gaussian vs. impulsive noise}
 
 
 Noise is often modeled to have a \htmladdnormallink{Gaussian}{https://en.wikipedia.org/wiki/Gaussian_noise} waveform. However, it might be unrealistic in some circumstances if the \htmladdnormallink{outlier}{https://en.wikipedia.org/wiki/Outlier} events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with \htmladdnormallink{fat-tailed distributions}{https://en.wikipedia.org/wiki/Fat-tailed_distribution} with significant mass in the tail distribution. 
 
-The \htmladdnormallink{$\alpha$-stable distributions}{https://en.wikipedia.org/wiki/Stable_distribution} are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the $\alpha$-stable family of $\alpha$-stable distributions ($\alpha = 2$), the only distribution in the family with a finite variance. With values $\alpha \leq 1$, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value – say, 10 euros in a year – versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
+The \htmladdnormallink{$\alpha$-stable distributions}{https://en.wikipedia.org/wiki/Stable_distribution} are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the $\alpha$-stable family of $\alpha$-stable distributions ($\alpha = 2$), the only distribution in the family with a finite variance. With values $\alpha \leq 1$, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value---say, 10 euros in a year---versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
 
 Other impulsive noise distribution models are the \textit{Middleton distributions} representing the envelope of non-Gaussian electromagnetic noise.
 
@@ -1271,7 +1271,7 @@ References:
 
 
 
-\subsection{July – Summing the signal powers}
+\subsection{July---Summing the signal powers}
 
 Let us consider two sinusoidal signals of opposite phases during the time $t \in [0,1]$: $S_1(t) = \cos(2 \pi t)$ and $S_2(t) = \cos(2 \pi t + \pi)$. Obviously, the signals cancel each other completely, and the mean power of the additive signal $ S_1 + S_2$ is just $0$:
 
@@ -1293,7 +1293,7 @@ Let us assume that $S_1$ and $S_2$ are two signals. We have that
 \begin{equation}
   \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2], \tag{3}
 \end{equation}
-thus, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated – this is not the case with our initial signals, as then the cross-correlation is given by
+thus, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated---this is not the case with our initial signals, as then the cross-correlation is given by
 
 $$
 \mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
@@ -1380,7 +1380,7 @@ References:
 %% \item \htmladdnormallink{reference.wolfram.com}{https://reference.wolfram.com/language/ref/LogPlot.html}
 %% \end{itemize}
 
-\subsection{September – Homography}
+\subsection{September---Homography}
 
 \htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than $90 \degree$, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$ so that the right-hand side focus point maps to the origin.
 $$
@@ -1442,7 +1442,7 @@ References:
 \end{itemize}
 
 
-\subsection{December – Asymptotic decay rate of a probability distribution}
+\subsection{December---Asymptotic decay rate of a probability distribution}
 
 
 Let us study the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's $X$ tail distribution. It is defined by
@@ -1495,7 +1495,7 @@ References:
 
 \section{Blog posts 2023}
 
-\subsection{May –  Signal fading in a satellite receiver and the coherence time}
+\subsection{May---Signal fading in a satellite receiver and the coherence time}
 \begin{figure}
   \includegraphics[width=\linewidth]{satelliteinterference.png}
 \end{figure}
@@ -1650,7 +1650,7 @@ References:
 
 \section{Blog posts 2024}
 
-\subsection{March – A representation of the generalized hypergeometric function $_3F_2$}
+\subsection{March---A representation of the generalized hypergeometric function $_3F_2$}
 
 
 Here is a representation of the \htmladdnormallink{hypergeometric function}{https://en.wikipedia.org/wiki/Generalized_hypergeometric_function} $_3F_2(1,1,b;2,2;\cdot)$ in terms of the \htmladdnormallink{polylogarithm}{https://en.wikipedia.org/wiki/Polylogarithm}: For  $|x|<1$ and $b\in\mathbb{N}$, the \textit{hypergeometric series} representation is given by

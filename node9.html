@@ -3,8 +3,8 @@
 <!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>February – Controlling your passwords with pass</TITLE>
-<META NAME="description" CONTENT="February – Controlling your passwords with pass">
+<TITLE>February&mdash;Controlling your passwords with pass</TITLE>
+<META NAME="description" CONTENT="February&mdash;Controlling your passwords with pass">
 <META NAME="keywords" CONTENT="source">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -40,11 +40,11 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">March – Signal propagation</A>
+ HREF="node10.html">March Signal propagation in</A>
 <B> Up:</B> <A
  HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">January – Poisson process</A>
+ HREF="node8.html">January Poisson process on</A>
  &nbsp; <B>  <A ID="tex2html171"
   HREF="node1.html">Contents</A></B> 
 <BR>
@@ -52,7 +52,7 @@
 <!--End of Navigation Panel-->
 
 <H2><A ID="SECTION00032000000000000000">
-February – Controlling your passwords with pass</A>
+February&mdash;Controlling your passwords with pass</A>
 </H2>
 Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
 
@@ -110,13 +110,13 @@ Connect Pass to Git and it is easy to keep track of passwords with multiple mach
 </PRE>
 where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
 <BR></LI>
-<LI>Now we can initialize the git repository with these keys. Move public.key and private.key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine. 
+<LI>Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
 <BR><PRE>
 gpg --import public.key
 gpg --import private.key
 </PRE>
 </LI>
-<LI>After importing the keys to a new machine you can list the keys
+<LI>After importing the keys to a new machine you can list the keys:
 <PRE>
 gpg --list-keys
 </PRE>
@@ -126,8 +126,8 @@ gpg --list-keys
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
 </LI>
-<LI>Initialize your git repository. Make a new repository named &ldquo;pass-store&rdquo; e.g. to GitHub if you are doing this the first time before the following commands. If the first command asks you to identify follow the given instructions.
-<BR><PRE>
+<LI>First, add your public SSH key to GitHub. We will initialize the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
+<PRE>
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
 </PRE>
@@ -137,12 +137,12 @@ pass git remote add origin git@repo.com:myname/pass-store
 pass git pull origin master --allow-unrelated-histories
 pass git commit -am "firstcommit"
 </PRE>
+If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconcileing and repeat the command.
 </LI>
 <LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
 <BR><PRE>
 pass git push --set-upstream origin master
 </PRE>
-If Git complains about &ldquo;divergent brances&rdquo; just follow the instructions and repeat the command.
 </LI>
 <LI>From here on you can use the familiar git commands. 
 <BR><PRE>
@@ -188,11 +188,11 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">March – Signal propagation</A>
+ HREF="node10.html">March Signal propagation in</A>
 <B> Up:</B> <A
  HREF="node7.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">January – Poisson process</A>
+ HREF="node8.html">January Poisson process on</A>
  &nbsp; <B>  <A ID="tex2html171"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
