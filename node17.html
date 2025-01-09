@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
 <TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
-<META NAME="description" CONTENT="June&mdash;Gaussian vs. impulsive noise">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -32,9 +28,9 @@
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html193"
+<A ID="tex2html192"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
@@ -45,7 +41,7 @@
  HREF="node14.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node16.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html194"
+ &nbsp; <B>  <A ID="tex2html193"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,33 +52,33 @@ June&mdash;Gaussian vs. impulsive noise</A>
 </H2>
 
 <P>
-Noise is often modeled to have a <A ID="tex2html63"
+Noise is often modeled to have a <A ID="tex2html62"
   HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
-waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html64"
+waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html63"
   HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
-events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html65"
+events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html64"
   HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
 with significant mass in the tail distribution. 
 
 <P>
-The <A ID="tex2html66"
+The <A ID="tex2html65"
   HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
  ALT="$\alpha$"></SPAN>-stable distributions</A>
 are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
  ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
  ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
  $\alpha = 2$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img26.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img24.svg"
  ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
  $\alpha \leq 1$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img27.svg"
+ STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img25.svg"
  ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
 
 <P>
@@ -90,15 +86,15 @@ Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleto
 
 <P>
 In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
  ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
  ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img28.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img26.svg"
  ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
  ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img28.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img26.svg"
  ALT="$\alpha =1$"></SPAN>. 
 
 <P>
@@ -167,7 +163,7 @@ Comparing the figures, one can easily understand where the term &ldquo;impulsive
 
 <P>
 It is also interesting to compare the audiolized noise signals:
-<A ID="tex2html67"
+<A ID="tex2html66"
   HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
 
 <P>
@@ -195,9 +191,9 @@ References:
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html193"
+<A ID="tex2html192"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
@@ -208,7 +204,7 @@ References:
  HREF="node14.html">Blog posts 2022</A>
 <B> Previous:</B> <A
  HREF="node16.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html194"
+ &nbsp; <B>  <A ID="tex2html193"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
