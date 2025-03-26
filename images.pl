@@ -367,10 +367,10 @@ $cached_env_img{$key} = q|<IMG
  ALT="$\displaystyle = \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))...
 ...i}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt d \phi_2 = 1/2 +1/2 =1.$">|; 
 
-$key = q/displaystyle=int_0^12cos^2(2pit)dt=int_0^1cos(4pit)dt+1=1,;MSF=1.6;AAT/;
+$key = q/displaystyle=int_0^12cos^2(2pit)dt=int_0^1cos(4pit)dt+1=1.;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 5.96ex; vertical-align: -2.23ex; " SRC="|."$dir".q|img56.svg"
- ALT="$\displaystyle = \int_0^1 2 \cos^2(2 \pi t) dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1,$">|; 
+ ALT="$\displaystyle = \int_0^1 2 \cos^2(2 \pi t) dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1.$">|; 
 
 $key = q/displaystyle=int_0^1cos^2(2pit)dt+int_0^1cos^2(2pit+pi)dt;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
@@ -459,10 +459,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 5.96ex; vertical-align: -2.23ex; " SRC="|."$dir".q|img52.svg"
  ALT="$\displaystyle \mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0,$">|; 
 
-$key = q/displaystylemathbb{E}[(S_1+S_2)^2]=mathbb{E}[S_1^2+S_2^2+2S_1S_2]=mathbb{E}[S_1^2]+mathbb{E}[S_2^2]+2mathbb{E}[S_1S_2],;MSF=1.6;AAT/;
+$key = q/displaystylemathbb{E}[(S_1+S_2)^2]=mathbb{E}[S_1^2+S_2^2+2S_1S_2]=mathbb{E}[S_1^2]+mathbb{E}[S_2^2]+2mathbb{E}[S_1S_2].;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img59.svg"
- ALT="$\displaystyle \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2],$">|; 
+ ALT="$\displaystyle \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2].$">|; 
 
 $key = q/displaystylemathbb{E}[S_1S_2]=int_0^1cos(2pit)cos(2pit+pi)dt=int_0^1-cos^2(2pit)dt=-frac{1}{2}int_0^1cos(4pit)dt-frac{1}{2}=-frac{1}{2},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
