@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>December&mdash;Asymptotic decay rate of a probability distribution</TITLE>
+<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node21.html">
 <LINK REL="previous" HREF="node19.html">
 <LINK REL="next" HREF="node21.html">
 </HEAD>
@@ -22,12 +23,12 @@
  HREF="node21.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="node16.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node19.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html198"
+<A ID="tex2html221"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -35,266 +36,145 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node21.html">Blog posts 2023</A>
+ HREF="node21.html">July Summing the signal</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="node16.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node19.html">September Homography</A>
- &nbsp; <B>  <A ID="tex2html199"
+ HREF="node19.html">May – Digital to</A>
+ &nbsp; <B>  <A ID="tex2html222"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00046000000000000000">
-December&mdash;Asymptotic decay rate of a probability distribution</A>
+<H2><A ID="SECTION00044000000000000000">
+June&mdash;Gaussian vs. impulsive noise</A>
 </H2>
 
 <P>
-Let us study the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img20.svg"
- ALT="$X$"></SPAN> tail distribution. It is defined by
-<P></P>
-<DIV CLASS="displaymath"><!-- MATH
- \begin{equation}
-\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x}, \tag{1}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img56.svg"
- ALT="$\displaystyle \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x},$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(1)</TD></TR>
-</TABLE></DIV>
-<P></P>
-where <!-- MATH
- $\textbf{P}(\cdot)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img57.svg"
- ALT="$\textbf{P}(\cdot)$"></SPAN> denotes the probability of an event. Let us calculate the decay rates for the exponential distribution, gamma distribution, and normal distribution.
+Noise is often modeled to have a <A ID="tex2html76"
+  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
+waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html77"
+  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
+events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html78"
+  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
+with significant mass in the tail distribution. 
 
 <P>
-For <SPAN  CLASS="textbf">exponentially distributed</SPAN> <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img20.svg"
- ALT="$X$"></SPAN> with scale parameter <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img58.svg"
- ALT="$\theta$"></SPAN>:
-<P></P>
-<DIV CLASS="displaymath"><TABLE CLASS="equation" >
-<TR >
-<TD class="lfill"></TD>
-<TD class="RIGHT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.89ex; vertical-align: -0.78ex; " SRC="img59.svg"
- ALT="$\displaystyle \rho_{\text{Exponential}}$"></SPAN></TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.47ex; vertical-align: -1.74ex; " SRC="img60.svg"
- ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x} = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}$"></SPAN></TD>
-<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD class="lfill"></TD>
-<TD>&nbsp;</TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img61.svg"
- ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta.$"></SPAN></TD>
-<TD  class="rfill">(2)</TD></TR>
-</TABLE></DIV>
-<P></P>
+The <A ID="tex2html79"
+  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions</A>
+are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
+ $\alpha = 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img45.svg"
+ ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
+ $\alpha \leq 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img46.svg"
+ ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
 
 <P>
-For <SPAN  CLASS="textbf">gamma distributed</SPAN> <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img20.svg"
- ALT="$X$"></SPAN> with shape parameter <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img62.svg"
- ALT="$k$"></SPAN> and scale parameter <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img58.svg"
- ALT="$\theta$"></SPAN>:
+Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
 
 <P>
-<P></P>
-<DIV CLASS="displaymath"><TABLE CLASS="equation" >
-<TR >
-<TD class="lfill"></TD>
-<TD class="RIGHT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img63.svg"
- ALT="$\displaystyle \rho_{\text{Gamma}}$"></SPAN></TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img64.svg"
- ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = \lim_{x\rightarrow \infty} -\frac{\log (1-\gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
-<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD class="lfill"></TD>
-<TD>&nbsp;</TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img65.svg"
- ALT="$\displaystyle =\lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
-<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD class="lfill"></TD>
-<TD>&nbsp;</TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.62ex; vertical-align: -1.74ex; " SRC="img66.svg"
- ALT="$\displaystyle \overset{(a)}{=} \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k...
-... = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}$"></SPAN></TD>
-<TD  class="rfill"><A ID="line:22">&nbsp;&nbsp;&nbsp;</A></TD></TR>
-<TR >
-<TD class="lfill"></TD>
-<TD>&nbsp;</TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.62ex; vertical-align: -1.74ex; " SRC="img67.svg"
- ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta.$"></SPAN></TD>
-<TD  class="rfill">(3)</TD></TR>
-</TABLE></DIV>
-<P></P>
-In <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img68.svg"
- ALT="$(a)$"></SPAN>, we used the asymptotic behavior of the gamma distribution
-<P><!-- MATH
- \begin{displaymath}
-\lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img69.svg"
- ALT="$\displaystyle \lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
-$">
-</DIV><P></P>
+In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
+ ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
+ ALT="$\alpha =1$"></SPAN>. 
 
 <P>
-For <SPAN  CLASS="textbf">normal distributed</SPAN> <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img20.svg"
- ALT="$X$"></SPAN> with mean <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img70.svg"
- ALT="$\mu$"></SPAN> and variance <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img71.svg"
- ALT="$\sigma^2$"></SPAN>:
+<PRE>
+pkg load statistics
+
+clear all;
+close all;
+
+%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
+function xb = digitaltoanalog(T, digitalsignal, Fs)
+  xb = [];
+  for t = T
+    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
+  end
+end
+
+
+%%Inverse of the alpha stable CDF with alpha = 1.
+invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
+%%Generate N Alpha-stable samples.
+N = 100;
+alphasamples = invalphaCDF(unifrnd(0,1,1,N));
+
+%%Generate normal samples.
+normalsamples = normrnd(0,1,1,N);
+%%Convert to analog signal.
+T = 1 : 0.1 : N;
+alphasamples = digitaltoanalog(T, alphasamples, 1);
+normalsamples = digitaltoanalog(T, normalsamples, 1);
+
+alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
+normalsamples = normalsamples/(mean(abs(normalsamples)));
+figure(1)
+plot(T, alphasamples)
+legend('Alpha-stable noise')
+axis([0 100 -15 15])
+figure(2)
+plot(T, normalsamples)
+legend('Gaussian noise')
+axis([0 100 -15 15])
+</PRE>
 
 <P>
-<P></P>
-<DIV CLASS="displaymath"><TABLE CLASS="equation" >
-<TR >
-<TD class="lfill"></TD>
-<TD class="RIGHT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img72.svg"
- ALT="$\displaystyle \rho_{\text{Normal}}$"></SPAN></TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="img73.svg"
- ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = -\...
-...t{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x}$"></SPAN></TD>
-<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD class="lfill"></TD>
-<TD>&nbsp;</TD>
-<TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="img74.svg"
- ALT="$\displaystyle \geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\fra...
-...}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x} = \infty,$"></SPAN></TD>
-<TD  class="rfill">(4)</TD></TR>
-</TABLE></DIV>
-<P></P>
-where in <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img75.svg"
- ALT="$(b)$"></SPAN>, we used the inequality <P><!-- MATH
- \begin{displaymath}
-\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-erfc<IMG
- STYLE="height: 6.09ex; vertical-align: -2.16ex; " SRC="img76.svg"
- ALT="$\displaystyle (x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$">
-</DIV><P></P>
-that holds for <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img77.svg"
- ALT="$x \geq 0$"></SPAN> and <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img78.svg"
- ALT="$\beta &gt;1$"></SPAN> (we used <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img79.svg"
- ALT="$\beta = 2$"></SPAN>).
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./alphastablenoise.png"
+ ALT="Image alphastablenoise">
+
+</DIV>
 
 <P>
-The asymptotic decay rates for the exponential, gamma, and normal distribution are given in <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img80.svg"
- ALT="$(2)$"></SPAN>, <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img81.svg"
- ALT="$(3)$"></SPAN>, and <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img82.svg"
- ALT="$(4)$"></SPAN>, respectively. We see that the decay rate <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img83.svg"
- ALT="$\rho$"></SPAN> of the normal distribution is always maximal, <SPAN  CLASS="textit">i.e.</SPAN>, <!-- MATH
- $\rho_{\text{Normal}} = \infty$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img84.svg"
- ALT="$\rho_{\text{Normal}} = \infty$"></SPAN>. In contrast, the decay rates of the exponential and gamma distributions depend on the scale parameter <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img58.svg"
- ALT="$\theta$"></SPAN>.
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./gaussiannoise.png"
+ ALT="Image gaussiannoise">
+
+</DIV>
 
 <P>
-By normalizing the mean (<!-- MATH
- $\mathbb{E}[X] = 1$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img85.svg"
- ALT="$\mathbb{E}[X] = 1$"></SPAN>) by setting <!-- MATH
- $\theta = 1$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img86.svg"
- ALT="$\theta = 1$"></SPAN> and <!-- MATH
- $k=1/\theta$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img87.svg"
- ALT="$k=1/\theta$"></SPAN>, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is <!-- MATH
- $\rho_{\text{Exponential}} = 1$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.78ex; " SRC="img88.svg"
- ALT="$\rho_{\text{Exponential}} = 1$"></SPAN> and of the gamma distribution is <!-- MATH
- $\rho_{\text{Gamma}} = k$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img89.svg"
- ALT="$\rho_{\text{Gamma}} = k$"></SPAN>. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="img90.svg"
- ALT="$k&lt;1$"></SPAN>, and faster than the exponential distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="img91.svg"
- ALT="$k&gt;1$"></SPAN>. With <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img92.svg"
- ALT="$k=1$"></SPAN>, the distributions coincide. When <!-- MATH
- $k \rightarrow \infty$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img93.svg"
- ALT="$k \rightarrow \infty$"></SPAN>, the gamma distribution approaches the normal distribution and <!-- MATH
- $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img94.svg"
- ALT="$\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$"></SPAN>.
+Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
+
+<P>
+It is also interesting to compare the audiolized noise signals:
+<A ID="tex2html80"
+  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html73"
-  HREF="https://en.wikipedia.org/wiki/Error_function">Error function</A>
+<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
 </LI>
-<LI><A ID="tex2html74"
-  HREF="https://en.wikipedia.org/wiki/Exponential_distribution">Exponential distribution</A>
+<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
 </LI>
-<LI><A ID="tex2html75"
-  HREF="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma distribution</A>
-</LI>
-<LI><A ID="tex2html76"
-  HREF="https://en.wikipedia.org/wiki/Normal_distribution">Normal distribution</A>
-<P>
+<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005. Print.
 </LI>
 </UL>
 
@@ -306,12 +186,12 @@ References:
  HREF="node21.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="node16.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node19.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html198"
+<A ID="tex2html221"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -319,12 +199,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node21.html">Blog posts 2023</A>
+ HREF="node21.html">July Summing the signal</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="node16.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node19.html">September Homography</A>
- &nbsp; <B>  <A ID="tex2html199"
+ HREF="node19.html">May – Digital to</A>
+ &nbsp; <B>  <A ID="tex2html222"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

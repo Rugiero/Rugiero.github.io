@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
+<TITLE>January&mdash;Inverse of a Gaussian variable</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -23,12 +23,12 @@
  HREF="node18.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="node16.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html192"
+<A ID="tex2html215"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,145 +36,107 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node18.html">July Summing the signal</A>
+ HREF="node18.html">February Voronoi tesselation on</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="node16.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node16.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html193"
+ HREF="node16.html">Blog posts 2022</A>
+ &nbsp; <B>  <A ID="tex2html216"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00043000000000000000">
-June&mdash;Gaussian vs. impulsive noise</A>
+<H2><A ID="SECTION00041000000000000000">
+January&mdash;Inverse of a Gaussian variable</A>
 </H2>
 
 <P>
-Noise is often modeled to have a <A ID="tex2html62"
-  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
-waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html63"
-  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
-events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html64"
-  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
-with significant mass in the tail distribution. 
+There is a lot of literature on the <A ID="tex2html70"
+  HREF="https://en.wikipedia.org/wiki/Inverse_distribution">inverse</A>
+of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution&mdash;it is a different matter). The inverse distribution is ill-behaved; the mean and variance do not generally exist.
 
 <P>
-The <A ID="tex2html65"
-  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
- ALT="$\alpha$"></SPAN>-stable distributions</A>
-are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
- ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
- ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
- $\alpha = 2$
+I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified, e.g., by Monte Carlo simulations).
+
+<P>
+First, approximate the Gaussian distributed variable <!-- MATH
+ $X \sim \mathcal{N}(\mu, \sigma^2)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img24.svg"
- ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
- $\alpha \leq 1$
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img26.svg"
+ ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$"></SPAN> by a log-normally distributed variable <!-- MATH
+ $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img25.svg"
- ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img27.svg"
+ ALT="$X \approx Y \sim$">&nbsp; &nbsp;Lognormal<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img28.svg"
+ ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$"></SPAN> with corresponding mean and variance, <SPAN  CLASS="textit">i.e.</SPAN>, <P><!-- MATH
+ \begin{displaymath}
+\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 5.88ex; vertical-align: -2.32ex; " SRC="img29.svg"
+ ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">
+</DIV><P></P>
+and
+<P><!-- MATH
+ \begin{displaymath}
+\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img30.svg"
+ ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">
+</DIV><P></P>
+We leave the solving of <!-- MATH
+ $\mu_{\text{LN}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img31.svg"
+ ALT="$\mu_{\text{LN}}$"></SPAN> and <!-- MATH
+ $\sigma_{\text{LN}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img32.svg"
+ ALT="$\sigma_{\text{LN}}$"></SPAN> as an easy exercise for the reader. (:
 
 <P>
-Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
+Using the theory of log-normal distribution, the inverse of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$X$"></SPAN> is now given by
+<P><!-- MATH
+ \begin{displaymath}
+1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ ALT="$\displaystyle 1/X \approx 1/Y \sim$">&nbsp; &nbsp;Lognormal<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
+ ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+$">
+</DIV><P></P>
 
 <P>
-In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
- ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
- ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img26.svg"
- ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img23.svg"
- ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img26.svg"
- ALT="$\alpha =1$"></SPAN>. 
-
-<P>
-<PRE>
-pkg load statistics
-
-clear all;
-close all;
-
-%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
-function xb = digitaltoanalog(T, digitalsignal, Fs)
-  xb = [];
-  for t = T
-    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
-  end
-end
-
-
-%%Inverse of the alpha stable CDF with alpha = 1.
-invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
-%%Generate N Alpha-stable samples.
-N = 100;
-alphasamples = invalphaCDF(unifrnd(0,1,1,N));
-
-%%Generate normal samples.
-normalsamples = normrnd(0,1,1,N);
-%%Convert to analog signal.
-T = 1 : 0.1 : N;
-alphasamples = digitaltoanalog(T, alphasamples, 1);
-normalsamples = digitaltoanalog(T, normalsamples, 1);
-
-alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
-normalsamples = normalsamples/(mean(abs(normalsamples)));
-figure(1)
-plot(T, alphasamples)
-legend('Alpha-stable noise')
-axis([0 100 -15 15])
-figure(2)
-plot(T, normalsamples)
-legend('Gaussian noise')
-axis([0 100 -15 15])
-</PRE>
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./alphastablenoise.png"
- ALT="Image alphastablenoise">
-
-</DIV>
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./gaussiannoise.png"
- ALT="Image gaussiannoise">
-
-</DIV>
-
-<P>
-Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
-
-<P>
-It is also interesting to compare the audiolized noise signals:
-<A ID="tex2html66"
-  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
+That's it!
 
 <P>
 References:
 
 <UL>
-<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
+<LI><A ID="tex2html71"
+  HREF="https://en.wikipedia.org/wiki/Log-normal_distribution">Log-normal distribution</A>
 </LI>
-<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
-</LI>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005. Print.
+<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
 </LI>
 </UL>
 
@@ -186,12 +148,12 @@ References:
  HREF="node18.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="node16.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html192"
+<A ID="tex2html215"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -199,12 +161,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node18.html">July Summing the signal</A>
+ HREF="node18.html">February Voronoi tesselation on</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="node16.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node16.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html193"
+ HREF="node16.html">Blog posts 2022</A>
+ &nbsp; <B>  <A ID="tex2html216"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
