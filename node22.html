@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>May&mdash;Signal fading in a satellite receiver and the coherence time</TITLE>
+<TITLE>September&mdash;Homography</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node23.html">
 <LINK REL="previous" HREF="node21.html">
 <LINK REL="next" HREF="node23.html">
 </HEAD>
@@ -22,12 +23,12 @@
  HREF="node23.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node21.html">
+ HREF="node16.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node21.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html203"
+<A ID="tex2html225"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -35,371 +36,130 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node23.html">Blog posts 2024</A>
+ HREF="node23.html">December Asymptotic decay rate</A>
 <B> Up:</B> <A
- HREF="node21.html">Blog posts 2023</A>
+ HREF="node16.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node21.html">Blog posts 2023</A>
- &nbsp; <B>  <A ID="tex2html204"
+ HREF="node21.html">July Summing the signal</A>
+ &nbsp; <B>  <A ID="tex2html226"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00051000000000000000">
-May&mdash;Signal fading in a satellite receiver and the coherence time</A>
+<H2><A ID="SECTION00046000000000000000">
+September&mdash;Homography</A>
 </H2>
+
+<P>
+<A ID="tex2html84"
+  HREF="https://en.wikipedia.org/wiki/Homography">Homography</A>
+can be used to &ldquo;change the perspective&rdquo; of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than <!-- MATH
+ $90 \degree$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$90 \degree$"></SPAN>, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img73.svg"
+ ALT="$H$"></SPAN> transforms an <A ID="tex2html85"
+  HREF="https://en.wikipedia.org/wiki/Ellipse">ellipse</A>
+of parameters <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img74.svg"
+ ALT="$a$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img75.svg"
+ ALT="$b$"></SPAN> to a circle of radius <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img6.svg"
+ ALT="$r$"></SPAN> so that the right-hand side focus point maps to the origin.
+<P><!-- MATH
+ \begin{displaymath}
+H=
+\begin{pmatrix}
+  -a &-0 &-1 &0 &0 &0 &ar &0 &r \\
+  0 &0 &0 &-a &-0 &-1 & 0& 0 &0 \\
+  -c &-b^2/a& -1& 0& 0& 0 &0& 0& 0 \\
+  0 &0 &0 &-c &-b^2/a &-1 &cr &rb^2/a& r\\
+  a &0 &-1& 0& 0 &0 & ar &0 &-r \\
+  0 &0 &0 &a &0 &-1 &0 &0 &0\\
+  -c &b^2/a& -1& 0& 0& 0& 0& 0& 0 \\
+  0 &0 &0 &-c &b^2/a &-1 &-rc &rb^2/ar &-r
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 22.45ex; vertical-align: -10.68ex; " SRC="img76.svg"
+ ALT="$\displaystyle H=
+\begin{pmatrix}
+-a &amp;-0 &amp;-1 &amp;0 &amp;0 &amp;0 &amp;ar &amp;0 &amp;r \\
+0 &amp;0 &amp;0 &amp;-...
+...&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0 \\
+0 &amp;0 &amp;0 &amp;-c &amp;b^2/a &amp;-1 &amp;-rc &amp;rb^2/ar &amp;-r
+\end{pmatrix}$">
+</DIV><P></P>
+
+<P>
 
 <DIV class="CENTER">
   <IMG
-  WIDTH="621" HEIGHT="452" STYLE=""
- SRC="./satelliteinterference.png"
- ALT="Image satelliteinterference">
+  WIDTH="621" HEIGHT="319" STYLE=""
+ SRC="./homographydrawing.png"
+ ALT="Image homographydrawing">
 
 </DIV>
 
 <P>
-Let us study a faded signal in an omnidirectional satellite receiver sent by an earth transmitter. We consider that the transmitter (TX) is sending a constant <A ID="tex2html79"
-  HREF="https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation">QAM</A>
-symbol, <SPAN  CLASS="textit">i.e.</SPAN>, the TX <A ID="tex2html80"
-  HREF="https://en.wikipedia.org/wiki/Baseband">baseband signal</A>
-is given by
-<P></P>
-<DIV CLASS="displaymath"><!-- MATH
- \begin{equation}
-S_{\text{TX}} = Ae^{-2 i \pi \theta},  \tag{1}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 2.76ex; vertical-align: -0.57ex; " SRC="img95.svg"
- ALT="$\displaystyle S_{\text{TX}} = Ae^{-2 i \pi \theta},$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(1)</TD></TR>
-</TABLE></DIV>
-<P></P>
-for some <!-- MATH
- $\theta \in [0,1]$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img96.svg"
- ALT="$\theta \in [0,1]$"></SPAN> and <!-- MATH
- $A \in \mathbb{R}_+$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.37ex; vertical-align: -0.66ex; " SRC="img97.svg"
- ALT="$A \in \mathbb{R}_+$"></SPAN>. The <A ID="tex2html81"
-  HREF="https://en.wikipedia.org/wiki/Passband">passband signal</A>
-experiences <A ID="tex2html82"
-  HREF="https://en.wikipedia.org/wiki/Fading">fading</A>
-due to terrestrial obstacles. We use a model where <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img98.svg"
- ALT="$100$"></SPAN> scatterer objects are <A ID="tex2html83"
-  HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson distributed </A>
-inside a circular area with a diameter of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img99.svg"
- ALT="$180$"></SPAN> m. The phases of the scattered signals are independently uniformly random. Initially, the satellite, which is moving at its <A ID="tex2html84"
-  HREF="https://en.wikipedia.org/wiki/Orbital_speed">orbital speed</A>, is in the <A ID="tex2html85"
-  HREF="https://en.wikipedia.org/wiki/Zenith">zenith</A>
-w.r.t. the earth transmitter. The receiver's (RX) baseband signal is a linear combination of the <A ID="tex2html86"
-  HREF="https://en.wikipedia.org/wiki/Digital_down_converter">down-conversions</A>
-of the scattered, <A ID="tex2html87"
-  HREF="https://en.wikipedia.org/wiki/Doppler_effect">Doppler shifted</A>
-and <A ID="tex2html88"
-  HREF="https://en.wikipedia.org/wiki/Attenuation">attenuated</A>
-passband signal components, and it is given by
-<P></P>
-<DIV CLASS="displaymath"><!-- MATH
- \begin{equation}
-S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_m }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
-  }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta}, \tag{2}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 7.68ex; vertical-align: -3.40ex; " SRC="img100.svg"
- ALT="$\displaystyle S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \...
-...
-}{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta},$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(2)</TD></TR>
-</TABLE></DIV>
-<P></P>
-where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img101.svg"
- ALT="$l(d_i)$"></SPAN> is the path-loss function at distance <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.50ex; vertical-align: -0.78ex; " SRC="img102.svg"
- ALT="$d_j$"></SPAN> from the scatterer <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.21ex; vertical-align: -0.57ex; " SRC="img103.svg"
- ALT="$j$"></SPAN>, <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img104.svg"
- ALT="$d_0$"></SPAN> is the direct-path distance to the transmitter, <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img105.svg"
- ALT="$K$"></SPAN> is the parameter that determines the energy ratio of the direct-path (<A ID="tex2html89"
-  HREF="https://en.wikipedia.org/wiki/Line-of-sight_propagation">LOS</A>) component and the scattered paths, and <!-- MATH
- $\tau_j(t) = d_j(t)/c$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.63ex; vertical-align: -0.78ex; " SRC="img106.svg"
- ALT="$\tau_j(t) = d_j(t)/c$"></SPAN> is the propagation delays restricted by the speed of light <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img107.svg"
- ALT="$c$"></SPAN>, which is dependent on time <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img108.svg"
- ALT="$t$"></SPAN> as the satellite moves, and <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img109.svg"
- ALT="$f_m$"></SPAN> is the carrier frequency.
-
-<P>
-Given this model, we are interested in the time scale during which <!-- MATH
- $S_{\text{RX}}(\cdot)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img110.svg"
- ALT="$S_{\text{RX}}(\cdot)$"></SPAN> varies, <SPAN  CLASS="textit">i.e.</SPAN>, the <A ID="tex2html90"
-  HREF="https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)">coherence time</A>. The coherence time depends on the Doppler shift, and the satellite's orbital speed is given by
-<P></P>
-<DIV CLASS="displaymath"><!-- MATH
- \begin{equation}
-v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 7.27ex; vertical-align: -2.87ex; " SRC="img111.svg"
- ALT="$\displaystyle v = \sqrt{\frac{GM}{h + R_{\oplus}}},$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(3)</TD></TR>
-</TABLE></DIV>
-<P></P>
-where <!-- MATH
- $GM \approx 3.9 \cdot 10^{14}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img112.svg"
- ALT="$GM \approx 3.9 \cdot 10^{14}$"></SPAN>m<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img113.svg"
- ALT="$^3/$"></SPAN>s<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img114.svg"
- ALT="$^2$"></SPAN>, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img115.svg"
- ALT="$7$"></SPAN> km/s at <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img116.svg"
- ALT="$h=600$"></SPAN> km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower <A ID="tex2html91"
-  HREF="https://en.wikipedia.org/wiki/Horizontal_coordinate_system">elevation angles</A>. In our model, the scatterers were distributed in an area of diameter <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img99.svg"
- ALT="$180$"></SPAN> m below the satellite, and the maximum Doppler shift initially is <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img117.svg"
- ALT="$50$"></SPAN> Hz for <!-- MATH
- $f_m = 12 \cdot 10^{9}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.57ex; vertical-align: -0.57ex; " SRC="img118.svg"
- ALT="$f_m = 12 \cdot 10^{9}$"></SPAN>; hence, the Doppler spread is <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img119.svg"
- ALT="$D_s = 100$"></SPAN> Hz. A small estimate for the coherence time is given by
-<P></P>
-<DIV CLASS="displaymath"><!-- MATH
- \begin{equation}
-T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.22ex; vertical-align: -2.06ex; " SRC="img120.svg"
- ALT="$\displaystyle T_c = \frac{1}{8 D_s} \approx 10^{-3}$">&nbsp; &nbsp;s<IMG
- STYLE="height: 0.48ex; vertical-align: -0.12ex; " SRC="img121.svg"
- ALT="$\displaystyle .$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(4)</TD></TR>
-</TABLE></DIV>
-<P></P>
-The satellite moves about <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img122.svg"
- ALT="$8$"></SPAN> meters during this period.
-
-<P>
-The following figures illustrate the RX baseband signal changing in time while the satellite moves. As expected, the variance in the signal strength is larger in the Rayleigh faded case.
-
-<P>
-
-<DIV class="CENTER"><A ID="586"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-The baseband signal with partial LOS <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img123.svg"
- ALT="$K=10$"></SPAN>.</CAPTION>
-<TR><TD><IMG
-  WIDTH="621" HEIGHT="490" STYLE=""
- SRC="./basebandgifK10.gif"
- ALT="Image basebandgifK10"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-
-<DIV class="CENTER"><A ID="590"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-The baseband signal under Rayleigh fading <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img124.svg"
- ALT="$K=0$"></SPAN>.</CAPTION>
-<TR><TD><IMG
-  WIDTH="621" HEIGHT="490" STYLE=""
- SRC="./basebandgifK0.gif"
- ALT="Image basebandgifK0"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-Here is the Octave code:
-
-<P>
+Here is a GNU Octave code:
 <PRE>
-function signals = satellite_baseband_simulation()
-  pkg load statistics
-  close all;
-  clear all;
-  clear imread;
-  clear imwrite;
+%%Changes ellipses with parameters a &gt; b  perspective to a sphere of radius r centered in origo. Vectors to be transformed are given in 2x1000 matrix refc.
 
-  h = 600*1000; #Altitude of satellites.
-  K = 0; #Rician parameter.
-  t = 0; #Initial time.
-  [refs bbsignals] = scatteredsignals(K);  #Random baseband signals &rdquo;bbsignals' and the scatterer-obstacle's locations in 'refs'.
-  signal = RXbaseband(refs, bbsignals);
-  N = 200;
-  history =[];
-  filename = 'basebandgif.gif';
-  if(exist(filename))
-    delete(filename);
+function points = homography(refc, a,b,r)
+  c = sqrt(a^2 - b^2);
+  %%Construct the homography matrix.
+  X1 = [[-a -0 -1 0 0 0 a*r 0*r r]; [0 0 0 -a -0 -1 a*0 0*0 0]];
+  X2 = [[-c -b^2/a -1 0 0 0 c*0 b^2/a*0 0]; [0 0 0 -c -b^2/a -1 c*r b^2/a*r r]];
+  X3 = [[a 0 -1 0 0 0 -a*-r 0*-r -r]; [0 0 0 a -0 -1 -a*0 0*0 0]];
+  X4 = [[-c b^2/a -1 0 0 0 c*0 -b^2/a*0 0]; [0 0 0 -c b^2/a -1 c*-r b^2/a*r -r]];
+  P = [X1; X2; X3; X4];
+  [U,S,V] = svd(P); %Singular value composition.
+  h = V(:,9);
+  H = reshape(h, 3, 3)';
+  points = [];
+  for point = refc
+    homopoint = [point; 1]; %Point presented in homogeneous coordinates.
+    homopoint = H*homopoint;
+    homopoint = [homopoint(1)/homopoint(3); homopoint(2)/homopoint(3)];
+    points = [points homopoint];
   end
-
-
-  for iii = 1 : N
-    ##Observe the progress.
-    if(mod(iii,10) == 0)
-      iii
-    end
-    refs = rotateearth(refs); #Rotate Earth.
-    signal = RXbaseband(refs, bbsignals); #New received baseband signal
-    history = [history [real(signal); imag(signal)]]; #History of the signals.    
-    ##Write GIF.
-    quiver(0,0,real(signal), imag(signal));
-    hold on;
-    plot(history(1,:), history(2,:))
-    axis([[-0.1, 0.1], [-0.1, 0.1]]);
-    t = t + 1/(4*8*100); #Time hop. t = 1/(8*300) is the initial coherence time of the example.
-     text(0.03, 0.03, mat2str(t, 3), 'fontsize',25);
-    text(0.075, 0.03, 's', 'fontsize',25);
-    frame = getframe();
-    imwrite(frame.cdata, filename,'gif','writemode','append','DelayTime',0.05, 'Compression','lzw')
-    hold off;
-  end  
-end
-
-
-##Returns a table of 101 (1 LOS signal and 100 signals from the scattered paths) randomly phased complex baseband signal symbols each corresponding to one of a obstacle location given in 'refs'. 'K' is the Rician parameter.
-function [refs, signals] = scatteredsignals(K)
-  ##First, generate the Poisson distributed random obstacle locations.
-  refs = [0; 0]; #LOS component.
-  yMin = 1-0.0000000001; yMax = 1;
-  xMin = -pi; xMax = pi;
-  xDelta = xMax - xMin; yDelta = yMax - yMin; #Rectangle dimensions
-  numbPoints =100;    #Number of points.
-  x = xDelta*(rand(numbPoints,1)) + xMin;    #Pick points from uniform distribution
-  y = yDelta*(rand(numbPoints,1)) + yMin;    
-  refs = [refs [pi/2-asin(y)' ; x'] ]; #Map referencepoints to spherical coordinates
-  A = 30000; #Amplitude.
-  signals = [A*sqrt(K/(K+1)).*exp(-rand(1,1).*i*2*pi)];
-  signals = [signals A/(sqrt(100)*sqrt(1+K)).*exp(-rand(1,length(refs(1,:))-1).*i*2*pi)];
-end
-
-
-##Derives the received baseband signal.
-function bb = RXbaseband(refs, signals)
-  R = 6378*1000; #Radius of Earth in m.
-  h = 600*1000; #Altitude of the satellite.
-  d = @(gamma) sqrt((cos(gamma).*(R+h)-R).^2+(sin(gamma).*(R+h)).^2); ##Distance to the satellites in m.
-  c = 299792458; ##Speed of light.
-  if(!isempty(refs))
-    a = 1./d(refs(1,:));
-    tau  = d(refs(1,:))/c;
-  else
-    a = 0;
-    tau = 0;
-  end
-  fm = 12*10^9; ##Modulation frequency.
-  ab = a.*exp(-i*2*pi*tau.*fm); ##Received individual signals.
-  bb = sum(ab.*signals); ##Aggregate received signal.
-end
-
-##Rotates the positions in 'refs' as the satellite "moves". In this model, the satellite stays still at (0,0) but the Earth moves.
-function refs = rotateearth(refs)
-  t = 1/(4*8*100); #Time hop in seconds.
-  h= 600*1000; #Altitude of the satellite.
-  R = 6378*1000; #Radius of Earth.
-  GM = 3.986*10^14; #Gravitational constant.
-  orbitalspeed = sqrt(GM/(h + R)); #Satellite speed in m/s.
-  angularspeed = orbitalspeed/(h + R); #Angular speed of the satellite.
-  rotation = angularspeed*t; #Rotation of Earth.
-  eucpos  = pol2euc(refs); #Transform the polar coordinates to euclidean coordinates.
-  newpos = [[1 0 0]; [0 cos(rotation) -sin(rotation)]; [0 sin(rotation) cos(rotation)]]*eucpos; #Rotation about x-axis.  
-  refs = euc2pol(newpos); #Back to the polaroordinates.
-end
-
-
-function p  = euc2pol(e)
-  R = 6378*1000; #Radius of Earth.
-  p = [acos(e(3,:)./R); (e(2,:) &gt;= 0).*atan2(e(2,:),e(1,:)) + ...
-			(e(2,:) &lt; 0).*(atan2(e(2,:),e(1,:)) + 2*pi)]; #Polar coordinates from the given Euclidean coordinates in 'e'..
-end
-
-function e = pol2euc(p)
-  R= 6378*1000; #Radius of Earth.
-  e = [R*cos(p(2,:)).*sin(p(1,:));...
-       R*sin(p(2,:)).*sin(p(1,:));...
-       R*cos(p(1,:))]; #Euclidean coordinates from the given polar coordinates in 'p'.
+  figure(1)
+  plot(points(1,:), points(2,:), 'b','linewidth',10);
 end
 </PRE>
+
+<P>
+In the following, we are rotating a &ldquo;pyramid&rdquo;. It can be seen how the homography mapping can be interpreted as a change of perspective.
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="490" STYLE=""
+ SRC="./gifu2.gif"
+ ALT="Image gifu2">
+
+</DIV>
+
+<P>
 References:
 
 <UL>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005.
-
-<P>
+<LI><A ID="tex2html86"
+  HREF="https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog">Stack exchange</A>
 </LI>
 </UL>
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node23.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node21.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node21.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html203"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node23.html">Blog posts 2024</A>
-<B> Up:</B> <A
- HREF="node21.html">Blog posts 2023</A>
-<B> Previous:</B> <A
- HREF="node21.html">Blog posts 2023</A>
- &nbsp; <B>  <A ID="tex2html204"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+
+<P>
+<BR><HR>
 
 </BODY>
 </HTML>

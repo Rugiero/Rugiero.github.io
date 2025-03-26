@@ -3,11 +3,11 @@
 
 
 $key = q/eq:pollog/;
-$external_labels{$key} = "$URL/" . q|node24.html|; 
+$external_labels{$key} = "$URL/" . q|node27.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/line:22/;
-$external_labels{$key} = "$URL/" . q|node20.html|; 
+$external_labels{$key} = "$URL/" . q|node23.html|; 
 $noresave{$key} = "$nosave";
 
 1;
