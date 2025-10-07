@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
+<TITLE>May – Digital to analog modulation</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -23,12 +23,12 @@
  HREF="node21.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node16.html">
+ HREF="node17.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node19.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html221"
+<A ID="tex2html225"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,74 +36,79 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node21.html">July Summing the signal</A>
+ HREF="node21.html">June Gaussian vs. impulsive</A>
 <B> Up:</B> <A
- HREF="node16.html">Blog posts 2022</A>
+ HREF="node17.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node19.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html222"
+ HREF="node19.html">February Voronoi tesselation on</A>
+ &nbsp; <B>  <A ID="tex2html226"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00044000000000000000">
-June&mdash;Gaussian vs. impulsive noise</A>
+<H2><A ID="SECTION00043000000000000000">
+May – Digital to analog modulation</A>
 </H2>
-
-<P>
-Noise is often modeled to have a <A ID="tex2html76"
-  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
-waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html77"
-  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
-events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html78"
-  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
-with significant mass in the tail distribution. 
-
-<P>
-The <A ID="tex2html79"
-  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable distributions</A>
-are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
- $\alpha = 2$
+Digital signal consists of values at discrete times, whereas analog signal is continuous in time <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img36.svg"
+ ALT="$t$"></SPAN>. As the orthogonal set of <A ID="tex2html75"
+  HREF="https://en.wikipedia.org/wiki/Sinc_function">sinc functions</A>
+<P><!-- MATH
+ \begin{displaymath}
+\{t \mapsto \text{sinc}(F_s t - n)\}_n,
+\end{displaymath}
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img45.svg"
- ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
- $\alpha \leq 1$
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
+ ALT="$\displaystyle \{t \mapsto$">&nbsp; &nbsp;sinc<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ ALT="$\displaystyle (F_s t - n)\}_n,
+$">
+</DIV><P></P>
+spans the space of signals of bandwidth <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img14.svg"
+ ALT="$F_s/2$"></SPAN>, an analog signal can be (uniquely) produced from a digital signal of length <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img12.svg"
+ ALT="$N$"></SPAN> 
+<P><!-- MATH
+ \begin{displaymath}
+\{ x[n]\}_{n=0}^{N-1}
+\end{displaymath}
  -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img46.svg"
- ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.95ex; vertical-align: -0.74ex; " SRC="img39.svg"
+ ALT="$\displaystyle \{ x[n]\}_{n=0}^{N-1}
+$">
+</DIV><P></P>
+as a superposition of the sinc basis-functions
+<P><!-- MATH
+ \begin{displaymath}
+S(t) =\sum_{n = 0}^{N-1} x[n]\text{sinc}(F_s t - n),
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 7.40ex; vertical-align: -3.06ex; " SRC="img40.svg"
+ ALT="$\displaystyle S(t) =\sum_{n = 0}^{N-1} x[n]$">sinc<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
+ ALT="$\displaystyle (F_s t - n),
+$">
+</DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img13.svg"
+ ALT="$F_s$"></SPAN> is the sampling rate of the digital signal.
 
 <P>
-Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
-
-<P>
-In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
- ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
- ALT="$\alpha =1$"></SPAN>. 
+The following GNU Octave function produces the analog signal from a given digital signal
 
 <P>
 <PRE>
-pkg load statistics
-
-clear all;
-close all;
-
 %%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
 function xb = digitaltoanalog(T, digitalsignal, Fs)
   xb = [];
@@ -111,31 +116,43 @@ function xb = digitaltoanalog(T, digitalsignal, Fs)
     xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
   end
 end
+</PRE>
 
+<P>
+The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img42.svg"
+ ALT="$x$"></SPAN>, and modulates the sampled digital signal back to an analog signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img43.svg"
+ ALT="$S$"></SPAN>. As the <A ID="tex2html76"
+  HREF="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist rate</A>
+restricts the bandwidth of the signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img43.svg"
+ ALT="$S$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img14.svg"
+ ALT="$F_s/2$"></SPAN>, information is lost in the sampling stage, because the original rectangle train has an infinite bandwidth.
 
-%%Inverse of the alpha stable CDF with alpha = 1.
-invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
-%%Generate N Alpha-stable samples.
-N = 100;
-alphasamples = invalphaCDF(unifrnd(0,1,1,N));
+<P>
+<PRE>
+pkg load signal;
+close all;
+clear all;
 
-%%Generate normal samples.
-normalsamples = normrnd(0,1,1,N);
-%%Convert to analog signal.
-T = 1 : 0.1 : N;
-alphasamples = digitaltoanalog(T, alphasamples, 1);
-normalsamples = digitaltoanalog(T, normalsamples, 1);
+input  = @(t) pulstran(t,[0,1,5,7,9],"rectpuls") %%The original analog signal at time t.
 
-alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
-normalsamples = normalsamples/(mean(abs(normalsamples)));
-figure(1)
-plot(T, alphasamples)
-legend('Alpha-stable noise')
-axis([0 100 -15 15])
-figure(2)
-plot(T, normalsamples)
-legend('Gaussian noise')
-axis([0 100 -15 15])
+Fs = 5; %Sampling rate.
+t = 10 %Time length of the signal.
+Ts = 0 : 1/Fs : t; %Sampling time instances.
+x =  input(Ts); %Sampled values, i.e. the digital signal.
+
+Ta = linspace(0, t, 1000); %Analog signal time instances for the plot.
+S = digitaltoanalog(Ta, x, Fs); %Modulated analog signal.
+
+%Plot.
+plot(Ta, input(Ta), 'color', 'r');
+hold on;
+plot(Ts, x, 'x', 'color', 'r')
+plot(Ta, S, 'color', 'b');
+legend( 'Original analog signal','Sampled digital signal', 'Rerproduced analog signal')
 </PRE>
 
 <P>
@@ -143,70 +160,21 @@ axis([0 100 -15 15])
 <DIV class="CENTER">
   <IMG
   WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./alphastablenoise.png"
- ALT="Image alphastablenoise">
+ SRC="./rectangletrain.png"
+ ALT="Image rectangletrain">
 
 </DIV>
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./gaussiannoise.png"
- ALT="Image gaussiannoise">
-
-</DIV>
-
-<P>
-Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
-
-<P>
-It is also interesting to compare the audiolized noise signals:
-<A ID="tex2html80"
-  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
 
 <P>
 References:
 
 <UL>
-<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
-</LI>
-<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
-</LI>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005. Print.
+<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press, 2005. Print.
 </LI>
 </UL>
 
 <P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node21.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node16.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node19.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html221"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node21.html">July Summing the signal</A>
-<B> Up:</B> <A
- HREF="node16.html">Blog posts 2022</A>
-<B> Previous:</B> <A
- HREF="node19.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html222"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<BR><HR>
 
 </BODY>
 </HTML>
