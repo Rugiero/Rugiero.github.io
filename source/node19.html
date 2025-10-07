@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>September&mdash;Homography</TITLE>
-<META NAME="description" CONTENT="September&mdash;Homography">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>February&mdash;Voronoi tesselation on a sphere</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -27,138 +23,87 @@
  HREF="node20.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="node17.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node18.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html196"
+<A ID="tex2html223"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node20.html">December Asymptotic decay rate</A>
+ HREF="node20.html">May – Digital to</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="node17.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node18.html">July Summing the signal</A>
- &nbsp; <B>  <A ID="tex2html197"
+ HREF="node18.html">January Inverse of a</A>
+ &nbsp; <B>  <A ID="tex2html224"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00045000000000000000">
-September&mdash;Homography</A>
+<H2><A ID="SECTION00042000000000000000">
+February&mdash;Voronoi tesselation on a sphere</A>
 </H2>
 
 <P>
-<A ID="tex2html70"
-  HREF="https://en.wikipedia.org/wiki/Homography">Homography</A>
-can be used to &ldquo;change the perspective&rdquo; of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than <!-- MATH
- $90 \degree$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img53.svg"
- ALT="$90 \degree$"></SPAN>, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.05ex; vertical-align: -0.12ex; " SRC="img54.svg"
- ALT="$H$"></SPAN> transforms an <A ID="tex2html71"
-  HREF="https://en.wikipedia.org/wiki/Ellipse">ellipse</A>
-of parameters <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img55.svg"
- ALT="$a$"></SPAN> and <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.07ex; vertical-align: -0.12ex; " SRC="img56.svg"
- ALT="$b$"></SPAN> to a circle of radius <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img8.svg"
- ALT="$r$"></SPAN> so that the right-hand side focus point maps to the origin.
-<P><!-- MATH
- \begin{displaymath}
-H=
-\begin{pmatrix}
-  -a &-0 &-1 &0 &0 &0 &ar &0 &r \\
-  0 &0 &0 &-a &-0 &-1 & 0& 0 &0 \\
-  -c &-b^2/a& -1& 0& 0& 0 &0& 0& 0 \\
-  0 &0 &0 &-c &-b^2/a &-1 &cr &rb^2/a& r\\
-  a &0 &-1& 0& 0 &0 & ar &0 &-r \\
-  0 &0 &0 &a &0 &-1 &0 &0 &0\\
-  -c &b^2/a& -1& 0& 0& 0& 0& 0& 0 \\
-  0 &0 &0 &-c &b^2/a &-1 &-rc &rb^2/ar &-r
-\end{pmatrix}
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 22.68ex; vertical-align: -10.68ex; " SRC="img57.svg"
- ALT="$\displaystyle H=
-\begin{pmatrix}
--a &amp;-0 &amp;-1 &amp;0 &amp;0 &amp;0 &amp;ar &amp;0 &amp;r \\
-0 &amp;0 &amp;0 &amp;-...
-...&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0 \\
-0 &amp;0 &amp;0 &amp;-c &amp;b^2/a &amp;-1 &amp;-rc &amp;rb^2/ar &amp;-r
-\end{pmatrix}$">
-</DIV><P></P>
+Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The <A ID="tex2html73"
+  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, has applications, <SPAN  CLASS="textit">e.g.</SPAN>, in wireless communications. 
 
 <P>
 
 <DIV class="CENTER">
   <IMG
-  WIDTH="621" HEIGHT="319" STYLE=""
- SRC="./homographydrawing.png"
- ALT="Image homographydrawing">
+  WIDTH="621" HEIGHT="467" STYLE=""
+ SRC="./voronoionsphere.png"
+ ALT="Image voronoionsphere">
 
 </DIV>
 
 <P>
-Here is a GNU Octave code:
-<PRE>
-%%Changes ellipses with parameters a &gt; b  perspective to a sphere of radius r centered in origo. Vectors to be transformed are given in 2x1000 matrix refc.
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
 
-function points = homography(refc, a,b,r)
-  c = sqrt(a^2 - b^2);
-  %%Construct the homography matrix.
-  X1 = [[-a -0 -1 0 0 0 a*r 0*r r]; [0 0 0 -a -0 -1 a*0 0*0 0]];
-  X2 = [[-c -b^2/a -1 0 0 0 c*0 b^2/a*0 0]; [0 0 0 -c -b^2/a -1 c*r b^2/a*r r]];
-  X3 = [[a 0 -1 0 0 0 -a*-r 0*-r -r]; [0 0 0 a -0 -1 -a*0 0*0 0]];
-  X4 = [[-c b^2/a -1 0 0 0 c*0 -b^2/a*0 0]; [0 0 0 -c b^2/a -1 c*-r b^2/a*r -r]];
-  P = [X1; X2; X3; X4];
-  [U,S,V] = svd(P); %Singular value composition.
-  h = V(:,9);
-  H = reshape(h, 3, 3)';
-  points = [];
-  for point = refc
-    homopoint = [point; 1]; %Point presented in homogeneous coordinates.
-    homopoint = H*homopoint;
-    homopoint = [homopoint(1)/homopoint(3); homopoint(2)/homopoint(3)];
-    points = [points homopoint];
-  end
-  figure(1)
-  plot(points(1,:), points(2,:), 'b','linewidth',10);
+<P>
+<PRE>
+%%Create Voronoi tesselation around Poisson points on a Sphere.
+
+clear all;
+close all;
+
+addpath(fullfile(cd,'rbfsphere'));
+density = 100;
+X = poissononsphere(density)'; %Poisson points in spherical coordinates.
+voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
+
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
 end
 </PRE>
-
-<P>
-In the following, we are rotating a &ldquo;pyramid&rdquo;. It can be seen how the homography mapping can be interpreted as a change of perspective.
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="490" STYLE=""
- SRC="./gifu2.gif"
- ALT="Image gifu2">
-
-</DIV>
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html72"
-  HREF="https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog">Stack exchange</A>
+<LI><A ID="tex2html74"
+  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
 </LI>
 </UL>
 

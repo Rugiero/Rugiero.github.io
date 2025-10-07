@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>March&mdash;Signal propagation in a city</TITLE>
-<META NAME="description" CONTENT="March&mdash;Signal propagation in a city">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>February&mdash;Controlling your passwords with pass</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -27,87 +23,144 @@
  HREF="node11.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node9.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html172"
+<A ID="tex2html198"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node11.html">May Rayleigh fading audiolized</A>
+ HREF="node11.html">March Signal propagation in</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node9.html">February Controlling your passwords</A>
- &nbsp; <B>  <A ID="tex2html173"
+ HREF="node9.html">January Poisson process on</A>
+ &nbsp; <B>  <A ID="tex2html199"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00033000000000000000">
-March&mdash;Signal propagation in a city</A>
+<H2><A ID="SECTION00032000000000000000">
+February&mdash;Controlling your passwords with pass</A>
 </H2>
-Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that <A ID="tex2html22"
-  HREF="https://en.wikipedia.org/wiki/Attenuation">attenuate</A>, <A ID="tex2html23"
-  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">reflect</A>, <A ID="tex2html24"
-  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">refract</A>
-and <A ID="tex2html25"
-  HREF="https://en.wikipedia.org/wiki/Diffraction">diffract</A>
-the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver&mdash;this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to <A ID="tex2html26"
-  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>
-as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow <A ID="tex2html27"
-  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>
-statistics.
-
-<P>
-I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
-
-<P>
-The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. These kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
 
 <P>
 
-<DIV class="CENTER"><A ID="148"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-The white boxes represent buildings, and the little white circle is the transmitter. One can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the phases of the incoming reflected waves.</CAPTION>
-<TR><TD><IMG
-  WIDTH="621" HEIGHT="415" STYLE=""
- SRC="./sin.gif"
- ALT="Image sin"></TD></TR>
-</TABLE>
-</DIV>
+<UL>
+<LI>Install the application in the terminal. 
+<BR><PRE>
+sudo apt install pass
+</PRE>
+</LI>
+<LI>Check for the existing GPG keys. 
+<BR><PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>If no keys were found generate a key pair. 
+<BR><PRE>
+gpg --generate-key
+</PRE>
+</LI>
+<LI>Copy the name of the key and initialize pass.
+<BR><PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
+</LI>
+<LI>Generate a password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+List the passwords.
+<PRE>
+pass
+</PRE>
+Copy a password to the clipboard. 
+<BR><PRE>
+pass keyfolder/newkey -c
+</PRE>
+For more commands:
+<PRE>
+man pass
+</PRE>
+</LI>
+</UL>
 
 <P>
+Connect Pass to Git and it is easy to keep track of passwords with multiple machines.
 
-<DIV class="CENTER"><A ID="152"></A>
-<TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-The interference power field develops in time as the interfering transmitters are moving in random directions at each time step. Red color represents the highest mean power of interference, and deep blue represents the absence of any interference. We assume  Rician fading. The interference in the red occurrences will reduce the performance remarkably.</CAPTION>
-<TR><TD><IMG
-  WIDTH="621" HEIGHT="493" STYLE=""
- SRC="./rician.gif"
- ALT="Image rician"></TD></TR>
-</TABLE>
-</DIV>
+<UL>
+<LI>Export your public and private key to a file with 
+<BR><PRE>
+  gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
+<BR></LI>
+<LI>Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
+<BR><PRE>
+gpg --import public.key
+gpg --import private.key
+</PRE>
+</LI>
+<LI>After importing the keys to a new machine you can list the keys:
+<PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>and initialize Pass with
+<PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+</LI>
+<LI>First, remember to <A ID="tex2html18"
+  HREF="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">add your public SSH key to GitHub</A>. We will initialize the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
+<PRE>
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
+</PRE>
+</LI>
+<LI>Get password data from the server (from a non-empty repository, otherwise skip)
+<PRE>
+pass git pull origin master --allow-unrelated-histories
+pass git commit -am "firstcommit"
+</PRE>
+If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconcileing and repeat the command.
+</LI>
+<LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
+<BR><PRE>
+pass git push --set-upstream origin master
+</PRE>
+</LI>
+<LI>From here on you can use the familiar git commands. 
+<BR><PRE>
+pass git pull 
+pass git push
+</PRE>
+It can be the case that you have to raise the trust level of the public key. For that, check <A ID="tex2html19"
+  HREF="https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user">this</A>
+article. 
+</LI>
+</UL>
+Stay safe :)
 
 <P>
 References:
 
-<UL>
-<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html28"
-  HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
 <P>
-</LI>
-<LI>Nicolae Cindea (2021).   <A ID="tex2html29"
-  HREF="https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)">Movie to GIF Converter</A>, MATLAB Central File Exchange. Retrieved June 14, 2021. 
+
+<UL>
+<LI><A ID="tex2html20"
+  HREF="https://www.passwordstore.org/">Password Store</A>
 </LI>
 </UL>
 
@@ -119,25 +172,25 @@ References:
  HREF="node11.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node9.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html172"
+<A ID="tex2html198"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node11.html">May Rayleigh fading audiolized</A>
+ HREF="node11.html">March Signal propagation in</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node9.html">February Controlling your passwords</A>
- &nbsp; <B>  <A ID="tex2html173"
+ HREF="node9.html">January Poisson process on</A>
+ &nbsp; <B>  <A ID="tex2html199"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

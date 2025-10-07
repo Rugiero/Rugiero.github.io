@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>May&mdash;Rayleigh fading audiolized</TITLE>
-<META NAME="description" CONTENT="May&mdash;Rayleigh fading audiolized">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>March&mdash;Signal propagation in a city</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -27,193 +23,87 @@
  HREF="node12.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node10.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html174"
+<A ID="tex2html200"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node12.html">June Why does MIMO</A>
+ HREF="node12.html">May Rayleigh fading audiolized</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node10.html">March Signal propagation in</A>
- &nbsp; <B>  <A ID="tex2html175"
+ HREF="node10.html">February Controlling your passwords</A>
+ &nbsp; <B>  <A ID="tex2html201"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00034000000000000000">
-May&mdash;Rayleigh fading audiolized</A>
+<H2><A ID="SECTION00033000000000000000">
+March&mdash;Signal propagation in a city</A>
 </H2>
+Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that <A ID="tex2html23"
+  HREF="https://en.wikipedia.org/wiki/Attenuation">attenuate</A>, <A ID="tex2html24"
+  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">reflect</A>, <A ID="tex2html25"
+  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">refract</A>
+and <A ID="tex2html26"
+  HREF="https://en.wikipedia.org/wiki/Diffraction">diffract</A>
+the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver&mdash;this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to <A ID="tex2html27"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>
+as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow <A ID="tex2html28"
+  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>
+statistics.
 
 <P>
-When a signal propagates through multiple paths, each signal component in each path will be in a different phase and of varying strength when received. Should there be no line-of-sight component present, the additive signal will fade according to the <A ID="tex2html33"
-  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
+I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
 
 <P>
-For example, a simple sine wave
-
-<P>
-<A ID="tex2html34"
-  HREF="https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH">wave</A>
-(links to soundcloud.com&mdash;VOLUME ALERT)
-
-<P>
-can after some multi-path propagation sound like
-
-<P>
-<A ID="tex2html35"
-  HREF="https://soundcloud.com/ilari-angervuori/ez-1/s-eQvc2PWfIJs">this</A>:
-
-<P>
-Assuming that the receiver is moving, the variation of Doppler shifts in different signal paths will cause the signal strength to vary randomly in time.
-
-<P>
-If we add some <A ID="tex2html36"
-  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>, we notice that the original signal is somehow recognizable from the
-
-<P>
-<A ID="tex2html37"
-  HREF="https://soundcloud.com/ilari-angervuori/refnoise/s-Za1jUDgCPSV">noised signal</A>
-(listen carefully, and you will hear the sine signal in the background).
-
-<P>
-but the
-
-<P>
-<A ID="tex2html38"
-  HREF="https://soundcloud.com/ilari-angervuori/eznoise/s-z4MjfqRZr6E">faded signal</A>
-<P>
-will sometimes get buried under the noise&mdash;these events are referred to as <SPAN  CLASS="textit">deep fades</SPAN>.
+The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. These kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
 
 <P>
 
-<DIV class="CENTER"><A ID="653"></A>
+<DIV class="CENTER"><A ID="156"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-The <A ID="tex2html30"
-  HREF="https://en.wikipedia.org/wiki/Envelope_(waves)">Envelope</A>
-of a multi-path faded sine signal.</CAPTION>
+The white boxes represent buildings, and the little white circle is the transmitter. One can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the phases of the incoming reflected waves.</CAPTION>
 <TR><TD><IMG
-  WIDTH="621" HEIGHT="118" STYLE=""
- SRC="./fadedsinesignal.png"
- ALT="Image fadedsinesignal"></TD></TR>
+  WIDTH="621" HEIGHT="415" STYLE=""
+ SRC="./sin.gif"
+ ALT="Image sin"></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-Here is a GNU Octave or Matlab code for the used Rayleigh simulator, which outputs the signal as audio:
-<PRE>
-%Rayleigh simulator. Jakes model. In Octave remember to load the statistics package.
 
-close all
-clear all
-
-tic
-
-N = 20; %Number multipaths.
-T = linspace(0,10000,100000); %Time.
-v = 0.001; %Speed of the receiver.
-randan = pi*rand(1,N); %Random angles w.r.t. receiver.
-rI = 1000*rand(1,N); %Random distances of the sources.
-
-%Geometrical stuff. Check for the Jakes model in the reference.
-An = @(t) (atan(sin(randan).*rI./(cos(randan).*rI-v*t))).*(cos(randan).*rI&gt;v*t)+...
-(pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI&lt;=v*t);
-phis = 2*pi.*(rand(1,N));
-wc =pi/2; %Frequency of the signal.
-Beta = 2*pi/(1/(wc/(2*pi)));
-theta = @(t) cos(An(t)).*Beta*v.*t+phis;
-
-powers = rand(1,N); %Random powers of the signals in the multipaths.
-powers = powers./sum(powers); %Normalize the powers.
-Ez = @(t) sum(powers.*cos(wc*t+theta(t)));
-EZ = []; %Faded signal.
-REF = []; %Original signal.
-NOISE = []; %Additional Gaussian noise.
-for t =T
-EZ = [EZ Ez(t)];
-REF = [REF cos(wc*t)];
-NOISE = [NOISE 0.9*stdnormal_rnd(1)];
-end
-
-%Write the audio files at sampling rate 8000.
-audiowrite('EZ.wav',EZ,8000)
-audiowrite('EZNOISE.wav',1/2*(EZ+NOISE),8000)
-audiowrite('REFNOISE.wav', 1/2*(REF+NOISE), 8000)
-
-
-toc
-plot(T,EZ)
-</PRE>
-
-<P>
-And the same in Python:
-
-<P>
-<PRE>
-  import numpy as np
-  import math
-  import matplotlib.pyplot as plt
-  import sounddevice as sd
-  import time
-
-  #Jakes Rayleigh simulator. Please check for the reference in this site for further details.
-
-  N = 20 #Number of multipaths.
-  T = np.linspace(0, 10000, 100000) #Time vector.
-  v = 0.001 #Speed of the receiver. 
-
-
-
-  randan = np.random.rand(1, N) * math.pi #Random angles w.r.t. receiver.
-  rI = np.random.rand(1, N) * 1000 #Random distances of the sources.
-  phis = np.random.rand(1, N) * 2 * math.pi 
-
-  def An(t):
-  return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * rI - v * t))) * (
-  np.cos(randan) * rI &gt; v * t
-  ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.cos(randan) * rI))) * (
-  np.cos(randan) * rI &lt;= v * t
-  )
-
-  wc = np.pi/2 #Frequency of the signal.
-  Beta = 2 * math.pi / (1 / (wc / (2 * math.pi)))
-
-def theta(t):
-    return np.cos(An(t)) * Beta * v * t +phis
-
-powers = np.random.rand(1,N)*2 #Random powers of the signals in the multipaths.
-powers = powers/np.sum(powers) #Normalize powers..
-
-def Ez(t):
-    return np.sum(powers * np.cos(wc * t + theta(t)))
-
-EZ = np.vectorize(Ez)(T)
-REF = np.vectorize(lambda time : 2*np.cos(wc * time))(T)
-
-#Play and plot.
-fs = 8000
-sd.play(EZ,fs,blocking = True)
-#sd.play(REF,fs,blocking = True)
-plt.plot(T, EZ)
-plt.show()
-</PRE>
+<DIV class="CENTER"><A ID="160"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+The interference power field develops in time as the interfering transmitters are moving in random directions at each time step. Red color represents the highest mean power of interference, and deep blue represents the absence of any interference. We assume  Rician fading. The interference in the red occurrences will reduce the performance remarkably.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="493" STYLE=""
+ SRC="./rician.gif"
+ ALT="Image rician"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
 References:
 
 <UL>
-<LI>William C. Jakes, &ldquo;Microwave Mobile Communications&rdquo;, IEEE PRESS, 1974.
+<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html29"
+  HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
+<P>
+</LI>
+<LI>Nicolae Cindea (2021).   <A ID="tex2html30"
+  HREF="https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)">Movie to GIF Converter</A>, MATLAB Central File Exchange. Retrieved June 14, 2021. 
 </LI>
 </UL>
 
@@ -225,25 +115,25 @@ References:
  HREF="node12.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node10.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html174"
+<A ID="tex2html200"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node12.html">June Why does MIMO</A>
+ HREF="node12.html">May Rayleigh fading audiolized</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node10.html">March Signal propagation in</A>
- &nbsp; <B>  <A ID="tex2html175"
+ HREF="node10.html">February Controlling your passwords</A>
+ &nbsp; <B>  <A ID="tex2html201"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

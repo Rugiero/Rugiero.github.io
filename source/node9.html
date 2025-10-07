@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>February&mdash;Controlling your passwords with pass</TITLE>
-<META NAME="description" CONTENT="February&mdash;Controlling your passwords with pass">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>January&mdash;Poisson process on a sphere</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -27,143 +23,194 @@
  HREF="node10.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html170"
+<A ID="tex2html196"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">March Signal propagation in</A>
+ HREF="node10.html">February Controlling your passwords</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">January Poisson process on</A>
- &nbsp; <B>  <A ID="tex2html171"
+ HREF="node8.html">Blog posts 2021</A>
+ &nbsp; <B>  <A ID="tex2html197"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00032000000000000000">
-February&mdash;Controlling your passwords with pass</A>
+<H2><A ID="SECTION00031000000000000000">
+January&mdash;Poisson process on a sphere</A>
 </H2>
-Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
+        The <A ID="tex2html15"
+  HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>
+can be generalized to general <A ID="tex2html16"
+  HREF="https://en.wikipedia.org/wiki/Manifold">manifolds</A>. In Particular, the Poisson process on a three-dimensional sphere surface is useful. Nicely enough, the Poisson process on a unit sphere is equivalent to the process in a two-dimensional area <!-- MATH
+ $A = [-\pi,\pi] \times [-1,1]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img2.svg"
+ ALT="$A = [-\pi,\pi] \times [-1,1]$"></SPAN> through the area-preserving mapping from <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img3.svg"
+ ALT="$A$"></SPAN> to geographical coordinates
+
+<P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+(x,y) \mapsto (1,x,\sin^{-1}(y)) \nonumber.
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.83ex; vertical-align: -0.70ex; " SRC="img4.svg"
+ ALT="$\displaystyle (x,y) \mapsto (1,x,\sin^{-1}(y)) .$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+The resulting process interpreted in geographical coordinates <!-- MATH
+ $(r,\theta,\varphi)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img5.svg"
+ ALT="$(r,\theta,\varphi)$"></SPAN> is a Poisson point process on a sphere of radius <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img6.svg"
+ ALT="$r$"></SPAN>. The following code returns a scatter plot of Poisson points on the unit sphere.
+
+<P>
+GNU Octave or Matlab:
+<PRE>
+%Plot random points on a unit sphere. Returns the points in a vector ref in cartesian coordinates
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+
+  figure(1)    %Plot
+  [X, Y, Z] = sphere;
+  surf(X,Y,Z,'EdgeColor','none','FaceColor','black');
+  hold on
+  scatter3(refc(1,:),refc(2,:),refc(3,:),10,...
+           'MarkerFaceColor','yellow',...
+           'MarkerEdgeColor','red');
+  axis equal
+end
+</PRE>
+
+<P>
+Python:
+
+<P>
+<PRE>
+import numpy as np
+import scipy.stats
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import axes3d
+
+#Rectangle dimension
+xMin = -np.pi; xMax = np.pi;
+yMin = -1; yMax = 1;
+xDelta = xMax - xMin; yDelta = yMax - yMin; #rectangle dimensions
+
+#Density parameter of the Poisson point process. Mean number of points on the sphere
+lambda0=1000; 
+
+#Simulate Poisson point process
+
+#Number of point in the area is a Poisson variable of intensity lambda0
+numbPoints = scipy.stats.poisson( lambda0 ).rvs()
+x = xDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+xMin
+y = yDelta*scipy.stats.uniform.rvs(0,1,((numbPoints,1)))+yMin
+
+#Transform to geographical coordinates
+x = x
+y = np.arcsin(y)
+#Plotting
+fig = plt.figure()
+ax = plt.axes(projection="3d")
+ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )
+plt.show()
+</PRE>
+
+<P>
+Wolfram Language:
+<PRE>
+(*lambda is the mean number of points on the unit sphere*) 
+  poissononsphere[lambda_] := 
+  Module[{nrofpoints, phi, theta, radius, refc, polarp}, 
+   nrofpoints = RandomVariate[PoissonDistribution[lambda]];
+   polarp = 
+    Table[{RandomVariate[UniformDistribution[{-Pi, Pi}]], 
+      ArcSin[RandomVariate[UniformDistribution[{-1, 1}]]]}, 
+     nrofpoints];
+   radius = 1;
+   refc = 
+    Table[{radius*Sin[polarp[[i]][[2]] + Pi/2]*
+       Cos[polarp[[i]][[1]] + Pi],
+      radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1]] + Pi],
+      radius*Cos[polarp[[i]][[2]] + Pi/2]}, {i, nrofpoints}];
+   refc
+   ];
+   ListPointPlot3D[poissononsphere[500], BoxRatios -&gt; {1, 1, 1}]
+</PRE>
 
 <P>
 
-<UL>
-<LI>Install the application in the terminal. 
-<BR><PRE>
-sudo apt install pass
-</PRE>
-</LI>
-<LI>Check for the existing GPG keys. 
-<BR><PRE>
-gpg --list-keys
-</PRE>
-</LI>
-<LI>If no keys were found generate a key pair. 
-<BR><PRE>
-gpg --generate-key
-</PRE>
-</LI>
-<LI>Copy the name of the key and initialize pass.
-<BR><PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234
-</PRE>
-where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
-</LI>
-<LI>Generate a password with 
-<BR><PRE>
-pass generate keyfolder/newkey
-</PRE>
-List the passwords.
-<PRE>
-pass
-</PRE>
-Copy a password to the clipboard. 
-<BR><PRE>
-pass keyfolder/newkey -c
-</PRE>
-For more commands:
-<PRE>
-man pass
-</PRE>
-</LI>
-</UL>
+<DIV class="CENTER"><A ID="86"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure 2:</STRONG>
+Are the stars Poisson distributed in the sky?</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="628" STYLE=""
+ SRC="./poissononsphere.jpg"
+ ALT="Image poissononsphere"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
-Connect Pass to Git and it is easy to keep track of passwords with multiple machines.
 
-<UL>
-<LI>Export your public and private key to a file with 
-<BR><PRE>
-  gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
-  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
-</PRE>
-where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
-<BR></LI>
-<LI>Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
-<BR><PRE>
-gpg --import public.key
-gpg --import private.key
-</PRE>
-</LI>
-<LI>After importing the keys to a new machine you can list the keys:
-<PRE>
-gpg --list-keys
-</PRE>
-</LI>
-<LI>and initialize Pass with
-<PRE>
-pass init ABCDEFGHIJKLMNOPQRSTUV1234
-</PRE>
-</LI>
-<LI>First, add your public SSH key to GitHub. We will initialize the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
-<PRE>
-pass git init 
-pass git remote add origin git@repo.com:myname/pass-store
-</PRE>
-</LI>
-<LI>Get password data from the server (from a non-empty repository, otherwise skip)
-<PRE>
-pass git pull origin master --allow-unrelated-histories
-pass git commit -am "firstcommit"
-</PRE>
-If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconcileing and repeat the command.
-</LI>
-<LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
-<BR><PRE>
-pass git push --set-upstream origin master
-</PRE>
-</LI>
-<LI>From here on you can use the familiar git commands. 
-<BR><PRE>
-pass git pull 
-pass git push
-</PRE>
-It can be the case that you have to raise the trust level of the public key. For that, check <A ID="tex2html18"
-  HREF="https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user">this</A>
-article. 
-</LI>
-</UL>
-Stay safe :)
+<DIV class="CENTER"><A ID="90"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure 3:</STRONG>
+Aggregate interference in a satellite. A color represents aggregate interference power at the given location. The interfering sources are considered Poisson distributed on Earth.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="452" STYLE=""
+ SRC="./interferenceenvironment.png"
+ ALT="Image interferenceenvironment"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
 References:
 
-<P>
-
 <UL>
-<LI><A ID="tex2html19"
-  HREF="https://www.passwordstore.org/">Password Store</A>
+<LI>D. J. Daley and D. Vere-Jones, The General Poisson Process in  &ldquo;An introduction to the theory of point processes&rdquo;. New York: Springer, 2003, pp. 39. 
+</LI>
+<LI>Stoyan, Dietrich. et al. &ldquo;Stochastic Geometry and Its Applications&rdquo;. 3rd ed. Chichester: Wiley, 2013. Print.
+</LI>
+<LI><A ID="tex2html17"
+  HREF="https://hpaulkeeler.com/simulating-a-poisson-point-process-on-a-sphere">H. Paul Keeler's Blog</A>
 </LI>
 </UL>
 
@@ -175,25 +222,25 @@ References:
  HREF="node10.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html170"
+<A ID="tex2html196"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node10.html">March Signal propagation in</A>
+ HREF="node10.html">February Controlling your passwords</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node8.html">January Poisson process on</A>
- &nbsp; <B>  <A ID="tex2html171"
+ HREF="node8.html">Blog posts 2021</A>
+ &nbsp; <B>  <A ID="tex2html197"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
