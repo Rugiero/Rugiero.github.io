@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.9)  26 MAR 2025 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  7 OCT 2025 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,9 +328,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 \lthtmlwrite=\write5
 (/usr/share/texmf/tex/latex/preview/preview.sty
 Package: preview 2023/01/17 13.2 (AUCTeX/preview-latex)
-(/usr/share/texlive/texmf-dist/tex/generic/luatex85/luatex85.sty
-Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
-) (/usr/share/texmf/tex/latex/preview/prtightpage.def
+(/usr/share/texmf/tex/latex/preview/prtightpage.def
 \PreviewBorder=\dimen184
 )
 \pr@snippet=\count302
@@ -1099,140 +1097,135 @@ and I'll forget about whatever was undefined.
 :tex2html_wrap_inline1961:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [128]
 
-:tex2html_wrap_inline1965:lthtmlCropMarkHeight:=12.94444pt
-
-:tex2html_wrap_inline1965:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
-[129]
-
 :tex2html_wrap_inline1967:lthtmlCropMarkHeight:=13.5pt
 
 :tex2html_wrap_inline1967:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[130]
+[129]
 
 :tex2html_wrap_indisplay1969:lthtmlCropMarkHeight:=24.54108pt
 
 :tex2html_wrap_indisplay1969:lthtmlCropMarkDepth:=11.85919pt:1ex:=4.30554pt
-[131]
+[130]
 
 :tex2html_wrap_inline1971:lthtmlCropMarkHeight:=14.14003pt
 
 :tex2html_wrap_inline1971:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[132]
+[131]
 
 :tex2html_wrap_inline1973:lthtmlCropMarkHeight:=14.14003pt
 
 :tex2html_wrap_inline1973:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[133]
+[132]
 
 :tex2html_wrap_inline1975:lthtmlCropMarkHeight:=14.14003pt
 
 :tex2html_wrap_inline1975:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[134]
+[133]
 
 :tex2html_wrap_inline1977:lthtmlCropMarkHeight:=12.44444pt
 
 :tex2html_wrap_inline1977:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[135]
+[134]
 
 :tex2html_wrap_inline1979:lthtmlCropMarkHeight:=12.94444pt
 
 :tex2html_wrap_inline1979:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[136]
+[135]
 
 :tex2html_wrap_inline1983:lthtmlCropMarkHeight:=12.44444pt
 
 :tex2html_wrap_inline1983:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[137]
+[136]
 
 :tex2html_wrap_inline1985:lthtmlCropMarkHeight:=14.14003pt
 
 :tex2html_wrap_inline1985:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
-[138]
+[137]
 
 :tex2html_wrap_inline1987:lthtmlCropMarkHeight:=12.83331pt
 
 :tex2html_wrap_inline1987:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
-[139]
+[138]
 
 :tex2html_wrap_indisplay1989:lthtmlCropMarkHeight:=19.20952pt
 
 :tex2html_wrap_indisplay1989:lthtmlCropMarkDepth:=8.3595pt:1ex:=4.30554pt
-[140]
+[139]
 
 :tex2html_wrap_indisplay1990:lthtmlCropMarkHeight:=7.05554pt
 
 :tex2html_wrap_indisplay1990:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[141]
+[140]
 
 :tex2html_wrap_inline1992:lthtmlCropMarkHeight:=12.44444pt
 
 :tex2html_wrap_inline1992:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[142]
+[141]
 
 :tex2html_wrap_inline1996:lthtmlCropMarkHeight:=12.83331pt
 
 :tex2html_wrap_inline1996:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[143]
+[142]
 
 :tex2html_wrap_inline2003:lthtmlCropMarkHeight:=12.83331pt
 
 :tex2html_wrap_inline2003:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[144]
+[143]
 
 :tex2html_wrap_inline2010:lthtmlCropMarkHeight:=12.83331pt
 
 :tex2html_wrap_inline2010:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
-[145]
+[144]
 
 :tex2html_wrap_inline2012:lthtmlCropMarkHeight:=13.5pt
 
 :tex2html_wrap_inline2012:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[146]
+[145]
 
 :tex2html_wrap_inline2014:lthtmlCropMarkHeight:=13.5pt
 
 :tex2html_wrap_inline2014:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
-[147]
+[146]
 
 :tex2html_wrap_inline2016:lthtmlCropMarkHeight:=12.94444pt
 
 :tex2html_wrap_inline2016:lthtmlCropMarkDepth:=0.39098pt:1ex:=4.30554pt
-[148]
+[147]
 
 :tex2html_wrap_indisplay2017:lthtmlCropMarkHeight:=22.51393pt
 
 :tex2html_wrap_indisplay2017:lthtmlCropMarkDepth:=12.67783pt:1ex:=4.30554pt
-[149]
+[148]
 
 :tex2html_wrap_indisplay2018:lthtmlCropMarkHeight:=22.51393pt
 
 :tex2html_wrap_indisplay2018:lthtmlCropMarkDepth:=12.67783pt:1ex:=4.30554pt
-[150]
+[149]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1107.
+(amsmath)                 on input line 1101.
 
 
 :tex2html_wrap_indisplay2019:lthtmlCropMarkHeight:=27.9001pt
 
 :tex2html_wrap_indisplay2019:lthtmlCropMarkDepth:=12.67783pt:1ex:=4.30554pt
-[151]
+[150]
 
 :tex2html_wrap_indisplay2020:lthtmlCropMarkHeight:=24.36115pt
 
 :tex2html_wrap_indisplay2020:lthtmlCropMarkDepth:=13.02782pt:1ex:=4.30554pt
-[152]
+[151]
 
 :tex2html_wrap_inline2022:lthtmlCropMarkHeight:=17.50008pt
 
 :tex2html_wrap_inline2022:lthtmlCropMarkDepth:=6.50009pt:1ex:=4.30554pt
-[153]
+[152]
 
 :tex2html_wrap_inline2024:lthtmlCropMarkHeight:=12.88889pt
 
 :tex2html_wrap_inline2024:lthtmlCropMarkDepth:=0.39098pt:1ex:=4.30554pt
-[154] (./images.aux)
+[153] (./images.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1241,12 +1234,12 @@ Package rerunfilecheck Info: File `images.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11774 strings out of 476106
- 179211 string characters out of 5793933
+ 11756 strings out of 475509
+ 178664 string characters out of 5776664
  1943975 words of memory out of 5000000
- 33483 multiletter control sequences out of 15000+600000
+ 33506 multiletter control sequences out of 15000+600000
  560695 words of font info for 47 fonts, out of 8000000 for 9000
- 59 hyphenation exceptions out of 8191
+ 395 hyphenation exceptions out of 8191
  90i,9n,93p,903b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
@@ -1261,10 +1254,10 @@ nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on images.pdf (154 pages, 199647 bytes).
+Output written on images.pdf (153 pages, 198672 bytes).
 PDF statistics:
- 756 PDF objects out of 1000 (max. 8388607)
- 568 compressed objects within 6 object streams
- 154 named destinations out of 1000 (max. 500000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 153 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

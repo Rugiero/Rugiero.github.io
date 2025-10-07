@@ -112,8 +112,8 @@ passband signal components, and it is given by
 <P></P>
 <DIV CLASS="displaymath"><!-- MATH
  \begin{equation}
-S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_m }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
-  }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta}, \tag{2}
+S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_c }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
+  }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_c }e^{-2 i \pi \theta}, \tag{2}
 \end{equation}
  -->
 <TABLE CLASS="equation" >
@@ -122,7 +122,7 @@ S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_
  STYLE="height: 7.68ex; vertical-align: -3.40ex; " SRC="img121.svg"
  ALT="$\displaystyle S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \...
 ...
-}{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta},$"></SPAN></TD>
+}{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_c }e^{-2 i \pi \theta},$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (2)</TD></TR>
 </TABLE></DIV>
@@ -148,15 +148,15 @@ where <SPAN CLASS="MATH"><IMG
  ALT="$c$"></SPAN>, which is dependent on time <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img36.svg"
  ALT="$t$"></SPAN> as the satellite moves, and <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img129.svg"
- ALT="$f_m$"></SPAN> is the carrier frequency.
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img23.svg"
+ ALT="$f_c$"></SPAN> is the carrier frequency.
 
 <P>
 Given this model, we are interested in the time scale during which <!-- MATH
  $S_{\text{RX}}(\cdot)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img130.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img129.svg"
  ALT="$S_{\text{RX}}(\cdot)$"></SPAN> varies, <SPAN  CLASS="textit">i.e.</SPAN>, the <A ID="tex2html104"
   HREF="https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)">coherence time</A>. The coherence time depends on the Doppler shift, and the satellite's orbital speed is given by
 <P></P>
@@ -168,7 +168,7 @@ v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3}
 <TABLE CLASS="equation" >
 <TR>
 <TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 7.27ex; vertical-align: -2.87ex; " SRC="img131.svg"
+ STYLE="height: 7.27ex; vertical-align: -2.87ex; " SRC="img130.svg"
  ALT="$\displaystyle v = \sqrt{\frac{GM}{h + R_{\oplus}}},$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (3)</TD></TR>
@@ -178,27 +178,27 @@ where <!-- MATH
  $GM \approx 3.9 \cdot 10^{14}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img132.svg"
+ STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img131.svg"
  ALT="$GM \approx 3.9 \cdot 10^{14}$"></SPAN>m<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img133.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img132.svg"
  ALT="$^3/$"></SPAN>s<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img134.svg"
+ STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img133.svg"
  ALT="$^2$"></SPAN>, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img135.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img134.svg"
  ALT="$7$"></SPAN> km/s at <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img136.svg"
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img135.svg"
  ALT="$h=600$"></SPAN> km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower <A ID="tex2html105"
   HREF="https://en.wikipedia.org/wiki/Horizontal_coordinate_system">elevation angles</A>. In our model, the scatterers were distributed in an area of diameter <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img120.svg"
  ALT="$180$"></SPAN> m below the satellite, and the maximum Doppler shift initially is <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img137.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img136.svg"
  ALT="$50$"></SPAN> Hz for <!-- MATH
- $f_m = 12 \cdot 10^{9}$
+ $f_c = 12 \cdot 10^{9}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.57ex; vertical-align: -0.57ex; " SRC="img138.svg"
- ALT="$f_m = 12 \cdot 10^{9}$"></SPAN>; hence, the Doppler spread is <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img139.svg"
+ STYLE="height: 2.57ex; vertical-align: -0.57ex; " SRC="img137.svg"
+ ALT="$f_c = 12 \cdot 10^{9}$"></SPAN>; hence, the Doppler spread is <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img138.svg"
  ALT="$D_s = 100$"></SPAN> Hz. A small estimate for the coherence time is given by
 <P></P>
 <DIV CLASS="displaymath"><!-- MATH
@@ -209,16 +209,16 @@ T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
 <TABLE CLASS="equation" >
 <TR>
 <TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 5.22ex; vertical-align: -2.06ex; " SRC="img140.svg"
+ STYLE="height: 5.22ex; vertical-align: -2.06ex; " SRC="img139.svg"
  ALT="$\displaystyle T_c = \frac{1}{8 D_s} \approx 10^{-3}$">&nbsp; &nbsp;s<IMG
- STYLE="height: 0.48ex; vertical-align: -0.12ex; " SRC="img141.svg"
+ STYLE="height: 0.48ex; vertical-align: -0.12ex; " SRC="img140.svg"
  ALT="$\displaystyle .$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (4)</TD></TR>
 </TABLE></DIV>
 <P></P>
 The satellite moves about <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img142.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img141.svg"
  ALT="$8$"></SPAN> meters during this period.
 
 <P>
@@ -230,7 +230,7 @@ The following figures illustrate the RX baseband signal changing in time while t
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 The baseband signal with partial LOS <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img143.svg"
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img142.svg"
  ALT="$K=10$"></SPAN>.</CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="490" STYLE=""
@@ -245,7 +245,7 @@ The baseband signal with partial LOS <SPAN CLASS="MATH"><IMG
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 The baseband signal under Rayleigh fading <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img144.svg"
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img143.svg"
  ALT="$K=0$"></SPAN>.</CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="490" STYLE=""
@@ -332,8 +332,8 @@ function bb = RXbaseband(refs, signals)
     a = 0;
     tau = 0;
   end
-  fm = 12*10^9; ##Modulation frequency.
-  ab = a.*exp(-i*2*pi*tau.*fm); ##Received individual signals.
+  fc = 12*10^9; ##Modulation frequency.
+  ab = a.*exp(-i*2*pi*tau.*fc); ##Received individual signals.
   bb = sum(ab.*signals); ##Aggregate received signal.
 end
 
