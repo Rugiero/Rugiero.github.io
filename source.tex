@@ -1663,7 +1663,7 @@ Here is a representation of the \htmladdnormallink{hypergeometric function}{http
                    &  _3F_2(1,1,1+b;2,2;x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{x^n}{n!} \nonumber\\
                    &=\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}x^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}x^n \nonumber \\
                    &\overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} x^n\nonumber \\
-                   &= \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\infty}_{n=0}  \frac{x^n}{(n+1)^{2-k}} \overset{(b)}{=} -\frac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(x)}{x}, \label{eq:pollog}
+                   &= \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\infty}_{n=0}  \frac{x^n}{(n+1)^{2-k}} \overset{(b)}{=} \frac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(x)}{x}, \label{eq:pollog}
                  \end{align*}
                  where $\left[ b \atop k \right]$ is the unsigned Stirling number of the first kind. In (a), we used the expansion of the rising Pochhammer factorial and in (b), we used the definition of the polylogarithm. Furthermore, the $x \in \mathbb{C}$ follows from the \htmladdnormallink{analytic continuation}{https://en.wikipedia.org/wiki/Analytic_continuation} of the polylogarithm.
 

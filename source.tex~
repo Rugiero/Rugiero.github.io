@@ -132,8 +132,9 @@
 
         \subsection{Education}
         \begin{itemize}
-        \item 2016 Bachelor of Science University of Helsinki\\
-        \item 2018 \htmladdnormallink{Master of Philosophy}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, grade: 4/5
+        \item 2025, PhD, \htmladdnormallink{``Narrow-Beam LEO and Stochastic Geometry Analysis: Non-Temporal and Temporal analysis,''}{dissertation.pdf} Department of Signal Processing, Aalto University\\
+        \item 2018, Master of Philosophy, \htmladdnormallink{``Elementtimenetelmä (Finite Element Method),''}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, grade: 4/5
+        \item 2016, Bachelor of Science, \htmladdnormallink{``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and Its Applications),''}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}, University of Helsinki\\
           
         \end{itemize}
 
@@ -144,7 +145,7 @@
 
         \begin{itemize}
         \item
-          I. Angervuori and A. Afridi, ``Spatial and Temporal Correlation of the Interference in a Narrow-Beam LEO Network with ALOHA Medium Access Control,'', 2025, in IEEE Letters on Communications, submitted.
+          I. Angervuori and A. Afridi, ``Spatial and Temporal Correlation of the Interference in a Narrow-Beam LEO Network with ALOHA Medium Access Control,'' 2025, in IEEE Letters on Communications, submitted.
         \item
           I. Angervuori and R. Wichman, ``Order Statistics of the SIR and Interference Cancellation in a Narrow-Beam LEO Uplink,'' in IEEE Letters on Communications, 2025, submitted.
         \item
@@ -154,8 +155,8 @@ I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Na
         \item
           N. Okati, T. Riihonen, D. Korpi, I. Angervuori and R. Wichman, ``Downlink Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry,'' in IEEE Transactions on Communications, vol. 68, no. 8, pp. 5120-5134, Aug. 2020, doi: 10.1109/TCOMM.2020.2990993.
         \item A. Yastrebova et al., ``Theoretical and Simulation-based Analysis of Terrestrial Interference to LEO Satellite Uplinks,'' GLOBECOM 2020 - 2020 IEEE Global Communications Conference, Taipei, Taiwan, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9347980.
-        \item Niloofar Okati, Islam Tanash, Taneli Riihonen, Ilari Angervuori, Wichman Risto, ``Performance Evaluation of Low Earth Orbit Communication Satellites'', Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
-        \item Ilari Angervuori, Wichman Risto, Niloofar Okati, Taneli Riihonen, ``On routing protocols in inter-satellite communications'', Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
+        \item Niloofar Okati, Islam Tanash, Taneli Riihonen, Ilari Angervuori, Wichman Risto, ``Performance Evaluation of Low Earth Orbit Communication Satellites,'' Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
+        \item Ilari Angervuori, Wichman Risto, Niloofar Okati, Taneli Riihonen, ``On routing protocols in inter-satellite communications,'' Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
           
         \end{itemize}
 
@@ -165,9 +166,10 @@ I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Na
         \end{itemize}        
         \subsection{Thesis's and other projects}
         \begin{itemize}
-        \item Master's thesis ``Elementtimenetelmä (The Finite Element Method)'', \htmladdnormallink{https://helda.helsinki.fi/handle/10138/273474}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, 2018, grade: eximia cum laude (5/5)
-        \item Bachelor's thesis ``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and Its Applications)'', \htmladdnormallink{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}, University of Helsinki, 2016, grade: 4/5          
-        \item An university project for a poster session, ``X-ray tomography with sparse data'', \htmladdnormallink{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}, 2015
+        \item PhD dissertation: a sketch (not published) ``Narrow-Beam LEO and Stochastic Geometry Analysis: Non-Temporal and Temporal analysis,'' \htmladdnormallink{V.0.1}{dissertation.pdf}, Department of Electrical Engineering, Aalto University 2025          
+        \item Master's thesis ``Elementtimenetelmä (The Finite Element Method),'' \htmladdnormallink{https://helda.helsinki.fi/handle/10138/273474}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, 2018, grade: eximia cum laude (5/5)
+        \item Bachelor's thesis ``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and Its Applications),'' \htmladdnormallink{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}, University of Helsinki, 2016, grade: 4/5         
+        \item An university project for a poster session, ``X-ray tomography with sparse data,'' \htmladdnormallink{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}, 2015
           
         \end{itemize}
         
