@@ -93,7 +93,7 @@
         \section{About me}
 
 
-        I am a Finnish mathematician interested in communication engineering. Read about my life, or jump straight to my professional records in the subsections below. Check out my blog. You can also listen to my music in Sound Cloud.
+        I am a Finnish mathematician interested in communication engineering. Read about my life, or jump straight to my professional records in the subsections below. Check out my blog. You can also listen to my music on \htmladdnormallink{SoundCloud}{\soundcloud} or check the \htmladdnormallink{GitHub}{\github}.
 
         \parbox{\textwidth} {
 
@@ -133,8 +133,8 @@
         \subsection{Education}
         \begin{itemize}
         \item 2025, PhD, \htmladdnormallink{``Narrow-Beam LEO and Stochastic Geometry Analysis: Non-Temporal and Temporal analysis,''}{dissertation.pdf} Department of Signal Processing, Aalto University\\
-        \item 2018, Master of Philosophy, \htmladdnormallink{``Elementtimenetelmä (Finite Element Method),''}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, grade: 4/5
-        \item 2016, Bachelor of Science, \htmladdnormallink{``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and Its Applications),''}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}, University of Helsinki\\
+        \item 2018, Master of Philosophy, \htmladdnormallink{``Elementtimenetelmä (Finite Element Method),''}{https://helda.helsinki.fi/handle/10138/273474} Department of Applied Analysis, University of Helsinki, grade: 4/5
+        \item 2016, Bachelor of Science, \htmladdnormallink{``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and Its Applications),''}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2} University of Helsinki\\
           
         \end{itemize}
 
