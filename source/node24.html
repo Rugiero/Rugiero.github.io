@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>March&mdash;A representation of the generalized hypergeometric function </TITLE>
-<META NAME="description" CONTENT="March&mdash;A representation of the generalized hypergeometric function ">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>December&mdash;Asymptotic decay rate of a probability distribution</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
@@ -26,103 +22,311 @@
  HREF="node25.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node23.html">
+ HREF="node17.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node23.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html208"
+<A ID="tex2html237"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node25.html">About this document ...</A>
+ HREF="node25.html">Blog posts 2023</A>
 <B> Up:</B> <A
- HREF="node23.html">Blog posts 2024</A>
+ HREF="node17.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node23.html">Blog posts 2024</A>
- &nbsp; <B>  <A ID="tex2html209"
+ HREF="node23.html">September Homography</A>
+ &nbsp; <B>  <A ID="tex2html238"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00061000000000000000">
-March&mdash;A representation of the generalized hypergeometric function <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img127.svg"
- ALT="$_3F_2$"></SPAN></A>
+<H2><A ID="SECTION00047000000000000000">
+December&mdash;Asymptotic decay rate of a probability distribution</A>
 </H2>
 
 <P>
-Here is a representation of the <A ID="tex2html92"
-  HREF="https://en.wikipedia.org/wiki/Generalized_hypergeometric_function">hypergeometric function</A>
-<!-- MATH
- $_3F_2(1,1,b;2,2;\cdot)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img128.svg"
- ALT="$_3F_2(1,1,b;2,2;\cdot)$"></SPAN> in terms of the <A ID="tex2html93"
-  HREF="https://en.wikipedia.org/wiki/Polylogarithm">polylogarithm</A>: For  <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.78ex; vertical-align: -0.70ex; " SRC="img129.svg"
- ALT="$\vert x\vert&lt;1$"></SPAN> and <!-- MATH
- $b\in\mathbb{N}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.21ex; " SRC="img130.svg"
- ALT="$b\in\mathbb{N}$"></SPAN>, the <SPAN  CLASS="textit">hypergeometric series</SPAN> representation is given by
-
+Let us study the tail distributions of three related distributions. The asymptotic decay rate measures the thickness of a random variable's <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$X$"></SPAN> tail distribution. It is defined by
 <P></P>
-<DIV CLASS="displaymath"><TABLE CLASS="equation" >
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 7.22ex; vertical-align: -3.06ex; " SRC="img131.svg"
- ALT="$\displaystyle _3F_2(1,1,1+b;2,2;x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{x^n}{n!} \nonumber$"></SPAN></TD>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X > x)}{x}, \tag{1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img77.svg"
+ ALT="$\displaystyle \lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x},$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 7.22ex; vertical-align: -3.06ex; " SRC="img132.svg"
- ALT="$\displaystyle =\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}x^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}x^n \nonumber$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 8.47ex; vertical-align: -3.06ex; " SRC="img133.svg"
- ALT="$\displaystyle \overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} x^n\nonumber$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR >
-<TD>&nbsp;</TD>
-<TD  style="text-align:left;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 7.73ex; vertical-align: -3.14ex; " SRC="img134.svg"
- ALT="$\displaystyle = \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\inft...
-...frac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(x)}{x},$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-<A ID="eq:pollog">&nbsp;&nbsp;&nbsp;</A></TD></TR>
+(1)</TD></TR>
 </TABLE></DIV>
 <P></P>
 where <!-- MATH
- $\left[ b \atop k \right]$
+ $\textbf{P}(\cdot)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 4.63ex; vertical-align: -1.63ex; " SRC="img135.svg"
- ALT="$\left[ b \atop k \right]$"></SPAN> is the unsigned Stirling number of the first kind. In (a), we used the expansion of the rising Pochhammer factorial and in (b), we used the definition of the polylogarithm. Furthermore, the <!-- MATH
- $x \in \mathbb{C}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.15ex; vertical-align: -0.21ex; " SRC="img136.svg"
- ALT="$x \in \mathbb{C}$"></SPAN> follows from the <A ID="tex2html94"
-  HREF="https://en.wikipedia.org/wiki/Analytic_continuation">analytic continuation</A>
-of the polylogarithm.
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img78.svg"
+ ALT="$\textbf{P}(\cdot)$"></SPAN> denotes the probability of an event. Let us calculate the decay rates for the exponential distribution, gamma distribution, and normal distribution.
 
 <P>
-<BR><HR>
+For <SPAN  CLASS="textbf">exponentially distributed</SPAN> <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$X$"></SPAN> with scale parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img79.svg"
+ ALT="$\theta$"></SPAN>:
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD class="lfill"></TD>
+<TD class="RIGHT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.89ex; vertical-align: -0.78ex; " SRC="img80.svg"
+ ALT="$\displaystyle \rho_{\text{Exponential}}$"></SPAN></TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.47ex; vertical-align: -1.74ex; " SRC="img81.svg"
+ ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{\log\textbf{P}(X &gt; x)}{x} = \lim_{x \rightarrow \infty} -\frac{\log(e^{- x/\theta})}{x}$"></SPAN></TD>
+<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD class="lfill"></TD>
+<TD>&nbsp;</TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img82.svg"
+ ALT="$\displaystyle =\lim_{x \rightarrow \infty} -\frac{-x/\theta }{x } = 1/\theta.$"></SPAN></TD>
+<TD  class="rfill">(2)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+For <SPAN  CLASS="textbf">gamma distributed</SPAN> <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$X$"></SPAN> with shape parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img83.svg"
+ ALT="$k$"></SPAN> and scale parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img79.svg"
+ ALT="$\theta$"></SPAN>:
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD class="lfill"></TD>
+<TD class="RIGHT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img84.svg"
+ ALT="$\displaystyle \rho_{\text{Gamma}}$"></SPAN></TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img85.svg"
+ ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = \lim_{x\rightarrow \infty} -\frac{\log (1-\gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
+<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD class="lfill"></TD>
+<TD>&nbsp;</TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img86.svg"
+ ALT="$\displaystyle =\lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta)/\Gamma(k))}{x}$"></SPAN></TD>
+<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD class="lfill"></TD>
+<TD>&nbsp;</TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.62ex; vertical-align: -1.74ex; " SRC="img87.svg"
+ ALT="$\displaystyle \overset{(a)}{=} \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k...
+... = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}$"></SPAN></TD>
+<TD  class="rfill"><A ID="line:22">&nbsp;&nbsp;&nbsp;</A></TD></TR>
+<TR >
+<TD class="lfill"></TD>
+<TD>&nbsp;</TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 5.62ex; vertical-align: -1.74ex; " SRC="img88.svg"
+ ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta.$"></SPAN></TD>
+<TD  class="rfill">(3)</TD></TR>
+</TABLE></DIV>
+<P></P>
+In <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img89.svg"
+ ALT="$(a)$"></SPAN>, we used the asymptotic behavior of the gamma distribution
+<P><!-- MATH
+ \begin{displaymath}
+\lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 5.15ex; vertical-align: -1.74ex; " SRC="img90.svg"
+ ALT="$\displaystyle \lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
+$">
+</DIV><P></P>
+
+<P>
+For <SPAN  CLASS="textbf">normal distributed</SPAN> <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$X$"></SPAN> with mean <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img91.svg"
+ ALT="$\mu$"></SPAN> and variance <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img92.svg"
+ ALT="$\sigma^2$"></SPAN>:
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><TABLE CLASS="equation" >
+<TR >
+<TD class="lfill"></TD>
+<TD class="RIGHT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img93.svg"
+ ALT="$\displaystyle \rho_{\text{Normal}}$"></SPAN></TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="img94.svg"
+ ALT="$\displaystyle = \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X&gt;x)}{x} = -\...
+...t{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x}$"></SPAN></TD>
+<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD class="lfill"></TD>
+<TD>&nbsp;</TD>
+<TD class="LEFT"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 8.31ex; vertical-align: -1.74ex; " SRC="img95.svg"
+ ALT="$\displaystyle \geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\fra...
+...}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x} = \infty,$"></SPAN></TD>
+<TD  class="rfill">(4)</TD></TR>
+</TABLE></DIV>
+<P></P>
+where in <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img96.svg"
+ ALT="$(b)$"></SPAN>, we used the inequality <P><!-- MATH
+ \begin{displaymath}
+\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+erfc<IMG
+ STYLE="height: 6.09ex; vertical-align: -2.16ex; " SRC="img97.svg"
+ ALT="$\displaystyle (x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$">
+</DIV><P></P>
+that holds for <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img98.svg"
+ ALT="$x \geq 0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img99.svg"
+ ALT="$\beta &gt;1$"></SPAN> (we used <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img100.svg"
+ ALT="$\beta = 2$"></SPAN>).
+
+<P>
+The asymptotic decay rates for the exponential, gamma, and normal distribution are given in <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img101.svg"
+ ALT="$(2)$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img102.svg"
+ ALT="$(3)$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img103.svg"
+ ALT="$(4)$"></SPAN>, respectively. We see that the decay rate <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img104.svg"
+ ALT="$\rho$"></SPAN> of the normal distribution is always maximal, <SPAN  CLASS="textit">i.e.</SPAN>, <!-- MATH
+ $\rho_{\text{Normal}} = \infty$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img105.svg"
+ ALT="$\rho_{\text{Normal}} = \infty$"></SPAN>. In contrast, the decay rates of the exponential and gamma distributions depend on the scale parameter <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img79.svg"
+ ALT="$\theta$"></SPAN>.
+
+<P>
+By normalizing the mean (<!-- MATH
+ $\mathbb{E}[X] = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img106.svg"
+ ALT="$\mathbb{E}[X] = 1$"></SPAN>) by setting <!-- MATH
+ $\theta = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img107.svg"
+ ALT="$\theta = 1$"></SPAN> and <!-- MATH
+ $k=1/\theta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img108.svg"
+ ALT="$k=1/\theta$"></SPAN>, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is <!-- MATH
+ $\rho_{\text{Exponential}} = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.39ex; vertical-align: -0.78ex; " SRC="img109.svg"
+ ALT="$\rho_{\text{Exponential}} = 1$"></SPAN> and of the gamma distribution is <!-- MATH
+ $\rho_{\text{Gamma}} = k$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img110.svg"
+ ALT="$\rho_{\text{Gamma}} = k$"></SPAN>. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="img111.svg"
+ ALT="$k&lt;1$"></SPAN>, and faster than the exponential distribution with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="img112.svg"
+ ALT="$k&gt;1$"></SPAN>. With <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img113.svg"
+ ALT="$k=1$"></SPAN>, the distributions coincide. When <!-- MATH
+ $k \rightarrow \infty$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img114.svg"
+ ALT="$k \rightarrow \infty$"></SPAN>, the gamma distribution approaches the normal distribution and <!-- MATH
+ $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img115.svg"
+ ALT="$\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$"></SPAN>.
+
+<P>
+References:
+
+<UL>
+<LI><A ID="tex2html92"
+  HREF="https://en.wikipedia.org/wiki/Error_function">Error function</A>
+</LI>
+<LI><A ID="tex2html93"
+  HREF="https://en.wikipedia.org/wiki/Exponential_distribution">Exponential distribution</A>
+</LI>
+<LI><A ID="tex2html94"
+  HREF="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma distribution</A>
+</LI>
+<LI><A ID="tex2html95"
+  HREF="https://en.wikipedia.org/wiki/Normal_distribution">Normal distribution</A>
+<P>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html237"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node25.html">Blog posts 2023</A>
+<B> Up:</B> <A
+ HREF="node17.html">Blog posts 2022</A>
+<B> Previous:</B> <A
+ HREF="node23.html">September Homography</A>
+ &nbsp; <B>  <A ID="tex2html238"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

@@ -1,22 +1,18 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
-<META NAME="description" CONTENT="June&mdash;Gaussian vs. impulsive noise">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>Blog posts 2022</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node18.html">
-<LINK REL="previous" HREF="node16.html">
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node8.html">
 <LINK REL="next" HREF="node18.html">
 </HEAD>
 
@@ -27,190 +23,57 @@
  HREF="node18.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="source.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html192"
+<A ID="tex2html216"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node18.html">July Summing the signal</A>
+ HREF="node18.html">January Inverse of a</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="source.html">A glimpse to my</A>
 <B> Previous:</B> <A
- HREF="node16.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html193"
+ HREF="node16.html">November – Digital filtering</A>
+ &nbsp; <B>  <A ID="tex2html217"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00043000000000000000">
-June&mdash;Gaussian vs. impulsive noise</A>
-</H2>
+<H1><A ID="SECTION00040000000000000000">
+Blog posts 2022</A>
+</H1>
 
 <P>
-Noise is often modeled to have a <A ID="tex2html62"
-  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
-waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html63"
-  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
-events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html64"
-  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
-with significant mass in the tail distribution. 
+<BR><HR>
+<!--Table of Child-Links-->
+<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<P>
-The <A ID="tex2html65"
-  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$\alpha$"></SPAN>-stable distributions</A>
-are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
- $\alpha = 2$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img26.svg"
- ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
- $\alpha \leq 1$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.27ex; vertical-align: -0.43ex; " SRC="img27.svg"
- ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
-
-<P>
-Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
-
-<P>
-In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img28.svg"
- ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.46ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.96ex; vertical-align: -0.12ex; " SRC="img28.svg"
- ALT="$\alpha =1$"></SPAN>. 
-
-<P>
-<PRE>
-pkg load statistics
-
-clear all;
-close all;
-
-%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
-function xb = digitaltoanalog(T, digitalsignal, Fs)
-  xb = [];
-  for t = T
-    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
-  end
-end
-
-
-%%Inverse of the alpha stable CDF with alpha = 1.
-invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
-%%Generate N Alpha-stable samples.
-N = 100;
-alphasamples = invalphaCDF(unifrnd(0,1,1,N));
-
-%%Generate normal samples.
-normalsamples = normrnd(0,1,1,N);
-%%Convert to analog signal.
-T = 1 : 0.1 : N;
-alphasamples = digitaltoanalog(T, alphasamples, 1);
-normalsamples = digitaltoanalog(T, normalsamples, 1);
-
-alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
-normalsamples = normalsamples/(mean(abs(normalsamples)));
-figure(1)
-plot(T, alphasamples)
-legend('Alpha-stable noise')
-axis([0 100 -15 15])
-figure(2)
-plot(T, normalsamples)
-legend('Gaussian noise')
-axis([0 100 -15 15])
-</PRE>
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./alphastablenoise.png"
- ALT="Image alphastablenoise">
-
-</DIV>
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./gaussiannoise.png"
- ALT="Image gaussiannoise">
-
-</DIV>
-
-<P>
-Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
-
-<P>
-It is also interesting to compare the audiolized noise signals:
-<A ID="tex2html66"
-  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
-
-<P>
-References:
-
-<UL>
-<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
-</LI>
-<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976 - .
-</LI>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press„ 2005. Print.
-</LI>
+<UL CLASS="ChildLinks">
+<LI><A ID="tex2html218"
+  HREF="node18.html">January&mdash;Inverse of a Gaussian variable</A>
+<LI><A ID="tex2html219"
+  HREF="node19.html">February&mdash;Voronoi tesselation on a sphere</A>
+<LI><A ID="tex2html220"
+  HREF="node20.html">May – Digital to analog modulation</A>
+<LI><A ID="tex2html221"
+  HREF="node21.html">June&mdash;Gaussian vs. impulsive noise</A>
+<LI><A ID="tex2html222"
+  HREF="node22.html">July&mdash;Summing the signal powers</A>
+<LI><A ID="tex2html223"
+  HREF="node23.html">September&mdash;Homography</A>
+<LI><A ID="tex2html224"
+  HREF="node24.html">December&mdash;Asymptotic decay rate of a probability distribution</A>
 </UL>
-
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A
- HREF="node18.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
-<A
- HREF="node14.html">
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
-<A
- HREF="node16.html">
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html192"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
-  HREF="cv.pdf"><IMG
- STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
-<BR>
-<B> Next:</B> <A
- HREF="node18.html">July Summing the signal</A>
-<B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
-<B> Previous:</B> <A
- HREF="node16.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html193"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<!--End of Table of Child-Links-->
+<BR><HR>
 
 </BODY>
 </HTML>

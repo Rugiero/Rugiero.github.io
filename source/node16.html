@@ -1,21 +1,16 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>February&mdash;Voronoi tesselation on a sphere</TITLE>
-<META NAME="description" CONTENT="February&mdash;Voronoi tesselation on a sphere">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>November – Digital filtering</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node17.html">
 <LINK REL="previous" HREF="node15.html">
 <LINK REL="next" HREF="node17.html">
 </HEAD>
@@ -27,92 +22,227 @@
  HREF="node17.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node14.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node15.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html190"
+<A ID="tex2html214"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node17.html">June Gaussian vs. impulsive</A>
+ HREF="node17.html">Blog posts 2022</A>
 <B> Up:</B> <A
- HREF="node14.html">Blog posts 2022</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node15.html">January Inverse of a</A>
- &nbsp; <B>  <A ID="tex2html191"
+ HREF="node15.html">October – Fast Fourier</A>
+ &nbsp; <B>  <A ID="tex2html215"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00042000000000000000">
-February&mdash;Voronoi tesselation on a sphere</A>
+<H2><A ID="SECTION00038000000000000000">
+November – Digital filtering</A>
 </H2>
 
 <P>
-Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The <A ID="tex2html60"
-  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, has applications, <SPAN  CLASS="textit">e.g.</SPAN>, in wireless communications. 
+Let's construct a simple digital band-pass filter based in the <A ID="tex2html70"
+  HREF="https://en.wikipedia.org/wiki/Sinc_filter">sinc filter</A>.
 
 <P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="467" STYLE=""
- SRC="./voronoionsphere.png"
- ALT="Image voronoionsphere">
-
-</DIV>
+As everyone know, the sinc function is the <A ID="tex2html71"
+  HREF="https://en.wikipedia.org/wiki/Impulse_response">impulse response</A>
+of a low-pass filter. That is, the <A ID="tex2html72"
+  HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
+of a signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
+ ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
+ $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img16.svg"
+ ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
+ ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img17.svg"
+ ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
+ $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img18.svg"
+ ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
+ ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html73"
+  HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img20.svg"
+ ALT="$B_H$"></SPAN>.
 
 <P>
-The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
+Heuristically, we can right away derive the discrete versions of the impulse responses:
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+\mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img21.svg"
+ ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
+$">
+</DIV><P></P>
+for the low-pass filter, and
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img22.svg"
+ ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
+$">
+</DIV><P></P>
+
+<P>
+for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img23.svg"
+ ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
+ $i \mapsto \delta[i] := \delta_{0i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img24.svg"
+ ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html74"
+  HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
+
+<P>
+Now, having a discrete signal at hand, band-pass filtering  is (in the simplest approach) just a matter of discrete convolution of the signal with the functions above. The following Octave code does the job.
 
 <P>
 <PRE>
-%%Create Voronoi tesselation around Poisson points on a Sphere.
+##Sinc band-pass filter. f0 = B_L/fs, f1 = B_H/fs
 
-clear all;
-close all;
-
-addpath(fullfile(cd,'rbfsphere'));
-density = 100;
-X = poissononsphere(density)'; %Poisson points in spherical coordinates.
-voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
-
-function refc = poissononsphere(density)
-  yMin = -1; yMax = 1;
-  xMin = -pi; xMax = pi;
+function filtered = sincfilter(signal, f0, f1)
+  if(mod(length(signal), 2) != 0) #Check if the signal length is even or odd.
+    signal = signal(1 : length(signal) - 1);
+  end
   
-  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
-  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
-  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
-  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
-  ref = [x y]';
+  M = 10000; #Increase this to increase accuracy.
+  sincF = zeros(1, M);
+  for m =  -M/2 + 1 : 1 : M/2 
+    if(!(m  == 0))
+      sincF(m + M/2) = sin(2*pi*f1*m)./(pi*m);
+    else
+      sincF(m + M/2) = 2*f1;
+    end
+  end
 
-  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
-  r = 1;
-  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
-          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
-          r*cos(refs(2,:)+pi/2)];
+  sincH = zeros(1,M);
+  for m =  -M/2 + 1 : 1 : M/2 
+    if(!(m  == 0))
+      sincH(m + M/2) = -sin(2*pi*f0*m)./(pi*m);
+    else
+      sincH(m + M/2) = -2*f0 + 1;
+    end
+  end
+  
+  ##Plot stuff.
+  figure(1)
+  plot(sincF)
+  figure(2)
+  plot(signal)
+
+  tic
+  filtered = conv(signal, sincF, "same");
+  filtered = conv(filtered, sincH, "same");
+  toc
+
+  figure(3)
+  plot(filtered)
 end
 </PRE>
+
+<P>
+
+<DIV class="CENTER"><A ID="310"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Signal of form <!-- MATH
+ $\cos(20 \pi t) + \sin(2 \pi t)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img25.svg"
+ ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./signal.jpg"
+ ALT="Image signal"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV class="CENTER"><A ID="314"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+The same signal with the first term filtered away</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./filtered.jpg"
+ ALT="Image filtered"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+For more accuracy and effectiveness, one should use windowed or recursive filters. One can check in the references for more sophisticated methods!
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html61"
-  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
+<LI>Steven W. Smith, &ldquo;Digital Signal Processing – A Practical Guide for Engineers and Scientists&rdquo;, Elsevier Science, 2003.
 </LI>
 </UL>
 
 <P>
-<BR><HR>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html214"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node17.html">Blog posts 2022</A>
+<B> Up:</B> <A
+ HREF="node8.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node15.html">October – Fast Fourier</A>
+ &nbsp; <B>  <A ID="tex2html215"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

@@ -1,22 +1,18 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>Blog posts 2024</TITLE>
-<META NAME="description" CONTENT="Blog posts 2024">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>September&mdash;Homography</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node25.html">
-<LINK REL="previous" HREF="node21.html">
+<LINK REL="next" HREF="node24.html">
+<LINK REL="previous" HREF="node22.html">
 <LINK REL="next" HREF="node24.html">
 </HEAD>
 
@@ -27,46 +23,142 @@
  HREF="node24.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="source.html">
+ HREF="node17.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node22.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html205"
+<A ID="tex2html235"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node24.html">March A representation of</A>
+ HREF="node24.html">December Asymptotic decay rate</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node17.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node22.html">May Signal fading in</A>
- &nbsp; <B>  <A ID="tex2html206"
+ HREF="node22.html">July Summing the signal</A>
+ &nbsp; <B>  <A ID="tex2html236"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00060000000000000000">
-Blog posts 2024</A>
-</H1>
+<H2><A ID="SECTION00046000000000000000">
+September&mdash;Homography</A>
+</H2>
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+<A ID="tex2html89"
+  HREF="https://en.wikipedia.org/wiki/Homography">Homography</A>
+can be used to &ldquo;change the perspective&rdquo; of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than <!-- MATH
+ $90 \degree$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$90 \degree$"></SPAN>, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img73.svg"
+ ALT="$H$"></SPAN> transforms an <A ID="tex2html90"
+  HREF="https://en.wikipedia.org/wiki/Ellipse">ellipse</A>
+of parameters <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img74.svg"
+ ALT="$a$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img75.svg"
+ ALT="$b$"></SPAN> to a circle of radius <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img6.svg"
+ ALT="$r$"></SPAN> so that the right-hand side focus point maps to the origin.
+<P><!-- MATH
+ \begin{displaymath}
+H=
+\begin{pmatrix}
+  -a &-0 &-1 &0 &0 &0 &ar &0 &r \\
+  0 &0 &0 &-a &-0 &-1 & 0& 0 &0 \\
+  -c &-b^2/a& -1& 0& 0& 0 &0& 0& 0 \\
+  0 &0 &0 &-c &-b^2/a &-1 &cr &rb^2/a& r\\
+  a &0 &-1& 0& 0 &0 & ar &0 &-r \\
+  0 &0 &0 &a &0 &-1 &0 &0 &0\\
+  -c &b^2/a& -1& 0& 0& 0& 0& 0& 0 \\
+  0 &0 &0 &-c &b^2/a &-1 &-rc &rb^2/ar &-r
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 22.45ex; vertical-align: -10.68ex; " SRC="img76.svg"
+ ALT="$\displaystyle H=
+\begin{pmatrix}
+-a &amp;-0 &amp;-1 &amp;0 &amp;0 &amp;0 &amp;ar &amp;0 &amp;r \\
+0 &amp;0 &amp;0 &amp;-...
+...&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0 \\
+0 &amp;0 &amp;0 &amp;-c &amp;b^2/a &amp;-1 &amp;-rc &amp;rb^2/ar &amp;-r
+\end{pmatrix}$">
+</DIV><P></P>
 
-<UL CLASS="ChildLinks">
-<LI><A ID="tex2html207"
-  HREF="node24.html">March&mdash;A representation of the generalized hypergeometric function <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.39ex; vertical-align: -0.46ex; " SRC="img127.svg"
- ALT="$_3F_2$"></SPAN></A>
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="319" STYLE=""
+ SRC="./homographydrawing.png"
+ ALT="Image homographydrawing">
+
+</DIV>
+
+<P>
+Here is a GNU Octave code:
+<PRE>
+%%Changes ellipses with parameters a &gt; b  perspective to a sphere of radius r centered in origo. Vectors to be transformed are given in 2x1000 matrix refc.
+
+function points = homography(refc, a,b,r)
+  c = sqrt(a^2 - b^2);
+  %%Construct the homography matrix.
+  X1 = [[-a -0 -1 0 0 0 a*r 0*r r]; [0 0 0 -a -0 -1 a*0 0*0 0]];
+  X2 = [[-c -b^2/a -1 0 0 0 c*0 b^2/a*0 0]; [0 0 0 -c -b^2/a -1 c*r b^2/a*r r]];
+  X3 = [[a 0 -1 0 0 0 -a*-r 0*-r -r]; [0 0 0 a -0 -1 -a*0 0*0 0]];
+  X4 = [[-c b^2/a -1 0 0 0 c*0 -b^2/a*0 0]; [0 0 0 -c b^2/a -1 c*-r b^2/a*r -r]];
+  P = [X1; X2; X3; X4];
+  [U,S,V] = svd(P); %Singular value composition.
+  h = V(:,9);
+  H = reshape(h, 3, 3)';
+  points = [];
+  for point = refc
+    homopoint = [point; 1]; %Point presented in homogeneous coordinates.
+    homopoint = H*homopoint;
+    homopoint = [homopoint(1)/homopoint(3); homopoint(2)/homopoint(3)];
+    points = [points homopoint];
+  end
+  figure(1)
+  plot(points(1,:), points(2,:), 'b','linewidth',10);
+end
+</PRE>
+
+<P>
+In the following, we are rotating a &ldquo;pyramid&rdquo;. It can be seen how the homography mapping can be interpreted as a change of perspective.
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="490" STYLE=""
+ SRC="./gifu2.gif"
+ ALT="Image gifu2">
+
+</DIV>
+
+<P>
+References:
+
+<UL>
+<LI><A ID="tex2html91"
+  HREF="https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog">Stack exchange</A>
+</LI>
 </UL>
-<!--End of Table of Child-Links-->
+
+<P>
 <BR><HR>
 
 </BODY>

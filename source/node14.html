@@ -1,22 +1,18 @@
 <!DOCTYPE HTML>
 
-<!--Converted with LaTeX2HTML 2021.2 (Released July 1, 2021) -->
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>Blog posts 2022</TITLE>
-<META NAME="description" CONTENT="Blog posts 2022">
-<META NAME="keywords" CONTENT="source">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
+<TITLE>August&mdash;Radio waves in a tunnel</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2021.2">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node21.html">
-<LINK REL="previous" HREF="node7.html">
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
 <LINK REL="next" HREF="node15.html">
 </HEAD>
 
@@ -27,55 +23,127 @@
  HREF="node15.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="source.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node13.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html180"
+<A ID="tex2html210"
   HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node15.html">January Inverse of a</A>
+ HREF="node15.html">October – Fast Fourier</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node13.html">August Radio waves in</A>
- &nbsp; <B>  <A ID="tex2html181"
+ HREF="node13.html">June Why does MIMO</A>
+ &nbsp; <B>  <A ID="tex2html211"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00040000000000000000">
-Blog posts 2022</A>
-</H1>
+<H2><A ID="SECTION00036000000000000000">
+August&mdash;Radio waves in a tunnel</A>
+</H2>
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+Almost everyone has some experience of how radio turns static when driving into a tunnel. The radio stations only work if a special  <A ID="tex2html54"
+  HREF="https://en.wikipedia.org/wiki/Leaky_feeder">radiating cable</A>
+is installed inside the tunnel. Once upon a night, I could not sleep, pondering why the <A ID="tex2html55"
+  HREF="https://en.wikipedia.org/wiki/FM_broadcast_band">FM</A>
+radios are unsuable in the tunnels. From my experience, mobile phone signals that operate at higher frequencies work better. Someone might have told me that FM radio wavelength is so large that the wave &ldquo;does not fit the tunnel&rdquo;. But as intuitively acceptable as this explanation could be (I don't think it is even that), this answer did not satisfy me.
 
-<UL CLASS="ChildLinks">
-<LI><A ID="tex2html182"
-  HREF="node15.html">January&mdash;Inverse of a Gaussian variable</A>
-<LI><A ID="tex2html183"
-  HREF="node16.html">February&mdash;Voronoi tesselation on a sphere</A>
-<LI><A ID="tex2html184"
-  HREF="node17.html">June&mdash;Gaussian vs. impulsive noise</A>
-<LI><A ID="tex2html185"
-  HREF="node18.html">July&mdash;Summing the signal powers</A>
-<LI><A ID="tex2html186"
-  HREF="node19.html">September&mdash;Homography</A>
-<LI><A ID="tex2html187"
-  HREF="node20.html">December&mdash;Asymptotic decay rate of a probability distribution</A>
+<P>
+After some research, I found that the explanation lies in <A ID="tex2html56"
+  HREF="https://en.wikipedia.org/wiki/Maxwell's_equations">Maxwell equation's</A>
+behavior (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface&mdash;this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
+
+<P>
+Intuitive or not, this is what the equations tell us. To demonstrate this, I solved using <A ID="tex2html57"
+  HREF="https://en.wikipedia.org/wiki/Finite_element_method">FEM</A>, the <A ID="tex2html58"
+  HREF="https://en.wikipedia.org/wiki/Helmholtz_equation">Helmholtz equation</A>
+for a plane wave in a two-dimensional setting mimicking a tunnel and its entrance. The <A ID="tex2html59"
+  HREF="https://en.wikipedia.org/wiki/Electromagnetic_radiation">electromagnetic wave's</A>
+polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). <A ID="tex2html60"
+  HREF="https://en.wikipedia.org/wiki/Boundary_value_problem">Boundary conditions</A>
+inside the 2D tunnel is zero. The coloring represents the electrical component's magnitude.
+
+<P>
+We compare the behavior of two different wavelengths:
+
+<P>
+
+<DIV class="CENTER"><A ID="251"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+High frequencies fit in the tunnel.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="410" STYLE=""
+ SRC="./highfreq.gif"
+ ALT="Image highfreq"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV class="CENTER"><A ID="255"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Wavelengths bigger than the diameter of the tunnel will not get through.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="390" STYLE=""
+ SRC="./lowfreq.gif"
+ ALT="Image lowfreq"></TD></TR>
+</TABLE>
+</DIV>
+.
+
+<P>
+References: 
+
+<UL>
+<LI><A ID="tex2html61"
+  HREF="https://se.mathworks.com/help/pde/ug/scattering-problem.html">Scattering Problem: Matlab PDE Modeler App</A>
+</LI>
+<LI><A ID="tex2html62"
+  HREF="https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields">Interface conditions for electromagnetic fields (Wikipedia article)</A>
+</LI>
 </UL>
-<!--End of Table of Child-Links-->
-<BR><HR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html210"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node15.html">October – Fast Fourier</A>
+<B> Up:</B> <A
+ HREF="node8.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node13.html">June Why does MIMO</A>
+ &nbsp; <B>  <A ID="tex2html211"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

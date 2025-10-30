@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>May – Digital to analog modulation</TITLE>
+<TITLE>February&mdash;Voronoi tesselation on a sphere</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -23,12 +23,12 @@
  HREF="node20.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node16.html">
+ HREF="node17.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node18.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html219"
+<A ID="tex2html227"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,140 +36,74 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node20.html">June Gaussian vs. impulsive</A>
+ HREF="node20.html">May – Digital to</A>
 <B> Up:</B> <A
- HREF="node16.html">Blog posts 2022</A>
+ HREF="node17.html">Blog posts 2022</A>
 <B> Previous:</B> <A
- HREF="node18.html">February Voronoi tesselation on</A>
- &nbsp; <B>  <A ID="tex2html220"
+ HREF="node18.html">January Inverse of a</A>
+ &nbsp; <B>  <A ID="tex2html228"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00043000000000000000">
-May – Digital to analog modulation</A>
+<H2><A ID="SECTION00042000000000000000">
+February&mdash;Voronoi tesselation on a sphere</A>
 </H2>
-Digital signal consists of values at discrete times, whereas analog signal is continuous in time <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img36.svg"
- ALT="$t$"></SPAN>. As the orthogonal set of <A ID="tex2html74"
-  HREF="https://en.wikipedia.org/wiki/Sinc_function">sinc functions</A>
-<P><!-- MATH
- \begin{displaymath}
-\{t \mapsto \text{sinc}(F_s t - n)\}_n,
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
- ALT="$\displaystyle \{t \mapsto$">&nbsp; &nbsp;sinc<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
- ALT="$\displaystyle (F_s t - n)\}_n,
-$">
-</DIV><P></P>
-spans the space of signals of bandwidth <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img14.svg"
- ALT="$F_s/2$"></SPAN>, an analog signal can be (uniquely) produced from a digital signal of length <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img12.svg"
- ALT="$N$"></SPAN> 
-<P><!-- MATH
- \begin{displaymath}
-\{ x[n]\}_{n=0}^{N-1}
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 2.95ex; vertical-align: -0.74ex; " SRC="img39.svg"
- ALT="$\displaystyle \{ x[n]\}_{n=0}^{N-1}
-$">
-</DIV><P></P>
-as a superposition of the sinc basis-functions
-<P><!-- MATH
- \begin{displaymath}
-S(t) =\sum_{n = 0}^{N-1} x[n]\text{sinc}(F_s t - n),
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 7.40ex; vertical-align: -3.06ex; " SRC="img40.svg"
- ALT="$\displaystyle S(t) =\sum_{n = 0}^{N-1} x[n]$">sinc<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
- ALT="$\displaystyle (F_s t - n),
-$">
-</DIV><P></P>
-where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img13.svg"
- ALT="$F_s$"></SPAN> is the sampling rate of the digital signal.
 
 <P>
-The following GNU Octave function produces the analog signal from a given digital signal
-
-<P>
-<PRE>
-%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
-function xb = digitaltoanalog(T, digitalsignal, Fs)
-  xb = [];
-  for t = T
-    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
-  end
-end
-</PRE>
-
-<P>
-The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img42.svg"
- ALT="$x$"></SPAN>, and modulates the sampled digital signal back to an analog signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$S$"></SPAN>. As the <A ID="tex2html75"
-  HREF="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist rate</A>
-restricts the bandwidth of the signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$S$"></SPAN> to <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img14.svg"
- ALT="$F_s/2$"></SPAN>, information is lost in the sampling stage, because the original rectangle train has an infinite bandwidth.
-
-<P>
-<PRE>
-pkg load signal;
-close all;
-clear all;
-
-input  = @(t) pulstran(t,[0,1,5,7,9],"rectpuls") %%The original analog signal at time t.
-
-Fs = 5; %Sampling rate.
-t = 10 %Time length of the signal.
-Ts = 0 : 1/Fs : t; %Sampling time instances.
-x =  input(Ts); %Sampled values, i.e. the digital signal.
-
-Ta = linspace(0, t, 1000); %Analog signal time instances for the plot.
-S = digitaltoanalog(Ta, x, Fs); %Modulated analog signal.
-
-%Plot.
-plot(Ta, input(Ta), 'color', 'r');
-hold on;
-plot(Ts, x, 'x', 'color', 'r')
-plot(Ta, S, 'color', 'b');
-legend( 'Original analog signal','Sampled digital signal', 'Rerproduced analog signal')
-</PRE>
+Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The <A ID="tex2html77"
+  HREF="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi Diagram</A>, or Voronoi tessellation, has applications, <SPAN  CLASS="textit">e.g.</SPAN>, in wireless communications. 
 
 <P>
 
 <DIV class="CENTER">
   <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./rectangletrain.png"
- ALT="Image rectangletrain">
+  WIDTH="621" HEIGHT="467" STYLE=""
+ SRC="./voronoionsphere.png"
+ ALT="Image voronoionsphere">
 
 </DIV>
+
+<P>
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
+
+<P>
+<PRE>
+%%Create Voronoi tesselation around Poisson points on a Sphere.
+
+clear all;
+close all;
+
+addpath(fullfile(cd,'rbfsphere'));
+density = 100;
+X = poissononsphere(density)'; %Poisson points in spherical coordinates.
+voronoiSph(X); %This function is downloaded from gradywright's Github. It is placed in the folder 'rbfsphere'.
+
+function refc = poissononsphere(density)
+  yMin = -1; yMax = 1;
+  xMin = -pi; xMax = pi;
+  
+  xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dimensions
+  numbPoints = poissrnd(density);    %Number of points in the area is a Poisson variable of intensity given as density
+  x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points from uniform distribution
+  y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencepoints to geographical coordinates
+  ref = [x y]';
+
+  refs = [x'; asin(y)'];%Map geographical coordinates to Cartesian coordinates on a unit circle
+  r = 1;
+  refc = [r*sin(refs(2,:)+pi/2).*cos(refs(1,:)+pi);...
+          r*sin(refs(2,:)+pi/2).*sin(refs(1,:)+pi);...
+          r*cos(refs(2,:)+pi/2)];
+end
+</PRE>
 
 <P>
 References:
 
 <UL>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press, 2005. Print.
+<LI><A ID="tex2html78"
+  HREF="https://github.com/gradywright/spherepts/tree/master/code">gradywright Github</A>
 </LI>
 </UL>
 

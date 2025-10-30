@@ -45,13 +45,13 @@
 \def\github{https://github.com/Rugiero}
 \def\pass{https://www.passwordstore.org/}
 %%\def\cv{https://www.dropbox.com/s/jem3l3jabcyex9s/Curriculum_Vitae_Ilari_Angervuori.pdf?dl=0}
-\def\cv{cv.pdf}
 \def\academiccv{acv.pdf}
 \def\hal{https://hal.inria.fr/inria-00403039v1/}
 \def\hall{https://hal.inria.fr/inria-00403040v4/document}
 \def\ray{https://en.wikipedia.org/wiki/Rayleigh_fading}
 \def\ric{https://en.wikipedia.org/wiki/Rician_fading}
 \def\gaus{https://en.wikipedia.org/wiki/Gaussian_noise}
+\def\reviewcert{certificate.pdf}
 \makeindex
 
 \begin{document}
@@ -71,15 +71,14 @@
 
     \date
         {
-          {Last major update 26.03.2025}\\
+          {Last major update 15.10.2025}\\
         }
 
         \begin{center}
           \htmladdnormallink{Linkedin}{\linkedin}\\
           \htmladdnormallink{Soundcloud}{\soundcloud}\\
           \htmladdnormallink{GitHub}{\github} \\
-          \htmladdnormallink{Academic CV}{\academiccv}\\
-          \htmladdnormallink{CV}{\cv}\\
+          \htmladdnormallink{CV}{\academiccv}\\
         \end{center}
 
         %\begin{latexonly}
@@ -94,22 +93,21 @@
         \section{About me}
 
 
-        
-        I am a Finnish mathematician interested in engineering. Read about my life, or jump straight to my professional records in the subsections below. Also, check out my blog.
+        I am a Finnish mathematician interested in communication engineering. Read about my life, or jump straight to my professional records in the subsections below. Check out my blog. You can also listen to my music on \htmladdnormallink{SoundCloud}{\soundcloud} or check the \htmladdnormallink{GitHub}{\github}.
 
         \parbox{\textwidth} {
 
-          I graduated in 2009 from Munkkiniemi high school. Mathematics was a subject I had naturally thrived in -- so, after some bumps and turns,  I found myself at the University of Helsinki studying mathematics. And yeah, indeed, I love mathematics -- I love the apparent universality of it. This subject is without a doubt debatable, but, at least in some sense, I like to think that mathematical truths are universal in the truest sense of the word; they are eternal, and they are the same everywhere, regardless of the physical universe we live in. Aliens in another galaxy will end up with the same mathematical truths we do. Aliens in another universe will end up with the same mathematical truths we do. Mathematics has the power to explain what we see in our everyday life. Mathematics is not only natural science but a form of art and poetry. Mathematics is music -- music is mathematics.
+          I graduated in 2009 from Munkkiniemi high school. Mathematics was a subject I had naturally thrived in -- so, after some bumps and turns,  I found myself at the University of Helsinki studying mathematics. And yeah, indeed, I love mathematics---I love the apparent universality of it. This subject is without a doubt debatable, but, at least in some sense, I like to think that mathematical truths are universal in the truest sense of the word; they are eternal, and they are the same everywhere, regardless of the physical universe we live in. Aliens in another galaxy will end up with the same mathematical truths we do. Aliens in another universe will end up with the same mathematical truths we do. Mathematics has the power to explain what we see in our everyday life. Mathematics is not only natural science but a form of art and poetry. Mathematics is music---music is mathematics.
 
           While studying mathematics, physics, and computer science, I took some courses on economics. That inspired me to write my bachelor's thesis on optimal control theory. I worked on the problem of how increasing public investments affects the GDP. I did not find any breakthrough, but it was an intriguing subject.
 
-          I proceeded with my graduate studies studying applied mathematics. I studied subjects like partial differential equations, functional analysis, dynamical systems, and  -- the University of Helsinki's pride -- complex analysis. (My thesis advisor said that, in a moral sense, you cannot graduate from the University of Helsinki without taking some courses on Complex analysis, because a lot of the discipline has been developed at the university.) In addition, as a more ``practical'' subject, I studied some inverse problems. Summa summarum, I studied a wide range of fields in mathematics.
+          I proceeded with my graduate studies studying applied mathematics. I studied subjects like partial differential equations, functional analysis, dynamical systems, and---the University of Helsinki's pride---complex analysis. (My thesis advisor said that, in a moral sense, you cannot graduate from the University of Helsinki without taking some courses on Complex analysis, because a lot of the discipline has been developed at the university.) In addition, as a more ``practical'' subject, I studied some inverse problems. Summa summarum, I studied a wide range of fields in mathematics.
 
-          During my graduate studies, I spent half a year in Utrecht, Netherlands, studying more applied analysis of varying subjects (searching periodic orbits in the Lorentz attractor as an example of a course -- that I failed). At Utrecht University, I got the inspiration for the subject for my future master's thesis; the Finite Element Method. After I got back to Helsinki from the exchange, I had a chance to study more about the finite element method in Aalto University's courses. (Aalto University is a consortium of the Helsinki University of Technology, the Helsinki School of Economics, and the University of Art and Design Helsinki.) While writing my thesis I also taught basic mathematics courses at the University of Helsinki and gained valuable experience in the pedagogical area.
+          During my graduate studies, I spent half a year in Utrecht, Netherlands, studying more applied analysis of varying subjects (searching periodic orbits in the Lorentz attractor as an example of a course---that I failed). At Utrecht University, I got the inspiration for the subject for my future master's thesis; the finite element method (FEM). After I got back to Helsinki from the exchange, I had a chance to study more about the FEM in Aalto University's courses. (Aalto University is a consortium of the Helsinki University of Technology, the Helsinki School of Economics, and the University of Art and Design Helsinki.) While writing my thesis I also taught basic mathematics courses at the University of Helsinki and gained valuable experience in the pedagogical area.
 
           In the binge of graduation, I started to look for future opportunities. I looked for coding jobs in Helsinki and Tallinn, jobs for mathematicians in the mapping industry, continuing at some universities to pursue a Ph.D., etc. I am glad I had the chance to use my creativity and continue in Aalto University's Department of Signal Processing and Acoustics to research low earth orbit satellite communications. The research methodology was from a stochastic geometry perspective, which was well aligned with my mathematical background.
 
-          My professional ambitions are in improving the lives of people globally. Communications play an essential in the picture. (But contain some challenging problems also, as we have seen with social media.) Through effective communication, we can share knowledge, control resources, discuss issues, etc. -- however, globally, the communication infrastructure is still not nearly complete. My interests contain, but are not limited to, communications, particularly wireless networks and signal processing. My dream is to share my knowledge in the process toward a free and honest world. (Pardon me for the cliches.)
+          My professional ambitions are in improving the lives of people globally. Communications play an essential in the picture. (But contain some challenging problems also, as we have seen with social media.) Through effective communication, we can share knowledge, control resources, discuss issues, etc.---however, globally, the communication infrastructure is still not nearly complete. My interests contain, but are not limited to, communications, particularly wireless networks and signal processing. Modulation and demodulation, bandpass and passband. My dream is to share my knowledge in the process toward a free and honest world. (Pardon me for the cliches.)
           
         }
         %% One milestone in my way to engineering started at 2009, thee year of my high school graduation, when I got in to study Electrical engineering in the Helsinki University of technology (TKK). Mathematical disclipline was a natural choice for me as during my highschool years in Helsinki, Munkkinimemi, mathematics and physics where areas where I could get by well without too much effort – or the effort did not feel overwhelmingly bad because I was genuinely interested in these arts. Vastness of space and mathematical poet-like ability to describe the world has always fascinated me – there is something calmfull in chewing the formulas and gradually starting to grasp the mathematical description by your own intuition.
@@ -134,8 +132,9 @@
 
         \subsection{Education}
         \begin{itemize}
-        \item 2016 Bachelor of Science University of Helsinki\\
-        \item 2018 \htmladdnormallink{Master of Philosophy}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, grade: 4/5
+        \item 2025, PhD, \htmladdnormallink{``Narrow-Beam LEO Communications and Stochastic Geometry: Non-Temporal and Temporal Analysis,''}{dissertation.pdf} Department of Signal Processing, Aalto University\\
+        \item 2018, Master of Philosophy, \htmladdnormallink{``Elementtimenetelmä (Finite Element Method),''}{https://helda.helsinki.fi/handle/10138/273474} Department of Applied Analysis, University of Helsinki, grade: 4/5
+        \item 2016, Bachelor of Science, \htmladdnormallink{``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and its Applications),''}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2} University of Helsinki\\
           
         \end{itemize}
 
@@ -146,31 +145,38 @@
 
         \begin{itemize}
         \item
-          I. Angervuori and R. Wichman, ``Order Statistics of the SIR and Interference Cancellation in a Narrow-Beam LEO Uplink,'' in IEEE Letters on Communications, planned for submission before 1.5.2025.
+          I. Angervuori and A. Afridi, ``Spatial and Temporal Correlation of the Interference in a Narrow-Beam LEO Network with ALOHA Medium Access Control,'' 2025, in IEEE Letters on Communications, submitted.
         \item
-I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Narrow-Beam LEO Uplink,'' in IEEE Transactions on Communications, doi: 10.1109/TCOMM.2025.3547734.
+          I. Angervuori and R. Wichman, ``Order Statistics of the SIR and Interference Cancellation in a Narrow-Beam LEO Uplink,'' in IEEE Letters on Communications, 2025, submitted.
+        \item
+I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Narrow-Beam LEO Uplink,'' in IEEE Transactions on Communications, 2025, doi: 10.1109/TCOMM.2025.3547734.
         \item
           I. Angervuori and R. Wichman, ``A Closed-Form Approximation of the SIR Distribution in a LEO Uplink Channel,'' 2022 IEEE Globecom Workshops (GC Wkshps), Rio de Janeiro, Brazil, 2022, pp. 856-861, doi: 10.1109/GCWkshps56602.2022.10008485.
         \item
           N. Okati, T. Riihonen, D. Korpi, I. Angervuori and R. Wichman, ``Downlink Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry,'' in IEEE Transactions on Communications, vol. 68, no. 8, pp. 5120-5134, Aug. 2020, doi: 10.1109/TCOMM.2020.2990993.
         \item A. Yastrebova et al., ``Theoretical and Simulation-based Analysis of Terrestrial Interference to LEO Satellite Uplinks,'' GLOBECOM 2020 - 2020 IEEE Global Communications Conference, Taipei, Taiwan, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9347980.
-        \item Niloofar Okati, Islam Tanash, Taneli Riihonen, Ilari Angervuori, Wichman Risto, ``Performance Evaluation of Low Earth Orbit Communication Satellites'', Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
-        \item Ilari Angervuori, Wichman Risto, Niloofar Okati, Taneli Riihonen, ``On routing protocols in inter-satellite communications'', Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
+        \item Niloofar Okati, Islam Tanash, Taneli Riihonen, Ilari Angervuori, Wichman Risto, ``Performance Evaluation of Low Earth Orbit Communication Satellites,'' Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
+        \item Ilari Angervuori, Wichman Risto, Niloofar Okati, Taneli Riihonen, ``On routing protocols in inter-satellite communications,'' Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
           
         \end{itemize}
 
         \subsection{Personal grants}
         \begin{itemize}
           \item 2022, Väisälä Fund, funding for a research visit to the University of Notre Dame, 4349€
-        \end{itemize}
+        \end{itemize}        
         \subsection{Thesis's and other projects}
         \begin{itemize}
-        \item Master's thesis ``Elementtimenetelmä (The Finite Element Method)'', \htmladdnormallink{https://helda.helsinki.fi/handle/10138/273474}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, 2018, grade: eximia cum laude (5/5)
-        \item Bachelor's thesis ``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and Its Applications)'', \htmladdnormallink{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}, University of Helsinki, 2016, grade: 4/5          
-        \item An university project for a poster session, ``X-ray tomography with sparse data'', \htmladdnormallink{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}, 2015
+        \item PhD dissertation: A sketch (not published), ``Narrow-Beam LEO Communications and Stochastic Geometry: Non-Temporal and Temporal Analysis,'' \htmladdnormallink{V.0.1}{dissertation.pdf}, Department of Electrical Engineering, Aalto University, 2025          
+        \item Master's thesis ``Elementtimenetelmä (The Finite Element Method),'' \htmladdnormallink{https://helda.helsinki.fi/handle/10138/273474}{https://helda.helsinki.fi/handle/10138/273474}, Department of Applied Analysis, University of Helsinki, 2018, grade: eximia cum laude (5/5)
+        \item Bachelor's thesis ``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and its Applications),'' \htmladdnormallink{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2}, University of Helsinki, 2016, grade: 4/5         
+        \item An university project for a poster session, ``X-ray tomography with sparse data,'' \htmladdnormallink{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}{https://www.dropbox.com/s/88pr2da24dil460/projektitosaulijamina.jpg?dl=0}, 2015
           
         \end{itemize}
         
+        \subsection{Other certificates}
+        \begin{itemize}
+        \item 2024, IEEE Transactions, Mobile Computing, \htmladdnormallink{2024 Review Certificate}{\reviewcert}
+        \end{itemize}        
         
 
         \section{Blog posts 2021}
@@ -284,7 +290,7 @@ Wolfram Language:
 References:
 \begin{itemize}
 \item D. J. Daley and D. Vere-Jones, The General Poisson Process in  ``An introduction to the theory of point processes''. New York: Springer, 2003, pp. 39. 
-\item Stoyan, Dietrich. et al. ``Stochastic Geometry and Its Applications''. 3rd ed. Chichester: Wiley, 2013. Print.
+\item Stoyan, Dietrich. et al. ``Stochastic Geometry and its Applications''. 3rd ed. Chichester: Wiley, 2013. Print.
 \item  \htmladdnormallink{H. Paul Keeler's Blog}{https://hpaulkeeler.com/simulating-a-poisson-point-process-on-a-sphere}
 \end{itemize}
 
@@ -1277,22 +1283,22 @@ Let us consider two sinusoidal signals of opposite phases during the time $t \in
 \begin{align}
   &\mathbb{E}[(S_1 + S_2)^2] = \int_0^1 (\cos(2 \pi t) + \cos(2 \pi t + \pi))^2dt = \int_0^10 dt = 0, \tag{1}
 \end{align}
-here $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the probabilistic expected value).
+where $\mathbb{E}[\cdot]$ is the mean (slightly abusing the notation of the probabilistic expected value).
 
 
 We could try to add the powers of the signals separately together:
 
 \begin{align}
   \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] &=   \int_0^1 \cos^2(2 \pi t) dt + \int_0^1 \cos^2(2 \pi  t + \pi) dt \tag{2} \\
-  &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1, \nonumber
+  &= \int_0^1 2 \cos^2(2 \pi t)  dt= \int_0^1 \cos(4 \pi t)dt + 1 = 1. \nonumber
 \end{align}
-but the result significantly differs from X! Can we sometimes sum the individual signal powers together, which would be handy in many applications? This question has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
+But (2) significantly differs from (1)! Can we sometimes sum the individual signal powers together, which would be handy in many applications? This question has everything to do with the \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} of the signals.
 
 Let us assume that $S_1$ and $S_2$ are two signals. We have that
 \begin{equation}
-  \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2], \tag{3}
+  \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2]. \tag{3}
 \end{equation}
-thus, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated---this is not the case with our initial signals, as then the cross-correlation is given by
+Hencex, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated---this is not the case with our initial signals, as then the cross-correlation is given by
 
 $$
 \mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
@@ -1505,16 +1511,16 @@ Let us study a faded signal in an omnidirectional satellite receiver sent by an 
 \end{equation}
 for some $\theta \in [0,1]$ and $A \in \mathbb{R}_+$. The \htmladdnormallink{passband signal}{https://en.wikipedia.org/wiki/Passband} experiences \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading} due to terrestrial obstacles. We use a model where $100$ scatterer objects are \htmladdnormallink{Poisson distributed }{https://en.wikipedia.org/wiki/Poisson_point_process} inside a circular area with a diameter of $180$ m. The phases of the scattered signals are independently uniformly random. Initially, the satellite, which is moving at its \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed}, is in the \htmladdnormallink{zenith}{https://en.wikipedia.org/wiki/Zenith} w.r.t. the earth transmitter. The receiver's (RX) baseband signal is a linear combination of the \htmladdnormallink{down-conversions}{https://en.wikipedia.org/wiki/Digital_down_converter} of the scattered, \htmladdnormallink{Doppler shifted}{https://en.wikipedia.org/wiki/Doppler_effect} and \htmladdnormallink{attenuated}{https://en.wikipedia.org/wiki/Attenuation} passband signal components, and it is given by
 \begin{equation}
-  S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_m }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
-  }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_m }e^{-2 i \pi \theta}, \tag{2}
+  S_{\text{RX}}(t) = \frac{A}{l(d_0)} \sqrt{\frac{K}{K+1}}e^{-2 i \pi \tau_0(t) f_c }e^{-2 i \pi \theta} + \sum_{j=1}^{100} + \frac{A
+  }{l(d_j) \sqrt{100}\sqrt{K+1}} e^{-2 i \pi \tau_j(t) f_c }e^{-2 i \pi \theta}, \tag{2}
 \end{equation}
-where $l(d_i)$ is the path-loss function at distance $d_j$ from the scatterer $j$, $d_0$ is the direct-path distance to the transmitter, $K$ is the parameter that determines the energy ratio of the direct-path (\htmladdnormallink{LOS}{https://en.wikipedia.org/wiki/Line-of-sight_propagation}) component and the scattered paths, and $\tau_j(t) = d_j(t)/c$ is the propagation delays restricted by the speed of light $c$, which is dependent on time $t$ as the satellite moves, and $f_m$ is the carrier frequency.
+where $l(d_i)$ is the path-loss function at distance $d_j$ from the scatterer $j$, $d_0$ is the direct-path distance to the transmitter, $K$ is the parameter that determines the energy ratio of the direct-path (\htmladdnormallink{LOS}{https://en.wikipedia.org/wiki/Line-of-sight_propagation}) component and the scattered paths, and $\tau_j(t) = d_j(t)/c$ is the propagation delays restricted by the speed of light $c$, which is dependent on time $t$ as the satellite moves, and $f_c$ is the carrier frequency.
 
 Given this model, we are interested in the time scale during which $S_{\text{RX}}(\cdot)$ varies, \textit{i.e.}, the \htmladdnormallink{coherence time}{https://en.wikipedia.org/wiki/Coherence_time_(communications_systems)}. The coherence time depends on the Doppler shift, and the satellite's orbital speed is given by
 \begin{equation}
   v = \sqrt{\frac{GM}{h + R_{\oplus}}}, \tag{3}
 \end{equation}
-where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_m = 12 \cdot 10^{9}$; hence, the Doppler spread is $D_s = 100$ Hz. A small estimate for the coherence time is given by
+where $GM \approx 3.9 \cdot 10^{14}$m$^3/$s$^2$, and the denominator is the sum of the satellite's altitude and the earth's radius, respectively. This is fast: around $7$ km/s at $h=600$ km. However, Doppler shift is only caused by the velocity component that is directed towards the transmitter. The Doppler shift is zero when the satellite is in the zenith and grows at lower \htmladdnormallink{elevation angles}{https://en.wikipedia.org/wiki/Horizontal_coordinate_system}. In our model, the scatterers were distributed in an area of diameter $180$ m below the satellite, and the maximum Doppler shift initially is $50$ Hz for $f_c = 12 \cdot 10^{9}$; hence, the Doppler spread is $D_s = 100$ Hz. A small estimate for the coherence time is given by
 \begin{equation}
 T_c = \frac{1}{8 D_s} \approx  10^{-3} \text{s}. \tag{4}
 \end{equation}
@@ -1608,8 +1614,8 @@ function bb = RXbaseband(refs, signals)
     a = 0;
     tau = 0;
   end
-  fm = 12*10^9; ##Modulation frequency.
-  ab = a.*exp(-i*2*pi*tau.*fm); ##Received individual signals.
+  fc = 12*10^9; ##Modulation frequency.
+  ab = a.*exp(-i*2*pi*tau.*fc); ##Received individual signals.
   bb = sum(ab.*signals); ##Aggregate received signal.
 end
 
@@ -1657,7 +1663,7 @@ Here is a representation of the \htmladdnormallink{hypergeometric function}{http
                    &  _3F_2(1,1,1+b;2,2;x)= \sum^{\infty}_{n=0}\frac{(1)_n(1)_n(1+b)_n}{(2)_n(2)_n} \frac{x^n}{n!} \nonumber\\
                    &=\sum^{\infty}_{n=0}\frac{(1+b)_n}{(n+1)^2n!}x^n = \frac{1}{b!}\sum^{\infty}_{n=0} \frac{(n+1)_{b}}{(n+1)^2}x^n \nonumber \\
                    &\overset{(a)}{=} \frac{1}{b!} \sum^{\infty}_{n=0} \frac{\sum^{b}_{k=1}\left[ b \atop k \right](n+1)^k}{(n+1)^2} x^n\nonumber \\
-                   &= \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\infty}_{n=0}  \frac{x^n}{(n+1)^{2-k}} \overset{(b)}{=} -\frac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(x)}{x}, \label{eq:pollog}
+                   &= \frac{1}{b!} \sum^{b}_{k=1}\left[ b \atop k \right] \sum^{\infty}_{n=0}  \frac{x^n}{(n+1)^{2-k}} \overset{(b)}{=} \frac{1}{b!}\sum^{b}_{k=1} \left[ b \atop k \right]\frac{\text{Li}_{2-k}(x)}{x}, \label{eq:pollog}
                  \end{align*}
                  where $\left[ b \atop k \right]$ is the unsigned Stirling number of the first kind. In (a), we used the expansion of the rising Pochhammer factorial and in (b), we used the definition of the polylogarithm. Furthermore, the $x \in \mathbb{C}$ follows from the \htmladdnormallink{analytic continuation}{https://en.wikipedia.org/wiki/Analytic_continuation} of the polylogarithm.
 

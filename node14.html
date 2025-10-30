@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>October – Fast Fourier transform in GNU Octave</TITLE>
+<TITLE>August&mdash;Radio waves in a tunnel</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -23,12 +23,12 @@
  HREF="node15.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node7.html">
+ HREF="node8.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node13.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html202"
+<A ID="tex2html210"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,92 +36,114 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node15.html">November – Digital filtering</A>
+ HREF="node15.html">October – Fast Fourier</A>
 <B> Up:</B> <A
- HREF="node7.html">Blog posts 2021</A>
+ HREF="node8.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node13.html">August Radio waves in</A>
- &nbsp; <B>  <A ID="tex2html203"
+ HREF="node13.html">June Why does MIMO</A>
+ &nbsp; <B>  <A ID="tex2html211"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00037000000000000000">
-October – Fast Fourier transform in GNU Octave</A>
+<H2><A ID="SECTION00036000000000000000">
+August&mdash;Radio waves in a tunnel</A>
 </H2>
 
 <P>
-<A ID="tex2html58"
-  HREF="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast fourier transform</A>
-(FFT) is an algorithm that computes the <A ID="tex2html59"
-  HREF="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">discrete Fourier transform</A>.
+Almost everyone has some experience of how radio turns static when driving into a tunnel. The radio stations only work if a special  <A ID="tex2html54"
+  HREF="https://en.wikipedia.org/wiki/Leaky_feeder">radiating cable</A>
+is installed inside the tunnel. Once upon a night, I could not sleep, pondering why the <A ID="tex2html55"
+  HREF="https://en.wikipedia.org/wiki/FM_broadcast_band">FM</A>
+radios are unsuable in the tunnels. From my experience, mobile phone signals that operate at higher frequencies work better. Someone might have told me that FM radio wavelength is so large that the wave &ldquo;does not fit the tunnel&rdquo;. But as intuitively acceptable as this explanation could be (I don't think it is even that), this answer did not satisfy me.
 
 <P>
-FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img13.svg"
- ALT="$F_s$"></SPAN> (Hz). By the <A ID="tex2html60"
-  HREF="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon sampling theorem</A>, sampling captures frequencies under <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img14.svg"
- ALT="$F_s/2$"></SPAN>.
+After some research, I found that the explanation lies in <A ID="tex2html56"
+  HREF="https://en.wikipedia.org/wiki/Maxwell's_equations">Maxwell equation's</A>
+behavior (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface&mdash;this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
 
 <P>
-Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
+Intuitive or not, this is what the equations tell us. To demonstrate this, I solved using <A ID="tex2html57"
+  HREF="https://en.wikipedia.org/wiki/Finite_element_method">FEM</A>, the <A ID="tex2html58"
+  HREF="https://en.wikipedia.org/wiki/Helmholtz_equation">Helmholtz equation</A>
+for a plane wave in a two-dimensional setting mimicking a tunnel and its entrance. The <A ID="tex2html59"
+  HREF="https://en.wikipedia.org/wiki/Electromagnetic_radiation">electromagnetic wave's</A>
+polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). <A ID="tex2html60"
+  HREF="https://en.wikipedia.org/wiki/Boundary_value_problem">Boundary conditions</A>
+inside the 2D tunnel is zero. The coloring represents the electrical component's magnitude.
 
 <P>
-<PRE>
-##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
-
-function fftvector = plotfft(signal, Fs)
-  N = length(signal); #Signal length.
-  FFT =  fft(signal);
-  if(mod(N,2) == 0) #Check if signal length is odd or even.
-    FFT = 2*FFT(1 : N/2)/N;
-    f = Fs*(0 : (N - 1)/2)/(N - 1); 
-  else
-    FFT = 2*FFT(1 : (N - 1)/2)/N;
-    f = Fs*(0 : (N - 2)/2)/(N - 1);
-  end  
-  fftvector = [f; FFT];
-  
-  figure(1)
-  plot(f, abs(FFT));
-  title('Fast fourier transform')
-  xlabel('Frequency (Hz)')
-  print  plot.jpg
-end
-</PRE>
-
-<P>
-The following figure shows my track <A ID="tex2html61"
-  HREF="https://soundcloud.com/ilari-angervuori/tappimarssi">Tappimarssi</A>
-in the frequency domain. The track was imported to Octave by
-
-<P>
-<PRE>
-[signal, Fs] = audioread('Tappimarssi.wav');
-</PRE>
+We compare the behavior of two different wavelengths:
 
 <P>
 
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./tappimarssi.jpg"
- ALT="Image tappimarssi">
-
+<DIV class="CENTER"><A ID="251"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+High frequencies fit in the tunnel.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="410" STYLE=""
+ SRC="./highfreq.gif"
+ ALT="Image highfreq"></TD></TR>
+</TABLE>
 </DIV>
 
 <P>
 
+<DIV class="CENTER"><A ID="255"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+Wavelengths bigger than the diameter of the tunnel will not get through.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="390" STYLE=""
+ SRC="./lowfreq.gif"
+ ALT="Image lowfreq"></TD></TR>
+</TABLE>
+</DIV>
+.
+
+<P>
+References: 
+
 <UL>
+<LI><A ID="tex2html61"
+  HREF="https://se.mathworks.com/help/pde/ug/scattering-problem.html">Scattering Problem: Matlab PDE Modeler App</A>
+</LI>
 <LI><A ID="tex2html62"
-  HREF="https://octave.org/doc/v5.2.0/Signal-Processing.html">Octave Documentation – Signal Processing</A>
+  HREF="https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields">Interface conditions for electromagnetic fields (Wikipedia article)</A>
 </LI>
 </UL>
 
 <P>
-<BR><HR>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html210"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node15.html">October – Fast Fourier</A>
+<B> Up:</B> <A
+ HREF="node8.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node13.html">June Why does MIMO</A>
+ &nbsp; <B>  <A ID="tex2html211"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
