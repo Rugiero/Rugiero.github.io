@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.9)  3 NOV 2025 08:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  4 NOV 2025 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,9 +328,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 \lthtmlwrite=\write5
 (/usr/share/texmf/tex/latex/preview/preview.sty
 Package: preview 2023/01/17 13.2 (AUCTeX/preview-latex)
-(/usr/share/texlive/texmf-dist/tex/generic/luatex85/luatex85.sty
-Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
-) (/usr/share/texmf/tex/latex/preview/prtightpage.def
+(/usr/share/texmf/tex/latex/preview/prtightpage.def
 \PreviewBorder=\dimen184
 )
 \pr@snippet=\count302
@@ -1236,12 +1234,12 @@ Package rerunfilecheck Info: File `images.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11773 strings out of 474222
- 179203 string characters out of 5748734
+ 11756 strings out of 475509
+ 178664 string characters out of 5776664
  1943975 words of memory out of 5000000
- 33727 multiletter control sequences out of 15000+600000
+ 33506 multiletter control sequences out of 15000+600000
  560695 words of font info for 47 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 395 hyphenation exceptions out of 8191
  90i,9n,93p,903b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
