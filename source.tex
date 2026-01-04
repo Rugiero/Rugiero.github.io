@@ -1668,6 +1668,48 @@ Here is a representation of the \htmladdnormallink{hypergeometric function}{http
                  where $\left[ b \atop k \right]$ is the unsigned Stirling number of the first kind. In (a), we used the expansion of the rising Pochhammer factorial and in (b), we used the definition of the polylogarithm. Furthermore, the $x \in \mathbb{C}$ follows from the \htmladdnormallink{analytic continuation}{https://en.wikipedia.org/wiki/Analytic_continuation} of the polylogarithm.
 
 
+     %%             \section{Blog posts 2025}
+                 
+%%                  \subsection{November---Artificial intelligence, machine learning, hypothesis classes, and stochastic geometry}
+
+%%                  The obvious trend that \htmladdnormallink{artificial intelligence}{https://en.wikipedia.org/wiki/Artificial_intelligence} (AI) and \htmladdnormallink{machinge learning}{https://en.wikipedia.org/wiki/Machine_learning} (ML) are the hot topic of the day. This is why want to address how \htmladdnormallink{stochastic geometry}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks} (SG) can and will be utilized in the modern ML by providing \textbf{hypothesis classes} for the ML algorithms.
+
+%%                  Sometimes one hears that SG and ML has are as far as rivals: if so, the ML community may declare the victory of the battle, maybe for the entire war, given the purely economical performance meters: SG has transformed from an academic exercise into the industry only in marginal sense; however, as of today, the ML is encompassed everywhere in the industry and academy. However, I am sure that most people agree that such rivalry is not the only way to see the situation. So is the (extensively ongoing) study of SG useless?  It definitely is not. Let us address why. 
+
+%%                  Le me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks aspects, and particularly interference modeling and its statistical inference.
+%%                  \begin{itemize}
+%%                  \item{SG encompasses random \textbf{models} of wireless networks, from which many statistical properties; such as of interference and its temporal and spatial correlations. The expressions are usually presented in mathematical forms; at best in tractable and closed form formulas are avalaible.} 
+%%                  \item{ML encompasses learning algorithms, from which many statistical properties can be numerically many times presented according to the past \textbf{raw-data}, such as interference prediction including its temporal and spatial correlation properties. The results are essentially numerical.}
+%%                  \end{itemize}
+
+%%                  ML algorithms are often based in \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). The landscape of such algorithms is vast. The GPR signal prediction is based in prior autocovariance, or more generally, correlation functions, which can be arbitrary. One may numerically estimate the autocovariance from empirical data; however, this approach can lead to uncontrollable numerical cliches. Hence, it is usefull to base the estimations in a theoretical estimate of the correlation functions, which guides us to right direction in infering the empirical data at hand. (For example, the numerical estimations of \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function may fluctuate vastly, depending on the sampled realization of the data, even though the data statistics would in principle be invariant.) In the following, we demonstrate a simple example of estimating the power of a non-stationary Gaussian interference signal at a \htmladdnormallink{low Earth orbit}{https://en.wikipedia.org/wiki/Low_Earth_orbit} base station (LEO BS). The prior autocovariance function is derived from a theoretical estimate based in SG, and based in this autocovariance, the power estimation is conducted from empirical data by using GPR.
+
+%%                  The theoretical settings are:
+%%                  \begin{enumerate}
+%%                  \item{The interferers (natural sources or tranmitters) with the bandiwdth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface causing interference at the LEO BS.} 
+%%                  \item{The LEO BS has a narrow beam of $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center.}
+%%                  \item{The LEO BS is at $h=200$ km moving at its orbital speed $v_{\text{sat}}=7.4$ km/s.}
+%%                  \item{For simplicity, no fast-\htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, Shadowing or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all tranmitters}
+%%                  \end{enumerate}
+%%                  As the LEO BS move, the magnitude of the aggregate interference varies due to the PPP distributed interferers.
+
+%%                  The key insight acquired from the SG is that in such settings, the normalized interference power $P=P(t)$ at the LEO BS is closely \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=1$ and the variance $\text{var}(P)=1/2$. Furthermore, the autocovariance at lag $\tau$ has the Gaussian form $K_{P}(\tau)=\kappa \exp\left\{D\tau^2} \log(2)\right\}=1/2 \exp\left\{v_{\text{sat}}^2\tau^2/(h^2 \varphi_{\text{RX}}^2)} \log(2)\right\}$. This is the prior \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} model we will utilize in the GPR: the decribed $P(t)$ is the hypothesis class of the set of functions within which we search our estimation.
+
+%%                      Note that the constant $D=v_{\text{sat}}^2\tau^2/(h^2 \varphi_{\text{RX}}^2)$ is directly defined by the altitude $h$ of the satellite: the \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed} $v_{\text{sat}}$ follows single-handly from the altitude. On the contrary, the scaling parameter $\kappa=1/2$ would have generally a dependency on the density of the interferers (in our case, the received power being normalized). However, it can be empirically verified that within a fairly general density region, the assertion of $D$ is more crucial for the GPR estimation: too large and small $D$ leads to \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting of the data, respectively. On the other hand, these two parameters can be also set as \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)} that are learned from the data---of course, also in this case, the proposed SG-based hypothesis class of $P(t)$ encompasses important insights through its the gamma distribution and the Gaussian correlation function.
+                     
+                     
+%%                    Furthermore, it can be shown that, under fairly general settings, the LEO BS receives a waveform $I(t)=\sqrt{P(t)}X(t)$, where $X(t)$ is a near-Gaussian noise waveform. This means that $I(t)$ can be approximated by a non-stationary Gaussian process with the varying variance $P(t)$. We will sample $|I(t)|^2$ to estimate the interference power $P(t)$.
+
+%%                    In Figures 1(a) and 1(b), we estimate the interference power $P(t)$ from a sampled (sampling frequency $0.1$ kHz) realization of $I(t)$ by using GPR and (non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter}) \htmladdnormallink{moving average}{https://en.wikipedia.org/wiki/Moving_average} (MA). (The window size of the MA is empirically optimized.) The power modulator $P(t)$ is generated through a latent \htmladdnormallink{Gaussian process}{https://en.wikipedia.org/wiki/Gaussian_process} based in the gamma distribution and the second-order statistics, which we accept as a sufficient approximation (the ``actual'' $P(t)$ should be generated by moving the LEO BS over the PPP distributed interferers on the Earth surface).
+                   
+%%                    Altough the MA might capture $P(t)$ reasonably well (as long as the window size is optimized), the GPR prediction is clearly able to better capture the smootheness of the signal power modulating the Gaussian noise. Furthermore, the GPR prediction captures the $P(t)$ from $t=0$ onwards, which is impossible for the non-causal, centralized MA, which starts at $t\approx 1.5$s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the signal future based in the past values: Not so suprisingly, the GPR is suprerior to MA in this regard.
+
+%% \begin{figure}
+%%   \includegraphics[width=\linewidth]{GPRvsMA.pdf}
+%%   \caption{The baseband signal under Rayleigh fading $K=0$.}
+%% \end{figure}
+                   
+                 
 \end{document}
 
 
