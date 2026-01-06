@@ -28,12 +28,12 @@
 <A
  HREF="node22.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html269"
+<A ID="tex2html270"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
+ ALT="8"></A>
 <BR>
 <B> Next:</B> <A
  HREF="node24.html">Inverse of a Gaussian</A>
@@ -41,7 +41,7 @@
  HREF="node20.html">Miscellaneous notes</A>
 <B> Previous:</B> <A
  HREF="node22.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html270"
+ &nbsp; <B>  <A ID="tex2html271"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -52,35 +52,35 @@ November – Digital filtering</A>
 </H2>
 
 <P>
-Let's construct a simple digital band-pass filter based in the <A ID="tex2html117"
+Let's construct a simple digital band-pass filter based in the <A ID="tex2html118"
   HREF="https://en.wikipedia.org/wiki/Sinc_filter">sinc filter</A>.
 
 <P>
-As everyone know, the sinc function is the <A ID="tex2html118"
+As everyone know, the sinc function is the <A ID="tex2html119"
   HREF="https://en.wikipedia.org/wiki/Impulse_response">impulse response</A>
-of a low-pass filter. That is, the <A ID="tex2html119"
+of a low-pass filter. That is, the <A ID="tex2html120"
   HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
 of a signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img77.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img84.svg"
  ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
  $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img78.svg"
+ STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img85.svg"
  ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img77.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img84.svg"
  ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img79.svg"
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img86.svg"
  ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
  $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img80.svg"
+ STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img87.svg"
  ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img81.svg"
- ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html120"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img88.svg"
+ ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html121"
   HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img82.svg"
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img89.svg"
  ALT="$B_H$"></SPAN>.
 
 <P>
@@ -95,7 +95,7 @@ Heuristically, we can right away derive the discrete versions of the impulse res
 </P>
 <DIV CLASS="displaymath">
 <IMG
- STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img83.svg"
+ STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img90.svg"
  ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
@@ -110,20 +110,20 @@ i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 </P>
 <DIV CLASS="displaymath">
 <IMG
- STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img84.svg"
+ STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img91.svg"
  ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
 $">
 </DIV><P></P>
 
 <P>
 for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img44.svg"
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img51.svg"
  ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
  $i \mapsto \delta[i] := \delta_{0i}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img85.svg"
- ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html121"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img92.svg"
+ ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html122"
   HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
 
 <P>
@@ -175,14 +175,14 @@ end
 
 <P>
 
-<DIV class="CENTER"><A ID="512"></A>
+<DIV class="CENTER"><A ID="518"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 Signal of form <!-- MATH
  $\cos(20 \pi t) + \sin(2 \pi t)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img86.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img93.svg"
  ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="466" STYLE=""
@@ -193,7 +193,7 @@ Signal of form <!-- MATH
 
 <P>
 
-<DIV class="CENTER"><A ID="516"></A>
+<DIV class="CENTER"><A ID="522"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
 The same signal with the first term filtered away</CAPTION>
@@ -228,12 +228,12 @@ References:
 <A
  HREF="node22.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html269"
+<A ID="tex2html270"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
  STYLE="" SRC="jetscalecropped.png"
- ALT="7"></A>
+ ALT="8"></A>
 <BR>
 <B> Next:</B> <A
  HREF="node24.html">Inverse of a Gaussian</A>
@@ -241,7 +241,7 @@ References:
  HREF="node20.html">Miscellaneous notes</A>
 <B> Previous:</B> <A
  HREF="node22.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html270"
+ &nbsp; <B>  <A ID="tex2html271"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

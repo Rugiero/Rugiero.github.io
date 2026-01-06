@@ -194,10 +194,10 @@ I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Na
 
                  
 
-                 Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modeling and its statistical inference.
+                 Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modeling.
                  \begin{itemize}
-                 \item{SG encompasses \textbf{random models} of wireless networks, from which many statistical properties, such as interference and its temporal and spatial correlations, can be inquired. The expressions are usually presented in mathematical forms; at best, tractable and closed-form formulas are available.} 
-                 \item{ML encompasses learning algorithms, from which many statistical properties can be numerically presented according to the past \textbf{raw data}, such as interference prediction, including its temporal and spatial correlation properties. The results are usually numerical.}
+                 \item{SG encompasses \textbf{stochastic models} of wireless networks, from which many statistical properties, such as signal power distributions, can be inquired. The expressions are usually presented in mathematical forms; at best, tractable and closed-form formulas are available.} 
+                 \item{ML encompasses learning algorithms that ultimately utilize empirical \textbf{raw data}, and they are powerful tools for signal interpolation and prediction. The results are usually numerical.}
                  \end{itemize}
 
                  
