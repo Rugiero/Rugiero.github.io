@@ -86,13 +86,13 @@ Let me formulate the working definitions of the ML and SG. We focus on the signa
 <P>
 The landscape of the ML algorithms is vast; however, they are often based on <A ID="tex2html25"
   HREF="https://en.wikipedia.org/wiki/Kriging">Gaussian process regression</A>
-(GPR). The GPR is a signal prediction method that is based on estimating the signal from a <A ID="tex2html26"
+(GPR). The GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a <A ID="tex2html26"
   HREF="https://en.wikipedia.org/wiki/Correlation">correlation</A>
-function, or more specifically, an <A ID="tex2html27"
+function. More specifically, an <A ID="tex2html27"
   HREF="https://en.wikipedia.org/wiki/Autocorrelation">autocovariance</A>
-function (also referred to as a kernel). The autocovariance function can be arbitrary: for example, one may numerically estimate the autocovariance from an empirical data set. However, this approach can lead to uncontrollable numerical problems, especially if the <A ID="tex2html28"
+function (also referred to as a kernel) is at the heart of the GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from an empirical data set. However, this approach can lead to uncontrollable numerical problems, especially if the <A ID="tex2html28"
   HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>
-is not encompassing enough. Hence, it is useful if the predictions have a prior correlation function estimate based on a theoretical model, which will guide us in the right direction for inferring the empirical data at hand.
+is not encompassing enough. Hence, it is useful if the predictions have a prior correlation function estimate based on a theoretical model, which will guide us in the right direction for inferring the empirical data at hand. In here, the SG steps into the arena.
 
 <P>
 In the following, we demonstrate a simple example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html29"
