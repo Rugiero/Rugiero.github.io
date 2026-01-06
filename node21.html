@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
+<TITLE>Controlling your passwords with pass</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -23,12 +23,12 @@
  HREF="node22.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node17.html">
+ HREF="node20.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node20.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html231"
+<A ID="tex2html265"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,145 +36,131 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node22.html">July Summing the signal</A>
+ HREF="node22.html">October – Fast Fourier</A>
 <B> Up:</B> <A
- HREF="node17.html">Blog posts 2022</A>
+ HREF="node20.html">Miscellaneous notes</A>
 <B> Previous:</B> <A
- HREF="node20.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html232"
+ HREF="node20.html">Miscellaneous notes</A>
+ &nbsp; <B>  <A ID="tex2html266"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00044000000000000000">
-June&mdash;Gaussian vs. impulsive noise</A>
+<H2><A ID="SECTION00071000000000000000">
+Controlling your passwords with pass</A>
 </H2>
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
 
 <P>
-Noise is often modeled to have a <A ID="tex2html81"
-  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
-waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html82"
-  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
-events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html83"
-  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
-with significant mass in the tail distribution. 
 
-<P>
-The <A ID="tex2html84"
-  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable distributions</A>
-are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
- $\alpha = 2$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img45.svg"
- ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
- $\alpha \leq 1$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img46.svg"
- ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
-
-<P>
-Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
-
-<P>
-In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
- ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
- ALT="$\alpha =1$"></SPAN>. 
-
-<P>
-<PRE>
-pkg load statistics
-
-clear all;
-close all;
-
-%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
-function xb = digitaltoanalog(T, digitalsignal, Fs)
-  xb = [];
-  for t = T
-    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
-  end
-end
-
-
-%%Inverse of the alpha stable CDF with alpha = 1.
-invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
-%%Generate N Alpha-stable samples.
-N = 100;
-alphasamples = invalphaCDF(unifrnd(0,1,1,N));
-
-%%Generate normal samples.
-normalsamples = normrnd(0,1,1,N);
-%%Convert to analog signal.
-T = 1 : 0.1 : N;
-alphasamples = digitaltoanalog(T, alphasamples, 1);
-normalsamples = digitaltoanalog(T, normalsamples, 1);
-
-alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
-normalsamples = normalsamples/(mean(abs(normalsamples)));
-figure(1)
-plot(T, alphasamples)
-legend('Alpha-stable noise')
-axis([0 100 -15 15])
-figure(2)
-plot(T, normalsamples)
-legend('Gaussian noise')
-axis([0 100 -15 15])
+<UL>
+<LI>Install the application in the terminal. 
+<BR><PRE>
+sudo apt install pass
 </PRE>
+</LI>
+<LI>Check for the existing GPG keys. 
+<BR><PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>If no keys were found generate a key pair. 
+<BR><PRE>
+gpg --generate-key
+</PRE>
+</LI>
+<LI>Copy the name of the key and initialize pass.
+<BR><PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
+</LI>
+<LI>Generate a password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+List the passwords.
+<PRE>
+pass
+</PRE>
+Copy a password to the clipboard. 
+<BR><PRE>
+pass keyfolder/newkey -c
+</PRE>
+For more commands:
+<PRE>
+man pass
+</PRE>
+</LI>
+</UL>
 
 <P>
+Connect Pass to Git and it is easy to keep track of passwords with multiple machines.
 
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./alphastablenoise.png"
- ALT="Image alphastablenoise">
-
-</DIV>
-
-<P>
-
-<DIV class="CENTER">
-  <IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./gaussiannoise.png"
- ALT="Image gaussiannoise">
-
-</DIV>
-
-<P>
-Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
-
-<P>
-It is also interesting to compare the audiolized noise signals:
-<A ID="tex2html85"
-  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
+<UL>
+<LI>Export your public and private key to a file with 
+<BR><PRE>
+  gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
+<BR></LI>
+<LI>Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
+<BR><PRE>
+gpg --import public.key
+gpg --import private.key
+</PRE>
+</LI>
+<LI>After importing the keys to a new machine you can list the keys:
+<PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>and initialize Pass with
+<PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+</LI>
+<LI>First, remember to <A ID="tex2html107"
+  HREF="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">add your public SSH key to GitHub</A>. We will initialize the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
+<PRE>
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
+</PRE>
+</LI>
+<LI>Get password data from the server (from a non-empty repository, otherwise skip)
+<PRE>
+pass git pull origin master --allow-unrelated-histories
+pass git commit -am "firstcommit"
+</PRE>
+If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconcileing and repeat the command.
+</LI>
+<LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
+<BR><PRE>
+pass git push --set-upstream origin master
+</PRE>
+</LI>
+<LI>From here on you can use the familiar git commands. 
+<BR><PRE>
+pass git pull 
+pass git push
+</PRE>
+It can be the case that you have to raise the trust level of the public key. For that, check <A ID="tex2html108"
+  HREF="https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user">this</A>
+article. 
+</LI>
+</UL>
+Stay safe :)
 
 <P>
 References:
 
+<P>
+
 <UL>
-<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
-</LI>
-<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976.
-</LI>
-<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ; Cambridge University Press, 2005. Print.
+<LI><A ID="tex2html109"
+  HREF="https://www.passwordstore.org/">Password Store</A>
 </LI>
 </UL>
 
@@ -186,12 +172,12 @@ References:
  HREF="node22.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node17.html">
+ HREF="node20.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node20.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html231"
+<A ID="tex2html265"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -199,12 +185,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node22.html">July Summing the signal</A>
+ HREF="node22.html">October – Fast Fourier</A>
 <B> Up:</B> <A
- HREF="node17.html">Blog posts 2022</A>
+ HREF="node20.html">Miscellaneous notes</A>
 <B> Previous:</B> <A
- HREF="node20.html">May – Digital to</A>
- &nbsp; <B>  <A ID="tex2html232"
+ HREF="node20.html">Miscellaneous notes</A>
+ &nbsp; <B>  <A ID="tex2html266"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

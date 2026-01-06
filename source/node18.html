@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>January&mdash;Inverse of a Gaussian variable</TITLE>
+<TITLE>June&mdash;Why does MIMO work?</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -23,12 +23,12 @@
  HREF="node19.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node17.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html225"
+<A ID="tex2html249"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,107 +36,119 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node19.html">February Voronoi tesselation on</A>
+ HREF="node19.html">August Radio waves in</A>
 <B> Up:</B> <A
- HREF="node17.html">Blog posts 2022</A>
+ HREF="node14.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node17.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html226"
+ HREF="node17.html">May Rayleigh fading audiolized</A>
+ &nbsp; <B>  <A ID="tex2html250"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00041000000000000000">
-January&mdash;Inverse of a Gaussian variable</A>
+<H2><A ID="SECTION00064000000000000000">
+June&mdash;Why does MIMO work?</A>
 </H2>
 
 <P>
-There is a lot of literature on the <A ID="tex2html75"
-  HREF="https://en.wikipedia.org/wiki/Inverse_distribution">inverse</A>
-of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution&mdash;it is a different matter). The inverse distribution is ill-behaved; the mean and variance do not generally exist.
+Multiple-input and multiple-output <A ID="tex2html89"
+  HREF="https://en.wikipedia.org/wiki/MIMO">MIMO</A>
+antenna technology is used to exploit the <A ID="tex2html90"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">multi-path propagation</A>
+to improve the capacity of a communication link. In principle, the link's capacity can be increased merely by increasing the power of the transmitting antenna. However&mdash;apart from being energy-consuming&mdash;this also increases interference to any other receivers should they operate in the same frequency band. In MIMO, the energy is divided among multiple antennas, and the link capacity is improved without using any extra energy and without increasing interference towards other transmitters.
 
 <P>
-I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified, e.g., by Monte Carlo simulations).
+Why does it work? Here is how I came up with a simple argument based on stochastic geometry. First, let us make some assumptions. We assume a flat and infinite Earth (this is a &ldquo;tin foil assumption,&rdquo; but it is often reasonable). In addition, our communication channel environment consists of many obstacles so that our transmitting and receiving antennae can not see each other. We are in a city full of houses, cars, trees, etc. Then, our data signal propagates to the receiver through multiple paths, for example, through distinct streets around different houses. The aggregate signal in the receiver will be  <A ID="tex2html91"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh faded</A>. The city is stormed with mobile phones exchanging data with their base stations, which further hand the data to the receiving mobile phones' base station and, on the other hand, cause interference to the other base stations. We assume that the interfering base stations are independently located and are distributed according to the <A ID="tex2html92"
+  HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>.
 
 <P>
-First, approximate the Gaussian distributed variable <!-- MATH
- $X \sim \mathcal{N}(\mu, \sigma^2)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img26.svg"
- ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$"></SPAN> by a log-normally distributed variable <!-- MATH
- $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img27.svg"
- ALT="$X \approx Y \sim$">&nbsp; &nbsp;Lognormal<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img28.svg"
- ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$"></SPAN> with corresponding mean and variance, <SPAN  CLASS="textit">i.e.</SPAN>, <P><!-- MATH
- \begin{displaymath}
-\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 5.88ex; vertical-align: -2.32ex; " SRC="img29.svg"
- ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">
-</DIV><P></P>
-and
-<P><!-- MATH
- \begin{displaymath}
-\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img30.svg"
- ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">
-</DIV><P></P>
-We leave the solving of <!-- MATH
- $\mu_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img31.svg"
- ALT="$\mu_{\text{LN}}$"></SPAN> and <!-- MATH
- $\sigma_{\text{LN}}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img32.svg"
- ALT="$\sigma_{\text{LN}}$"></SPAN> as an easy exercise for the reader. (:
+Let's consider that person A is sending a message to person B. We are interested in the probability that the base station serving person A successfully transmits the message to a base station serving person B. Under the assumptions above and some other simplified assumptions, as derived in <A ID="tex2html93"
+  HREF="https://hal.inria.fr/inria-00403040v4/document">here</A>, we can express the probability of a successful transmission as:
 
 <P>
-Using the theory of log-normal distribution, the inverse of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
- ALT="$X$"></SPAN> is now given by
-<P><!-- MATH
- \begin{displaymath}
-1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-\end{displaymath}
+<P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\textbf{P}[\text{Successful single-antenna transmission}] = e^{-\frac{\pi^2}{2\sqrt{P}}}, \tag{1}
+\end{equation}
  -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
- ALT="$\displaystyle 1/X \approx 1/Y \sim$">&nbsp; &nbsp;Lognormal<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
-$">
-</DIV><P></P>
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img69.svg"
+ ALT="$\displaystyle \textbf{P}[$">Successful single-antenna transmission<IMG
+ STYLE="height: 3.83ex; vertical-align: -0.70ex; " SRC="img70.svg"
+ ALT="$\displaystyle ] = e^{-\frac{\pi^2}{2\sqrt{P}}},$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(1)</TD></TR>
+</TABLE></DIV>
+<P></P>
 
 <P>
-That's it!
+where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img71.svg"
+ ALT="$P$"></SPAN> denotes the mean transmitting power of the base stations.
+
+<P>
+In MIMO, we use multiple distinct antennas to transmit the same message. In each antenna, the encoding of the message should be different so that it can't mix with the information that the other antennas are transmitting&mdash;this is possible by <A ID="tex2html94"
+  HREF="https://en.wikipedia.org/wiki/Orthogonal_frequency_division_multiplexing">orthogonal modulation</A>.
+Assuming that each message from each antenna independently propagates to the receiver, we can calculate from equation <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img72.svg"
+ ALT="$(1)$"></SPAN> by the complementary probability that <SPAN  CLASS="textbf">at least one message transmission gets through:</SPAN>
+
+<P>
+<P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\textbf{P}[\text{Successful MIMO transmission with N antennas}]  = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N, \tag{2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img69.svg"
+ ALT="$\displaystyle \textbf{P}[$">Successful MIMO transmission with N antennas<IMG
+ STYLE="height: 6.46ex; vertical-align: -2.32ex; " SRC="img73.svg"
+ ALT="$\displaystyle ] = 1-\left(1-e^{-\frac{\pi^2}{2\sqrt{P/N}}}\right)^N,$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(2)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img74.svg"
+ ALT="$N$"></SPAN> is the number of transmitting antennas. Notice that we divided the transmitting power <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img71.svg"
+ ALT="$P$"></SPAN> by the number of antennas, so we didn't increase the aggregate power.
+On the other hand, should we have no MIMO technology at hand, we could improve the link quality by increasing the power <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img71.svg"
+ ALT="$P$"></SPAN> of a single antenna. In the following figure, we compare these two cases.
+
+<P>
+
+<DIV class="CENTER"><A ID="384"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+MIMO saves energy and improves performance.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="467" STYLE=""
+ SRC="./MIMO.png"
+ ALT="Image MIMO"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+It is evident that MIMO is an excellent solution for increasing the throughput of a wireless communication link. Using multiple antennas, we can save power and achieve better data rates than by merely increasing the power of a single transmitter. In MIMO, using multiple antennas, statistically speaking, a significant fraction of the channels are in a good state (as well as a bad state), and the performance is consistent.
 
 <P>
 References:
 
 <UL>
-<LI><A ID="tex2html76"
-  HREF="https://en.wikipedia.org/wiki/Log-normal_distribution">Log-normal distribution</A>
-</LI>
-<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html95"
+  HREF="https://hal.inria.fr/inria-00403040v4/document">Stochastic Geometry and Wireless Networks, Volume 2 - Applications</A>
 </LI>
 </UL>
 
@@ -148,12 +160,12 @@ References:
  HREF="node19.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node17.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node17.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html225"
+<A ID="tex2html249"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -161,12 +173,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node19.html">February Voronoi tesselation on</A>
+ HREF="node19.html">August Radio waves in</A>
 <B> Up:</B> <A
- HREF="node17.html">Blog posts 2022</A>
+ HREF="node14.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node17.html">Blog posts 2022</A>
- &nbsp; <B>  <A ID="tex2html226"
+ HREF="node17.html">May Rayleigh fading audiolized</A>
+ &nbsp; <B>  <A ID="tex2html250"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

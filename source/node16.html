@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>November – Digital filtering</TITLE>
+<TITLE>March&mdash;Signal propagation in a city</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
+<LINK REL="next" HREF="node17.html">
 <LINK REL="previous" HREF="node15.html">
 <LINK REL="next" HREF="node17.html">
 </HEAD>
@@ -22,12 +23,12 @@
  HREF="node17.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node8.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node15.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html214"
+<A ID="tex2html245"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -35,182 +36,74 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node17.html">Blog posts 2022</A>
+ HREF="node17.html">May Rayleigh fading audiolized</A>
 <B> Up:</B> <A
- HREF="node8.html">Blog posts 2021</A>
+ HREF="node14.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node15.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html215"
+ HREF="node15.html">January Poisson process on</A>
+ &nbsp; <B>  <A ID="tex2html246"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A ID="SECTION00038000000000000000">
-November – Digital filtering</A>
+<H2><A ID="SECTION00062000000000000000">
+March&mdash;Signal propagation in a city</A>
 </H2>
+Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that <A ID="tex2html71"
+  HREF="https://en.wikipedia.org/wiki/Attenuation">attenuate</A>, <A ID="tex2html72"
+  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">reflect</A>, <A ID="tex2html73"
+  HREF="https://en.wikipedia.org/wiki/Reflection_(physics)">refract</A>
+and <A ID="tex2html74"
+  HREF="https://en.wikipedia.org/wiki/Diffraction">diffract</A>
+the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver&mdash;this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to <A ID="tex2html75"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>
+as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow <A ID="tex2html76"
+  HREF="https://en.wikipedia.org/wiki/Rician_fading">Rician fading</A>
+statistics.
 
 <P>
-Let's construct a simple digital band-pass filter based in the <A ID="tex2html70"
-  HREF="https://en.wikipedia.org/wiki/Sinc_filter">sinc filter</A>.
+I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
 
 <P>
-As everyone know, the sinc function is the <A ID="tex2html71"
-  HREF="https://en.wikipedia.org/wiki/Impulse_response">impulse response</A>
-of a low-pass filter. That is, the <A ID="tex2html72"
-  HREF="https://en.wikipedia.org/wiki/Convolution">convolution</A>
-of a signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
- ALT="$S(t)$"></SPAN> and the sinc function <!-- MATH
- $t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img16.svg"
- ALT="$t \mapsto \frac{\sin(2 \pi B_L t)}{\pi t}$"></SPAN> will produce a low-pass filtered signal <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
- ALT="$S(t)$"></SPAN> without frequencies higher than <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img17.svg"
- ALT="$B_L$"></SPAN>. Similarly, the function <!-- MATH
- $t \mapsto \delta(t) -  \frac{\sin(2 \pi B_H t)}{\pi t},$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 3.37ex; vertical-align: -0.92ex; " SRC="img18.svg"
- ALT="$t \mapsto \delta(t) - \frac{\sin(2 \pi B_H t)}{\pi t},$"></SPAN> where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
- ALT="$\delta(t)$"></SPAN> represents the <A ID="tex2html73"
-  HREF="https://en.wikipedia.org/wiki/Dirac_delta_function">Dirac delta function</A>, is the frequency response of the ideal high-pass filter of frequency <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img20.svg"
- ALT="$B_H$"></SPAN>.
-
-<P>
-Heuristically, we can right away derive the discrete versions of the impulse responses:
-
-<P>
-<P><!-- MATH
- \begin{displaymath}
-\mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img21.svg"
- ALT="$\displaystyle \mathbb{Z} \ni i \mapsto \frac{\sin(2 \pi \frac{B_L}{f_c} i)}{\pi i},
-$">
-</DIV><P></P>
-for the low-pass filter, and
-
-<P>
-<P><!-- MATH
- \begin{displaymath}
-i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
-\end{displaymath}
- -->
-</P>
-<DIV CLASS="displaymath">
-<IMG
- STYLE="height: 5.89ex; vertical-align: -1.71ex; " SRC="img22.svg"
- ALT="$\displaystyle i \mapsto \delta[i] - \frac{\sin(2 \pi \frac{B_H}{f_c} i)}{\pi i},
-$">
-</DIV><P></P>
-
-<P>
-for the high-pass filter. The variable <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img23.svg"
- ALT="$f_c$"></SPAN> is the sampling frequency and  <!-- MATH
- $i \mapsto \delta[i] := \delta_{0i}$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img24.svg"
- ALT="$i \mapsto \delta[i] := \delta_{0i} $"></SPAN> is the <A ID="tex2html74"
-  HREF="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</A>.
-
-<P>
-Now, having a discrete signal at hand, band-pass filtering  is (in the simplest approach) just a matter of discrete convolution of the signal with the functions above. The following Octave code does the job.
-
-<P>
-<PRE>
-##Sinc band-pass filter. f0 = B_L/fs, f1 = B_H/fs
-
-function filtered = sincfilter(signal, f0, f1)
-  if(mod(length(signal), 2) != 0) #Check if the signal length is even or odd.
-    signal = signal(1 : length(signal) - 1);
-  end
-  
-  M = 10000; #Increase this to increase accuracy.
-  sincF = zeros(1, M);
-  for m =  -M/2 + 1 : 1 : M/2 
-    if(!(m  == 0))
-      sincF(m + M/2) = sin(2*pi*f1*m)./(pi*m);
-    else
-      sincF(m + M/2) = 2*f1;
-    end
-  end
-
-  sincH = zeros(1,M);
-  for m =  -M/2 + 1 : 1 : M/2 
-    if(!(m  == 0))
-      sincH(m + M/2) = -sin(2*pi*f0*m)./(pi*m);
-    else
-      sincH(m + M/2) = -2*f0 + 1;
-    end
-  end
-  
-  ##Plot stuff.
-  figure(1)
-  plot(sincF)
-  figure(2)
-  plot(signal)
-
-  tic
-  filtered = conv(signal, sincF, "same");
-  filtered = conv(filtered, sincH, "same");
-  toc
-
-  figure(3)
-  plot(filtered)
-end
-</PRE>
+The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. These kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
 
 <P>
 
-<DIV class="CENTER"><A ID="310"></A>
+<DIV class="CENTER"><A ID="317"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-Signal of form <!-- MATH
- $\cos(20 \pi t) + \sin(2 \pi t)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img25.svg"
- ALT="$\cos(20 \pi t) + \sin(2 \pi t)$"></SPAN></CAPTION>
+The white boxes represent buildings, and the little white circle is the transmitter. One can see how reflections will cause the aggregate signal strength to fluctuate by location depending on the phases of the incoming reflected waves.</CAPTION>
 <TR><TD><IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./signal.jpg"
- ALT="Image signal"></TD></TR>
+  WIDTH="621" HEIGHT="415" STYLE=""
+ SRC="./sin.gif"
+ ALT="Image sin"></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
 
-<DIV class="CENTER"><A ID="314"></A>
+<DIV class="CENTER"><A ID="321"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
-The same signal with the first term filtered away</CAPTION>
+The interference power field develops in time as the interfering transmitters are moving in random directions at each time step. Red color represents the highest mean power of interference, and deep blue represents the absence of any interference. We assume  Rician fading. The interference in the red occurrences will reduce the performance remarkably.</CAPTION>
 <TR><TD><IMG
-  WIDTH="621" HEIGHT="466" STYLE=""
- SRC="./filtered.jpg"
- ALT="Image filtered"></TD></TR>
+  WIDTH="621" HEIGHT="493" STYLE=""
+ SRC="./rician.gif"
+ ALT="Image rician"></TD></TR>
 </TABLE>
 </DIV>
-
-<P>
-For more accuracy and effectiveness, one should use windowed or recursive filters. One can check in the references for more sophisticated methods!
 
 <P>
 References:
 
 <UL>
-<LI>Steven W. Smith, &ldquo;Digital Signal Processing – A Practical Guide for Engineers and Scientists&rdquo;, Elsevier Science, 2003.
+<LI>François Baccelli, Bartlomiej Blaszczyszyn <A ID="tex2html77"
+  HREF="https://hal.inria.fr/inria-00403039v1/">Stochastic Geometry and Wireless Networks, Volume I -Theory</A>
+<P>
+</LI>
+<LI>Nicolae Cindea (2021).   <A ID="tex2html78"
+  HREF="https://www.mathworks.com/matlabcentral/fileexchange/17463-movie-to-gif-converter)">Movie to GIF Converter</A>, MATLAB Central File Exchange. Retrieved June 14, 2021. 
 </LI>
 </UL>
 
@@ -222,12 +115,12 @@ References:
  HREF="node17.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="node8.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node15.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html214"
+<A ID="tex2html245"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -235,12 +128,12 @@ References:
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node17.html">Blog posts 2022</A>
+ HREF="node17.html">May Rayleigh fading audiolized</A>
 <B> Up:</B> <A
- HREF="node8.html">Blog posts 2021</A>
+ HREF="node14.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node15.html">October – Fast Fourier</A>
- &nbsp; <B>  <A ID="tex2html215"
+ HREF="node15.html">January Poisson process on</A>
+ &nbsp; <B>  <A ID="tex2html246"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

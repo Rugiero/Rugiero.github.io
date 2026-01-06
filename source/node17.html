@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>Blog posts 2022</TITLE>
+<TITLE>May&mdash;Rayleigh fading audiolized</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -11,8 +11,8 @@
 
 <LINK REL="STYLESHEET" HREF="source.css">
 
-<LINK REL="next" HREF="node25.html">
-<LINK REL="previous" HREF="node8.html">
+<LINK REL="next" HREF="node18.html">
+<LINK REL="previous" HREF="node16.html">
 <LINK REL="next" HREF="node18.html">
 </HEAD>
 
@@ -23,12 +23,12 @@
  HREF="node18.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="source.html">
+ HREF="node14.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="node16.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html216"
+<A ID="tex2html247"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -36,44 +36,212 @@
  ALT="7"></A>
 <BR>
 <B> Next:</B> <A
- HREF="node18.html">January Inverse of a</A>
+ HREF="node18.html">June Why does MIMO</A>
 <B> Up:</B> <A
- HREF="source.html">A glimpse to my</A>
+ HREF="node14.html">Blog posts 2021</A>
 <B> Previous:</B> <A
- HREF="node16.html">November – Digital filtering</A>
- &nbsp; <B>  <A ID="tex2html217"
+ HREF="node16.html">March Signal propagation in</A>
+ &nbsp; <B>  <A ID="tex2html248"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00040000000000000000">
-Blog posts 2022</A>
-</H1>
+<H2><A ID="SECTION00063000000000000000">
+May&mdash;Rayleigh fading audiolized</A>
+</H2>
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+When a signal propagates through multiple paths, each signal component in each path will be in a different phase and of varying strength when received. Should there be no line-of-sight component present, the additive signal will fade according to the <A ID="tex2html82"
+  HREF="https://en.wikipedia.org/wiki/Rayleigh_fading">Rayleigh fading</A>.
 
-<UL CLASS="ChildLinks">
-<LI><A ID="tex2html218"
-  HREF="node18.html">January&mdash;Inverse of a Gaussian variable</A>
-<LI><A ID="tex2html219"
-  HREF="node19.html">February&mdash;Voronoi tesselation on a sphere</A>
-<LI><A ID="tex2html220"
-  HREF="node20.html">May – Digital to analog modulation</A>
-<LI><A ID="tex2html221"
-  HREF="node21.html">June&mdash;Gaussian vs. impulsive noise</A>
-<LI><A ID="tex2html222"
-  HREF="node22.html">July&mdash;Summing the signal powers</A>
-<LI><A ID="tex2html223"
-  HREF="node23.html">September&mdash;Homography</A>
-<LI><A ID="tex2html224"
-  HREF="node24.html">December&mdash;Asymptotic decay rate of a probability distribution</A>
+<P>
+For example, a simple sine wave
+
+<P>
+<A ID="tex2html83"
+  HREF="https://soundcloud.com/ilari-angervuori/ref/s-MvjJzhr6qQH">wave</A>
+(links to soundcloud.com&mdash;VOLUME ALERT)
+
+<P>
+can after some multi-path propagation sound like
+
+<P>
+<A ID="tex2html84"
+  HREF="https://soundcloud.com/ilari-angervuori/ez-1/s-eQvc2PWfIJs">this</A>:
+
+<P>
+Assuming that the receiver is moving, the variation of Doppler shifts in different signal paths will cause the signal strength to vary randomly in time.
+
+<P>
+If we add some <A ID="tex2html85"
+  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian white noise</A>, we notice that the original signal is somehow recognizable from the
+
+<P>
+<A ID="tex2html86"
+  HREF="https://soundcloud.com/ilari-angervuori/refnoise/s-Za1jUDgCPSV">noised signal</A>
+(listen carefully, and you will hear the sine signal in the background).
+
+<P>
+but the
+
+<P>
+<A ID="tex2html87"
+  HREF="https://soundcloud.com/ilari-angervuori/eznoise/s-z4MjfqRZr6E">faded signal</A>
+<P>
+will sometimes get buried under the noise&mdash;these events are referred to as <SPAN  CLASS="textit">deep fades</SPAN>.
+
+<P>
+
+<DIV class="CENTER"><A ID="859"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+The <A ID="tex2html79"
+  HREF="https://en.wikipedia.org/wiki/Envelope_(waves)">Envelope</A>
+of a multi-path faded sine signal.</CAPTION>
+<TR><TD><IMG
+  WIDTH="621" HEIGHT="118" STYLE=""
+ SRC="./fadedsinesignal.png"
+ ALT="Image fadedsinesignal"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Here is a GNU Octave or Matlab code for the used Rayleigh simulator, which outputs the signal as audio:
+<PRE>
+%Rayleigh simulator. Jakes model. In Octave remember to load the statistics package.
+
+close all
+clear all
+
+tic
+
+N = 20; %Number multipaths.
+T = linspace(0,10000,100000); %Time.
+v = 0.001; %Speed of the receiver.
+randan = pi*rand(1,N); %Random angles w.r.t. receiver.
+rI = 1000*rand(1,N); %Random distances of the sources.
+
+%Geometrical stuff. Check for the Jakes model in the reference.
+An = @(t) (atan(sin(randan).*rI./(cos(randan).*rI-v*t))).*(cos(randan).*rI&gt;v*t)+...
+(pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(randan).*rI&lt;=v*t);
+phis = 2*pi.*(rand(1,N));
+wc =pi/2; %Frequency of the signal.
+Beta = 2*pi/(1/(wc/(2*pi)));
+theta = @(t) cos(An(t)).*Beta*v.*t+phis;
+
+powers = rand(1,N); %Random powers of the signals in the multipaths.
+powers = powers./sum(powers); %Normalize the powers.
+Ez = @(t) sum(powers.*cos(wc*t+theta(t)));
+EZ = []; %Faded signal.
+REF = []; %Original signal.
+NOISE = []; %Additional Gaussian noise.
+for t =T
+EZ = [EZ Ez(t)];
+REF = [REF cos(wc*t)];
+NOISE = [NOISE 0.9*stdnormal_rnd(1)];
+end
+
+%Write the audio files at sampling rate 8000.
+audiowrite('EZ.wav',EZ,8000)
+audiowrite('EZNOISE.wav',1/2*(EZ+NOISE),8000)
+audiowrite('REFNOISE.wav', 1/2*(REF+NOISE), 8000)
+
+
+toc
+plot(T,EZ)
+</PRE>
+
+<P>
+And the same in Python:
+
+<P>
+<PRE>
+  import numpy as np
+  import math
+  import matplotlib.pyplot as plt
+  import sounddevice as sd
+  import time
+
+  #Jakes Rayleigh simulator. Please check for the reference in this site for further details.
+
+  N = 20 #Number of multipaths.
+  T = np.linspace(0, 10000, 100000) #Time vector.
+  v = 0.001 #Speed of the receiver. 
+
+
+
+  randan = np.random.rand(1, N) * math.pi #Random angles w.r.t. receiver.
+  rI = np.random.rand(1, N) * 1000 #Random distances of the sources.
+  phis = np.random.rand(1, N) * 2 * math.pi 
+
+  def An(t):
+  return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * rI - v * t))) * (
+  np.cos(randan) * rI &gt; v * t
+  ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.cos(randan) * rI))) * (
+  np.cos(randan) * rI &lt;= v * t
+  )
+
+  wc = np.pi/2 #Frequency of the signal.
+  Beta = 2 * math.pi / (1 / (wc / (2 * math.pi)))
+
+def theta(t):
+    return np.cos(An(t)) * Beta * v * t +phis
+
+powers = np.random.rand(1,N)*2 #Random powers of the signals in the multipaths.
+powers = powers/np.sum(powers) #Normalize powers..
+
+def Ez(t):
+    return np.sum(powers * np.cos(wc * t + theta(t)))
+
+EZ = np.vectorize(Ez)(T)
+REF = np.vectorize(lambda time : 2*np.cos(wc * time))(T)
+
+#Play and plot.
+fs = 8000
+sd.play(EZ,fs,blocking = True)
+#sd.play(REF,fs,blocking = True)
+plt.plot(T, EZ)
+plt.show()
+</PRE>
+
+<P>
+References:
+
+<UL>
+<LI>William C. Jakes, &ldquo;Microwave Mobile Communications&rdquo;, IEEE PRESS, 1974.
+</LI>
 </UL>
-<!--End of Table of Child-Links-->
-<BR><HR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html247"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="7"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node18.html">June Why does MIMO</A>
+<B> Up:</B> <A
+ HREF="node14.html">Blog posts 2021</A>
+<B> Previous:</B> <A
+ HREF="node16.html">March Signal propagation in</A>
+ &nbsp; <B>  <A ID="tex2html248"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
