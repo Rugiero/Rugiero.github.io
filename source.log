@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  19 OCT 2025 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  6 JAN 2026 02:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,7 +430,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 112--114
 []$[]$ 
  []
 
-<me1.jpg, id=53, 501.875pt x 282.05376pt>
+<me1.jpg, id=59, 501.875pt x 282.05376pt>
 File: me1.jpg Graphic file (type jpg)
 <use me1.jpg>
 Package pdftex.def Info: me1.jpg  used on input line 125.
@@ -440,210 +440,119 @@ Overfull \vbox (42.44444pt too high) has occurred while \output is active []
 
 
 [4]
+Overfull \hbox (2.25067pt too wide) in paragraph at lines 135--136
+[]\OT1/cmr/m/n/10 2025, PhD, []``Narrow-Beam Low Earth Or-bit Com-mu-ni-ca-tion
+s and Stochas-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
+
+Overfull \hbox (13.36185pt too wide) in paragraph at lines 136--137
+[]\OT1/cmr/m/n/10 2018, Mas-ter of Phi-los-o-phy, []``El-e-ment-timenetelm^^?a 
+(Fi-nite El-e-ment Method),''[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
 [5{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./me1.jpg>]
-Overfull \hbox (47.18617pt too wide) in paragraph at lines 155--156
+Overfull \hbox (47.18617pt too wide) in paragraph at lines 156--157
 \OT1/cmr/m/n/10 tions, vol. 68, no. 8, pp. 5120-5134, Aug. 2020, doi: 10.1109/T
 COMM.2020.2990993. 
  []
 
 
-Overfull \hbox (1.52843pt too wide) in paragraph at lines 158--159
-\OT1/cmr/m/n/10 rout-ing pro-to-cols in inter-satellite com-mu-ni-ca-tions'', P
+Overfull \hbox (1.52843pt too wide) in paragraph at lines 159--160
+\OT1/cmr/m/n/10 rout-ing pro-to-cols in inter-satellite com-mu-ni-ca-tions,'' P
 ro-ceed-ings of XXXV
- []
-
-
-Overfull \hbox (8.60953pt too wide) in paragraph at lines 168--169
-[]\OT1/cmr/m/n/10 PhD dis-ser-ta-tion: a sketch (not pub-lished) ``Narrow-Beam 
-LEO and stochas-
  []
 
 
 Overfull \hbox (185.44556pt too wide) in paragraph at lines 170--171
 []\OT1/cmr/m/n/10 Master's the-sis ``El-e-ment-timenetelm^^?a (The Fi-nite El-e
--ment Method)'', []https://helda.helsinki.fi/handle/10138/273474[],
+-ment Method),'' []https://helda.helsinki.fi/handle/10138/273474[],
  []
 
 
-Overfull \hbox (125.22325pt too wide) in paragraph at lines 171--172
-\OT1/cmr/m/n/10 Con-trol The-ory and Its Ap-pli-ca-tions)'', []https://www.over
+Overfull \hbox (124.38992pt too wide) in paragraph at lines 171--172
+\OT1/cmr/m/n/10 Con-trol The-ory and its Ap-pli-ca-tions),'' []https://www.over
 leaf.com/project/563b9dec737da16f65bd24f2[],
  []
 
-
+[6]
 Overfull \hbox (54.08437pt too wide) in paragraph at lines 172--173
-\OT1/cmr/m/n/10 data'', []https://www.dropbox.com/s/88pr2da24dil460/projektitos
+\OT1/cmr/m/n/10 data,'' []https://www.dropbox.com/s/88pr2da24dil460/projektitos
 aulijamina.jpg?dl=0[],
  []
 
-[6]
-Overfull \hbox (164.24556pt too wide) in paragraph at lines 223--223
-[]\OT1/cmtt/m/n/10 %Plot random points on a unit sphere. Returns the points in 
-a vector ref in cartesian coordinates[] 
+<SGandML.png, id=91, 246.6816pt x 246.6816pt>
+File: SGandML.png Graphic file (type png)
+<use SGandML.png>
+Package pdftex.def Info: SGandML.png  used on input line 188.
+(pdftex.def)             Requested size: 334.65042pt x 334.68077pt.
+[7] [8 <./SGandML.png>]
+Overfull \hbox (0.64339pt too wide) in paragraph at lines 225--226
+[]\OT1/cmr/m/n/10 Note that, given an an-tenna pat-tern width, the con-stant $\
+OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 v[]^^\[]=\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 h[]'[]\OT1/cmr/m/n/10 )$
+ []
+
+[9]
+<GPRvsMA.pdf, id=142, 722.7pt x 433.62pt>
+File: GPRvsMA.pdf Graphic file (type pdf)
+<use GPRvsMA.pdf>
+Package pdftex.def Info: GPRvsMA.pdf  used on input line 231.
+(pdftex.def)             Requested size: 334.65042pt x 200.79092pt.
+ [10 <./GPRvsMA.pdf>]
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 404--404
+[]\OT1/cmtt/m/n/10 dt = 0.001           # fine time step for continuous path (1
+000 Hz)[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 223--223
-[]  \OT1/cmtt/m/n/10 xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dim
-ensions[] 
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 404--404
+[]\OT1/cmtt/m/n/10 indices = np.arange(0, int(T_obs / dt), int(sample_interval 
+/ dt))[] 
  []
 
 
-Overfull \hbox (274.4946pt too wide) in paragraph at lines 223--223
-[]  \OT1/cmtt/m/n/10 numbPoints = poissrnd(density);    %Number of points in th
-e area is a Poisson variable of intensity given as density[] 
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 404--404
+[]\OT1/cmtt/m/n/10 # Gamma marginal for P(t): mean=1, var=1/2 -> Gamma(k=2, the
+ta=0.5)[] 
  []
 
 
-Overfull \hbox (90.7462pt too wide) in paragraph at lines 223--223
-[]  \OT1/cmtt/m/n/10 x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points fr
-om uniform distribution[] 
- []
-
-
-Overfull \hbox (143.24574pt too wide) in paragraph at lines 223--223
-[]  \OT1/cmtt/m/n/10 y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencep
-oints to geographical coordinates[] 
- []
-
-
-Overfull \hbox (153.74565pt too wide) in paragraph at lines 223--223
-[]  \OT1/cmtt/m/n/10 refs = [x'; asin(y)'];%Map geographical coordinates to Car
-tesian coordinates on a unit circle[] 
- []
-
-[7]
-Overfull \hbox (95.99615pt too wide) in paragraph at lines 257--257
-[]\OT1/cmtt/m/n/10 #Density parameter of the Poisson point process. Mean number
- of points on the sphere[] 
- []
-
-
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 257--257
-[]\OT1/cmtt/m/n/10 #Number of point in the area is a Poisson variable of intens
-ity lambda0[] 
- []
-
-
-Overfull \hbox (227.24501pt too wide) in paragraph at lines 257--257
-[]\OT1/cmtt/m/n/10 ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/
-2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )[] 
- []
-
-
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 278--278
-[]      \OT1/cmtt/m/n/10 radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1
-]] + Pi],[] 
- []
-
-[8]
-<poissononsphere.jpg, id=96, 120.45pt x 121.8954pt>
-File: poissononsphere.jpg Graphic file (type jpg)
-<use poissononsphere.jpg>
-Package pdftex.def Info: poissononsphere.jpg  used on input line 281.
-(pdftex.def)             Requested size: 345.0pt x 349.17432pt.
-<interferenceenvironment.png, id=97, 376.40625pt x 274.02374pt>
-File: interferenceenvironment.png Graphic file (type png)
-<use interferenceenvironment.png>
-Package pdftex.def Info: interferenceenvironment.png  used on input line 286.
-(pdftex.def)             Requested size: 345.0pt x 251.17665pt.
- [9 <./poissononsphere.jpg>] [10 <./interferenceenvironment.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
-
- []
-
-
-Overfull \hbox (0.24724pt too wide) in paragraph at lines 345--345
- []  \OT1/cmtt/m/n/10 gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV12
-34[] 
- []
-
-
-Overfull \hbox (63.24669pt too wide) in paragraph at lines 345--345
- []  \OT1/cmtt/m/n/10 gpg --export-secret-key --output private.key ABCDEFGHIJKL
-MNOPQRSTUV1234[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
-
- []
-
-[12]
-
-! LaTeX Error: Unknown graphics extension: .gif.
+! LaTeX Error: Unicode character τ (U+03C4)
+               not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.400 ...ncludegraphics[width=\linewidth]{sin.gif}
-                                                  
+l.404 \end{verbatim}
+                    
 ? 
 ! Emergency stop.
  ...                                              
                                                   
-l.400 ...ncludegraphics[width=\linewidth]{sin.gif}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.404 \end{verbatim}
+                    
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
  
 Here is how much of TeX's memory you used:
- 11002 strings out of 475509
- 169015 string characters out of 5776664
- 1934975 words of memory out of 5000000
- 32889 multiletter control sequences out of 15000+600000
- 566434 words of font info for 69 fonts, out of 8000000 for 9000
+ 10984 strings out of 475509
+ 168473 string characters out of 5776664
+ 1937975 words of memory out of 5000000
+ 32861 multiletter control sequences out of 15000+600000
+ 566742 words of font info for 70 fonts, out of 8000000 for 9000
  395 hyphenation exceptions out of 8191
- 90i,11n,93p,1091b,669s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,93p,1266b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
