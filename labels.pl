@@ -17,5 +17,9 @@ $noresave{$key} = "$nosave";
 # labels from external_latex_labels array.
 
 
+$key = q/line:22/;
+$external_latex_labels{$key} = q|3 Asymptotic decay rate of a probability distribution|; 
+$noresave{$key} = "$nosave";
+
 1;
 

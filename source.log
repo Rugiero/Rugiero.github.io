@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  6 JAN 2026 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  7 JAN 2026 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,6 +501,12 @@ File: SGandML.png Graphic file (type png)
 Package pdftex.def Info: SGandML.png  used on input line 188.
 (pdftex.def)             Requested size: 334.65042pt x 334.69025pt.
 [7] [8 <./SGandML.png>]
+! Interruption.
+<argument> ...\__shipout_drop_firstpage_specials: 
+                                                  \set@typeset@protect \hook...
+l.205 
+      
+? 
 
 ! Package amsmath Error: \tag not allowed here.
 
@@ -511,22 +517,1446 @@ Type  H <return>  for immediate help.
 l.227 ...rphi_{\text{RX}}^2) \log(2)\right\}, \tag
                                                   {2}$$
 ? 
-! Emergency stop.
+
+Overfull \hbox (44.81917pt too wide) detected at line 227
+\OML/cmm/m/it/10 K[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 ) = \O
+ML/cmm/m/it/10 k [] [] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ^^Y^^U [][] [] [] ;
+
+ []
+
+[9]
+<GPRvsMA.pdf, id=132, 722.7pt x 433.62pt>
+File: GPRvsMA.pdf Graphic file (type pdf)
+<use GPRvsMA.pdf>
+Package pdftex.def Info: GPRvsMA.pdf  used on input line 243.
+(pdftex.def)             Requested size: 334.65042pt x 200.79092pt.
+ [10]
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 dt = 0.001           # fine time step for continuous path (1
+000 Hz)[] 
+ []
+
+[11 <./GPRvsMA.pdf>]
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 indices = np.arange(0, int(T_obs / dt), int(sample_interval 
+/ dt))[] 
+ []
+
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # Gamma marginal for P(t): mean=1, var=1/2 -> Gamma(k=2, the
+ta=0.5)[] 
+ []
+
+
+! LaTeX Error: Unicode character τ (U+03C4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.227 ...rphi_{\text{RX}}^2) \log(2)\right\}, \tag
-                                                  {2}$$
-\tag cannot be used at this point. If you don't understand why
-you should consult the documentation.
-But don't worry: just continue, and I'll forget what happened. 
+l.416 \end{verbatim}
+                    
+? 
 
- 
+! LaTeX Error: Unicode character τ (U+03C4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (148.4957pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # === 1. Construct latent Gaussian process for P(t) with cov
+ariance C() = 0.5 * exp(-3 ^2) ===[] 
+ []
+
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # === 4. 300-sample moving average on sampled powers (0..T_o
+bs) ===[] 
+ []
+
+[12]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # Simple MA "forecast": extend last MA value flat from last 
+t_ma to T_total[] 
+ []
+
+
+Overfull \hbox (132.74583pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 t_ma_forecast = np.arange(t_ma[-1], T_total + 1e-9, sample_i
+nterval)  # 0.1 kHz grid to end[] 
+ []
+
+
+! LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.416 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (85.49625pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # === 5. GPR prediction of P(t) on [0, 15] from noisy power 
+samples on [0, 10] ===[] 
+ []
+
+
+! LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # Posterior mean: m_post(t) = mean_P + C_fs * K^{-1} * (z - 
+mean_P)[] 
+ []
+
+[13]
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex
+=True)[] 
+ []
+
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # ---------- Subplot (a): P(t), GPR forecast, MA forecast --
+--------[] 
+ []
+
+
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax1.plot(t, P, label='True signal power P(t)', color='C0', a
+lpha=0.7)[] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+416.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+
+! LaTeX Error: Unicode character σ (U+03C3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color
+='C1', linewidth=2)[] 
+ []
+
+
+! LaTeX Error: Unicode character σ (U+03C3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+
+! LaTeX Error: Unicode character σ (U+03C3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (38.24542pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 #                  color='r', alpha=0.15, label='MA \TS1/cmt
+t/m/n/10 �\OT1/cmtt/m/n/10 2 (approx, 0{10 s)')[] 
+ []
+
+
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax1.plot(t_ma_forecast, power_ma_forecast, 'r--', label='MA 
+forecast (flat)')[] 
+ []
+
+
+Overfull \hbox (132.7446pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 # ax1.plot(t_sampled, power_sampled, 'kx', label='Samples |I
+(t)|\TS1/cmtt/m/n/10 � \OT1/cmtt/m/n/10 (0.1 kHz)', markersize=6)[] 
+ []
+
+
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax1.text(T_obs+0.05, ax1.get_ylim()[1]*0.9, 'Forecast region
+', fontsize=12)[] 
+ []
+
+
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast,
+ and 300-sample MA & forecast', fontsize=12)[] 
+ []
+
+
+! LaTeX Error: Unicode character √ (U+221A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (143.24574pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) 
+(0{10 s, 0.1 kHz)', markersize=1)[] 
+ []
+
+
+Overfull \hbox (179.99542pt too wide) in paragraph at lines 416--416
+[]\OT1/cmtt/m/n/10 ax2.set_title('Fig 1(b): Non-stationary Gaussian noise I(t) 
+with sampled observations', fontsize=12)[] 
+ []
+
+[14]
+<satelliteinterference.png, id=230, 1197.273pt x 869.649pt>
+File: satelliteinterference.png Graphic file (type png)
+<use satelliteinterference.png>
+Package pdftex.def Info: satelliteinterference.png  used on input line 438.
+(pdftex.def)             Requested size: 345.0pt x 250.5861pt.
+
+! Argument of \equation has an extra }.
+<inserted text> 
+                \par 
+l.443   S_{\text{TX}} = Ae^{-2 i \pi \theta}, }
+                                                \tag{$1$}
+? 
+Runaway argument?
+ S_{\text {TX}} = Ae^{-2 i \pi \theta }, 
+! Paragraph ended before \equation was complete.
+<to be read again> 
+                   \par 
+l.443   S_{\text{TX}} = Ae^{-2 i \pi \theta}, }
+                                                \tag{$1$}
+? 
+[15 <./satelliteinterference.png>]
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.443   S_{\text{TX}} = Ae^{-2 i \pi \theta}, }
+                                                \tag{$1$}
+? 
+
+! Package amsmath Error: \tag not allowed here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.443 ...\text{TX}} = Ae^{-2 i \pi \theta}, } \tag
+                                                  {$1$}
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.444 \end{equation}
+                    
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.444 \end{equation}
+                    
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.444 \end{equation}
+                    
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.444 \end{equation}
+                    
+? 
+
+Overfull \hbox (29.19955pt too wide) detected at line 449
+[]
+ []
+
+
+Overfull \hbox (29.19955pt too wide) detected at line 449
+[]
+ []
+
+[16]
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.465 ...ics[width=\linewidth]{basebandgifK10.gif}
+                                                  
+? 
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.470 ...hics[width=\linewidth]{basebandgifK0.gif}
+                                                  
+? 
+
+Overfull \hbox (337.49405pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 [refs bbsignals] = scatteredsignals(K);  #Random baseband 
+signals ''bbsignals' and the scatterer-obstacle's locations in 'refs'.[] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 583--583
+[]    \OT1/cmtt/m/n/10 signal = RXbaseband(refs, bbsignals); #New received base
+band signal[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 583--583
+[]    \OT1/cmtt/m/n/10 history = [history [real(signal); imag(signal)]]; #Histo
+ry of the signals.[] 
+ []
+
+[17]
+Overfull \hbox (153.74565pt too wide) in paragraph at lines 583--583
+[]    \OT1/cmtt/m/n/10 t = t + 1/(4*8*100); #Time hop. t = 1/(8*300) is the ini
+tial coherence time of the example.[] 
+ []
+
+
+Overfull \hbox (174.74547pt too wide) in paragraph at lines 583--583
+[]    \OT1/cmtt/m/n/10 imwrite(frame.cdata, filename,'gif','writemode','append'
+,'DelayTime',0.05, 'Compression','lzw')[] 
+ []
+
+
+Overfull \hbox (825.73979pt too wide) in paragraph at lines 583--583
+[]\OT1/cmtt/m/n/10 ##Returns a table of 101 (1 LOS signal and 100 signals from 
+the scattered paths) randomly phased complex baseband signal symbols each corre
+sponding to one of a obstacle location given in 'refs'. 'K' is the Rician param
+eter.[] 
+ []
+
+
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 ##First, generate the Poisson distributed random obstacle 
+locations.[] 
+ []
+
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 xDelta = xMax - xMin; yDelta = yMax - yMin; #Rectangle dim
+ensions[] 
+ []
+
+
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 x = xDelta*(rand(numbPoints,1)) + xMin;    #Pick points fr
+om uniform distribution[] 
+ []
+
+
+Overfull \hbox (95.99615pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 refs = [refs [pi/2-asin(y)' ; x'] ]; #Map referencepoints 
+to spherical coordinates[] 
+ []
+
+
+Overfull \hbox (122.24593pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 signals = [signals A/(sqrt(100)*sqrt(1+K)).*exp(-rand(1,le
+ngth(refs(1,:))-1).*i*2*pi)];[] 
+ []
+
+
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 d = @(gamma) sqrt((cos(gamma).*(R+h)-R).^2+(sin(gamma).*(R
++h)).^2); ##Distance to the satellites in m.[] 
+ []
+
+[18]
+Overfull \hbox (337.49405pt too wide) in paragraph at lines 583--583
+[]\OT1/cmtt/m/n/10 ##Rotates the positions in 'refs' as the satellite "moves". 
+In this model, the satellite stays still at (0,0) but the Earth moves.[] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 angularspeed = orbitalspeed/(h + R); #Angular speed of the
+ satellite.[] 
+ []
+
+
+Overfull \hbox (101.24611pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 eucpos  = pol2euc(refs); #Transform the polar coordinates 
+to euclidean coordinates.[] 
+ []
+
+
+Overfull \hbox (279.74455pt too wide) in paragraph at lines 583--583
+[]  \OT1/cmtt/m/n/10 newpos = [[1 0 0]; [0 cos(rotation) -sin(rotation)]; [0 si
+n(rotation) cos(rotation)]]*eucpos; #Rotation about x-axis.[] 
+ []
+
+
+Overfull \hbox (248.24483pt too wide) in paragraph at lines 583--583
+[]   \OT1/cmtt/m/n/10 (e(2,:) < 0).*(atan2(e(2,:),e(1,:)) + 2*pi)]; #Polar coor
+dinates from the given Euclidean coordinates in 'e'..[] 
+ []
+
+
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 583--583
+[]       \OT1/cmtt/m/n/10 R*cos(p(1,:))]; #Euclidean coordinates from the given
+ polar coordinates in 'p'.[] 
+ []
+
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.586 ...ireless Communication. Cambridge, U.K. 
+                                                  ; Cambridge University Pre...
+
+? 
+[19]
+Overfull \hbox (274.4946pt too wide) in paragraph at lines 644--644
+[]\OT1/cmtt/m/n/10 %%Function returns the values at times T of the analog signa
+l of the corresponding digital signal sampled at speed Fs.[] 
+ []
+
+
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 644--644
+[]    \OT1/cmtt/m/n/10 xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(dig
+italsignal) - 1)))];[] 
+ []
+
+
+Overfull \hbox (169.49551pt too wide) in paragraph at lines 644--644
+[]\OT1/cmtt/m/n/10 alphasamples = alphasamples/(mean(abs(alphasamples))); %Norm
+alize by mean instantaneous amplitude.[] 
+ []
+
+[20]
+<alphastablenoise.png, id=294, 876.27374pt x 657.45625pt>
+File: alphastablenoise.png Graphic file (type png)
+<use alphastablenoise.png>
+Package pdftex.def Info: alphastablenoise.png  used on input line 647.
+(pdftex.def)             Requested size: 345.0pt x 258.8547pt.
+<gaussiannoise.png, id=295, 876.27374pt x 657.45625pt>
+File: gaussiannoise.png Graphic file (type png)
+<use gaussiannoise.png>
+Package pdftex.def Info: gaussiannoise.png  used on input line 652.
+(pdftex.def)             Requested size: 345.0pt x 258.8547pt.
+
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.665 .... Stable Non-Gaussian Random Processes 
+                                                  : Stochastic Models with I...
+
+? 
+! Misplaced alignment tab character &.
+l.665 ...th Infinite Variance. New York: Chapman &
+                                                   Hall, 1994. Print.
+? 
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.668 ...ireless Communication. Cambridge, U.K. 
+                                                  ; Cambridge University Pre...
+
+? 
+[21 <./alphastablenoise.png (PNG copy)>]
+Overfull \hbox (164.24556pt too wide) in paragraph at lines 717--717
+[]\OT1/cmtt/m/n/10 %Plot random points on a unit sphere. Returns the points in 
+a vector ref in cartesian coordinates[] 
+ []
+
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 717--717
+[]  \OT1/cmtt/m/n/10 xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dim
+ensions[] 
+ []
+
+
+Overfull \hbox (274.4946pt too wide) in paragraph at lines 717--717
+[]  \OT1/cmtt/m/n/10 numbPoints = poissrnd(density);    %Number of points in th
+e area is a Poisson variable of intensity given as density[] 
+ []
+
+
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 717--717
+[]  \OT1/cmtt/m/n/10 x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points fr
+om uniform distribution[] 
+ []
+
+[22 <./gaussiannoise.png (PNG copy)>]
+Overfull \hbox (143.24574pt too wide) in paragraph at lines 717--717
+[]  \OT1/cmtt/m/n/10 y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencep
+oints to geographical coordinates[] 
+ []
+
+
+Overfull \hbox (153.74565pt too wide) in paragraph at lines 717--717
+[]  \OT1/cmtt/m/n/10 refs = [x'; asin(y)'];%Map geographical coordinates to Car
+tesian coordinates on a unit circle[] 
+ []
+
+
+Overfull \hbox (95.99615pt too wide) in paragraph at lines 751--751
+[]\OT1/cmtt/m/n/10 #Density parameter of the Poisson point process. Mean number
+ of points on the sphere[] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 751--751
+[]\OT1/cmtt/m/n/10 #Number of point in the area is a Poisson variable of intens
+ity lambda0[] 
+ []
+
+
+Overfull \hbox (227.24501pt too wide) in paragraph at lines 751--751
+[]\OT1/cmtt/m/n/10 ax.scatter(np.sin(y+np.pi/2)*np.cos(x+np.pi),np.sin(y+np.pi/
+2)*np.sin(x+np.pi),np.cos(y+np.pi/2), color='r' )[] 
+ []
+
+[23]
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 772--772
+[]      \OT1/cmtt/m/n/10 radius*Sin[polarp[[i]][[2]] + Pi/2]*Sin[polarp[[i]][[1
+]] + Pi],[] 
+ []
+
+<poissononsphere.jpg, id=315, 120.45pt x 121.8954pt>
+File: poissononsphere.jpg Graphic file (type jpg)
+<use poissononsphere.jpg>
+Package pdftex.def Info: poissononsphere.jpg  used on input line 775.
+(pdftex.def)             Requested size: 345.0pt x 349.17432pt.
+<interferenceenvironment.png, id=316, 376.40625pt x 274.02374pt>
+File: interferenceenvironment.png Graphic file (type png)
+<use interferenceenvironment.png>
+Package pdftex.def Info: interferenceenvironment.png  used on input line 780.
+(pdftex.def)             Requested size: 345.0pt x 251.17665pt.
+[24] [25 <./poissononsphere.jpg>] [26 <./interferenceenvironment.png>]
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.803 ...ncludegraphics[width=\linewidth]{sin.gif}
+                                                  
+? 
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.810 ...udegraphics[width=\linewidth]{rician.gif}
+                                                  
+? 
+[27]
+<fadedsinesignal.png, id=358, 785.93625pt x 147.55125pt>
+File: fadedsinesignal.png Graphic file (type png)
+<use fadedsinesignal.png>
+Package pdftex.def Info: fadedsinesignal.png  used on input line 887.
+(pdftex.def)             Requested size: 345.0pt x 64.7719pt.
+
+Overfull \hbox (95.99615pt too wide) in paragraph at lines 934--934
+[]\OT1/cmtt/m/n/10 %Rayleigh simulator. Jakes model. In Octave remember to load
+ the statistics package.[] 
+ []
+
+
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 934--934
+[]\OT1/cmtt/m/n/10 An = @(t) (atan(sin(randan).*rI./(cos(randan).*rI-v*t))).*(c
+os(randan).*rI>v*t)+...[] 
+ []
+
+
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 934--934
+[]\OT1/cmtt/m/n/10 (pi-atan(sin(randan).*rI./(v*t-cos(randan).*rI))).*(cos(rand
+an).*rI<=v*t);[] 
+ []
+
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 934--934
+[]\OT1/cmtt/m/n/10 powers = rand(1,N); %Random powers of the signals in the mul
+tipaths.[] 
+ []
+
+[28 <./fadedsinesignal.png>]
+Overfull \hbox (143.24574pt too wide) in paragraph at lines 986--986
+[]  \OT1/cmtt/m/n/10 #Jakes Rayleigh simulator. Please check for the reference 
+in this site for further details.[] 
+ []
+
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 986--986
+[]  \OT1/cmtt/m/n/10 randan = np.random.rand(1, N) * math.pi #Random angles w.r
+.t. receiver.[] 
+ []
+
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 986--986
+[]  \OT1/cmtt/m/n/10 rI = np.random.rand(1, N) * 1000 #Random distances of the 
+sources.[] 
+ []
+
+
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 986--986
+[]  \OT1/cmtt/m/n/10 return (np.arctan(np.sin(randan) * rI / (np.cos(randan) * 
+rI - v * t))) * ([] 
+ []
+
+
+Overfull \hbox (85.49625pt too wide) in paragraph at lines 986--986
+[]  \OT1/cmtt/m/n/10 ) + (np.pi - np.arctan(np.sin(randan) * rI / (v * t - np.c
+os(randan) * rI))) * ([] 
+ []
+
+[29]
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 986--986
+[]\OT1/cmtt/m/n/10 powers = np.random.rand(1,N)*2 #Random powers of the signals
+ in the multipaths.[] 
+ []
+
+[30]
+<MIMO.png, id=380, 423.08063pt x 318.43968pt>
+File: MIMO.png Graphic file (type png)
+<use MIMO.png>
+Package pdftex.def Info: MIMO.png  used on input line 1022.
+(pdftex.def)             Requested size: 345.0pt x 259.67911pt.
+ [31] [32 <./MIMO.png (PNG copy)>]
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1102 ...graphics[width=\linewidth]{highfreq.gif}
+                                                  
+? 
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1108 ...egraphics[width=\linewidth]{lowfreq.gif}
+                                                  
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1175--1176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1180
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1183--1184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1188--1189
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+
+ []
+
+
+Overfull \hbox (0.24724pt too wide) in paragraph at lines 1212--1212
+ []  \OT1/cmtt/m/n/10 gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV12
+34[] 
+ []
+
+
+Overfull \hbox (63.24669pt too wide) in paragraph at lines 1212--1212
+ []  \OT1/cmtt/m/n/10 gpg --export-secret-key --output private.key ABCDEFGHIJKL
+MNOPQRSTUV1234[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1214--1215
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1238--1239
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1243
+
+ []
+
+[35]
+Overfull \hbox (195.74529pt too wide) in paragraph at lines 1289--1289
+[]\OT1/cmtt/m/n/10 ##Calculates the FFT and plots the frequency spectrum of a s
+ignal. Sampletimes have to start at time 0.[] 
+ []
+
+<tappimarssi.jpg, id=431, 656.4525pt x 492.84125pt>
+File: tappimarssi.jpg Graphic file (type jpg)
+<use tappimarssi.jpg>
+Package pdftex.def Info: tappimarssi.jpg  used on input line 1300.
+(pdftex.def)             Requested size: 345.0pt x 259.01625pt.
+[36]
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 1373--1373
+[]  \OT1/cmtt/m/n/10 if(mod(length(signal), 2) != 0) #Check if the signal lengt
+h is even or odd.[] 
+ []
+
+[37 <./tappimarssi.jpg>]
+<signal.jpg, id=451, 501.875pt x 376.40625pt>
+File: signal.jpg Graphic file (type jpg)
+<use signal.jpg>
+Package pdftex.def Info: signal.jpg  used on input line 1378.
+(pdftex.def)             Requested size: 345.0pt x 258.76141pt.
+<filtered.jpg, id=452, 501.875pt x 376.40625pt>
+File: filtered.jpg Graphic file (type jpg)
+<use filtered.jpg>
+Package pdftex.def Info: filtered.jpg  used on input line 1383.
+(pdftex.def)             Requested size: 345.0pt x 258.76141pt.
+ [38] [39 <./signal.jpg>] [40 <./filtered.jpg>]
+<voronoionsphere.png, id=470, 423.08063pt x 318.43968pt>
+File: voronoionsphere.png Graphic file (type png)
+<use voronoionsphere.png>
+Package pdftex.def Info: voronoionsphere.png  used on input line 1461.
+(pdftex.def)             Requested size: 345.0pt x 259.67911pt.
+
+[41]
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 1497--1497
+[]\OT1/cmtt/m/n/10 X = poissononsphere(density)'; %Poisson points in spherical 
+coordinates.[] 
+ []
+
+
+Overfull \hbox (232.49496pt too wide) in paragraph at lines 1497--1497
+[]\OT1/cmtt/m/n/10 voronoiSph(X); %This function is downloaded from gradywright
+'s Github. It is placed in the folder 'rbfsphere'.[] 
+ []
+
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 1497--1497
+[]  \OT1/cmtt/m/n/10 xDelta = xMax - xMin; yDelta = yMax - yMin; %Rectangle dim
+ensions[] 
+ []
+
+
+Overfull \hbox (274.4946pt too wide) in paragraph at lines 1497--1497
+[]  \OT1/cmtt/m/n/10 numbPoints = poissrnd(density);    %Number of points in th
+e area is a Poisson variable of intensity given as density[] 
+ []
+
+
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 1497--1497
+[]  \OT1/cmtt/m/n/10 x = xDelta*(rand(numbPoints,1)) + xMin;    %Pick points fr
+om uniform distribution[] 
+ []
+
+
+Overfull \hbox (143.24574pt too wide) in paragraph at lines 1497--1497
+[]  \OT1/cmtt/m/n/10 y = yDelta*(rand(numbPoints,1)) + yMin;    %Map referencep
+oints to geographical coordinates[] 
+ []
+
+
+Overfull \hbox (153.74565pt too wide) in paragraph at lines 1497--1497
+[]  \OT1/cmtt/m/n/10 refs = [x'; asin(y)'];%Map geographical coordinates to Car
+tesian coordinates on a unit circle[] 
+ []
+
+[42 <./voronoionsphere.png (PNG copy)>]
+Overfull \hbox (274.4946pt too wide) in paragraph at lines 1650--1650
+[]\OT1/cmtt/m/n/10 %%Function returns the values at times T of the analog signa
+l of the corresponding digital signal sampled at speed Fs.[] 
+ []
+
+
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 1650--1650
+[]    \OT1/cmtt/m/n/10 xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(dig
+italsignal) - 1)))];[] 
+ []
+
+
+Overfull \hbox (116.99597pt too wide) in paragraph at lines 1677--1677
+[]\OT1/cmtt/m/n/10 input  = @(t) pulstran(t,[0,1,5,7,9],"rectpuls") %%The origi
+nal analog signal at time t.[] 
+ []
+
+[43]
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 1677--1677
+[]\OT1/cmtt/m/n/10 Ta = linspace(0, t, 1000); %Analog signal time instances for
+ the plot.[] 
+ []
+
+
+Overfull \hbox (111.74602pt too wide) in paragraph at lines 1677--1677
+[]\OT1/cmtt/m/n/10 legend( 'Original analog signal','Sampled digital signal', '
+Rerproduced analog signal')[] 
+ []
+
+<rectangletrain.png, id=490, 602.25pt x 451.6875pt>
+File: rectangletrain.png Graphic file (type png)
+<use rectangletrain.png>
+Package pdftex.def Info: rectangletrain.png  used on input line 1680.
+(pdftex.def)             Requested size: 345.0pt x 258.76027pt.
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1688 ...reless Communication. Cambridge, U.K. 
+                                                  ;: Cambridge University Pr...
+
+? 
+! Undefined control sequence.
+l.1693 ...levation angles smaller than $90 \degree
+                                                  $, you can conveniently ma...
+
+? 
+[44 <./rectangletrain.png>]
+<homographydrawing.png, id=498, 401.5pt x 205.568pt>
+File: homographydrawing.png Graphic file (type png)
+<use homographydrawing.png>
+Package pdftex.def Info: homographydrawing.png  used on input line 1709.
+(pdftex.def)             Requested size: 345.0pt x 176.65327pt.
+
+Overfull \hbox (468.7429pt too wide) in paragraph at lines 1739--1739
+[]\OT1/cmtt/m/n/10 %%Changes ellipses with parameters a > b  perspective to a s
+phere of radius r centered in origo. Vectors to be transformed are given in 2x1
+000 matrix refc.[] 
+ []
+
+
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 1739--1739
+[]  \OT1/cmtt/m/n/10 X2 = [[-c -b^2/a -1 0 0 0 c*0 b^2/a*0 0]; [0 0 0 -c -b^2/a
+ -1 c*r b^2/a*r r]];[] 
+ []
+
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 1739--1739
+[]  \OT1/cmtt/m/n/10 X3 = [[a 0 -1 0 0 0 -a*-r 0*-r -r]; [0 0 0 a -0 -1 -a*0 0*
+0 0]];[] 
+ []
+
+
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 1739--1739
+[]  \OT1/cmtt/m/n/10 X4 = [[-c b^2/a -1 0 0 0 c*0 -b^2/a*0 0]; [0 0 0 -c b^2/a 
+-1 c*-r b^2/a*r -r]];[] 
+ []
+
+[45 <./homographydrawing.png>]
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 1739--1739
+[]    \OT1/cmtt/m/n/10 homopoint = [point; 1]; %Point presented in homogeneous 
+coordinates.[] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1739--1739
+[]    \OT1/cmtt/m/n/10 homopoint = [homopoint(1)/homopoint(3); homopoint(2)/hom
+opoint(3)];[] 
+ []
+
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1744 ...udegraphics[width=\linewidth]{gifu2.gif}
+                                                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1766 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1766 \end{align}
+                  
+? 
+
+Overfull \hbox (4.51584pt too wide) detected at line 1766
+[]
+ []
+
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 \end{align}
+                  
+? 
+
+Overfull \hbox (430.26216pt too wide) detected at line 1775
+[]
+ []
+
+! Argument of \align has an extra }.
+<inserted text> 
+                \par 
+l.1785 ...frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }
+                                                  {x} = \frac{1}{\sigma^2 }\...
+
+? 
+Runaway argument?
+ \rho _{\text {Normal}} &= \lim _{x\rightarrow \infty } -\frac {\log \ETC.
+! Paragraph ended before \align was complete.
+<to be read again> 
+                   \par 
+l.1785 ...frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }
+                                                  {x} = \frac{1}{\sigma^2 }\...
+
+? 
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.1785 ...frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }
+                                                  {x} = \frac{1}{\sigma^2 }\...
+
+? 
+[46]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1785 ...2}}\right)^2} }{x} = \frac{1}{\sigma^2 }
+                                                  \lim_{x\rightarrow \infty}...
+
+? 
+! Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.1785 ...2}}\right)^2} }{x} = \frac{1}{\sigma^2 }
+                                                  \lim_{x\rightarrow \infty}...
+
+? 
+
+! Package amsmath Error: \tag not allowed here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1785 ...x^2-2 x \mu + \mu^2}{ x}  = \infty, \tag
+                                                  {4}
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+<argument> \EQ_mathbody: 
+                         
+l.1786 \end{align}
+                  
+? 
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1786 \end{align}
+                  
+? 
+
+! Package amsmath Error: \tag not allowed here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1786 \end{align}
+                  
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1786 \end{align}
+                  
+? 
+
+! LaTeX Error: \begin{align} on input line 1783 ended by \end{AmSequation*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1786 \end{align}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1786 \end{align}
+                  
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.1786 \end{align}
+                  
+? 
+! Undefined control sequence.
+\EQ_post_process: ...quation =\l_EQ_equation_fint 
+                                                  \relax 
+l.1786 \end{align}
+                  
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.1786 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1818 \end{align}
+                  
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1818 \end{align}
+                  
+? 
+
+Overfull \hbox (93.46156pt too wide) detected at line 1818
+[]
+ []
+
+[47]
+Overfull \hbox (39.45695pt too wide) detected at line 1829
+\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 S[]S[]\OT1/cmr/m/n/10 ] = [][]
+ [](2\OML/cmm/m/it/10 ^^Yt\OT1/cmr/m/n/10 ) [](2\OML/cmm/m/it/10 ^^Yt \OT1/cmr/
+m/n/10 + \OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dt \OT1/cmr/m/n/
+10 = [][] \OMS/cmsy/m/n/10 ^^@ [][]\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 ^^Yt\OT1/
+cmr/m/n/10 )\OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[] [][] [
+]\OT1/cmr/m/n/10 (4\OML/cmm/m/it/10 ^^Yt\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dt \O
+MS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[]\OML/cmm/m/it/10 
+;
+ []
+
+! Undefined control sequence.
+l.1832 ...phi_2 \in [0,2 \pi]$, let $S_1(t) = \cps
+                                                  (2 \pi t + \phi_1)$ and $S...
+
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1839 \end{align*}
+                   
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1839 \end{align*}
+                   
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1839 \end{align*}
+                   
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1839 \end{align*}
+                   
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1839 \end{align*}
+                   
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1839 \end{align*}
+                   
+? 
+
+Overfull \hbox (934.84561pt too wide) detected at line 1839
+[]
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1913.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1913.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1913.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1913.
+
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1922                  \end{align*}
+                                    
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1922                  \end{align*}
+                                    
+? 
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 1922.
+
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1922                  \end{align*}
+                                    
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1922                  \end{align*}
+                                    
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1922                  \end{align*}
+                                    
+? 
+
+! Package empheq Error: You cannot use \\ in equation!.
+
+See the empheq package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1922                  \end{align*}
+                                    
+? 
+
+Overfull \hbox (427.90688pt too wide) detected at line 1922
+[]
+ []
+
+
+! LaTeX Error: \begin{equation} on input line 442 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1926 \end{document}
+                     
+? 
+[48] (./source.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `source.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `source.out':
+(rerunfilecheck)             Before: 686E0FF55616DAA6CF72B57B0F23B476;1334
+(rerunfilecheck)             After:  92742F35FDB58B55A0E55DC4262A7678;6103.
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 442 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 11024 strings out of 475509
- 169392 string characters out of 5776664
- 1934975 words of memory out of 5000000
- 32912 multiletter control sequences out of 15000+600000
- 566920 words of font info for 70 fonts, out of 8000000 for 9000
+ 11500 strings out of 475509
+ 178626 string characters out of 5776664
+ 1945975 words of memory out of 5000000
+ 33276 multiletter control sequences out of 15000+600000
+ 568004 words of font info for 74 fonts, out of 8000000 for 9000
  395 hyphenation exceptions out of 8191
- 90i,6n,93p,1332b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 90i,14n,93p,1332b,757s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sftt1000.pfb>
+Output written on source.pdf (48 pages, 2265691 bytes).
+PDF statistics:
+ 661 PDF objects out of 1000 (max. 8388607)
+ 488 compressed objects within 5 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+
