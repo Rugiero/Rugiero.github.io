@@ -60,8 +60,18 @@ The clear trend is that <A ID="tex2html25"
 (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this kind of contraption is a poor perspective, and without saying, not the only way to look at it. The truth is that ongoing SG research remains valuable, not only as an academic exercise, but also beyond its academic context. In practice, SG can and will be utilized in modern ML by providing <SPAN  CLASS="textbf">hypothesis classes</SPAN> for the ML algorithms. In this post, I will provide a concrete example of how.
 
 <P>
+<BLOCKQUOTE>
+<SPAN  CLASS="textit">For instance, SG models can be integrated as a hypothesis class in the learning process of ML.</SPAN>
+                           
+<DIV class="RIGHT">
+&mdash; Yassine H Mamouche et al., [1].
+                           
+</DIV>
+</BLOCKQUOTE>
 
-<DIV class="CENTER"><A ID="88"></A>
+<P>
+
+<DIV class="CENTER"><A ID="93"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure 2:</STRONG>
 Image generated with the help of DALL-E, an AI by OpenAI.</CAPTION>
@@ -91,13 +101,7 @@ The landscape of the ML algorithms is vast; however, they are often based on <A 
 function. More specifically, an <A ID="tex2html30"
   HREF="https://en.wikipedia.org/wiki/Autocorrelation">autocovariance</A>
 function (also referred to as a kernel) is at the heart of the GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html31"
-  HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>. Whether the training data is empirical data from an actual system or generated synthetically by using simulation tools, the numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have a rigid understanding of what qualities we are looking for? It is time for the SG to step into the arena: 
-
-<P>
-<BLOCKQUOTE>
-<SPAN  CLASS="textit">A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical ML signal data.</SPAN>
-                 
-</BLOCKQUOTE>
+  HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>. Whether the training data is empirical data from an actual system or generated synthetically by using simulation tools, the numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have a rigid understanding of what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical ML signal data.
 
 <P>
 In the following, we demonstrate a simple example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html32"
@@ -314,7 +318,7 @@ The prior model we will utilize in the GPR is the properties 5-7. The described 
 
 <P>
 
-<DIV class="CENTER"><A ID="159"></A>
+<DIV class="CENTER"><A ID="161"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure 3:</STRONG>
 Signal power estimated from scarce signal samples.</CAPTION>
@@ -521,20 +525,15 @@ plt.show()
 
 <P>
 References:
-
-<UL>
-<LI><A ID="tex2html44"
-  HREF="dissertation.pdf">Angervuori, Ilari., Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University</A>
-</LI>
-<LI><A ID="tex2html45"
+<table width="90%"><tr><td align="right" valign="top">[1]</td><td valign="top">&nbsp;Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778 </td></tr>
+<tr><td align="right" valign="top">[2]</td><td valign="top">&nbsp;<A ID="tex2html44"
+  HREF="dissertation.pdf">Angervuori, Ilari., Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University</A></td></tr>
+<tr><td align="right" valign="top">[3]</td><td valign="top">&nbsp;<A ID="tex2html45"
   HREF="https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content">Oksanen, Maiju., Stokastinen geometria langattoman
-  tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.</A>
-</LI>
-<LI>Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778
 
+tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.</A>
 <P>
-</LI>
-</UL>
+</td></tr></table>
 
 <P>
 
