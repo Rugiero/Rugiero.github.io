@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>June&mdash;Gaussian vs. impulsive noise</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html236"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node14.html">Blog posts 2021</A>
+<B> Up:</B> <A
+ HREF="node12.html">Blog posts 2022</A>
+<B> Previous:</B> <A
+ HREF="node12.html">Blog posts 2022</A>
+ &nbsp; <B>  <A ID="tex2html237"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00051000000000000000">
+June&mdash;Gaussian vs. impulsive noise</A>
+</H2>
+
+<P>
+Noise is often modeled to have a <A ID="tex2html61"
+  HREF="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian</A>
+waveform. However, it might be unrealistic in some circumstances if the <A ID="tex2html62"
+  HREF="https://en.wikipedia.org/wiki/Outlier">outlier</A>
+events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with <A ID="tex2html63"
+  HREF="https://en.wikipedia.org/wiki/Fat-tailed_distribution">fat-tailed distributions</A>
+with significant mass in the tail distribution. 
+
+<P>
+The <A ID="tex2html64"
+  HREF="https://en.wikipedia.org/wiki/Stable_distribution"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions</A>
+are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$\alpha$"></SPAN>-stable family of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$\alpha$"></SPAN>-stable distributions (<!-- MATH
+ $\alpha = 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img73.svg"
+ ALT="$\alpha = 2$"></SPAN>), the only distribution in the family with a finite variance. With values <!-- MATH
+ $\alpha \leq 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.04ex; vertical-align: -0.43ex; " SRC="img74.svg"
+ ALT="$\alpha \leq 1$"></SPAN>, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value&mdash;say, 10 euros in a year&mdash;versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
+
+<P>
+Other impulsive noise distribution models are the <SPAN  CLASS="textit">Middleton distributions</SPAN> representing the envelope of non-Gaussian electromagnetic noise.
+
+<P>
+In the following, we compare the Gaussian and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$\alpha$"></SPAN>-stable noises. The in-phase and quadrature components are distributed as Gaussian distribution or <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$\alpha$"></SPAN>-stable distribution with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img75.svg"
+ ALT="$\alpha =1$"></SPAN>, accordingly. The following GNU Octave code produces plots of bandwidth-limited analog Gaussian and  <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img72.svg"
+ ALT="$\alpha$"></SPAN>-stable noises with <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img75.svg"
+ ALT="$\alpha =1$"></SPAN>. 
+
+<P>
+<PRE>
+pkg load statistics
+
+clear all;
+close all;
+
+%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
+function xb = digitaltoanalog(T, digitalsignal, Fs)
+  xb = [];
+  for t = T
+    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
+  end
+end
+
+
+%%Inverse of the alpha stable CDF with alpha = 1.
+invalphaCDF = @(x) tan(0.5*(-1 + 2*x)*pi);
+%%Generate N Alpha-stable samples.
+N = 100;
+alphasamples = invalphaCDF(unifrnd(0,1,1,N));
+
+%%Generate normal samples.
+normalsamples = normrnd(0,1,1,N);
+%%Convert to analog signal.
+T = 1 : 0.1 : N;
+alphasamples = digitaltoanalog(T, alphasamples, 1);
+normalsamples = digitaltoanalog(T, normalsamples, 1);
+
+alphasamples = alphasamples/(mean(abs(alphasamples))); %Normalize by mean instantaneous amplitude.
+normalsamples = normalsamples/(mean(abs(normalsamples)));
+figure(1)
+plot(T, alphasamples)
+legend('Alpha-stable noise')
+axis([0 100 -15 15])
+figure(2)
+plot(T, normalsamples)
+legend('Gaussian noise')
+axis([0 100 -15 15])
+</PRE>
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./alphastablenoise.png"
+ ALT="Image alphastablenoise">
+
+</DIV>
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./gaussiannoise.png"
+ ALT="Image gaussiannoise">
+
+</DIV>
+
+<P>
+Comparing the figures, one can easily understand where the term &ldquo;impulsive noise&rdquo; comes from.
+
+<P>
+It is also interesting to compare the audiolized noise signals:
+<A ID="tex2html65"
+  HREF="https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing">my Soundcloud</A>.
+
+<P>
+References:
+
+<UL>
+<LI>Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman &amp; Hall, 1994. Print.
+</LI>
+<LI>Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976.
+</LI>
+<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ; Cambridge University Press, 2005. Print.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html236"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node14.html">Blog posts 2021</A>
+<B> Up:</B> <A
+ HREF="node12.html">Blog posts 2022</A>
+<B> Previous:</B> <A
+ HREF="node12.html">Blog posts 2022</A>
+ &nbsp; <B>  <A ID="tex2html237"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

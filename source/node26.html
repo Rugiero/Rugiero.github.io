@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>May – Digital to analog modulation</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html277"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node27.html">Homography</A>
+<B> Up:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+<B> Previous:</B> <A
+ HREF="node25.html">Voronoi tesselation on a</A>
+ &nbsp; <B>  <A ID="tex2html278"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00076000000000000000">
+May – Digital to analog modulation</A>
+</H2>
+Digital signal consists of values at discrete times, whereas analog signal is continuous in time <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.66ex; vertical-align: -0.12ex; " SRC="img57.svg"
+ ALT="$t$"></SPAN>. As the orthogonal set of <A ID="tex2html128"
+  HREF="https://en.wikipedia.org/wiki/Sinc_function">sinc functions</A>
+<P><!-- MATH
+ \begin{displaymath}
+\{t \mapsto \text{sinc}(F_s t - n)\}_n,
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img108.svg"
+ ALT="$\displaystyle \{t \mapsto$">&nbsp; &nbsp;sinc<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img109.svg"
+ ALT="$\displaystyle (F_s t - n)\}_n,
+$">
+</DIV><P></P>
+spans the space of signals of bandwidth <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img88.svg"
+ ALT="$F_s/2$"></SPAN>, an analog signal can be (uniquely) produced from a digital signal of length <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img86.svg"
+ ALT="$N$"></SPAN> 
+<P><!-- MATH
+ \begin{displaymath}
+\{ x[n]\}_{n=0}^{N-1}
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.95ex; vertical-align: -0.74ex; " SRC="img110.svg"
+ ALT="$\displaystyle \{ x[n]\}_{n=0}^{N-1}
+$">
+</DIV><P></P>
+as a superposition of the sinc basis-functions
+<P><!-- MATH
+ \begin{displaymath}
+S(t) =\sum_{n = 0}^{N-1} x[n]\text{sinc}(F_s t - n),
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 7.40ex; vertical-align: -3.06ex; " SRC="img111.svg"
+ ALT="$\displaystyle S(t) =\sum_{n = 0}^{N-1} x[n]$">sinc<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img112.svg"
+ ALT="$\displaystyle (F_s t - n),
+$">
+</DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img87.svg"
+ ALT="$F_s$"></SPAN> is the sampling rate of the digital signal.
+
+<P>
+The following GNU Octave function produces the analog signal from a given digital signal
+
+<P>
+<PRE>
+%%Function returns the values at times T of the analog signal of the corresponding digital signal sampled at speed Fs.
+function xb = digitaltoanalog(T, digitalsignal, Fs)
+  xb = [];
+  for t = T
+    xb =  [xb sum(digitalsignal.*sinc(Fs*t - (0 : length(digitalsignal) - 1)))];
+  end
+end
+</PRE>
+
+<P>
+The following code simulates a rectangle pulse train signal given as input, samples the input to a digital signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img113.svg"
+ ALT="$x$"></SPAN>, and modulates the sampled digital signal back to an analog signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img114.svg"
+ ALT="$S$"></SPAN>. As the <A ID="tex2html129"
+  HREF="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist rate</A>
+restricts the bandwidth of the signal <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img114.svg"
+ ALT="$S$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img88.svg"
+ ALT="$F_s/2$"></SPAN>, information is lost in the sampling stage, because the original rectangle train has an infinite bandwidth.
+
+<P>
+<PRE>
+pkg load signal;
+close all;
+clear all;
+
+input  = @(t) pulstran(t,[0,1,5,7,9],"rectpuls") %%The original analog signal at time t.
+
+Fs = 5; %Sampling rate.
+t = 10 %Time length of the signal.
+Ts = 0 : 1/Fs : t; %Sampling time instances.
+x =  input(Ts); %Sampled values, i.e. the digital signal.
+
+Ta = linspace(0, t, 1000); %Analog signal time instances for the plot.
+S = digitaltoanalog(Ta, x, Fs); %Modulated analog signal.
+
+%Plot.
+plot(Ta, input(Ta), 'color', 'r');
+hold on;
+plot(Ts, x, 'x', 'color', 'r')
+plot(Ta, S, 'color', 'b');
+legend( 'Original analog signal','Sampled digital signal', 'Rerproduced analog signal')
+</PRE>
+
+<P>
+
+<DIV class="CENTER">
+  <IMG
+  WIDTH="621" HEIGHT="466" STYLE=""
+ SRC="./rectangletrain.png"
+ ALT="Image rectangletrain">
+
+</DIV>
+
+<P>
+References:
+
+<UL>
+<LI>Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press, 2005. Print.
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>
