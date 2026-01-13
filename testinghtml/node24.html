@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>Inverse of a Gaussian variable</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html273"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node25.html">Voronoi tesselation on a</A>
+<B> Up:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+<B> Previous:</B> <A
+ HREF="node23.html">November – Digital filtering</A>
+ &nbsp; <B>  <A ID="tex2html274"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00074000000000000000">
+Inverse of a Gaussian variable</A>
+</H2>
+
+<P>
+There is a lot of literature on the <A ID="tex2html124"
+  HREF="https://en.wikipedia.org/wiki/Inverse_distribution">inverse</A>
+of a Gaussian distributed variable (this should not be fixed with inverse Gaussian distribution&mdash;it is a different matter). The inverse distribution is ill-behaved; the mean and variance do not generally exist.
+
+<P>
+I came up with a simple approximation that works well if the mean is large enough and the variance is small enough (I have yet to work out the details of the exact conditions for this approximation. However, the results can be verified, e.g., by Monte Carlo simulations).
+
+<P>
+First, approximate the Gaussian distributed variable <!-- MATH
+ $X \sim \mathcal{N}(\mu, \sigma^2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img98.svg"
+ ALT="$X \sim \mathcal{N}(\mu, \sigma^2)$"></SPAN> by a log-normally distributed variable <!-- MATH
+ $X \approx Y \sim \text{Lognormal}(\mu_{\text{LN}}, \sigma_{\text{LN}}),$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img99.svg"
+ ALT="$X \approx Y \sim$">&nbsp; &nbsp;Lognormal<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img100.svg"
+ ALT="$(\mu_{\text{LN}}, \sigma_{\text{LN}}),$"></SPAN> with corresponding mean and variance, <SPAN  CLASS="textit">i.e.</SPAN>, <P><!-- MATH
+ \begin{displaymath}
+\mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 5.88ex; vertical-align: -2.32ex; " SRC="img101.svg"
+ ALT="$\displaystyle \mu = \exp\left( \mu_{\text{LN}} + \frac{\sigma_{\text{LN}}^2}{2} \right)$">
+</DIV><P></P>
+and
+<P><!-- MATH
+ \begin{displaymath}
+\sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img102.svg"
+ ALT="$\displaystyle \sigma = (\exp( \sigma_{\text{LN}}^2) - 1)\exp(2 \mu_{\text{LN}} + \sigma_{\text{LN}}^2).$">
+</DIV><P></P>
+We leave the solving of <!-- MATH
+ $\mu_{\text{LN}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img103.svg"
+ ALT="$\mu_{\text{LN}}$"></SPAN> and <!-- MATH
+ $\sigma_{\text{LN}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img104.svg"
+ ALT="$\sigma_{\text{LN}}$"></SPAN> as an easy exercise for the reader. (:
+
+<P>
+Using the theory of log-normal distribution, the inverse of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img105.svg"
+ ALT="$X$"></SPAN> is now given by
+<P><!-- MATH
+ \begin{displaymath}
+1/X \approx 1/Y \sim \text{Lognormal}(-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+\end{displaymath}
+ -->
+</P>
+<DIV CLASS="displaymath">
+<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img106.svg"
+ ALT="$\displaystyle 1/X \approx 1/Y \sim$">&nbsp; &nbsp;Lognormal<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img107.svg"
+ ALT="$\displaystyle (-\mu_{\text{LN}}, \sigma_{\text{LN}}).
+$">
+</DIV><P></P>
+
+<P>
+That's it!
+
+<P>
+References:
+
+<UL>
+<LI><A ID="tex2html125"
+  HREF="https://en.wikipedia.org/wiki/Log-normal_distribution">Log-normal distribution</A>
+</LI>
+<LI>Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html273"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node25.html">Voronoi tesselation on a</A>
+<B> Up:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+<B> Previous:</B> <A
+ HREF="node23.html">November – Digital filtering</A>
+ &nbsp; <B>  <A ID="tex2html274"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

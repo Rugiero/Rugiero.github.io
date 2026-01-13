@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>Controlling your passwords with pass</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
+
+<LINK REL="STYLESHEET" HREF="source.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html267"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node22.html">October – Fast Fourier</A>
+<B> Up:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+<B> Previous:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+ &nbsp; <B>  <A ID="tex2html268"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00071000000000000000">
+Controlling your passwords with pass</A>
+</H2>
+Pass is a nice Unix style free and open source wallet for keeping your passwords safe. Here is a brief look how to set it up in Linux.
+
+<P>
+
+<UL>
+<LI>Install the application in the terminal. 
+<BR><PRE>
+sudo apt install pass
+</PRE>
+</LI>
+<LI>Check for the existing GPG keys. 
+<BR><PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>If no keys were found generate a key pair. 
+<BR><PRE>
+gpg --generate-key
+</PRE>
+</LI>
+<LI>Copy the name of the key and initialize pass.
+<BR><PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is the name of the key.
+</LI>
+<LI>Generate a password with 
+<BR><PRE>
+pass generate keyfolder/newkey
+</PRE>
+List the passwords.
+<PRE>
+pass
+</PRE>
+Copy a password to the clipboard. 
+<BR><PRE>
+pass keyfolder/newkey -c
+</PRE>
+For more commands:
+<PRE>
+man pass
+</PRE>
+</LI>
+</UL>
+
+<P>
+Connect Pass to Git and it is easy to keep track of passwords with multiple machines.
+
+<UL>
+<LI>Export your public and private key to a file with 
+<BR><PRE>
+  gpg --export --output public.key ABCDEFGHIJKLMNOPQRSTUV1234 
+  gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
+<BR></LI>
+<LI>Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
+<BR><PRE>
+gpg --import public.key
+gpg --import private.key
+</PRE>
+</LI>
+<LI>After importing the keys to a new machine you can list the keys:
+<PRE>
+gpg --list-keys
+</PRE>
+</LI>
+<LI>and initialize Pass with
+<PRE>
+pass init ABCDEFGHIJKLMNOPQRSTUV1234
+</PRE>
+</LI>
+<LI>First, remember to <A ID="tex2html109"
+  HREF="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">add your public SSH key to GitHub</A>. We will initialize the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
+<PRE>
+pass git init 
+pass git remote add origin git@repo.com:myname/pass-store
+</PRE>
+</LI>
+<LI>Get password data from the server (from a non-empty repository, otherwise skip)
+<PRE>
+pass git pull origin master --allow-unrelated-histories
+pass git commit -am "firstcommit"
+</PRE>
+If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconcileing and repeat the command.
+</LI>
+<LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
+<BR><PRE>
+pass git push --set-upstream origin master
+</PRE>
+</LI>
+<LI>From here on you can use the familiar git commands. 
+<BR><PRE>
+pass git pull 
+pass git push
+</PRE>
+It can be the case that you have to raise the trust level of the public key. For that, check <A ID="tex2html110"
+  HREF="https://stackoverflow.com/questions/33361068/gnupg-there-is-no-assurance-this-key-belongs-to-the-named-user">this</A>
+article. 
+</LI>
+</UL>
+Stay safe :)
+
+<P>
+References:
+
+<P>
+
+<UL>
+<LI><A ID="tex2html111"
+  HREF="https://www.passwordstore.org/">Password Store</A>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html267"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
+  HREF="cv.pdf"><IMG
+ STYLE="" SRC="jetscalecropped.png"
+ ALT="8"></A>
+<BR>
+<B> Next:</B> <A
+ HREF="node22.html">October – Fast Fourier</A>
+<B> Up:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+<B> Previous:</B> <A
+ HREF="node20.html">Miscellaneous notes</A>
+ &nbsp; <B>  <A ID="tex2html268"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
