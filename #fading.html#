@@ -1,0 +1,27 @@
+Consider a constant sine signal
+
+<p>
+<figure>
+    <audio
+        controls
+        src="reference.ogg">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+</figure>
+</p>
+
+propagating in a environment scattering from objects, of which some are moving, and fading into the medium. Somebody who is listening might here something like
+
+<p>
+<figure>
+    <audio
+        controls
+        src="whale.ogg">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+</figure>
+</p>
+
+

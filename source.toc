@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}About me}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Education}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Publications}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Personal grants}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Thesis's and other projects}{6}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Other certificates}{7}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Blog posts 2026}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}January---Machine learning and stochastic geometry are a happy couple}{7}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Blog posts 2023}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}May---Signal fading in a satellite receiver and the coherence time}{16}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Blog posts 2022}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}June---Gaussian vs. impulsive noise}{19}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Blog posts 2021}{22}{section.5}%
+\contentsline {subsection}{\numberline {5.1}January---Poisson process on a sphere}{22}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}March---Signal propagation in a city}{24}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}May---Rayleigh fading audiolized}{27}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}June---Why does MIMO work?}{30}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}August---Radio waves in a tunnel}{31}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Miscellaneous notes}{33}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Controlling your passwords with pass}{33}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}October – Fast Fourier transform in GNU Octave}{36}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}November – Digital filtering}{36}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Inverse of a Gaussian variable}{41}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Voronoi tesselation on a sphere}{41}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}May – Digital to analog modulation}{43}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Homography}{44}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Asymptotic decay rate of a probability distribution}{46}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Summing the signal powers}{47}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}A representation of the generalized hypergeometric function $_3F_2$}{48}{subsection.6.10}%
