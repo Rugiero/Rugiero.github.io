@@ -27,7 +27,7 @@
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html226"
+<A ID="tex2html227"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -40,7 +40,7 @@
  HREF="node8.html">Blog posts 2026</A>
 <B> Previous:</B> <A
  HREF="node8.html">Blog posts 2026</A>
- &nbsp; <B>  <A ID="tex2html227"
+ &nbsp; <B>  <A ID="tex2html228"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -51,11 +51,11 @@ January&mdash;Machine learning and stochastic geometry are a happy couple</A>
 </H2>
 
 <P>
-The clear trend is that <A ID="tex2html25"
+The clear trend is that <A ID="tex2html26"
   HREF="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</A>
-(AI) and <A ID="tex2html26"
+(AI) and <A ID="tex2html27"
   HREF="https://en.wikipedia.org/wiki/Machine_learning">machine learning</A>
-(ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html27"
+(ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html28"
   HREF="https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks">stochastic geometry</A>
 (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this kind of contraption is a poor perspective, and without saying, not the only way to look at it. The truth is that ongoing SG research remains valuable, not only as an academic exercise, but also beyond its academic context. In practice, SG can and will be utilized in modern ML by providing <SPAN  CLASS="textbf">hypothesis classes</SPAN> for the ML algorithms. In this post, I will provide a concrete example of how.
 
@@ -71,7 +71,7 @@ The clear trend is that <A ID="tex2html25"
 
 <P>
 
-<DIV class="CENTER"><A ID="93"></A>
+<DIV class="CENTER"><A ID="96"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure 2:</STRONG>
 Image generated with the help of DALL-E, an AI by OpenAI.</CAPTION>
@@ -94,19 +94,19 @@ Let me formulate the working definitions of the ML and SG. We focus on the signa
 </UL>
 
 <P>
-The landscape of the ML algorithms is vast; however, they are often based on <A ID="tex2html28"
+The landscape of the ML algorithms is vast; however, they are often based on <A ID="tex2html29"
   HREF="https://en.wikipedia.org/wiki/Kriging">Gaussian process regression</A>
-(GPR). The GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a <A ID="tex2html29"
+(GPR). The GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a <A ID="tex2html30"
   HREF="https://en.wikipedia.org/wiki/Correlation">correlation</A>
-function. More specifically, an <A ID="tex2html30"
+function. More specifically, an <A ID="tex2html31"
   HREF="https://en.wikipedia.org/wiki/Autocorrelation">autocovariance</A>
-function (also referred to as a kernel) is at the heart of the GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html31"
+function (also referred to as a kernel) is at the heart of the GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html32"
   HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>. Whether the training data is empirical data from an actual system or generated synthetically by using simulation tools, the numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have a rigid understanding of what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical ML signal data.
 
 <P>
-In the following, we demonstrate a simple example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html32"
+In the following, we demonstrate a simple example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html33"
   HREF="https://en.wikipedia.org/wiki/Low_Earth_orbit">low Earth orbit</A>
-(LEO) satellite receiver. The prior autocovariance function is derived from a theoretical estimate based on SG. Based on this autocovariance, the power estimation is inferred from empirical data using GPR. Furthermore, the estimation is compared to a <A ID="tex2html33"
+(LEO) satellite receiver. The prior autocovariance function is derived from a theoretical estimate based on SG. Based on this autocovariance, the power estimation is inferred from empirical data using GPR. Furthermore, the estimation is compared to a <A ID="tex2html34"
   HREF="https://en.wikipedia.org/wiki/Moving_average">moving average</A>
 (MA) estimation. 
 
@@ -116,7 +116,7 @@ The theoretical settings are:
 <OL>
 <LI>The interferers (natural sources or transmitters) of bandwidth <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img6.svg"
- ALT="$1$"></SPAN> kHz are distributed according to the <A ID="tex2html19"
+ ALT="$1$"></SPAN> kHz are distributed according to the <A ID="tex2html20"
   HREF="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson point process</A>
 (PPP) on the Earth surface, causing interference at the LEO satellite. 
 </LI>
@@ -138,12 +138,12 @@ The theoretical settings are:
  STYLE="height: 2.07ex; vertical-align: -0.46ex; " SRC="img10.svg"
  ALT="$v_{\text{sat}}=7.4$"></SPAN> km/s.
 </LI>
-<LI>For simplicity, no fast-<A ID="tex2html20"
+<LI>For simplicity, no fast-<A ID="tex2html21"
   HREF="https://en.wikipedia.org/wiki/Fading">fading</A>, shadowing, or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all transmitters.
                  
 </LI>
 </OL>
-                 As the satellite moves, the magnitude of the aggregate interference varies due to the randomly distributed interferers. The key insight acquired from the SG analysis is as follows. (The details can be found in <A ID="tex2html34"
+                 As the satellite moves, the magnitude of the aggregate interference varies due to the randomly distributed interferers. The key insight acquired from the SG analysis is as follows. (The details can be found in <A ID="tex2html35"
   HREF="dissertation.pdf">my thesis</A>, Sections 3.3 and 3.4.)
 
 <P>
@@ -176,7 +176,7 @@ where <SPAN CLASS="MATH"><IMG
 <DT>6.</DT>
 <DD>The normalized interference power (<SPAN  CLASS="textit">i.e.</SPAN>, variance of <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img15.svg"
- ALT="$I$"></SPAN>) is approximately <A ID="tex2html21"
+ ALT="$I$"></SPAN>) is approximately <A ID="tex2html22"
   HREF="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distributed</A>
 with the mean <!-- MATH
  $\mathbb{E}(P)=1$
@@ -188,7 +188,7 @@ with the mean <!-- MATH
  -->
 <SPAN CLASS="MATH">var<IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
- ALT="$(P)=1/2$"></SPAN> (see <A ID="tex2html22"
+ ALT="$(P)=1/2$"></SPAN> (see <A ID="tex2html23"
   HREF="dissertation.pdf">thesis</A>, Theorems 3.3.6 and 3.3.7).
                  
 </DD>
@@ -197,7 +197,7 @@ with the mean <!-- MATH
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img18.svg"
  ALT="$P(t)$"></SPAN> at lag <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img19.svg"
- ALT="$\tau$"></SPAN> has the <A ID="tex2html23"
+ ALT="$\tau$"></SPAN> has the <A ID="tex2html24"
   HREF="https://en.wikipedia.org/wiki/Radial_basis_function_kernel">Gaussian form</A>
 <P><!-- MATH
  \begin{displaymath}
@@ -266,7 +266,7 @@ In our settings, since the antenna is directed to the Earth center, <!-- MATH
  STYLE="height: 2.75ex; vertical-align: -0.76ex; " SRC="img32.svg"
  ALT="$D=v_{\text{sat}}^2\tau^2/(h^2 \varphi_{\text{RX}}^2)$"></SPAN> in (2) is directly defined by the altitude <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img25.svg"
- ALT="$h$"></SPAN> of the satellite: the <A ID="tex2html35"
+ ALT="$h$"></SPAN> of the satellite: the <A ID="tex2html36"
   HREF="https://en.wikipedia.org/wiki/Orbital_speed">orbital speed</A>
 <!-- MATH
  $v_{\text{sat}}$
@@ -279,13 +279,13 @@ In our settings, since the antenna is directed to the Earth center, <!-- MATH
  STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img34.svg"
  ALT="$k$"></SPAN> (especially in the non-causal prediction): too large and too small <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
- ALT="$D$"></SPAN> yield <A ID="tex2html36"
+ ALT="$D$"></SPAN> yield <A ID="tex2html37"
   HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
 and underfitting the data, respectively. In a refined version of the GPR, <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img34.svg"
  ALT="$k$"></SPAN> and <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
- ALT="$D$"></SPAN> could also be treated as <A ID="tex2html37"
+ ALT="$D$"></SPAN> could also be treated as <A ID="tex2html38"
   HREF="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameters</A>, which are learned from the data, but we treat them as fixed.
 
 <P>
@@ -293,7 +293,7 @@ The prior model we will utilize in the GPR is the properties 5-7. The described 
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img18.svg"
  ALT="$P(t)$"></SPAN> with the Gaussian autocovariance is the hypothesis class of the set of functions within which we search our estimation from, and the waveform <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$I(t)$"></SPAN> is treated as a non-stationary <A ID="tex2html38"
+ ALT="$I(t)$"></SPAN> is treated as a non-stationary <A ID="tex2html39"
   HREF="https://en.wikipedia.org/wiki/Gaussian_process">Gaussian process</A>. In practice, we will use the samples from <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img36.svg"
  ALT="$\vert I(t)\vert^2$"></SPAN> to estimate the interference power <SPAN CLASS="MATH"><IMG
@@ -318,7 +318,7 @@ The prior model we will utilize in the GPR is the properties 5-7. The described 
 
 <P>
 
-<DIV class="CENTER"><A ID="161"></A>
+<DIV class="CENTER"><A ID="164"></A>
 <TABLE>
 <CAPTION class="BOTTOM"><STRONG>Figure 3:</STRONG>
 Signal power estimated from scarce signal samples.</CAPTION>
@@ -338,7 +338,7 @@ For a random realization of the power <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img41.svg"
  ALT="$0.1$"></SPAN> kHz) realization of the interference waveform <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html39"
+ ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html40"
   HREF="https://en.wikipedia.org/wiki/Causal_filter">causal</A>
 MA. The window size of the MA is empirically optimized, but it could also be learned from training data. Apart from the slight overfitting, the MA captures <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img18.svg"
@@ -353,7 +353,7 @@ MA. The window size of the MA is empirically optimized, but it could also be lea
  -->
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img43.svg"
- ALT="$t\approx 1.5$"></SPAN>s. The <A ID="tex2html40"
+ ALT="$t\approx 1.5$"></SPAN>s. The <A ID="tex2html41"
   HREF="https://en.wikipedia.org/wiki/Predictive_analytics">forecast</A>
 region in the figure corresponds to a causal estimation of the future signal based on the past values. Not so surprisingly, the GPR is superior to MA in this regard. Both predictions can be improved by increasing the sampling frequency.
 
@@ -361,9 +361,9 @@ region in the figure corresponds to a causal estimation of the future signal bas
 Figure 1 (a) speaks its own language for the benefit of the prior SG-based hypothesis class versus the simple MA. On the contrary, without any hypothesis classes at hand, signal estimation would be much more difficult and arbitrary: even if the Gaussian correlation function is a commonly used initial guess for the autocovariance, and could be guessed without the SG analysis, the insight into the hyperparameters and their dependency on the orbital and network properties is invaluable. 
 
 <P>
-This was a simple, however theoretically solidly grounded, example of how SG analysis of wireless networks can assist in producing prior knowledge for the ML algorithms. A similar inquiry extends to signals affected by fading and other signal attenuation in LEO networks. Of course, terrestrial network settings are also feasible as hypothesis classes (having their distinct characteristics). The potential applications include <A ID="tex2html41"
-  HREF="https://en.wikipedia.org/wiki/Self-interference_cancellation">interference cancellation</A>, <A ID="tex2html42"
-  HREF="https://en.wikipedia.org/wiki/Error_correction_code">error correction</A>, and <A ID="tex2html43"
+This was a simple, however theoretically solidly grounded, example of how SG analysis of wireless networks can assist in producing prior knowledge for the ML algorithms. A similar inquiry extends to signals affected by fading and other signal attenuation in LEO networks. Of course, terrestrial network settings are also feasible as hypothesis classes (having their distinct characteristics). The potential applications include <A ID="tex2html42"
+  HREF="https://en.wikipedia.org/wiki/Self-interference_cancellation">interference cancellation</A>, <A ID="tex2html43"
+  HREF="https://en.wikipedia.org/wiki/Error_correction_code">error correction</A>, and <A ID="tex2html44"
   HREF="https://en.wikipedia.org/wiki/Medium_access_control">medium access control</A>.
 
 <P>
@@ -529,9 +529,9 @@ plt.show()
 <P>
 References:
 <table width="90%"><tr><td align="right" valign="top">[1]</td><td valign="top">&nbsp;Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778 </td></tr>
-<tr><td align="right" valign="top">[2]</td><td valign="top">&nbsp;<A ID="tex2html44"
+<tr><td align="right" valign="top">[2]</td><td valign="top">&nbsp;<A ID="tex2html45"
   HREF="dissertation.pdf">Angervuori, Ilari., Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University</A></td></tr>
-<tr><td align="right" valign="top">[3]</td><td valign="top">&nbsp;<A ID="tex2html45"
+<tr><td align="right" valign="top">[3]</td><td valign="top">&nbsp;<A ID="tex2html46"
   HREF="https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content">Oksanen, Maiju., Stokastinen geometria langattoman
 
 tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.</A>
@@ -551,7 +551,7 @@ tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.</A>
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html226"
+<A ID="tex2html227"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html2"
   HREF="cv.pdf"><IMG
@@ -564,7 +564,7 @@ tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.</A>
  HREF="node8.html">Blog posts 2026</A>
 <B> Previous:</B> <A
  HREF="node8.html">Blog posts 2026</A>
- &nbsp; <B>  <A ID="tex2html227"
+ &nbsp; <B>  <A ID="tex2html228"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 

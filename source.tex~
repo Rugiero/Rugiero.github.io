@@ -184,6 +184,13 @@ I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Na
 
                          The clear trend is that \htmladdnormallink{artificial intelligence}{https://en.wikipedia.org/wiki/Artificial_intelligence} (AI) and \htmladdnormallink{machine learning}{https://en.wikipedia.org/wiki/Machine_learning} (ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is \htmladdnormallink{stochastic geometry}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks} (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this kind of contraption is a poor perspective, and without saying, not the only way to look at it. The truth is that ongoing SG research remains valuable, not only as an academic exercise, but also beyond its academic context. In practice, SG can and will be utilized in modern ML by providing \textbf{hypothesis classes} for the ML algorithms. In this post, I will provide a concrete example of how.
 
+                         \begin{quotation}
+                           \textit{For instance, SG models can be integrated as a hypothesis class in the learning process of ML.}
+                           \begin{flushright}
+                             --- Yassine H Mamouche et al., [1].
+                           \end{flushright}
+                         \end{quotation}
+
                                           \begin{figure}                           
                                             \includegraphics[width=0.97\linewidth]{SGandML.png}
                                             \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
@@ -201,11 +208,8 @@ I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Na
                  \end{itemize}
 
                  
-                 The landscape of the ML algorithms is vast; however, they are often based on \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). The GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} function. More specifically, an \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function (also referred to as a kernel) is at the heart of the GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from \htmladdnormallink{training data}{https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets}. Whether the training data is empirical data from an actual system or generated synthetically by using simulation tools, the numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have a rigid understanding of what qualities we are looking for? It is time for the SG to step into the arena: 
+                 The landscape of the ML algorithms is vast; however, they are often based on \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). The GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} function. More specifically, an \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function (also referred to as a kernel) is at the heart of the GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from \htmladdnormallink{training data}{https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets}. Whether the training data is empirical data from an actual system or generated synthetically by using simulation tools, the numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have a rigid understanding of what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical ML signal data.
                  
-                 \begin{quotation}
-                   \textit{A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical ML signal data.}
-                 \end{quotation}
 
                  In the following, we demonstrate a simple example of estimating the power of a non-stationary Gaussian interference signal at a \htmladdnormallink{low Earth orbit}{https://en.wikipedia.org/wiki/Low_Earth_orbit} (LEO) satellite receiver. The prior autocovariance function is derived from a theoretical estimate based on SG. Based on this autocovariance, the power estimation is inferred from empirical data using GPR. Furthermore, the estimation is compared to a \htmladdnormallink{moving average}{https://en.wikipedia.org/wiki/Moving_average} (MA) estimation. 
 
@@ -247,7 +251,9 @@ I. Angervuori, M. Haenggi and R. Wichman, ``Meta Distribution of the SIR in a Na
                                           
                                           For a random realization of the power $P(t)$ (generated according to the gamma distribution and its second-order statistics), which is ``not known'' prior to the empirical samples, in Figures 1 (a) and 1 (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realization of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. The window size of the MA is empirically optimized, but it could also be learned from training data. Apart from the slight overfitting, the MA captures $P(t)$ reasonably well (as long as the window size is optimized). However, the GPR prediction is clearly better in capturing the smoothness of $P(t)$. Furthermore, the GPR prediction captures the $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralized MA, which starts at $t\approx 1.5$s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Not so surprisingly, the GPR is superior to MA in this regard. Both predictions can be improved by increasing the sampling frequency.
 
-                                          Figure 1 (a) speaks its own language for the benefit of the prior SG-based hypothesis class. On the contrary, without any hypothesis classes at hand, signal estimation would be much more difficult and arbitrary: even if the Gaussian correlation function is a commonly used initial guess for the autocovariance, and could be guessed without the SG analysis, the insight into the hyperparameters and their dependency on the orbital and network properties is invaluable. This was a simple, however solidly grounded, example of how SG analysis of wireless networks can assist in producing prior knowledge for the ML algorithms. A similar inquiry extends to signals affected by fading and other signal attenuation in LEO networks. Of course, terrestrial network settings are also feasible. The potential applications include \htmladdnormallink{interference cancellation}{https://en.wikipedia.org/wiki/Self-interference_cancellation}, \htmladdnormallink{error correction}{https://en.wikipedia.org/wiki/Error_correction_code}, and \htmladdnormallink{medium access control}{https://en.wikipedia.org/wiki/Medium_access_control}.
+                                          Figure 1 (a) speaks its own language for the benefit of the prior SG-based hypothesis class versus the simple MA. On the contrary, without any hypothesis classes at hand, signal estimation would be much more difficult and arbitrary: even if the Gaussian correlation function is a commonly used initial guess for the autocovariance, and could be guessed without the SG analysis, the insight into the hyperparameters and their dependency on the orbital and network properties is invaluable. 
+
+This was a simple, however theoretically solidly grounded, example of how SG analysis of wireless networks can assist in producing prior knowledge for the ML algorithms. A similar inquiry extends to signals affected by fading and other signal attenuation in LEO networks. Of course, terrestrial network settings are also feasible as hypothesis classes (having their distinct characteristics). The potential applications include \htmladdnormallink{interference cancellation}{https://en.wikipedia.org/wiki/Self-interference_cancellation}, \htmladdnormallink{error correction}{https://en.wikipedia.org/wiki/Error_correction_code}, and \htmladdnormallink{medium access control}{https://en.wikipedia.org/wiki/Medium_access_control}.
 
 
 
@@ -417,10 +423,11 @@ plt.show()
 
 References:
 \begin{itemize}
-\item \htmladdnormallink{Angervuori, Ilari., Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University}{dissertation.pdf}
-\item \htmladdnormallink{Oksanen, Maiju., Stokastinen geometria langattoman
+\item[[1]] Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778 
+\item[[2]] \htmladdnormallink{Angervuori, Ilari., Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University}{dissertation.pdf}
+\item[[3]] \htmladdnormallink{Oksanen, Maiju., Stokastinen geometria langattoman
   tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.}{https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content}
-  \item Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778
+
   
 \end{itemize}
 
@@ -433,7 +440,7 @@ References:
 
 \section{Blog posts 2023}
 
-\subsection{May---Signal fading in a satellite receiver and the coherence time}
+\subsection{May---Signal fading at a satellite receiver and the coherence time}
 \begin{figure}
   \includegraphics[width=\linewidth]{satelliteinterference.png}
 \end{figure}
