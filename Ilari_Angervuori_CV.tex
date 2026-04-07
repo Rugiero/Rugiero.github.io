@@ -1,0 +1,203 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important <note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper,dejavu]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{red} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.9]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Ilari} % Your first name
+\familyname{Angervuori} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{Ilari Angervuori}
+\extrainfo{Home page and blog: \href{https://ilari.angervuori.fi}{\textcolor{red}{ilari.angervuori.fi} – } \\ please find my GitHub, LinkedIn, Google Scholar, etc., in the link.}
+\mobile{+358 4578752502}
+\email{ilari.angervuori@aalto.fi}
+\photo[60pt][0.1pt]{jetscalecropped.png} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Profile}
+
+
+\cventry{}{A mathematically oriented wireless/NTN engineer with PhD-level expertise and 6+ years of proven track record of R\&D experience in building simulation tools and algorithms to analyze interference, SIR/SINR, channel modeling, coverage, and routing for NTN systems. Able to make sense of raw data and communicate it to the audience and stakeholders. Participated in projects tied to VTT and ESA. With ambition, I will apply my NTN performance analysis and simulation expertise to solve real-world problems in the fast-paced industry/startups. Ethical and environmental aspects are also near my heart. I am a FI/EU citizen.}{}{}{}{}
+
+
+
+
+\section{Core Skills}
+\cvitem{Languages/\\Tools}{\textsc{python}, \textsc{C++}, \textsc{java}, \textsc{C}, \textsc{Octave}, \textsc{Matlab}, \textsc{Mathematica}, \textsc{GIT}, \LaTeX, Linux operating system. Spoken languages: Native \textbf{Finnish}, fluent in \textbf{English}, good in \textbf{Swedish}, beginner in \textbf{Spanish}.}
+\cvitem{Domains}{LEO/NTN comms, stochastic geometry, spatial and temporal channel models, statistical interference models, SINR, SIR, and other performance metrics, routing, ML for signal processing, LEO constellations.}
+\cvitem{Practices}{Simulation design, algorithm prototyping, data analysis, stakeholder coordination, technical writing.}
+%----------------------------------------------------------------------------------------
+\section{Experience and impact (hyperlinks in red)}
+\cventry{5/2025-9/2025}{Project Researcher}{Aalto University}{Department of Electrical Engineering}{Espoo, Finland}{- Managed an R\&D article project \href{https://www.techrxiv.org/users/755890/articles/1353864-spatial-and-temporal-correlation-of-the-interference-in-a-narrow-beam-leo-network-with-aloha-medium-access-control}{\textcolor{red}{[1]}}: drove on-campus collaboration to deliver a spatio-temporal interference and ALOHA MAC analysis for LEO/NTN networks. - Built/maintained simulation code in \textsc{MATLAB} and \textsc{Octave}.  \\
+   \textbf{Impact:} - Formulated closed-form interference correlation functions enabling more efficient ML-based signal processing, including NTN channel responses and GPR signal estimation for 3GPP NTN and satellite imaging applications.
+ }{}
+
+\cventry{8/2023-2/2024}{Visiting Researcher}{University of Notre Dame}{Department of Electrical Engineering}{South Bend, IN, US}{- Designed and implemented analytical and simulation framework (\textsc{MATLAB}, \textsc{Mathematica}, \textsc{GIT}) for 3GPP LEO uplink SIR meta distribution, enabling systematic exploration of constellation densities and terrestrial interference effects on link performance \href{https://ieeexplore.ieee.org/document/10909705}{\textcolor{red}{[2]}}. - Coordinated a distributed team (co-authors across institutions), handled the full delivery pipeline (simulation, analysis, documentation, peer review) to publication in IEEE TCOM. \\
+ \textbf{Impact:} - Identified an optimal LEO constellation density that maximizes average throughput and quantified a trade-off between throughput and performance consistency, quantitatively and qualitatively guiding dense LEO network design. - Proposed a novel statistical NTN SIR model as the well-known Lomax distribution, enlightening the NTN communication peculiarities, and providing tractable tools for performance analysis.}
+\cventry{05/2019-05/2025}{PhD Researcher}{Aalto University}{Signal Processing of Wireless Networks}{Espoo, Finland}{ - Conceived and executed an R\&D project plan on impactful NTN research. - Built and maintained a multi-language simulation stack (\textsc{Python}, \textsc{MATLAB}, \textsc{Octace}, \textsc{Mathematica}, \textsc{GIT}) including algorithms for analysis, simulation, and visualization, used across several research projects. - Secured competitive research \href{https://www.yumpu.com/fi/document/read/68386274/suomalaisen-tiedeakatemian-vuosikirja-2022}{\textcolor{red}{grants}}. - Presented results to audiences in flagship conferences \href{https://ieeexplore.ieee.org/document/10008485}{\textcolor{red}{[3]}}. - \href{https://aaltodoc.aalto.fi/items/fff11278-eae1-4d38-aeb3-c0800fa81648}{\textcolor{red}{Supervised}} junior researchers. - Put forth a novel stochastic geometry NTN model, allowing for more efficient allocation of simulation resources. - Building an international professional network. \\
+ \textbf{Impact:} - Laid novel stochastic geometry framework for analysis of NTN networks, reducing the simulation time in the order of magnitude hours to minutes compared to \textsc{MATLAB} Satellite Communication Toolbox  \href{https://ieeexplore.ieee.org/document/9347980}{\textcolor{red}{[4]}}. - Analyzed and simulated successive interference cancellation (SIC) algorithms that improved coverage performance by 900\% \href{https://www.techrxiv.org/users/755890/articles/1350435-order-statistics-of-the-sir-and-interference-cancellation-in-a-narrow-beam-leo-uplink}{\textcolor{red}{[5]}}.}
+
+%\cventry{11/2018- 5/2019}{Research Assistant}{Aalto University}{Department of Signal Processing and Acoustics}{Espoo, Finland}{- Co-developed a structured R\&D plan with the supervising professor, defining objectives, methodology, and milestones.}{}
+%%\cventry{2017}{Course Assistant}{University of Helsinki}{Integral Calculations}{4 months}{}{}{}
+%%cventry{2015}{Conference Arrangement at the Applied Inverse Problems (AIP) Conference}{University of Helsinki}{1 month}{}{}{}
+%%\cventry{2013-2015}{Sailing Instructor, Responsibility Director}{Merenkävijät ry}{3 years}{}{}{}
+\section{Education}
+
+\cventry{2026}{Doctor of Science (PhD) (thesis in pre-examination)}{Aalto University}{Signal Processing for 5G/6G/LTE/3GPP/NTN/LEO communications, stochastic geometry analysis and simulation.}{}{}
+\cventry{2018}{MSc}{Univ. of Helsinki}{Applied Analysis. PDEs, finite element method (FEM), antenna theory.}{}{}{}
+\cventry{2016}{BSc}{Univ. of Helsinki}{Applied Analysis. Optimal control theory, system performance optimization.}{}{}{}
+
+%% \section{Peer-Reviewed Publications}
+%% \cventry{2025}{ Meta Distribution of the SIR in a Narrow-Beam LEO Uplink}{IEEE Transactions on Communications}{I. Angervuori, M. Haenggi and R. Wichman}{}{}{}
+
+
+%% \cventry{2022}{\href{https://ieeexplore.ieee.org/document/10008485}{\textcolor{red}{[2]}} A Closed-Form Approximation of the SIR Distribution in a LEO Uplink Channel  }{IEEE Globecom: Workshop on Cellular UAV and Satellite Communications, Rio De Janeiro}{I. Angervuori and R. Wichman}{Oral Presentation}{}{}
+
+%% \cventry{2020}{\href{https://ieeexplore.ieee.org/document/9079921}{\textcolor{red}{[3]}} Downlink Coverage and Rate Analysis of Low Earth Orbit Satellite Constellations Using Stochastic Geometry}{IEEE Transactions on Communications}{N. Okati, T. Riihonen, D. Korpi, I. Angervuori and R. Wichman}{}{}{}
+
+%% \cventry{2020}{\href{https://ieeexplore.ieee.org/document/9347980}{\textcolor{red}{[4]}} Theoretical and Simulation-based Analysis of Terrestrial Interference to LEO Satellite Uplinks, Taipei, Taiwan}{GLOBECOM Global Communications Conference, Taipei}{A. Yastrebova, I. Angervuori, Niloofar Okati, et al.}{}{}{}{}
+
+%% \cventry{2019}{\href{https://www.ursi.fi/2019/Papers/Okati.pdf}{\textcolor{red}{[5]}} Performance Evaluation of Low Earth Orbit Communication Satellites}{Proceedings of XXXV Finnish URSI Convention on Radio Science}{N. Okati, I. Tanash, T. Riihonen, I. Angervuori and R. Wichman}{}{}{}{}
+
+%% \cventry{2019}{ On Routing Protocols in Inter-Satellite Communications}{Proceedings of XXXV Finnish URSI Convention on Radio Science}{I. Angervuori, R. Wichman, N. Okati and T. Riihonen}{Oral Presentation}{}{}{}
+
+
+%% \section{Preprints}
+%% \cventry{2025}{ Spatial and Temporal Correlation of the Interference in a Narrow-Beam LEO Network with ALOHA Medium Access Control}{TechRxiv, submitted to IEEE Communications Letters}{I. Angervuori, A. Afridi and R. Wichman}{}{}{}{}
+
+%% \cventry{2025}{\href{https://www.techrxiv.org/users/755890/articles/1350435-order-statistics-of-the-sir-and-interference-cancellation-in-a-narrow-beam-leo-uplink}{\textcolor{red}{[8]}} Order Statistics of the SIR and Interference Cancellation in a Narrow-Beam LEO Uplink}{TechRxiv, submitted to IEEE Communications Letters}{I. Angervuori and R. Wichman}{}{}{}{}
+    
+
+
+
+%% \section{Languages}
+
+%% \cvitem{Native}{Finnish}
+%% \cvitem{Excellent}{English}
+%% \cvitem{Others}{Swedish, Spanish}
+
+%% \section{Recognitions}
+
+%% \cvitem{2024}{\textbf{Peer Reviewer Certificate}, IEEE Transactions, Mobile Computing}
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+
+%------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{Cursos}
+
+%\cvitem{2014}{Curso de Java, UFPE}
+%\cvitem{2014}{Curso de Ingl\^es, UFPE}
+%\cvitem{2016}{Curso de Android}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+%%\section{Further interests}
+
+%%\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+
+
+%%\cvlistitem{Long walks and traveling.}
+%%\cvlistitem{Literature and writing.}
+%%\cvlistitem{Listening and playing music.}
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+
+%\section{Interests}
+%\cvlistdoubleitem{Reading and writing}{Listening to music and producing music}
+%\cvlistdoubleitem{Listening to music}{Making music}
+
+\section{References}
+\cvlistitem{Prof. Martin Haenggi, University of Notre Dame, mhaenggi@nd.edu, +1 574-631-6103}
+\cvlistitem{Prof. Risto Wichman,  Aalto University, risto.wichman@aalto.fi, +358 40 0800801}
+\cvlistitem{MSc. Abid Afridi,  Aalto University, abid.afridi@aalto.fi}
+
+%\section{Instruction links}
+%\begin{itemize}
+%    \item \url{https://tenk.fi/sites/default/files/2021-06/TENK_Tutkijan_ansioluettelomalli_2020.pdf} 
+ %   \item \url{https://cvpohja.fi/blogi/cv-kielitaito/}
+%\end{itemize}
+
+\end{document}
