@@ -3,11 +3,11 @@
 
 
 $key = q/eq:pollog/;
-$ref_files{$key} = "$dir".q|node30.html|; 
+$ref_files{$key} = "$dir".q|node29.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/line:22/;
-$ref_files{$key} = "$dir".q|node28.html|; 
+$ref_files{$key} = "$dir".q|node27.html|; 
 $noresave{$key} = "$nosave";
 
 1;
