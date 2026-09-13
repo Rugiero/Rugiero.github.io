@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  14 SEP 2026 00:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  14 SEP 2026 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1460,9 +1460,9 @@ nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on images.pdf (189 pages, 896219 bytes).
+Output written on images.pdf (189 pages, 890549 bytes).
 PDF statistics:
- 979 PDF objects out of 1000 (max. 8388607)
+ 978 PDF objects out of 1000 (max. 8388607)
  692 compressed objects within 7 object streams
  189 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)

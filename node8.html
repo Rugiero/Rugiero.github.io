@@ -367,8 +367,8 @@ from scipy.linalg import cholesky
 from numpy.linalg import solve
 
 # === Parameters ===
-T_total = 30.0       # simulate P(t), I(t) on [0, 15] s
-T_obs = 20.0         # we only "observe" up to 10 s
+T_total = 30.0       # simulate P(t), I(t) on [0, 30] s
+T_obs = 20.0         # we only "observe" up to 20 s
 dt = 0.001           # fine time step for continuous path (1000 Hz)
 t = np.arange(0, T_total, dt)
 N = len(t)
@@ -434,7 +434,7 @@ noise_var = 3.0
 ma_var = noise_var / window_size
 ma_std = np.sqrt(ma_var)
 
-# === 5. GPR prediction of P(t) on [0, 15] from noisy power samples on [0, 10] ===
+# === 5. GPR prediction of P(t) on [0, 30] from noisy power samples on [0, 20] ===
 # GP prior: P ~ GP(mean=mean_P, cov(t,s) = 0.5*exp(-3(t-s)^2))
 # Observations: z_i = |I(t_i)|^2 ≈ P(t_i) + N(0, noise_var)
 
@@ -471,36 +471,34 @@ P_gp_std = np.sqrt(np.maximum(P_gp_var, 0.0))
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 
 # ---------- Subplot (a): P(t), GPR forecast, MA forecast ----------
-# True P(t) over [0, 15]
+# True P(t) over [0, 30]
 ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
-# GPR mean and ±2σ over [0, 15]
+# GPR mean and ±2σ over [0, 30]
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
 # 90 percent confidence interval
 ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
                  color='C1', alpha=0.2, label='GPR 90% CI')
 
-# 300-sample MA on [0, T_obs]
-ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–10 s)')
+# 400-sample MA on [0, T_obs]
+ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–20 s)')
 
 # Flat MA forecast beyond last MA point
 ax1.plot(t_ma_forecast, power_ma_forecast, 'r--', label='MA forecast (flat)')
 
-# Raw power samples (0–10 s)
-# ax1.plot(t_sampled, power_sampled, 'kx', label='Samples |I(t)|² (0.1 kHz)', markersize=6)
 
 # Mark observation horizon
 ax1.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax1.text(T_obs+0.05, ax1.get_ylim()[1]*0.9, 'Forecast region', fontsize=12)
 
 ax1.set_ylabel('Signal power', fontsize=12)
-ax1.set_title('Fig 1(a): True P(t), GPR estimate &amp; forecast, and 300-sample MA &amp; forecast', fontsize=12)
+ax1.set_title('Fig 1(a): True P(t), GPR estimate &amp; forecast, and 400-sample MA &amp; forecast', fontsize=12)
 ax1.grid(True)
 ax1.legend(fontsize=12)
 
 # ---------- Subplot (b): I(t) and samples ----------
 ax2.plot(t, I, label='I(t) = X(t)√P(t)', color='tab:orange')
-ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–10 s, 0.1 kHz)', markersize=1)
+ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–20 s, 0.1 kHz)', markersize=1)
 ax2.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax2.set_xlabel('t [s]')
 ax2.set_ylabel('Amplitude', fontsize=12)
