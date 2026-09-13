@@ -367,8 +367,8 @@ from scipy.linalg import cholesky
 from numpy.linalg import solve
 
 # === Parameters ===
-T_total = 15.0       # simulate P(t), I(t) on [0, 15] s
-T_obs = 10.0         # we only "observe" up to 10 s
+T_total = 30.0       # simulate P(t), I(t) on [0, 15] s
+T_obs = 20.0         # we only "observe" up to 10 s
 dt = 0.001           # fine time step for continuous path (1000 Hz)
 t = np.arange(0, T_total, dt)
 N = len(t)
@@ -388,7 +388,7 @@ mean_P = 1.0
 tau_full = t[:, None] - t[None, :]
 k_emp = 0.5
 D_emp = 0.1352
-C_full = k_emp * np.exp(-D_emp * tau_full**2)
+C_full = k_emp * np.exp(-D_emp * tau_full**2 * np.log(2) / 2)
 
 # numerical jitter for Cholesky
 jitter = 1e-10
@@ -411,8 +411,8 @@ I = X * np.sqrt(P)
 I_sampled = I[indices]
 power_sampled = np.abs(I_sampled)**2   # z_i = |I(t_i)|^2
 
-# === 4. 300-sample moving average on sampled powers (0..T_obs) ===
-window_size = 300
+# === 4. 400-sample moving average on sampled powers (0..T_obs) ===
+window_size = 400
 kernel = np.ones(window_size) / window_size
 power_ma = np.convolve(power_sampled, kernel, mode='valid')
 
@@ -446,10 +446,10 @@ z_train = power_sampled
 tau_ss = t_train[:, None] - t_train[None, :]
 k_prior = 0.5
 D_prior = 0.1352
-C_ss = k_prior * np.exp(-D_prior * tau_ss**2 )
+C_ss = k_prior * np.exp(-D_prior * tau_ss**2 * np.log(2) / 2)
 # Covariance between all times (0..T_total) and training points
 tau_fs = t[:, None] - t_train[None, :]
-C_fs = k_prior * np.exp(-D_prior * tau_fs**2 )
+C_fs = k_prior * np.exp(-D_prior * tau_fs**2 * np.log(2) / 2)
 
 
 # Add observation noise to training covariance
@@ -476,17 +476,12 @@ ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
 # GPR mean and ±2σ over [0, 15]
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
-# ax1.fill_between(t,
-#                  P_gp_mean - 2*P_gp_std,
-#                  P_gp_mean + 2*P_gp_std,
-#                  color='C1', alpha=0.2, label='GPR ±2σ')
+# 90 percent confidence interval
+ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
+                 color='C1', alpha=0.2, label='GPR 90% CI')
 
 # 300-sample MA on [0, T_obs]
 ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–10 s)')
-# ax1.fill_between(t_ma,
-#                  power_ma - 2*ma_std,
-#                  power_ma + 2*ma_std,
-#                  color='r', alpha=0.15, label='MA ±2σ (approx, 0–10 s)')
 
 # Flat MA forecast beyond last MA point
 ax1.plot(t_ma_forecast, power_ma_forecast, 'r--', label='MA forecast (flat)')
@@ -525,7 +520,7 @@ References:
 <tr><td align="right" valign="top">[3]</td><td valign="top">&nbsp;<A ID="tex2html45"
   HREF="https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content">Maiju Oksanen, Stokastinen geometria langattoman
 
-tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.</A>
+tietoliikenteen analyysissä, opinnäytetyö; Aalto-yliopisto.</A>
 </td></tr>
 <tr><td align="right" valign="top">[4]</td><td valign="top">&nbsp;<A ID="tex2html46"
   HREF="https://arxiv.org/abs/2607.11602">I. Angervuori, A. Afridi, R. Wichman, Spatial and Temporal Correlation of Interference in a Narrow Multibeam LEO Satellite Random Access Network, arXiv:2607.11602</A>
