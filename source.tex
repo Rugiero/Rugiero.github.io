@@ -283,14 +283,14 @@ from scipy.linalg import cholesky
 from numpy.linalg import solve
 
 # === Parameters ===
-T_total = 30.0       # simulate P(t), I(t) on [0, 30] s
-T_obs = 20.0         # we only "observe" up to 20 s
-dt = 0.001           # fine time step for continuous path (1000 Hz)
+T_total = 10.0       # simulate P(t), I(t)
+T_obs = 7.0         # "observation" time 
+dt = 0.001           # fine time step for continuous path 
 t = np.arange(0, T_total, dt)
 N = len(t)
 
-fs_sample = 100.0     # sampling of |I|^2 (0.1 kHz)
-sample_interval = 1.0 / fs_sample  # 0.1 s
+fs_sample = 100.0     # sampling of |I|^2 
+sample_interval = 1.0 / fs_sample  
 # indices of sampled points up to T_obs
 indices = np.arange(0, int(T_obs / dt), int(sample_interval / dt))
 t_sampled = t[indices]
@@ -300,10 +300,10 @@ k_shape = 2.0
 theta_scale = 0.5
 mean_P = 1.0
 
-# === 1. Construct latent Gaussian process for P(t) with covariance C(τ) = 0.5 * exp(-3 τ^2) ===
+# === 1. Construct latent Gaussian process for P(t) with covariance C(τ) = k * exp(-D τ^2 log(2) / 2) ===
 tau_full = t[:, None] - t[None, :]
 k_emp = 0.5
-D_emp = 0.1352
+D_emp = 1.7555
 C_full = k_emp * np.exp(-D_emp * tau_full**2 * np.log(2) / 2)
 
 # numerical jitter for Cholesky
@@ -323,12 +323,12 @@ P = gamma.ppf(u, a=k_shape, scale=theta_scale)
 X = np.random.randn(N)
 I = X * np.sqrt(P)
 
-# === 3. Sample I and form |I|^2 on [0, T_obs] at 0.1 kHz ===
+# # === 3. Sample I and form |I|^2 on [0, T_obs] at 0.1 kHz ===
 I_sampled = I[indices]
 power_sampled = np.abs(I_sampled)**2   # z_i = |I(t_i)|^2
 
-# === 4. 400-sample moving average on sampled powers (0..T_obs) ===
-window_size = 400
+# # === 4. 100-sample moving average on sampled powers (0..T_obs) ===
+window_size = 100
 kernel = np.ones(window_size) / window_size
 power_ma = np.convolve(power_sampled, kernel, mode='valid')
 
@@ -350,7 +350,7 @@ noise_var = 3.0
 ma_var = noise_var / window_size
 ma_std = np.sqrt(ma_var)
 
-# === 5. GPR prediction of P(t) on [0, 30] from noisy power samples on [0, 20] ===
+# === 5. GPR prediction of P(t) on from noisy power samples ===
 # GP prior: P ~ GP(mean=mean_P, cov(t,s) = 0.5*exp(-3(t-s)^2))
 # Observations: z_i = |I(t_i)|^2 ≈ P(t_i) + N(0, noise_var)
 
@@ -361,7 +361,7 @@ z_train = power_sampled
 # Covariance among training points
 tau_ss = t_train[:, None] - t_train[None, :]
 k_prior = 0.5
-D_prior = 0.1352
+D_prior = 1.7555
 C_ss = k_prior * np.exp(-D_prior * tau_ss**2 * np.log(2) / 2)
 # Covariance between all times (0..T_total) and training points
 tau_fs = t[:, None] - t_train[None, :]
@@ -387,17 +387,17 @@ P_gp_std = np.sqrt(np.maximum(P_gp_var, 0.0))
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 
 # ---------- Subplot (a): P(t), GPR forecast, MA forecast ----------
-# True P(t) over [0, 30]
+# True P(t) 
 ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
-# GPR mean and ±2σ over [0, 30]
+# GPR mean and ±2σ 
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
 # 90 percent confidence interval
 ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
                  color='C1', alpha=0.2, label='GPR 90% CI')
 
-# 400-sample MA on [0, T_obs]
-ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–20 s)')
+# 100-sample MA on [0, T_obs]
+ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–7 s)')
 
 # Flat MA forecast beyond last MA point
 ax1.plot(t_ma_forecast, power_ma_forecast, 'r--', label='MA forecast (flat)')
@@ -408,13 +408,13 @@ ax1.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax1.text(T_obs+0.05, ax1.get_ylim()[1]*0.9, 'Forecast region', fontsize=12)
 
 ax1.set_ylabel('Signal power', fontsize=12)
-ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast, and 400-sample MA & forecast', fontsize=12)
+ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast, and 100-sample MA & forecast', fontsize=12)
 ax1.grid(True)
 ax1.legend(fontsize=12)
 
 # ---------- Subplot (b): I(t) and samples ----------
 ax2.plot(t, I, label='I(t) = X(t)√P(t)', color='tab:orange')
-ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–20 s, 0.1 kHz)', markersize=1)
+ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–7 s, 0.1 kHz)', markersize=1)
 ax2.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax2.set_xlabel('t [s]')
 ax2.set_ylabel('Amplitude', fontsize=12)
