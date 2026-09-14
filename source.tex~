@@ -74,7 +74,7 @@
 
     \date
         {
-          {Last major update 6.10.2026}\\
+          {Last major update 10.6.2026}\\
         }
 
         \begin{center}
@@ -97,8 +97,9 @@
          \pagebreak
         %% \section{About me}
 
+         \subsection{Me}
 
-         I am a Finnish researcher and engineer. Read about my life, or jump straight to my professional records in the subsections below. Check out my blog. You can also listen to my music on \htmladdnormallink{SoundCloud}{\soundcloud} or check the \htmladdnormallink{GitHub}{\github}.
+         I am a Finnish researcher and engineer who loves mathematics.
 
         %% \parbox{\textwidth} {
 
@@ -132,12 +133,14 @@
         \end{figure}
 
         
-        I am keeping up a blog that you can find in the blog posts section. It handles stuff encountered in my daily professional life. Stuff that I have found interesting. 
+        I keep a blog that you can find in the blog posts section. It covers all kinds of subjects I encounter in my daily professional life. Stuff that I have found interesting. 
+
+        
         
 
         \subsection{Education}
         \begin{itemize}
-        \item 2025, PhD, \htmladdnormallink{``Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis,''}{dissertation.pdf} Department of Signal Processing, Aalto University\\
+        \item Expected 2026, PhD, \htmladdnormallink{``Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis,''}{dissertation.pdf} Department of Signal Processing, Aalto University\\
         \item 2018, Master of Philosophy, \htmladdnormallink{``Elementtimenetelmä (Finite Element Method),''}{https://helda.helsinki.fi/handle/10138/273474} Department of Applied Analysis, University of Helsinki, grade: 4/5
         \item 2016, Bachelor of Science, \htmladdnormallink{``Optimiohjausteoriasta ja sen sovelluksista (On Optimal Control Theory and its Applications),''}{https://www.overleaf.com/project/563b9dec737da16f65bd24f2} University of Helsinki\\
           
@@ -227,13 +230,13 @@
                  \item{The LEO satellite is at $h=200$ km moving at its orbital speed $v_{\text{sat}}=7.4$ km/s.}
                  \item{For simplicity, no fast-\htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all transmitters.}
                  \end{enumerate}
-                 As the satellite moves, the magnitude of the aggregate interference varies due to the randomly distributed interferers. The key insight acquired from the SG analysis is as follows. (The details can be found in \htmladdnormallink{my thesis}{dissertation.pdf}, Sections 3.3 and 3.4.)
+                 As the satellite moves, the magnitude of the aggregate interference varies due to the randomly distributed interferers. The key insight acquired from the SG analysis is as follows. The details can be found in \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}.
 
                  \begin{enumerate}
                  \item[5.]{Under fairly general settings (like assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite is approximately
                    $$I=I(t)=\sqrt{P(t)}X(t), $$
                    where $X=X(t)$ is a zero-mean Gaussian waveform with $\mathbb{E}(|X|^2)=1$, which is modulated by the power $P=P(t)$.}
-                 \item[6.]{The normalized interference power (\textit{i.e.}, variance of $I$) is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=1$ and the variance $\text{var}(P)=1/2$ (see \htmladdnormallink{thesis}{dissertation.pdf}, Theorems 3.3.6 and 3.3.7).}
+                 \item[6.]{The normalized interference power (\textit{i.e.}, variance of $I$) is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=1$ and the variance $\text{var}(P)=1/2$ (see \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eqs. (16), (17) and (28)).}
                  \item[7.]{The autocovariance of $P(t)$ at lag $\tau$ has the \htmladdnormallink{Gaussian form}{https://en.wikipedia.org/wiki/Radial_basis_function_kernel}
                    $$K_{P}(\tau)=k \exp\left\{-D\tau^2 \log(2)/2\right\}= \frac{p_t^2}{2\log(2)}  \pi \lambda\left(\frac{h \varphi_{\text{RX}}}{\sin^2(\epsilon)}\right)^2 \exp\left\{-v_{\text{sat}}^2\tau^2/(h^2 \varphi_{\text{RX}}^2) \log(2)/2\right\}, \tag{2}$$
                    where $k,D>0$ are constant parameters that depend on the $-3$ dB width of the antenna gain $\varphi_{\text{RX}}$, interference source power $p_t$, the elevation angle $\epsilon$, the altitude of the LEO satellite $h$, the orbital speed $v_{\text{sat}}$, and the density of the Earth signal sources $\lambda$.
@@ -277,8 +280,8 @@ from scipy.linalg import cholesky
 from numpy.linalg import solve
 
 # === Parameters ===
-T_total = 15.0       # simulate P(t), I(t) on [0, 15] s
-T_obs = 10.0         # we only "observe" up to 10 s
+T_total = 30.0       # simulate P(t), I(t) on [0, 30] s
+T_obs = 20.0         # we only "observe" up to 20 s
 dt = 0.001           # fine time step for continuous path (1000 Hz)
 t = np.arange(0, T_total, dt)
 N = len(t)
@@ -298,7 +301,7 @@ mean_P = 1.0
 tau_full = t[:, None] - t[None, :]
 k_emp = 0.5
 D_emp = 0.1352
-C_full = k_emp * np.exp(-D_emp * tau_full**2)
+C_full = k_emp * np.exp(-D_emp * tau_full**2 * np.log(2) / 2)
 
 # numerical jitter for Cholesky
 jitter = 1e-10
@@ -321,8 +324,8 @@ I = X * np.sqrt(P)
 I_sampled = I[indices]
 power_sampled = np.abs(I_sampled)**2   # z_i = |I(t_i)|^2
 
-# === 4. 300-sample moving average on sampled powers (0..T_obs) ===
-window_size = 300
+# === 4. 400-sample moving average on sampled powers (0..T_obs) ===
+window_size = 400
 kernel = np.ones(window_size) / window_size
 power_ma = np.convolve(power_sampled, kernel, mode='valid')
 
@@ -344,7 +347,7 @@ noise_var = 3.0
 ma_var = noise_var / window_size
 ma_std = np.sqrt(ma_var)
 
-# === 5. GPR prediction of P(t) on [0, 15] from noisy power samples on [0, 10] ===
+# === 5. GPR prediction of P(t) on [0, 30] from noisy power samples on [0, 20] ===
 # GP prior: P ~ GP(mean=mean_P, cov(t,s) = 0.5*exp(-3(t-s)^2))
 # Observations: z_i = |I(t_i)|^2 ≈ P(t_i) + N(0, noise_var)
 
@@ -356,10 +359,10 @@ z_train = power_sampled
 tau_ss = t_train[:, None] - t_train[None, :]
 k_prior = 0.5
 D_prior = 0.1352
-C_ss = k_prior * np.exp(-D_prior * tau_ss**2 )
+C_ss = k_prior * np.exp(-D_prior * tau_ss**2 * np.log(2) / 2)
 # Covariance between all times (0..T_total) and training points
 tau_fs = t[:, None] - t_train[None, :]
-C_fs = k_prior * np.exp(-D_prior * tau_fs**2 )
+C_fs = k_prior * np.exp(-D_prior * tau_fs**2 * np.log(2) / 2)
 
 
 # Add observation noise to training covariance
@@ -381,41 +384,34 @@ P_gp_std = np.sqrt(np.maximum(P_gp_var, 0.0))
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 
 # ---------- Subplot (a): P(t), GPR forecast, MA forecast ----------
-# True P(t) over [0, 15]
+# True P(t) over [0, 30]
 ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
-# GPR mean and ±2σ over [0, 15]
+# GPR mean and ±2σ over [0, 30]
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
-# ax1.fill_between(t,
-#                  P_gp_mean - 2*P_gp_std,
-#                  P_gp_mean + 2*P_gp_std,
-#                  color='C1', alpha=0.2, label='GPR ±2σ')
+# 90 percent confidence interval
+ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
+                 color='C1', alpha=0.2, label='GPR 90% CI')
 
-# 300-sample MA on [0, T_obs]
-ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–10 s)')
-# ax1.fill_between(t_ma,
-#                  power_ma - 2*ma_std,
-#                  power_ma + 2*ma_std,
-#                  color='r', alpha=0.15, label='MA ±2σ (approx, 0–10 s)')
+# 400-sample MA on [0, T_obs]
+ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–20 s)')
 
 # Flat MA forecast beyond last MA point
 ax1.plot(t_ma_forecast, power_ma_forecast, 'r--', label='MA forecast (flat)')
 
-# Raw power samples (0–10 s)
-# ax1.plot(t_sampled, power_sampled, 'kx', label='Samples |I(t)|² (0.1 kHz)', markersize=6)
 
 # Mark observation horizon
 ax1.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax1.text(T_obs+0.05, ax1.get_ylim()[1]*0.9, 'Forecast region', fontsize=12)
 
 ax1.set_ylabel('Signal power', fontsize=12)
-ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast, and 300-sample MA & forecast', fontsize=12)
+ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast, and 400-sample MA & forecast', fontsize=12)
 ax1.grid(True)
 ax1.legend(fontsize=12)
 
 # ---------- Subplot (b): I(t) and samples ----------
 ax2.plot(t, I, label='I(t) = X(t)√P(t)', color='tab:orange')
-ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–10 s, 0.1 kHz)', markersize=1)
+ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–20 s, 0.1 kHz)', markersize=1)
 ax2.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax2.set_xlabel('t [s]')
 ax2.set_ylabel('Amplitude', fontsize=12)
@@ -431,9 +427,10 @@ plt.show()
 References:
 \begin{itemize}
 \item[[1]] Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778 
-\item[[2]] \htmladdnormallink{Angervuori, Ilari., Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University}{dissertation.pdf}
-\item[[3]] \htmladdnormallink{Oksanen, Maiju., Stokastinen geometria langattoman
-  tietoliikenteen analyysissä, opinnäytetyö; aalto-yliopisto.}{https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content}
+\item[[2]] \htmladdnormallink{Ilari Angervuori, Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University}{dissertation.pdf}
+\item[[3]] \htmladdnormallink{Maiju Oksanen, Stokastinen geometria langattoman
+  tietoliikenteen analyysissä, opinnäytetyö; Aalto-yliopisto.}{https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content}
+  \item[[4]] \htmladdnormallink{I. Angervuori, A. Afridi, R. Wichman, Spatial and Temporal Correlation of Interference in a Narrow Multibeam LEO Satellite Random Access Network, arXiv:2607.11602}{https://arxiv.org/abs/2607.11602}
 
   
 \end{itemize}
