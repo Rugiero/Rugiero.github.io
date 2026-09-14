@@ -674,11 +674,6 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img157.svg"
  ALT="$k=1$">|; 
 
-$key = q/k=1slash2;MSF=1.6;AAT/;
-$cached_env_img{$key} = q|<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img33.svg"
- ALT="$k=1/2$">|; 
-
 $key = q/k=1slashtheta;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img152.svg"
@@ -688,6 +683,11 @@ $key = q/k>1;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 1.93ex; vertical-align: -0.21ex; " SRC="|."$dir".q|img156.svg"
  ALT="$k&gt;1$">|; 
+
+$key = q/kapprox0.5;MSF=1.6;AAT/;
+$cached_env_img{$key} = q|<IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img33.svg"
+ ALT="$k\approx 0.5$">|; 
 
 $key = q/krightarrowinfty;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
