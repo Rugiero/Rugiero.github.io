@@ -225,7 +225,7 @@
 
                  The theoretical settings are:
                  \begin{enumerate}
-                 \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface, causing interference at the LEO satellite.} 
+                 \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda = 7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
                  \item{The LEO satellite has a narrow beam of $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center.}
                  \item{The LEO satellite is at $h=200$ km moving at its orbital speed $v_{\text{sat}}=7.4$ km/s.}
                  \item{For simplicity, no fast-\htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all transmitters.}
@@ -238,12 +238,15 @@
                    where $X=X(t)$ is a zero-mean Gaussian waveform with $\mathbb{E}(|X|^2)=1$, which is modulated by the power $P=P(t)$.}
                  \item[6.]{The normalized interference power (\textit{i.e.}, variance of $I$) is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=1$ and the variance $\text{var}(P)=1/2$ (see \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eqs. (16), (17) and (28)).}
                  \item[7.]{The autocovariance of $P(t)$ at lag $\tau$ has the \htmladdnormallink{Gaussian form}{https://en.wikipedia.org/wiki/Radial_basis_function_kernel}
-                   $$K_{P}(\tau)=k \exp\left\{-D\tau^2 \log(2)/2\right\}= \frac{p_t^2}{2\log(2)}  \pi \lambda\left(\frac{h \varphi_{\text{RX}}}{\sin^2(\epsilon)}\right)^2 \exp\left\{-v_{\text{sat}}^2\tau^2/(h^2 \varphi_{\text{RX}}^2) \log(2)/2\right\}, \tag{2}$$
-                   where $k,D>0$ are constant parameters that depend on the $-3$ dB width of the antenna gain $\varphi_{\text{RX}}$, interference source power $p_t$, the elevation angle $\epsilon$, the altitude of the LEO satellite $h$, the orbital speed $v_{\text{sat}}$, and the density of the Earth signal sources $\lambda$.
+                   \begin{align*}
+                     K_{P}(\tau)&=k \exp\left\{-D\tau^2 \log(2)/2\right\}\\
+                     &= \underbrace{\frac{p_t^2}{2\log(2)}  \pi \lambda\left(\frac{h \varphi_{\text{RX}}}{\sin^2(\epsilon)}\right)^2}_{ k\triangleq} \exp\left\{-\tau^2\underbrace{v_{\text{sat}}^2\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)}_{D\triangleq } \log(2)/2\right\}, \tag{2}
+                     \end{align*}
+                   where $k,D>0$ are constant parameters that depend on $\varphi_{\text{RX}}$, $p_t$, $\epsilon$,  $h$, $v_{\text{sat}}$ and $\lambda$.
 
-                   In our settings, since the antenna is directed to the Earth center, $\epsilon = 90^{\circ} = \pi/2$ rad. Further, for a normalized $\mathbb{E}(P)$ ($p_t$ can be scaled accordingly) and for our satellite settings 2-3, $k=0.5$ and $D\approx 0.1352$. }
+                   In our settings, since the antenna is directed to the Earth center, $\epsilon = 90^{\circ} = \pi/2$ rad. For our satellite settings 2-3, $k\approx 0.5$ and $D\approx 1.7555$. }
                  \end{enumerate}
-                   Note that, given an antenna pattern width, the constant $D=v_{\text{sat}}^2\tau^2/(h^2 \varphi_{\text{RX}}^2)$ in (2) is directly defined by the altitude $h$ of the satellite: the \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed} $v_{\text{sat}}$ follows single-handedly from the orbital altitude. It can be empirically verified that within a fairly general density region, the assertion of $D$ is more crucial for the GPR estimation than $k$ (especially in the non-causal prediction): too large and too small $D$ yield \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting the data, respectively. In a refined version of the GPR, $k$ and $D$ could also be treated as \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)}, which are learned from the data, but we treat them as fixed.
+                   Note that, given an antenna pattern width, the constant $D=v_{\text{sat}}^2\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)$ in (2) is directly defined by the altitude $h$ of the satellite, because the \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed} $v_{\text{sat}}$ follows single-handedly from the orbital altitude. It can be empirically verified that within a fairly general density region, the assertion of $D$ is more crucial for the GPR estimation than $k$ (especially in the non-causal prediction): too large and too small $D$ yield \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting of the data, respectively. In a refined version of the GPR, $k$ and $D$ could also be treated as \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)}, which are learned from the data, but we treat them as fixed.
 
                  
                  The prior model we will utilize in the GPR is the properties 5-7. The described signal power $P(t)$ with the Gaussian autocovariance is the hypothesis class of the set of functions within which we search our estimation from, and the waveform $I(t)$ is treated as a non-stationary \htmladdnormallink{Gaussian process}{https://en.wikipedia.org/wiki/Gaussian_process}. In practice, we will use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each such sample $z_i$ is interpreted as noisy measurements of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to correspond to the expected variance of $|I(t)|^2$. 
@@ -280,14 +283,14 @@ from scipy.linalg import cholesky
 from numpy.linalg import solve
 
 # === Parameters ===
-T_total = 30.0       # simulate P(t), I(t) on [0, 30] s
-T_obs = 20.0         # we only "observe" up to 20 s
-dt = 0.001           # fine time step for continuous path (1000 Hz)
+T_total = 10.0       # simulate P(t), I(t)
+T_obs = 7.0         # "observation" time 
+dt = 0.001           # fine time step for continuous path 
 t = np.arange(0, T_total, dt)
 N = len(t)
 
-fs_sample = 100.0     # sampling of |I|^2 (0.1 kHz)
-sample_interval = 1.0 / fs_sample  # 0.1 s
+fs_sample = 100.0     # sampling of |I|^2 
+sample_interval = 1.0 / fs_sample  
 # indices of sampled points up to T_obs
 indices = np.arange(0, int(T_obs / dt), int(sample_interval / dt))
 t_sampled = t[indices]
@@ -297,10 +300,10 @@ k_shape = 2.0
 theta_scale = 0.5
 mean_P = 1.0
 
-# === 1. Construct latent Gaussian process for P(t) with covariance C(τ) = 0.5 * exp(-3 τ^2) ===
+# === 1. Construct latent Gaussian process for P(t) with covariance C(τ) = k * exp(-D τ^2 log(2) / 2) ===
 tau_full = t[:, None] - t[None, :]
 k_emp = 0.5
-D_emp = 0.1352
+D_emp = 1.7555
 C_full = k_emp * np.exp(-D_emp * tau_full**2 * np.log(2) / 2)
 
 # numerical jitter for Cholesky
@@ -320,12 +323,12 @@ P = gamma.ppf(u, a=k_shape, scale=theta_scale)
 X = np.random.randn(N)
 I = X * np.sqrt(P)
 
-# === 3. Sample I and form |I|^2 on [0, T_obs] at 0.1 kHz ===
+# # === 3. Sample I and form |I|^2 on [0, T_obs] at 0.1 kHz ===
 I_sampled = I[indices]
 power_sampled = np.abs(I_sampled)**2   # z_i = |I(t_i)|^2
 
-# === 4. 400-sample moving average on sampled powers (0..T_obs) ===
-window_size = 400
+# # === 4. 100-sample moving average on sampled powers (0..T_obs) ===
+window_size = 100
 kernel = np.ones(window_size) / window_size
 power_ma = np.convolve(power_sampled, kernel, mode='valid')
 
@@ -347,7 +350,7 @@ noise_var = 3.0
 ma_var = noise_var / window_size
 ma_std = np.sqrt(ma_var)
 
-# === 5. GPR prediction of P(t) on [0, 30] from noisy power samples on [0, 20] ===
+# === 5. GPR prediction of P(t) on from noisy power samples ===
 # GP prior: P ~ GP(mean=mean_P, cov(t,s) = 0.5*exp(-3(t-s)^2))
 # Observations: z_i = |I(t_i)|^2 ≈ P(t_i) + N(0, noise_var)
 
@@ -358,7 +361,7 @@ z_train = power_sampled
 # Covariance among training points
 tau_ss = t_train[:, None] - t_train[None, :]
 k_prior = 0.5
-D_prior = 0.1352
+D_prior = 1.7555
 C_ss = k_prior * np.exp(-D_prior * tau_ss**2 * np.log(2) / 2)
 # Covariance between all times (0..T_total) and training points
 tau_fs = t[:, None] - t_train[None, :]
@@ -384,17 +387,17 @@ P_gp_std = np.sqrt(np.maximum(P_gp_var, 0.0))
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 
 # ---------- Subplot (a): P(t), GPR forecast, MA forecast ----------
-# True P(t) over [0, 30]
+# True P(t) 
 ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
-# GPR mean and ±2σ over [0, 30]
+# GPR mean and ±2σ 
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
 # 90 percent confidence interval
 ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
                  color='C1', alpha=0.2, label='GPR 90% CI')
 
-# 400-sample MA on [0, T_obs]
-ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–20 s)')
+# 100-sample MA on [0, T_obs]
+ax1.plot(t_ma, power_ma, 'r-', label='MA of |I|² (0–7 s)')
 
 # Flat MA forecast beyond last MA point
 ax1.plot(t_ma_forecast, power_ma_forecast, 'r--', label='MA forecast (flat)')
@@ -405,13 +408,13 @@ ax1.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax1.text(T_obs+0.05, ax1.get_ylim()[1]*0.9, 'Forecast region', fontsize=12)
 
 ax1.set_ylabel('Signal power', fontsize=12)
-ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast, and 400-sample MA & forecast', fontsize=12)
+ax1.set_title('Fig 1(a): True P(t), GPR estimate & forecast, and 100-sample MA & forecast', fontsize=12)
 ax1.grid(True)
 ax1.legend(fontsize=12)
 
 # ---------- Subplot (b): I(t) and samples ----------
 ax2.plot(t, I, label='I(t) = X(t)√P(t)', color='tab:orange')
-ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–20 s, 0.1 kHz)', markersize=1)
+ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–7 s, 0.1 kHz)', markersize=1)
 ax2.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax2.set_xlabel('t [s]')
 ax2.set_ylabel('Amplitude', fontsize=12)

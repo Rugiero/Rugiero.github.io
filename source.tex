@@ -226,7 +226,7 @@
                  The theoretical settings are:
                  \begin{enumerate}
                  \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda = 7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
-                 \item{The LEO satellite has a narrow beam of $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center.}
+                 \item{The LEO satellite has an antenna pattern with half $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is $\epsilon = 90^{\circ} = \pi/2$ rad.}
                  \item{The LEO satellite is at $h=200$ km moving at its orbital speed $v_{\text{sat}}=7.4$ km/s.}
                  \item{For simplicity, no fast-\htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all transmitters.}
                  \end{enumerate}
@@ -244,7 +244,7 @@
                      \end{align*}
                    where $k,D>0$ are constant parameters that depend on $\varphi_{\text{RX}}$, $p_t$, $\epsilon$,  $h$, $v_{\text{sat}}$ and $\lambda$.
 
-                   In our settings, since the antenna is directed to the Earth center, $\epsilon = 90^{\circ} = \pi/2$ rad. For our satellite settings 2-3, $k\approx 0.5$ and $D\approx 1.7555$. }
+                   For our satellite settings 2-3, $k\approx 0.5$ and $D\approx 1.7555$. }
                  \end{enumerate}
                    Note that, given an antenna pattern width, the constant $D=v_{\text{sat}}^2\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)$ in (2) is directly defined by the altitude $h$ of the satellite, because the \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed} $v_{\text{sat}}$ follows single-handedly from the orbital altitude. It can be empirically verified that within a fairly general density region, the assertion of $D$ is more crucial for the GPR estimation than $k$ (especially in the non-causal prediction): too large and too small $D$ yield \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting of the data, respectively. In a refined version of the GPR, $k$ and $D$ could also be treated as \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)}, which are learned from the data, but we treat them as fixed.
 

@@ -129,22 +129,27 @@ The theoretical settings are:
  STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
  ALT="$p_t=1$"></SPAN>. 
 </LI>
-<LI>The LEO satellite has a narrow beam of <SPAN CLASS="MATH"><IMG
+<LI>The LEO satellite has an antenna pattern with half <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.92ex; vertical-align: -0.31ex; " SRC="img9.svg"
  ALT="$-3$"></SPAN> dB beamwidth <!-- MATH
  $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$
  -->
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.28ex; vertical-align: -0.57ex; " SRC="img10.svg"
- ALT="$\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$"></SPAN> rad steered towards the Earth center.
+ ALT="$\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$"></SPAN> rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is <!-- MATH
+ $\epsilon = 90^{\circ} = \pi/2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img11.svg"
+ ALT="$\epsilon = 90^{\circ} = \pi/2$"></SPAN> rad.
 </LI>
 <LI>The LEO satellite is at <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img11.svg"
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img12.svg"
  ALT="$h=200$"></SPAN> km moving at its orbital speed <!-- MATH
  $v_{\text{sat}}=7.4$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.07ex; vertical-align: -0.46ex; " SRC="img12.svg"
+ STYLE="height: 2.07ex; vertical-align: -0.46ex; " SRC="img13.svg"
  ALT="$v_{\text{sat}}=7.4$"></SPAN> km/s.
 </LI>
 <LI>For simplicity, no fast-<A ID="tex2html21"
@@ -167,45 +172,45 @@ I=I(t)=\sqrt{P(t)}X(t),
 </P>
 <DIV CLASS="displaymath">
 <IMG
- STYLE="height: 3.10ex; vertical-align: -0.71ex; " SRC="img13.svg"
+ STYLE="height: 3.10ex; vertical-align: -0.71ex; " SRC="img14.svg"
  ALT="$\displaystyle I=I(t)=\sqrt{P(t)}X(t), $">
 </DIV><P></P>
 where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img14.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
  ALT="$X=X(t)$"></SPAN> is a zero-mean Gaussian waveform with <!-- MATH
  $\mathbb{E}(|X|^2)=1$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img15.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img16.svg"
  ALT="$\mathbb{E}(\vert X\vert^2)=1$"></SPAN>, which is modulated by the power <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img16.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
  ALT="$P=P(t)$"></SPAN>.
                  
 </DD>
 <DT>6.</DT>
 <DD>The normalized interference power (<SPAN  CLASS="textit">i.e.</SPAN>, variance of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img17.svg"
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img18.svg"
  ALT="$I$"></SPAN>) is approximately <A ID="tex2html22"
   HREF="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distributed</A>
 with the mean <!-- MATH
  $\mathbb{E}(P)=1$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img18.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
  ALT="$\mathbb{E}(P)=1$"></SPAN> and the variance <!-- MATH
  $\text{var}(P)=1/2$
  -->
 <SPAN CLASS="MATH">var<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
  ALT="$(P)=1/2$"></SPAN> (see <A ID="tex2html23"
   HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eqs. (16), (17) and (28)).
                  
 </DD>
 <DT>7.</DT>
 <DD>The autocovariance of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> at lag <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img21.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img22.svg"
  ALT="$\tau$"></SPAN> has the <A ID="tex2html24"
   HREF="https://en.wikipedia.org/wiki/Radial_basis_function_kernel">Gaussian form</A>
 <P></P>
@@ -213,51 +218,46 @@ with the mean <!-- MATH
 <TR >
 <TD class="lfill"></TD>
 <TD class="RIGHT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img22.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img23.svg"
  ALT="$\displaystyle K_{P}(\tau)$"></SPAN></TD>
 <TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 3.04ex; vertical-align: -0.93ex; " SRC="img23.svg"
+ STYLE="height: 3.04ex; vertical-align: -0.93ex; " SRC="img24.svg"
  ALT="$\displaystyle =k \exp\left\{-D\tau^2 \log(2)/2\right\}$"></SPAN></TD>
 <TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
 <TR >
 <TD class="lfill"></TD>
 <TD>&nbsp;</TD>
 <TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 11.90ex; vertical-align: -6.37ex; " SRC="img24.svg"
+ STYLE="height: 11.90ex; vertical-align: -6.37ex; " SRC="img25.svg"
  ALT="$\displaystyle = \underbrace{\frac{p_t^2}{2\log(2)} \pi \lambda\left(\frac{h \va...
 ...\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)}_{D\triangleq } \log(2)/2\right\},$"></SPAN></TD>
 <TD  class="rfill">(2)</TD></TR>
 </TABLE></DIV>
 <P></P>
 where <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img25.svg"
+ STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img26.svg"
  ALT="$k,D&gt;0$"></SPAN> are constant parameters that depend on <!-- MATH
  $\varphi_{\text{RX}}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img26.svg"
- ALT="$\varphi_{\text{RX}}$"></SPAN>, <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img27.svg"
+ ALT="$\varphi_{\text{RX}}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img28.svg"
  ALT="$p_t$"></SPAN>, <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img28.svg"
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img29.svg"
  ALT="$\epsilon$"></SPAN>,  <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img29.svg"
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img30.svg"
  ALT="$h$"></SPAN>, <!-- MATH
  $v_{\text{sat}}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img30.svg"
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img31.svg"
  ALT="$v_{\text{sat}}$"></SPAN> and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img31.svg"
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img32.svg"
  ALT="$\lambda$"></SPAN>.
 
 <P>
-In our settings, since the antenna is directed to the Earth center, <!-- MATH
- $\epsilon = 90^{\circ} = \pi/2$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img32.svg"
- ALT="$\epsilon = 90^{\circ} = \pi/2$"></SPAN> rad. For our satellite settings 2-3, <!-- MATH
+For our satellite settings 2-3, <!-- MATH
  $k\approx 0.5$
  -->
 <SPAN CLASS="MATH"><IMG
@@ -277,14 +277,14 @@ In our settings, since the antenna is directed to the Earth center, <!-- MATH
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.89ex; vertical-align: -0.76ex; " SRC="img35.svg"
  ALT="$D=v_{\text{sat}}^2\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)$"></SPAN> in (2) is directly defined by the altitude <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img29.svg"
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img30.svg"
  ALT="$h$"></SPAN> of the satellite, because the <A ID="tex2html36"
   HREF="https://en.wikipedia.org/wiki/Orbital_speed">orbital speed</A>
 <!-- MATH
  $v_{\text{sat}}$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img30.svg"
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img31.svg"
  ALT="$v_{\text{sat}}$"></SPAN> follows single-handedly from the orbital altitude. It can be empirically verified that within a fairly general density region, the assertion of <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img36.svg"
  ALT="$D$"></SPAN> is more crucial for the GPR estimation than <SPAN CLASS="MATH"><IMG
@@ -302,18 +302,18 @@ and underfitting of the data, respectively. In a refined version of the GPR, <SP
 
 <P>
 The prior model we will utilize in the GPR is the properties 5-7. The described signal power <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> with the Gaussian autocovariance is the hypothesis class of the set of functions within which we search our estimation from, and the waveform <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
  ALT="$I(t)$"></SPAN> is treated as a non-stationary <A ID="tex2html39"
   HREF="https://en.wikipedia.org/wiki/Gaussian_process">Gaussian process</A>. In practice, we will use the samples from <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img39.svg"
  ALT="$\vert I(t)\vert^2$"></SPAN> to estimate the interference power <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN>. Each such sample <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img40.svg"
  ALT="$z_i$"></SPAN> is interpreted as noisy measurements of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN>: <!-- MATH
  $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$
  -->
@@ -343,9 +343,9 @@ Signal power estimated from scarce signal samples.</CAPTION>
 
 <P>
 For a random realization of the power <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> (generated according to the gamma distribution and its second-order statistics), which is &ldquo;not known&rdquo; prior to the empirical samples, in Figures 1 (a) and 1 (b), we estimate <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> from a sampled (<SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img44.svg"
  ALT="$0.1$"></SPAN> kHz) realization of the interference waveform <SPAN CLASS="MATH"><IMG
@@ -353,11 +353,11 @@ For a random realization of the power <SPAN CLASS="MATH"><IMG
  ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html40"
   HREF="https://en.wikipedia.org/wiki/Causal_filter">causal</A>
 MA. The window size of the MA is empirically optimized, but it could also be learned from training data. Apart from the slight overfitting, the MA captures <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> reasonably well (as long as the window size is optimized). However, the GPR prediction is clearly better in capturing the smoothness of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN>. Furthermore, the GPR prediction captures the <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img20.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> from <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img45.svg"
  ALT="$t=0$"></SPAN> onward, which is impossible for the non-causal, centralized MA, which starts at <!-- MATH
