@@ -201,10 +201,10 @@
                            \end{flushright}
                          \end{quotation}
 
-                         \begin{figure}                           
-                           \includegraphics[width=0.97\linewidth]{SGandML.png}
-                           \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
-                         \end{figure}
+        \begin{figure}
+          \includegraphics[width=0.97\linewidth]{SGandML.png}
+          \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
+        \end{figure}
 
                          
                
@@ -223,15 +223,22 @@
 
                  We will demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a \htmladdnormallink{low Earth orbit}{https://en.wikipedia.org/wiki/Low_Earth_orbit} (LEO) satellite receiver. The estimation is based on the GPR and a theoretical SG model of the interference power distribution and its autocovariance function. The results are compared with a \htmladdnormallink{moving average}{https://en.wikipedia.org/wiki/Moving_average} (MA). 
                  
-
-                 The theoretical settings are:
+                 
+                 The theoretical settings are 
                  \begin{enumerate}
                  \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda = 7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
                  \item{The LEO satellite has an antenna pattern with half $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is $\epsilon = 90^{\circ} = \pi/2$ rad.}
-                 \item{The LEO satellite is at $h=200$ km moving at its orbital speed $v_{\text{sat}}=7.4$ km/s.}
-                 \item{For simplicity, no fast-\htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all transmitters.}
+                 \item{The LEO satellite is at $h=200$ km moving at its orbital speed $\left|\vec{v}_{\text{sat}}\right|=v_{\text{sat}}=7.4$ km/s.}
+                 \item{While feasible, for simplicity, we do not model fast \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation. For the narrow beam, the Doppler shifts are almost identical for all transmitters.
+                 }
                  \end{enumerate}
                  As the satellite moves, the magnitude of the aggregate interference varies due to the randomly distributed interferers. The key insight acquired from the SG analysis is as follows. The details can be found in my thesis \htmladdnormallink{[2]}{dissertation.pdf} and \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}.
+
+                 
+                 \begin{figure}                           
+                   \includegraphics[width=0.97\linewidth]{SGandMLsysmod.png}
+                   \caption{A sketch of the system model.}
+                 \end{figure}
 
                  \begin{enumerate}
                  \item[5.]{Under fairly general settings (for example, assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite is approximately 
@@ -258,7 +265,6 @@ If unfixed, $k$, $D$, and the first- and second-order statistics of $P$ are \htm
                    
                      
 \begin{figure}
-  
   \includegraphics[width=0.97\linewidth]{GPRvsMA.pdf}
   \caption{Signal power estimated from scarce signal samples.}
 \end{figure}
