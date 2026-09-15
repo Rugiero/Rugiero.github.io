@@ -104,11 +104,11 @@ function (also referred to as a kernel) is at the heart of GPR. Such an autocova
   HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have an understanding of what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical data.
 
 <P>
-In the following, we demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html35"
+In the following, we will introduce some of the most recent advancements in the SG modeling of satellite communication systems. We demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html35"
   HREF="https://en.wikipedia.org/wiki/Low_Earth_orbit">low Earth orbit</A>
-(LEO) satellite receiver. Prior autocovariance function is derived from a theoretical estimate based on SG. Based on this autocovariance, the power estimation is inferred from empirical data using GPR. Furthermore, the estimation is compared to a <A ID="tex2html36"
+(LEO) satellite receiver. The estimation is based on a theoretical SG model of the interference power distribution and its autocovariance function, utilizing GPR. The results are compared with a <A ID="tex2html36"
   HREF="https://en.wikipedia.org/wiki/Moving_average">moving average</A>
-(MA) estimation. 
+(MA). 
 
 <P>
 The theoretical settings are:
@@ -355,9 +355,6 @@ MA. For simplicity, we use the model parameter values derived from the theoretic
  ALT="$t\approx 0.5$"></SPAN> s. The <A ID="tex2html42"
   HREF="https://en.wikipedia.org/wiki/Predictive_analytics">forecast</A>
 region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
-
-<P>
-This was a simple hands-on example of how SG is useful in ML models in satellite communications.
 
 <P>
 The following Python code generates the plots. (Written with the help of ChatGPT.)
