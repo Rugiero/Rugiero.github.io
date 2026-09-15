@@ -277,24 +277,25 @@ For our satellite settings 2-3, theoretically, <!-- MATH
 </DL>
 
 <P>
-The gamma distribution model 6 combined with the correlation model 7 forms the hypothesis class within which we search for the interference power <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img35.svg"
- ALT="$P$"></SPAN>.
-
-<P>
-In the correlation model, too large and too small <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img36.svg"
- ALT="$D$"></SPAN> yield <A ID="tex2html39"
-  HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
-and underfitting of the data, respectively. If unfixed, <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img37.svg"
+If unfixed, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img35.svg"
  ALT="$k$"></SPAN>, <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img36.svg"
  ALT="$D$"></SPAN>, and the first- and second-order statistics of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img35.svg"
- ALT="$P$"></SPAN> are <A ID="tex2html40"
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img37.svg"
+ ALT="$P$"></SPAN> are <A ID="tex2html39"
   HREF="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameters</A>
-learned from the data as part of the machine learning process.
+learned from the data in the machine learning process. Then the gamma distribution model <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img38.svg"
+ ALT="$6$"></SPAN>, combined with the correlation model <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img39.svg"
+ ALT="$7$"></SPAN>, forms the hypothesis class within which we search for the interference power <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img37.svg"
+ ALT="$P$"></SPAN>. In the correlation model, too large or too small <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img36.svg"
+ ALT="$D$"></SPAN> yields <A ID="tex2html40"
+  HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
+and underfitting, respectively. 
 
 <P>
 
@@ -304,7 +305,7 @@ learned from the data as part of the machine learning process.
 Signal power estimated from scarce signal samples.</CAPTION>
 <TR><TD><P>
 <IMG
- STYLE="height: 46.69ex; vertical-align: -0.12ex; " SRC="img38.svg"
+ STYLE="height: 46.69ex; vertical-align: -0.12ex; " SRC="img40.svg"
  ALT="\includegraphics[width=0.97\linewidth]{GPRvsMA.pdf}"></TD></TR>
 </TABLE>
 </DIV>
@@ -313,31 +314,31 @@ Signal power estimated from scarce signal samples.</CAPTION>
 In Figures 1 (a) and (b), we estimate <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> from a sampled (<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img39.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img41.svg"
  ALT="$0.1$"></SPAN> kHz) realization of the interference waveform <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img40.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img42.svg"
  ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html41"
   HREF="https://en.wikipedia.org/wiki/Causal_filter">causal</A>
-MA. For simplicity, we use the theoretically derived values for the hyperparameters. We use the samples from <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img41.svg"
+MA. For simplicity, we use the model parameter values derived from the theoretical SG model (not treating them as hyperparameters). We use the samples from <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img43.svg"
  ALT="$\vert I(t)\vert^2$"></SPAN> to estimate the interference power <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN>. Each sample <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img42.svg"
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img44.svg"
  ALT="$z_i$"></SPAN> is interpreted as a noisy measurement of <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN>: <!-- MATH
  $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img43.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img45.svg"
  ALT="$z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$"></SPAN>, where <!-- MATH
  $\sigma^2=3$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img46.svg"
  ALT="$\sigma^2=3$"></SPAN> is set to the expected variance of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img41.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img43.svg"
  ALT="$\vert I(t)\vert^2$"></SPAN>. The MA window size is empirically optimized, and apart from the slight overfitting, the MA captures <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> reasonably well. The GPR prediction clearly captures the smoothness of <SPAN CLASS="MATH"><IMG
@@ -345,12 +346,12 @@ MA. For simplicity, we use the theoretically derived values for the hyperparamet
  ALT="$P(t)$"></SPAN> better. Furthermore, the GPR prediction captures <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img21.svg"
  ALT="$P(t)$"></SPAN> from <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img45.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img47.svg"
  ALT="$t=0$"></SPAN> onward, which is impossible for the non-causal, centralized MA, which starts at <!-- MATH
  $t\approx 0.5$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img46.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img48.svg"
  ALT="$t\approx 0.5$"></SPAN> s. The <A ID="tex2html42"
   HREF="https://en.wikipedia.org/wiki/Predictive_analytics">forecast</A>
 region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
