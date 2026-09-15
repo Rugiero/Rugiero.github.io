@@ -644,10 +644,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img97.svg"
  ALT="$i \mapsto \delta[i] := \delta_{0i} $">|; 
 
-$key = q/includegraphics[width=0.97linewidth]{GPRvsMA.pdf};AAT/;
+$key = q/includegraphics[width=linewidth]{GPRvsMA.pdf};AAT/;
 $cached_env_img{$key} = q|<IMG
- STYLE="height: 46.69ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img36.svg"
- ALT="\includegraphics[width=0.97\linewidth]{GPRvsMA.pdf}">|; 
+ STYLE="height: 48.13ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img36.svg"
+ ALT="\includegraphics[width=\linewidth]{GPRvsMA.pdf}">|; 
 
 $key = q/j;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG

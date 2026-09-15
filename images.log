@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  16 SEP 2026 02:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.9.21)  16 SEP 2026 02:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,14 +616,14 @@ Preview: Tightpage -32890 -32890 32890 32890
 File: GPRvsMA.pdf Graphic file (type pdf)
 <use GPRvsMA.pdf>
 Package pdftex.def Info: GPRvsMA.pdf  used on input line 365.
-(pdftex.def)             Requested size: 334.65042pt x 200.79092pt.
+(pdftex.def)             Requested size: 345.0pt x 206.9972pt.
 
-Overfull \hbox (4.65042pt too wide) in paragraph at lines 365--366
+Overfull \hbox (15.0pt too wide) in paragraph at lines 365--366
 [][] 
  []
 
 
-:tex2html_wrap1927:lthtmlCropMarkHeight:=206.79092pt
+:tex2html_wrap1927:lthtmlCropMarkHeight:=212.9972pt
 
 :tex2html_wrap1927:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [36 </home/ilari/testinghtml/GPRvsMA.pdf>]
