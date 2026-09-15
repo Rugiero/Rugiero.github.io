@@ -834,10 +834,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img45.svg"
  ALT="$t=0$">|; 
 
-$key = q/tapprox1.5;MSF=1.6;AAT/;
+$key = q/tapprox0.5;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="|."$dir".q|img46.svg"
- ALT="$t\approx 1.5$">|; 
+ ALT="$t\approx 0.5$">|; 
 
 $key = q/tau;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
