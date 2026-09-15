@@ -188,23 +188,23 @@
         \item 2025, IEEE Transactions, Mobile Computing, \htmladdnormallink{2025 Review Certificate}{\reviewcert_2}
         \end{itemize}        
 
-                         \section{Blog posts 2026}
-                 
-                         \subsection{January---Machine learning and stochastic geometry are a happy couple}
+        \section{Blog posts 2026}
+                         
+        \subsection{January---Machine learning and stochastic geometry are a happy couple}
 
-                         The clear trend is that \htmladdnormallink{artificial intelligence}{https://en.wikipedia.org/wiki/Artificial_intelligence} (AI) and \htmladdnormallink{machine learning}{https://en.wikipedia.org/wiki/Machine_learning} (ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is \htmladdnormallink{stochastic geometry}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks} (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this kind of contraption is a poor perspective, and without saying, not the only way to look at it. The truth is that ongoing SG research remains valuable, not only as an academic exercise, but also beyond its academic context. In practice, SG can and will be utilized in modern ML by providing \textbf{hypothesis classes} for the ML algorithms. In this post, I will provide a concrete example of how.
+        The clear trend is that \htmladdnormallink{artificial intelligence}{https://en.wikipedia.org/wiki/Artificial_intelligence} (AI) and \htmladdnormallink{machine learning}{https://en.wikipedia.org/wiki/Machine_learning} (ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is \htmladdnormallink{stochastic geometry}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks} (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The truth is that ongoing SG research remains valuable, beyond being an academic exercise. In practice, SG can and will be utilized in modern ML by providing models and, further, \textbf{hypothesis classes} of models for the ML algorithms. In this post, I will provide a concrete example.
 
-                         \begin{quotation}
-                           \textit{For instance, SG models can be integrated as a hypothesis class in the learning process of ML.}
+        \begin{quotation}
+          \textit{For instance, SG models can be integrated as a hypothesis class in the learning process of ML.}
                            \begin{flushright}
                              --- Yassine H Mamouche et al., [1].
                            \end{flushright}
                          \end{quotation}
 
-                                          \begin{figure}                           
-                                            \includegraphics[width=0.97\linewidth]{SGandML.png}
-                                            \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
-                                          \end{figure}
+                         \begin{figure}                           
+                           \includegraphics[width=0.97\linewidth]{SGandML.png}
+                           \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
+                         \end{figure}
 
                          
                
@@ -218,7 +218,7 @@
                  \end{itemize}
 
                  
-                 The landscape of ML algorithms is vast; however, they are often based on \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} function. More specifically, an \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function (also referred to as a kernel) is at the heart of GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from \htmladdnormallink{training data}{https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets}. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have an understanding of what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical data.
+                 The landscape of ML algorithms is vast; however, they are often based on \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). GPR is a signal prediction method that relies on estimating the signal from a set of samples (or observations) and a \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} function. More specifically, an \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function (also referred to as a kernel) is at the heart of GPR. The autocovariance function can be arbitrary, and it should be carefully chosen to get meaningful results. One way is to numerically estimate the autocovariance from \htmladdnormallink{training data}{https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets}. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight and have a concomitant dependence on local, empirical data and circumstances. How to interpret such data if we don't have understand what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides ML models that guide us effectively in inferring patterns from empirical data.
                  
 
                  In the following, we will introduce some of the most recent advancements in the SG modeling of satellite communication systems. We demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a \htmladdnormallink{low Earth orbit}{https://en.wikipedia.org/wiki/Low_Earth_orbit} (LEO) satellite receiver. The estimation is based on a theoretical SG model of the interference power distribution and its autocovariance function, utilizing GPR. The results are compared with a \htmladdnormallink{moving average}{https://en.wikipedia.org/wiki/Moving_average} (MA). 
@@ -257,17 +257,17 @@ If unfixed, $k$, $D$, and the first- and second-order statistics of $P$ are \htm
 
                    
                      
-                                          \begin{figure}
-
-                                            \includegraphics[width=0.97\linewidth]{GPRvsMA.pdf}
+\begin{figure}
+  
+  \includegraphics[width=0.97\linewidth]{GPRvsMA.pdf}
   \caption{Signal power estimated from scarce signal samples.}
 \end{figure}
 
                                           
-                                          In Figures 1 (a) and (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realization of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. For simplicity, we use the model parameter values derived from the theoretical SG model (not treating them as hyperparameters). We use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each sample $z_i$ is interpreted as a noisy measurement of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to the expected variance of $|I(t)|^2$. The MA window size is empirically optimized, and apart from the slight overfitting, the MA captures $P(t)$ reasonably well. The GPR prediction clearly captures the smoothness of $P(t)$ better. Furthermore, the GPR prediction captures $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralized MA, which starts at $t\approx 0.5$ s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
+In Figures 1 (a) and (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realization of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. For simplicity, we use the model parameter values derived from the theoretical SG model (not treating them as hyperparameters). We use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each sample $z_i$ is interpreted as a noisy measurement of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to the expected variance of $|I(t)|^2$. The MA window size is empirically optimized, and apart from the slight overfitting, the MA captures $P(t)$ reasonably well. The GPR prediction clearly captures the smoothness of $P(t)$ better. Furthermore, the GPR prediction captures $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralized MA, which starts at $t\approx 0.5$ s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
 
 
-                                          This was a simple hands-on example of how SG is utilized in ML satellite communication models.
+This was a simple hands-on example of how SG is utilized in ML satellite communication models.
                                           
 
 
