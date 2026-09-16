@@ -57,7 +57,7 @@ The clear trend is that <A ID="tex2html28"
   HREF="https://en.wikipedia.org/wiki/Machine_learning">machine learning</A>
 (ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html30"
   HREF="https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks">stochastic geometry</A>
-(SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The ongoing SG research remains valuable, beyond being an academic exercise. SG can and will be utilized in modern ML by providing models and, further, <SPAN  CLASS="textbf">hypothesis classes</SPAN> of models for ML algorithms. In this post, I will introduce some of the most recent advancements in SG modeling of satellite communication systems and provide a concrete example of its application in ML.
+(SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The ongoing SG research remains valuable, beyond being an academic exercise. SG can and will be utilised in modern ML by providing models and, further, <SPAN  CLASS="textbf">hypothesis classes</SPAN> of models for ML algorithms. In this post, I will introduce some of the most recent advancements in SG modelling of satellite communication systems and provide a concrete example of its application in ML.
 
 <P>
 <BLOCKQUOTE>
@@ -83,12 +83,12 @@ Image generated with the help of DALL-E, an AI by OpenAI.</CAPTION>
 </DIV>
 
 <P>
-Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modeling.
+Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modelling.
                  
 <UL>
 <LI>SG encompasses <SPAN  CLASS="textbf">stochastic models</SPAN> of wireless networks, from which many statistical properties, such as signal power distributions, can be inquired. The expressions are usually presented in mathematical forms; at best, tractable and closed-form formulas are available. 
 </LI>
-<LI>ML encompasses learning algorithms that ultimately utilize empirical <SPAN  CLASS="textbf">raw data</SPAN>, and they are powerful tools for signal interpolation and prediction. The results are usually numerical.
+<LI>ML encompasses learning algorithms that ultimately utilise empirical <SPAN  CLASS="textbf">raw data</SPAN>, and they are powerful tools for signal interpolation and prediction. The results are usually numerical.
                  
 </LI>
 </UL>
@@ -180,7 +180,7 @@ A sketch of the system model.</CAPTION>
 <P>
 <DL class="COMPACT">
 <DT>5.</DT>
-<DD>Under fairly general settings (for example, assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite is approximately 
+<DD>Under fairly general settings (for example, assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite can be modelled as
                    <P><!-- MATH
  \begin{displaymath}
 I=I(t)=\sqrt{P(t)}X(t),
@@ -206,7 +206,7 @@ where <SPAN CLASS="MATH"><IMG
                  
 </DD>
 <DT>6.</DT>
-<DD>The normalized interference power (<SPAN  CLASS="textit">i.e.</SPAN>, variance of <SPAN CLASS="MATH"><IMG
+<DD>The normalised interference power (<SPAN  CLASS="textit">i.e.</SPAN>, variance of <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img14.svg"
  ALT="$I$"></SPAN>) is approximately <A ID="tex2html23"
   HREF="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distributed</A>
@@ -337,7 +337,7 @@ In Figures 1 (a) and (b), we estimate <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
  ALT="$P(t)$"></SPAN> from a sampled (<SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img38.svg"
- ALT="$0.1$"></SPAN> kHz) realization of the interference waveform <SPAN CLASS="MATH"><IMG
+ ALT="$0.1$"></SPAN> kHz) realisation of the interference waveform <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img39.svg"
  ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html41"
   HREF="https://en.wikipedia.org/wiki/Causal_filter">causal</A>
@@ -361,7 +361,7 @@ MA. For simplicity, we use the model parameter values derived from the theoretic
  STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img43.svg"
  ALT="$\sigma^2=3$"></SPAN> is set to the expected variance of <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img40.svg"
- ALT="$\vert I(t)\vert^2$"></SPAN>. The MA window size is empirically optimized, and apart from the slight overfitting, the MA captures <SPAN CLASS="MATH"><IMG
+ ALT="$\vert I(t)\vert^2$"></SPAN>. The MA window size is empirically optimised, and apart from the slight overfitting, the MA captures <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
  ALT="$P(t)$"></SPAN> reasonably well. The GPR prediction clearly captures the smoothness of <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
@@ -369,7 +369,7 @@ MA. For simplicity, we use the model parameter values derived from the theoretic
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
  ALT="$P(t)$"></SPAN> from <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img44.svg"
- ALT="$t=0$"></SPAN> onward, which is impossible for the non-causal, centralized MA, which starts at <!-- MATH
+ ALT="$t=0$"></SPAN> onward, which is impossible for the non-causal, centralised MA, which starts at <!-- MATH
  $t\approx 0.5$
  -->
 <SPAN CLASS="MATH"><IMG
@@ -379,7 +379,7 @@ MA. For simplicity, we use the model parameter values derived from the theoretic
 region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
 
 <P>
-This was a simple hands-on demonstration of how SG is utilized in ML satellite communication models.
+This was a simple hands-on demonstration of how SG is utilised in ML satellite communication models.
 
 <P>
 The following Python code generates the plots. (Written with the help of ChatGPT.)

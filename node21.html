@@ -70,7 +70,7 @@ gpg --list-keys
 gpg --generate-key
 </PRE>
 </LI>
-<LI>Copy the name of the key and initialize pass.
+<LI>Copy the name of the key and initialise pass.
 <BR><PRE>
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
@@ -106,7 +106,7 @@ Connect Pass to Git and it is easy to keep track of passwords with multiple mach
 </PRE>
 where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.
 <BR></LI>
-<LI>Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
+<LI>Now, we can initialise the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: 
 <BR><PRE>
 gpg --import public.key
 gpg --import private.key
@@ -117,13 +117,13 @@ gpg --import private.key
 gpg --list-keys
 </PRE>
 </LI>
-<LI>and initialize Pass with
+<LI>and initialise Pass with
 <PRE>
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 </PRE>
 </LI>
 <LI>First, remember to <A ID="tex2html109"
-  HREF="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">add your public SSH key to GitHub</A>. We will initialize the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
+  HREF="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">add your public SSH key to GitHub</A>. We will initialise the GitHub repository. If you do this for the first time, create a new repository named &ldquo;pass-store&rdquo; before the following commands. If the first command asks you to identify yourself, follow the instructions.
 <PRE>
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
@@ -134,7 +134,7 @@ pass git remote add origin git@repo.com:myname/pass-store
 pass git pull origin master --allow-unrelated-histories
 pass git commit -am "firstcommit"
 </PRE>
-If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconcileing and repeat the command.
+If Git complains about &ldquo;divergent branches&rdquo; just choose the &ldquo;merge&rdquo; reconciling and repeat the command.
 </LI>
 <LI>Do some changes and pass will automatically commit them. Push and set the &ldquo;upstream&rdquo;. 
 <BR><PRE>
