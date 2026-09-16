@@ -226,8 +226,8 @@
                  
                  The theoretical settings are 
                  \begin{enumerate}
-                 \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda = 7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
-                 \item{The LEO satellite has an antenna pattern with half $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is $\epsilon = 90^{\circ} = \pi/2$ rad.}
+                 \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda=7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
+                 \item{The LEO satellite has an antenna pattern with half $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ}=0.027925$ rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is $\epsilon = 90^{\circ}=\pi/2$ rad.}
                  \item{The LEO satellite is at $h=200$ km moving at its orbital speed $\left|\vec{v}_{\text{sat}}\right|=v_{\text{sat}}=7.4$ km/s.}
                  \item{While feasible, for simplicity, we do not model fast \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation. For the narrow beam, the Doppler shifts are almost identical for all transmitters.
                  }
@@ -244,7 +244,7 @@
                  \item[5.]{Under fairly general settings (for example, assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite can be modelled as
                    $$I=I(t)=\sqrt{P(t)}X(t), $$
                    where $X=X(t)$ is a zero-mean Gaussian waveform with $\mathbb{E}(|X|^2)=1$, which is modulated by the power $P=P(t)$ (see \htmladdnormallink{[2]}{dissertation.pdf}, Section 3.4).}
-                 \item[6.]{The normalised interference power (\textit{i.e.}, variance of $I$) is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=1$ and the variance $\text{var}(P)=1/2$ (see \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eqs. (18), (19) and (29)).}
+                 \item[6.]{The normalised interference power (\textit{i.e.}, variance of $I$) is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=\mathbb{E}(I^2)=\text{var}(I)=1$ and the variance $\text{var}(P)=1/2$ (see \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eqs. (18), (19) and (29)).}
                  \item[7.]{The autocovariance of $P(t)$ at lag $\tau$ has the \htmladdnormallink{Gaussian form}{https://en.wikipedia.org/wiki/Radial_basis_function_kernel}
                    \begin{align*}
                      K_{P}(\tau)&=k \exp\left\{-D\tau^2 \log(2)/2\right\}\\
@@ -255,7 +255,7 @@
                    For our satellite settings 2-3, theoretically, $k\approx 0.5$ and $D\approx 1.7555$. }
                  \end{enumerate}
                  
-                 If left unfixed, $k=\text{var}(P)$, $D$, and $\mathbb{E}(P)$ are \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)} learned from the data in the machine learning process. Then the gamma distribution model $6$, combined with the correlation model $7$, forms the hypothesis class within which we search for the power of $I$. In the correlation model, too large or too small $D$ yields \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting, respectively. 
+                 If left unfixed, $k=\text{var}(P)$, $D$, and $\mathbb{E}(P)$ are \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)} learned from the data in the machine learning process. Then the gamma distribution model 6, combined with the correlation model 7, forms the hypothesis class within which we search for the power of $I$. In the correlation model, too large or too small $D$ yields \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting, respectively. 
 
 
 
@@ -270,7 +270,7 @@
 \end{figure}
 
                                           
-In Figures 1 (a) and (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realisation of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. The ``true'' signal is generated following the distribution properties in 5-7 (i.e., is not generated by simulating the PPP). Furthermore, for simplicity, in the ML algorithm, the parameters are fixed at the values given in 6 and 7 and are not treated as hyperparameters. We use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each sample $z_i$ is interpreted as a noisy measurement of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to the expected variance of $|I(t)|^2$. The MA window size is empirically optimised, and apart from the slight overfitting, the MA captures $P(t)$ reasonably well. The GPR prediction clearly captures the smoothness of $P(t)$ better. It captures $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralised MA, which starts at $t\approx 0.5$ s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
+In Figures 1 (a) and (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realisation of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. The ``true'' signal is generated following the distribution properties 5-7 (i.e., is not generated by simulating the PPP). Furthermore, for simplicity, in the ML algorithm, the parameters are fixed at the values $k\approx 0.5$, $D\approx 1.7555$, and $\mathbb{E}(P)=1$, and are not treated as hyperparameters. We use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each sample $z_i$ is interpreted as a noisy measurement of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to the expected variance of $|I(t)|^2$. The MA window size is empirically optimised, and apart from the slight overfitting, the MA captures $P(t)$ reasonably well. The GPR prediction clearly captures the smoothness of $P(t)$ better. It captures $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralised MA, which starts at $t\approx 0.5$ s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
 
 
 This was a simple hands-on demonstration of how SG is utilised in ML satellite communication models.
