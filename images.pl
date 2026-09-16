@@ -31,7 +31,7 @@ $cached_env_img{$key} = q|<IMG
 $key = q/(P);MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img32.svg"
- ALT="$(P) $">|; 
+ ALT="$(P)$">|; 
 
 $key = q/(P)=1slash2;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG

@@ -6,10 +6,6 @@ $key = q/eq:pollog/;
 $external_labels{$key} = "$URL/" . q|node30.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/fig:sj/;
-$external_labels{$key} = "$URL/" . q|node9.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/line:22/;
 $external_labels{$key} = "$URL/" . q|node28.html|; 
 $noresave{$key} = "$nosave";
