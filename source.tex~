@@ -54,7 +54,7 @@
 \def\ric{https://en.wikipedia.org/wiki/Rician_fading}
 \def\gaus{https://en.wikipedia.org/wiki/Gaussian_noise}
 \def\reviewcert{certificate.pdf}
-\def\reviewcert_2{certificate2.pdf}
+\def\reviewcert2{certificate2.pdf}
 \makeindex
 
 \begin{document}
@@ -167,7 +167,6 @@
 %%         \item Niloofar Okati, Islam Tanash, Taneli Riihonen, Ilari Angervuori, Wichman Risto, ``Performance Evaluation of Low Earth Orbit Communication Satellites,'' Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
 %%         \item Ilari Angervuori, Wichman Risto, Niloofar Okati, Taneli Riihonen, ``On routing protocols in inter-satellite communications,'' Proceedings of XXXV Finnish URSI Convention on Radio Science, 2019
           
-        \end{itemize}
 
         \subsection{Personal grants}
         \begin{itemize}
@@ -184,85 +183,121 @@
         
         \subsection{Other certificates}
         \begin{itemize}
-        \item 2024, IEEE Transactions, Mobile Computing, \htmladdnormallink{2024 Review Certificate}{\reviewcert}
-        \item 2025, IEEE Transactions, Mobile Computing, \htmladdnormallink{2025 Review Certificate}{\reviewcert_2}
+        \item 2024, IEEE Transactions, Mobile Computing, \htmladdnormallink{2024 Review Certificate}{}
+        \item 2025, IEEE Transactions, Mobile Computing, \htmladdnormallink{2025 Review Certificate}{}
         \end{itemize}        
 
-                         \section{Blog posts 2026}
-                 
-                         \subsection{January---Machine learning and stochastic geometry are a happy couple}
+        \section{Blog posts 2026}
+                         
+        \subsection{January---Machine learning and stochastic geometry are a happy couple}
 
-                         The clear trend is that \htmladdnormallink{artificial intelligence}{https://en.wikipedia.org/wiki/Artificial_intelligence} (AI) and \htmladdnormallink{machine learning}{https://en.wikipedia.org/wiki/Machine_learning} (ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is \htmladdnormallink{stochastic geometry}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks} (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this kind of contraption is a poor perspective, and without saying, not the only way to look at it. The truth is that ongoing SG research remains valuable, not only as an academic exercise, but also beyond its academic context. In practice, SG can and will be utilized in modern ML by providing \textbf{hypothesis classes} for the ML algorithms. In this post, I will provide a concrete example of how.
+        The clear trend is that \htmladdnormallink{artificial intelligence}{https://en.wikipedia.org/wiki/Artificial_intelligence} (AI) and \htmladdnormallink{machine learning}{https://en.wikipedia.org/wiki/Machine_learning} (ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is \htmladdnormallink{stochastic geometry}{https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks} (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The ongoing SG research remains valuable, beyond being an academic exercise. SG can and will be utilised in modern ML by providing models and, further, \textbf{hypothesis classes} of models for ML algorithms. In this post, I will introduce some of the most recent advancements in SG modelling of satellite communication systems and provide a concrete example of its application in ML.
 
-                         \begin{quotation}
-                           \textit{For instance, SG models can be integrated as a hypothesis class in the learning process of ML.}
+        \begin{quotation}
+          \textit{For instance, SG models can be integrated as a hypothesis class in the learning process of ML.}
                            \begin{flushright}
                              --- Yassine H Mamouche et al., [1].
                            \end{flushright}
                          \end{quotation}
 
-                                          \begin{figure}                           
-                                            \includegraphics[width=0.97\linewidth]{SGandML.png}
-                                            \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
-                                          \end{figure}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{SGandML.png}
+          \caption{Image generated with the help of DALL-E, an AI by OpenAI.}
+        \end{figure}
 
                          
                
 
                  
 
-                 Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modeling.
+                 Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modelling.
                  \begin{itemize}
                  \item{SG encompasses \textbf{stochastic models} of wireless networks, from which many statistical properties, such as signal power distributions, can be inquired. The expressions are usually presented in mathematical forms; at best, tractable and closed-form formulas are available.} 
-                 \item{ML encompasses learning algorithms that ultimately utilize empirical \textbf{raw data}, and they are powerful tools for signal interpolation and prediction. The results are usually numerical.}
+                 \item{ML encompasses learning algorithms that ultimately utilise empirical \textbf{raw data}, and they are powerful tools for signal interpolation and prediction. The results are usually numerical.}
                  \end{itemize}
 
                  
-                 The landscape of ML algorithms is vast; however, they are often based on \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). GPR is a signal prediction method that relies on estimating the signal using a set of samples (or observations) and a \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} function. More specifically, an \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function (also referred to as a kernel) is at the heart of GPR. Such an autocovariance function can be arbitrary, and one should carefully choose an appropriate one to gain meaningful results. One way is to numerically estimate the autocovariance from \htmladdnormallink{training data}{https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets}. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight, and have a concomitant dependence on local, empirical data and circumstances. Where to even start interpreting such data, if we don't have an understanding of what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides hypothesis classes that guide us effectively in inferring patterns from empirical data.
+                 The landscape of ML algorithms is vast; however, they are often based on \htmladdnormallink{Gaussian process regression}{https://en.wikipedia.org/wiki/Kriging} (GPR). GPR is a signal prediction method that relies on estimating the signal from a set of samples (or observations) and a \htmladdnormallink{correlation}{https://en.wikipedia.org/wiki/Correlation} function. More specifically, an \htmladdnormallink{autocovariance}{https://en.wikipedia.org/wiki/Autocorrelation} function (also referred to as a kernel) is at the heart of GPR. The autocovariance function can be arbitrary, and it should be carefully chosen to get meaningful results. One way is to numerically estimate the autocovariance from \htmladdnormallink{training data}{https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets}. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight and have a concomitant dependence on local, empirical data and circumstances. How to interpret such data if we don't have understand what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides ML models that guide us effectively in inferring patterns from empirical data.
                  
 
-                 In the following, we demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a \htmladdnormallink{low Earth orbit}{https://en.wikipedia.org/wiki/Low_Earth_orbit} (LEO) satellite receiver. Prior autocovariance function is derived from a theoretical estimate based on SG. Based on this autocovariance, the power estimation is inferred from empirical data using GPR. Furthermore, the estimation is compared to a \htmladdnormallink{moving average}{https://en.wikipedia.org/wiki/Moving_average} (MA) estimation. 
-
-                 The theoretical settings are:
+                 We will demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a \htmladdnormallink{low Earth orbit}{https://en.wikipedia.org/wiki/Low_Earth_orbit} (LEO) satellite receiver. The estimation is based on the GPR and a theoretical SG model of the interference power distribution and its autocovariance function. The results are compared with a \htmladdnormallink{moving average}{https://en.wikipedia.org/wiki/Moving_average} (MA). 
+                 
+                 
+                 The theoretical settings are 
                  \begin{enumerate}
-                 \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda = 7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
-                 \item{The LEO satellite has an antenna pattern with half $-3$ dB beamwidth $\varphi_{\text{RX}}=1.6^{\circ} = 0.027925$ rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is $\epsilon = 90^{\circ} = \pi/2$ rad.}
-                 \item{The LEO satellite is at $h=200$ km moving at its orbital speed $v_{\text{sat}}=7.4$ km/s.}
-                 \item{For simplicity, no fast-\htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}, shadowing, or other attenuation is considered. For the narrow beam, the Doppler shifts are very close to each other for all transmitters.}
+                 \item{The interferers (natural sources or transmitters) of bandwidth $1$ kHz are distributed according to the \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} (PPP) on the Earth surface with a density $\lambda=7 \times 10^{-3}/$km$^2$, causing interference at the LEO satellite. Each interferer transmits at power $p_t=1$.} 
+                 \item{The LEO satellite has a \textit{narrow} antenna pattern with a half-power ($-3$ dB) beamwidth $\varphi_{\text{RX}}=1.6^{\circ}=0.027925$ rad, steered toward the Earth's center. This means the beam center elevation angle w.r.t the satellite is $\epsilon = 90^{\circ}=\pi/2$ rad.}
+                 \item{The LEO satellite is at $h=200$ km moving at its orbital speed $\left|\vec{v}_{\text{sat}}\right|=v_{\text{sat}}=7.4$ km/s.}
+                \item{We model Rician fast \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading}. No shadowing, cloud attenuation, or similar are modelled. 
+                 }
                  \end{enumerate}
-                 As the satellite moves, the magnitude of the aggregate interference varies due to the randomly distributed interferers. The key insight acquired from the SG analysis is as follows. The details can be found in my thesis \htmladdnormallink{[2]}{dissertation.pdf} and \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}.
+                 As the satellite moves, the magnitude of the aggregate interference from the randomly distributed interferers varies. A rigorous analysis of the interference statistics is presented in my thesis \htmladdnormallink{[2]}{dissertation.pdf} and in article \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, where the results are validated against a realistic Monte Carlo simulation model.
+
+                 The key insights acquired from the SG analysis are as follows. 
+
+                 
+                 \begin{figure}                           
+                   \includegraphics[width=\linewidth]{SGandMLsysmod.png}
+                   \caption{A sketch of the system model.}
+                 \end{figure}
 
                  \begin{enumerate}
-                 \item[5.]{Under fairly general settings (for example, assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite is approximately 
+                 \item[5.]{Under fairly general settings (for example, assuming a Gaussian waveform for each interferer), the interference waveform at the LEO satellite can be modelled as
                    $$I=I(t)=\sqrt{P(t)}X(t), $$
                    where $X=X(t)$ is a zero-mean Gaussian waveform with $\mathbb{E}(|X|^2)=1$, which is modulated by the power $P=P(t)$ (see \htmladdnormallink{[2]}{dissertation.pdf}, Section 3.4).}
-                 \item[6.]{The normalized interference power (\textit{i.e.}, variance of $I$) is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean $\mathbb{E}(P)=1$ and the variance $\text{var}(P)=1/2$ (see \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eqs. (18), (19) and (29)).}
-                 \item[7.]{The autocovariance of $P(t)$ at lag $\tau$ has the \htmladdnormallink{Gaussian form}{https://en.wikipedia.org/wiki/Radial_basis_function_kernel}
+                 \item[6.]{The autocovariance
+                   $K_P(\tau) \triangleq \mathbb{E}\left[(P(t)-\mathbb{E}(P(t)))(P(\tau-t)-\mathbb{E}(P(\tau-t)))\right]$
+                   of $P$ at lag $\tau$ has the \htmladdnormallink{Gaussian form}{https://en.wikipedia.org/wiki/Radial_basis_function_kernel}
                    \begin{align*}
-                     K_{P}(\tau)&=k \exp\left\{-D\tau^2 \log(2)/2\right\}\\
-                     &= \underbrace{\frac{p_t^2}{2\log(2)}  \pi \lambda\left(\frac{h \varphi_{\text{RX}}}{\sin^2(\epsilon)}\right)^2}_{ k\triangleq} \exp\left\{-\tau^2\underbrace{v_{\text{sat}}^2\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)}_{D\triangleq } \log(2)/2\right\}, \tag{2}
-                     \end{align*}
-                   where $k,D>0$ are constant parameters that depend on $\varphi_{\text{RX}}$, $p_t$, $\epsilon$,  $h$, $v_{\text{sat}}$ and $\lambda$ (see \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eq. (21)).
+                     K_{P}(\tau) &= \frac{1}{2} \underbrace{\frac{\pi \lambda p_t^2}{\log(2)}  \left(\frac{h \varphi_{\text{RX}}}{\sin^2(\epsilon)}\right)^2}_{ k\triangleq} \left( E(H)^2\exp\left\{-\tau^2\underbrace{\frac{v_{\text{sat}}^2\sin^4(\epsilon)}{2 h^2 \varphi_{\text{RX}}^2}}_{D\triangleq } \log(2)\right\} \tag{2} + K_H(\tau) \right)\\
+                     &=\frac{k}{2} \left(E(H)^2\exp\left\{-D\tau^2 \log(2)/2\right\} +   \text{var}(H) \text{triang}(\tau/\tau_c) \right),
+                   \end{align*}
+                   where $H \geq 0$ is an i.i.d. deterministic or random fading gain of the typical transmitter. The Gaussian left-hand-side term corresponds to satellite movement and antenna attenuation of the interferers, and the right-hand-side term corresponds to the fading component. The autocovariance function is modelled using a triangular function with coherence time $\tau_c$ (samples separated by a time interval greater than $\tau_c$ are uncorrelated). The parameters $k,D>0$ are constants that depend on $\varphi_{\text{RX}}$, $p_t$, $\epsilon$,  $h$, $v_{\text{sat}}$, and $\lambda$ (analogous derivation for the amplitude in \htmladdnormallink{[2]}{dissertation.pdf}, Section 4.2, and for the Pearson correlation coefficient \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eq. (21)).  For our system model settings 1-4, $k\approx 0.5$ and $D\approx 1.7555$.
+                   
+ If left unfixed, $k$, $D$, $\mathbb{E}(P)$, $\mathbb{E}(H)$, $\text{var}(H)$, and $\tau_c$ are \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)} learned from the data in the machine learning process. Generally, they can be dependent on time; however, we treat them as constants. In the correlation model, too large or too small $D$ or $1/\tau_c$ yields \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting, respectively. 
+                 }
+                   
+                 \item[7.]{The normalised interference power is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean
+                   \begin{equation}
+                     \mathbb{E}(P)=\mathbb{E}(I^2)=\text{var}(I)= k \mathbb{E}(H)
+                   \end{equation}
+                   and the variance
+                   \begin{equation}
+                     \text{var}(P)=k\mathbb{E}(H^2)/2.
+                   \end{equation}
+                   (See \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eqs. (18), (19) and (29)).}
 
-                   For our satellite settings 2-3, $k\approx 0.5$ and $D\approx 1.7555$. }
+      
+
+                
                  \end{enumerate}
-                   Note that, given an antenna pattern width, the constant $D=v_{\text{sat}}^2\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)$ in (2) is directly defined by the altitude $h$ of the satellite, because the \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed} $v_{\text{sat}}$ follows single-handedly from the orbital altitude. It can be empirically verified that within a fairly general density region, the assertion of $D$ is more crucial for the GPR estimation than $k$ (especially in the non-causal prediction): too large and too small $D$ yield \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting of the data, respectively. In a refined version of the GPR, $k$ and $D$ could also be treated as \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)}, which are learned from the data, but we treat them as fixed.
-
                  
-                 The prior model we will utilize in the GPR is the properties 5-7. The described signal power $P(t)$ with the Gaussian autocovariance is the hypothesis class of the set of functions within which we search our estimation from, and the waveform $I(t)$ is treated as a non-stationary \htmladdnormallink{Gaussian process}{https://en.wikipedia.org/wiki/Gaussian_process}. In practice, we will use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each such sample $z_i$ is interpreted as noisy measurements of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to correspond to the expected variance of $|I(t)|^2$. 
+
+
+                 The correlation model 6, combined with the gamma distribution model 7, defines the hypothesis class in which we search for the power $P$. This process is computationally highly efficient and will serve as a prior model for training the ML algorithm.
+
+
+
+
+
 
 
 
                    
                      
-                                          \begin{figure}
-
-  \includegraphics[width=0.97\linewidth]{GPRvsMA.pdf}
+\begin{figure}
+  \includegraphics[width=\linewidth]{GPRvsMA.pdf}
   \caption{Signal power estimated from scarce signal samples.}
 \end{figure}
 
                                           
-                                          For a random realization of the power $P(t)$ (generated according to the gamma distribution and its first and second-order statistics), which is ``not known'' before the empirical samples, in Figures 1 (a) and 1 (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realization of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. The window size of the MA is empirically optimized, but it could also be learned from training data. Apart from the slight overfitting, the MA captures $P(t)$ reasonably well (as long as the window size is optimized). However, the GPR prediction is clearly better in capturing the smoothness of $P(t)$. Furthermore, the GPR prediction captures the $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralized MA, which starts at $t\approx 0.5$ s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Not so surprisingly, the GPR is superior to MA in this regard. Both predictions can be improved by increasing the sampling frequency.
+In Figures 1 (a) and (b), we estimate $P(t)$ from a sampled ($0.1$ kHz) realisation of the interference waveform $I(t)$ by using GPR and non-\htmladdnormallink{causal}{https://en.wikipedia.org/wiki/Causal_filter} MA. The ``true'' signal is generated following the distribution properties 5-7 (i.e., is not generated by simulating the PPP). Furthermore, for simplicity, in the ML algorithm, the parameters are fixed at the values $k\approx 0.5$, $D\approx 1.7555$, and $\mathbb{E}(P)=1$, and are not treated as hyperparameters. We use the samples from $|I(t)|^2$ to estimate the interference power $P(t)$. Each sample $z_i$ is interpreted as a noisy measurement of $P(t)$: $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$, where $\sigma^2=3$ is set to the expected variance of $|I(t)|^2$. The MA window size is empirically optimised, and apart from the slight overfitting, the MA captures $P(t)$ reasonably well. The GPR prediction clearly captures the smoothness of $P(t)$ better. It captures $P(t)$ from $t=0$ onward, which is impossible for the non-causal, centralised MA, which starts at $t\approx 0.5$ s. The \htmladdnormallink{forecast}{https://en.wikipedia.org/wiki/Predictive_analytics} region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
+
+
+This was a simple hands-on demonstration of how SG is utilised in ML satellite communication models.
+                                          
+
+
 
 %                                          Figure 1 (a) speaks its own language for the benefit of the prior SG-based hypothesis class versus the simple MA. On the contrary, without any hypothesis classes at hand, signal estimation would be much more difficult and arbitrary: even if the Gaussian correlation function is a commonly used initial guess for the autocovariance, and could be guessed without the SG analysis, the insight into the hyperparameters and their dependency on the orbital and network properties is invaluable. 
 
@@ -300,7 +335,7 @@ k_shape = 2.0
 theta_scale = 0.5
 mean_P = 1.0
 
-# === 1. Construct latent Gaussian process for P(t) with covariance C(τ) = k * exp(-D τ^2 log(2) / 2) ===
+# === 1. Construct latent Gaussian process for P(t) with covariance C(tau) = k * exp(-D tau^2 log(2) / 2) ===
 tau_full = t[:, None] - t[None, :]
 k_emp = 0.5
 D_emp = 1.7555
@@ -343,7 +378,7 @@ t_ma_forecast = np.arange(t_ma[-1], T_total + 1e-9, sample_interval)  # 0.1 kHz 
 power_ma_forecast = np.full_like(t_ma_forecast, power_ma[-1])
 
 # Approximate noise variance for |I|^2
-# Var(|I|^2 | P=p) = 2 p^2, E[P^2]=1.5 => average Var ≈ 3
+# Var(|I|^2 | P=p) = 2 p^2, E[P^2]=1.5 => average Var \approx 3
 noise_var = 3.0
 
 # Variance of 300-sample MA under iid noise with var=noise_var
@@ -352,7 +387,7 @@ ma_std = np.sqrt(ma_var)
 
 # === 5. GPR prediction of P(t) on from noisy power samples ===
 # GP prior: P ~ GP(mean=mean_P, cov(t,s) = 0.5*exp(-3(t-s)^2))
-# Observations: z_i = |I(t_i)|^2 ≈ P(t_i) + N(0, noise_var)
+# Observations: z_i = |I(t_i)|^2 \approx P(t_i) + N(0, noise_var)
 
 # training times (sampled up to T_obs)
 t_train = t_sampled
@@ -390,7 +425,7 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 # True P(t) 
 ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
-# GPR mean and ±2σ 
+# GPR mean and ±2 \sigma 
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
 # 90 percent confidence interval
 ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
@@ -413,7 +448,7 @@ ax1.grid(True)
 ax1.legend(fontsize=12)
 
 # ---------- Subplot (b): I(t) and samples ----------
-ax2.plot(t, I, label='I(t) = X(t)√P(t)', color='tab:orange')
+ax2.plot(t, I, label='I(t) = X(t)\sqrt{P(t)}', color='tab:orange')
 ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–7 s, 0.1 kHz)', markersize=1)
 ax2.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax2.set_xlabel('t [s]')
@@ -454,7 +489,7 @@ References:
 
 Let us study a faded signal in an omnidirectional satellite receiver sent by an earth transmitter. We consider that the transmitter (TX) is sending a constant \htmladdnormallink{QAM}{https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation} symbol, \textit{i.e.}, the TX \htmladdnormallink{baseband signal}{https://en.wikipedia.org/wiki/Baseband} is given by
 \begin{equation}
-  S_{\text{TX}} = Ae^{-2 i \pi \theta}, } \tag{$1$}
+  S_{\text{TX}} = Ae^{-2 i \pi \theta},  \tag{$1$}
 \end{equation}
 for some $\theta \in [0,1]$ and $A \in \mathbb{R}_+$. The \htmladdnormallink{passband signal}{https://en.wikipedia.org/wiki/Passband} experiences \htmladdnormallink{fading}{https://en.wikipedia.org/wiki/Fading} due to terrestrial obstacles. We use a model where $100$ scatterer objects are \htmladdnormallink{Poisson distributed }{https://en.wikipedia.org/wiki/Poisson_point_process} inside a circular area with a diameter of $180$ m. The phases of the scattered signals are independently uniformly random. Initially, the satellite, which is moving at its \htmladdnormallink{orbital speed}{https://en.wikipedia.org/wiki/Orbital_speed}, is in the \htmladdnormallink{zenith}{https://en.wikipedia.org/wiki/Zenith} w.r.t. the earth transmitter. The receiver's (RX) baseband signal is a linear combination of the \htmladdnormallink{down-conversions}{https://en.wikipedia.org/wiki/Digital_down_converter} of the scattered, \htmladdnormallink{Doppler shifted}{https://en.wikipedia.org/wiki/Doppler_effect} and \htmladdnormallink{attenuated}{https://en.wikipedia.org/wiki/Attenuation} passband signal components, and it is given by
 \begin{equation}
@@ -597,7 +632,7 @@ end
 \end{verbatim}
 References:
 \begin{itemize}
-\item Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ; Cambridge University Press, 2005.
+\item Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K.; Cambridge University Press, 2005.
 \end{itemize}
 
                   \section{Blog posts 2022}
@@ -607,7 +642,7 @@ References:
 \subsection{June---Gaussian vs. impulsive noise}
 
 
-Noise is often modeled to have a \htmladdnormallink{Gaussian}{https://en.wikipedia.org/wiki/Gaussian_noise} waveform. However, it might be unrealistic in some circumstances if the \htmladdnormallink{outlier}{https://en.wikipedia.org/wiki/Outlier} events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with \htmladdnormallink{fat-tailed distributions}{https://en.wikipedia.org/wiki/Fat-tailed_distribution} with significant mass in the tail distribution. 
+Noise is often modelled to have a \htmladdnormallink{Gaussian}{https://en.wikipedia.org/wiki/Gaussian_noise} waveform. However, it might be unrealistic in some circumstances if the \htmladdnormallink{outlier}{https://en.wikipedia.org/wiki/Outlier} events are more likely than in the Gaussian distribution. In this case, we might have to model the noise with \htmladdnormallink{fat-tailed distributions}{https://en.wikipedia.org/wiki/Fat-tailed_distribution} with significant mass in the tail distribution. 
 
 The \htmladdnormallink{$\alpha$-stable distributions}{https://en.wikipedia.org/wiki/Stable_distribution} are used as noise models in various applications, including economics and electromagnetic communications. Also, the normal distribution belongs to the $\alpha$-stable family of $\alpha$-stable distributions ($\alpha = 2$), the only distribution in the family with a finite variance. With values $\alpha \leq 1$, the mean is undefined. The qualitative difference to the normal distribution is clear: imagine investing money in a share that has a fixed expected profit value---say, 10 euros in a year---versus investing in a share whose value fluctuates so rapidly that the expected profit (mean profit over time) can be arbitrary.
 
@@ -669,17 +704,17 @@ axis([0 100 -15 15])
 Comparing the figures, one can easily understand where the term ``impulsive noise'' comes from.
 
 
-It is also interesting to compare the audiolized noise signals:
+It is also interesting to compare the audiolised noise signals:
 \htmladdnormallink{my Soundcloud}{https://soundcloud.com/ilari-angervuori/sets/gaussian-noise-and-impulsive-noise?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing}.
 
 
 
 References:
 \begin{itemize}
-\item Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes : Stochastic Models with Infinite Variance. New York: Chapman & Hall, 1994. Print.
+\item Samorodnitsky, Gennady., and Murad S. Taqqu. Stable Non-Gaussian Random Processes: Stochastic Models with Infinite Variance. New York: Chapman \& Hall, 1994. Print.
 \item Middleton, David. Statistical-Physical Models of Man-made and Natural Radio Noise parts I - , 1976.
 \item 
-  Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ; Cambridge University Press, 2005. Print.
+  Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K.; Cambridge University Press, 2005. Print.
 \end{itemize}
 
 
@@ -691,7 +726,7 @@ References:
 
 \subsection{January---Poisson process on a sphere}
 
-        The \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalized to general \htmladdnormallink{manifolds}{https://en.wikipedia.org/wiki/Manifold}. In Particular, the Poisson process on a three-dimensional sphere surface is useful. Nicely enough, the Poisson process on a unit sphere is equivalent to the process in a two-dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area-preserving mapping from $A$ to geographical coordinates
+        The \htmladdnormallink{Poisson point process}{https://en.wikipedia.org/wiki/Poisson_point_process} can be generalised to general \htmladdnormallink{manifolds}{https://en.wikipedia.org/wiki/Manifold}. In Particular, the Poisson process on a three-dimensional sphere surface is useful. Nicely enough, the Poisson process on a unit sphere is equivalent to the process in a two-dimensional area $ A = [-\pi,\pi] \times [-1,1]$ through the area-preserving mapping from $A$ to geographical coordinates
         \begin{equation}
           (x,y) \mapsto (1,x,\sin^{-1}(y)). \tag{1}
         \end{equation}
@@ -807,11 +842,11 @@ References:
 
 
 \subsection{March---Signal propagation in a city}
-Mobile telephone signal propagation in a city is characterized by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver---this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
+Mobile telephone signal propagation in a city is characterised by obstacles, such as buildings and cars, that \htmladdnormallink{attenuate}{https://en.wikipedia.org/wiki/Attenuation}, \htmladdnormallink{reflect}{https://en.wikipedia.org/wiki/Reflection_(physics)}, \htmladdnormallink{refract}{https://en.wikipedia.org/wiki/Reflection_(physics)} and \htmladdnormallink{diffract}{https://en.wikipedia.org/wiki/Diffraction} the signal. Should there be a pure line-of-sight from the transmitter to the receiver, the receiver will always receive a constant power from the transmitter conditioned that the transmitter stays at a constant distance from the receiver---this can be the case, for example, if you are transmitting to a near-by high base-station antenna. Without the line-of-sight component, the signal strength will vary according to \htmladdnormallink{Rayleigh fading}{\ray} as the transmitter or the obstacles move. If only a limited line-of-sight element is present, the signal strength will follow \htmladdnormallink{Rician fading}{\ric} statistics.
 
 I animated a couple of GIFs to help us perceive what is happening. The first figure demonstrates how a simple sine signal propagates between buildings. You can observe how the multi-path components sum up to a signal amplifying in some locations and degenerating in others. In the first figure, you can look for Rician conditions (lower right) and Rayleigh conditions (lower left) and see how the signal behaves. The figure was obtained by solving the Helmholtz equation by finite element method.
 
-The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. These kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realization of the Poisson point process on a plane.
+The second figure shows how the aggregate signal power from many mobile transmitters develops in time under Rician fading conditions. The aggregate power can be considered as interference in a receiver. You can see how the high peaks of interference power emerge at random locations. These kinds of peaks can cause decreased data rates. The figure was obtained by simulating a random walk of points in a realisation of the Poisson point process on a plane.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{sin.gif}
@@ -870,7 +905,7 @@ References:
 %% \end{itemize}
 
 
-\subsection{May---Rayleigh fading audiolized}
+\subsection{May---Rayleigh fading audiolised}
 
 When a signal propagates through multiple paths, each signal component in each path will be in a different phase and of varying strength when received. Should there be no line-of-sight component present, the additive signal will fade according to the \htmladdnormallink{Rayleigh fading}{\ray}.
 
@@ -1099,15 +1134,15 @@ References:
 
 \subsection{August---Radio waves in a tunnel}
 
-Almost everyone has some experience of how radio turns static when driving into a tunnel. The radio stations only work if a special  \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} is installed inside the tunnel. Once upon a night, I could not sleep, pondering why the \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radios are unsuable in the tunnels. From my experience, mobile phone signals that operate at higher frequencies work better. Someone might have told me that FM radio wavelength is so large that the wave ``does not fit the tunnel''. But as intuitively acceptable as this explanation could be (I don't think it is even that), this answer did not satisfy me.
+Almost everyone has some experience of how radio turns static when driving into a tunnel. The radio stations only work if a special  \htmladdnormallink{radiating cable}{https://en.wikipedia.org/wiki/Leaky_feeder} is installed inside the tunnel. Once upon a night, I could not sleep, pondering why the \htmladdnormallink{FM}{https://en.wikipedia.org/wiki/FM_broadcast_band} radios are unusable in the tunnels. From my experience, mobile phone signals that operate at higher frequencies work better. Someone might have told me that FM radio wavelength is so large that the wave ``does not fit the tunnel''. But as intuitively acceptable as this explanation could be (I don't think it is even that), this answer did not satisfy me.
 
 
-After some research, I found that the explanation lies in \htmladdnormallink{Maxwell equation's}{https://en.wikipedia.org/wiki/Maxwell's_equations} behavior (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface---this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
+After some research, I found that the explanation lies in \htmladdnormallink{Maxwell equation's}{https://en.wikipedia.org/wiki/Maxwell's_equations} behaviour (well, what a surprise). Everything backs down to the boundary conditions of the electromagnetic field at the tunnel wall: the tangential component of the electric field component of the electromagnetic wave has to be near zero in the tunnel interface---this leads to a situation where the wave has, in a sense, no room to oscillate inside the tunnel.
 
 
-Intuitive or not, this is what the equations tell us. To demonstrate this, I solved using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane wave in a two-dimensional setting mimicking a tunnel and its entrance. The \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarization is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is zero. The coloring represents the electrical component's magnitude.
+Intuitive or not, this is what the equations tell us. To demonstrate this, I solved using \htmladdnormallink{FEM}{https://en.wikipedia.org/wiki/Finite_element_method}, the \htmladdnormallink{Helmholtz equation}{https://en.wikipedia.org/wiki/Helmholtz_equation} for a plane wave in a two-dimensional setting mimicking a tunnel and its entrance. The \htmladdnormallink{electromagnetic wave's}{https://en.wikipedia.org/wiki/Electromagnetic_radiation} polarisation is so that the electrical component is pointing at the right angle w.r.t. the plane (either towards or against the reader of this page). \htmladdnormallink{Boundary conditions}{https://en.wikipedia.org/wiki/Boundary_value_problem} inside the 2D tunnel is zero. The colouring represents the electrical component's magnitude.
 
-We compare the behavior of two different wavelengths:
+We compare the behaviour of two different wavelengths:
 
 
 
@@ -1127,7 +1162,7 @@ We compare the behavior of two different wavelengths:
 
 References: 
 \begin{itemize}
-\item \htmladdnormallink{Scattering Problem: Matlab PDE Modeler App}{https://se.mathworks.com/help/pde/ug/scattering-problem.html}
+\item \htmladdnormallink{Scattering Problem: Matlab PDE Modeller App}{https://se.mathworks.com/help/pde/ug/scattering-problem.html}
 \item \htmladdnormallink{Interface conditions for electromagnetic fields (Wikipedia article)}{https://en.wikipedia.org/wiki/Interface_conditions_for_electromagnetic_fields}
 \end{itemize}
 
@@ -1194,7 +1229,7 @@ gpg --list-keys
 \begin{verbatim}
 gpg --generate-key
 \end{verbatim}
-\item Copy the name of the key and initialize pass.\\
+\item Copy the name of the key and initialise pass.\\
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
@@ -1225,7 +1260,7 @@ Connect Pass to Git and it is easy to keep track of passwords with multiple mach
   gpg --export-secret-key --output private.key ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
 where ABCDEFGHIJKLMNOPQRSTUV1234 is your key name.\\
-\item Now, we can initialize the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: \\
+\item Now, we can initialise the Git repository with these keys. Move the public key and private key through a safe channel to a computer you wish to use Pass in. Import the keys to the machine: \\
 \begin{verbatim}
 gpg --import public.key
 gpg --import private.key
@@ -1234,11 +1269,11 @@ gpg --import private.key
 \begin{verbatim}
 gpg --list-keys 
 \end{verbatim}
-\item and initialize Pass with
+\item and initialise Pass with
 \begin{verbatim}
 pass init ABCDEFGHIJKLMNOPQRSTUV1234
 \end{verbatim}
-\item First, remember to \htmladdnormallink{add your public SSH key to GitHub}{https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account}. We will initialize the GitHub repository. If you do this for the first time, create a new repository named ``pass-store'' before the following commands. If the first command asks you to identify yourself, follow the instructions.
+\item First, remember to \htmladdnormallink{add your public SSH key to GitHub}{https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account}. We will initialise the GitHub repository. If you do this for the first time, create a new repository named ``pass-store'' before the following commands. If the first command asks you to identify yourself, follow the instructions.
 \begin{verbatim}
 pass git init 
 pass git remote add origin git@repo.com:myname/pass-store
@@ -1248,7 +1283,7 @@ pass git remote add origin git@repo.com:myname/pass-store
 pass git pull origin master --allow-unrelated-histories
 pass git commit -am "firstcommit"
 \end{verbatim}
-If Git complains about ``divergent branches'' just choose the ``merge'' reconcileing and repeat the command.
+If Git complains about ``divergent branches'' just choose the ``merge'' reconciling and repeat the command.
 \item Do some changes and pass will automatically commit them. Push and set the ``upstream''. \\
 \begin{verbatim}
 pass git push --set-upstream origin master 
@@ -1270,13 +1305,13 @@ References:
 \end{itemize}
 
 
-    \subsection{October – Fast Fourier transform in GNU Octave}
+    \subsection{Fast Fourier transform in GNU Octave}
 
-    \htmladdnormallink{Fast fourier transform}{https://en.wikipedia.org/wiki/Fast_Fourier_transform} (FFT) is an algorithm that computes the \htmladdnormallink{discrete Fourier transform}{https://en.wikipedia.org/wiki/Discrete_Fourier_transform}.
+    \htmladdnormallink{Fast Fourier transform}{https://en.wikipedia.org/wiki/Fast_Fourier_transform} (FFT) is an algorithm that computes the \htmladdnormallink{discrete Fourier transform}{https://en.wikipedia.org/wiki/Discrete_Fourier_transform}.
 
     FFT is especially handy in real-time digital signal processing. Digital computers are working on discrete data, thus a input signal is always sampled with some sampling rate $F_s$ (Hz). By the \htmladdnormallink{Nyquist-Shannon sampling theorem}{https://en.wikipedia.org/wiki/Nyquist\%E2\%80\%93Shannon_sampling_theorem}, sampling captures frequencies under $F_s/2$.
 
-    Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalized FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
+    Octave calculates the FFT of a discrete signal.  In the following code, we calculate the normalised FFT and plot the frequency spectrum w.r.t. the frequency. Signal vector and sampling frequency are given as input.
 
 \begin{verbatim}
 ##Calculates the FFT and plots the frequency spectrum of a signal. Sampletimes have to start at time 0.
@@ -1319,7 +1354,7 @@ The following figure shows my track \htmladdnormallink{Tappimarssi}{https://soun
 \item  \htmladdnormallink{Octave Documentation – Signal Processing}{https://octave.org/doc/v5.2.0/Signal-Processing.html}
 \end{itemize}
 
-\subsection{November – Digital filtering}
+\subsection{Digital filtering}
 
 Let's construct a simple digital band-pass filter based in the \htmladdnormallink{sinc filter}{https://en.wikipedia.org/wiki/Sinc_filter}.
 
@@ -1467,16 +1502,16 @@ References:
 \item  Díaz-Francés, Eloísa; Rubio, Francisco J. (2012-01-24). "On the existence of a normal approximation to the distribution of the ratio of two independent normal random variables". Statistical Papers. Springer Science and Business Media LLC.
 \end{itemize}
 
-\subsection{Voronoi tesselation on a sphere}
+\subsection{Voronoi tessellation on a sphere}
 
-Voronoi tessellation consists of neighborhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, has applications, \textit{e.g.}, in wireless communications. 
+Voronoi tessellation consists of neighbourhood areas of a given set of points, or Voronoi cells: every cell is surrounded by the area that consists of locations that are closer to the cell than any other cell. The \htmladdnormallink{Voronoi Diagram}{https://en.wikipedia.org/wiki/Voronoi_diagram}, or Voronoi tessellation, has applications, \textit{e.g.}, in wireless communications. 
 
 \begin{figure}
   \includegraphics[width=\linewidth]{voronoionsphere.png}
 \end{figure}
 
 
-The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in Github. 
+The next Matlab code produces a Voronoi tessellation on a sphere Poisson points as cells. It is based in Grady Wrights codes openly available in GitHub. 
 
 \begin{verbatim}
 
@@ -1514,7 +1549,7 @@ end
 
 References:
 \begin{itemize}
-\item \htmladdnormallink{gradywright Github}{https://github.com/gradywright/spherepts/tree/master/code}
+\item \htmladdnormallink{gradywright GitHub}{https://github.com/gradywright/spherepts/tree/master/code}
 \end{itemize}
 
 
@@ -1636,7 +1671,7 @@ References:
 %% \item \htmladdnormallink{Mathworks}{https://se.mathworks.com/products/satellite-communications.html}
 %% \end{itemize}
 
-\subsection{May – Digital to analog modulation}
+\subsection{Digital to analog modulation}
 Digital signal consists of values at discrete times, whereas analog signal is continuous in time $t$. As the orthogonal set of \htmladdnormallink{sinc functions}{https://en.wikipedia.org/wiki/Sinc_function}
 $$
 \{t \mapsto \text{sinc}(F_s t - n)\}_n,
@@ -1699,12 +1734,12 @@ legend( 'Original analog signal','Sampled digital signal', 'Rerproduced analog s
 References:
 \begin{itemize}
 \item 
-  Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K. ;: Cambridge University Press, 2005. Print.
+  Tse, David., and Pramod. Viswanath. Fundamentals of Wireless Communication. Cambridge, U.K.;: Cambridge University Press, 2005. Print.
 \end{itemize}
 
 \subsection{Homography}
 
-\htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than $90 \degree$, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$ so that the right-hand side focus point maps to the origin.
+\htmladdnormallink{Homography}{https://en.wikipedia.org/wiki/Homography} can be used to ``change the perspective'' of an image (set of vectors). I have used homography for the satellite footprint in the computer simulations. For elevation angles smaller than $90^{\circ}$, you can conveniently map transmitters inside the elliptical footprint to a circle for which the radially symmetric antenna pattern function can be used. The following homography matrix $H$ transforms an \htmladdnormallink{ellipse}{https://en.wikipedia.org/wiki/Ellipse} of parameters $a$ and $b$ to a circle of radius $r$ so that the right-hand side focus point maps to the origin.
 $$
 H=
 \begin{pmatrix}
@@ -1787,7 +1822,7 @@ For \textbf{gamma distributed} $X$ with shape parameter $k$ and scale parameter 
   &\overset{(a)}{=} \lim_{x\rightarrow \infty} -\frac{\log (\Gamma(k,x/\theta))}{x} = \lim_{x\rightarrow \infty} -\frac{\log\left(x^{k-1}e^{-x/\theta}\right) }{x}\label{line:22} \nonumber \\
   &= \lim_{x\rightarrow \infty} -\frac{\log \left(e^{-x/\theta}\right)}{x} = 1/\theta. \tag{3}
 \end{align}
-In $(a)$, we used the asymptotic behavior of the gamma distribution
+In $(a)$, we used the asymptotic behaviour of the gamma distribution
 $$
 \lim_{x \rightarrow \infty}\frac{\Gamma(s,x)}{x^{s-1}e^{-x}} = 1.
 $$
@@ -1796,14 +1831,14 @@ For \textbf{normal distributed} $X$ with mean $\mu$ and variance $\sigma^2$:
 
 \begin{align}
   \rho_{\text{Normal}} &= \lim_{x\rightarrow \infty} -\frac{\log \mathbb{P}(X>x)}{x} = -\lim_{x\rightarrow \infty} \frac{\log \text{erfc}\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)}{x} \overset{(b)}{\geq} -\lim_{x\rightarrow \infty} \frac{\log\left( \sqrt{\frac{e}{2\pi}}e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} \nonumber \\
-  &\geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} = -\lim_{x\rightarrow \infty} \frac{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} }{x} = \frac{1}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x}  = \infty, \tag{4}
+  &\geq -\lim_{x\rightarrow \infty} \frac{\log\left( e^{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} \right)}{x} = -\lim_{x\rightarrow \infty} \frac{-2\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)^2} {x} = \frac{1}{\sigma^2 }\lim_{x\rightarrow \infty} \frac{x^2-2 x \mu + \mu^2}{ x}  = \infty, \tag{4}
 \end{align}
 where in $(b)$, we used the inequality $$\text{erfc}(x) \geq \sqrt{\frac{{2 e}}{\pi}} \frac{\sqrt{\beta-1}}{\beta} e^{-\beta x^2},$$ that holds for $x \geq 0$ and $\beta >1$ (we used $\beta = 2$).
 
 
 The asymptotic decay rates for the exponential, gamma, and normal distribution are given in $(2)$, $(3)$, and $(4)$, respectively. We see that the decay rate $\rho$ of the normal distribution is always maximal, \textit{i.e.}, $\rho_{\text{Normal}} = \infty$. In contrast, the decay rates of the exponential and gamma distributions depend on the scale parameter $\theta$.
 
-By normalizing the mean ($\mathbb{E}[X] = 1$) by setting $\theta = 1$ and $k=1/\theta$, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is $\rho_{\text{Exponential}} = 1$ and of the gamma distribution is $\rho_{\text{Gamma}} = k$. That is, keeping the mean normalized, the gamma distribution decays slower than the exponential distribution with shape parameters $k<1$, and faster than the exponential distribution with $k>1$. With $k=1$, the distributions coincide. When $k \rightarrow \infty$, the gamma distribution approaches the normal distribution and $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$.
+By normalising the mean ($\mathbb{E}[X] = 1$) by setting $\theta = 1$ and $k=1/\theta$, we can compare the decay rates of the exponential distribution and gamma distribution: then, the decay rate of the exponential distribution is $\rho_{\text{Exponential}} = 1$ and of the gamma distribution is $\rho_{\text{Gamma}} = k$. That is, keeping the mean normalised, the gamma distribution decays slower than the exponential distribution with shape parameters $k<1$, and faster than the exponential distribution with $k>1$. With $k=1$, the distributions coincide. When $k \rightarrow \infty$, the gamma distribution approaches the normal distribution and $\rho_{\text{Gamma}} \rightarrow \rho_{\text{Normal}} = \infty$.
 
 
 References:
@@ -1836,14 +1871,14 @@ Let us assume that $S_1$ and $S_2$ are two signals. We have that
 \begin{equation}
   \mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2 + S_2^2 + 2 S_1 S_2]= \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] + 2 \mathbb{E}[S_1 S_2]. \tag{3}
 \end{equation}
-Hencex, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated---this is not the case with our initial signals, as then the cross-correlation is given by
+Hence, the identity $\mathbb{E}[(S_1 + S_2)^2] = \mathbb{E}[S_1^2] + \mathbb{E}[S_2^2] $ holds \textit{if and only if} the \htmladdnormallink{cross-correlation}{https://en.wikipedia.org/wiki/Cross-correlation} $\mathbb{E}[S_1 S_2] = 0,$ \textit{i.e}., if the signals $S_1$ and $S_2$ are not correlated---this is not the case with our initial signals, as then the cross-correlation is given by
 
 $$
 \mathbb{E}[S_1S_2] = \int_0^1 \cos(2 \pi t) \cos(2 \pi t + \pi) dt =\int_0^1 -\cos^2(2 \pi t )dt = - \frac{1}{2}\int_0^1 \cos(4 \pi t)dt - \frac{1}{2} = - \frac{1}{2},
 $$
 as it should be if we tie together the equations (1), (2) and (3).
 
-We used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases $\phi_1,\phi_2 \in [0,2 \pi]$, let $S_1(t) = \cps(2 \pi t + \phi_1)$ and $S_2(t) = \cos(2 \pi t + \phi_2)$;
+We used deterministic signals, but the same remarks apply to random signals. For example, for uniformly random phases $\phi_1,\phi_2 \in [0,2 \pi]$, let $S_1(t) = \cos(2 \pi t + \phi_1)$ and $S_2(t) = \cos(2 \pi t + \phi_2)$;
 
 \begin{align*}
   &\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}[(S_1 + S_2)^2]\right] = \mathbb{E}_{\phi_1} \left[\mathbb{E}\left[ S_1^2\right]\right] + \mathbb{E}_{\phi_2} \left[\mathbb{E}\left[ S_2^2\right]\right] +\mathbb{E}_{\phi_1,\phi_2} \left[\mathbb{E}\left[ S_1S_2\right]\right] \\
@@ -1924,7 +1959,7 @@ References:
 %% \end{itemize}
 
 
-\subsection{A representation of the generalized hypergeometric function $_3F_2$}
+\subsection{A representation of the generalised hypergeometric function $_3F_2$}
 
 
 Here is a representation of the \htmladdnormallink{hypergeometric function}{https://en.wikipedia.org/wiki/Generalized_hypergeometric_function} $_3F_2(1,1,b;2,2;\cdot)$ in terms of the \htmladdnormallink{polylogarithm}{https://en.wikipedia.org/wiki/Polylogarithm}: For  $|x|<1$ and $b\in\mathbb{N}$, the \textit{hypergeometric series} representation is given by

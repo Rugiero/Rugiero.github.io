@@ -27,7 +27,7 @@
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html227"
+<A ID="tex2html228"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -40,7 +40,7 @@
  HREF="node8.html">Blog posts 2026</A>
 <B> Previous:</B> <A
  HREF="node8.html">Blog posts 2026</A>
- &nbsp; <B>  <A ID="tex2html228"
+ &nbsp; <B>  <A ID="tex2html229"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -51,13 +51,13 @@ January&mdash;Machine learning and stochastic geometry are a happy couple</A>
 </H2>
 
 <P>
-The clear trend is that <A ID="tex2html28"
+The clear trend is that <A ID="tex2html31"
   HREF="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</A>
-(AI) and <A ID="tex2html29"
+(AI) and <A ID="tex2html32"
   HREF="https://en.wikipedia.org/wiki/Machine_learning">machine learning</A>
-(ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html30"
+(ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html33"
   HREF="https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks">stochastic geometry</A>
-(SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The ongoing SG research remains valuable, beyond being an academic exercise. SG can and will be utilised in modern ML by providing models and, further, <SPAN  CLASS="textbf">hypothesis classes</SPAN> of models for ML algorithms. In this post, I will introduce some of the most recent advancements in SG modelling of satellite communication systems and provide a concrete example of its application in ML.
+(SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The ongoing SG research remains valuable, beyond being an academic exercise. SG can and will be utilised in modern ML by providing models and, further, <SPAN  CLASS="textbf">hypothesis classes</SPAN> of models for ML algorithms. In this post, we will introduce some of the most recent advancements in SG modelling of satellite communication systems and provide a concrete example of its application in ML.
 
 <P>
 <BLOCKQUOTE>
@@ -71,9 +71,9 @@ The clear trend is that <A ID="tex2html28"
 
 <P>
 
-<DIV class="CENTER"><A ID="95"></A>
+<DIV class="CENTER"><A ID="94"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 2:</STRONG>
 Image generated with the help of DALL-E, an AI by OpenAI.</CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="621" STYLE=""
@@ -83,30 +83,31 @@ Image generated with the help of DALL-E, an AI by OpenAI.</CAPTION>
 </DIV>
 
 <P>
-Let me formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modelling.
-                 
+Let us formulate the working definitions of the ML and SG. We focus on the signal processing of wireless networks, particularly interference modelling.
+        
 <UL>
-<LI>SG encompasses <SPAN  CLASS="textbf">stochastic models</SPAN> of wireless networks, from which many statistical properties, such as signal power distributions, can be inquired. The expressions are usually presented in mathematical forms; at best, tractable and closed-form formulas are available. 
+<LI>
+          SG encompasses <SPAN  CLASS="textbf">stochastic models</SPAN> of wireless networks, allowing the investigation of many statistical properties, such as interference power distribution and coverage. These expressions are usually presented in <SPAN  CLASS="textbf">mathematical form</SPAN>; tractable, closed-form formulas are the most insightful and useful. 
 </LI>
 <LI>ML encompasses learning algorithms that ultimately utilise empirical <SPAN  CLASS="textbf">raw data</SPAN>, and they are powerful tools for signal interpolation and prediction. The results are usually numerical.
-                 
+        
 </LI>
 </UL>
 
 <P>
-The landscape of ML algorithms is vast; however, they are often based on <A ID="tex2html31"
+The landscape of ML algorithms is vast; however, they are often based on <A ID="tex2html34"
   HREF="https://en.wikipedia.org/wiki/Kriging">Gaussian process regression</A>
-(GPR). GPR is a signal prediction method that relies on estimating the signal from a set of samples (or observations) and a <A ID="tex2html32"
+(GPR). GPR is a signal prediction method that relies on estimating the signal from a set of samples (or observations) and a <A ID="tex2html35"
   HREF="https://en.wikipedia.org/wiki/Correlation">correlation</A>
-function. More specifically, an <A ID="tex2html33"
+function. More specifically, an <A ID="tex2html36"
   HREF="https://en.wikipedia.org/wiki/Autocorrelation">autocovariance</A>
-function (also referred to as a kernel) is at the heart of GPR. The autocovariance function can be arbitrary, and it should be carefully chosen to get meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html34"
+function (also referred to as a kernel) is at the heart of GPR. The autocovariance function can be arbitrary, and it should be carefully chosen to get meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html37"
   HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight and have a concomitant dependence on local, empirical data and circumstances. How to interpret such data if we don't have understand what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides ML models that guide us effectively in inferring patterns from empirical data.
 
 <P>
-We will demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html35"
+We will demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html38"
   HREF="https://en.wikipedia.org/wiki/Low_Earth_orbit">low Earth orbit</A>
-(LEO) satellite receiver. The estimation is based on the GPR and a theoretical SG model of the interference power distribution and its autocovariance function. The results are compared with a <A ID="tex2html36"
+(LEO) satellite receiver. The estimation is based on the GPR and a theoretical SG model of the interference power distribution and its autocovariance function. The results are compared with a <A ID="tex2html39"
   HREF="https://en.wikipedia.org/wiki/Moving_average">moving average</A>
 (MA). 
 
@@ -129,14 +130,14 @@ The theoretical settings are
  STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img4.svg"
  ALT="$p_t=1$"></SPAN>. 
 </LI>
-<LI>The LEO satellite has an antenna pattern with half <SPAN CLASS="MATH"><IMG
+<LI>The LEO satellite has a <SPAN  CLASS="textit">narrow</SPAN> antenna pattern with a half-power (<SPAN CLASS="MATH"><IMG
  STYLE="height: 1.92ex; vertical-align: -0.31ex; " SRC="img5.svg"
- ALT="$-3$"></SPAN> dB beamwidth <!-- MATH
+ ALT="$-3$"></SPAN> dB) beamwidth <!-- MATH
  $\varphi_{\text{RX}}=1.6^{\circ}=0.027925$
  -->
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.28ex; vertical-align: -0.57ex; " SRC="img6.svg"
- ALT="$\varphi_{\text{RX}}=1.6^{\circ}=0.027925$"></SPAN> rad steered towards the Earth center. This means the beam center elevation angle w.r.t. the satellite is <!-- MATH
+ ALT="$\varphi_{\text{RX}}=1.6^{\circ}=0.027925$"></SPAN> rad, steered toward the Earth's center. This means the beam center elevation angle w.r.t the satellite is <!-- MATH
  $\epsilon = 90^{\circ}=\pi/2$
  -->
 <SPAN CLASS="MATH"><IMG
@@ -152,16 +153,16 @@ The theoretical settings are
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img9.svg"
  ALT="$\left\vert\vec{v}_{\text{sat}}\right\vert=v_{\text{sat}}=7.4$"></SPAN> km/s.
 </LI>
-<LI>While feasible, for simplicity, we do not model fast <A ID="tex2html20"
-  HREF="https://en.wikipedia.org/wiki/Fading">fading</A>, shadowing, cloud attenuation, or similar. 
+<LI>We model Rician fast <A ID="tex2html20"
+  HREF="https://en.wikipedia.org/wiki/Fading">fading</A>. No shadowing, cloud attenuation, or similar are modelled. 
 
 
                  
 </LI>
 </OL>
-                 As the satellite moves, the magnitude of the aggregate interference from the randomly distributed interferers varies. A rigorous analysis of the interference statistics is presented in my thesis <A ID="tex2html37"
+                 As the satellite moves, the magnitude of the aggregate interference from the randomly distributed interferers varies. A rigorous analysis of the interference statistics is presented in my thesis <A ID="tex2html40"
   HREF="dissertation.pdf">[2]</A>
-and in article <A ID="tex2html38"
+and in article <A ID="tex2html41"
   HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, where the results are validated against a realistic Monte Carlo simulation model.
 
 <P>
@@ -169,9 +170,9 @@ The key insights acquired from the SG analysis are as follows.
 
 <P>
 
-<DIV class="CENTER"><A ID="132"></A>
+<DIV class="CENTER"><A ID="133"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 3:</STRONG>
 A sketch of the system model.</CAPTION>
 <TR><TD><IMG
   WIDTH="621" HEIGHT="479" STYLE=""
@@ -209,55 +210,49 @@ where <SPAN CLASS="MATH"><IMG
                  
 </DD>
 <DT>6.</DT>
-<DD>The normalised interference power is approximately <A ID="tex2html23"
-  HREF="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distributed</A>
-with the mean <!-- MATH
- $\mathbb{E}(P)=\mathbb{E}(I^2)=\text{var}(I)=1$
+<DD>The autocovariance
+                   <!-- MATH
+ $K_P(\tau) \triangleq \mathbb{E}\left[(P(t)-\mathbb{E}(P(t)))(P(\tau-t)-\mathbb{E}(P(\tau-t)))\right]$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img14.svg"
- ALT="$\mathbb{E}(P)=\mathbb{E}(I^2)=$">var<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
- ALT="$(I)=1$"></SPAN> and the variance <!-- MATH
- $\text{var}(P)=1/2$
- -->
-<SPAN CLASS="MATH">var<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img16.svg"
- ALT="$(P)=1/2$"></SPAN> (see <A ID="tex2html24"
-  HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eqs. (18), (19) and (29)).
-                 
-</DD>
-<DT>7.</DT>
-<DD>The autocovariance of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
- ALT="$P(t)$"></SPAN> at lag <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img18.svg"
- ALT="$\tau$"></SPAN> has the <A ID="tex2html25"
+ STYLE="height: 2.93ex; vertical-align: -0.70ex; " SRC="img14.svg"
+ ALT="$K_P(\tau) \triangleq \mathbb{E}\left[(P(t)-\mathbb{E}(P(t)))(P(\tau-t)-\mathbb{E}(P(\tau-t)))\right]$"></SPAN>
+                   of <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img15.svg"
+ ALT="$P$"></SPAN> at lag <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img16.svg"
+ ALT="$\tau$"></SPAN> has the <A ID="tex2html23"
   HREF="https://en.wikipedia.org/wiki/Radial_basis_function_kernel">Gaussian form</A>
 <P></P>
 <DIV CLASS="displaymath"><TABLE CLASS="equation" >
 <TR >
 <TD class="lfill"></TD>
 <TD class="RIGHT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
  ALT="$\displaystyle K_{P}(\tau)$"></SPAN></TD>
 <TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 3.04ex; vertical-align: -0.93ex; " SRC="img20.svg"
- ALT="$\displaystyle =k \exp\left\{-D\tau^2 \log(2)/2\right\}$"></SPAN></TD>
-<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
+ STYLE="height: 13.29ex; vertical-align: -6.37ex; " SRC="img18.svg"
+ ALT="$\displaystyle = \frac{1}{2} \underbrace{\frac{\pi \lambda p_t^2}{\log(2)} \left...
+... h^2 \varphi_{\text{RX}}^2}}_{D\triangleq } \log(2)\right\} + K_H(\tau) \right)$"></SPAN></TD>
+<TD  class="rfill">(2)</TD></TR>
 <TR >
 <TD class="lfill"></TD>
 <TD>&nbsp;</TD>
 <TD class="LEFT"><SPAN CLASS="MATH"><IMG
- STYLE="height: 11.90ex; vertical-align: -6.37ex; " SRC="img21.svg"
- ALT="$\displaystyle = \underbrace{\frac{p_t^2}{2\log(2)} \pi \lambda\left(\frac{h \va...
-...\sin^4(\epsilon)/(h^2 \varphi_{\text{RX}}^2)}_{D\triangleq } \log(2)/2\right\},$"></SPAN></TD>
-<TD  class="rfill">(2)</TD></TR>
+ STYLE="height: 4.99ex; vertical-align: -1.71ex; " SRC="img19.svg"
+ ALT="$\displaystyle =\frac{k}{2} \left(E(H)^2\exp\left\{-D\tau^2 \log(2)/2\right\} + \text{var}(H) \text{triang}(\tau/\tau_c) \right),$"></SPAN></TD>
+<TD  class="rfill">&nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <P></P>
 where <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.13ex; vertical-align: -0.43ex; " SRC="img20.svg"
+ ALT="$H \geq 0$"></SPAN> is an i.i.d. deterministic or random fading gain of the typical transmitter. The Gaussian left-hand-side term corresponds to satellite movement and antenna attenuation of the interferers, and the right-hand-side term corresponds to the fading component. The autocovariance function is modelled using a triangular function with coherence time <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img21.svg"
+ ALT="$\tau_c$"></SPAN> (samples separated by a time interval greater than <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img21.svg"
+ ALT="$\tau_c$"></SPAN> are uncorrelated). The parameters <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img22.svg"
- ALT="$k,D&gt;0$"></SPAN> are constant parameters that depend on <!-- MATH
+ ALT="$k,D&gt;0$"></SPAN> are constants that depend on <!-- MATH
  $\varphi_{\text{RX}}$
  -->
 <SPAN CLASS="MATH"><IMG
@@ -273,13 +268,11 @@ where <SPAN CLASS="MATH"><IMG
  -->
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img27.svg"
- ALT="$v_{\text{sat}}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ ALT="$v_{\text{sat}}$"></SPAN>, and <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img28.svg"
- ALT="$\lambda$"></SPAN> (see <A ID="tex2html26"
-  HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eq. (21)).
-
-<P>
-For our system model settings 1-4, <!-- MATH
+ ALT="$\lambda$"></SPAN> (analogous derivation for the amplitude in <A ID="tex2html24"
+  HREF="dissertation.pdf">[2]</A>, Section 4.2, and for the Pearson correlation coefficient <A ID="tex2html25"
+  HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eq. (21)).  For our system model settings 1-4, <!-- MATH
  $k\approx 0.5$
  -->
 <SPAN CLASS="MATH"><IMG
@@ -289,56 +282,112 @@ For our system model settings 1-4, <!-- MATH
  -->
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img30.svg"
- ALT="$D\approx 1.7555$"></SPAN>. 
+ ALT="$D\approx 1.7555$"></SPAN>.
+
+<P>
+If left unfixed, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img31.svg"
+ ALT="$k$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img32.svg"
+ ALT="$D$"></SPAN>, <!-- MATH
+ $\mathbb{E}(P)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img33.svg"
+ ALT="$\mathbb{E}(P)$"></SPAN>, <!-- MATH
+ $\mathbb{E}(H)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ ALT="$\mathbb{E}(H)$"></SPAN>, <!-- MATH
+ $\text{var}(H)$
+ -->
+<SPAN CLASS="MATH">var<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
+ ALT="$(H)$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img21.svg"
+ ALT="$\tau_c$"></SPAN> are <A ID="tex2html26"
+  HREF="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameters</A>
+learned from the data in the machine learning process. Generally, they can be dependent on time; however, we treat them as constants. In the correlation model, too large or too small <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img32.svg"
+ ALT="$D$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img36.svg"
+ ALT="$1/\tau_c$"></SPAN> yields <A ID="tex2html27"
+  HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
+and underfitting, respectively. 
                  
+
+<P>
+</DD>
+<DT>7.</DT>
+<DD>The normalised interference power is approximately <A ID="tex2html28"
+  HREF="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distributed</A>
+with the mean
+                   <P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\mathbb{E}(P)=\mathbb{E}(I^2)=\text{var}(I)= k \mathbb{E}(H)
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img37.svg"
+ ALT="$\displaystyle \mathbb{E}(P)=\mathbb{E}(I^2)=$">var<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ ALT="$\displaystyle (I)= k \mathbb{E}(H)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+and the variance
+                   <P></P>
+<DIV CLASS="displaymath"><!-- MATH
+ \begin{equation}
+\text{var}(P)=k\mathbb{E}(H^2)/2.
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH">var<IMG
+ STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img39.svg"
+ ALT="$\displaystyle (P)=k\mathbb{E}(H^2)/2.$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+                   (See <A ID="tex2html29"
+  HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eqs. (18), (19) and (29)).
+
+<P>
 </DD>
 </DL>
 
 <P>
-If left unfixed, <!-- MATH
- $k=\text{var}(P)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img31.svg"
- ALT="$k=$">var<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img32.svg"
- ALT="$(P)$"></SPAN>, <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
- ALT="$D$"></SPAN>, and <!-- MATH
- $\mathbb{E}(P)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
- ALT="$\mathbb{E}(P)$"></SPAN> are <A ID="tex2html39"
-  HREF="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameters</A>
-learned from the data in the machine learning process. Then the gamma distribution model 6, combined with the correlation model 7, forms the hypothesis class within which we search for the power of <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img35.svg"
- ALT="$I$"></SPAN>. In the correlation model, too large or too small <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img33.svg"
- ALT="$D$"></SPAN> yields <A ID="tex2html40"
-  HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
-and underfitting, respectively. 
+The correlation model 6, combined with the gamma distribution model 7, defines the hypothesis class in which we search for the power <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img15.svg"
+ ALT="$P$"></SPAN>. This process is computationally highly efficient and will serve as a prior model for training the ML algorithm.
 
 <P>
 
-<DIV class="CENTER"><A ID="174"></A>
+<DIV class="CENTER"><A ID="193"></A>
 <TABLE>
-<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+<CAPTION class="BOTTOM"><STRONG>Figure 4:</STRONG>
 Signal power estimated from scarce signal samples.</CAPTION>
 <TR><TD><IMG
- STYLE="height: 48.13ex; vertical-align: -0.12ex; " SRC="img36.svg"
+ STYLE="height: 48.13ex; vertical-align: -0.12ex; " SRC="img40.svg"
  ALT="\includegraphics[width=\linewidth]{GPRvsMA.pdf}"></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
 In Figures 1 (a) and (b), we estimate <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
  ALT="$P(t)$"></SPAN> from a sampled (<SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img37.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img42.svg"
  ALT="$0.1$"></SPAN> kHz) realisation of the interference waveform <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
- ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html41"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img43.svg"
+ ALT="$I(t)$"></SPAN> by using GPR and non-<A ID="tex2html42"
   HREF="https://en.wikipedia.org/wiki/Causal_filter">causal</A>
 MA. The &ldquo;true&rdquo; signal is generated following the distribution properties 5-7 (i.e., is not generated by simulating the PPP). Furthermore, for simplicity, in the ML algorithm, the parameters are fixed at the values <!-- MATH
  $k\approx 0.5$
@@ -354,41 +403,41 @@ MA. The &ldquo;true&rdquo; signal is generated following the distribution proper
  $\mathbb{E}(P)=1$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img39.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img44.svg"
  ALT="$\mathbb{E}(P)=1$"></SPAN>, and are not treated as hyperparameters. We use the samples from <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img40.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img45.svg"
  ALT="$\vert I(t)\vert^2$"></SPAN> to estimate the interference power <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
  ALT="$P(t)$"></SPAN>. Each sample <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img41.svg"
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img46.svg"
  ALT="$z_i$"></SPAN> is interpreted as a noisy measurement of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
  ALT="$P(t)$"></SPAN>: <!-- MATH
  $z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img42.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img47.svg"
  ALT="$z_i= P(t_i) + \mathcal{N}(0,\sigma^2)$"></SPAN>, where <!-- MATH
  $\sigma^2=3$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img43.svg"
+ STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img48.svg"
  ALT="$\sigma^2=3$"></SPAN> is set to the expected variance of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img40.svg"
+ STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img45.svg"
  ALT="$\vert I(t)\vert^2$"></SPAN>. The MA window size is empirically optimised, and apart from the slight overfitting, the MA captures <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
  ALT="$P(t)$"></SPAN> reasonably well. The GPR prediction clearly captures the smoothness of <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
  ALT="$P(t)$"></SPAN> better. It captures <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img41.svg"
  ALT="$P(t)$"></SPAN> from <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img44.svg"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img49.svg"
  ALT="$t=0$"></SPAN> onward, which is impossible for the non-causal, centralised MA, which starts at <!-- MATH
  $t\approx 0.5$
  -->
 <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img45.svg"
- ALT="$t\approx 0.5$"></SPAN> s. The <A ID="tex2html42"
+ STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img50.svg"
+ ALT="$t\approx 0.5$"></SPAN> s. The <A ID="tex2html43"
   HREF="https://en.wikipedia.org/wiki/Predictive_analytics">forecast</A>
 region in the figure corresponds to a causal estimation of the future signal based on the past values. Both predictions improve as the sampling frequency is increased.
 
@@ -422,7 +471,7 @@ k_shape = 2.0
 theta_scale = 0.5
 mean_P = 1.0
 
-# === 1. Construct latent Gaussian process for P(t) with covariance C(τ) = k * exp(-D τ^2 log(2) / 2) ===
+# === 1. Construct latent Gaussian process for P(t) with covariance C(tau) = k * exp(-D tau^2 log(2) / 2) ===
 tau_full = t[:, None] - t[None, :]
 k_emp = 0.5
 D_emp = 1.7555
@@ -465,7 +514,7 @@ t_ma_forecast = np.arange(t_ma[-1], T_total + 1e-9, sample_interval)  # 0.1 kHz 
 power_ma_forecast = np.full_like(t_ma_forecast, power_ma[-1])
 
 # Approximate noise variance for |I|^2
-# Var(|I|^2 | P=p) = 2 p^2, E[P^2]=1.5 =&gt; average Var ≈ 3
+# Var(|I|^2 | P=p) = 2 p^2, E[P^2]=1.5 =&gt; average Var \approx 3
 noise_var = 3.0
 
 # Variance of 300-sample MA under iid noise with var=noise_var
@@ -474,7 +523,7 @@ ma_std = np.sqrt(ma_var)
 
 # === 5. GPR prediction of P(t) on from noisy power samples ===
 # GP prior: P ~ GP(mean=mean_P, cov(t,s) = 0.5*exp(-3(t-s)^2))
-# Observations: z_i = |I(t_i)|^2 ≈ P(t_i) + N(0, noise_var)
+# Observations: z_i = |I(t_i)|^2 \approx P(t_i) + N(0, noise_var)
 
 # training times (sampled up to T_obs)
 t_train = t_sampled
@@ -512,7 +561,7 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 # True P(t) 
 ax1.plot(t, P, label='True signal power P(t)', color='C0', alpha=0.7)
 
-# GPR mean and ±2σ 
+# GPR mean and ±2 \sigma 
 ax1.plot(t, P_gp_mean, label='GPR prediction of P(t)', color='C1', linewidth=2)
 # 90 percent confidence interval
 ax1.fill_between(t, P_gp_mean - 1.645*P_gp_std, P_gp_mean + 1.645*P_gp_std,
@@ -535,7 +584,7 @@ ax1.grid(True)
 ax1.legend(fontsize=12)
 
 # ---------- Subplot (b): I(t) and samples ----------
-ax2.plot(t, I, label='I(t) = X(t)√P(t)', color='tab:orange')
+ax2.plot(t, I, label='I(t) = X(t)\sqrt{P(t)}', color='tab:orange')
 ax2.plot(t_sampled, I_sampled, 'ko', label='Samples of I(t) (0–7 s, 0.1 kHz)', markersize=1)
 ax2.axvline(T_obs, color='k', linestyle=':', alpha=0.5)
 ax2.set_xlabel('t [s]')
@@ -551,14 +600,14 @@ plt.show()
 <P>
 References:
 <table width="90%"><tr><td align="right" valign="top">[1]</td><td valign="top">&nbsp;Y. Hmamouche, M. Benjillali, S. Saoudi, H. Yanikomeroglu and M. D. Renzo, "New Trends in Stochastic Geometry for Wireless Networks: A Tutorial and Survey," in Proceedings of the IEEE, vol. 109, no. 7, pp. 1200-1252, July 2021, doi: 10.1109/JPROC.2021.3061778 </td></tr>
-<tr><td align="right" valign="top">[2]</td><td valign="top">&nbsp;<A ID="tex2html43"
+<tr><td align="right" valign="top">[2]</td><td valign="top">&nbsp;<A ID="tex2html44"
   HREF="dissertation.pdf">Ilari Angervuori, Narrow-Beam Low Earth Orbit Communications and Stochastic Geometry: Non-Temporal and Temporal Interference Analysis, Thesis Draft; Aalto University</A></td></tr>
-<tr><td align="right" valign="top">[3]</td><td valign="top">&nbsp;<A ID="tex2html44"
+<tr><td align="right" valign="top">[3]</td><td valign="top">&nbsp;<A ID="tex2html45"
   HREF="https://aaltodoc.aalto.fi/server/api/core/bitstreams/c9162271-264d-46f8-8796-efb4f8a4724e/content">Maiju Oksanen, Stokastinen geometria langattoman
 
 tietoliikenteen analyysissä, opinnäytetyö; Aalto-yliopisto.</A>
 </td></tr>
-<tr><td align="right" valign="top">[4]</td><td valign="top">&nbsp;<A ID="tex2html45"
+<tr><td align="right" valign="top">[4]</td><td valign="top">&nbsp;<A ID="tex2html46"
   HREF="https://arxiv.org/abs/2607.11602">I. Angervuori, A. Afridi, R. Wichman, Spatial and Temporal Correlation of Interference in a Narrow Multibeam LEO Satellite Random Access Network, arXiv:2607.11602</A>
 <P>
 </td></tr></table>
@@ -576,7 +625,7 @@ tietoliikenteen analyysissä, opinnäytetyö; Aalto-yliopisto.</A>
 <A
  HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html227"
+<A ID="tex2html228"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  <A ID="tex2html1"
   HREF="cv.pdf"><IMG
@@ -589,7 +638,7 @@ tietoliikenteen analyysissä, opinnäytetyö; Aalto-yliopisto.</A>
  HREF="node8.html">Blog posts 2026</A>
 <B> Previous:</B> <A
  HREF="node8.html">Blog posts 2026</A>
- &nbsp; <B>  <A ID="tex2html228"
+ &nbsp; <B>  <A ID="tex2html229"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 
