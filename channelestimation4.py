@@ -3,12 +3,16 @@ from dataclasses import dataclass
 
 import numpy as np
 import torch
+import pickle
 import matplotlib.pyplot as plt
+
 
 from scipy.special import ndtr
 from scipy.stats import gamma as scipy_gamma
 
 from sbi.inference import NPE_C
+from sbi.inference import NRE_C
+from sbi.inference import NLE_A
 from sbi.utils import BoxUniform
 
 from pytictoc import TicToc
@@ -231,7 +235,9 @@ def train_sbi(
 
     x_sims = torch.stack(x_sims)
 
-    inference = NPE_C(prior=prior)
+    inference = NPE_C(prior=prior, density_estimator="nsf")
+    # inference = NLE_A(prior=prior, density_estimator="nsf")
+    # inference = NRE_C(prior=prior)
     density_estimator = inference.append_simulations(theta_sims, x_sims).train()
     posterior = inference.build_posterior(density_estimator)
 
@@ -342,31 +348,36 @@ def demo():
         H_m1=1.0,
         D=0.3,
         k=1.0,
-        T=2**15, # T is a power of 2 for fast FFT
+        T=2**16, # T is a power of 2 for fast FFT
         dt=0.05,
         device="cpu",
     )
-    maxlaginsec = 10.0
+    maxlaginsec = 7.0
     # Prior on [var_H, tau_c]
-    prior_low = torch.tensor([0.0, 0.1], dtype=torch.float32)
-    prior_high = torch.tensor([1.0, 10.0], dtype=torch.float32)
+    prior_low = torch.tensor([0.0, 1.0], dtype=torch.float32)
+    prior_high = torch.tensor([1.0, 6.0], dtype=torch.float32)
 
     timer.tic()
-    num_simulations = 50000
-    # Train posterior
-    posterior, inference, prior = train_sbi(
-        cfg=cfg,
-        prior_low=prior_low,
-        prior_high=prior_high,
-        num_simulations=num_simulations,
-        summary_lags=int(maxlaginsec / cfg.dt) + 1,
-    )
-    timer.toc()
-    #    np.load('posterior.npz')
-    np.savez('posterior.npz', posterior=posterior, inference=inference, prior=prior)
+    num_simulations = 100000
+    #    Train posterior
+    # posterior, inference, prior = train_sbi(
+    #     cfg=cfg,
+    #     prior_low=prior_low,
+    #     prior_high=prior_high,
+    #     num_simulations=num_simulations,
+    #     summary_lags=int(maxlaginsec / cfg.dt) + 1,
+    # )
+    # timer.toc()
 
+
+    # with open("my_posterior100000.pkl", "wb") as handle: # Save the training
+    #     pickle.dump(posterior, handle)
+
+    with open("my_posterior100000.pkl", "rb") as handle: # Load an existing training
+        posterior = pickle.load(handle)
+    
     # One synthetic observed dataset
-    theta_true1 = torch.tensor([0.04, 6.0], dtype=torch.float32)
+    theta_true1 = torch.tensor([0.04, 3.0], dtype=torch.float32)
     I_obs1, P_obs1 = simulate_I(theta_true1, cfg)
 
     I21 = I_obs1**2
@@ -405,44 +416,64 @@ def demo():
         summary_lags=int(maxlaginsec / cfg.dt) + 1,
         num_posterior_samples=num_simulations,
     )
-    
-    print("True theta 1       :", theta_true1)
-    print("Posterior mean 1   :", result1["mean"])
-    print("Posterior median 1 :", result1["median"])
-    print("Posterior std 1    :", result1["std"])
-
-    print("True theta 2       :", theta_true2)
-    print("Posterior mean 2   :", result2["mean"])
-    print("Posterior median 2 :", result2["median"])
-    print("Posterior std 2    :", result2["std"])
 
     # Posterior histograms
     samples1 = result1["samples"].detach().cpu().numpy()
     samples2 = result2["samples"].detach().cpu().numpy()
 
+    print("True theta        :", theta_true1)
+    print("Posterior mean    :", result1["mean"])
+    print("Posterior median  :", result1["median"])
+    print("Posterior std     :", result1["std"])
+
+    print("True theta        :", theta_true2)
+    print("Posterior mean    :", result2["mean"])
+    print("Posterior median  :", result2["median"])
+    print("Posterior std     :", result2["std"])
+
+
+    plt.rcParams.update({'font.size': 15})
     fig, axs = plt.subplots(1, 2, figsize=(10, 4))
 
     axs[0].hist(samples1[:, 0], bins=40, density=True)
-    axs[0].axvline(theta_true1[0].item(), color="r", linestyle="--")
-    axs[0].set_xlabel("var_H")
+    axs[0].axvline(theta_true1[0].item(), color="r", linestyle="-")
+    axs[0].axvline(result1["mean"][0], color="r", linestyle="--")
+    axs[0].axvline(result1["median"][0], color="r", linestyle="-.")
+    axs[0].set_xlabel("var(H)")
+    axs[0].set_xlim(prior_low[0].item(), prior_high[0].item())
+    axs[0].set_title("Fading variance estimate")
+    axs[0].legend(['Actual', 'Posterior mean', 'Posterior median'])
 
     axs[1].hist(samples1[:, 1], bins=40, density=True)
-    axs[1].axvline(theta_true1[1].item(), color="r", linestyle="--")
+    axs[1].axvline(theta_true1[1].item(), color="r", linestyle="-")
+    axs[1].axvline(result1["mean"][1], color="r", linestyle="--")
+    axs[1].axvline(result1["median"][1], color="r", linestyle="-.")
     axs[1].set_xlabel("tau_c")
+    axs[1].set_xlim(prior_low[1].item(), prior_high[1].item())
+    axs[1].set_title("Coherence time estimate")
+    
 
     plt.tight_layout()
     plt.show()
     
-    samples1 = result2["samples"].detach().cpu().numpy()
     fig, axs = plt.subplots(1, 2, figsize=(10, 4))
 
     axs[0].hist(samples2[:, 0], bins=40, density=True)
-    axs[0].axvline(theta_true2[0].item(), color="r", linestyle="--")
-    axs[0].set_xlabel("var_H")
+    axs[0].axvline(theta_true2[0].item(), color="r", linestyle="-")
+    axs[0].axvline(result2["mean"][0], color="r", linestyle="--")
+    axs[0].axvline(result2["median"][0], color="r", linestyle="-.")
+    axs[0].set_xlabel("var(H)")
+    axs[0].set_xlim(prior_low[0].item(), prior_high[0].item())
+    axs[0].set_title("Fading variance estimate")
+    axs[0].legend(['Actual', 'Posterior mean', 'Posterior median'])
 
     axs[1].hist(samples2[:, 1], bins=40, density=True)
-    axs[1].axvline(theta_true2[1].item(), color="r", linestyle="--")
+    axs[1].axvline(theta_true2[1].item(), color="r", linestyle="-")
+    axs[1].axvline(result2["mean"][1], color="r", linestyle="--")
+    axs[1].axvline(result2["median"][1], color="r", linestyle="-.")    
     axs[1].set_xlabel("tau_c")
+    axs[1].set_xlim(prior_low[1].item(), prior_high[1].item())
+    axs[1].set_title("Coherence time estimate")
 
     plt.tight_layout()
     plt.show()
@@ -452,27 +483,25 @@ def demo():
     plt.figure(figsize=(10, 3))
     plt.plot(t, I_obs1.detach().cpu().numpy())
     plt.plot(t, P_obs1.detach().cpu().numpy())
-    plt.legend(['I(t)', 'P(t)'])
+    plt.legend(['Observed signal: I(t)', 'Modulating power: P(t)'])
     plt.xlabel("t")
     plt.ylabel("Non-dimensional")
-    plt.title("Observed signal amplitude and the modulating power: Rice-50 fading with coherence time 6 s")
-    plt.xlim(0, 100)  # Set x-axis limits
-    plt.ylim(-10, 10)  # Set y-axis limit
+    plt.xlim(0, 48)  # Set x-axis limits
+    plt.ylim(-6, 6)  # Set y-axis limit
     plt.grid(color='black', linestyle='-', linewidth=0.5)
     plt.tight_layout()
     plt.show()
 
-        # Plot observed signal
+    # Plot observed # signal
     t = np.arange(cfg.T) * cfg.dt
     plt.figure(figsize=(10, 3))
     plt.plot(t, I_obs2.detach().cpu().numpy())
     plt.plot(t, P_obs2.detach().cpu().numpy())
-    plt.legend(['I(t)', 'P(t)'])
+    plt.legend(['Observed signal: I(t)', 'Modulating power: P(t)'])
     plt.xlabel("t")
     plt.ylabel("Non-dimensional")
-    plt.title("Observed signal amplitude and the modulating power: Rice-1 fading with coherence time 3 s")
-    plt.xlim(0, 100)  # Set x-axis limits
-    plt.ylim(-10, 10)  # Set y-axis limit
+    plt.xlim(0, 48)  # Set x-axis limits
+    plt.ylim(-6, 6)  # Set y-axis limit
     plt.grid(color='black', linestyle='-', linewidth=0.5)
     plt.tight_layout()
     plt.show()
