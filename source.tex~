@@ -259,7 +259,7 @@
                    
                  \item[7.]{The normalised interference power is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean
                    $$
-                   \mathbb{E}(P)=\mathbb{E}(I^2)=\text{var}(I)= k \mathbb{E}(H)
+                   \mathbb{E}(P)=\mathbb{E}(I^2)=\text{var}(I)= k \mathbb{E}(H),
                    $$
                    and the variance
                    $$
