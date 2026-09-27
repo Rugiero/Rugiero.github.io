@@ -51,11 +51,11 @@ January&mdash;Machine learning and stochastic geometry are a happy couple: LEO c
 </H2>
 
 <P>
-The clear trend is that <A ID="tex2html32"
+The clear trend is that <A ID="tex2html30"
   HREF="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</A>
-(AI) and <A ID="tex2html33"
+(AI) and <A ID="tex2html31"
   HREF="https://en.wikipedia.org/wiki/Machine_learning">machine learning</A>
-(ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html34"
+(ML) are current hot topics, particularly in wireless networks and signal processing. Another active research topic is <A ID="tex2html32"
   HREF="https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks">stochastic geometry</A>
 (SG). In this regard, some perceive SG and ML as competitors, suggesting ML has surpassed SG in practical impact. However, this comparison is a poor perspective and not the only way to look at it. The ongoing SG research remains valuable, beyond being an academic exercise. SG can and will be utilised in modern ML by providing models and, further, <SPAN  CLASS="textbf">hypothesis classes</SPAN> of models for ML algorithms. In this post, we will introduce some of the most recent advancements in SG modelling of satellite communication systems and provide a concrete example of its application in ML.
 
@@ -95,19 +95,19 @@ Let us formulate the working definitions of the ML and SG. We focus on the signa
 </UL>
 
 <P>
-The landscape of ML algorithms is vast; however, they are often based on <A ID="tex2html35"
+The landscape of ML algorithms is vast; however, they are often based on <A ID="tex2html33"
   HREF="https://en.wikipedia.org/wiki/Kriging">Gaussian process regression</A>
-(GPR). GPR is a signal prediction method that relies on estimating the signal from a set of samples (or observations) and a <A ID="tex2html36"
+(GPR). GPR is a signal prediction method that relies on estimating the signal from a set of samples (or observations) and a <A ID="tex2html34"
   HREF="https://en.wikipedia.org/wiki/Correlation">correlation</A>
-function. More specifically, an <A ID="tex2html37"
+function. More specifically, an <A ID="tex2html35"
   HREF="https://en.wikipedia.org/wiki/Autocorrelation">autocovariance</A>
-function (also referred to as a kernel) is at the heart of GPR. The autocovariance function can be arbitrary, and it should be carefully chosen to get meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html38"
+function (also referred to as a kernel) is at the heart of GPR. The autocovariance function can be arbitrary, and it should be carefully chosen to get meaningful results. One way is to numerically estimate the autocovariance from <A ID="tex2html36"
   HREF="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training data</A>. Whether the training data is empirical data from an actual system or generated synthetically using simulation tools, numerical statistical estimates lack generality and physical insight and have a concomitant dependence on local, empirical data and circumstances. How to interpret such data if we don't have understand what qualities we are looking for? It is time for the SG to step into the arena: A comprehensive, tractable, and solid wireless network SG system model provides ML models that guide us effectively in inferring patterns from empirical data.
 
 <P>
-We will demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html39"
+We will demonstrate an example of estimating the power of a non-stationary Gaussian interference signal at a <A ID="tex2html37"
   HREF="https://en.wikipedia.org/wiki/Low_Earth_orbit">low Earth orbit</A>
-(LEO) satellite receiver. The estimation is based on the GPR and a theoretical SG model of the interference power distribution and its autocovariance function. The results are compared with a <A ID="tex2html40"
+(LEO) satellite receiver. The estimation is based on the GPR and a theoretical SG model of the interference power distribution and its autocovariance function. The results are compared with a <A ID="tex2html38"
   HREF="https://en.wikipedia.org/wiki/Moving_average">moving average</A>
 (MA). 
 
@@ -162,9 +162,9 @@ with the Rician parameter <SPAN CLASS="MATH"><IMG
                  
 </LI>
 </OL>
-                 As the satellite moves, the magnitude of the aggregate interference from the randomly distributed interferers varies. A rigorous analysis of the interference statistics is presented in my thesis <A ID="tex2html41"
+                 As the satellite moves, the magnitude of the aggregate interference from the randomly distributed interferers varies. A rigorous analysis of the interference statistics is presented in my thesis <A ID="tex2html39"
   HREF="dissertation.pdf">[2]</A>
-and in article <A ID="tex2html42"
+and in article <A ID="tex2html40"
   HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, where the results are validated against a realistic Monte Carlo simulation model.
 
 <P>
@@ -277,42 +277,12 @@ where <SPAN CLASS="MATH"><IMG
   HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eq. (21)).  
 
 <P>
-If left unfixed, <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img30.svg"
- ALT="$k$"></SPAN>, <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img31.svg"
- ALT="$D$"></SPAN>, <!-- MATH
- $\mathbb{E}(P)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img32.svg"
- ALT="$\mathbb{E}(P)$"></SPAN>, <!-- MATH
- $\mathbb{E}(H)$
- -->
-<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img33.svg"
- ALT="$\mathbb{E}(H)$"></SPAN>, <!-- MATH
- $\text{var}(H)$
- -->
-<SPAN CLASS="MATH">var<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
- ALT="$(H)$"></SPAN>, and <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img22.svg"
- ALT="$\tau_c$"></SPAN> are <A ID="tex2html26"
-  HREF="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameters</A>
-learned from the data in the machine learning process. In the correlation model, too large or too small <SPAN CLASS="MATH"><IMG
- STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img31.svg"
- ALT="$D$"></SPAN> or <SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
- ALT="$1/\tau_c$"></SPAN> yields <A ID="tex2html27"
-  HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
-and underfitting, respectively. 
-                 
+
 
 <P>
 </DD>
 <DT>7.</DT>
-<DD>The normalised interference power is approximately <A ID="tex2html28"
+<DD>The normalised interference power is approximately <A ID="tex2html26"
   HREF="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distributed</A>
 with the mean
                    <P></P>
@@ -324,9 +294,9 @@ with the mean
 <TABLE CLASS="equation" >
 <TR>
 <TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG
- STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img36.svg"
+ STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img30.svg"
  ALT="$\displaystyle \mathbb{E}(P)=\mathbb{E}(I^2)=$">var<IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img31.svg"
  ALT="$\displaystyle (I)= k \mathbb{E}(H)$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (2)</TD></TR>
@@ -342,13 +312,13 @@ and the variance
 <TABLE CLASS="equation" >
 <TR>
 <TD  style="text-align:center;"><SPAN CLASS="MATH">var<IMG
- STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="img32.svg"
  ALT="$\displaystyle (P)=k\mathbb{E}(H^2)/2.$"></SPAN></TD>
 <TD  CLASS="eqno" style="text-align:right">
 (3)</TD></TR>
 </TABLE></DIV>
 <P></P>
-                   (See <A ID="tex2html29"
+                   (See <A ID="tex2html27"
   HREF="https://arxiv.org/pdf/2607.11602">[4]</A>, Eqs. (18), (19) and (29)).
 
 <P>
@@ -358,7 +328,39 @@ and the variance
 <P>
 Waveform model 5, correlation model 6, and gamma distribution model 7 define a ML hypothesis class in which the latent variable <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img16.svg"
- ALT="$P$"></SPAN> encodes information about coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. In the following, we are interested in the coherence time and multipath fading parameter.
+ ALT="$P$"></SPAN> encodes information about coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. If left unfixed, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$k$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img34.svg"
+ ALT="$D$"></SPAN>, <!-- MATH
+ $\mathbb{E}(P)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img35.svg"
+ ALT="$\mathbb{E}(P)$"></SPAN>, <!-- MATH
+ $\mathbb{E}(H)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img36.svg"
+ ALT="$\mathbb{E}(H)$"></SPAN>, <!-- MATH
+ $\text{var}(H)$
+ -->
+<SPAN CLASS="MATH">var<IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
+ ALT="$(H)$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img22.svg"
+ ALT="$\tau_c$"></SPAN> are <A ID="tex2html41"
+  HREF="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameters</A>
+learned from the data in the machine learning process. In the correlation model, too large or too small <SPAN CLASS="MATH"><IMG
+ STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img34.svg"
+ ALT="$D$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ ALT="$1/\tau_c$"></SPAN> yields <A ID="tex2html42"
+  HREF="https://en.wikipedia.org/wiki/Overfitting">overfitting</A>
+and underfitting, respectively.
+
+<P>
+In the following, we are interested in the coherence time and multipath fading parameter.
 
 <P>
 
@@ -411,7 +413,7 @@ In Figures 1 and 2, we estimate the channel conditions from a sampled <SPAN CLAS
 <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img45.svg"
  ALT="$D\approx 0.3$"></SPAN>. Consequently, we are left with the unknown parameters var<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
  ALT="$(H)$"></SPAN> and <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img22.svg"
  ALT="$\tau_c$"></SPAN>. Considering Rician fading, the variance of <SPAN CLASS="MATH"><IMG
@@ -433,7 +435,7 @@ The inference is based on the property that the autocovariances of <SPAN CLASS="
  ALT="$P$"></SPAN> and <SPAN CLASS="MATH"><IMG
  STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img48.svg"
  ALT="$I^2$"></SPAN> coincide for lags larger than the signal sampling resolution. The prior distributions for var<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
  ALT="$(H)$"></SPAN> and <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.58ex; vertical-align: -0.46ex; " SRC="img22.svg"
  ALT="$\tau_c$"></SPAN> are uniform on <SPAN CLASS="MATH"><IMG
@@ -479,7 +481,7 @@ The inference is based on the property that the autocovariances of <SPAN CLASS="
 
 <P>
 In Figure 1, one can observe that the coherence time is hard to estimate when the Rician parameter is large (var<SPAN CLASS="MATH"><IMG
- STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img34.svg"
+ STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
  ALT="$(H)$"></SPAN> is small). However, the fading variance estimate is less spread. On the other hand, small Rician parameters seem to produce highly accurate coherence estimates, as shown in Figure 2. Both estimates improve with larger training data sets and/or by optimising the estimation method.
 
 <P>

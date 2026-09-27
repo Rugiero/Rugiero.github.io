@@ -2,10 +2,6 @@
 # Associate internals original text with physical files.
 
 
-$key = q/eq:K_P/;
-$ref_files{$key} = "$dir".q|node9.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/eq:pollog/;
 $ref_files{$key} = "$dir".q|node30.html|; 
 $noresave{$key} = "$nosave";

@@ -257,7 +257,6 @@
                    \end{align}
                    where $H \geq 0$ is an i.i.d. deterministic or random fading gain of the typical transmitter. The Gaussian left-hand-side term corresponds to satellite movement and antenna attenuation of the interferers, and the right-hand-side term corresponds to the fading component. The autocovariance function is modelled using a triangular function with coherence time $\tau_c$ (fading gain separated by a time interval greater than $\tau_c$ is uncorrelated). The parameters $k,D>0$ are constants that depend on $\varphi_{\text{RX}}$, $p_t$, $\epsilon$,  $h$, $v_{\text{sat}}$, and $\lambda$ (analogous derivation for the amplitude in \htmladdnormallink{[2]}{dissertation.pdf}, Section 4.2, and for the Pearson correlation coefficient \htmladdnormallink{[4]}{https://arxiv.org/pdf/2607.11602}, Eq. (21)).  
                    
- If left unfixed, $k$, $D$, $\mathbb{E}(P)$, $\mathbb{E}(H)$, $\text{var}(H)$, and $\tau_c$ are \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)} learned from the data in the machine learning process. In the correlation model, too large or too small $D$ or $1/\tau_c$ yields \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting, respectively. 
                  }
                    
                  \item[7.]{The normalised interference power is approximately \htmladdnormallink{gamma distributed}{https://en.wikipedia.org/wiki/Gamma_distribution} with the mean
@@ -277,7 +276,9 @@
                  
 
 
-                 Waveform model 5, correlation model 6, and gamma distribution model 7 define a ML hypothesis class in which the latent variable $P$ encodes information about coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. In the following, we are interested in the coherence time and multipath fading parameter.
+                 Waveform model 5, correlation model 6, and gamma distribution model 7 define a ML hypothesis class in which the latent variable $P$ encodes information about coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. If left unfixed, $k$, $D$, $\mathbb{E}(P)$, $\mathbb{E}(H)$, $\text{var}(H)$, and $\tau_c$ are \htmladdnormallink{hyperparameters}{https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)} learned from the data in the machine learning process. In the correlation model, too large or too small $D$ or $1/\tau_c$ yields \htmladdnormallink{overfitting}{https://en.wikipedia.org/wiki/Overfitting} and underfitting, respectively.
+
+                 In the following, we are interested in the coherence time and multipath fading parameter.
                  
 
 
