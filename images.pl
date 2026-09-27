@@ -411,15 +411,17 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img47.svg"
  ALT="$\displaystyle (H)= (1+2 K)/(K+1)^2.$">|; 
 
-$key = q/displaystyle(I)=kmathbb{E}(H);MSF=1.6;AAT/;
+$key = q/displaystyle(I)=kmathbb{E}(H),;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img31.svg"
- ALT="$\displaystyle (I)= k \mathbb{E}(H)$">|; 
+ ALT="$\displaystyle (I)= k \mathbb{E}(H),
+$">|; 
 
 $key = q/displaystyle(P)=kmathbb{E}(H^2)slash2.;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 2.81ex; vertical-align: -0.70ex; " SRC="|."$dir".q|img32.svg"
- ALT="$\displaystyle (P)=k\mathbb{E}(H^2)/2.$">|; 
+ ALT="$\displaystyle (P)=k\mathbb{E}(H^2)/2.
+$">|; 
 
 $key = q/displaystyle(x)geqsqrt{frac{{2e}}{pi}}frac{sqrt{beta-1}}{beta}e^{-betax^2},;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
