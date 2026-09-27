@@ -458,10 +458,10 @@ $cached_env_img{$key} = q|<IMG
  ALT="$\displaystyle = \frac{1}{2 \pi}\int_0^{2 \pi} \int_0^1 (\cos(2 \pi t + \phi_1))...
 ...i}\int_0^{2 \pi} \int_0^1 ( \cos(2 \pi t + \phi_2))^2dt d \phi_2 = 1/2 +1/2 =1.$">|; 
 
-$key = q/displaystyle=frac{k}{2}left(E(H)^2expleft{-Dtau^2log(2)slash2right}+text{var}(H)text{triang}(tauslashtau_c)right),nonumber;MSF=1.6;AAT/;
+$key = q/displaystyle=frac{k}{2}left(E(H)^2expleft{-Dtau^2log(2)slash2right}+text{var}(H)text{triang}(tauslashtau_c)right),;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 4.99ex; vertical-align: -1.71ex; " SRC="|."$dir".q|img20.svg"
- ALT="$\displaystyle =\frac{k}{2} \left(E(H)^2\exp\left\{-D\tau^2 \log(2)/2\right\} + \text{var}(H) \text{triang}(\tau/\tau_c) \right), \nonumber$">|; 
+ ALT="$\displaystyle =\frac{k}{2} \left(E(H)^2\exp\left\{-D\tau^2 \log(2)/2\right\} + \text{var}(H) \text{triang}(\tau/\tau_c) \right),$">|; 
 
 $key = q/displaystyle=int_0^12cos^2(2pit)dt=int_0^1cos(4pit)dt+1=1.;MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG

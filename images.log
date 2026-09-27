@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.9)  27 SEP 2026 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.6.9)  27 SEP 2026 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -347,7 +347,7 @@ Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
 \l__pdf_internal_box=\box59
-) (./images.aux)
+) (/home/ilari/testinghtml/images.aux)
 \openout1 = `images.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
@@ -369,7 +369,7 @@ LaTeX Font Info:    ... okay on input line 123.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
 LaTeX Font Info:    ... okay on input line 123.
 Package hyperref Info: Link coloring OFF on input line 123.
-(./images.out) (./images.out)
+(/home/ilari/testinghtml/images.out) (/home/ilari/testinghtml/images.out)
 \@outlinefile=\write6
 \openout6 = `images.out'.
 
@@ -1432,8 +1432,8 @@ Package rerunfilecheck Info: File `images.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11883 strings out of 474222
- 180908 string characters out of 5748734
+ 11884 strings out of 474222
+ 181070 string characters out of 5748734
  1933975 words of memory out of 5000000
  33790 multiletter control sequences out of 15000+600000
  560695 words of font info for 47 fonts, out of 8000000 for 9000
