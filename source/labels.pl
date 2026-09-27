@@ -2,6 +2,10 @@
 # Associate labels original text with physical files.
 
 
+$key = q/eq:K_P/;
+$external_labels{$key} = "$URL/" . q|node9.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/eq:pollog/;
 $external_labels{$key} = "$URL/" . q|node30.html|; 
 $noresave{$key} = "$nosave";
