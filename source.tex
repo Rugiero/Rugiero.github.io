@@ -294,7 +294,8 @@
 
                                           
 In Figures 1 and 2, we estimate the channel conditions from a sampled $20$ Hz interference signal by using simulation-based inference and the Neural Posterior Estimation algorithm (NPE-C) [4]. The ``actual'' signal and training data are generated synthetically following the distribution properties 5-7 (i.e., not by simulating the PPP). We are only interested in the second-order fading statistics (not, for example, the interferer density or the transmitting powers); hence, without loss of generality, the parameters can be fixed at the values $k= 1$ and $\mathbb{E}(H)= 1$ in the autocovariance model 6. Furthermore, for model parameters 2 and 3, $D\approx 0.3$. Consequently, we are left with the unknown parameters var$(H)$ and $\tau_c$. Considering Rician fading, the variance of $H$ directly determines the Rician parameter by the equation
-$$\text{var}(H)= (1+2 K)/(K+1)^2.$$ The inference is based on the property that the autocovariances of $P$ and $I^2$ coincide for non-zero lags. The prior distributions for var$(H)$ and $\tau_c$ are uniform on $(0,1)$ and $(1,6),$ respectively.
+$$\text{var}(H)= (1+2 K)/(K+1)^2,$$
+with $\text{var}(H) \in \{0,1\}$ corresponding to pure line-of-sight (LoS) and pure multipath (Rayleigh) fading $K \in \{\infty, 0\}$, respectively. The inference is based on the property that the autocovariances of $P$ and $I^2$ coincide for non-zero lags. The prior distributions for var$(H)$ and $\tau_c$ are uniform on $(0,1)$ and $(1,6),$ respectively.
 
 \begin{figure}
   \includegraphics[width=1.0\linewidth]{channelconditionsignal2.png}
