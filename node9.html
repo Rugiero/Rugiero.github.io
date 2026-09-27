@@ -356,9 +356,9 @@ and the variance
 </DL>
 
 <P>
-The correlation model 6, combined with gamma distribution model 7, defines a hypothesis class in which the latent variable <SPAN CLASS="MATH"><IMG
+Waveform model 5, correlation model 6, and gamma distribution model 7 define a ML hypothesis class in which the latent variable <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img16.svg"
- ALT="$P$"></SPAN> encodes information about the coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. In the following, we are interested in the coherence time and multipath fading parameter.
+ ALT="$P$"></SPAN> encodes information about coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. In the following, we are interested in the coherence time and multipath fading parameter.
 
 <P>
 
@@ -398,7 +398,7 @@ The correlation model 6, combined with gamma distribution model 7, defines a hyp
 <P>
 In Figures 1 and 2, we estimate the channel conditions from a sampled <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img42.svg"
- ALT="$20$"></SPAN> Hz interference signal by using simulation-based inference and the Neural Posterior Estimation algorithm (NPE-C) [4]. &ldquo;True&rdquo; signal and training data are generated synthetically following the distribution properties 5-7 (i.e., not by simulating the PPP). We are only interested in the fading statistics (not, for example, the interferer density or the transmitting powers); hence, without loss of generality, the parameters can be fixed at the values <SPAN CLASS="MATH"><IMG
+ ALT="$20$"></SPAN> Hz interference signal by using simulation-based inference and the Neural Posterior Estimation algorithm (NPE-C) [4]. The &ldquo;actual &rdquo; signal and training data are generated synthetically following the distribution properties 5-7 (i.e., not by simulating the PPP). We are only interested in the fading statistics (not, for example, the interferer density or the transmitting powers); hence, without loss of generality, the parameters can be fixed at the values <SPAN CLASS="MATH"><IMG
  STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img43.svg"
  ALT="$k= 1$"></SPAN> and <!-- MATH
  $\mathbb{E}(H)= 1$

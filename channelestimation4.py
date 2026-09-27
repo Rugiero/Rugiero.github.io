@@ -507,7 +507,7 @@ def demo():
     plt.show()
 
     # Compare the generated I^2 covariance to the theoretical
-    diagnostic_compare_I2(theta_true1, cfg, num_realizations=1, max_lag=1000)
+    diagnostic_compare_I2(theta_true2, cfg, num_realizations=1, max_lag=1000)
 
 
 if __name__ == "__main__":

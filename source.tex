@@ -277,7 +277,7 @@
                  
 
 
-                 The correlation model 6, combined with gamma distribution model 7, defines a hypothesis class in which the latent variable $P$ encodes information about the coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. In the following, we are interested in the coherence time and multipath fading parameter.
+                 Waveform model 5, correlation model 6, and gamma distribution model 7 define a ML hypothesis class in which the latent variable $P$ encodes information about coherence time, fading conditions, transmission powers, and interferer density. This process is computationally efficient to generate and will serve as a prior model for training the ML algorithm and for inferring the received signal waveform data. In the following, we are interested in the coherence time and multipath fading parameter.
                  
 
 
@@ -294,7 +294,7 @@
 \end{figure}
 
                                           
-In Figures 1 and 2, we estimate the channel conditions from a sampled $20$ Hz interference signal by using simulation-based inference and the Neural Posterior Estimation algorithm (NPE-C) [4]. ``True'' signal and training data are generated synthetically following the distribution properties 5-7 (i.e., not by simulating the PPP). We are only interested in the fading statistics (not, for example, the interferer density or the transmitting powers); hence, without loss of generality, the parameters can be fixed at the values $k= 1$ and $\mathbb{E}(H)= 1$ in (1). Furthermore, for model parameters 2 and 3, $D\approx 0.3$. Consequently, we are left with the unknown parameters var$(H)$ and $\tau_c$. Considering Rician fading, the variance of $H$ directly determines the Rician parameter by the equation
+In Figures 1 and 2, we estimate the channel conditions from a sampled $20$ Hz interference signal by using simulation-based inference and the Neural Posterior Estimation algorithm (NPE-C) [4]. The ``actual '' signal and training data are generated synthetically following the distribution properties 5-7 (i.e., not by simulating the PPP). We are only interested in the fading statistics (not, for example, the interferer density or the transmitting powers); hence, without loss of generality, the parameters can be fixed at the values $k= 1$ and $\mathbb{E}(H)= 1$ in (1). Furthermore, for model parameters 2 and 3, $D\approx 0.3$. Consequently, we are left with the unknown parameters var$(H)$ and $\tau_c$. Considering Rician fading, the variance of $H$ directly determines the Rician parameter by the equation
 $$\text{var}(H)= (1+2 K)/(K+1)^2.$$ The inference is based on the property that the autocovariances of $P$ and $I^2$ coincide for lags larger than the signal sampling resolution. The prior distributions for var$(H)$ and $\tau_c$ are uniform on $(0,1)$ and $(1,6),$ respectively.
 
 \begin{figure}
